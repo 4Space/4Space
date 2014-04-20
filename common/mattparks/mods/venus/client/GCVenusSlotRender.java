@@ -1,20 +1,22 @@
 package mattparks.mods.venus.client;
 
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.util.ResourceLocation;
 import mattparks.mods.venus.GCVenus;
 import micdoodle8.mods.galacticraft.api.world.ICelestialBodyRenderer;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.util.ResourceLocation;
 
-public class GCVenusSlotRender implements ICelestialBodyRenderer{
-
+public class GCVenusSlotRender implements ICelestialBodyRenderer
+{
 	@Override
-	public ResourceLocation getPlanetSprite() {
-		return new ResourceLocation(GCVenus.ASSET_DOMAIN, "textures/gui/planets/pixelearth.png");
+	public ResourceLocation getPlanetSprite() 
+	{
+		return new ResourceLocation(GCVenus.TEXTURE_PREFIX, "textures/gui/planets/venus.png");
 	}
 
 	@Override
-	public String getPlanetName() {
-		return "PixelEarth";
+	public String getPlanetName() 
+	{
+		return "Venus";
 	}
 
 	@Override

@@ -1,0 +1,28 @@
+# Galacticraft Venus Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+
+# ITEMS
+item.jetpack.name=Jetpack
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.VenusGrass.name=Venus Grass
+tile.VenusDirt.name=Venus Dirt
+tile.VenusStone.name=Venus Stone
+tile.VenusCobblestone.name=Venus Cobblestone
+tile.EvolvedBlazeEgg.name=Evolved Blaze Egg
+
+# ENTITYS
+
+# GUI
+itemGroup.galacticraftVenusTab=Galacticraft Venus
+
+gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
+
+dimension.Venus.name=Venus
+
+# Schematics
