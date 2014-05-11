@@ -1,0 +1,77 @@
+# Galacticraft Venus Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.tier3.desc=Tier 3
+
+# ITEMS
+item.FossilizedPlant.name=Fossilized Plant
+item.ingotSulfer.name=Sulfer Ingot
+item.jetpack.name=Jetpack
+item.plateHeavyT3.name=Heavy-Duty Plate
+item.redGem.name=Red Gem
+item.redGemPlate.name=Red Gem Plate
+item.sulferDust.name=Sulfer Dust
+item.sulferPlate.name=Sulfer Plate
+item.venusBattery.name=Sulfer-Cell Battery
+item.VenusCrystal.name=Venus Crystal
+item.venusPowerCrystal.name=Venus Power Crystal
+item.venusRod.name=Venus Rod
+item.venusRodDust.name=Venus Rod Dust
+item.vurnBerry.name=Vurn Berry
+
+
+# TOOLS
+item.gemAxe.name=Red Gem Axe
+item.gemHoe.name=Red Gem Hoe
+item.gemPick.name=Red Gem Pickaxe
+item.gemSpade.name=Red Gem Shovel
+item.gemSword.name=Red Gem Sword
+item.sulferAxe.name=Sulfer Axe
+item.sulferHoe.name=Sulfer Hoe
+item.sulferPick.name=Sulfer Pickaxe
+item.sulferSpade.name=Sulfer Shovel
+item.sulferSword.name=Sulfer Sword
+
+
+# ARMOR
+item.gemBoots.name=Red Gem Boots
+item.gemChestplate.name=Red Gem Chestplate
+item.gemHelmet.name=Red Gem Helmet
+item.gemLeggings.name=Red Gem Leggings
+item.sulferBoots.name=Sulfer Boots
+item.sulferChestplate.name=Sulfer Chestplate
+item.sulferHelmet.name=Sulfer Helmet
+item.sulferLeggings.name=Sulfer Leggings
+
+
+# BLOCKS
+tile.BasaltOre.name=Basalt Ore
+tile.EvolvedBlazeEgg.name=Evolved Blaze Egg
+tile.FossilizedPlantOre.name=Fossilised Plant Ore
+tile.VenusBrick.name=Venus Brick
+tile.VenusCoalOre.name=Coal Ore
+tile.VenusCopperOre.name=Copper Ore
+tile.VenusCrystalOre.name=Venus Crystal Ore
+tile.VenusDirt.name=Venus Dirt
+tile.VenusGem.name=Red Gem Block
+tile.VenusGemOre.name=Red Gem Ore
+tile.VenusGrass.name=Venus Grass
+tile.VenusIronOre.name=Iron Ore
+tile.VenusMeteor.name=Meteor Block
+tile.VenusMeteorOre.name=Meteor Ore
+tile.VenusStone.name=Venus Stone
+tile.VenusSulfer.name=Sulfer Block
+tile.VenusSulferOre.name=Sulfer Ore
+tile.VenusTinOre.name=Tin Ore
+
+
+# ENTITYS
+
+# GUI
+itemGroup.galacticraftVenusTab=Galacticraft Venus
+
+gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
+
+dimension.Venus.name=Venus
+
+# Schematics
