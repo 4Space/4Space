@@ -13,7 +13,7 @@ item.redGemPlate.name=Red Gem Plate
 item.sulferDust.name=Sulfer Dust
 item.sulferPlate.name=Sulfer Plate
 item.venusBattery.name=Sulfer-Cell Battery
-item.VenusCrystal.name=Venus Crystal
+item.venusCrystal.name=Venus Crystal
 item.venusPowerCrystal.name=Venus Power Crystal
 item.venusRod.name=Venus Rod
 item.venusRodDust.name=Venus Rod Dust
@@ -64,8 +64,10 @@ tile.VenusSulfer.name=Sulfer Block
 tile.VenusSulferOre.name=Sulfer Ore
 tile.VenusTinOre.name=Tin Ore
 
-
 # ENTITYS
+entity.GalacticraftCore.VenusianVillager.name=Venusian Villager
+entity.GalacticraftCore.Flameling.name=Flameling
+entity.GalacticraftCore.EvolvedBlaze.name=Evolved Blaze
 
 # GUI
 itemGroup.galacticraftVenusTab=Galacticraft Venus

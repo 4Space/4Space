@@ -3,6 +3,7 @@ package mattparks.mods.venus.wgen.village;
 import java.util.List;
 import java.util.Random;
 
+import mattparks.mods.venus.entities.GCVenusEntityVenusianVillager;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityAlienVillager;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
@@ -176,8 +177,7 @@ public abstract class GCVenusComponentVillage extends StructureComponent
                 }
 
                 ++this.villagersSpawned;
-//                final SCVenusEntityVenusianVillager var11 = new SCVenusEntityVenusianVillager(par1World);
-                final GCCoreEntityAlienVillager var11 = new GCCoreEntityAlienVillager(par1World);
+                final GCVenusEntityVenusianVillager var11 = new GCVenusEntityVenusianVillager(par1World);
                 var11.setLocationAndAngles(var8 + 0.5D, var9, var10 + 0.5D, 0.0F, 0.0F);
                 par1World.spawnEntityInWorld(var11);
             }

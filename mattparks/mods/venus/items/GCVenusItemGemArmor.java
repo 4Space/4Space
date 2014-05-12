@@ -28,17 +28,17 @@ public class GCVenusItemGemArmor extends ItemArmor
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
     {
-        if (this.material == VenusItems.ARMORGEM)
+        if (this.material == GCVenusItems.ARMORGEM)
         {
-            if (stack.getItem().itemID == VenusItems.gemHelmet.itemID)
+            if (stack.getItem().itemID == GCVenusItems.gemHelmet.itemID)
             {
                 return "textures/model/armor/gem_1.png";
             }
-            else if (stack.getItem().itemID == VenusItems.gemChestplate.itemID || stack.getItem().itemID == VenusItems.gemBoots.itemID)
+            else if (stack.getItem().itemID == GCVenusItems.gemChestplate.itemID || stack.getItem().itemID == GCVenusItems.gemBoots.itemID)
             {
                 return "textures/model/armor/gem_2.png";
             }
-            else if (stack.getItem().itemID == VenusItems.gemLeggings.itemID)
+            else if (stack.getItem().itemID == GCVenusItems.gemLeggings.itemID)
             {
                 return "textures/model/armor/gem_3.png";
             }

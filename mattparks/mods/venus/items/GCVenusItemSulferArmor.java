@@ -28,17 +28,17 @@ public class GCVenusItemSulferArmor extends ItemArmor
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
     {
-        if (this.material == VenusItems.ARMORSULFER)
+        if (this.material == GCVenusItems.ARMORSULFER)
         {
-            if (stack.getItem().itemID == VenusItems.sulferHelmet.itemID)
+            if (stack.getItem().itemID == GCVenusItems.sulferHelmet.itemID)
             {
                 return "textures/model/armor/sulfer_1.png";
             }
-            else if (stack.getItem().itemID == VenusItems.sulferChestplate.itemID || stack.getItem().itemID == VenusItems.sulferBoots.itemID)
+            else if (stack.getItem().itemID == GCVenusItems.sulferChestplate.itemID || stack.getItem().itemID == GCVenusItems.sulferBoots.itemID)
             {
                 return "textures/model/armor/sulfer_2.png";
             }
-            else if (stack.getItem().itemID == VenusItems.sulferLeggings.itemID)
+            else if (stack.getItem().itemID == GCVenusItems.sulferLeggings.itemID)
             {
                 return "textures/model/armor/sulfer_3.png";
             }

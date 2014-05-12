@@ -55,9 +55,9 @@ public class GCVenusItemJetpack extends ItemArmor
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
     {
-        if (this.material == VenusItems.ARMORJETPACK)
+        if (this.material == GCVenusItems.ARMORJETPACK)
         {
-            if (stack.getItem().itemID == VenusItems.jetpack.itemID)
+            if (stack.getItem().itemID == GCVenusItems.jetpack.itemID)
             {
                 return "textures/model/armor/jetpack.png";
             }

@@ -106,6 +106,8 @@ public class GCVenusRoomSpawner extends GCCoreDungeonRoom
 			return "EvolvedCreeper";
 		case 3:
 			return "EvolvedSkeleton";
+		case 4:
+			return "EvolvedBlaze";
 		default:
 			return "EvolvedCreeper";
 		}

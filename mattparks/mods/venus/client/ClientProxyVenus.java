@@ -7,9 +7,13 @@ import java.util.EnumSet;
 
 import mattparks.mods.venus.CommonProxyVenus;
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.client.render.entities.GCVenusRenderEvolvedBlaze;
+import mattparks.mods.venus.client.render.entities.GCVenusRenderVenusianVillager;
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
+import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
+import mattparks.mods.venus.entities.GCVenusEntityVenusianVillager;
 import mattparks.mods.venus.items.GCVenusItemJetpack;
-import mattparks.mods.venus.items.VenusItems;
+import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.client.render.entities.GCCoreRenderSpaceship;
 import micdoodle8.mods.galacticraft.core.client.sounds.GCCoreSoundUpdaterSpaceship;
@@ -118,7 +122,7 @@ public class ClientProxyVenus extends CommonProxyVenus
     		
     		if (type.equals(EnumSet.of(TickType.CLIENT)))
             {
-        		if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == VenusItems.jetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
+        		if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == GCVenusItems.jetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
         		{
         			((GCVenusItemJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
         			player.motionY -= 0.062D;
@@ -216,9 +220,8 @@ public class ClientProxyVenus extends CommonProxyVenus
         RenderingRegistry.addNewArmourRendererPrefix("sulfer");
         RenderingRegistry.addNewArmourRendererPrefix("jetpack");
 
-//        RenderingRegistry.registerEntityRenderingHandler(SCVenusEntityVenusianVillager.class, new SCVenusRenderVenusianVillager());
-//        RenderingRegistry.registerEntityRenderingHandler(SCVenusEntityFlameling.class, new SCVenusRenderFlameling());
-//        RenderingRegistry.registerEntityRenderingHandler(SCVenusEntityEvolvedBlaze.class, new SCVenusRenderEvolvedBlaze());
+        RenderingRegistry.registerEntityRenderingHandler(GCVenusEntityVenusianVillager.class, new GCVenusRenderVenusianVillager());
+        RenderingRegistry.registerEntityRenderingHandler(GCVenusEntityEvolvedBlaze.class, new GCVenusRenderEvolvedBlaze());
   
  //       IModelCustom cargoRocketModel = AdvancedModelLoader.loadModel("/assets/galacticraftmars/models/cargoRocket.obj");
 

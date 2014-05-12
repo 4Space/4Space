@@ -5,13 +5,16 @@ import java.io.File;
 import mattparks.mods.venus.blocks.*;
 import mattparks.mods.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
-import mattparks.mods.venus.items.VenusItems;
+import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
+import mattparks.mods.venus.entities.GCVenusEntityVenusianVillager;
+import mattparks.mods.venus.items.GCVenusItems;
 import mattparks.mods.venus.network.GCVenusPacketHandlerServer;
 import mattparks.mods.venus.recipe.GCVenusRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
+import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -67,7 +70,7 @@ public class GCVenus
 	{
 		new GCVenusConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/Venus.conf"));
 
-		VenusItems.initItems();
+		GCVenusItems.initItems();
 
 		GCVenus.proxy.preInit(event);
 	}
@@ -85,7 +88,8 @@ public class GCVenus
 
 	public void registerCreatures()
 	{
-		;
+	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityVenusianVillager.class, "VenusianVillager", GCVenusConfigManager.idEntityVenusianVillager, GCCoreUtil.convertTo32BitColor(255, 103, 181, 145), 12422002);
+	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityEvolvedBlaze.class, "EvolvedBlaze", GCVenusConfigManager.idEntityEvolvedBlaze, 44975, 7969893);
 	}
 
 	public void registerOtherEntities()

@@ -1,6 +1,6 @@
 package mattparks.mods.venus.blocks;
 
-import mattparks.mods.venus.items.VenusItems;
+import mattparks.mods.venus.items.GCVenusItems;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
@@ -20,7 +20,7 @@ public class GCVenusVurnBerryBush extends BlockCrops
     @Override
 	protected int getCropItem()
     {
-      return VenusItems.vurnBerry.itemID;
+      return GCVenusItems.vurnBerry.itemID;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class GCVenusVurnBerryBush extends BlockCrops
     @Override
 	protected int getSeedItem()
     {
-        return VenusItems.vurnBerry.itemID;
+        return GCVenusItems.vurnBerry.itemID;
     }
 
     @Override

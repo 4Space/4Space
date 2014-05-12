@@ -22,6 +22,7 @@ public class GCVenusConfigManager
 
     // BLOCKS
     
+    
     // ARMOR
     public static int idArmorSulferHelmet;
     public static int idArmorSulferChestplate;
@@ -47,6 +48,10 @@ public class GCVenusConfigManager
     public static int idToolGemAxe;
     public static int idToolGemSpade;
     public static int idToolGemHoe;
+    
+    // ENTITIES
+    public static int idEntityEvolvedBlaze;
+    public static int idEntityVenusianVillager;
 
     // GUI
 
@@ -78,7 +83,7 @@ public class GCVenusConfigManager
             GCVenusConfigManager.idItemVenusBasic = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusItemBasic", 7870).getInt(7870);
             GCVenusConfigManager.idVurnBerry = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idVurnBerry", 7871).getInt(7871);
 
-            GCVenusConfigManager.idItemVenusBattery = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusBattery", 7871).getInt(7871);
+            GCVenusConfigManager.idItemVenusBattery = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusBattery", 7872).getInt(7872);
             
             GCVenusConfigManager.idArmorGemHelmet = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemHelmet", 7852).getInt(7852);
             GCVenusConfigManager.idArmorGemChestplate = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemChestplate", 7853).getInt(7853);
@@ -100,6 +105,9 @@ public class GCVenusConfigManager
             GCVenusConfigManager.idToolSulferHoe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferHoe", 7868).getInt(7868);
             GCVenusConfigManager.idToolSulferAxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferAxe", 7869).getInt(7869);
             GCVenusConfigManager.idJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idJetpack", 8879).getInt(8879);
+            
+            GCVenusConfigManager.idEntityEvolvedBlaze = GCVenusConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
+            GCVenusConfigManager.idEntityVenusianVillager = GCVenusConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);
             
             GCVenusConfigManager.generateOtherMods = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Venus", false).getBoolean(false);        
             GCVenusConfigManager.disableVenusVillageGen = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Disable Venus Village Gen", false).getBoolean(false);  

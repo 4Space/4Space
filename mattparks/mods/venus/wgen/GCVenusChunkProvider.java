@@ -6,6 +6,7 @@ import java.util.Random;
 
 import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.GCVenusConfigManager;
+import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.venus.wgen.dungeon.GCVenusRoomBoss;
 import mattparks.mods.venus.wgen.dungeon.GCVenusRoomChests;
 import mattparks.mods.venus.wgen.dungeon.GCVenusRoomEmpty;
@@ -467,6 +468,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
+			monsters.add(new SpawnListEntry(GCVenusEntityEvolvedBlaze.class, 8, 2, 3));
 			return monsters;
 		}
 		else
