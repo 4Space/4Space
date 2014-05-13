@@ -1,12 +1,9 @@
 package mattparks.mods.venus.recipe;
 
-import java.util.HashMap;
-
 import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.util.RecipeUtil;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;

@@ -15,8 +15,6 @@ import mattparks.mods.venus.entities.GCVenusEntityVenusianVillager;
 import mattparks.mods.venus.items.GCVenusItemJetpack;
 import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
-import micdoodle8.mods.galacticraft.core.client.render.entities.GCCoreRenderSpaceship;
-import micdoodle8.mods.galacticraft.core.client.sounds.GCCoreSoundUpdaterSpaceship;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -29,11 +27,7 @@ import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.client.model.AdvancedModelLoader;
-import net.minecraftforge.client.model.IModelCustom;
 import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
@@ -128,7 +122,7 @@ public class ClientProxyVenus extends CommonProxyVenus
         			player.motionY -= 0.062D;
         			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.063;
         			player.fallDistance = 3;
-//            		world.spawnParticle("smoke", player.posX, player.posY - 1D, player.posZ, 5, -0.5, 5);
+//            		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 5, -0.5, 5);
         		}
         		
             if (type.equals(EnumSet.of(TickType.CLIENT)))
@@ -201,21 +195,12 @@ public class ClientProxyVenus extends CommonProxyVenus
     @Override
     public void preInit(FMLPreInitializationEvent event)
     {
-//		ClientProxyVenus.treasureRenderID = RenderingRegistry.getNextAvailableRenderId();
-//		RenderingRegistry.registerBlockHandler(new SCVenusBlockRendererTreasureChest(ClientProxyVenus.treasureRenderID));
+    	;
     }
 
-//	@Override
-//	public int getTreasureRenderID()
-//	{
-//		return ClientProxyVenus.treasureRenderID;
-//	}
-	
     @Override
     public void registerRenderInformation()
     {
-//    	ClientRegistry.bindTileEntitySpecialRenderer(SCVenusTileEntityTreasureChest.class, new SCVenusTileEntityTreasureChestRenderer());
-    	
         RenderingRegistry.addNewArmourRendererPrefix("gem");
         RenderingRegistry.addNewArmourRendererPrefix("sulfer");
         RenderingRegistry.addNewArmourRendererPrefix("jetpack");

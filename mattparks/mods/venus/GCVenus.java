@@ -2,7 +2,11 @@ package mattparks.mods.venus;
 
 import java.io.File;
 
-import mattparks.mods.venus.blocks.*;
+import mattparks.mods.venus.blocks.GCVenusBlock;
+import mattparks.mods.venus.blocks.GCVenusEgg;
+import mattparks.mods.venus.blocks.GCVenusGrass;
+import mattparks.mods.venus.blocks.GCVenusOre;
+import mattparks.mods.venus.blocks.GCVenusVurnBerryBush;
 import mattparks.mods.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
 import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
@@ -143,7 +147,6 @@ public class GCVenus
         GameRegistry.registerBlock(GCVenus.VenusCoalOre, "VenusCoalOre");
         GameRegistry.registerBlock(GCVenus.VenusTinOre, "VenusTinOre");
         GameRegistry.registerBlock(GCVenus.VenusCopperOre, "VenusCopperOre");
-//        GameRegistry.registerBlock(GCVenus.VenusianTNT, "VenusianTNT");
         GameRegistry.registerBlock(GCVenus.EvolvedBlazeEgg, "EvolvedBlazeEgg");
         GameRegistry.registerBlock(GCVenus.VenusCrystalOre, "VenusCrystalOre");
         GameRegistry.registerBlock(GCVenus.FossilizedPlantOre, "FossilizedPlantOre");
@@ -182,8 +185,6 @@ public class GCVenus
     public static final Block VenusCrystalOre = new GCVenusOre(776, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCrystalOre").setTextureName("galacticraftvenus:venusCrystalOre").setCreativeTab(GCVenus.galacticraftVenusTab);
     
     public static final Block FossilizedPlantOre = new GCVenusOre(777, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("FossilizedPlantOre").setTextureName("galacticraftvenus:fossilizedPlantOre").setCreativeTab(GCVenus.galacticraftVenusTab);
-
-//	public static final Block VenusianTNT = new GCVenusVenusianTNT(778, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusianTNT").setTextureName("galacticraftvenus:venusianTNT").setCreativeTab(GCVenus.galacticraftVenusTab);
 
 	public static final Block VurnBerryBush = new GCVenusVurnBerryBush(779).setHardness(0.25F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush").setCreativeTab(GCVenus.galacticraftVenusTab);
 

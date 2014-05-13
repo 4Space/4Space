@@ -1,6 +1,5 @@
 package mattparks.mods.venus.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.GCVenusConfigManager;
 import net.minecraft.block.Block;
@@ -9,6 +8,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GCVenusItems
 {
