@@ -11,6 +11,7 @@ import mattparks.mods.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
 import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.venus.entities.GCVenusEntityVenusianVillager;
+import mattparks.mods.venus.event.GCVenusEvents;
 import mattparks.mods.venus.items.GCVenusItems;
 import mattparks.mods.venus.network.GCVenusPacketHandlerServer;
 import mattparks.mods.venus.recipe.GCVenusRecipeManager;
@@ -25,6 +26,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -44,7 +46,7 @@ import cpw.mods.fml.relauncher.Side;
 public class GCVenus
 {
 	public static final String NAME = "Galacticraft Venus";
-	public static final String MODID = "galacticraftvenus";
+	public static final String MODID = "GCVenus";
 	public static final String CHANNEL = "GCVenus";
 	public static final String CHANNELENTITIES = "GCVenusEntities";
 
@@ -74,6 +76,8 @@ public class GCVenus
 	{
 		new GCVenusConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/Venus.conf"));
 
+		MinecraftForge.EVENT_BUS.register(new GCVenusEvents());
+		
 		GCVenusItems.initItems();
 
 		GCVenus.proxy.preInit(event);

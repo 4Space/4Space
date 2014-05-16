@@ -1,17 +1,17 @@
 [
 {
-  "modid": "GalacticraftVenus",
+  "modid": "GCVenus",
   "name": "Galacticraft Venus",
   "description": "Venus addon for Galacticraft.",
   "version": "2.0.0",
   "mcversion": "1.6.4",
   "url": "http://www.matparks5855.weebly.com/",
-  "updateUrl": "http://www.mattparks5855.weebly.com/",
+  "updateUrl": "",
   "authors": [
-    "micdoodle8"
+    "mattparks"
   ],
   "credits": "",
-  "logoFile": "/starcraft_logo.png",
+  "logoFile": "",
   "screenshots": [
   ],
   "parent":""

@@ -57,7 +57,7 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 8), new Object[] { "XYX", 'X', "sulferPlate", 'Y', "redGemPlate" });
         
         // OTHERS CRAFTING
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 4), new Object[] { "VV", "VC", 'X', "venusRodDust", 'C', "VenusCrystal" });
+        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 4), new Object[] { "D D", " C ", "D D", 'D', "venusRodDust", 'C', "VenusCrystal" });
 
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 0), new Object[] { "XX", 'X', "sulferDust" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 4, 10), new Object[] { "X", 'X', "venusRod" });

@@ -27,6 +27,7 @@ import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.ITickHandler;
@@ -41,6 +42,7 @@ import cpw.mods.fml.relauncher.Side;
 
 public class ClientProxyVenus extends CommonProxyVenus
 {
+	
     public class ClientPacketHandler implements IPacketHandler
     {
         @Override
@@ -195,7 +197,7 @@ public class ClientProxyVenus extends CommonProxyVenus
     @Override
     public void preInit(FMLPreInitializationEvent event)
     {
-    	;
+    	MinecraftForge.EVENT_BUS.register(new GCVenusSounds());
     }
 
     @Override
