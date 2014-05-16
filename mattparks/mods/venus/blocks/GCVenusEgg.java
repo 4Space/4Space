@@ -1,5 +1,6 @@
 package mattparks.mods.venus.blocks;
 
+import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
 import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.Explosion;
@@ -53,9 +54,9 @@ public class GCVenusEgg extends BlockDragonEgg
     {
         if (!world.isRemote)
         {
-//        	SCVenusEntityEvolvedBlaze blaze = new SCVenusEntityEvolvedBlaze(world);
-//            blaze.setPosition(x + 0.5, y + 1, z + 0.5);
-//            world.spawnEntityInWorld(blaze);
+        	GCVenusEntityEvolvedBlaze blaze = new GCVenusEntityEvolvedBlaze(world);
+            blaze.setPosition(x + 0.5, y + 1, z + 0.5);
+            world.spawnEntityInWorld(blaze);
         }
 
         world.setBlockToAir(x, y, z);

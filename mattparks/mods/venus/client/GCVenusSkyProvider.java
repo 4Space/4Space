@@ -2,6 +2,7 @@ package mattparks.mods.venus.client;
 
 import java.util.Random;
 
+import mattparks.mods.venus.GCVenus;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.client.Minecraft;
@@ -20,8 +21,7 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class GCVenusSkyProvider extends IRenderHandler
 {
-	private static final ResourceLocation overworldTexture = new ResourceLocation(GalacticraftCore.ASSET_DOMAIN, "textures/gui/planets/overworld.png");
-	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
+	private static final ResourceLocation sunTexture = new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/gui/planets/sun.png");
 
 	public int starList;
 	public int glSkyList;
@@ -200,6 +200,7 @@ public class GCVenusSkyProvider extends IRenderHandler
         GL11.glTranslatef(f7, f8, f9);
         GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+        
         // Render sun
         f10 = 14.0F;
         mc.renderEngine.bindTexture(sunTexture);
@@ -210,20 +211,6 @@ public class GCVenusSkyProvider extends IRenderHandler
         tessellator1.addVertexWithUV((double)(-f10), 250.0D, (double)f10, 0.0D, 1.0D);
         tessellator1.draw();
 
-        // Render earth
-        f10 = 0.5F;
-		GL11.glScalef(0.1F, 0.1F, 0.1F);
-		GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(350F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCVenusSkyProvider.overworldTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
-		
         GL11.glDisable(GL11.GL_TEXTURE_2D);
 
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
