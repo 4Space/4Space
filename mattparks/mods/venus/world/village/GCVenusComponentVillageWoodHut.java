@@ -201,10 +201,10 @@ public class GCVenusComponentVillageWoodHut extends GCVenusComponentVillage
 		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.basicBlock.blockID, 4, 6, yLevel, 1, par3StructureBoundingBox);
 		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.basicBlock.blockID, 4, 5, yLevel, 1, par3StructureBoundingBox);
 
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.unlitTorch.blockID, 15, 8, yLevel, 2, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.unlitTorch.blockID, 15, 14, yLevel, 8, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.unlitTorch.blockID, 15, 8, yLevel, 14, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.unlitTorch.blockID, 15, 2, yLevel, 8, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 8, yLevel, 2, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 14, yLevel, 8, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 8, yLevel, 14, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 2, yLevel, 8, par3StructureBoundingBox);
 
 		yLevel = 5;
 

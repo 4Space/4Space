@@ -1,5 +1,6 @@
 package mattparks.mods.venus.entities;
 
+import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -102,7 +103,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
 
             for (int k = 0; k < j; ++k)
             {
-                this.dropItem(Item.blazeRod.itemID, 1);
+                this.dropItem(GCVenusItems.venusRod.itemID, 1);
             }
         }
     }

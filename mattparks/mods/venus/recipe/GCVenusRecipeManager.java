@@ -17,10 +17,10 @@ public class GCVenusRecipeManager
     	OreDictionary.registerOre("ingotSulfer", new ItemStack(GCVenusItems.venusItemBasic, 1, 0));
     	OreDictionary.registerOre("sulferDust", new ItemStack(GCVenusItems.venusItemBasic, 1, 1));
     	OreDictionary.registerOre("redGem", new ItemStack(GCVenusItems.venusItemBasic, 1, 2));
-    	OreDictionary.registerOre("venusRodDust", new ItemStack(GCVenusItems.venusItemBasic, 1, 10));
+    	OreDictionary.registerOre("venusRodDust", new ItemStack(GCVenusItems.venusItemBasic, 1, 9));
     	OreDictionary.registerOre("sulferPlate", new ItemStack(GCVenusItems.venusItemBasic, 1, 7));
     	OreDictionary.registerOre("redGemPlate", new ItemStack(GCVenusItems.venusItemBasic, 1, 6));
-    	OreDictionary.registerOre("venusRod", new ItemStack(GCVenusItems.venusItemBasic, 1, 9));
+//    	OreDictionary.registerOre(GCVenusItems.venusRod, new ItemStack(GCVenusItems.venusRod));
     	OreDictionary.registerOre("VenusPowerCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 4));
     	OreDictionary.registerOre("VenusCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 3));
     	OreDictionary.registerOre("FossilizedPlant", new ItemStack(GCVenusItems.venusItemBasic, 1, 5));
@@ -60,7 +60,7 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 4), new Object[] { "D D", " C ", "D D", 'D', "venusRodDust", 'C', "VenusCrystal" });
 
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 0), new Object[] { "XX", 'X', "sulferDust" });
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 4, 10), new Object[] { "X", 'X', "venusRod" });
+        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 4, 9), new Object[] { "X", 'X', GCVenusItems.venusRod });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.vurnBerry), new Object[] { "Y Y", " X ", "Y Y", 'X', "FossilizedPlant", 'Y', Item.bone });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusBattery, 1, 100), new Object[] { "TRT", "CVC", "TRT", 'T', "sulferPlate", 'R', Item.redstone, 'C', Item.coal, 'V', "VenusPowerCrystal" });
         

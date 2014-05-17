@@ -36,6 +36,8 @@ public class GCVenusItems
     public static Item gemLeggings;
     public static Item gemBoots;
     
+    public static Item venusRod;
+    
     public static Item venusBattery;
     
     public static EnumArmorMaterial ARMORSULFER = EnumHelper.addArmorMaterial("SULFER", 42, new int[] { 4, 9, 7, 4 }, 12);
@@ -73,6 +75,8 @@ public class GCVenusItems
         GCVenusItems.gemLeggings = new GCVenusItemGemArmor(GCVenusConfigManager.idArmorGemLeggings, GCVenusItems.ARMORGEM, 7, 2, false).setUnlocalizedName("gemLeggings");
         GCVenusItems.gemBoots = new GCVenusItemGemArmor(GCVenusConfigManager.idArmorGemBoots, GCVenusItems.ARMORGEM, 7, 3, false).setUnlocalizedName("gemBoots");
 
+        GCVenusItems.venusRod = new GCVenusRod(GCVenusConfigManager.idItemVenusRod, null).setUnlocalizedName("venusRod").setTextureName("galacticraftvenus:venusRod");
+        
         GCVenusItems.jetpack = new GCVenusItemJetpack(GCVenusConfigManager.idJetpack, GCVenusItems.ARMORJETPACK, 7, 1, false).setUnlocalizedName("jetpack");
         GCVenusItems.venusBattery = new GCVenusItemBattery(GCVenusConfigManager.idItemVenusBattery, "venusBattery");
     

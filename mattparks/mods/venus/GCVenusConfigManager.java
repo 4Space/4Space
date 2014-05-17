@@ -19,6 +19,7 @@ public class GCVenusConfigManager
     // ITEMS
     public static int idItemVenusBasic;
     public static int idItemVenusBattery;
+    public static int idItemVenusRod;
     public static int idVurnBerry;
 
     // BLOCKS
@@ -85,6 +86,9 @@ public class GCVenusConfigManager
             GCVenusConfigManager.idVurnBerry = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idVurnBerry", 7871).getInt(7871);
 
             GCVenusConfigManager.idItemVenusBattery = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusBattery", 7872).getInt(7872);
+            
+            GCVenusConfigManager.idItemVenusRod = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 8880).getInt(8880);
+            
             
             GCVenusConfigManager.idArmorGemHelmet = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemHelmet", 7852).getInt(7852);
             GCVenusConfigManager.idArmorGemChestplate = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemChestplate", 7853).getInt(7853);
