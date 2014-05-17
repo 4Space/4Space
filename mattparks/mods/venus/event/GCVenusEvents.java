@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.client.ClientProxyVenus;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.client.ClientProxyCore;
 import micdoodle8.mods.galacticraft.core.wrappers.PlayerGearData;
@@ -28,9 +29,9 @@ public class GCVenusEvents
 	public void onSoundLoad(SoundLoadEvent event)
 	{
 //		event.manager.addSound(GCVenus.TEXTURE_PREFIX + "ambience/scaryscape.ogg");
-		ClientProxyCore.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_1.ogg"));
-		ClientProxyCore.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_2.ogg"));
-		ClientProxyCore.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Bells.ogg"));
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_1.ogg"));
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_2.ogg"));
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Bells.ogg"));
 	}
 
 	@SideOnly(Side.CLIENT)

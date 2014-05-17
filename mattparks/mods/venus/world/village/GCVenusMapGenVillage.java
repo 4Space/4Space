@@ -33,15 +33,15 @@ public class GCVenusMapGenVillage extends MapGenStructure
 	{
 		if (!GCVenusMapGenVillage.initialized)
 		{
-			MapGenStructureIO.func_143034_b(GCVenusStructureVillageStart.class, "MoonVillage");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageField.class, "MoonField1");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageField2.class, "MoonField2");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageHouse.class, "MoonHouse");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageRoadPiece.class, "MoonRoadPiece");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillagePathGen.class, "MoonPath");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageTorch.class, "MoonTorch");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageStartPiece.class, "MoonWell");
-			MapGenStructureIO.func_143031_a(GCVenusComponentVillageWoodHut.class, "MoonWoodHut");
+			MapGenStructureIO.func_143034_b(GCVenusStructureVillageStart.class, "VenusVillage");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageField.class, "VenusField1");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageField2.class, "VenusField2");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageHouse.class, "VenusHouse");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageRoadPiece.class, "VenusRoadPiece");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillagePathGen.class, "VenusPath");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageTorch.class, "VenusTorch");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageStartPiece.class, "VenusWell");
+			MapGenStructureIO.func_143031_a(GCVenusComponentVillageWoodHut.class, "VenusWoodHut");
 		}
 
 		GCVenusMapGenVillage.initialized = true;
@@ -89,13 +89,13 @@ public class GCVenusMapGenVillage extends MapGenStructure
 	@Override
 	protected StructureStart getStructureStart(int par1, int par2)
 	{
-		FMLLog.info("Generating Moon Village at x" + par1 * 16 + " z" + par2 * 16);
+		FMLLog.info("Generating Venus Village at x" + par1 * 16 + " z" + par2 * 16);
 		return new GCVenusStructureVillageStart(this.worldObj, this.rand, par1, par2, this.terrainType);
 	}
 
 	@Override
 	public String func_143025_a()
 	{
-		return "MoonVillage";
+		return "VenusVillage";
 	}
 }
