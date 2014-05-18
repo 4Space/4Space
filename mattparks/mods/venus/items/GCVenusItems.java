@@ -123,6 +123,7 @@ public class GCVenusItems
  		registerItem(gemLeggings);
  		registerItem(gemBoots);
 		
+ 		registerItem(pJetpack);
  		registerItem(jetpack);
  		registerItem(venusBattery);
  		registerItem(venusRod);

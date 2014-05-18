@@ -25,7 +25,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
     {
         super(par1World);
         this.isImmuneToFire = true;
-        this.experienceValue = 10;
+        this.experienceValue = 25;
     }
 
     @Override
@@ -58,9 +58,9 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
                     this.attackTime = 60;
                     this.func_70844_e(true);
                 }
-                else if (this.field_70846_g <= 4)
+                else if (this.field_70846_g <= 6)
                 {
-                    this.attackTime = 6;
+                    this.attackTime = 10;
                 }
                 else
                 {
@@ -71,7 +71,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
 
                 if (this.field_70846_g > 1)
                 {
-                    float f1 = MathHelper.sqrt_float(par2) * 0.5F;
+                    float f1 = MathHelper.sqrt_float(par2) * 0.075F;
                     this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
 
                     for (int i = 0; i < 1; ++i)

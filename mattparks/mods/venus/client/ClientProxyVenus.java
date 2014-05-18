@@ -130,7 +130,7 @@ public class ClientProxyVenus extends CommonProxyVenus
         		else if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == GCVenusItems.pJetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
         		{
         			((GCVenusItemPJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
-        			player.motionY -= 0.065D;
+        			player.motionY -= 0.05D;
         			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.063;
         			player.fallDistance = -10; //TODO: Disable all FALL damage //TODO: Allow player to look in any direction for jetpack to work
             		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);

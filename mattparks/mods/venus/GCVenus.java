@@ -3,6 +3,7 @@ package mattparks.mods.venus;
 import java.io.File;
 
 import mattparks.mods.venus.blocks.GCVenusBlock;
+import mattparks.mods.venus.blocks.GCVenusBrick;
 import mattparks.mods.venus.blocks.GCVenusEgg;
 import mattparks.mods.venus.blocks.GCVenusGrass;
 import mattparks.mods.venus.blocks.GCVenusOre;
@@ -163,7 +164,7 @@ public class GCVenus
 
 	public static final Block VenusStone = new GCVenusBlock(762, null).setHardness(1.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusStone").setTextureName("galacticraftvenus:stoneVenus").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusBrick = new GCVenusBlock(763, null).setHardness(2500.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusBrick = new GCVenusBrick(763, null).setHardness(2500.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick").setCreativeTab(GCVenus.galacticraftVenusTab);
 
 	public static final Block EvolvedBlazeEgg = new GCVenusEgg(764, 0, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg").setCreativeTab(GCVenus.galacticraftVenusTab);
 
