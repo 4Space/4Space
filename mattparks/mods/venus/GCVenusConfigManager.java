@@ -26,10 +26,10 @@ public class GCVenusConfigManager
     
     
     // ARMOR
-    public static int idArmorSulferHelmet;
-    public static int idArmorSulferChestplate;
-    public static int idArmorSulferLeggings;
-    public static int idArmorSulferBoots;
+    public static int idArmorSulfurHelmet;
+    public static int idArmorSulfurChestplate;
+    public static int idArmorSulfurLeggings;
+    public static int idArmorSulfurBoots;
     
     public static int idArmorGemHelmet;
     public static int idArmorGemChestplate;
@@ -37,13 +37,14 @@ public class GCVenusConfigManager
     public static int idArmorGemBoots;
     
     public static int idJetpack;
+    public static int idPJetpack;
     
     // TOOLS
-    public static int idToolSulferSword;
-    public static int idToolSulferPickaxe;
-    public static int idToolSulferAxe;
-    public static int idToolSulferSpade;
-    public static int idToolSulferHoe;
+    public static int idToolSulfurSword;
+    public static int idToolSulfurPickaxe;
+    public static int idToolSulfurAxe;
+    public static int idToolSulfurSpade;
+    public static int idToolSulfurHoe;
     
     public static int idToolGemSword;
     public static int idToolGemPickaxe;
@@ -87,29 +88,31 @@ public class GCVenusConfigManager
 
             GCVenusConfigManager.idItemVenusBattery = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusBattery", 7872).getInt(7872);
             
-            GCVenusConfigManager.idItemVenusRod = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 8880).getInt(8880);
+            GCVenusConfigManager.idItemVenusRod = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 7873).getInt(7873);
             
             
-            GCVenusConfigManager.idArmorGemHelmet = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemHelmet", 7852).getInt(7852);
-            GCVenusConfigManager.idArmorGemChestplate = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemChestplate", 7853).getInt(7853);
-            GCVenusConfigManager.idArmorGemLeggings = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemLeggings", 7854).getInt(7854);
-            GCVenusConfigManager.idArmorGemBoots = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemBoots", 7855).getInt(7855);
-            GCVenusConfigManager.idToolGemSword = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemSword", 7856).getInt(7856);
-            GCVenusConfigManager.idToolGemPickaxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemPickaxe", 7857).getInt(7857);
-            GCVenusConfigManager.idToolGemSpade = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemSpade", 7858).getInt(7858);
-            GCVenusConfigManager.idToolGemHoe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemHoe", 7859).getInt(7859);
-            GCVenusConfigManager.idToolGemAxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemAxe", 7860).getInt(7860);
+            GCVenusConfigManager.idArmorGemHelmet = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemHelmet", 7874).getInt(7874);
+            GCVenusConfigManager.idArmorGemChestplate = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemChestplate", 7875).getInt(7875);
+            GCVenusConfigManager.idArmorGemLeggings = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemLeggings", 7876).getInt(7876);
+            GCVenusConfigManager.idArmorGemBoots = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemBoots", 7877).getInt(7877);
+            GCVenusConfigManager.idToolGemSword = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemSword", 7878).getInt(7878);
+            GCVenusConfigManager.idToolGemPickaxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemPickaxe", 7879).getInt(7879);
+            GCVenusConfigManager.idToolGemSpade = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemSpade", 7880).getInt(7880);
+            GCVenusConfigManager.idToolGemHoe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemHoe", 7881).getInt(7881);
+            GCVenusConfigManager.idToolGemAxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolGemAxe", 7882).getInt(7882);
             
-            GCVenusConfigManager.idArmorSulferHelmet = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulferHelmet", 7861).getInt(7861);
-            GCVenusConfigManager.idArmorSulferChestplate = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulferChestplate", 7862).getInt(7862);
-            GCVenusConfigManager.idArmorSulferLeggings = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulferLeggings", 7863).getInt(7863);
-            GCVenusConfigManager.idArmorSulferBoots = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulferBoots", 7864).getInt(7864);
-            GCVenusConfigManager.idToolSulferSword = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferSword", 7865).getInt(7865);
-            GCVenusConfigManager.idToolSulferPickaxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferPickaxe", 7866).getInt(7866);
-            GCVenusConfigManager.idToolSulferSpade = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferSpade", 7867).getInt(7867);
-            GCVenusConfigManager.idToolSulferHoe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferHoe", 7868).getInt(7868);
-            GCVenusConfigManager.idToolSulferAxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulferAxe", 7869).getInt(7869);
-            GCVenusConfigManager.idJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idJetpack", 8879).getInt(8879);
+            GCVenusConfigManager.idArmorSulfurHelmet = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulfurHelmet", 7883).getInt(7883);
+            GCVenusConfigManager.idArmorSulfurChestplate = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulfurChestplate", 7884).getInt(7884);
+            GCVenusConfigManager.idArmorSulfurLeggings = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulfurLeggings", 7885).getInt(7885);
+            GCVenusConfigManager.idArmorSulfurBoots = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorSulfurBoots", 7886).getInt(7886);
+            GCVenusConfigManager.idToolSulfurSword = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurSword", 7887).getInt(7887);
+            GCVenusConfigManager.idToolSulfurPickaxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurPickaxe", 7888).getInt(7888);
+            GCVenusConfigManager.idToolSulfurSpade = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurSpade", 7889).getInt(7889);
+            GCVenusConfigManager.idToolSulfurHoe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurHoe", 7890).getInt(7890);
+            GCVenusConfigManager.idToolSulfurAxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurAxe", 7891).getInt(7891);
+            GCVenusConfigManager.idJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idJetpack", 7892).getInt(7892);
+            
+            GCVenusConfigManager.idPJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idPJetpack", 7893).getInt(7893);
             
             GCVenusConfigManager.idEntityEvolvedBlaze = GCVenusConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
             GCVenusConfigManager.idEntityVenusianVillager = GCVenusConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);

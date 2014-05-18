@@ -74,7 +74,7 @@ public class GCVenus
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		new GCVenusConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/Venus.conf"));
+		new GCVenusConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/venus.conf"));
 
 		MinecraftForge.EVENT_BUS.register(new GCVenusEvents());
 		
@@ -143,14 +143,15 @@ public class GCVenus
         GameRegistry.registerBlock(GCVenus.VenusRedGemBlock, "VenusRedGemBlock");
         GameRegistry.registerBlock(GCVenus.VenusMeteorBlock, "VenusMeteorBlock");
         GameRegistry.registerBlock(GCVenus.VenusBrick, "VenusBrick");
-        GameRegistry.registerBlock(GCVenus.VenusSulferBlock, "VenusSulferBlock");
+        GameRegistry.registerBlock(GCVenus.VenusSulfurBlock, "VenusSulfurBlock");
         GameRegistry.registerBlock(GCVenus.VenusRedGemOre, "VenusRedGemOre");
         GameRegistry.registerBlock(GCVenus.VenusMeteorOre, "VenusMeteorOre");
-        GameRegistry.registerBlock(GCVenus.VenusSulferOre, "VenusSulferOre");
+        GameRegistry.registerBlock(GCVenus.VenusSulfurOre, "VenusSulfurOre");
         GameRegistry.registerBlock(GCVenus.VenusIronOre, "VenusIronOre");
         GameRegistry.registerBlock(GCVenus.VenusCoalOre, "VenusCoalOre");
         GameRegistry.registerBlock(GCVenus.VenusTinOre, "VenusTinOre");
         GameRegistry.registerBlock(GCVenus.VenusCopperOre, "VenusCopperOre");
+        GameRegistry.registerBlock(GCVenus.VenusGoldOre, "VenusGoldOre");
         GameRegistry.registerBlock(GCVenus.EvolvedBlazeEgg, "EvolvedBlazeEgg");
         GameRegistry.registerBlock(GCVenus.VenusCrystalOre, "VenusCrystalOre");
         GameRegistry.registerBlock(GCVenus.FossilizedPlantOre, "FossilizedPlantOre");
@@ -162,33 +163,35 @@ public class GCVenus
 
 	public static final Block VenusStone = new GCVenusBlock(762, null).setHardness(1.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusStone").setTextureName("galacticraftvenus:stoneVenus").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusBrick = new GCVenusBlock(764, null).setHardness(2500.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusBrick = new GCVenusBlock(763, null).setHardness(2500.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block EvolvedBlazeEgg = new GCVenusEgg(765, 0, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block EvolvedBlazeEgg = new GCVenusEgg(764, 0, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusRedGemBlock = new GCVenusBlock(766, null).setHardness(2.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusGem").setTextureName("galacticraftvenus:gemBlock").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusRedGemBlock = new GCVenusBlock(765, null).setHardness(2.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusGemBlock").setTextureName("galacticraftvenus:gemBlock").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusMeteorBlock = new GCVenusBlock(767, null).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusMeteor").setTextureName("galacticraftvenus:meteorBlock").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusMeteorBlock = new GCVenusBlock(766, null).setHardness(3.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusMeteorBlock").setTextureName("galacticraftvenus:meteorBlock").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusSulferBlock = new GCVenusOre(768, null).setHardness(2.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusSulfer").setTextureName("galacticraftvenus:sulferBlock").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusSulfurBlock = new GCVenusOre(767, null).setHardness(2.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusSulfurBlock").setTextureName("galacticraftvenus:sulfurBlock").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusSulferOre = new GCVenusOre(769, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusSulferOre").setTextureName("galacticraftvenus:sulferOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusSulfurOre = new GCVenusOre(768, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusSulfurOre").setTextureName("galacticraftvenus:sulfurOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusMeteorOre = new GCVenusOre(770, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusMeteorOre").setTextureName("galacticraftvenus:meteorOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusMeteorOre = new GCVenusOre(769, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusMeteorOre").setTextureName("galacticraftvenus:meteorOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusRedGemOre = new GCVenusOre(771, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusGemOre").setTextureName("galacticraftvenus:gemOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusRedGemOre = new GCVenusOre(770, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusGemOre").setTextureName("galacticraftvenus:gemOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusIronOre = new GCVenusOre(772, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusIronOre").setTextureName("galacticraftvenus:ironOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusIronOre = new GCVenusOre(771, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusIronOre").setTextureName("galacticraftvenus:ironOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusCoalOre = new GCVenusOre(773, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCoalOre").setTextureName("galacticraftvenus:coalOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusCoalOre = new GCVenusOre(772, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCoalOre").setTextureName("galacticraftvenus:coalOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusTinOre = new GCVenusOre(774, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusTinOre").setTextureName("galacticraftvenus:tinOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusTinOre = new GCVenusOre(773, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusTinOre").setTextureName("galacticraftvenus:tinOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VenusCopperOre = new GCVenusOre(775, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCopperOre").setTextureName("galacticraftvenus:copperOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VenusCopperOre = new GCVenusOre(774, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCopperOre").setTextureName("galacticraftvenus:copperOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-    public static final Block VenusCrystalOre = new GCVenusOre(776, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCrystalOre").setTextureName("galacticraftvenus:venusCrystalOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+    public static final Block VenusCrystalOre = new GCVenusOre(775, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusCrystalOre").setTextureName("galacticraftvenus:venusCrystalOre").setCreativeTab(GCVenus.galacticraftVenusTab);
+    
+    public static final Block VenusGoldOre = new GCVenusOre(776, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusGoldOre").setTextureName("galacticraftvenus:goldOre").setCreativeTab(GCVenus.galacticraftVenusTab);
     
     public static final Block FossilizedPlantOre = new GCVenusOre(777, null).setHardness(1.5F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("FossilizedPlantOre").setTextureName("galacticraftvenus:fossilizedPlantOre").setCreativeTab(GCVenus.galacticraftVenusTab);
 
-	public static final Block VurnBerryBush = new GCVenusVurnBerryBush(779).setHardness(0.25F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush").setCreativeTab(GCVenus.galacticraftVenusTab);
+	public static final Block VurnBerryBush = new GCVenusVurnBerryBush(778).setHardness(0.25F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush").setCreativeTab(GCVenus.galacticraftVenusTab);
 }
