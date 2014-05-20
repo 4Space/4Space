@@ -1,9 +1,12 @@
 package mattparks.mods.venus.entities;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySmallFireball;
@@ -11,185 +14,85 @@ import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 {
+    /** Random offset used in floating behaviour */
     private float heightOffset = 0.5F;
 
+    /** ticks until heightOffset is randomized */
     private int heightOffsetUpdateTime;
     private int field_70846_g;
 
+    /** allows the mob the survive in space */
+	@Override
+	public boolean canBreath()
+	{
+		return true;
+	}
+	
     public GCVenusEntityEvolvedBlaze(World par1World)
     {
         super(par1World);
         this.isImmuneToFire = true;
-        this.experienceValue = 25;
+        this.experienceValue = 10;
     }
 
-    @Override
-	protected void applyEntityAttributes()
+    protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(6.0D);
     }
 
-    @Override
-	protected void attackEntity(Entity par1Entity, float par2)
-    {
-        if (this.attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > this.boundingBox.minY && par1Entity.boundingBox.minY < this.boundingBox.maxY)
-        {
-            this.attackTime = 20;
-            this.attackEntityAsMob(par1Entity);
-        }
-        else if (par2 < 30.0F)
-        {
-            double d0 = par1Entity.posX - this.posX;
-            double d1 = par1Entity.boundingBox.minY + par1Entity.height / 2.0F - (this.posY + this.height / 2.0F);
-            double d2 = par1Entity.posZ - this.posZ;
-
-            if (this.attackTime == 0)
-            {
-                ++this.field_70846_g;
-
-                if (this.field_70846_g == 1)
-                {
-                    this.attackTime = 60;
-                    this.func_70844_e(true);
-                }
-                else if (this.field_70846_g <= 6)
-                {
-                    this.attackTime = 10;
-                }
-                else
-                {
-                    this.attackTime = 100;
-                    this.field_70846_g = 0;
-                    this.func_70844_e(false);
-                }
-
-                if (this.field_70846_g > 1)
-                {
-                    float f1 = MathHelper.sqrt_float(par2) * 0.075F;
-                    this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
-
-                    for (int i = 0; i < 1; ++i)
-                    {
-                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.worldObj, this, d0 + this.rand.nextGaussian() * f1, d1, d2 + this.rand.nextGaussian() * f1);
-                        entitysmallfireball.posY = this.posY + this.height / 2.0F + 0.5D;
-                        this.worldObj.spawnEntityInWorld(entitysmallfireball);
-                    }
-                }
-            }
-
-            this.rotationYaw = (float)(Math.atan2(d2, d0) * 180.0D / Math.PI) - 90.0F;
-            this.hasAttacked = true;
-        }
-    }
-
-    @Override
-    public boolean canBreath()
-    {
-        return true;
-    }
-
-    @Override
-	protected void dropFewItems(boolean par1, int par2)
-    {
-        if (par1)
-        {
-            int j = this.rand.nextInt(2 + par2);
-
-            for (int k = 0; k < j; ++k)
-            {
-                this.dropItem(GCVenusItems.venusRod.itemID, 1);
-            }
-        }
-    }
-
-    @Override
-	protected void entityInit()
+    protected void entityInit()
     {
         super.entityInit();
         this.dataWatcher.addObject(16, new Byte((byte)0));
     }
 
-    @Override
-	protected void fall(float par1) {}
-
-    public void func_70844_e(boolean par1)
+    /**
+     * Returns the sound this mob makes while it's alive.
+     */
+    protected String getLivingSound()
     {
-        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
-
-        if (par1)
-        {
-            b0 = (byte)(b0 | 1);
-        }
-        else
-        {
-            b0 &= -2;
-        }
-
-        this.dataWatcher.updateObject(16, Byte.valueOf(b0));
+        return "mob.blaze.breathe";
     }
 
-    public boolean func_70845_n()
+    /**
+     * Returns the sound this mob makes when it is hurt.
+     */
+    protected String getHurtSound()
     {
-        return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+        return "mob.blaze.hit";
     }
 
-    @Override
-	public float getBrightness(float par1)
+    /**
+     * Returns the sound this mob makes on death.
+     */
+    protected String getDeathSound()
     {
-        return 1.0F;
+        return "mob.blaze.death";
     }
 
-    @Override
-	@SideOnly(Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     public int getBrightnessForRender(float par1)
     {
         return 15728880;
     }
 
-    @Override
-	protected String getDeathSound()
+    /**
+     * Gets how bright this entity is.
+     */
+    public float getBrightness(float par1)
     {
-        return "mob.blaze.death";
+        return 1.0F;
     }
 
-    @Override
-	protected int getDropItemId()
-    {
-        return Item.blazeRod.itemID;
-    }
-
-    @Override
-	protected String getHurtSound()
-    {
-        return "mob.blaze.hit";
-    }
-
-    @Override
-	protected String getLivingSound()
-    {
-        return "mob.blaze.breathe";
-    }
-
-    @Override
-	public boolean isBurning()
-    {
-        return this.func_70845_n();
-    }
-
-    @Override
-	protected boolean isValidLightLevel()
-    {
-        return true;
-    }
-
-    @Override
-	public void onLivingUpdate()
+    /**
+     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+     * use this to react to sunlight and start to burn.
+     */
+    public void onLivingUpdate()
     {
         if (!this.worldObj.isRemote)
         {
@@ -206,7 +109,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
                 this.heightOffset = 0.5F + (float)this.rand.nextGaussian() * 3.0F;
             }
 
-            if (this.getEntityToAttack() != null && this.getEntityToAttack().posY + this.getEntityToAttack().getEyeHeight() > this.posY + this.getEyeHeight() + this.heightOffset)
+            if (this.getEntityToAttack() != null && this.getEntityToAttack().posY + (double)this.getEntityToAttack().getEyeHeight() > this.posY + (double)this.getEyeHeight() + (double)this.heightOffset)
             {
                 this.motionY += (0.30000001192092896D - this.motionY) * 0.30000001192092896D;
             }
@@ -224,9 +127,131 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
 
         for (int i = 0; i < 2; ++i)
         {
-            this.worldObj.spawnParticle("largesmoke", this.posX + (this.rand.nextDouble() - 0.5D) * this.width, this.posY + this.rand.nextDouble() * this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
+            this.worldObj.spawnParticle("largesmoke", this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
         }
 
         super.onLivingUpdate();
+    }
+
+    /**
+     * Basic mob attack. Default to touch of death in EntityCreature. Overridden by each mob to define their attack.
+     */
+    protected void attackEntity(Entity par1Entity, float par2)
+    {
+        if (this.attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > this.boundingBox.minY && par1Entity.boundingBox.minY < this.boundingBox.maxY)
+        {
+            this.attackTime = 20;
+            this.attackEntityAsMob(par1Entity);
+        }
+        else if (par2 < 30.0F)
+        {
+            double d0 = par1Entity.posX - this.posX;
+            double d1 = par1Entity.boundingBox.minY + (double)(par1Entity.height / 2.0F) - (this.posY + (double)(this.height / 2.0F));
+            double d2 = par1Entity.posZ - this.posZ;
+
+            if (this.attackTime == 0)
+            {
+                ++this.field_70846_g;
+
+                if (this.field_70846_g == 1)
+                {
+                    this.attackTime = 60;
+                    this.func_70844_e(true);
+                }
+                else if (this.field_70846_g <= 5)
+                {
+                    this.attackTime = 6;
+                }
+                else
+                {
+                    this.attackTime = 100;
+                    this.field_70846_g = 0;
+                    this.func_70844_e(false);
+                }
+
+                if (this.field_70846_g > 1)
+                {
+                    float f1 = MathHelper.sqrt_float(par2) * 0.5F;
+                    this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+
+                    for (int i = 0; i < 1; ++i)
+                    {
+                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.worldObj, this, d0 + this.rand.nextGaussian() * (double)f1, d1, d2 + this.rand.nextGaussian() * (double)f1);
+                        entitysmallfireball.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
+                        this.worldObj.spawnEntityInWorld(entitysmallfireball);
+                    }
+                }
+            }
+
+            this.rotationYaw = (float)(Math.atan2(d2, d0) * 180.0D / Math.PI) - 90.0F;
+            this.hasAttacked = true;
+        }
+    }
+
+    /**
+     * Called when the mob is falling. Calculates and applies fall damage.
+     */
+    protected void fall(float par1) {}
+
+    /**
+     * Returns the item ID for the item the mob drops on death.
+     */
+    protected int getDropItemId()
+    {
+        return GCVenusItems.venusRod.itemID;
+    }
+
+    /**
+     * Returns true if the entity is on fire. Used by render to add the fire effect on rendering.
+     */
+    public boolean isBurning()
+    {
+        return this.func_70845_n();
+    }
+
+    /**
+     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
+     * par2 - Level of Looting used to kill this mob.
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+        if (par1)
+        {
+            int j = this.rand.nextInt(2 + par2);
+
+            for (int k = 0; k < j; ++k)
+            {
+                this.dropItem(GCVenusItems.venusRod.itemID, 1);
+            }
+        }
+    }
+
+    public boolean func_70845_n()
+    {
+        return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+    }
+
+    public void func_70844_e(boolean par1)
+    {
+        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
+
+        if (par1)
+        {
+            b0 = (byte)(b0 | 1);
+        }
+        else
+        {
+            b0 &= -2;
+        }
+
+        this.dataWatcher.updateObject(16, Byte.valueOf(b0));
+    }
+
+    /**
+     * Checks to make sure the light is not too bright where the mob is spawning
+     */
+    protected boolean isValidLightLevel()
+    {
+        return true;
     }
 }

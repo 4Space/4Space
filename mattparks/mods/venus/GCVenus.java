@@ -42,10 +42,17 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = GCVenus.NAME, version = GalacticraftCore.LOCALMAJVERSION + "." + GalacticraftCore.LOCALMINVERSION + "." + GalacticraftCore.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCVenus.NAME, version = GCVenus.LOCALMAJVERSION + "." + GCVenus.LOCALMINVERSION + "." + GCVenus.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
 @NetworkMod(channels = { GCVenus.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCVenus
 {
+	public static final int LOCALMAJVERSION = 2;
+	public static final int LOCALMINVERSION = 0;
+	public static final int LOCALBUILDVERSION = 0;
+	public static int remoteMajVer;
+	public static int remoteMinVer;
+	public static int remoteBuildVer;
+	
 	public static final String NAME = "Galacticraft Venus";
 	public static final String MODID = "GCVenus";
 	public static final String CHANNEL = "GCVenus";

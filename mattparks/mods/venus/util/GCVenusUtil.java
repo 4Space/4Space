@@ -1,5 +1,8 @@
 package mattparks.mods.venus.util;
 
+import mattparks.mods.venus.GCVenusThreadVersionCheck;
+import cpw.mods.fml.relauncher.Side;
+
 
 public class GCVenusUtil
 {
@@ -7,4 +10,9 @@ public class GCVenusUtil
 //	{
 //		GalacticraftRegistry.addT2RocketRecipe(new GCCoreNasaWorkbenchRecipe(result, input));
 //	}
+	
+	public static void checkVersion(Side side)
+	{
+		GCVenusThreadVersionCheck.startCheck(side);
+	}
 }
