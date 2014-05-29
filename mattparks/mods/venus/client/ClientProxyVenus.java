@@ -156,19 +156,6 @@ public class ClientProxyVenus extends CommonProxyVenus
                     for (int i = 0; i < world.loadedEntityList.size(); i++)
                     {
                         final Entity e = (Entity) world.loadedEntityList.get(i);
-
-                        if (e != null)
-                        {
-//                            if (e instanceof SCVenusEntityRocketT3)
-                            {
-//                                final SCVenusEntityRocketT3 eship = (SCVenusEntityRocketT3) e;
-
-//                                if (eship.rocketSoundUpdater == null)
-                                {
-//                                    eship.rocketSoundUpdater = new GCCoreSoundUpdaterSpaceship(FMLClientHandler.instance().getClient().sndManager, eship, FMLClientHandler.instance().getClient().thePlayer);
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -219,10 +206,5 @@ public class ClientProxyVenus extends CommonProxyVenus
 
         RenderingRegistry.registerEntityRenderingHandler(GCVenusEntityVenusianVillager.class, new GCVenusRenderVenusianVillager());
         RenderingRegistry.registerEntityRenderingHandler(GCVenusEntityEvolvedBlaze.class, new GCVenusRenderEvolvedBlaze());
-  
- //       IModelCustom cargoRocketModel = AdvancedModelLoader.loadModel("/assets/galacticraftmars/models/cargoRocket.obj");
-
-//        RenderingRegistry.registerEntityRenderingHandler(SCVenusEntityRocketT3.class, new GCCoreRenderSpaceship(new SCCoreModelSpaceshipTier3(), VenusCore.TEXTURE_DOMAIN, "rocketT3"));
-//        MinecraftForgeClient.registerItemRenderer(VenusItems.spaceshipT3.itemID, new SCVenusItemRendererSpaceshipT3(cargoRocketModel));
     }
 }

@@ -28,7 +28,6 @@ public class GCVenusEvents
 	@ForgeSubscribe
 	public void onSoundLoad(SoundLoadEvent event)
 	{
-//		event.manager.addSound(GCVenus.TEXTURE_PREFIX + "ambience/scaryscape.ogg");
 		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_1.ogg"));
 		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_2.ogg"));
 		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Ambience.ogg"));

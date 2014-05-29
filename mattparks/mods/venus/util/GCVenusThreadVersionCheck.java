@@ -1,10 +1,11 @@
-package mattparks.mods.venus;
+package mattparks.mods.venus.util;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import mattparks.mods.venus.GCVenus;
 import micdoodle8.mods.galacticraft.core.GCLog;
 import micdoodle8.mods.galacticraft.core.util.EnumColor;
 import net.minecraft.util.StatCollector;
@@ -42,7 +43,7 @@ public class GCVenusThreadVersionCheck extends Thread
 		{
 			try
 			{
-				final URL url = new URL("http://micdoodle8.com/galacticraft/version.html"); //TODO: Update Mattparks website with version.html
+				final URL url = new URL("http://version.mattparks5855.webege.com/4-Space.html");
 				final HttpURLConnection http = (HttpURLConnection) url.openConnection();
 				http.addRequestProperty("User-Agent", "Mozilla/4.76");
 				final BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
@@ -71,11 +72,11 @@ public class GCVenusThreadVersionCheck extends Thread
 
 							if (sideToCheck.equals(Side.CLIENT))
 							{
-								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "Galacticraft" + EnumColor.GREY + " version available! v" + String.valueOf(GCVenus.remoteMajVer) + "." + String.valueOf(GCVenus.remoteMinVer) + "." + String.valueOf(GCVenus.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks5855.weebly.com/");
+								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "Galacticraft Venus" + EnumColor.GREY + " version available! v" + String.valueOf(GCVenus.remoteMajVer) + "." + String.valueOf(GCVenus.remoteMinVer) + "." + String.valueOf(GCVenus.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks5855.webege.com/");
 							}
 							else if (sideToCheck.equals(Side.SERVER))
 							{
-								GCLog.severe("New Galacticraft Venus version available! v" + String.valueOf(GCVenus.remoteMajVer) + "." + String.valueOf(GCVenus.remoteMinVer) + "." + String.valueOf(GCVenus.remoteBuildVer) + " http://mattparks5855.weebly.com/");
+								GCLog.severe("New Galacticraft Venus version available! v" + String.valueOf(GCVenus.remoteMajVer) + "." + String.valueOf(GCVenus.remoteMinVer) + "." + String.valueOf(GCVenus.remoteBuildVer) + " http://mattparks5855.webege.com/");
 							}
 						}
 					}
