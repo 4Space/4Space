@@ -1,9 +1,6 @@
 # Galacticraft Venus Language File = UNITED STATES ENGLISH
 
 # GENERAL ITEMS
-item.tier3.desc=Tier 3
-
-# ITEMS
 item.FossilizedPlant.name=Fossilized Plant
 item.ingotSulfur.name=Sulfur Ingot
 item.jetpack.name=Jetpack
@@ -19,7 +16,8 @@ item.venusPowerCrystal.name=Venus Power Crystal
 item.venusRod.name=Venus Rod
 item.venusRodDust.name=Venus Rod Dust
 item.vurnBerry.name=Vurn Berry
-
+item.jetpackThruster.name=Jetpack Engine
+item.jetpackBody.name=Jetpack Body
 
 # TOOLS
 item.gemAxe.name=Red-Gem Axe
@@ -33,7 +31,6 @@ item.sulfurPick.name=Sulfur Pickaxe
 item.sulfurSpade.name=Sulfur Shovel
 item.sulfurSword.name=Sulfur Sword
 
-
 # ARMOR
 item.gemBoots.name=Red-Gem Boots
 item.gemChestplate.name=Red-Gem Chestplate
@@ -43,7 +40,6 @@ item.sulfurBoots.name=Sulfur Boots
 item.sulfurChestplate.name=Sulfur Chestplate
 item.sulfurHelmet.name=Sulfur Helmet
 item.sulfurLeggings.name=Sulfur Leggings
-
 
 # BLOCKS
 tile.EvolvedBlazeEgg.name=Evolved Blaze Egg
@@ -65,15 +61,18 @@ tile.VenusSulfurBlock.name=Sulfur Block
 tile.VenusSulfurOre.name=Sulfur Ore
 tile.VenusTinOre.name=Tin Ore
 
-# ENTITYS
-entity.GalacticraftCore.VenusianVillager.name=Venusian Villager
-entity.GalacticraftCore.EvolvedBlaze.name=Evolved Blaze
-
 # GUI
-itemGroup.galacticraftVenusTab=Galacticraft Venus
-
 gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
+
+item.tier3.desc=Tier 3
+
+itemGroup.galacticraftVenusTab=Galacticraft Venus
 
 dimension.Venus.name=Venus
 
 # Schematics
+
+# Entity
+entity.EvolvedBlaze.name=Evolved Blaze
+entity.EvolvedBlazeBoss.name=Evolved Blaze Boss
+entity.VenusianVillager.name=Venusian Villager

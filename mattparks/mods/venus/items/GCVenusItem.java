@@ -11,13 +11,14 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.StatCollector;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusItem extends Item
 {
-    public static String[] names = { "ingotSulfur", "sulfurDust", "redGem", "venusCrystal", "venusPowerCrystal", "FossilizedPlant", "redGemPlate", "sulfurPlate", "plateHeavyT3", "venusRodDust" };
+    public static String[] names = { "ingotSulfur", "sulfurDust", "redGem", "venusCrystal", "venusPowerCrystal", "FossilizedPlant", "redGemPlate", "sulfurPlate", "plateHeavyT3", "venusRodDust", "jetpackThruster", "jetpackBody" };
     protected Icon[] icons = new Icon[GCVenusItem.names.length];
 
     public GCVenusItem(int par1)
@@ -27,21 +28,16 @@ public class GCVenusItem extends Item
         this.setHasSubtypes(true);
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
-    {
-        if (par2EntityPlayer.worldObj.isRemote)
-        {
-            switch (par1ItemStack.getItemDamage())
-            {
-            case 8:
-                par3List.add(LanguageRegistry.instance().getStringLocalization("item.tier3.desc"));
-                break;
-            }
-        }
-    }
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
+	{
+		if (par1ItemStack != null && par1ItemStack.getItemDamage() == 8)
+		{
+			par3List.add(StatCollector.translateToLocal("item.tier3.desc"));
+		}
+	}
 
     @Override
     public CreativeTabs getCreativeTab()
@@ -64,13 +60,6 @@ public class GCVenusItem extends Item
     public int getMetadata(int par1)
     {
         return par1;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
-        return ClientProxyCore.galacticraftItem;
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })

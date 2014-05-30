@@ -20,20 +20,25 @@ public class GCVenusRecipeManager
     	OreDictionary.registerOre("venusRodDust", new ItemStack(GCVenusItems.venusItemBasic, 1, 9));
     	OreDictionary.registerOre("SulfurPlate", new ItemStack(GCVenusItems.venusItemBasic, 1, 7));
     	OreDictionary.registerOre("redGemPlate", new ItemStack(GCVenusItems.venusItemBasic, 1, 6));
-//    	OreDictionary.registerOre(GCVenusItems.venusRod, new ItemStack(GCVenusItems.venusRod));
+
     	OreDictionary.registerOre("VenusPowerCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 4));
     	OreDictionary.registerOre("VenusCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 3));
     	OreDictionary.registerOre("FossilizedPlant", new ItemStack(GCVenusItems.venusItemBasic, 1, 5));
-    	OreDictionary.registerOre("jetpack", new ItemStack(GCVenusItems.jetpack));
+    	OreDictionary.registerOre("jetpackThruster", new ItemStack(GCVenusItems.venusItemBasic, 1, 10));
+    	OreDictionary.registerOre("jetpackBody", new ItemStack(GCVenusItems.venusItemBasic, 1, 11));
     	
     	OreDictionary.registerOre("vurnBerry", new ItemStack(GCVenusItems.vurnBerry, 1, 1));
     	OreDictionary.registerOre("meteoricIronIngot", new ItemStack(GCCoreItems.meteoricIronIngot, 1, 0));
     	OreDictionary.registerOre("meteorBlock", new ItemStack(GCVenus.VenusMeteorBlock));
 
     	// ARMOR AND TOOLS CRAFTING
-    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.jetpack), new Object[] {  "GRG", "C C", 'R', Item.redstone, 'G', "redGem", 'C', Item.coal });
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 11), new Object[] {  "III", "IRI", 'I', Item.ingotIron, 'R', Item.redstone });
     	
-    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.pJetpack), new Object[] {  "RRR", "RJR", "RRR", 'R', "redGem", 'J', "jetpack" });
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 10), new Object[] {  "IRI", "C C", 'I', Item.ingotIron, 'R', Item.redstone , 'C', Item.coal });
+    	
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.jetpack), new Object[] {  "TBT", 'B', "jetpackBody", 'T', "jetpackThruster" });
+    	
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.pJetpack), new Object[] {  "TCT", 'T', "jetpackThruster", 'C', GCVenusItems.gemChestplate, });
     	
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemBoots), new Object[] {  "X X", "X X", 'X', "redGem" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemHelmet), new Object[] { "XXX", "X X", 'X', "redGem" });

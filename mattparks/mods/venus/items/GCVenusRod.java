@@ -19,19 +19,11 @@ public class GCVenusRod extends Item
 	{
 		super(id);
 		this.setUnlocalizedName(assetName);
-//		this.setTextureName(GCVenus.TEXTURE_PREFIX + assetName);
 	}
 
 	@Override
 	public CreativeTabs getCreativeTab()
 	{
 		return GCVenus.galacticraftVenusTab;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public EnumRarity getRarity(ItemStack par1ItemStack)
-	{
-		return ClientProxyCore.galacticraftItem;
 	}
 }

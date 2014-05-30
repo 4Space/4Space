@@ -25,13 +25,6 @@ public class GCVenusItemBattery extends ItemElectric
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public EnumRarity getRarity(ItemStack par1ItemStack)
-	{
-		return ClientProxyCore.galacticraftItem;
-	}
-
-	@Override
 	public float getMaxElectricityStored(ItemStack itemStack)
 	{
 		return 7500;

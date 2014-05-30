@@ -32,13 +32,6 @@ public class GCVenusItemPickaxe extends ItemPickaxe
         return par1;
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
-        return ClientProxyCore.galacticraftItem;
-    }
-
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public void getSubItems(int par1, CreativeTabs par2CreativeTabs, List par3List)
