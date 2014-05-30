@@ -17,6 +17,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusWorldProvider extends WorldProvider implements IGalacticraftWorldProvider
 {
+//	5832000
+	
 	@Override
 	public void setDimension(int var1)
 	{
@@ -61,6 +63,28 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	}
 
 	@Override
+	public float calculateCelestialAngle(long par1, float par3)
+	{
+		final int var4 = (int) (par1 % 5832000L);
+		float var5 = (var4 + par3) / 5832000.0F - 0.25F;
+
+		if (var5 < 0.0F)
+		{
+			++var5;
+		}
+
+		if (var5 > 1.0F)
+		{
+			--var5;
+		}
+
+		final float var6 = var5;
+		var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+		var5 = var6 + (var5 - var6) / 3.0F;
+		return var5;
+	}
+	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1)
 	{
@@ -78,12 +102,6 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
         }
 
         return f2 * f2 * 1.0F;
-	}
-
-	@Override
-	public float calculateCelestialAngle(long par1, float par3)
-	{
-		return super.calculateCelestialAngle(par1, par3);
 	}
 
 	public float calculatePhobosAngle(long par1, float par3)
@@ -107,8 +125,10 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	{
 		this.worldObj.getWorldInfo().setRainTime(0);
 		this.worldObj.getWorldInfo().setRaining(false);
-		this.worldObj.getWorldInfo().setThunderTime(999999999);
-		this.worldObj.getWorldInfo().setThundering(true);
+//		this.worldObj.getWorldInfo().setThunderTime(0);
+//		this.worldObj.getWorldInfo().setThundering(true);
+    	this.worldObj.rainingStrength = 0.0F;
+//    	this.worldObj.thunderingStrength = 0.0F;
 	}
 
 	@Override
