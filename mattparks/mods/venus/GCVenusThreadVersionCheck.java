@@ -1,11 +1,10 @@
-package mattparks.mods.venus.util;
+package mattparks.mods.venus;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import mattparks.mods.venus.GCVenus;
 import micdoodle8.mods.galacticraft.core.GCLog;
 import micdoodle8.mods.galacticraft.core.util.EnumColor;
 import net.minecraft.util.StatCollector;

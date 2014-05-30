@@ -85,14 +85,11 @@ public class GCVenusConfigManager
 
             GCVenusConfigManager.idItemVenusBasic = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusItemBasic", 7868).getInt(7868);
             
-            GCVenusConfigManager.idJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idJetpack", 7869).getInt(7869);
-            
+            GCVenusConfigManager.idJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idJetpack", 7869).getInt(7869);       
             GCVenusConfigManager.idPJetpack = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idPJetpack", 7870).getInt(7870);
             
             GCVenusConfigManager.idVurnBerry = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idVurnBerry", 7871).getInt(7871);
-
             GCVenusConfigManager.idItemVenusBattery = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusBattery", 7872).getInt(7872);
-            
             GCVenusConfigManager.idItemVenusRod = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 7873).getInt(7873);
             
             
@@ -115,7 +112,7 @@ public class GCVenusConfigManager
             GCVenusConfigManager.idToolSulfurSpade = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurSpade", 7889).getInt(7889);
             GCVenusConfigManager.idToolSulfurHoe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurHoe", 7890).getInt(7890);
             GCVenusConfigManager.idToolSulfurAxe = GCVenusConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolSulfurAxe", 7891).getInt(7891);
-            
+
             GCVenusConfigManager.idEntityEvolvedBlaze = GCVenusConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
             GCVenusConfigManager.idEntityVenusianVillager = GCVenusConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);
 

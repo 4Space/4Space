@@ -21,10 +21,26 @@ import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
+import micdoodle8.mods.galacticraft.mars.GCMarsConfigManager;
+import micdoodle8.mods.galacticraft.mars.GalacticraftMars;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlock;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockCreeperEgg;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockMachine;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockSlimelingEgg;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockSludge;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockT2TreasureChest;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockTintedGlassPane;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlockVine;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlocks;
+import micdoodle8.mods.galacticraft.mars.items.GCMarsItemBlock;
+import micdoodle8.mods.galacticraft.mars.items.GCMarsItemBlockMachine;
+import micdoodle8.mods.galacticraft.mars.items.GCMarsItemBlockRock;
+import micdoodle8.mods.galacticraft.mars.items.GCMarsItemBlockTintedGlassPane;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,7 +64,7 @@ public class GCVenus
 {
 	public static final int LOCALMAJVERSION = 2;
 	public static final int LOCALMINVERSION = 0;
-	public static final int LOCALBUILDVERSION = 0;
+	public static final int LOCALBUILDVERSION = 1;
 	public static int remoteMajVer;
 	public static int remoteMinVer;
 	public static int remoteBuildVer;
@@ -164,6 +180,8 @@ public class GCVenus
         GameRegistry.registerBlock(GCVenus.VenusCrystalOre, "VenusCrystalOre");
         GameRegistry.registerBlock(GCVenus.FossilizedPlantOre, "FossilizedPlantOre");
 	}
+
+	//TODO: Create configurable ID's
 	
 	public static final Block VenusGrass = new GCVenusGrass(760, null).setHardness(0.4F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("VenusGrass").setTextureName("galacticraftvenus:grassVenus").setCreativeTab(GCVenus.galacticraftVenusTab);
 

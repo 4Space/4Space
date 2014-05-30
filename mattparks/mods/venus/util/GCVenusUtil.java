@@ -1,5 +1,6 @@
 package mattparks.mods.venus.util;
 
+import mattparks.mods.venus.GCVenusThreadVersionCheck;
 import micdoodle8.mods.galacticraft.core.GCCoreThreadVersionCheck;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityLander;
