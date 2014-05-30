@@ -1,7 +1,6 @@
 package mattparks.mods.venus.client;
 
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
-import micdoodle8.mods.galacticraft.core.client.ClientProxyCore;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.sound.PlayBackgroundMusicEvent;
 import net.minecraftforge.event.ForgeSubscribe;

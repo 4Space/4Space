@@ -1,7 +1,5 @@
 package mattparks.mods.venus.client.render.entities;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
 import net.minecraft.client.model.ModelBlaze;
@@ -11,6 +9,8 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.util.ResourceLocation;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class GCVenusRenderEvolvedBlaze extends RenderLiving
