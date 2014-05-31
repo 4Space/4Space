@@ -17,8 +17,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusWorldProvider extends WorldProvider implements IGalacticraftWorldProvider
 {
-//	5832000
-	
 	@Override
 	public void setDimension(int var1)
 	{
