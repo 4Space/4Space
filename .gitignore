@@ -23,14 +23,15 @@ CHANGELOG
 !/src/minecraft/assets/
 /src/minecraft/assets/forge
 /src/minecraft/assets/galacticraftcore
+/src/minecraft/assets/galacticraftmoon
 /src/minecraft/assets/galacticraftmars
-/src/minecraft/assets/minecraft/textures/model/armor/desh_1
-/src/minecraft/assets/minecraft/textures/model/armor/desh_2
-/src/minecraft/assets/minecraft/textures/model/armor/desh_3
-/src/minecraft/assets/minecraft/textures/model/armor/sensor_1
-/src/minecraft/assets/minecraft/textures/model/armor/titanium_1
-/src/minecraft/assets/minecraft/textures/model/armor/titanium_2
-/src/minecraft/assets/minecraft/textures/model/armor/titanium_3
+/src/minecraft/assets/minecraft/textures/model/armor/desh_1.png
+/src/minecraft/assets/minecraft/textures/model/armor/desh_2.png
+/src/minecraft/assets/minecraft/textures/model/armor/desh_3.png
+/src/minecraft/assets/minecraft/textures/model/armor/sensor_1.png
+/src/minecraft/assets/minecraft/textures/model/armor/titanium_1.png
+/src/minecraft/assets/minecraft/textures/model/armor/titanium_2.png
+/src/minecraft/assets/minecraft/textures/model/armor/titanium_3.png
 
 *.bat
 *.sh
