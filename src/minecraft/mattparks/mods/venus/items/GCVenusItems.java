@@ -1,7 +1,7 @@
 package mattparks.mods.venus.items;
 
+import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.venus.GCVenus;
-import mattparks.mods.venus.GCVenusConfigManager;
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
@@ -52,36 +52,36 @@ public class GCVenusItems
     
     public static void initItems()
     {    	
-        GCVenusItems.venusItemBasic = new GCVenusItem(GCVenusConfigManager.idItemVenusBasic);
-        GCVenusItems.vurnBerry = (new GCVenusVurnBerry(GCVenusConfigManager.idVurnBerry, 4, 0.6F, GCVenus.VurnBerryBush.blockID, Block.tilledField.blockID)).setUnlocalizedName("vurnBerry").setTextureName("galacticraftvenus:vurnBerry");
+        GCVenusItems.venusItemBasic = new GCVenusItem(ConfigManager.idItemVenusBasic);
+        GCVenusItems.vurnBerry = (new GCVenusVurnBerry(ConfigManager.idVurnBerry, 4, 0.6F, GCVenus.VurnBerryBush.blockID, GCVenus.VenusGrass.blockID)).setUnlocalizedName("vurnBerry").setTextureName("galacticraftvenus:vurnBerry");
  
-        GCVenusItems.sulfurPickaxe = new GCVenusItemPickaxe(GCVenusConfigManager.idToolSulfurPickaxe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurPick");
-        GCVenusItems.sulfurAxe = new GCVenusItemAxe(GCVenusConfigManager.idToolSulfurAxe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurAxe");
-        GCVenusItems.sulfurHoe = new GCVenusItemHoe(GCVenusConfigManager.idToolSulfurHoe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurHoe");
-        GCVenusItems.sulfurSpade = new GCVenusItemSpade(GCVenusConfigManager.idToolSulfurSpade, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurSpade");
-        GCVenusItems.sulfurSword = new GCVenusItemSword(GCVenusConfigManager.idToolSulfurSword, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurSword");
+        GCVenusItems.sulfurPickaxe = new GCVenusItemPickaxe(ConfigManager.idToolSulfurPickaxe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurPick");
+        GCVenusItems.sulfurAxe = new GCVenusItemAxe(ConfigManager.idToolSulfurAxe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurAxe");
+        GCVenusItems.sulfurHoe = new GCVenusItemHoe(ConfigManager.idToolSulfurHoe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurHoe");
+        GCVenusItems.sulfurSpade = new GCVenusItemSpade(ConfigManager.idToolSulfurSpade, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurSpade");
+        GCVenusItems.sulfurSword = new GCVenusItemSword(ConfigManager.idToolSulfurSword, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurSword");
         
-        GCVenusItems.sulfurHelmet = new GCVenusItemSulfurArmor(GCVenusConfigManager.idArmorSulfurHelmet, GCVenusItems.ARMORSULFUR, 7, 0, false).setUnlocalizedName("sulfurHelmet");
-        GCVenusItems.sulfurChestplate = new GCVenusItemSulfurArmor(GCVenusConfigManager.idArmorSulfurChestplate, GCVenusItems.ARMORSULFUR, 7, 1, false).setUnlocalizedName("sulfurChestplate");
-        GCVenusItems.sulfurLeggings = new GCVenusItemSulfurArmor(GCVenusConfigManager.idArmorSulfurLeggings, GCVenusItems.ARMORSULFUR, 7, 2, false).setUnlocalizedName("sulfurLeggings");
-        GCVenusItems.sulfurBoots = new GCVenusItemSulfurArmor(GCVenusConfigManager.idArmorSulfurBoots, GCVenusItems.ARMORSULFUR, 7, 3, false).setUnlocalizedName("sulfurBoots");
+        GCVenusItems.sulfurHelmet = new GCVenusItemSulfurArmor(ConfigManager.idArmorSulfurHelmet, GCVenusItems.ARMORSULFUR, 7, 0, false).setUnlocalizedName("sulfurHelmet");
+        GCVenusItems.sulfurChestplate = new GCVenusItemSulfurArmor(ConfigManager.idArmorSulfurChestplate, GCVenusItems.ARMORSULFUR, 7, 1, false).setUnlocalizedName("sulfurChestplate");
+        GCVenusItems.sulfurLeggings = new GCVenusItemSulfurArmor(ConfigManager.idArmorSulfurLeggings, GCVenusItems.ARMORSULFUR, 7, 2, false).setUnlocalizedName("sulfurLeggings");
+        GCVenusItems.sulfurBoots = new GCVenusItemSulfurArmor(ConfigManager.idArmorSulfurBoots, GCVenusItems.ARMORSULFUR, 7, 3, false).setUnlocalizedName("sulfurBoots");
     
-        GCVenusItems.gemPickaxe = new GCVenusItemPickaxe(GCVenusConfigManager.idToolGemPickaxe, GCVenusItems.TOOLGEM).setUnlocalizedName("gemPick");
-        GCVenusItems.gemAxe = new GCVenusItemAxe(GCVenusConfigManager.idToolGemAxe, GCVenusItems.TOOLGEM).setUnlocalizedName("gemAxe");
-        GCVenusItems.gemHoe = new GCVenusItemHoe(GCVenusConfigManager.idToolGemHoe, GCVenusItems.TOOLGEM).setUnlocalizedName("gemHoe");
-        GCVenusItems.gemSpade = new GCVenusItemSpade(GCVenusConfigManager.idToolGemSpade, GCVenusItems.TOOLGEM).setUnlocalizedName("gemSpade");
-        GCVenusItems.gemSword = new GCVenusItemSword(GCVenusConfigManager.idToolGemSword, GCVenusItems.TOOLGEM).setUnlocalizedName("gemSword");
+        GCVenusItems.gemPickaxe = new GCVenusItemPickaxe(ConfigManager.idToolGemPickaxe, GCVenusItems.TOOLGEM).setUnlocalizedName("gemPick");
+        GCVenusItems.gemAxe = new GCVenusItemAxe(ConfigManager.idToolGemAxe, GCVenusItems.TOOLGEM).setUnlocalizedName("gemAxe");
+        GCVenusItems.gemHoe = new GCVenusItemHoe(ConfigManager.idToolGemHoe, GCVenusItems.TOOLGEM).setUnlocalizedName("gemHoe");
+        GCVenusItems.gemSpade = new GCVenusItemSpade(ConfigManager.idToolGemSpade, GCVenusItems.TOOLGEM).setUnlocalizedName("gemSpade");
+        GCVenusItems.gemSword = new GCVenusItemSword(ConfigManager.idToolGemSword, GCVenusItems.TOOLGEM).setUnlocalizedName("gemSword");
 
-        GCVenusItems.gemHelmet = new GCVenusItemGemArmor(GCVenusConfigManager.idArmorGemHelmet, GCVenusItems.ARMORGEM, 7, 0, false).setUnlocalizedName("gemHelmet");
-        GCVenusItems.gemChestplate = new GCVenusItemGemArmor(GCVenusConfigManager.idArmorGemChestplate, GCVenusItems.ARMORGEM, 7, 1, false).setUnlocalizedName("gemChestplate");
-        GCVenusItems.gemLeggings = new GCVenusItemGemArmor(GCVenusConfigManager.idArmorGemLeggings, GCVenusItems.ARMORGEM, 7, 2, false).setUnlocalizedName("gemLeggings");
-        GCVenusItems.gemBoots = new GCVenusItemGemArmor(GCVenusConfigManager.idArmorGemBoots, GCVenusItems.ARMORGEM, 7, 3, false).setUnlocalizedName("gemBoots");
+        GCVenusItems.gemHelmet = new GCVenusItemGemArmor(ConfigManager.idArmorGemHelmet, GCVenusItems.ARMORGEM, 7, 0, false).setUnlocalizedName("gemHelmet");
+        GCVenusItems.gemChestplate = new GCVenusItemGemArmor(ConfigManager.idArmorGemChestplate, GCVenusItems.ARMORGEM, 7, 1, false).setUnlocalizedName("gemChestplate");
+        GCVenusItems.gemLeggings = new GCVenusItemGemArmor(ConfigManager.idArmorGemLeggings, GCVenusItems.ARMORGEM, 7, 2, false).setUnlocalizedName("gemLeggings");
+        GCVenusItems.gemBoots = new GCVenusItemGemArmor(ConfigManager.idArmorGemBoots, GCVenusItems.ARMORGEM, 7, 3, false).setUnlocalizedName("gemBoots");
 
-        GCVenusItems.venusRod = new GCVenusRod(GCVenusConfigManager.idItemVenusRod, null).setUnlocalizedName("venusRod").setTextureName("galacticraftvenus:venusRod");
+        GCVenusItems.venusRod = new GCVenusRod(ConfigManager.idItemVenusRod, null).setUnlocalizedName("venusRod").setTextureName("galacticraftvenus:venusRod");
         
-        GCVenusItems.pJetpack = new GCVenusItemPJetpack(GCVenusConfigManager.idPJetpack, GCVenusItems.ARMORPJETPACK, 7, 1, false).setUnlocalizedName("pJetpack");
-        GCVenusItems.jetpack = new GCVenusItemJetpack(GCVenusConfigManager.idJetpack, GCVenusItems.ARMORJETPACK, 7, 1, false).setUnlocalizedName("jetpack");
-        GCVenusItems.venusBattery = new GCVenusItemBattery(GCVenusConfigManager.idItemVenusBattery, "venusBattery");
+        GCVenusItems.pJetpack = new GCVenusItemPJetpack(ConfigManager.idPJetpack, GCVenusItems.ARMORPJETPACK, 7, 1, false).setUnlocalizedName("pJetpack");
+        GCVenusItems.jetpack = new GCVenusItemJetpack(ConfigManager.idJetpack, GCVenusItems.ARMORJETPACK, 7, 1, false).setUnlocalizedName("jetpack");
+        GCVenusItems.venusBattery = new GCVenusItemBattery(ConfigManager.idItemVenusBattery, "venusBattery");
     
     	registerItems();
     }

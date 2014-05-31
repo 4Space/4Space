@@ -2,6 +2,8 @@ package mattparks.mods.venus;
 
 import java.io.File;
 
+import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.venus.blocks.GCVenusBlock;
 import mattparks.mods.venus.blocks.GCVenusBrick;
 import mattparks.mods.venus.blocks.GCVenusEgg;
@@ -42,17 +44,10 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = GCVenus.NAME, version = GCVenus.LOCALMAJVERSION + "." + GCVenus.LOCALMINVERSION + "." + GCVenus.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCVenus.NAME, version = MattCore.LOCALMAJVERSION + "." + MattCore.LOCALMINVERSION + "." + MattCore.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
 @NetworkMod(channels = { GCVenus.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCVenus
 {
-	public static final int LOCALMAJVERSION = 2;
-	public static final int LOCALMINVERSION = 0;
-	public static final int LOCALBUILDVERSION = 1;
-	public static int remoteMajVer;
-	public static int remoteMinVer;
-	public static int remoteBuildVer;
-	
 	public static final String NAME = "Galacticraft Venus";
 	public static final String MODID = "GCVenus";
 	public static final String CHANNEL = "GCVenus";
@@ -82,7 +77,7 @@ public class GCVenus
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		new GCVenusConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/venus.conf"));
+		new ConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/venus.conf"));
 
 		MinecraftForge.EVENT_BUS.register(new GCVenusEvents());
 		
@@ -104,8 +99,8 @@ public class GCVenus
 
 	public void registerCreatures()
 	{
-	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityVenusianVillager.class, "VenusianVillager", GCVenusConfigManager.idEntityVenusianVillager, GCCoreUtil.convertTo32BitColor(255, 103, 181, 145), 12422002);
-	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityEvolvedBlaze.class, "EvolvedBlaze", GCVenusConfigManager.idEntityEvolvedBlaze, 44975, 7969893);
+	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityVenusianVillager.class, "VenusianVillager", ConfigManager.idEntityVenusianVillager, GCCoreUtil.convertTo32BitColor(255, 103, 181, 145), 12422002);
+	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityEvolvedBlaze.class, "EvolvedBlaze", ConfigManager.idEntityEvolvedBlaze, 44975, 7969893);
 	}
 
 	public void registerOtherEntities()

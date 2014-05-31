@@ -1,22 +1,22 @@
-package mattparks.mods.venus;
+package mattparks.mods.mercury;
 
 import mattparks.mods.MattparksCore.ConfigManager;
-import mattparks.mods.venus.client.GCMapVenus;
-import mattparks.mods.venus.dimension.GCVenusWorldProvider;
+import mattparks.mods.mercury.client.GCMapMercury;
+import mattparks.mods.mercury.dimension.GCMercuryWorldProvider;
 import micdoodle8.mods.galacticraft.api.world.IGalaxy;
 import micdoodle8.mods.galacticraft.api.world.IMapObject;
 import micdoodle8.mods.galacticraft.api.world.IPlanet;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.world.WorldProvider;
 
-public class GCVenusPlanet implements IPlanet
+public class GCMercuryPlanet implements IPlanet
 {
-	private final IMapObject venus = new GCMapVenus();
+	private final IMapObject mercury = new GCMapMercury();
 
 	@Override
 	public String getName()
 	{
-		return "Venus";
+		return "Mercury";
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class GCVenusPlanet implements IPlanet
 	@Override
 	public IMapObject getMapObject()
 	{
-		return this.venus;
+		return this.mercury;
 	}
 
 	@Override
@@ -52,13 +52,13 @@ public class GCVenusPlanet implements IPlanet
 	@Override
 	public Class<? extends WorldProvider> getWorldProvider()
 	{
-		return GCVenusWorldProvider.class;
+		return GCMercuryWorldProvider.class;
 	}
 
 	@Override
 	public int getDimensionID()
 	{
-		return ConfigManager.dimensionIDVenus;
+		return ConfigManager.dimensionIDMercury;
 	}
 
 	@Override

@@ -1,0 +1,62 @@
+# Galacticraft Mercury Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.iridiumCrystals.name=Iridium Crystals
+item.iridiumPlate.name=Iridium Plate
+item.iridiumPlate.name=Iridium Plate
+item.plateHeavyT4.name=Heavy-Duty Plate
+
+# TOOLS
+item.iridiumAxe.name=Iridium Axe
+item.iridiumHoe.name=Iridium Hoe
+item.iridiumPick.name=Iridium Pickaxe
+item.iridiumSpade.name=Iridium Shovel
+item.iridiumSword.name=Iridium Sword
+
+# ARMOR
+item.iridiumBoots.name=Iridium Boots
+item.iridiumChestplate.name=Iridium Chestplate
+item.iridiumHelmet.name=Iridium Helmet
+item.iridiumLeggings.name=Iridium Leggings
+
+# BLOCKS
+tile.MercuryBrick.name=Mercury Brick
+tile.MercuryCopperOre.name=Copper Ore
+tile.MercuryDirt.name=Mercury Dirt
+tile.MercuryIridiumBlock.name=Iridium Block
+tile.MercuryIridiumOre.name=Iridium Ore
+tile.MercuryGrass.name=Mercury Grass
+tile.MercuryStone.name=Mercury Stone
+tile.MercuryTinOre.name=Tin Ore
+tile.caravanModule.name=Portable Space Tent
+tile.caravanModulePart.name=Caravan Module Part
+tile.WhiteGlowstone.name=White Glowstone
+tile.OrangeGlowstone.name=Orange Glowstone
+tile.MagentaGlowstone.name=Magenta Glowstone
+tile.LightBlueGlowstone.name=Light Blue Glowstone
+tile.YellowGlowstone.name=Yellow Glowstone
+tile.LimeGlowstone.name=Lime Glowstone
+tile.PinkGlowstone.name=Pink Glowstone
+tile.GreyGlowstone.name=Grey Glowstone
+tile.SilverGlowstone.name=Silver Glowstone
+tile.CyanGlowstone.name=Cyan Glowstone
+tile.PurpleGlowstone.name=Purple Glowstone
+tile.BlueGlowstone.name=Blue Glowstone
+tile.BrownGlowstone.name=Brown Glowstone
+tile.GreenGlowstone.name=Green Glowstone
+tile.RedGlowstone.name=Red Glowstone
+tile.BlackGlowstone.name=Black Glowstone
+
+# GUI
+gui.choosePlanet.desc.mercury=Habitable#No Oxygen#Gravity: 38%
+
+item.tier4.desc=Tier 4
+
+itemGroup.galacticraftMercuryTab=Galacticraft Mercury
+
+dimension.Mercury.name=Mercury
+
+# Schematics
+
+# Entity
+

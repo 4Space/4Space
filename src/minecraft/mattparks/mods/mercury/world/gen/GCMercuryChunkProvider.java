@@ -1,19 +1,16 @@
-package mattparks.mods.venus.world.gen;
+package mattparks.mods.mercury.world.gen;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.MattparksCore.ConfigManager;
-import mattparks.mods.venus.GCVenus;
-import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
-import mattparks.mods.venus.world.gen.dungeon.GCVenusRoomBoss;
-import mattparks.mods.venus.world.gen.dungeon.GCVenusRoomChests;
-import mattparks.mods.venus.world.gen.dungeon.GCVenusRoomEmpty;
-import mattparks.mods.venus.world.gen.dungeon.GCVenusRoomSpawner;
-import mattparks.mods.venus.world.gen.dungeon.GCVenusRoomTreasure;
-import mattparks.mods.venus.world.gen.pit.GCVenusMapGenBlazeNest;
-import mattparks.mods.venus.world.village.GCVenusMapGenVillage;
+import mattparks.mods.mercury.GCMercury;
+import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomBoss;
+import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomChests;
+import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomEmpty;
+import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomSpawner;
+import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomTreasure;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;
@@ -33,13 +30,13 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.common.ForgeDirection;
 
-public class GCVenusChunkProvider extends ChunkProviderGenerate
+public class GCMercuryChunkProvider extends ChunkProviderGenerate  //TODO MAKE PLANET FLAT AND CRATORS
 {
-	final short topBlockID = (short) GCVenus.VenusGrass.blockID;
+	final short topBlockID = (short) GCMercury.MercuryGrass.blockID;
 	final byte topBlockMeta = 5;
-	final short fillBlockID = (short) GCVenus.VenusDirt.blockID;
+	final short fillBlockID = (short) GCMercury.MercuryDirt.blockID;
 	final byte fillBlockMeta = 6;
-	final short lowerBlockID = (short) GCVenus.VenusStone.blockID;
+	final short lowerBlockID = (short) GCMercury.MercuryStone.blockID;
 	final byte lowerBlockMeta = 9;
 
 	private final Random rand;
@@ -51,36 +48,31 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	private final Gradient noiseGen5;
 	private final Gradient noiseGen6;
 	private final Gradient noiseGen7;
-	public GCVenusBiomeDecorator biomedecoratorplanet = new GCVenusBiomeDecorator();
+	public GCMercuryBiomeDecorator biomedecoratorplanet = new GCMercuryBiomeDecorator();
 
 	private final World worldObj;
 
-	private final GCVenusCaveGen caveGenerator = new GCVenusCaveGen();
-
-    public static List blazeDungeonLocations;
-    private final GCVenusMapGenBlazeNest blazeNest = new GCVenusMapGenBlazeNest();
+	private final GCMercuryCaveGen caveGenerator = new GCMercuryCaveGen();
     
-    private final GCVenusMapGenVillage villageGenerator = new GCVenusMapGenVillage();
-    
-	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(GCVenus.VenusBrick.blockID, 7, 8, 16, 6);
+	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(GCMercury.MercuryBrick.blockID, 7, 8, 16, 6);
 
 	{
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new GCVenusRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.bossRooms.add(new GCVenusRoomBoss(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.treasureRooms.add(new GCVenusRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.bossRooms.add(new GCMercuryRoomBoss(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.treasureRooms.add(new GCMercuryRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
 	}
 
-	private BiomeGenBase[] biomesForGeneration = { GCVenusBiomeGenBase.venusFlat };
+	private BiomeGenBase[] biomesForGeneration = { GCMercuryBiomeGenBase.mercuryFlat };
 
 	double[] noise1;
 	double[] noise2;
@@ -106,7 +98,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	private static final double LARGE_FEATURE_FILTER_MOD = 8;
 	private static final double SMALL_FEATURE_FILTER_MOD = 8;
 
-	public GCVenusChunkProvider(World par1World, long par2, boolean par4)
+	public GCMercuryChunkProvider(World par1World, long par2, boolean par4)
 	{
 		super(par1World, par2, par4);
 		this.worldObj = par1World;
@@ -131,17 +123,17 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 		this.noiseGen6.frequency = 0.001;
 		this.noiseGen7.frequency = 0.005;
 
-		for (int x = 0; x < GCVenusChunkProvider.CHUNK_SIZE_X; x++)
+		for (int x = 0; x < GCMercuryChunkProvider.CHUNK_SIZE_X; x++)
 		{
-			for (int z = 0; z < GCVenusChunkProvider.CHUNK_SIZE_Z; z++)
+			for (int z = 0; z < GCMercuryChunkProvider.CHUNK_SIZE_Z; z++)
 			{
-				final double baseHeight = this.noiseGen1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCVenusChunkProvider.TERRAIN_HEIGHT_MOD;
-				final double smallHillHeight = this.noiseGen2.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCVenusChunkProvider.SMALL_FEATURE_HEIGHT_MOD;
+				final double baseHeight = this.noiseGen1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCMercuryChunkProvider.TERRAIN_HEIGHT_MOD;
+				final double smallHillHeight = this.noiseGen2.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCMercuryChunkProvider.SMALL_FEATURE_HEIGHT_MOD;
 				double mountainHeight = Math.abs(this.noiseGen3.getNoise(chunkX * 16 + x, chunkZ * 16 + z));
 				double valleyHeight = Math.abs(this.noiseGen4.getNoise(chunkX * 16 + x, chunkZ * 16 + z));
-				final double featureFilter = this.noiseGen5.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCVenusChunkProvider.MAIN_FEATURE_FILTER_MOD;
-				final double largeFilter = this.noiseGen6.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCVenusChunkProvider.LARGE_FEATURE_FILTER_MOD;
-				final double smallFilter = this.noiseGen7.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCVenusChunkProvider.SMALL_FEATURE_FILTER_MOD - 0.5;
+				final double featureFilter = this.noiseGen5.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCMercuryChunkProvider.MAIN_FEATURE_FILTER_MOD;
+				final double largeFilter = this.noiseGen6.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCMercuryChunkProvider.LARGE_FEATURE_FILTER_MOD;
+				final double smallFilter = this.noiseGen7.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * GCMercuryChunkProvider.SMALL_FEATURE_FILTER_MOD - 0.5;
 				/*
 				 * if(largeFilter < 0.0) { featureDev = valleyHeight; } else
 				 * if(largeFilter > 1.0) { featureDev = mountainHeight; } else {
@@ -158,16 +150,16 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 				 * if(featureFilter > 1.0) { yDev = featureDev; } else { yDev =
 				 * baseHeight + (featureDev - baseHeight) * (featureFilter); }
 				 */
-				mountainHeight = this.lerp(smallHillHeight, mountainHeight * GCVenusChunkProvider.MOUNTAIN_HEIGHT_MOD, this.fade(this.clamp(mountainHeight * 2, 0, 1)));
-				valleyHeight = this.lerp(smallHillHeight, valleyHeight * GCVenusChunkProvider.VALLEY_HEIGHT_MOD - GCVenusChunkProvider.VALLEY_HEIGHT_MOD + 9, this.fade(this.clamp((valleyHeight + 2) * 4, 0, 1)));
+				mountainHeight = this.lerp(smallHillHeight, mountainHeight * GCMercuryChunkProvider.MOUNTAIN_HEIGHT_MOD, this.fade(this.clamp(mountainHeight * 2, 0, 1)));
+				valleyHeight = this.lerp(smallHillHeight, valleyHeight * GCMercuryChunkProvider.VALLEY_HEIGHT_MOD - GCMercuryChunkProvider.VALLEY_HEIGHT_MOD + 9, this.fade(this.clamp((valleyHeight + 2) * 4, 0, 1)));
 
 				double yDev = this.lerp(valleyHeight, mountainHeight, this.fade(largeFilter));
 				yDev = this.lerp(smallHillHeight, yDev, smallFilter);
 				yDev = this.lerp(baseHeight, yDev, featureFilter);
 
-				for (int y = 0; y < GCVenusChunkProvider.CHUNK_SIZE_Y; y++)
+				for (int y = 0; y < GCMercuryChunkProvider.CHUNK_SIZE_Y; y++)
 				{
-					if (y < GCVenusChunkProvider.MID_HEIGHT + yDev)
+					if (y < GCMercuryChunkProvider.MID_HEIGHT + yDev)
 					{
 						idArray[this.getIndex(x, y, z)] = this.lowerBlockID;
 						metaArray[this.getIndex(x, y, z)] = this.lowerBlockMeta;
@@ -227,7 +219,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 				short var15 = this.fillBlockID;
 				byte var15m = this.fillBlockMeta;
 
-				for (int var16 = GCVenusChunkProvider.CHUNK_SIZE_Y - 1; var16 >= 0; --var16)
+				for (int var16 = GCMercuryChunkProvider.CHUNK_SIZE_Y - 1; var16 >= 0; --var16)
 				{
 					final int index = this.getIndex(var8, var16, var9);
 
@@ -309,8 +301,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 		this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 30, par2 * 16, par1, par2, ids, meta);
         
 		int[] var3 = null;
-		this.blazeNest.generate(this, this.worldObj, par1, par2, var3);
-		
+
 		final Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		final byte[] var5 = var4.getBiomeArray();
 
@@ -330,11 +321,11 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 		{
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++)
 			{
-				for (int x = 0; x < GCVenusChunkProvider.CHUNK_SIZE_X; x++)
+				for (int x = 0; x < GCMercuryChunkProvider.CHUNK_SIZE_X; x++)
 				{
-					for (int z = 0; z < GCVenusChunkProvider.CHUNK_SIZE_Z; z++)
+					for (int z = 0; z < GCMercuryChunkProvider.CHUNK_SIZE_Z; z++)
 					{
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen5.getNoise(cx * 16 + x, cz * 16 + z) / GCVenusChunkProvider.CRATER_PROB)
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen5.getNoise(cx * 16 + x, cz * 16 + z) / GCMercuryChunkProvider.CRATER_PROB)
 						{
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final GCCoreCraterSize cSize = GCCoreCraterSize.sizeArray[random.nextInt(GCCoreCraterSize.sizeArray.length)];
@@ -349,9 +340,9 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 
 	public void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, short[] chunkArray, byte[] metaArray)
 	{
-		for (int x = 0; x < GCVenusChunkProvider.CHUNK_SIZE_X; x++)
+		for (int x = 0; x < GCMercuryChunkProvider.CHUNK_SIZE_X; x++)
 		{
-			for (int z = 0; z < GCVenusChunkProvider.CHUNK_SIZE_Z; z++)
+			for (int z = 0; z < GCMercuryChunkProvider.CHUNK_SIZE_Z; z++)
 			{
 				double xDev = craterX - (chunkX + x);
 				double zDev = craterZ - (chunkZ + z);
@@ -421,23 +412,13 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 		var5 += 8;
 		this.dungeonGenerator.handleTileEntities(this.rand);
 
-		this.blazeNest.generateStructuresInChunk(this.worldObj, new Random(), par2, par3);
-        
-        if (!ConfigManager.disableVenusVillageGen)
-        {
-            this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-        }
-        
 		BlockSand.fallInstantly = false;
 	}
 	
     @Override
     public void recreateStructures(int par1, int par2)
     {
-        if (!ConfigManager.disableVenusVillageGen)
-        {
-            this.villageGenerator.generate(this, this.worldObj, par1, par2, (byte[]) null);
-        }
+    	;
     }
 
 	@Override
@@ -455,7 +436,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.venusGenerateOtherMods ? "RandomLevelSource" : "MarsLevelSource";
+		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "MarsLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -469,7 +450,6 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(GCVenusEntityEvolvedBlaze.class, 8, 2, 3));
 			return monsters;
 		}
 		else

@@ -1,9 +1,11 @@
-package mattparks.mods.venus.dimension;
+package mattparks.mods.mercury.dimension;
 
 import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.mercury.world.gen.GCMercuryChunkProvider;
+import mattparks.mods.mercury.world.gen.GCMercuryWorldChunkManager;
 import mattparks.mods.venus.world.gen.GCVenusChunkProvider;
-import mattparks.mods.venus.world.gen.GCVenusWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
+import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
@@ -14,7 +16,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCVenusWorldProvider extends WorldProvider implements IGalacticraftWorldProvider
+public class GCMercuryWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
 {
 	@Override
 	public void setDimension(int var1)
@@ -23,16 +25,17 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 		super.setDimension(var1);
 	}
 
-    protected void generateLightBrightnessTable()
-    {
-        float f = 0.0F;
+	@Override
+	protected void generateLightBrightnessTable()
+	{
+		final float var1 = 0.0F;
 
-        for (int i = 0; i <= 15; ++i)
-        {
-            float f1 = 1.0F - (float)i / 15.0F;
-            this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f;
-        }
-    }
+		for (int var2 = 0; var2 <= 15; ++var2)
+		{
+			final float var3 = 1.0F - var2 / 15.0F;
+			this.lightBrightnessTable[var2] = (1.0F - var3) / (var3 * 3.0F + 1.0F) * (1.0F - var1) + var1;
+		}
+	}
 
 	@Override
 	public float[] calcSunriseSunsetColors(float var1, float var2)
@@ -40,23 +43,23 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 		return null;
 	}
 
-    @Override
-    public void registerWorldChunkManager()
-    {
-        this.worldChunkMgr = new GCVenusWorldChunkManager();
-    }
+	@Override
+	public void registerWorldChunkManager()
+	{
+		this.worldChunkMgr = new GCMercuryWorldChunkManager();
+	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public Vec3 getFogColor(float var1, float var2)
 	{
-		return this.worldObj.getWorldVec3Pool().getVecFromPool((double) 150F / 255F, (double) 120F / 255F, (double) 59F / 255F);
+		return this.worldObj.getWorldVec3Pool().getVecFromPool((double) 0F / 255F, (double) 0F / 255F, (double) 0F / 255F);
 	}
 
 	@Override
 	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
 	{
-		return this.worldObj.getWorldVec3Pool().getVecFromPool(145 / 255.0F, 125 / 255.0F, 50 / 255.0F);
+		return this.worldObj.getWorldVec3Pool().getVecFromPool(0, 0, 0);
 	}
 
 	@Override
@@ -122,10 +125,10 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	{
 		this.worldObj.getWorldInfo().setRainTime(0);
 		this.worldObj.getWorldInfo().setRaining(false);
-//		this.worldObj.getWorldInfo().setThunderTime(0);
-//		this.worldObj.getWorldInfo().setThundering(true);
+		this.worldObj.getWorldInfo().setThunderTime(0);
+		this.worldObj.getWorldInfo().setThundering(true);
     	this.worldObj.rainingStrength = 0.0F;
-//    	this.worldObj.thunderingStrength = 0.0F;
+    	this.worldObj.thunderingStrength = 0.0F;
 	}
 
 	@Override
@@ -167,25 +170,25 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	@Override
 	public String getSaveFolder()
 	{
-		return "DIM" + ConfigManager.dimensionIDVenus;
+		return "DIM" + ConfigManager.dimensionIDMercury;
 	}
 
 	@Override
 	public String getWelcomeMessage()
 	{
-		return "Entering Venus";
+		return "Entering Mercury";
 	}
 
 	@Override
 	public String getDepartMessage()
 	{
-		return "Leaving Venus";
+		return "Leaving Mercury";
 	}
 
 	@Override
 	public String getDimensionName()
 	{
-		return "Venus";
+		return "Mercury";
 	}
 
 	@Override
@@ -197,7 +200,7 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	@Override
 	public boolean canDoLightning(Chunk chunk)
 	{
-		return true;
+		return false;
 	}
 
 	@Override
@@ -206,11 +209,11 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 		return false;
 	}
 
-	@Override
-	public float getGravity()
-	{
-		return 0.021F;
-	}
+    @Override
+    public float getGravity()
+    {
+        return 0.058F;
+    }
 
 	@Override
 	public int getHeight()
@@ -233,7 +236,7 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier >= ConfigManager.VenusTierLevel;
+		return tier >= ConfigManager.MercuryTierLevel;
 	}
 
 	@Override
@@ -246,5 +249,11 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	public float getSoundVolReductionAmount()
 	{
 		return 6.0F;
+	}
+
+	@Override
+	public double getSolarEnergyMultiplier() 
+	{
+		return 26;
 	}
 }
