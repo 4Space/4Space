@@ -18,7 +18,8 @@ LICENSE.txt
 CHANGELOG
 
 /src/minecraft/*
-!/src/minecraft/mattparks/
+!/src/minecraft/mattparks/mods/
+/src/minecraft/mattparks/mods/MattparksCore
 !/src/minecraft/micdoodle8/mods/galacticraft/api
 !/src/minecraft/assets/
 /src/minecraft/assets/forge
