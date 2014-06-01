@@ -3,6 +3,7 @@ package mattparks.mods.mercury.world.gen;
 import java.util.Random;
 
 import mattparks.mods.mercury.GCMercury;
+import mattparks.mods.mercury.blocks.MercuryBlocks;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
 import net.minecraft.world.World;
@@ -24,10 +25,10 @@ public class GCMercuryBiomeDecorator
 
 	public GCMercuryBiomeDecorator()
 	{
-        this.dirtGen = new GCCoreWorldGenMinableMeta(GCMercury.MercuryDirt.blockID, 25, 6, false, GCMercury.MercuryStone.blockID, 9); 
-        this.tinGen = new GCCoreWorldGenMinableMeta(GCMercury.MercuryTinOre.blockID, 4, 1, false, GCMercury.MercuryStone.blockID, 9);  
-        this.copperGen = new GCCoreWorldGenMinableMeta(GCMercury.MercuryCopperOre.blockID, 5, 3, false, GCMercury.MercuryStone.blockID, 9);      
-        this.iridiumGen = new GCCoreWorldGenMinableMeta(GCMercury.MercuryIridiumOre.blockID, 8, 5, false, GCMercury.MercuryStone.blockID, 9);
+        this.dirtGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryDirt.blockID, 25, 6, false, MercuryBlocks.MercuryStone.blockID, 9); 
+        this.tinGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryTinOre.blockID, 4, 1, false, MercuryBlocks.MercuryStone.blockID, 9);  
+        this.copperGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryCopperOre.blockID, 5, 3, false, MercuryBlocks.MercuryStone.blockID, 9);      
+        this.iridiumGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryIridiumOre.blockID, 8, 5, false, MercuryBlocks.MercuryStone.blockID, 9);
 	}
 
 	public void decorate(World world, Random random, int chunkX, int chunkZ)

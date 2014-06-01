@@ -6,6 +6,7 @@ import java.util.Random;
 
 import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.mercury.GCMercury;
+import mattparks.mods.mercury.blocks.MercuryBlocks;
 import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomBoss;
 import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomChests;
 import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomEmpty;
@@ -32,11 +33,11 @@ import net.minecraftforge.common.ForgeDirection;
 
 public class GCMercuryChunkProvider extends ChunkProviderGenerate  //TODO MAKE PLANET FLAT AND CRATORS
 {
-	final short topBlockID = (short) GCMercury.MercuryGrass.blockID;
+	final short topBlockID = (short) MercuryBlocks.MercuryGrass.blockID;
 	final byte topBlockMeta = 5;
-	final short fillBlockID = (short) GCMercury.MercuryDirt.blockID;
+	final short fillBlockID = (short) MercuryBlocks.MercuryDirt.blockID;
 	final byte fillBlockMeta = 6;
-	final short lowerBlockID = (short) GCMercury.MercuryStone.blockID;
+	final short lowerBlockID = (short) MercuryBlocks.MercuryStone.blockID;
 	final byte lowerBlockMeta = 9;
 
 	private final Random rand;
@@ -54,7 +55,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate  //TODO MAKE P
 
 	private final GCMercuryCaveGen caveGenerator = new GCMercuryCaveGen();
     
-	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(GCMercury.MercuryBrick.blockID, 7, 8, 16, 6);
+	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(MercuryBlocks.MercuryBrick.blockID, 7, 8, 16, 6);
 
 	{
 		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
