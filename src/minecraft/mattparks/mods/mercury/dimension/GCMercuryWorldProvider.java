@@ -1,8 +1,8 @@
 package mattparks.mods.mercury.dimension;
 
 import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.mercury.world.gen.GCMercuryChunkProvider;
 import mattparks.mods.mercury.world.gen.GCMercuryWorldChunkManager;
-import mattparks.mods.venus.world.gen.GCVenusChunkProvider;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
@@ -116,7 +116,7 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
     @Override
     public IChunkProvider createChunkGenerator()
     {
-        return new GCVenusChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+        return new GCMercuryChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
     }
 
 	@Override

@@ -436,7 +436,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate  //TODO MAKE P
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "MarsLevelSource";
+		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "MercuryLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

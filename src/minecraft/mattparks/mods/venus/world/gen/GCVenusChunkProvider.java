@@ -455,7 +455,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.venusGenerateOtherMods ? "RandomLevelSource" : "MarsLevelSource";
+		return ConfigManager.venusGenerateOtherMods ? "RandomLevelSource" : "VenusLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
