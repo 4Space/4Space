@@ -1,9 +1,6 @@
 package mattparks.mods.mercury;
 
-import java.io.File;
-
 import mattparks.mods.MattparksCore.MattCore;
-import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.mercury.blocks.GCMercuryBlock;
 import mattparks.mods.mercury.blocks.GCMercuryBrick;
 import mattparks.mods.mercury.blocks.GCMercuryGrass;
@@ -18,7 +15,6 @@ import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
-import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;

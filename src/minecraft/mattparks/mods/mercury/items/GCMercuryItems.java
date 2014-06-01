@@ -2,7 +2,6 @@ package mattparks.mods.mercury.items;
 
 import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.mercury.GCMercury;
-import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;

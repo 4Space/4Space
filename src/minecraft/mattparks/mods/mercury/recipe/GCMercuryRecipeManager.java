@@ -1,15 +1,14 @@
 package mattparks.mods.mercury.recipe;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import mattparks.mods.mercury.GCMercury;
 import mattparks.mods.mercury.items.GCMercuryItems;
-import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.util.RecipeUtil;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
 {

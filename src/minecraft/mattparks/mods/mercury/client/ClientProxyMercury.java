@@ -8,7 +8,6 @@ import java.util.EnumSet;
 import mattparks.mods.mercury.CommonProxyMercury;
 import mattparks.mods.mercury.GCMercury;
 import mattparks.mods.mercury.dimension.GCMercuryWorldProvider;
-import mattparks.mods.mercury.items.GCMercuryItems;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
 import net.minecraft.block.material.Material;

@@ -5,8 +5,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import mattparks.mods.mercury.GCMercury;
-import mattparks.mods.mercury.client.ClientProxyMercury;
 import net.minecraft.client.audio.SoundPool;
 import net.minecraft.client.audio.SoundPoolEntry;
 import net.minecraft.client.audio.SoundPoolProtocolHandler;

@@ -4,8 +4,6 @@ import java.util.List;
 
 import mattparks.mods.mercury.GCMercury;
 import micdoodle8.mods.galacticraft.core.client.ClientProxyCore;
-import micdoodle8.mods.galacticraft.moon.GalacticraftMoon;
-import micdoodle8.mods.galacticraft.moon.items.GCMoonItem;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;

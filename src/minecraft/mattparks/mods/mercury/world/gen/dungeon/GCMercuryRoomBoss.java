@@ -2,7 +2,6 @@ package mattparks.mods.mercury.world.gen.dungeon;
 
 import java.util.Random;
 
-import mattparks.mods.mercury.GCMercury;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.GCCoreTileEntityDungeonSpawner;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.GCCoreDungeonBoundingBox;

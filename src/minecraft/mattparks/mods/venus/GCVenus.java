@@ -1,7 +1,5 @@
 package mattparks.mods.venus;
 
-import java.io.File;
-
 import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.venus.blocks.GCVenusBlock;
@@ -77,8 +75,6 @@ public class GCVenus
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		new ConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/venus.conf"));
-
 		MinecraftForge.EVENT_BUS.register(new GCVenusEvents());
 		
 		GCVenusItems.initItems();
