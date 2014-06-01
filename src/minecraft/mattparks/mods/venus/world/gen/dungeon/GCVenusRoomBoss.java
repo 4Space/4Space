@@ -3,6 +3,7 @@ package mattparks.mods.venus.world.gen.dungeon;
 import java.util.Random;
 
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.GCCoreTileEntityDungeonSpawner;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.GCCoreDungeonBoundingBox;
@@ -57,7 +58,7 @@ public class GCVenusRoomBoss extends GCCoreDungeonRoom
 					}
 					else if (j == this.posY && (i <= this.posX + 1 || i >= this.posX + this.sizeX - 2 || k == this.posZ + 1 || k == this.posZ + this.sizeZ - 2) && this.rand.nextInt(6) == 0)
 					{
-						this.placeBlock(chunk, meta, i, j, k, cx, cz, GCVenus.EvolvedBlazeEgg.blockID, 0);
+						this.placeBlock(chunk, meta, i, j, k, cx, cz, VenusBlocks.EvolvedBlazeEgg.blockID, 0);
 					}
 					else
 					{

@@ -3,7 +3,7 @@ package mattparks.mods.venus.world.gen.pit;
 import java.util.List;
 import java.util.Random;
 
-import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreStructureComponent;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityMobSpawner;
@@ -115,7 +115,7 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
     			{
     				if ((x == 0 || x == 6 || z == 0 || z == 6) && (y == 0 || y > 7))
     				{
-    					this.placeBlockAtCurrentPosition(world, GCVenus.VenusBrick.blockID, 0, x, y, z, this.getBoundingBox());
+    					this.placeBlockAtCurrentPosition(world, VenusBlocks.VenusBrick.blockID, 0, x, y, z, this.getBoundingBox());
     				}
     				else
     				{
@@ -136,7 +136,7 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
     			{
     				if (y % 4 == 0 && rand.nextInt(20) == 0)
 					{
-						if (world.getBlockId(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z) == GCVenus.VenusBrick.blockID);
+						if (world.getBlockId(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z) == VenusBlocks.VenusBrick.blockID);
 						{
 							for (int i = -2; i < 2; i++)
 							{
@@ -144,7 +144,7 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
 								{
 									if (world.getBlockId(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == 0)
 									{
-										this.placeBlockAtCurrentPosition(world, GCVenus.VenusBrick.blockID, 0, x + i, y, z + j, this.getBoundingBox());
+										this.placeBlockAtCurrentPosition(world, VenusBlocks.VenusBrick.blockID, 0, x + i, y, z + j, this.getBoundingBox());
 									}
 
 									if (y > 10)
@@ -155,9 +155,9 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
 										this.placeBlockAtCurrentPosition(world, 0, 0, x + 1, y, z + 1, this.getBoundingBox());
 									}
 
-		                    		if (rand.nextInt(5) == 0 && world.getBlockId(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z + j) == 0 && world.getBlockId(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == GCVenus.VenusBrick.blockID)
+		                    		if (rand.nextInt(5) == 0 && world.getBlockId(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z + j) == 0 && world.getBlockId(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == VenusBlocks.VenusBrick.blockID)
 		                    		{
-										this.placeBlockAtCurrentPosition(world, GCVenus.EvolvedBlazeEgg.blockID, 0, x + i, y + 1, z + j, this.getBoundingBox());
+										this.placeBlockAtCurrentPosition(world, VenusBlocks.EvolvedBlazeEgg.blockID, 0, x + i, y + 1, z + j, this.getBoundingBox());
 		                    		}
 								}
 							}
@@ -168,7 +168,7 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
 								{
 									if (world.getBlockId(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z) == 0)
 									{
-										this.placeBlockAtCurrentPosition(world, GCVenus.EvolvedBlazeEgg.blockID, 0, x, y + 2, z, this.getBoundingBox());
+										this.placeBlockAtCurrentPosition(world, VenusBlocks.EvolvedBlazeEgg.blockID, 0, x, y + 2, z, this.getBoundingBox());
 									}
 
 					                final TileEntityMobSpawner var7 = (TileEntityMobSpawner)world.getBlockTileEntity(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z);

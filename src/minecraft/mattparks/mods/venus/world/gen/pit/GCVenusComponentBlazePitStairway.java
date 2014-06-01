@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreStructureComponent;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
@@ -39,7 +40,7 @@ public class GCVenusComponentBlazePitStairway extends GCCoreStructureComponent
 		final int y2 = this.getBoundingBox().maxY;
 		final int z2 = this.getBoundingBox().maxZ;
 
-		this.fillWithBlocks(par1World, var3, x1, y1, z1, x2, y2, z2, GCVenus.VenusBrick.blockID, 0, false);
+		this.fillWithBlocks(par1World, var3, x1, y1, z1, x2, y2, z2, VenusBlocks.VenusBrick.blockID, 0, false);
 		this.fillWithBlocks(par1World, var3, x1 + 1, y1, z1 + 1, x2 - 1, y2, z2 - 1, 0, 0, false);
 
 		return true;

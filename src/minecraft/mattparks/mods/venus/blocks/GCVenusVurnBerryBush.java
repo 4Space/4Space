@@ -17,10 +17,10 @@ public class GCVenusVurnBerryBush extends BlockCrops
         super(par1);
     }
 
-    @Override
-	protected int getCropItem()
+//    @Override
+//	protected int getCropItem()
     {
-      return GCVenusItems.vurnBerry.itemID;
+//      return GCVenusItems.vurnBerry.itemID;
     }
 
     @Override
@@ -42,10 +42,10 @@ public class GCVenusVurnBerryBush extends BlockCrops
         }
     }
 
-    @Override
-	protected int getSeedItem()
+//    @Override
+//	protected int getSeedItem()
     {
-        return GCVenusItems.vurnBerry.itemID;
+//        return GCVenusItems.vurnBerry.itemID;
     }
 
     @Override

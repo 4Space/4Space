@@ -1,6 +1,7 @@
 package mattparks.mods.venus.recipe;
 
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.blocks.VenusBlocks;
 import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.util.RecipeUtil;
@@ -27,9 +28,9 @@ public class GCVenusRecipeManager
     	OreDictionary.registerOre("jetpackThruster", new ItemStack(GCVenusItems.venusItemBasic, 1, 10));
     	OreDictionary.registerOre("jetpackBody", new ItemStack(GCVenusItems.venusItemBasic, 1, 11));
     	
-    	OreDictionary.registerOre("vurnBerry", new ItemStack(GCVenusItems.vurnBerry, 1, 1));
+//    	OreDictionary.registerOre("vurnBerry", new ItemStack(GCVenusItems.vurnBerry, 1, 1));
     	OreDictionary.registerOre("meteoricIronIngot", new ItemStack(GCCoreItems.meteoricIronIngot, 1, 0));
-    	OreDictionary.registerOre("meteorBlock", new ItemStack(GCVenus.VenusMeteorBlock));
+    	OreDictionary.registerOre("meteorBlock", new ItemStack(VenusBlocks.VenusMeteorBlock));
 
     	// ARMOR AND TOOLS CRAFTING
     	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 11), new Object[] {  "III", "IRI", 'I', Item.ingotIron, 'R', Item.redstone });
@@ -69,30 +70,30 @@ public class GCVenusRecipeManager
 
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 0), new Object[] { "XX", 'X', "SulfurDust" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 4, 9), new Object[] { "X", 'X', GCVenusItems.venusRod });
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.vurnBerry), new Object[] { "Y Y", " X ", "Y Y", 'X', "FossilizedPlant", 'Y', Item.bone });
+//        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.vurnBerry), new Object[] { "Y Y", " X ", "Y Y", 'X', "FossilizedPlant", 'Y', Item.bone });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusBattery, 1, 100), new Object[] { "TRT", "CVC", "TRT", 'T', "SulfurPlate", 'R', Item.redstone, 'C', Item.coal, 'V', "VenusPowerCrystal" });
         
         // ITEM TO BLOCK
-        RecipeUtil.addRecipe(new ItemStack(GCVenus.VenusRedGemBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "redGem" });
-        RecipeUtil.addRecipe(new ItemStack(GCVenus.VenusMeteorBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "meteoricIronIngot" });
-        RecipeUtil.addRecipe(new ItemStack(GCVenus.VenusSulfurBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotSulfur" });
+        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusRedGemBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "redGem" });
+        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusMeteorBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "meteoricIronIngot" });
+        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusSulfurBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotSulfur" });
 
         // BLOCK TO ITEM
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 9, 0), new Object[] { "X", 'X', GCVenus.VenusSulfurBlock });
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 9, 2), new Object[] { "X", 'X', GCVenus.VenusRedGemBlock });
-        RecipeUtil.addRecipe(new ItemStack(GCCoreItems.meteoricIronIngot, 9, 0), new Object[] { "X", 'X', GCVenus.VenusMeteorBlock });
+        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 9, 0), new Object[] { "X", 'X', VenusBlocks.VenusSulfurBlock });
+        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 9, 2), new Object[] { "X", 'X', VenusBlocks.VenusRedGemBlock });
+        RecipeUtil.addRecipe(new ItemStack(GCCoreItems.meteoricIronIngot, 9, 0), new Object[] { "X", 'X', VenusBlocks.VenusMeteorBlock });
 
         // Smelting
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusSulfurOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 1), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusCoalOre.blockID, 0, new ItemStack(Item.coal), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusIronOre.blockID, 0, new ItemStack(Item.ingotIron), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusCopperOre.blockID, 0, OreDictionary.getOres("ingotCopper").get(0), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusTinOre.blockID, 0, OreDictionary.getOres("ingotTin").get(0), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusRedGemOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 2), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusCrystalOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 3), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusMeteorOre.blockID, 0, new ItemStack(GCCoreItems.meteoricIronRaw), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.FossilizedPlantOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 5), 0.2F);
-        FurnaceRecipes.smelting().addSmelting(GCVenus.VenusGoldOre.blockID, 0, new ItemStack(Item.ingotGold), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusSulfurOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 1), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusCoalOre.blockID, 0, new ItemStack(Item.coal), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusIronOre.blockID, 0, new ItemStack(Item.ingotIron), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusCopperOre.blockID, 0, OreDictionary.getOres("ingotCopper").get(0), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusTinOre.blockID, 0, OreDictionary.getOres("ingotTin").get(0), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusRedGemOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 2), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusCrystalOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 3), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusMeteorOre.blockID, 0, new ItemStack(GCCoreItems.meteoricIronRaw), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.FossilizedPlantOre.blockID, 0, new ItemStack(GCVenusItems.venusItemBasic, 1, 5), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(VenusBlocks.VenusGoldOre.blockID, 0, new ItemStack(Item.ingotGold), 0.2F);
     }
 
     public static void loadRecipes()

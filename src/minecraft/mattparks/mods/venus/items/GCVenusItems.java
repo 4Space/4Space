@@ -2,9 +2,12 @@ package mattparks.mods.venus.items;
 
 import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.blocks.VenusBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -12,7 +15,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class GCVenusItems
 {
     public static Item venusItemBasic;
-    public static Item vurnBerry;
+//    public static Item vurnBerry;
 
     public static Item sulfurPickaxe;
     public static Item sulfurAxe;
@@ -52,7 +55,8 @@ public class GCVenusItems
     public static void initItems()
     {    	
         GCVenusItems.venusItemBasic = new GCVenusItem(ConfigManager.idItemVenusBasic);
-        GCVenusItems.vurnBerry = (new GCVenusVurnBerry(ConfigManager.idVurnBerry, 4, 0.6F, GCVenus.VurnBerryBush.blockID, GCVenus.VenusGrass.blockID)).setUnlocalizedName("vurnBerry").setTextureName("galacticraftvenus:vurnBerry");
+        
+//        GCVenusItems.vurnBerry = (new GCVenusVurnBerry(ConfigManager.idVurnBerry, 4, 0.6F, (VenusBlocks.VurnBerryBush.blockID), Block.tilledField.blockID)).setUnlocalizedName("vurnBerry").setTextureName("starcraftvenus:vurnBerry");
  
         GCVenusItems.sulfurPickaxe = new GCVenusItemPickaxe(ConfigManager.idToolSulfurPickaxe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurPick");
         GCVenusItems.sulfurAxe = new GCVenusItemAxe(ConfigManager.idToolSulfurAxe, GCVenusItems.TOOLSULFUR).setUnlocalizedName("sulfurAxe");
@@ -97,8 +101,8 @@ public class GCVenusItems
     
  	private static void registerItems()
  	{
- 		registerItem(venusItemBasic);
-		registerItem(vurnBerry);
+		registerItem(venusItemBasic);
+//		registerItem(vurnBerry);
 		
  		registerItem(sulfurPickaxe);
  		registerItem(sulfurAxe);

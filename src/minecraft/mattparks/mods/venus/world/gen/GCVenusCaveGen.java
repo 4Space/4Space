@@ -3,6 +3,7 @@ package mattparks.mods.venus.world.gen;
 import java.util.Random;
 
 import mattparks.mods.venus.GCVenus;
+import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreMapGenBaseMeta;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -168,7 +169,7 @@ public class GCVenusCaveGen extends GCCoreMapGenBaseMeta
 
 										if (yfactor > -0.7D && xfactorSq + yfactorSq + zfactorSq < 1.0D)
 										{
-											if (blockIdArray[coords] == GCVenus.VenusStone.blockID)
+											if (blockIdArray[coords] == VenusBlocks.VenusStone.blockID)
 											{
 												if (metaArray[coords] == 6 || metaArray[coords] == 9)
 												{
