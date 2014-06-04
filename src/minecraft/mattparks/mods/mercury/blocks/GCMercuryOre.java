@@ -1,14 +1,13 @@
 package mattparks.mods.mercury.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import mattparks.mods.mercury.GCMercury;
-import mattparks.mods.venus.GCVenus;
 import micdoodle8.mods.galacticraft.api.block.IDetectableResource;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCMercuryOre extends Block implements IDetectableResource
 {
@@ -37,4 +36,19 @@ public class GCMercuryOre extends Block implements IDetectableResource
             return true;
         }
     }
+    
+//    @Override
+//    public int idDropped(int par1, Random par2Random, int par3)
+//    {
+//    	if(MercuryBlocks.MercuryIridiumOre.blockID == this.blockID)
+//    	{
+//    		if(Compatibility.isIndustrialCraft2Loaded())
+//    		{
+//    			return Items.getItem("iridiumOre").itemID;
+//    		}
+//    		
+//    		return this.blockID;
+//    	}
+//		return par3;
+//    }
 }

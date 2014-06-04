@@ -1,14 +1,13 @@
 package mattparks.mods.venus.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import mattparks.mods.venus.GCVenus;
 import micdoodle8.mods.galacticraft.api.block.IDetectableResource;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusOre extends Block implements IDetectableResource
 {
@@ -37,4 +36,19 @@ public class GCVenusOre extends Block implements IDetectableResource
             return true;
         }
     }
+    
+//    @Override
+//    public int idDropped(int par1, Random par2Random, int par3)
+//    {
+//    	if(VenusBlocks.VenusUraniumOre.blockID == this.blockID)
+//   	{
+//    		if(Compatibility.isIndustrialCraft2Loaded())
+//    		{
+//    			return Items.getItem("UranFuel").itemID;
+//    		}
+//    		
+//    		return this.blockID;
+//    	}
+//		return par3;
+//    }
 }

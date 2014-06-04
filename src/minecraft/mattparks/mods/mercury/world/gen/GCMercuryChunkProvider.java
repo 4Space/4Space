@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.MattparksCore.ConfigManager;
-import mattparks.mods.mercury.GCMercury;
 import mattparks.mods.mercury.blocks.MercuryBlocks;
 import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomBoss;
 import mattparks.mods.mercury.world.gen.dungeon.GCMercuryRoomChests;

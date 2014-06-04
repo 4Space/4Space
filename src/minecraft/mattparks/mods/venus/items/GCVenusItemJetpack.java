@@ -4,12 +4,10 @@ import mattparks.mods.venus.GCVenus;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,27 +20,8 @@ public class GCVenusItemJetpack extends ItemArmor
     public GCVenusItemJetpack(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, boolean breathable)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
-		this.setMaxStackSize(1);
-		this.setMaxDamage(256);
         this.material = par2EnumArmorMaterial;
         this.attachedMask = breathable;
-    }
-    
-	@Override
-    public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) 
-    {
-    	if (entity instanceof EntityPlayer)
-    	{
-    		final EntityPlayer player = (EntityPlayer) entity;
-    		
-    		if (GCVenus.tick % 100 == 0)
-    		{
-    			if (!player.capabilities.isCreativeMode)
-    			{
-        			player.inventory.consumeInventoryItem(Item.coal.itemID);
-    			}
-    		}
-    	}
     }
 
 	public void setActive()

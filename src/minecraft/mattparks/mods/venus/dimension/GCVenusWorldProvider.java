@@ -62,8 +62,8 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
 	{
-		final int var4 = (int) (par1 % 5832000L);
-		float var5 = (var4 + par3) / 5832000.0F - 0.25F;
+		final int var4 = (int) (par1 % 2802000L);
+		float var5 = (var4 + par3) / 2802000.0F - 0.25F;
 
 		if (var5 < 0.0F)
 		{
@@ -122,10 +122,10 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	{
 		this.worldObj.getWorldInfo().setRainTime(0);
 		this.worldObj.getWorldInfo().setRaining(false);
-//		this.worldObj.getWorldInfo().setThunderTime(0);
-//		this.worldObj.getWorldInfo().setThundering(true);
+		this.worldObj.getWorldInfo().setThunderTime(0);
+		this.worldObj.getWorldInfo().setThundering(true);
     	this.worldObj.rainingStrength = 0.0F;
-//    	this.worldObj.thunderingStrength = 0.0F;
+    	this.worldObj.thunderingStrength = 99.9F;
 	}
 
 	@Override

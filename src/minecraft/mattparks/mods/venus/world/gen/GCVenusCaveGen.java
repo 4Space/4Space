@@ -2,7 +2,6 @@ package mattparks.mods.venus.world.gen;
 
 import java.util.Random;
 
-import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreMapGenBaseMeta;
 import net.minecraft.util.MathHelper;

@@ -2,12 +2,9 @@ package mattparks.mods.venus.items;
 
 import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.venus.GCVenus;
-import mattparks.mods.venus.blocks.VenusBlocks;
-import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;

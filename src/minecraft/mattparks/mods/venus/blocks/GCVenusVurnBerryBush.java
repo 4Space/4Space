@@ -1,6 +1,5 @@
 package mattparks.mods.venus.blocks;
 
-import mattparks.mods.venus.items.GCVenusItems;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;

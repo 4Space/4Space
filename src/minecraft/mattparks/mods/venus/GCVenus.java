@@ -2,12 +2,6 @@ package mattparks.mods.venus;
 
 import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.MattparksCore.MattCore;
-import mattparks.mods.venus.blocks.GCVenusBlock;
-import mattparks.mods.venus.blocks.GCVenusBrick;
-import mattparks.mods.venus.blocks.GCVenusEgg;
-import mattparks.mods.venus.blocks.GCVenusGrass;
-import mattparks.mods.venus.blocks.GCVenusOre;
-import mattparks.mods.venus.blocks.GCVenusVurnBerryBush;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import mattparks.mods.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
@@ -22,7 +16,6 @@ import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -40,7 +33,6 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = GCVenus.NAME, version = MattCore.LOCALMAJVERSION + "." + MattCore.LOCALMINVERSION + "." + MattCore.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.MattparksCore.ConfigManager;
-import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.venus.world.gen.dungeon.GCVenusRoomBoss;

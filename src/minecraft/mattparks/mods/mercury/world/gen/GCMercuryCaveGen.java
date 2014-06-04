@@ -2,7 +2,6 @@ package mattparks.mods.mercury.world.gen;
 
 import java.util.Random;
 
-import mattparks.mods.mercury.GCMercury;
 import mattparks.mods.mercury.blocks.MercuryBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreMapGenBaseMeta;
 import net.minecraft.util.MathHelper;

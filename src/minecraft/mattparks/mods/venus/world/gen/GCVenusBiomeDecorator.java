@@ -2,7 +2,6 @@ package mattparks.mods.venus.world.gen;
 
 import java.util.Random;
 
-import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
@@ -21,13 +20,12 @@ public class GCVenusBiomeDecorator
     protected WorldGenerator dirtGen;
     protected WorldGenerator gemGen;
     protected WorldGenerator sulfurGen;
-    protected WorldGenerator meteorGen;
     protected WorldGenerator ironGen;
     protected WorldGenerator coalGen;
     protected WorldGenerator tinGen;
     protected WorldGenerator copperGen;
-    protected WorldGenerator crystalGen;
-    protected WorldGenerator goldGen;
+    protected WorldGenerator crystalGen; 
+    protected WorldGenerator uraniumGen;
     protected WorldGenerator fossilizedPlantGen;
 
 	public GCVenusBiomeDecorator()
@@ -39,10 +37,9 @@ public class GCVenusBiomeDecorator
         this.tinGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusTinOre.blockID, 4, 1, false, VenusBlocks.VenusStone.blockID, 9);  
         this.copperGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusCopperOre.blockID, 5, 3, false, VenusBlocks.VenusStone.blockID, 9);      
         this.crystalGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusCrystalOre.blockID, 3, 1, false, VenusBlocks.VenusStone.blockID, 9);
-        this.meteorGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusMeteorOre.blockID, 4, 3, false, VenusBlocks.VenusStone.blockID, 9);
-        this.goldGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusGoldOre.blockID, 7, 4, false, VenusBlocks.VenusStone.blockID, 9);
         this.gemGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusRedGemOre.blockID, 8, 5, false, VenusBlocks.VenusStone.blockID, 9);
         this.fossilizedPlantGen = new GCCoreWorldGenMinableMeta(VenusBlocks.FossilizedPlantOre.blockID, 2, 1, false, VenusBlocks.VenusStone.blockID, 9);
+        this.uraniumGen = new GCCoreWorldGenMinableMeta(VenusBlocks.VenusUraniumOre.blockID, 2, 1, false, VenusBlocks.VenusStone.blockID, 9);
 	}
 
 	public void decorate(World world, Random random, int chunkX, int chunkZ)
@@ -84,10 +81,9 @@ public class GCVenusBiomeDecorator
         this.generateOre(35, this.tinGen, 0, 60);
         this.generateOre(36, this.copperGen, 0, 60);
         this.generateOre(36, this.crystalGen, 0, 60);
-        this.generateOre(12, this.meteorGen, 0, 40);
-        this.generateOre(36, this.goldGen, 0, 30);
         this.generateOre(26, this.gemGen, 0, 20);
         this.generateOre(36, this.fossilizedPlantGen, 0, 15);
+        this.generateOre(36, this.uraniumGen, 0, 15);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
 	}
 }

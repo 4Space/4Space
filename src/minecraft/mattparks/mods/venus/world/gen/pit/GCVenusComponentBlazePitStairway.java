@@ -3,7 +3,6 @@ package mattparks.mods.venus.world.gen.pit;
 import java.util.List;
 import java.util.Random;
 
-import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreStructureComponent;
 import net.minecraft.nbt.NBTTagCompound;

@@ -2,7 +2,6 @@ package mattparks.mods.venus.world.gen.dungeon;
 
 import java.util.Random;
 
-import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.GCCoreTileEntityDungeonSpawner;

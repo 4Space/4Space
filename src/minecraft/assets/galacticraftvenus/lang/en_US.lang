@@ -18,6 +18,8 @@ item.venusRodDust.name=Venus Rod Dust
 item.vurnBerry.name=Vurn Berry
 item.jetpackThruster.name=Jetpack Engine
 item.jetpackBody.name=Jetpack Body
+item.ingotUranium.name=Uranium Ingot
+item.uraniumPlate.name=Uranium Plate
 
 # TOOLS
 item.gemAxe.name=Red-Gem Axe
@@ -49,15 +51,15 @@ tile.VenusCoalOre.name=Coal Ore
 tile.VenusCopperOre.name=Copper Ore
 tile.VenusCrystalOre.name=Crystal Ore
 tile.VenusDirt.name=Venus Dirt
-tile.VenusGemBlock.name=Red-Gem Block
+tile.VenusGemBlock.name=Block of Red-Gem
 tile.VenusGemOre.name=Red-Gem Ore
-tile.VenusGoldOre.name=Gold Ore
+tile.VenusUraniumOre.name=Uranium Ore
 tile.VenusGrass.name=Venus Grass
 tile.VenusIronOre.name=Iron Ore
-tile.VenusMeteorBlock.name=Meteor Block
-tile.VenusMeteorOre.name=Meteor Ore
+tile.VenusUraniumBlock.name=Block of Uranium
+tile.VenusUraniumPowerBlock.name=Uranium Power Block
 tile.VenusStone.name=Venus Stone
-tile.VenusSulfurBlock.name=Sulfur Block
+tile.VenusSulfurBlock.name=Block of Sulfur
 tile.VenusSulfurOre.name=Sulfur Ore
 tile.VenusTinOre.name=Tin Ore
 

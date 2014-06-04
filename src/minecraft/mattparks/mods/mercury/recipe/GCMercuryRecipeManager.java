@@ -1,15 +1,14 @@
 package mattparks.mods.mercury.recipe;
 
-import mattparks.mods.mercury.GCMercury;
 import mattparks.mods.mercury.blocks.MercuryBlocks;
 import mattparks.mods.mercury.items.GCMercuryItems;
+import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.util.RecipeUtil;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
 {
@@ -18,6 +17,7 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
     	// ORE DICTIONARY
     	OreDictionary.registerOre("iridiumCrystals", new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 0));
       	OreDictionary.registerOre("iridiumPlate", new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 2));
+      	OreDictionary.registerOre("meteorBlock", new ItemStack(MercuryBlocks.MercuryMeteorBlock));
 
     	// ARMOR AND TOOLS CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumBoots), new Object[] {  "X X", "X X", 'X', "iridiumCrystals" });
@@ -37,7 +37,10 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
         // OTHERS CRAFTING
 
         // ITEM TO BLOCK
+        RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.CaravanModule), new Object[] { "XYZ", "GJG", "GGG", 'X', Block.furnaceIdle, 'Y', Block.workbench , 'Z', Block.chest, 'G' , GCCoreItems.canvas, 'J' , new ItemStack(GCCoreItems.canister, 1, 0) });
+
         RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.MercuryIridiumBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "iridiumCrystals" });
+        RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.MercuryMeteorBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "meteoricIronIngot" });
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.BlackGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 0), new ItemStack(Block.glowStone, 1, 0));
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.BlueGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(Block.glowStone, 1, 0));
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.BrownGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 3), new ItemStack(Block.glowStone, 1, 0));
@@ -57,11 +60,14 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
       
         // BLOCK TO ITEM
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.mercuryItemBasic, 9, 0), new Object[] { "X", 'X', MercuryBlocks.MercuryIridiumBlock });
+        RecipeUtil.addRecipe(new ItemStack(GCCoreItems.meteoricIronIngot, 9, 0), new Object[] { "X", 'X', MercuryBlocks.MercuryMeteorBlock });
 
         // Smelting
         FurnaceRecipes.smelting().addSmelting(MercuryBlocks.MercuryCopperOre.blockID, 0, OreDictionary.getOres("ingotCopper").get(0), 0.2F);
         FurnaceRecipes.smelting().addSmelting(MercuryBlocks.MercuryTinOre.blockID, 0, OreDictionary.getOres("ingotTin").get(0), 0.2F);
         FurnaceRecipes.smelting().addSmelting(MercuryBlocks.MercuryIridiumOre.blockID, 0, OreDictionary.getOres("iridiumCrystals").get(0), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(MercuryBlocks.MercuryMeteorOre.blockID, 0, new ItemStack(GCCoreItems.meteoricIronRaw), 0.2F);
+        FurnaceRecipes.smelting().addSmelting(MercuryBlocks.MercuryGoldOre.blockID, 0, new ItemStack(Item.ingotGold), 0.2F);
 
     }
 

@@ -2,8 +2,6 @@ package mattparks.mods.venus.blocks;
 
 import mattparks.mods.venus.GCVenus;
 import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
-import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
-import micdoodle8.mods.galacticraft.mars.GalacticraftMars;
 import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;

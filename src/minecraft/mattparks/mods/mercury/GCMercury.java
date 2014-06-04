@@ -1,10 +1,6 @@
 package mattparks.mods.mercury;
 
 import mattparks.mods.MattparksCore.MattCore;
-import mattparks.mods.mercury.blocks.GCMercuryBlock;
-import mattparks.mods.mercury.blocks.GCMercuryBrick;
-import mattparks.mods.mercury.blocks.GCMercuryGrass;
-import mattparks.mods.mercury.blocks.GCMercuryOre;
 import mattparks.mods.mercury.blocks.MercuryBlocks;
 import mattparks.mods.mercury.dimension.GCMercuryTeleportType;
 import mattparks.mods.mercury.dimension.GCMercuryWorldProvider;
@@ -12,12 +8,10 @@ import mattparks.mods.mercury.event.GCMercuryEvents;
 import mattparks.mods.mercury.items.GCMercuryItems;
 import mattparks.mods.mercury.network.GCMercuryPacketHandlerServer;
 import mattparks.mods.mercury.recipe.GCMercuryRecipeManager;
-import mattparks.mods.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -35,7 +29,6 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = GCMercury.NAME, version = MattCore.LOCALMAJVERSION + "." + MattCore.LOCALMINVERSION + "." + MattCore.LOCALBUILDVERSION, useMetadata = true, modid = GCMercury.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
