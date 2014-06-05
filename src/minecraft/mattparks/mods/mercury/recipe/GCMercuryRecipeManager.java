@@ -18,6 +18,7 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
     	OreDictionary.registerOre("iridiumCrystals", new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 0));
       	OreDictionary.registerOre("iridiumPlate", new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 2));
       	OreDictionary.registerOre("meteorBlock", new ItemStack(MercuryBlocks.MercuryMeteorBlock));
+    	OreDictionary.registerOre("meteoricIronIngot", new ItemStack(GCCoreItems.meteoricIronIngot, 1, 0));
 
     	// ARMOR AND TOOLS CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumBoots), new Object[] {  "X X", "X X", 'X', "iridiumCrystals" });

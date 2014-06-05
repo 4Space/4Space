@@ -82,25 +82,25 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 		var5 = var6 + (var5 - var6) / 3.0F;
 		return var5;
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1)
 	{
-        float f1 = this.worldObj.getCelestialAngle(par1);
-        float f2 = 1.0F - (MathHelper.cos(f1 * (float)Math.PI * 2.0F) * 2.0F + 0.25F);
+		final float var2 = this.worldObj.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-        if (f2 < 0.0F)
-        {
-            f2 = 0.0F;
-        }
+		if (var3 < 0.0F)
+		{
+			var3 = 0.0F;
+		}
 
-        if (f2 > 0.9F)
-        {
-            f2 = 0.9F;
-        }
+		if (var3 > 1.0F)
+		{
+			var3 = 1.0F;
+		}
 
-        return f2 * f2 * 1.0F;
+		return var3 * var3 * 0.5F + 0.3F;
 	}
 
 	public float calculatePhobosAngle(long par1, float par3)
@@ -113,39 +113,39 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
 	}
 
-    @Override
-    public IChunkProvider createChunkGenerator()
-    {
-        return new GCMercuryChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
-    }
+	@Override
+	public IChunkProvider createChunkGenerator()
+	{
+		return new GCMercuryChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+	}
 
 	@Override
-	public void updateWeather()
-	{
+    public void updateWeather()
+    {
 		this.worldObj.getWorldInfo().setRainTime(0);
 		this.worldObj.getWorldInfo().setRaining(false);
 		this.worldObj.getWorldInfo().setThunderTime(0);
-		this.worldObj.getWorldInfo().setThundering(true);
+		this.worldObj.getWorldInfo().setThundering(false);
     	this.worldObj.rainingStrength = 0.0F;
     	this.worldObj.thunderingStrength = 0.0F;
-	}
+    }
 
 	@Override
 	public boolean isSkyColored()
 	{
-		return true;
+		return false;
 	}
 
 	@Override
 	public double getHorizon()
 	{
-		return 45.0D;
+		return 44.0D;
 	}
 
 	@Override
 	public int getAverageGroundLevel()
 	{
-		return 45;
+		return 44;
 	}
 
 	@Override
@@ -175,19 +175,25 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	@Override
 	public String getWelcomeMessage()
 	{
-		return "Entering Mercury";
+		return "Entering The Mercury";
 	}
 
 	@Override
 	public String getDepartMessage()
 	{
-		return "Leaving Mercury";
+		return "Leaving The Mercury";
 	}
 
 	@Override
 	public String getDimensionName()
 	{
 		return "Mercury";
+	}
+
+	@Override
+	public boolean canSnowAt(int x, int y, int z)
+	{
+		return false;
 	}
 
 	@Override
@@ -208,11 +214,11 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 		return false;
 	}
 
-    @Override
-    public float getGravity()
-    {
-        return 0.058F;
-    }
+	@Override
+	public float getGravity()
+	{
+		return 0.058F;
+	}
 
 	@Override
 	public int getHeight()
@@ -223,36 +229,36 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	@Override
 	public double getMeteorFrequency()
 	{
-		return 99.9D;
+		return 7.0D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier()
 	{
-		return 0.9D;
+		return 0.7D;
+	}
+
+	@Override
+	public double getSolarEnergyMultiplier()
+	{
+		return 1.4D;
 	}
 
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier >= ConfigManager.MercuryTierLevel;
+		return tier > ConfigManager.MercuryTierLevel;
 	}
 
 	@Override
 	public float getFallDamageModifier()
 	{
-		return 0.9F;
+		return 0.18F;
 	}
 
 	@Override
 	public float getSoundVolReductionAmount()
 	{
-		return 6.0F;
-	}
-
-	@Override
-	public double getSolarEnergyMultiplier() 
-	{
-		return 26;
+		return 20.0F;
 	}
 }

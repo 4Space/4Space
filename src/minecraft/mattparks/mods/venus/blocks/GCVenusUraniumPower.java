@@ -5,7 +5,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -17,6 +16,7 @@ public class GCVenusUraniumPower extends Block
         this.setResistance(0.0F);
         this.setHardness(2.0F);
         this.setUnlocalizedName(name);
+        this.setLightValue(0.25F);
         this.setStepSound(new StepSound("stone", 0.0F, 1.0F));
     }
 
@@ -25,16 +25,5 @@ public class GCVenusUraniumPower extends Block
 	public CreativeTabs getCreativeTabToDisplayOn()
 	{
 		return GCVenus.galacticraftVenusTab;
-	}
-	
-
-	public float getMaxElectricityStored(ItemStack itemStack)
-	{
-		return 5000;
-	}
-
-	public float getVoltage(ItemStack itemStack)
-	{
-		return 120;
 	}
 }
