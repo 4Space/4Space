@@ -17,7 +17,7 @@ public class VenusBlocks
 	public static Block VenusRedGemBlock;
 	public static Block VenusSulfurBlock;
 	public static Block VenusUraniumBlock;
-	public static Block VenusUraniumPowerBlock;
+	public static Block VenusCrystalBlock;
 	public static Block VenusSulfurOre;
 	public static Block VenusRedGemOre;
 	public static Block VenusIronOre;
@@ -47,7 +47,7 @@ public class VenusBlocks
 
 		VenusBlocks.VenusUraniumBlock = new GCVenusBlock(ConfigManager.idBlockVenusUraniumBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusUraniumBlock").setTextureName("galacticraftvenus:uraniumBlock");
 
-		VenusBlocks.VenusUraniumPowerBlock = new GCVenusUraniumPower(ConfigManager.idBlockVenusUraniumPowerBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusUraniumPowerBlock").setTextureName("galacticraftvenus:uraniumPowerBlock");
+		VenusBlocks.VenusCrystalBlock = new GCVenusCrystalBlock(ConfigManager.idBlockVenusCrystalBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusCrystalBlock").setTextureName("galacticraftvenus:VenusCrystalBlock");
 
 		VenusBlocks.VenusSulfurOre = new GCVenusOre(ConfigManager.idBlockVenusSulfurOre, null).setHardness(-1.0F).setUnlocalizedName("VenusSulfurOre").setTextureName("galacticraftvenus:sulfurOre");
 
@@ -88,7 +88,7 @@ public class VenusBlocks
 		
 		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusUraniumBlock, "pickaxe", 1);
 		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusUraniumPowerBlock, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCrystalBlock, "pickaxe", 1);
 		
 		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusSulfurOre, "pickaxe", 1);
 		
@@ -127,7 +127,7 @@ public class VenusBlocks
 		
 		GameRegistry.registerBlock(VenusBlocks.VenusUraniumBlock, ItemBlock.class, VenusBlocks.VenusUraniumBlock.getUnlocalizedName(), GCVenus.MODID);
 		
-		GameRegistry.registerBlock(VenusBlocks.VenusUraniumPowerBlock, ItemBlock.class, VenusBlocks.VenusUraniumPowerBlock.getUnlocalizedName(), GCVenus.MODID);
+		GameRegistry.registerBlock(VenusBlocks.VenusCrystalBlock, ItemBlock.class, VenusBlocks.VenusCrystalBlock.getUnlocalizedName(), GCVenus.MODID);
 		
 		GameRegistry.registerBlock(VenusBlocks.VenusSulfurOre, ItemBlock.class, VenusBlocks.VenusSulfurOre.getUnlocalizedName(), GCVenus.MODID);
 		

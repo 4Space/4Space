@@ -10,7 +10,7 @@ public class ConfigManager
 {
     public static boolean loaded;
 
-    static Configuration configuration;
+    public static Configuration configuration;
     public static boolean capesEnabled;
     
     // MERCURY
@@ -41,6 +41,9 @@ public class ConfigManager
     public static int idBlockMercuryGoldOre;
     public static int idBlockMercuryCopperOre;
     public static int idBlockMercuryMeteorOre;
+    
+    public static int idBlockCaravanModule;
+    public static int idBlockCaravanModulePart;
 
     public static boolean mercuryGenerateOtherMods;
     
@@ -91,7 +94,7 @@ public class ConfigManager
     public static int idBlockFossilizedPlantOre;
     public static int idBlockVurnBerryBush;
     public static int idBlockVenusUraniumBlock;
-    public static int idBlockVenusUraniumPowerBlock;
+    public static int idBlockVenusCrystalBlock;
     
     public static int idEntityEvolvedBlaze;
     public static int idEntityVenusianVillager;
@@ -142,6 +145,8 @@ public class ConfigManager
             ConfigManager.idBlockMercuryIridiumOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryIridiumOre", 501).getInt(501);
             ConfigManager.idBlockMercuryTinOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryTinOre", 502).getInt(502);
             ConfigManager.idBlockMercuryCopperOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryCopperOre", 503).getInt(503);
+            ConfigManager.idBlockCaravanModule = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockCaravanModule", 504).getInt(504);
+            ConfigManager.idBlockCaravanModulePart = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockCaravanModulePart", 505).getInt(505);
             
             ConfigManager.dimensionIDMercury = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Dimension ID", -40).getInt(-40);
             ConfigManager.MercuryTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Tier Level", 2).getInt(2);
@@ -194,7 +199,7 @@ public class ConfigManager
             ConfigManager.idBlockFossilizedPlantOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusFossilizedPlantOre", 775).getInt(775);
             ConfigManager.idBlockVurnBerryBush = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVurnBerryBush", 776).getInt(776);
             ConfigManager.idBlockVenusUraniumBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusUraniumBlock", 777).getInt(777);
-            ConfigManager.idBlockVenusUraniumPowerBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusUraniumPowerBlock", 778).getInt(778);
+            ConfigManager.idBlockVenusCrystalBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCrystalBlock", 778).getInt(778);
             
             ConfigManager.idEntityEvolvedBlaze = ConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
             ConfigManager.idEntityVenusianVillager = ConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);

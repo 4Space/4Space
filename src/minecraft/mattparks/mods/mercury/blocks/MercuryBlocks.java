@@ -49,9 +49,9 @@ public class MercuryBlocks
 	    
 		MercuryBlocks.MercuryGoldOre = new GCMercuryOre(ConfigManager.idBlockMercuryGoldOre, null).setHardness(-1.0F).setUnlocalizedName("MercuryGoldOre").setTextureName("galacticraftmercury:goldOre");
 
-		MercuryBlocks.CaravanModule = new GCCaravanModule(518, null).setHardness(-1.0F).setUnlocalizedName("CaravanModule").setTextureName("galacticraftmercury:caravanModule");
+		MercuryBlocks.CaravanModule = new GCCaravanModule(ConfigManager.idBlockCaravanModule, null).setHardness(-1.0F).setUnlocalizedName("CaravanModule").setTextureName("galacticraftmercury:caravanModule");
 
-		MercuryBlocks.CaravanModulePart = new GCCaravanPart(519, null).setHardness(-1.0F).setUnlocalizedName("CaravanModulePart").setTextureName("galacticraftmercury:caravanModulePart");
+		MercuryBlocks.CaravanModulePart = new GCCaravanPart(ConfigManager.idBlockCaravanModulePart, null).setHardness(-1.0F).setUnlocalizedName("CaravanModulePart").setTextureName("galacticraftmercury:caravanModulePart");
 	}
 
 	public static void setHarvestLevels()

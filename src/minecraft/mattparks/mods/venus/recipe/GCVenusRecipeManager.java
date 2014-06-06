@@ -76,7 +76,7 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusUraniumBattery, 1, 100), new Object[] { "TRT", "RVR", "TRT", 'T', "sulfurPlate", 'V', "VenusPowerCrystal", 'R', Item.redstone });
         
         // ITEM TO BLOCK
-        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusUraniumPowerBlock, 1, 1), new Object[] { "XXX", "XCX", "XXX", 'X', "redGemPlate", 'C', VenusBlocks.VenusUraniumBlock });
+        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusCrystalBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "VenusCrystal" });
         RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusUraniumBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotUranium" });
         RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusRedGemBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "redGem" });
         RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusSulfurBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotSulfur" });

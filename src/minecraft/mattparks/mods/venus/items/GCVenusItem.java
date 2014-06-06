@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -36,6 +37,11 @@ public class GCVenusItem extends Item
 		}
 	}
 
+	//isFuel
+	public static boolean isFluidEqual(int itemDamage) {
+		return itemDamage == 3 || itemDamage == 1;
+	}
+	
     @Override
     public CreativeTabs getCreativeTab()
     {

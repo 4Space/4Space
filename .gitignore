@@ -18,7 +18,9 @@ LICENSE.txt
 CHANGELOG
 
 /src/minecraft/*
+!/src/minecraft/erogenousbeef
 !/src/minecraft/mattparks/
+!/src/minecraft/micdoodle8/mods/galacticraft/api
 !/src/minecraft/assets/
 /src/minecraft/assets/forge
 /src/minecraft/assets/galacticraftcore
