@@ -46,7 +46,8 @@ public class ConfigManager
     
     // VENUS
     public static int idItemVenusBasic;
-    public static int idItemVenusBattery;
+    public static int idItemVenusSulfurBattery;
+    public static int idItemVenusUraniumBattery;
     public static int idItemVenusRod;
     public static int idVurnBerry;
 
@@ -147,8 +148,10 @@ public class ConfigManager
             ConfigManager.mercuryGenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Mercury", false).getBoolean(false);        
         
             //VENUS
+            ConfigManager.idItemVenusUraniumBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusUraniumBattery", 7860).getInt(7860);
+            
             ConfigManager.idVurnBerry = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idVurnBerry", 7870).getInt(7870);
-            ConfigManager.idItemVenusBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusBattery", 7871).getInt(7871);
+            ConfigManager.idItemVenusSulfurBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusSulfurBattery", 7871).getInt(7871);
             ConfigManager.idItemVenusRod = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 7872).getInt(7872);
             ConfigManager.idArmorGemHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemHelmet", 7873).getInt(7873);
             ConfigManager.idArmorGemChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorGemChestplate", 7874).getInt(7874);

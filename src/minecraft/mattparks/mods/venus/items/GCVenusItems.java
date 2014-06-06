@@ -38,7 +38,8 @@ public class GCVenusItems
     
     public static Item venusRod;
     
-    public static Item venusBattery;
+    public static Item venusSulfurBattery;
+    public static Item venusUraniumBattery;
     
     public static EnumArmorMaterial ARMORSULFUR = EnumHelper.addArmorMaterial("SULFUR", 15, new int[] { 1, 4, 2, 1 }, 7);
     public static EnumToolMaterial TOOLSULFUR = EnumHelper.addToolMaterial("SULFUR", 3, 216, 2.5F, 0, 2);
@@ -81,7 +82,9 @@ public class GCVenusItems
         
         GCVenusItems.pJetpack = new GCVenusItemPJetpack(ConfigManager.idPJetpack, GCVenusItems.ARMORPJETPACK, 7, 1, false).setUnlocalizedName("pJetpack");
         GCVenusItems.jetpack = new GCVenusItemJetpack(ConfigManager.idJetpack, GCVenusItems.ARMORJETPACK, 7, 1, false).setUnlocalizedName("jetpack");
-        GCVenusItems.venusBattery = new GCVenusItemBattery(ConfigManager.idItemVenusBattery, "venusBattery");
+        GCVenusItems.venusSulfurBattery = new GCVenusItemSulfurBattery(ConfigManager.idItemVenusSulfurBattery, "venusSulfurBattery");
+        GCVenusItems.venusUraniumBattery = new GCVenusItemUraniumBattery(ConfigManager.idItemVenusUraniumBattery, "venusUraniumBattery");
+        
     
     	registerItems();
     }
@@ -125,7 +128,8 @@ public class GCVenusItems
 		
  		registerItem(pJetpack);
  		registerItem(jetpack);
- 		registerItem(venusBattery);
+ 		registerItem(venusSulfurBattery);
+ 		registerItem(venusUraniumBattery);
  		registerItem(venusRod);
  	}
  	

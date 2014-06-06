@@ -5,9 +5,9 @@ import micdoodle8.mods.galacticraft.api.transmission.core.item.ItemElectric;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-public class GCVenusItemBattery extends ItemElectric
+public class GCVenusItemUraniumBattery extends ItemElectric
 {
-	public GCVenusItemBattery(int id, String assetName)
+	public GCVenusItemUraniumBattery(int id, String assetName)
 	{
 		super(id);
 		this.setUnlocalizedName(assetName);
@@ -23,7 +23,7 @@ public class GCVenusItemBattery extends ItemElectric
 	@Override
 	public float getMaxElectricityStored(ItemStack itemStack)
 	{
-		return 7500;
+		return 750000;
 	}
 
 	@Override
