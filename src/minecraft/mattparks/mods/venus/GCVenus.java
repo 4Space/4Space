@@ -12,6 +12,7 @@ import mattparks.mods.venus.items.GCVenusItems;
 import mattparks.mods.venus.network.GCVenusPacketHandlerServer;
 import mattparks.mods.venus.recipe.GCVenusRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
+import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
@@ -77,6 +78,16 @@ public class GCVenus
 		VenusBlocks.setHarvestLevels();
 
 		GCVenus.proxy.preInit(event);
+		
+		CompressorRecipes.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 5), "SS", 'S', new ItemStack(GCVenusItems.venusItemBasic, 1, 0));
+		
+		CompressorRecipes.addShapelessRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 5), new ItemStack(GCVenusItems.venusItemBasic, 1, 1));
+		
+		CompressorRecipes.addShapelessRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 6), new ItemStack(GCVenusItems.venusItemBasic, 1, 2));
+		
+		CompressorRecipes.addShapelessRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 7), new ItemStack(GCVenusItems.venusItemBasic, 1, 3));
+		
+		CompressorRecipes.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 8), "SUR", 'S', new ItemStack(GCVenusItems.venusItemBasic, 1, 5), 'U', new ItemStack(GCVenusItems.venusItemBasic, 1, 6), 'R', new ItemStack(GCVenusItems.venusItemBasic, 1, 7));
 	}
 
 	@EventHandler
@@ -92,8 +103,8 @@ public class GCVenus
 
 	public void registerCreatures()
 	{
-	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityVenusianVillager.class, "VenusianVillager", ConfigManager.idEntityVenusianVillager, GCCoreUtil.convertTo32BitColor(255, 103, 181, 145), 12422002);
-	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityEvolvedBlaze.class, "EvolvedBlaze", ConfigManager.idEntityEvolvedBlaze, 44975, 7969893);
+	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityVenusianVillager.class, "VenusianVillager", ConfigManager.idEntityVenusianVillager, GCCoreUtil.convertTo32BitColor(255, 103, 181, 145), 16167425);
+	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityEvolvedBlaze.class, "EvolvedBlaze", ConfigManager.idEntityVenusEvolvedBlaze, 16167425, 16775294);
 	}
 
 	public void registerOtherEntities()

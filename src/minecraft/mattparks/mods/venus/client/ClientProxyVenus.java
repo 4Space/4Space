@@ -12,8 +12,8 @@ import mattparks.mods.venus.client.render.entities.GCVenusRenderVenusianVillager
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
 import mattparks.mods.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.venus.entities.GCVenusEntityVenusianVillager;
+import mattparks.mods.venus.items.GCVenusItemGemJetpack;
 import mattparks.mods.venus.items.GCVenusItemJetpack;
-import mattparks.mods.venus.items.GCVenusItemPJetpack;
 import mattparks.mods.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
@@ -127,9 +127,9 @@ public class ClientProxyVenus extends CommonProxyVenus
         			player.fallDistance = -10; //TODO: Disable all FALL damage //TODO: Allow player to look in any direction for jetpack to work
             		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);
         		}
-        		else if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == GCVenusItems.pJetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
+        		else if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == GCVenusItems.gemJetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
         		{
-        			((GCVenusItemPJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
+        			((GCVenusItemGemJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
         			player.motionY -= 0.05D;
         			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.063;
         			player.fallDistance = -10; //TODO: Disable all FALL damage //TODO: Allow player to look in any direction for jetpack to work
@@ -202,7 +202,7 @@ public class ClientProxyVenus extends CommonProxyVenus
         RenderingRegistry.addNewArmourRendererPrefix("gem");
         RenderingRegistry.addNewArmourRendererPrefix("sulfur");
         RenderingRegistry.addNewArmourRendererPrefix("jetpack");
-        RenderingRegistry.addNewArmourRendererPrefix("pJetpack");
+        RenderingRegistry.addNewArmourRendererPrefix("gemJetpack");
 
         RenderingRegistry.registerEntityRenderingHandler(GCVenusEntityVenusianVillager.class, new GCVenusRenderVenusianVillager());
         RenderingRegistry.registerEntityRenderingHandler(GCVenusEntityEvolvedBlaze.class, new GCVenusRenderEvolvedBlaze());

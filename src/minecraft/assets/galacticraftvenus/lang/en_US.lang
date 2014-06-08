@@ -3,8 +3,6 @@
 # GENERAL ITEMS
 item.FossilizedPlant.name=Fossilized Plant
 item.ingotSulfur.name=Sulfur Ingot
-item.jetpack.name=Jetpack
-item.pJetpack.name=Protective Jetpack
 item.plateHeavyT3.name=Heavy-Duty Plate
 item.redGem.name=Red-Gem
 item.redGemPlate.name=Red-Gem Plate
@@ -43,6 +41,8 @@ item.sulfurBoots.name=Sulfur Boots
 item.sulfurChestplate.name=Sulfur Chestplate
 item.sulfurHelmet.name=Sulfur Helmet
 item.sulfurLeggings.name=Sulfur Leggings
+item.jetpack.name=Jetpack
+item.gemJetpack.name=Red-Gem Jetpack
 
 # BLOCKS
 tile.EvolvedBlazeEgg.name=Evolved Blaze Egg
@@ -68,6 +68,7 @@ tile.VenusTinOre.name=Tin Ore
 gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
 
 item.tier3.desc=Tier 3
+item.bigreactors.desc=Requires 4-Space Big Reactors, And Its Dependencies
 
 itemGroup.galacticraftVenusTab=Galacticraft Venus
 
@@ -79,3 +80,7 @@ dimension.Venus.name=Venus
 entity.EvolvedBlaze.name=Evolved Blaze
 entity.EvolvedBlazeBoss.name=Evolved Blaze Boss
 entity.VenusianVillager.name=Venusian Villager
+
+entity.GalacticraftCore.EvolvedBlaze.name=Evolved Blaze
+entity.GalacticraftCore.EvolvedBlazeBoss.name=Evolved Blaze Boss
+entity.GalacticraftCore.VenusianVillager.name=Venusian Villager

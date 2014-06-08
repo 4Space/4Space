@@ -15,7 +15,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GCVenusRenderEvolvedBlaze extends RenderLiving
 {
-    private static final ResourceLocation blazeTextures = new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/model/EvolvedBlaze.png");
+    static final ResourceLocation blazeTextures = new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/model/EvolvedBlaze.png");
     private int field_77068_a;
 
     public GCVenusRenderEvolvedBlaze()

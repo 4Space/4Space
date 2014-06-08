@@ -30,16 +30,16 @@ public class GCMercuryItems
     {    	
         GCMercuryItems.mercuryItemBasic = new GCMercuryItem(ConfigManager.idItemMercuryBasic);
 
-        GCMercuryItems.iridiumPickaxe = new GCMercuryItemPickaxe(ConfigManager.idToolIridiumPickaxe, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumPick");
-        GCMercuryItems.iridiumAxe = new GCMercuryItemAxe(ConfigManager.idToolIridiumAxe, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumAxe");
-        GCMercuryItems.iridiumHoe = new GCMercuryItemHoe(ConfigManager.idToolIridiumHoe, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumHoe");
-        GCMercuryItems.iridiumSpade = new GCMercuryItemSpade(ConfigManager.idToolIridiumSpade, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumSpade");
-        GCMercuryItems.iridiumSword = new GCMercuryItemSword(ConfigManager.idToolIridiumSword, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumSword");
+        GCMercuryItems.iridiumPickaxe = new GCMercuryItemPickaxe(ConfigManager.idToolMercuryIridiumPickaxe, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumPick");
+        GCMercuryItems.iridiumAxe = new GCMercuryItemAxe(ConfigManager.idToolMercuryIridiumAxe, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumAxe");
+        GCMercuryItems.iridiumHoe = new GCMercuryItemHoe(ConfigManager.idToolMercuryIridiumHoe, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumHoe");
+        GCMercuryItems.iridiumSpade = new GCMercuryItemSpade(ConfigManager.idToolMercuryIridiumSpade, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumSpade");
+        GCMercuryItems.iridiumSword = new GCMercuryItemSword(ConfigManager.idToolMercuryIridiumSword, GCMercuryItems.TOOLIRIDIUM).setUnlocalizedName("iridiumSword");
 
-        GCMercuryItems.iridiumHelmet = new GCMercuryItemIridiumArmor(ConfigManager.idArmorIridiumHelmet, GCMercuryItems.ARMORIRIDIUM, 7, 0, false).setUnlocalizedName("iridiumHelmet");
-        GCMercuryItems.iridiumChestplate = new GCMercuryItemIridiumArmor(ConfigManager.idArmorIridiumChestplate, GCMercuryItems.ARMORIRIDIUM, 7, 1, false).setUnlocalizedName("iridiumChestplate");
-        GCMercuryItems.iridiumLeggings = new GCMercuryItemIridiumArmor(ConfigManager.idArmorIridiumLeggings, GCMercuryItems.ARMORIRIDIUM, 7, 2, false).setUnlocalizedName("iridiumLeggings");
-        GCMercuryItems.iridiumBoots = new GCMercuryItemIridiumArmor(ConfigManager.idArmorIridiumBoots, GCMercuryItems.ARMORIRIDIUM, 7, 3, false).setUnlocalizedName("iridiumBoots");
+        GCMercuryItems.iridiumHelmet = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumHelmet, GCMercuryItems.ARMORIRIDIUM, 7, 0, false).setUnlocalizedName("iridiumHelmet");
+        GCMercuryItems.iridiumChestplate = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumChestplate, GCMercuryItems.ARMORIRIDIUM, 7, 1, false).setUnlocalizedName("iridiumChestplate");
+        GCMercuryItems.iridiumLeggings = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumLeggings, GCMercuryItems.ARMORIRIDIUM, 7, 2, false).setUnlocalizedName("iridiumLeggings");
+        GCMercuryItems.iridiumBoots = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumBoots, GCMercuryItems.ARMORIRIDIUM, 7, 3, false).setUnlocalizedName("iridiumBoots");
 
     	registerItems();
     }

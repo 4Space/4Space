@@ -13,13 +13,13 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCVenusItemPJetpack extends ItemArmor
+public class GCVenusItemGemJetpack extends ItemArmor
 {
 	public boolean active;
     public boolean attachedMask;
     private final EnumArmorMaterial material;
 
-    public GCVenusItemPJetpack(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, boolean breathable)
+    public GCVenusItemGemJetpack(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, boolean breathable)
     {
         super(par1, par2EnumArmorMaterial, par3, par4);
 		this.setMaxStackSize(1);
@@ -53,11 +53,11 @@ public class GCVenusItemPJetpack extends ItemArmor
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
     {
-        if (this.material == GCVenusItems.ARMORPJETPACK)
+        if (this.material == GCVenusItems.ARMORGEMJETPACK)
         {
-            if (stack.getItem().itemID == GCVenusItems.pJetpack.itemID)
+            if (stack.getItem().itemID == GCVenusItems.gemJetpack.itemID)
             {
-                return "textures/model/armor/pJetpack.png";
+                return "textures/model/armor/gemJetpack.png";
             }
         }
 

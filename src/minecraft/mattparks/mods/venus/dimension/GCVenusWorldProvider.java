@@ -233,7 +233,7 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier >= ConfigManager.VenusTierLevel;
+		return tier >= ConfigManager.venusTierLevel;
 	}
 
 	@Override

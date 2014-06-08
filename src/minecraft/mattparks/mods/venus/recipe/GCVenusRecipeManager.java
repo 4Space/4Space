@@ -34,13 +34,8 @@ public class GCVenusRecipeManager
 
     	// ARMOR AND TOOLS CRAFTING
     	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 11), new Object[] {  "III", "IRI", 'I', Item.ingotIron, 'R', Item.redstone });
-    	
     	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 10), new Object[] {  "IRI", "C C", 'I', Item.ingotIron, 'R', Item.redstone , 'C', Item.coal });
-    	
-    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.jetpack), new Object[] {  "TBT", 'B', "jetpackBody", 'T', "jetpackThruster" });
-    	
-    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.pJetpack), new Object[] {  "TCT", 'T', "jetpackThruster", 'C', GCVenusItems.gemChestplate, });
-    	
+
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemBoots), new Object[] {  "X X", "X X", 'X', "redGem" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemHelmet), new Object[] { "XXX", "X X", 'X', "redGem" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "redGem" });
@@ -50,6 +45,7 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemSpade), new Object[] { "X", "Y", "Y", 'X', "redGem", 'Y', Item.stick  });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemHoe), new Object[] { "XX", " Y", " Y", 'X', "redGem", 'Y', Item.stick  });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemAxe), new Object[] { "XX", "XY", " Y", 'X', "redGem", 'Y', Item.stick });
+        
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurHelmet), new Object[] { "XXX", "X X", 'X', "ingotSulfur" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "ingotSulfur" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurLeggings), new Object[] { "XXX", "X X", "X X", 'X', "ingotSulfur" });
@@ -59,13 +55,10 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurSpade), new Object[] { "X", "Y", "Y", 'X', "ingotSulfur", 'Y', Item.stick });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurHoe), new Object[] { "XX", " Y", " Y", 'X', "ingotSulfur", 'Y', Item.stick });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurAxe), new Object[] { "XX", "XY", " Y", 'X', "ingotSulfur", 'Y', Item.stick });
-       
-        // PLATE CRAFTING
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 7), new Object[] { "XX", "XY", 'X', "ingotUranium", 'Y', "venusRodDust" });
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 5), new Object[] { "XX", "XY", 'X', "ingotSulfur", 'Y', "venusRodDust" });
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 6), new Object[] { "XX", "XY", 'X', "redGem", 'Y', "venusRodDust" });
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 8), new Object[] { "XXX", "UUU", "YYY", 'X', "sulfurPlate", 'U', "uraniumPlate", 'Y', "redGemPlate" });
-        
+    	
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.jetpack), new Object[] {  "TBT", 'B', "jetpackBody", 'T', "jetpackThruster" });
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemJetpack), new Object[] {  "TBT", " C ", 'T', "jetpackThruster", 'B', "jetpackBody", 'C', GCVenusItems.gemChestplate });
+    	
         // OTHERS CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 12), new Object[] { "D D", " C ", "D D", 'D', "venusRodDust", 'C', "VenusCrystal" });
 

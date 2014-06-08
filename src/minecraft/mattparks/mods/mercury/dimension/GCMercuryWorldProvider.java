@@ -247,7 +247,7 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ConfigManager.MercuryTierLevel;
+		return tier > ConfigManager.mercuryTierLevel;
 	}
 
 	@Override

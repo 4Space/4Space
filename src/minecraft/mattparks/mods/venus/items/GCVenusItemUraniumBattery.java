@@ -23,7 +23,7 @@ public class GCVenusItemUraniumBattery extends ItemElectric
 	@Override
 	public float getMaxElectricityStored(ItemStack itemStack)
 	{
-		return 750000;
+		return 150000;
 	}
 
 	@Override

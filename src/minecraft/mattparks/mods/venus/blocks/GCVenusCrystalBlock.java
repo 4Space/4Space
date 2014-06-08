@@ -1,7 +1,5 @@
 package mattparks.mods.venus.blocks;
 
-import java.util.Random;
-
 import mattparks.mods.venus.GCVenus;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;

@@ -9,7 +9,9 @@ import mattparks.mods.mercury.items.GCMercuryItems;
 import mattparks.mods.mercury.network.GCMercuryPacketHandlerServer;
 import mattparks.mods.mercury.recipe.GCMercuryRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
+import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
+import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.creativetab.CreativeTabs;
@@ -70,6 +72,11 @@ public class GCMercury
 		MercuryBlocks.setHarvestLevels();
 
 		GCMercury.proxy.preInit(event);
+		
+		CompressorRecipes.addShapelessRecipe(new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 2), new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 0));
+		
+		CompressorRecipes.addRecipe(new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 1), "SUS", 'S', new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 2), 'U', new ItemStack(GCCoreItems.meteoricIronIngot, 1, 1));
+
 	}
 
 	@EventHandler

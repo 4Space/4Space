@@ -25,17 +25,12 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumHelmet), new Object[] { "XXX", "X X", 'X', "iridiumCrystals" });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "iridiumCrystals" });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumLeggings), new Object[] { "XXX", "X X", "X X", 'X', "iridiumCrystals" });
+        
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumSword), new Object[] { "X", "X", "Y", 'X', "iridiumCrystals", 'Y', Item.stick  });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumPickaxe), new Object[] { "XXX", " Y ", " Y ", 'X', "iridiumCrystals", 'Y',Item.stick  });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumSpade), new Object[] { "X", "Y", "Y", 'X', "iridiumCrystals", 'Y', Item.stick  });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumHoe), new Object[] { "XX", " Y", " Y", 'X', "iridiumCrystals", 'Y', Item.stick  });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumAxe), new Object[] { "XX", "XY", " Y", 'X', "iridiumCrystals", 'Y', Item.stick });
-
-        // PLATE CRAFTING
-        RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 2), new Object[] { "XX", "XX", 'X', "iridiumCrystals" });
-        RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 1), new Object[] { "XX", "XX", 'X', "iridiumPlate" });
-
-        // OTHERS CRAFTING
 
         // ITEM TO BLOCK
         RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.CaravanModule), new Object[] { "XYZ", "GJG", "GGG", 'X', Block.furnaceIdle, 'Y', Block.workbench , 'Z', Block.chest, 'G' , GCCoreItems.canvas, 'J' , new ItemStack(GCCoreItems.canister, 1, 0) });

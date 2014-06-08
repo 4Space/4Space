@@ -20,14 +20,14 @@ public class VenusBlocks
 	public static Block VenusCrystalBlock;
 	public static Block VenusSulfurOre;
 	public static Block VenusRedGemOre;
+	public static Block VenusUraniumOre;
 	public static Block VenusIronOre;
 	public static Block VenusCoalOre;
 	public static Block VenusTinOre;
-	public static Block VenusUraniumOre;
 	public static Block VenusCopperOre;
 	public static Block VenusCrystalOre;
 	public static Block FossilizedPlantOre;
-	public static Block VurnBerryBush;
+//	public static Block VurnBerryBush;
 	
 	public static void initBlocks()
 	{
@@ -39,7 +39,7 @@ public class VenusBlocks
 		
 		VenusBlocks.VenusBrick = new GCVenusBrick(ConfigManager.idBlockVenusBrick, null).setHardness(-1.0F).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick");
 		
-		VenusBlocks.EvolvedBlazeEgg = new GCVenusEgg(ConfigManager.idBlockEvolvedBlazeEgg).setHardness(-1.0F).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg");
+		VenusBlocks.EvolvedBlazeEgg = new GCVenusEgg(ConfigManager.idBlockVenusBlazeEgg).setHardness(-1.0F).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg");
 	
 		VenusBlocks.VenusRedGemBlock = new GCVenusBlock(ConfigManager.idBlockVenusRedGemBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusGemBlock").setTextureName("galacticraftvenus:gemBlock");
 
@@ -65,9 +65,9 @@ public class VenusBlocks
 
 		VenusBlocks.VenusCrystalOre = new GCVenusOre(ConfigManager.idBlockVenusCrystalOre, null).setHardness(-1.0F).setUnlocalizedName("VenusCrystalOre").setTextureName("galacticraftvenus:venusCrystalOre");
     
-		VenusBlocks.FossilizedPlantOre = new GCVenusOre(ConfigManager.idBlockFossilizedPlantOre, null).setHardness(-1.0F).setUnlocalizedName("FossilizedPlantOre").setTextureName("galacticraftvenus:fossilizedPlantOre");
+		VenusBlocks.FossilizedPlantOre = new GCVenusOre(ConfigManager.idBlockVenusFossilizedPlantOre, null).setHardness(-1.0F).setUnlocalizedName("FossilizedPlantOre").setTextureName("galacticraftvenus:fossilizedPlantOre");
 
-		VenusBlocks.VurnBerryBush = new GCVenusVurnBerryBush(ConfigManager.idBlockVurnBerryBush).setHardness(0.25F).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush");
+//		VenusBlocks.VurnBerryBush = (new GCVenusVurnBerryBush(ConfigManager.idBlockVurnBerryBush)).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush");
 	}
 
 	public static void setHarvestLevels()
@@ -106,7 +106,7 @@ public class VenusBlocks
 		
 		MinecraftForge.setBlockHarvestLevel(VenusBlocks.FossilizedPlantOre, "pickaxe", 1);
 		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VurnBerryBush, "pickaxe", 1);
+//		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VurnBerryBush, "pickaxe", 1);
 	}
 
 	public static void registerBlocks()
@@ -147,6 +147,6 @@ public class VenusBlocks
 		
 		GameRegistry.registerBlock(VenusBlocks.FossilizedPlantOre, ItemBlock.class, VenusBlocks.FossilizedPlantOre.getUnlocalizedName(), GCVenus.MODID);
 		
-		GameRegistry.registerBlock(VenusBlocks.VurnBerryBush, ItemBlock.class, VenusBlocks.VurnBerryBush.getUnlocalizedName(), GCVenus.MODID);
+//		GameRegistry.registerBlock(VenusBlocks.VurnBerryBush, ItemBlock.class, VenusBlocks.VurnBerryBush.getUnlocalizedName(), GCVenus.MODID);
 	}
 }

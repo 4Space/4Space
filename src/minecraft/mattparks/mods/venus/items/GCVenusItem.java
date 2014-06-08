@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.StatCollector;
-import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -35,11 +34,15 @@ public class GCVenusItem extends Item
 		{
 			par3List.add(StatCollector.translateToLocal("item.tier3.desc"));
 		}
-	}
-
-	//isFuel
-	public static boolean isFluidEqual(int itemDamage) {
-		return itemDamage == 3 || itemDamage == 1;
+		
+		else if (par1ItemStack != null && par1ItemStack.getItemDamage() == 3)
+		{
+			par3List.add(StatCollector.translateToLocal("item.bigreactors.desc"));
+		}
+		else if (par1ItemStack != null && par1ItemStack.getItemDamage() == 7)
+		{
+			par3List.add(StatCollector.translateToLocal("item.bigreactors.desc"));
+		}
 	}
 	
     @Override
