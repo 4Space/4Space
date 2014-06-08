@@ -68,7 +68,6 @@ tile.VenusTinOre.name=Tin Ore
 gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
 
 item.tier3.desc=Tier 3
-item.bigreactors.desc=Requires 4-Space Big Reactors, And Its Dependencies
 
 itemGroup.galacticraftVenusTab=Galacticraft Venus
 

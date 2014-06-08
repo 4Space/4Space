@@ -15,7 +15,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusItem extends Item
 {
-    public static String[] names = { "sulfurDust", "ingotSulfur", "redGem", "ingotUranium", "venusCrystal", "sulfurPlate", "redGemPlate", "uraniumPlate", "plateHeavyT3", "venusRodDust", "jetpackThruster", "jetpackBody", "venusPowerCrystal", "FossilizedPlant" };
+    public static String[] names = { "sulfurDust", "ingotSulfur", "redGem", "ingotUranium", "venusCrystal", "sulfurPlate", "redGemPlate", "uraniumPlate", "plateHeavyT3", "venusRodDust", "jetpackThruster", "jetpackBody", "venusPowerCrystal", 
+	//"FossilizedPlant" 
+	};
     protected Icon[] icons = new Icon[GCVenusItem.names.length];
 
     public GCVenusItem(int par1)
@@ -33,15 +35,6 @@ public class GCVenusItem extends Item
 		if (par1ItemStack != null && par1ItemStack.getItemDamage() == 8)
 		{
 			par3List.add(StatCollector.translateToLocal("item.tier3.desc"));
-		}
-		
-		else if (par1ItemStack != null && par1ItemStack.getItemDamage() == 3)
-		{
-			par3List.add(StatCollector.translateToLocal("item.bigreactors.desc"));
-		}
-		else if (par1ItemStack != null && par1ItemStack.getItemDamage() == 7)
-		{
-			par3List.add(StatCollector.translateToLocal("item.bigreactors.desc"));
 		}
 	}
 	

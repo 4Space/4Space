@@ -23,6 +23,7 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -79,14 +80,13 @@ public class GCVenus
 
 		GCVenus.proxy.preInit(event);
 		
-		CompressorRecipes.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 5), "SS", 'S', new ItemStack(GCVenusItems.venusItemBasic, 1, 0));
-		
+
 		CompressorRecipes.addShapelessRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 5), new ItemStack(GCVenusItems.venusItemBasic, 1, 1));
-		
+
 		CompressorRecipes.addShapelessRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 6), new ItemStack(GCVenusItems.venusItemBasic, 1, 2));
-		
+
 		CompressorRecipes.addShapelessRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 7), new ItemStack(GCVenusItems.venusItemBasic, 1, 3));
-		
+
 		CompressorRecipes.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 8), "SUR", 'S', new ItemStack(GCVenusItems.venusItemBasic, 1, 5), 'U', new ItemStack(GCVenusItems.venusItemBasic, 1, 6), 'R', new ItemStack(GCVenusItems.venusItemBasic, 1, 7));
 	}
 
