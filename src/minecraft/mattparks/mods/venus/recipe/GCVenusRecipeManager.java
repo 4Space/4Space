@@ -14,7 +14,7 @@ public class GCVenusRecipeManager
     {
     	// ORE DICTIONARY
     	OreDictionary.registerOre("ingotSulfur", new ItemStack(GCVenusItems.venusItemBasic, 1, 1));
-    	OreDictionary.registerOre("sulfurDust", new ItemStack(GCVenusItems.venusItemBasic, 1, 0));
+    	OreDictionary.registerOre("dustSulfur", new ItemStack(GCVenusItems.venusItemBasic, 1, 0));
     	OreDictionary.registerOre("redGem", new ItemStack(GCVenusItems.venusItemBasic, 1, 2));
     	OreDictionary.registerOre("ingotUranium", new ItemStack(GCVenusItems.venusItemBasic, 1, 3));
     	OreDictionary.registerOre("VenusCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 4));
@@ -62,7 +62,8 @@ public class GCVenusRecipeManager
         // OTHERS CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 12), new Object[] { "D D", " C ", "D D", 'D', "venusRodDust", 'C', "VenusCrystal" });
 
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 1), new Object[] { "XX", 'X', "sulfurDust" });
+        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 1), new Object[] { "XX", 'X', "dustSulfur" });
+		RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 2, 0), new Object[] { "X", 'X', "ingotSulfur" });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 4, 9), new Object[] { "X", 'X', GCVenusItems.venusRod });
 //        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.vurnBerry), new Object[] { "Y Y", " X ", "Y Y", 'X', "FossilizedPlant", 'Y', Item.bone });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusSulfurBattery, 1, 100), new Object[] { "TTT", "SIS", "TTT", 'T', "redGemPlate", 'I', VenusBlocks.VenusUraniumBlock, 'S', GCVenusItems.venusSulfurBattery });
