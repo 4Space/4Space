@@ -92,6 +92,7 @@ public class GCVenusItems
     public static void registerHarvestLevels()
     {
 		MinecraftForge.setToolClass(GCVenusItems.gemPickaxe, "pickaxe", 4);
+		MinecraftForge.setToolClass(GCVenusItems.gemPickaxe, "brickPickaxe", 4);
 		MinecraftForge.setToolClass(GCVenusItems.gemAxe, "axe", 4);
 		MinecraftForge.setToolClass(GCVenusItems.gemSpade, "shovel", 4);
 		MinecraftForge.setToolClass(GCVenusItems.sulfurPickaxe, "pickaxe", 4);

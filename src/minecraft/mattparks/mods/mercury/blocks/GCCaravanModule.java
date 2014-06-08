@@ -16,8 +16,6 @@ public class GCCaravanModule extends Block
     public GCCaravanModule(int par1, String name)
     {
         super(par1, Material.cloth);
-        this.setResistance(0.0F);
-        this.setHardness(2.0F);
         this.setUnlocalizedName(name);
         this.setStepSound(new StepSound("cloth", 0.0F, 1.0F));
     }

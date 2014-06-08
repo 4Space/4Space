@@ -46,7 +46,8 @@ public class GCMercuryItems
     
     public static void registerHarvestLevels()
     {
-		MinecraftForge.setToolClass(GCMercuryItems.iridiumPickaxe, "pickaxe", 4);
+    	MinecraftForge.setToolClass(GCMercuryItems.iridiumPickaxe, "pickaxe", 4);
+		MinecraftForge.setToolClass(GCMercuryItems.iridiumPickaxe, "brickPickaxe", 4);
 		MinecraftForge.setToolClass(GCMercuryItems.iridiumAxe, "axe", 4);
 		MinecraftForge.setToolClass(GCMercuryItems.iridiumSpade, "shovel", 4);
     }

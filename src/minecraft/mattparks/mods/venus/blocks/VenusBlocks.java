@@ -31,41 +31,41 @@ public class VenusBlocks
 	
 	public static void initBlocks()
 	{
-		VenusBlocks.VenusGrass = new GCVenusGrass(ConfigManager.idBlockVenusGrass, null).setHardness(-1.0F).setUnlocalizedName("VenusGrass").setTextureName("galacticraftvenus:grassVenus");
+		VenusBlocks.VenusGrass = new GCVenusGrass(ConfigManager.idBlockVenusGrass, null).setHardness(0.6F).setResistance(0.0F).setUnlocalizedName("VenusGrass").setTextureName("galacticraftvenus:grassVenus");
 		
-		VenusBlocks.VenusDirt = new GCVenusBlock(ConfigManager.idBlockVenusDirt, null).setHardness(-1.0F).setUnlocalizedName("VenusDirt").setTextureName("galacticraftvenus:dirtVenus");
+		VenusBlocks.VenusDirt = new GCVenusBlock(ConfigManager.idBlockVenusDirt, null).setHardness(1.0F).setResistance(0.0F).setUnlocalizedName("VenusDirt").setTextureName("galacticraftvenus:dirtVenus");
 		
-		VenusBlocks.VenusStone = new GCVenusBlock(ConfigManager.idBlockVenusStone, null).setHardness(-1.0F).setUnlocalizedName("VenusStone").setTextureName("galacticraftvenus:stoneVenus");
+		VenusBlocks.VenusStone = new GCVenusBlock(ConfigManager.idBlockVenusStone, null).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("VenusStone").setTextureName("galacticraftvenus:stoneVenus");
 		
-		VenusBlocks.VenusBrick = new GCVenusBrick(ConfigManager.idBlockVenusBrick, null).setHardness(-1.0F).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick");
+		VenusBlocks.VenusBrick = new GCVenusBrick(ConfigManager.idBlockVenusBrick, null).setHardness(25.0F).setResistance(6000000.0F).setUnlocalizedName("VenusBrick").setTextureName("galacticraftvenus:venusBrick");
 		
-		VenusBlocks.EvolvedBlazeEgg = new GCVenusEgg(ConfigManager.idBlockVenusBlazeEgg).setHardness(-1.0F).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg");
+		VenusBlocks.EvolvedBlazeEgg = new GCVenusEgg(ConfigManager.idBlockVenusBlazeEgg).setHardness(15.0F).setResistance(0.0F).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg");
 	
-		VenusBlocks.VenusRedGemBlock = new GCVenusBlock(ConfigManager.idBlockVenusRedGemBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusGemBlock").setTextureName("galacticraftvenus:gemBlock");
+		VenusBlocks.VenusRedGemBlock = new GCVenusBlock(ConfigManager.idBlockVenusRedGemBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusGemBlock").setTextureName("galacticraftvenus:gemBlock");
 
-		VenusBlocks.VenusSulfurBlock = new GCVenusBlock(ConfigManager.idBlockVenusSulfurBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusSulfurBlock").setTextureName("galacticraftvenus:sulfurBlock");
+		VenusBlocks.VenusSulfurBlock = new GCVenusBlock(ConfigManager.idBlockVenusSulfurBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusSulfurBlock").setTextureName("galacticraftvenus:sulfurBlock");
 
-		VenusBlocks.VenusUraniumBlock = new GCVenusBlock(ConfigManager.idBlockVenusUraniumBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusUraniumBlock").setTextureName("galacticraftvenus:uraniumBlock");
+		VenusBlocks.VenusUraniumBlock = new GCVenusBlock(ConfigManager.idBlockVenusUraniumBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusUraniumBlock").setTextureName("galacticraftvenus:uraniumBlock");
 
-		VenusBlocks.VenusCrystalBlock = new GCVenusCrystalBlock(ConfigManager.idBlockVenusCrystalBlock, null).setHardness(-1.0F).setUnlocalizedName("VenusCrystalBlock").setTextureName("galacticraftvenus:VenusCrystalBlock");
+		VenusBlocks.VenusCrystalBlock = new GCVenusCrystalBlock(ConfigManager.idBlockVenusCrystalBlock, null).setHardness(0.75F).setResistance(0.75F).setUnlocalizedName("VenusCrystalBlock").setTextureName("galacticraftvenus:VenusCrystalBlock");
 
-		VenusBlocks.VenusSulfurOre = new GCVenusOre(ConfigManager.idBlockVenusSulfurOre, null).setHardness(-1.0F).setUnlocalizedName("VenusSulfurOre").setTextureName("galacticraftvenus:sulfurOre");
+		VenusBlocks.VenusSulfurOre = new GCVenusOre(ConfigManager.idBlockVenusSulfurOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusSulfurOre").setTextureName("galacticraftvenus:sulfurOre");
 
-		VenusBlocks.VenusRedGemOre = new GCVenusOre(ConfigManager.idBlockVenusRedGemOre, null).setHardness(-1.0F).setUnlocalizedName("VenusGemOre").setTextureName("galacticraftvenus:gemOre");
+		VenusBlocks.VenusRedGemOre = new GCVenusOre(ConfigManager.idBlockVenusRedGemOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusGemOre").setTextureName("galacticraftvenus:gemOre");
 
-		VenusBlocks.VenusUraniumOre = new GCVenusOre(ConfigManager.idBlockVenusUraniumOre, null).setHardness(-1.0F).setUnlocalizedName("VenusUraniumOre").setTextureName("galacticraftvenus:uraniumOre");
+		VenusBlocks.VenusUraniumOre = new GCVenusOre(ConfigManager.idBlockVenusUraniumOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusUraniumOre").setTextureName("galacticraftvenus:uraniumOre");
 
-		VenusBlocks.VenusIronOre = new GCVenusOre(ConfigManager.idBlockVenusIronOre, null).setHardness(-1.0F).setUnlocalizedName("VenusIronOre").setTextureName("galacticraftvenus:ironOre");
+		VenusBlocks.VenusIronOre = new GCVenusOre(ConfigManager.idBlockVenusIronOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusIronOre").setTextureName("galacticraftvenus:ironOre");
 
-		VenusBlocks.VenusCoalOre = new GCVenusOre(ConfigManager.idBlockVenusCoalOre, null).setHardness(-1.0F).setUnlocalizedName("VenusCoalOre").setTextureName("galacticraftvenus:coalOre");
+		VenusBlocks.VenusCoalOre = new GCVenusOre(ConfigManager.idBlockVenusCoalOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusCoalOre").setTextureName("galacticraftvenus:coalOre");
 
-		VenusBlocks.VenusTinOre = new GCVenusOre(ConfigManager.idBlockVenusTinOre, null).setHardness(-1.0F).setUnlocalizedName("VenusTinOre").setTextureName("galacticraftvenus:tinOre");
+		VenusBlocks.VenusTinOre = new GCVenusOre(ConfigManager.idBlockVenusTinOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusTinOre").setTextureName("galacticraftvenus:tinOre");
 
-		VenusBlocks.VenusCopperOre = new GCVenusOre(ConfigManager.idBlockVenusCopperOre, null).setHardness(-1.0F).setUnlocalizedName("VenusCopperOre").setTextureName("galacticraftvenus:copperOre");
+		VenusBlocks.VenusCopperOre = new GCVenusOre(ConfigManager.idBlockVenusCopperOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusCopperOre").setTextureName("galacticraftvenus:copperOre");
 
-		VenusBlocks.VenusCrystalOre = new GCVenusOre(ConfigManager.idBlockVenusCrystalOre, null).setHardness(-1.0F).setUnlocalizedName("VenusCrystalOre").setTextureName("galacticraftvenus:venusCrystalOre");
+		VenusBlocks.VenusCrystalOre = new GCVenusOre(ConfigManager.idBlockVenusCrystalOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("VenusCrystalOre").setTextureName("galacticraftvenus:venusCrystalOre");
     
-		VenusBlocks.FossilizedPlantOre = new GCVenusOre(ConfigManager.idBlockVenusFossilizedPlantOre, null).setHardness(-1.0F).setUnlocalizedName("FossilizedPlantOre").setTextureName("galacticraftvenus:fossilizedPlantOre");
+		VenusBlocks.FossilizedPlantOre = new GCVenusOre(ConfigManager.idBlockVenusFossilizedPlantOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("FossilizedPlantOre").setTextureName("galacticraftvenus:fossilizedPlantOre");
 
 //		VenusBlocks.VurnBerryBush = (new GCVenusVurnBerryBush(ConfigManager.idBlockVurnBerryBush)).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush");
 	}

@@ -14,8 +14,6 @@ public class GCMercuryBrick extends Block
     public GCMercuryBrick(int par1, String name)
     {
         super(par1, Material.rock);
-        this.setResistance(0.0F);
-        this.setHardness(2.0F);
         this.setUnlocalizedName(name);
         this.setStepSound(new StepSound("stone", 0.0F, 1.0F));
     }

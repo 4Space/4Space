@@ -13,8 +13,6 @@ public class GCVenusCrystalBlock extends Block
     public GCVenusCrystalBlock(int par1, String name)
     {
         super(par1, Material.glass);
-        this.setResistance(0.0F);
-        this.setHardness(2.0F);
         this.setUnlocalizedName(name);
         this.setStepSound(new StepSound("glass", 0.0F, 1.0F));
     }
