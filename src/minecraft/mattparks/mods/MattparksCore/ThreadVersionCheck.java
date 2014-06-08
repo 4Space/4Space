@@ -36,11 +36,11 @@ public class ThreadVersionCheck extends Thread
 			return;
 		}
 
-		while (this.count < 3 && MattCore.remoteBuildVer == 0)
+		while (this.count < 3 && Version.remoteBuildVer == 0)
 		{
 			try
 			{
-				final URL url = new URL("http://version.mattparks.host22.com/MattparksCore.html");
+				final URL url = new URL("http://version.mattparks.webatu.com/MattCore.html");
 				final HttpURLConnection http = (HttpURLConnection) url.openConnection();
 				http.addRequestProperty("User-Agent", "Mozilla/4.76");
 				final BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
@@ -58,22 +58,22 @@ public class ThreadVersionCheck extends Thread
 
 						if (str2 != null && str2.length == 3)
 						{
-							MattCore.remoteMajVer = Integer.parseInt(str2[0]);
-							MattCore.remoteMinVer = Integer.parseInt(str2[1]);
-							MattCore.remoteBuildVer = Integer.parseInt(str2[2]);
+							Version.remoteMajVer = Integer.parseInt(str2[0]);
+							Version.remoteMinVer = Integer.parseInt(str2[1]);
+							Version.remoteBuildVer = Integer.parseInt(str2[2]);
 						}
 
-						if (MattCore.remoteMajVer > MattCore.LOCALMAJVERSION || MattCore.remoteMajVer == MattCore.LOCALMAJVERSION && MattCore.remoteMinVer > MattCore.LOCALMINVERSION || MattCore.remoteMajVer == MattCore.LOCALMAJVERSION && MattCore.remoteMinVer == MattCore.LOCALMINVERSION && MattCore.remoteBuildVer > MattCore.LOCALBUILDVERSION)
+						if (Version.remoteMajVer > Version.LOCALMAJVERSION || Version.remoteMajVer == Version.LOCALMAJVERSION && Version.remoteMinVer > Version.LOCALMINVERSION || Version.remoteMajVer == Version.LOCALMAJVERSION && Version.remoteMinVer == Version.LOCALMINVERSION && Version.remoteBuildVer > Version.LOCALBUILDVERSION)
 						{
 							Thread.sleep(5000);
 
 							if (sideToCheck.equals(Side.CLIENT))
 							{
-								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "Galacticraft Venus" + EnumColor.GREY + " version available! v" + String.valueOf(MattCore.remoteMajVer) + "." + String.valueOf(MattCore.remoteMinVer) + "." + String.valueOf(MattCore.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks.host22.com/");
+								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "Mattparks Core" + EnumColor.GREY + " version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks.webatu.com/mods/4-space");
 							}
 							else if (sideToCheck.equals(Side.SERVER))
 							{
-								Log.severe("New Mattparks mod versions available! v" + String.valueOf(MattCore.remoteMajVer) + "." + String.valueOf(MattCore.remoteMinVer) + "." + String.valueOf(MattCore.remoteBuildVer) + " http://mattparks.host22.com/");
+								Log.severe("New Mattparks mod versions available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + " http://mattparks.webatu.com/mods/4-space");
 							}
 						}
 					}
@@ -83,7 +83,7 @@ public class ThreadVersionCheck extends Thread
 			{
 			}
 
-			if (MattCore.remoteBuildVer == 0)
+			if (Version.remoteBuildVer == 0)
 			{
 				try
 				{
@@ -96,7 +96,7 @@ public class ThreadVersionCheck extends Thread
 			}
 			else
 			{
-				Log.info(StatCollector.translateToLocal("newversion.success.name") + " " + MattCore.remoteMajVer + "." + MattCore.remoteMinVer + "." + MattCore.remoteBuildVer);
+				Log.info(StatCollector.translateToLocal("newversion.success.name") + " " + Version.remoteMajVer + "." + Version.remoteMinVer + "." + Version.remoteBuildVer);
 			}
 
 			this.count++;

@@ -1,7 +1,7 @@
 package mattparks.mods.venus;
 
 import mattparks.mods.MattparksCore.ConfigManager;
-import mattparks.mods.MattparksCore.MattCore;
+import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.venus.blocks.VenusBlocks;
 import mattparks.mods.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.venus.dimension.GCVenusWorldProvider;
@@ -36,7 +36,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = GCVenus.NAME, version = MattCore.LOCALMAJVERSION + "." + MattCore.LOCALMINVERSION + "." + MattCore.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCVenus.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCVenus.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
 @NetworkMod(channels = { GCVenus.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCVenus
 {

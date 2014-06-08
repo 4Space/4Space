@@ -1,6 +1,6 @@
 package mattparks.mods.mercury;
 
-import mattparks.mods.MattparksCore.MattCore;
+import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.mercury.blocks.MercuryBlocks;
 import mattparks.mods.mercury.dimension.GCMercuryTeleportType;
 import mattparks.mods.mercury.dimension.GCMercuryWorldProvider;
@@ -33,7 +33,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = GCMercury.NAME, version = MattCore.LOCALMAJVERSION + "." + MattCore.LOCALMINVERSION + "." + MattCore.LOCALBUILDVERSION, useMetadata = true, modid = GCMercury.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCMercury.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCMercury.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
 @NetworkMod(channels = { GCMercury.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCMercury
 {
