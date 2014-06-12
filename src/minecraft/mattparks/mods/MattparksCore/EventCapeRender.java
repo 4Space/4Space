@@ -22,7 +22,7 @@ import cpw.mods.fml.common.Loader;
 
 public class EventCapeRender
 {
-    private final String serverLocation = "https://raw.githubusercontent.com/4-Space/Mattparks-Core-2.0/master/capes.txt";
+    private final String serverLocation = "https://github.com/4-Space/MattparksCapes/master/capes.txt";
     private final int timeout = 1000;
 
     private static final Graphics TEST_GRAPHICS = new BufferedImage(128, 128, BufferedImage.TYPE_INT_RGB).getGraphics();
