@@ -1,6 +1,6 @@
 package mattparks.mods.space.venus.items;
 
-import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.GCVenus;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;

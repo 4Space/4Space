@@ -1,6 +1,6 @@
 package mattparks.mods.space.mercury;
 
-import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.client.GCMapMercury;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
 import micdoodle8.mods.galacticraft.api.world.IGalaxy;

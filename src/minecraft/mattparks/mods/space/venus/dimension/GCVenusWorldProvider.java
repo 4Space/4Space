@@ -1,6 +1,6 @@
 package mattparks.mods.space.venus.dimension;
 
-import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.world.gen.GCVenusChunkProvider;
 import mattparks.mods.space.venus.world.gen.GCVenusWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;

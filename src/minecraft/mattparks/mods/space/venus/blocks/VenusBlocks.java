@@ -1,6 +1,6 @@
 package mattparks.mods.space.venus.blocks;
 
-import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.GCVenus;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

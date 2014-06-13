@@ -1,7 +1,7 @@
 package mattparks.mods.space.venus;
 
-import mattparks.mods.MattparksCore.ConfigManager;
 import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import mattparks.mods.space.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.space.venus.dimension.GCVenusWorldProvider;
@@ -23,7 +23,6 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;

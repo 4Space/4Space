@@ -1,6 +1,6 @@
 package mattparks.mods.space.mercury.dimension;
 
-import mattparks.mods.MattparksCore.ConfigManager;
+import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.world.gen.GCMercuryChunkProvider;
 import mattparks.mods.space.mercury.world.gen.GCMercuryWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
