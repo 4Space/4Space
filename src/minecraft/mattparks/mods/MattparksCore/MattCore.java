@@ -2,7 +2,6 @@ package mattparks.mods.MattparksCore;
 
 import java.io.File;
 
-import mattparks.mods.Version;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraftforge.common.MinecraftForge;
