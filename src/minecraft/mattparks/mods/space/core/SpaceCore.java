@@ -2,11 +2,14 @@ package mattparks.mods.space.core;
 
 import java.io.File;
 
+import mattparks.mods.space.core.thread.ThreadRequirementMissing;
 import mattparks.mods.MattparksCore.*;
+import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.util.CoreUtil;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -29,11 +32,13 @@ public class SpaceCore
 	public static final String CHANNEL = "SpaceCore";
 	public static final String CHANNELENTITIES = "SpaceCoreEntities";
 
-	@SidedProxy(clientSide = "mattparks.mods.space.core.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
+	@SidedProxy(clientSide = "mattparks.mods.space.core.client.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
 	public static CommonProxy proxy;
 
 	@Instance(SpaceCore.MODID)
 	public static SpaceCore instance;
+	
+	private static ThreadRequirementMissing missingRequirementThread;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -48,12 +53,6 @@ public class SpaceCore
     {
     	;
     }
-    
-	@EventHandler
-	public void serverInit(FMLServerStartedEvent event)
-	{
-		;
-	}
 
 	@EventHandler
 	public void postLoad(FMLPostInitializationEvent event)
@@ -83,6 +82,17 @@ public class SpaceCore
 		SpaceCore.proxy.init(event);
 	}
 	
+	@EventHandler
+	public void serverInit(FMLServerStartedEvent event)
+	{
+		if (SpaceCore.missingRequirementThread == null)
+		{
+			SpaceCore.missingRequirementThread = new ThreadRequirementMissing(FMLCommonHandler.instance().getEffectiveSide());
+			SpaceCore.missingRequirementThread.start();
+		}
+
+		CoreUtil.checkVersion(Side.SERVER);
+	}
 
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
@@ -104,5 +114,4 @@ public class SpaceCore
 	{
 		;
 	}
-
 }

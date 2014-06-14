@@ -1,4 +1,4 @@
-package mattparks.mods.MattparksCore;
+package mattparks.mods.space.core.util;
 
 import java.util.logging.Level;
 
@@ -8,11 +8,11 @@ public class Log
 {
 	public static void info(String message)
 	{
-		FMLRelaunchLog.log("Mattparks", Level.INFO, message);
+		FMLRelaunchLog.log("SpaceCore", Level.INFO, message);
 	}
 
 	public static void severe(String message)
 	{
-		FMLRelaunchLog.log("Mattparks", Level.SEVERE, message);
+		FMLRelaunchLog.log("SpaceCore", Level.SEVERE, message);
 	}
 }

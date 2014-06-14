@@ -1,10 +1,13 @@
-package mattparks.mods.MattparksCore;
+package mattparks.mods.space.core.thread;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.util.EnumColor;
+import mattparks.mods.space.core.util.Log;
 import net.minecraft.util.StatCollector;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -17,7 +20,7 @@ public class ThreadVersionCheck extends Thread
 
 	public ThreadVersionCheck()
 	{
-		super("Mattparks Core Version Check Thread");
+		super("SpaceCore Version Check Thread");
 	}
 
 	public static void startCheck(Side sideToCheck)
@@ -69,11 +72,11 @@ public class ThreadVersionCheck extends Thread
 
 							if (sideToCheck.equals(Side.CLIENT))
 							{
-								FMLClientHandler.instance().getClient().thePlayer.addChatMessage("New " + "Mattparks Core" + " version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + " http://mattparks.webatu.com/mods/4-space");
+								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "SpaceCore" + EnumColor.GREY + " version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks.webatu.com/mods-2/4-space");
 							}
 							else if (sideToCheck.equals(Side.SERVER))
 							{
-								Log.severe("New Mattparks mod versions available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + " http://mattparks.webatu.com/mods/4-space");
+								Log.severe("New Galacticraft version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + " http://mattparks.webatu.com/mods-2/4-space");
 							}
 						}
 					}

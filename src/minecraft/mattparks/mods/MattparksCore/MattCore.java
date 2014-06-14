@@ -53,8 +53,7 @@ public class MattCore
 	@EventHandler
 	public void serverInit(FMLServerStartedEvent event)
 	{
-		MattCore.checkVersion(Side.SERVER);
-		MattCore.checkVersion(Side.CLIENT);
+		;
 	}
 
 	@EventHandler
@@ -90,11 +89,6 @@ public class MattCore
 	public void serverStarting(FMLServerStartingEvent event)
 	{
 		;
-	}
-	
-	public static void checkVersion(Side side)
-	{
-		ThreadVersionCheck.startCheck(side);
 	}
 	
 	public void registerTileEntities()

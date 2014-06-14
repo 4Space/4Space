@@ -1,7 +1,8 @@
-package mattparks.mods.space.core;
+package mattparks.mods.space.core.client;
 
 import java.util.EnumSet;
 
+import mattparks.mods.space.core.CommonProxy;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -16,6 +17,11 @@ public class ClientProxy extends CommonProxy
         TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
     }
 
+	public static void registerHandlers()
+	{
+		TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
+	}
+	
 	public static class TickHandlerClient implements ITickHandler
 	{
 		@Override
