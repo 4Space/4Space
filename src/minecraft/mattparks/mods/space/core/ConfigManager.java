@@ -110,7 +110,13 @@ public class ConfigManager
     public static int venusTierLevel;
     public static boolean venusGenerateOtherMods;
     public static boolean disableVenusVillageGen;
-
+    
+    // GASS PLANETS
+    public static int jupiterTierLevel;
+    public static int saturnTierLevel;
+    public static int uranusTierLevel;
+    public static int neptuneTierLevel;
+    
 	private void setDefaultValues()
 	{
 		try
@@ -207,7 +213,14 @@ public class ConfigManager
 	        ConfigManager.venusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Tier Level", 2).getInt(2);
             ConfigManager.venusGenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Venus", false).getBoolean(false);        
             ConfigManager.disableVenusVillageGen = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Disable Venus Village Gen", false).getBoolean(false);  
-        }
+        
+            // GASS PLANETS
+	        ConfigManager.jupiterTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Jupiter Tier Level", 2).getInt(2);
+	        ConfigManager.saturnTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Saturn Tier Level", 2).getInt(2);
+	        ConfigManager.uranusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Uranus Tier Level", 2).getInt(2);
+	        ConfigManager.neptuneTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Neptune Tier Level", 2).getInt(2);
+ 
+		}
         catch (final Exception e)
         {
             FMLLog.log(Level.SEVERE, e, "Mattparks Config has a problem loading it's configuration");
