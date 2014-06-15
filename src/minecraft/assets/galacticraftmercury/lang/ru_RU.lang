@@ -1,0 +1,50 @@
+# Galacticraft Mercury Language File = RUSSIA RUSSIAN
+
+# GENERAL ITEMS
+item.iridiumCrystals.name=Иридиум Кристаллы
+item.iridiumPlate.name=Иридиум плиты
+item.iridiumPlate.name=Иридиум плиты
+item.plateHeavyT4.name=сверхпрочных плита
+
+# TOOLS
+item.iridiumAxe.name=Иридиум топор
+item.iridiumHoe.name=Иридиум мотыга
+item.iridiumPick.name=Иридиум Киркомотыга
+item.iridiumSpade.name=Иридиум Лопата
+item.iridiumSword.name=Иридиум Меч
+
+# ARMOR
+item.iridiumBoots.name=Иридиум Сапоги
+item.iridiumChestplate.name=Иридиум Бригантина
+item.iridiumHelmet.name=Иридиум шлем
+item.iridiumLeggings.name=Иридиум Леггинсы
+
+# BLOCKS
+tile.MercuryBrick.name=Меркурий Кирпич
+tile.MercuryCopperOre.name=Медная руда
+tile.MercuryDirt.name=Меркурий Грязь
+tile.MercuryMeteorBlock.name=Блок Метеор
+tile.MercuryMeteorOre.name=Метеор руды
+tile.MercuryGoldOre.name=Золотая руда
+tile.MercuryIridiumBlock.name=Блок Иридиум
+tile.MercuryIridiumOre.name=Иридиум руды
+tile.MercuryGrass.name=Меркурий Трава
+tile.MercuryStone.name=Меркурий Камень
+tile.MercuryTinOre.name=Оловянная руда
+tile.CaravanModule.name=Портативный Космический Палатка
+tile.CaravanModulePart.name=Караван Модуль Часть
+
+# GUI
+gui.choosePlanet.desc.mercury=Жилые#нет кислорода#тяжести: 38%
+
+item.tier4.desc=Tier 4
+
+itemGroup.galacticraftMercuryTab=Galacticraft Меркурий
+
+dimension.Mercury.name=Меркурий
+
+# Schematics
+
+# Entity
+
+

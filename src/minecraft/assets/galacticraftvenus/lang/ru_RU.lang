@@ -1,0 +1,85 @@
+# Galacticraft Venus Language File = RUSSIA RUSSIAN
+
+# GENERAL ITENS
+item.FossilizedPlant.name=Ископаемый завод
+item.ingotSulfur.name=серы Слиток
+item.plateHeavyT3.name=сверхпрочных плита
+item.redGem.name=красных-Gem
+item.redGemPlate.name=красных Gem плиты
+item.sulfurDust.name=серы пыли
+item.sulfurPlate.name=серы плиты
+item.venusSulfurBattery.name=серы одноклеточные батареи
+item.venusUraniumBattery.name=урана одноклеточные батареи
+item.venusCrystal.name=Венера Кристалл
+item.venusPowerCrystal.name=Венера кристалл силы
+item.venusRod.name=Венера Род
+item.venusRodDust.name=Венера Род Пыль
+item.vurnBerry.name=Vurn Берри
+item.jetpackThruster.name=реактивный ранец двигателя
+item.jetpackBody.name=реактивный ранец тела
+item.ingotUranium.name=урана Слиток
+item.uraniumPlate.name=урана плита
+
+# TOOLS
+item.gemAxe.name=красных Gem Топор
+item.gemHoe.name=красных Gem мотыга
+item.gemPick.name=красных Gem Киркомотыга
+item.gemSpade.name=красных Gem Лопата
+item.gemSword.name=красных Gem Меч
+item.sulfurAxe.name=серы топор
+item.sulfurHoe.name=серы мотыга
+item.sulfurPick.name=серы Киркомотыга
+item.sulfurSpade.name=серы Лопата
+item.sulfurSword.name=серы Меч
+
+# ARMOR
+item.gemBoots.name=Сапоги красных Gem
+item.gemChestplate.name=красных Gem Бригантина
+item.gemHelmet.name=красных Gem шлем
+item.gemLeggings.name=красных Gem Леггинсы
+item.sulfurBoots.name=серы Сапоги
+item.sulfurChestplate.name=серы Бригантина
+item.sulfurHelmet.name=серы шлем
+item.sulfurLeggings.name=серы Леггинсы
+item.jetpack.name=реактивный ранец
+item.gemJetpack.name=красных Gem реактивный ранец
+
+# BLOCKS
+tile.EvolvedBlazeEgg.name=Evolved Blaze Яйцо
+tile.FossilizedPlantOre.name=окаменелый завод руды
+tile.VenusBrick.name=Венера Кирпич
+tile.VenusCoalOre.name=Уголь Руда
+tile.VenusCopperOre.name=Медная руда
+tile.VenusCrystalOre.name=Кристальная руда
+tile.VenusDirt.name=Венера Грязь
+tile.VenusGemBlock.name=Блок красный-Gem
+tile.VenusGemOre.name=красных Gem руды
+tile.VenusUraniumOre.name=урановой руды
+tile.VenusGrass.name=Венера Трава
+tile.VenusIronOre.name=Железная руда
+tile.VenusUraniumBlock.name=Блок урана
+tile.VenusCrystalBlock.name=Блок Кристалл
+tile.VenusStone.name=Венера Камень
+tile.VenusSulfurBlock.name=Блок серы
+tile.VenusSulfurOre.name=серы руды
+tile.VenusTinOre.name=Оловянная руда
+
+# GUI
+gui.choosePlanet.desc.venus=Жилая#Нет Кислород#вес: 90%
+
+item.tier3.desc=Уровень 3
+
+itemGroup.galacticraftVenusTab=Galacticraft Венера
+
+dimension.Venus.name=Венера
+
+# Schematics
+
+# Entity
+entity.EvolvedBlaze.name=Evolved Blaze
+entity.EvolvedBlazeBoss.name=Evolved Blaze Босс
+entity.VenusianVillager.name=венерианский Селянин
+
+entity.GalacticraftCore.EvolvedBlaze.name=Evolved Blaze
+entity.GalacticraftCore.EvolvedBlazeBoss.name=Evolved Blaze Босс
+entity.GalacticraftCore.VenusianVillager.name=венерианский Селянин
