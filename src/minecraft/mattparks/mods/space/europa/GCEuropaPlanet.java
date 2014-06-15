@@ -1,44 +1,41 @@
-package mattparks.mods.space.uranus;
+package mattparks.mods.space.europa;
 
-import mattparks.mods.space.uranus.client.GCMapUranus;
+import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.europa.client.GCMapEuropa;
+import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
 import micdoodle8.mods.galacticraft.api.world.IGalaxy;
 import micdoodle8.mods.galacticraft.api.world.IMapObject;
 import micdoodle8.mods.galacticraft.api.world.IPlanet;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.world.WorldProvider;
 
-public class GCUranusPlanet implements IPlanet
+public class GCEuropaPlanet implements IPlanet
+//IMoon
 {
-	private final IMapObject uranus = new GCMapUranus();
+	private final IMapObject europa = new GCMapEuropa();
 
 	@Override
 	public String getName()
 	{
-		return "Uranus";
+		return "Europa";
 	}
 
 	@Override
 	public boolean isReachable()
 	{
-		return false;
-	}
-
-	@Override
-	public IGalaxy getParentGalaxy()
-	{
-		return GalacticraftCore.galaxyMilkyWay;
+		return true;
 	}
 
 	@Override
 	public IMapObject getMapObject()
 	{
-		return this.uranus;
+		return this.europa;
 	}
 
 	@Override
 	public boolean autoRegister()
 	{
-		return false;
+		return true;
 	}
 
 	@Override
@@ -50,13 +47,13 @@ public class GCUranusPlanet implements IPlanet
 	@Override
 	public Class<? extends WorldProvider> getWorldProvider()
 	{
-		return null;
+		return GCEuropaWorldProvider.class;
 	}
 
 	@Override
 	public int getDimensionID()
 	{
-		return -1;
+		return ConfigManager.dimensionIDEuropa;
 	}
 
 	@Override
@@ -64,4 +61,16 @@ public class GCUranusPlanet implements IPlanet
 	{
 		return true;
 	}
+
+	@Override
+	public IGalaxy getParentGalaxy() 
+	{
+		return GalacticraftCore.galaxyMilkyWay;
+	}
+
+//	@Override
+//	public IPlanet getParentPlanet() 
+//	{
+//		return GCJupiter.jupiter;
+//	}
 }

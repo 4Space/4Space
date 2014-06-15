@@ -1,12 +1,14 @@
-package mattparks.mods.space.neptune.client;
+package mattparks.mods.space.europa.client;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.util.ArrayList;
 import java.util.EnumSet;
 
-import mattparks.mods.space.neptune.CommonProxyNeptune;
-import mattparks.mods.space.neptune.GCNeptune;
+import mattparks.mods.space.europa.CommonProxyEuropa;
+import mattparks.mods.space.europa.GCEuropa;
+import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
+import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -30,7 +32,7 @@ import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-public class ClientProxyNeptune extends CommonProxyNeptune
+public class ClientProxyEuropa extends CommonProxyEuropa
 {
 	
     public class ClientPacketHandler implements IPacketHandler
@@ -82,7 +84,7 @@ public class ClientProxyNeptune extends CommonProxyNeptune
         @Override
         public String getLabel()
         {
-            return "Galacticraft Neptune Client";
+            return "Galacticraft Europa Client";
         }
 
         @Override
@@ -110,6 +112,19 @@ public class ClientProxyNeptune extends CommonProxyNeptune
             {
                 if (world != null)
                 {
+                    if (world.provider instanceof GCEuropaWorldProvider)
+                    {
+                        if (world.provider.getSkyRenderer() == null)
+                        {
+                            world.provider.setSkyRenderer(new GCEuropaSkyProvider());
+                        }
+
+                        if (world.provider.getCloudRenderer() == null)
+                        {
+                            world.provider.setCloudRenderer(new GCCoreCloudRenderer());
+                        }
+                    }
+                    
                     for (int i = 0; i < world.loadedEntityList.size(); i++)
                     {
                         final Entity e = (Entity) world.loadedEntityList.get(i);
@@ -144,7 +159,7 @@ public class ClientProxyNeptune extends CommonProxyNeptune
     public void init(FMLInitializationEvent event)
     {
         TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
-        NetworkRegistry.instance().registerChannel(new ClientPacketHandler(), GCNeptune.CHANNEL, Side.CLIENT);
+        NetworkRegistry.instance().registerChannel(new ClientPacketHandler(), GCEuropa.CHANNEL, Side.CLIENT);
     }
 
     @Override
@@ -156,6 +171,6 @@ public class ClientProxyNeptune extends CommonProxyNeptune
     @Override
     public void registerRenderInformation()
     {
-    	;
+        ;
     }
 }

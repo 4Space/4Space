@@ -1,6 +1,5 @@
 package mattparks.mods.space.jupiter;
 
-import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.jupiter.client.GCMapJupiter;
 import micdoodle8.mods.galacticraft.api.world.IGalaxy;
 import micdoodle8.mods.galacticraft.api.world.IMapObject;

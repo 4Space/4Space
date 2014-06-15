@@ -1,6 +1,5 @@
 package mattparks.mods.space.neptune;
 
-import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.neptune.client.GCMapNeptune;
 import micdoodle8.mods.galacticraft.api.world.IGalaxy;
 import micdoodle8.mods.galacticraft.api.world.IMapObject;

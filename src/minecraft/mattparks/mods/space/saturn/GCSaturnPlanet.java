@@ -1,6 +1,5 @@
 package mattparks.mods.space.saturn;
 
-import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.saturn.client.GCMapSaturn;
 import micdoodle8.mods.galacticraft.api.world.IGalaxy;
 import micdoodle8.mods.galacticraft.api.world.IMapObject;

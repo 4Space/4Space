@@ -2,11 +2,10 @@ package mattparks.mods.space.core;
 
 import java.io.File;
 
-import mattparks.mods.space.core.thread.ThreadRequirementMissing;
-import mattparks.mods.MattparksCore.*;
+import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.thread.ThreadRequirementMissing;
 import mattparks.mods.space.core.util.CoreUtil;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import cpw.mods.fml.common.FMLCommonHandler;

@@ -21,11 +21,7 @@ public class ConfigManager
 		}
 	}
     
-    // MERCURY
-    public static int dimensionIDMercury;
-    public static int mercuryTierLevel;
-    public static boolean mercuryGenerateOtherMods;
-    
+    // MERCURY    
     public static int idItemMercuryBasic;
     
     public static int idArmorMercuryIridiumHelmet;
@@ -52,6 +48,10 @@ public class ConfigManager
     public static int idBlockMercuryMeteorOre;
     public static int idBlockMercuryCaravanModule;
     public static int idBlockMercuryCaravanModulePart;
+    
+    public static int dimensionIDMercury;
+    public static int mercuryTierLevel;
+    public static boolean mercuryGenerateOtherMods;
     
     // VENUS
     public static int idItemVenusBasic;
@@ -113,9 +113,14 @@ public class ConfigManager
     
     // GASS PLANETS
     public static int jupiterTierLevel;
+    public static int dimensionIDEuropa;
+    
     public static int saturnTierLevel;
+    
     public static int uranusTierLevel;
+    
     public static int neptuneTierLevel;
+    
     
 	private void setDefaultValues()
 	{
@@ -216,6 +221,8 @@ public class ConfigManager
         
             // GASS PLANETS
 	        ConfigManager.jupiterTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Jupiter Tier Level", 2).getInt(2);
+            ConfigManager.dimensionIDEuropa = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension ID", -50).getInt(-50);
+            
 	        ConfigManager.saturnTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Saturn Tier Level", 2).getInt(2);
 	        ConfigManager.uranusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Uranus Tier Level", 2).getInt(2);
 	        ConfigManager.neptuneTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Neptune Tier Level", 2).getInt(2);
