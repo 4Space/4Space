@@ -2,11 +2,7 @@ package mattparks.mods.space.europa.world.gen;
 
 import java.util.Random;
 
-import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
-import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
-import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;

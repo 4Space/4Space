@@ -1,7 +1,6 @@
 package mattparks.mods.space.europa.blocks;
 
 import mattparks.mods.space.jupiter.GCJupiter;
-import mattparks.mods.space.mercury.GCMercury;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;

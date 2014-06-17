@@ -7,9 +7,6 @@ import mattparks.mods.space.jupiter.GCJupiter;
 import micdoodle8.mods.galacticraft.api.world.IMapObject;
 import micdoodle8.mods.galacticraft.api.world.IMoon;
 import micdoodle8.mods.galacticraft.api.world.IPlanet;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
-import micdoodle8.mods.galacticraft.moon.client.GCMoonMapPlanet;
-import micdoodle8.mods.galacticraft.moon.dimension.GCMoonWorldProvider;
 import net.minecraft.world.WorldProvider;
 
 public class GCEuropaPlanet implements IMoon

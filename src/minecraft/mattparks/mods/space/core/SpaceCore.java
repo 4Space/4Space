@@ -5,7 +5,6 @@ import java.io.File;
 import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.space.core.thread.ThreadRequirementMissing;
-import mattparks.mods.space.core.util.CoreUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -20,7 +19,6 @@ import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = SpaceCore.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION + "-" + Version.LOCALGITVERSION, useMetadata = true, modid = SpaceCore.MODID, dependencies = "required-after:" + MattCore.MODID + ";")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -89,8 +87,6 @@ public class SpaceCore
 			SpaceCore.missingRequirementThread = new ThreadRequirementMissing(FMLCommonHandler.instance().getEffectiveSide());
 			SpaceCore.missingRequirementThread.start();
 		}
-
-		CoreUtil.checkVersion(Side.SERVER);
 	}
 
 	@EventHandler

@@ -3,6 +3,7 @@ package mattparks.mods.MattparksCore;
 import java.io.File;
 import java.util.logging.Level;
 
+import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.FMLLog;
 
@@ -28,7 +29,7 @@ public class ConfigManager
         {
             ConfigManager.configuration.load();
             
-            ConfigManager.capesEnabled = ConfigManager.configuration.get("Capes", "Enable Mattparks Capes", true).getBoolean(true);
+            ConfigManager.capesEnabled = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Mattparks Capes", true).getBoolean(true);
         }
         catch (final Exception e)
         {

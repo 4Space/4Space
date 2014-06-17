@@ -5,7 +5,6 @@ import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import mattparks.mods.space.europa.dimension.GCEuropaTeleportType;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
 import mattparks.mods.space.europa.network.GCEuropaPacketHandlerServer;
-import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;

@@ -49,12 +49,6 @@ public class MattCore
             MinecraftForge.EVENT_BUS.register(new EventCapeRender());
         }
     }
-    
-	@EventHandler
-	public void serverInit(FMLServerStartedEvent event)
-	{
-		;
-	}
 
 	@EventHandler
 	public void postLoad(FMLPostInitializationEvent event)
@@ -84,7 +78,12 @@ public class MattCore
 		MattCore.proxy.init(event);
 	}
 	
-
+	@EventHandler
+	public void serverInit(FMLServerStartedEvent event)
+	{
+		Util.checkVersion(Side.SERVER);
+	}
+	
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
