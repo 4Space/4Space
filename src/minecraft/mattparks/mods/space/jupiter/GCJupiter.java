@@ -1,7 +1,7 @@
 package mattparks.mods.space.jupiter;
 
 import mattparks.mods.MattparksCore.Version;
-import mattparks.mods.space.europa.blocks.EuropaBlocks;
+import mattparks.mods.space.io.blocks.IoBlocks;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
@@ -43,7 +43,7 @@ public class GCJupiter
 	public static CreativeTabs galacticraftJupiterTab = new CreativeTabs("galacticraftJupiterTab") {
 		@Override
 		public ItemStack getIconItemStack() {
-			return new ItemStack(EuropaBlocks.EuropaSurface, 1, 0);
+			return new ItemStack(IoBlocks.IoSlab, 1, 0);
 		}
 	};
 	

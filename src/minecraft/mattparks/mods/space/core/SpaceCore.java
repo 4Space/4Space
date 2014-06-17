@@ -4,7 +4,6 @@ import java.io.File;
 
 import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.MattparksCore.Version;
-import mattparks.mods.space.core.thread.ThreadRequirementMissing;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -34,8 +33,6 @@ public class SpaceCore
 
 	@Instance(SpaceCore.MODID)
 	public static SpaceCore instance;
-	
-	private static ThreadRequirementMissing missingRequirementThread;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -82,11 +79,7 @@ public class SpaceCore
 	@EventHandler
 	public void serverInit(FMLServerStartedEvent event)
 	{
-		if (SpaceCore.missingRequirementThread == null)
-		{
-			SpaceCore.missingRequirementThread = new ThreadRequirementMissing(FMLCommonHandler.instance().getEffectiveSide());
-			SpaceCore.missingRequirementThread.start();
-		}
+		;
 	}
 
 	@EventHandler

@@ -116,6 +116,10 @@ public class ConfigManager
     public static int dimensionIDEuropa;
     public static int idBlockEuropaSurface;
     public static int idBlockEuropaIce;
+    public static int dimensionIDIo;
+    public static int idBlockIoSlab;
+    public static int idBlockIoFull;
+    public static int idBlockIoStone;
     
     public static int saturnTierLevel;
     
@@ -226,6 +230,10 @@ public class ConfigManager
             ConfigManager.dimensionIDEuropa = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension ID", -50).getInt(-50);
             ConfigManager.idBlockEuropaSurface = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaSurface", 809).getInt(809);
             ConfigManager.idBlockEuropaIce = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaIce", 810).getInt(810);
+            ConfigManager.dimensionIDIo = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Io Dimension ID", -51).getInt(-51);
+            ConfigManager.idBlockIoSlab = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoSlab", 820).getInt(820);
+            ConfigManager.idBlockIoFull = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoFull", 821).getInt(821);
+            ConfigManager.idBlockIoStone = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoStone", 822).getInt(822);
             
 	        ConfigManager.saturnTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Saturn Tier Level", 2).getInt(2);
 	        ConfigManager.uranusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Uranus Tier Level", 2).getInt(2);
