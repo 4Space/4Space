@@ -20,7 +20,7 @@ public class ThreadVersionCheck extends Thread
 
 	public ThreadVersionCheck()
 	{
-		super("SpaceCore Version Check Thread");
+		super("4-Space Version Check Thread");
 	}
 
 	public static void startCheck(Side sideToCheck)
@@ -72,11 +72,11 @@ public class ThreadVersionCheck extends Thread
 
 							if (sideToCheck.equals(Side.CLIENT))
 							{
-								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "SpaceCore" + EnumColor.GREY + " version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks.webatu.com/mods-2/4-space");
+								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "4-Space" + EnumColor.GREY + " version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + EnumColor.DARK_BLUE + " http://mattparks.webatu.com/mods-2/4-space");
 							}
 							else if (sideToCheck.equals(Side.SERVER))
 							{
-								Log.severe("New Galacticraft version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + " http://mattparks.webatu.com/mods-2/4-space");
+								Log.severe("New 4-Space version available! v" + String.valueOf(Version.remoteMajVer) + "." + String.valueOf(Version.remoteMinVer) + "." + String.valueOf(Version.remoteBuildVer) + " http://mattparks.webatu.com/mods-2/4-space");
 							}
 						}
 					}

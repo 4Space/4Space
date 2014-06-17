@@ -64,8 +64,8 @@ public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraf
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
 	{
-		final int var4 = (int) (par1 % 5832000L);
-		float var5 = (var4 + par3) / 5832000.0F - 0.25F;
+		final int var4 = (int) (par1 % 58320L);
+		float var5 = (var4 + par3) / 58320.0F - 0.25F;
 
 		if (var5 < 0.0F)
 		{

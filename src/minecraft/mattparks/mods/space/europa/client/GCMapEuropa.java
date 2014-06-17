@@ -8,38 +8,38 @@ import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 public class GCMapEuropa implements IMapObject
 {
 	@Override
-	public float getDistanceFromCenter() 
+	public float getPlanetSize()
 	{
-		return 0.38F;
+		return 0.31666666666666666666666666666667F;
 	}
 
 	@Override
-    public IGalaxy getParentGalaxy()
-    {
-        return GalacticraftCore.galaxyMilkyWay;
-    }
-
-	@Override
-	public float getPhaseShift() 
+	public float getDistanceFromCenter()
 	{
-		return 2350F;
+		return 38.0F;
 	}
 
 	@Override
-	public float getPlanetSize() 
+	public float getPhaseShift()
 	{
-		return 0.33191489361702127659574468085106F;
+		return 0.0F;
 	}
 
-    @Override
-    public ICelestialBodyRenderer getSlotRenderer()
-    {
-        return new GCEuropaSlotRender();
-    }
-
-    @Override
-	public float getStretchValue() 
+	@Override
+	public float getStretchValue()
 	{
-		return 11.86F;
+		return 0.01F;
+	}
+
+	@Override
+	public ICelestialBodyRenderer getSlotRenderer()
+	{
+		return new GCEuropaSlotRender();
+	}
+
+	@Override
+	public IGalaxy getParentGalaxy()
+	{
+		return GalacticraftCore.galaxyMilkyWay;
 	}
 }

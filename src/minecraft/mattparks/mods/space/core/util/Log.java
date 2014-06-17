@@ -8,11 +8,11 @@ public class Log
 {
 	public static void info(String message)
 	{
-		FMLRelaunchLog.log("SpaceCore", Level.INFO, message);
+		FMLRelaunchLog.log("4-Space", Level.INFO, message);
 	}
 
 	public static void severe(String message)
 	{
-		FMLRelaunchLog.log("SpaceCore", Level.SEVERE, message);
+		FMLRelaunchLog.log("4-Space", Level.SEVERE, message);
 	}
 }

@@ -114,6 +114,8 @@ public class ConfigManager
     // GASS PLANETS
     public static int jupiterTierLevel;
     public static int dimensionIDEuropa;
+    public static int idBlockEuropaSurface;
+    public static int idBlockEuropaIce;
     
     public static int saturnTierLevel;
     
@@ -222,6 +224,8 @@ public class ConfigManager
             // GASS PLANETS
 	        ConfigManager.jupiterTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Jupiter Tier Level", 2).getInt(2);
             ConfigManager.dimensionIDEuropa = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension ID", -50).getInt(-50);
+            ConfigManager.idBlockEuropaSurface = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaSurface", 809).getInt(809);
+            ConfigManager.idBlockEuropaIce = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaIce", 810).getInt(810);
             
 	        ConfigManager.saturnTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Saturn Tier Level", 2).getInt(2);
 	        ConfigManager.uranusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Uranus Tier Level", 2).getInt(2);

@@ -1,5 +1,7 @@
 package mattparks.mods.space.venus.entities;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mattparks.mods.space.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.entity.Entity;
@@ -7,28 +9,18 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySmallFireball;
+import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 {
-    /** Random offset used in floating behaviour */
     private float heightOffset = 0.5F;
 
-    /** ticks until heightOffset is randomized */
     private int heightOffsetUpdateTime;
     private int field_70846_g;
 
-    /** allows the mob the survive in space */
-	@Override
-	public boolean canBreath()
-	{
-		return true;
-	}
-	
     public GCVenusEntityEvolvedBlaze(World par1World)
     {
         super(par1World);
@@ -48,25 +40,16 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         this.dataWatcher.addObject(16, new Byte((byte)0));
     }
 
-    /**
-     * Returns the sound this mob makes while it's alive.
-     */
     protected String getLivingSound()
     {
         return "mob.blaze.breathe";
     }
 
-    /**
-     * Returns the sound this mob makes when it is hurt.
-     */
     protected String getHurtSound()
     {
         return "mob.blaze.hit";
     }
 
-    /**
-     * Returns the sound this mob makes on death.
-     */
     protected String getDeathSound()
     {
         return "mob.blaze.death";
@@ -78,18 +61,11 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         return 15728880;
     }
 
-    /**
-     * Gets how bright this entity is.
-     */
     public float getBrightness(float par1)
     {
         return 1.0F;
     }
 
-    /**
-     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-     * use this to react to sunlight and start to burn.
-     */
     public void onLivingUpdate()
     {
         if (!this.worldObj.isRemote)
@@ -131,9 +107,6 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         super.onLivingUpdate();
     }
 
-    /**
-     * Basic mob attack. Default to touch of death in EntityCreature. Overridden by each mob to define their attack.
-     */
     protected void attackEntity(Entity par1Entity, float par2)
     {
         if (this.attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > this.boundingBox.minY && par1Entity.boundingBox.minY < this.boundingBox.maxY)
@@ -156,7 +129,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
                     this.attackTime = 60;
                     this.func_70844_e(true);
                 }
-                else if (this.field_70846_g <= 5)
+                else if (this.field_70846_g <= 4)
                 {
                     this.attackTime = 6;
                 }
@@ -186,31 +159,18 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         }
     }
 
-    /**
-     * Called when the mob is falling. Calculates and applies fall damage.
-     */
     protected void fall(float par1) {}
 
-    /**
-     * Returns the item ID for the item the mob drops on death.
-     */
     protected int getDropItemId()
     {
         return GCVenusItems.venusRod.itemID;
     }
 
-    /**
-     * Returns true if the entity is on fire. Used by render to add the fire effect on rendering.
-     */
     public boolean isBurning()
     {
         return this.func_70845_n();
     }
 
-    /**
-     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
-     * par2 - Level of Looting used to kill this mob.
-     */
     protected void dropFewItems(boolean par1, int par2)
     {
         if (par1)
@@ -245,11 +205,14 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         this.dataWatcher.updateObject(16, Byte.valueOf(b0));
     }
 
-    /**
-     * Checks to make sure the light is not too bright where the mob is spawning
-     */
     protected boolean isValidLightLevel()
     {
         return true;
     }
+
+	@Override
+	public boolean canBreath() 
+	{
+		return true;
+	}
 }

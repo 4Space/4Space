@@ -2,8 +2,9 @@ package mattparks.mods.space.europa.client;
 
 import java.util.Random;
 
-import mattparks.mods.space.venus.GCVenus;
+import mattparks.mods.space.jupiter.GCJupiter;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
+import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.moon.dimension.GCMoonWorldProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -21,7 +22,8 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class GCEuropaSkyProvider extends IRenderHandler
 {
-	private static final ResourceLocation venusTexture = new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/gui/planets/Venus.png");	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
+	private static final ResourceLocation jupiterTexture = new ResourceLocation(GCJupiter.TEXTURE_DOMAIN, "textures/gui/planets/Jupiter.png");
+	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
 
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
@@ -138,18 +140,17 @@ public class GCEuropaSkyProvider extends IRenderHandler
 
 		GL11.glPushMatrix();
 
-		//SUN:
-        GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-        var12 = 30.0F;
-        FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.sunTexture);
-        var23.startDrawingQuads();
-        var23.addVertexWithUV(-var12, 75.0D, -var12, 0.0D, 0.0D);
-        var23.addVertexWithUV(var12, 75.0D, -var12, 1.0D, 0.0D);
-        var23.addVertexWithUV(var12, 75.0D, var12, 1.0D, 1.0D);
-        var23.addVertexWithUV(-var12, 75.0D, var12, 0.0D, 1.0D);
-        var23.draw();
+		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 5F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		var12 = 30.0F;
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.sunTexture);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, 400.0D, -var12, 0.0D, 0.0D);
+		var23.addVertexWithUV(var12, 400.0D, -var12, 1.0D, 0.0D);
+		var23.addVertexWithUV(var12, 400.0D, var12, 1.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 400.0D, var12, 0.0D, 1.0D);
+		var23.draw();
 
 		GL11.glPopMatrix();
 
@@ -157,19 +158,21 @@ public class GCEuropaSkyProvider extends IRenderHandler
 
 		GL11.glDisable(GL11.GL_BLEND);
 
-		// VENUS:
-        var12 = 0.5F;
-        GL11.glScalef(0.6F, 0.6F, 0.6F);
-        GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
-        GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-        FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.venusTexture);
-        var23.startDrawingQuads();
-        var23.addVertexWithUV(-var12, -100.0D, var12, 0, 1);
-        var23.addVertexWithUV(var12, -100.0D, var12, 1, 1);
-        var23.addVertexWithUV(var12, -100.0D, -var12, 1, 0);
-        var23.addVertexWithUV(-var12, -100.0D, -var12, 0, 0);
-        var23.draw();
+		// JUPITER:
+		var12 = 10.0F;
+		final float earthRotation = (float) (world.getSpawnPoint().posZ - mc.thePlayer.posZ) * 0.01F;
+		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		GL11.glRotatef(earthRotation, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.jupiterTexture);
+		world.getMoonPhase();
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, -15.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -15.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -15.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -15.0D, -var12, 0, 0);
+		var23.draw();
 
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glDisable(GL11.GL_BLEND);

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;
@@ -25,11 +26,12 @@ import net.minecraft.world.gen.ChunkProviderGenerate;
 
 public class GCEuropaChunkProvider extends ChunkProviderGenerate
 {
-	final short topBlockID = (short) Block.ice.blockID;
+	final short topBlockID = (short) EuropaBlocks.EuropaSurface.blockID;
 	final byte topBlockMeta = 5;
-	final short fillBlockID = (short) Block.ice.blockID;
+	final short fillBlockID = (short) EuropaBlocks.EuropaIce.blockID;
 	final byte fillBlockMeta = 3;
-	final short lowerBlockID = (short) Block.waterMoving.blockID;
+	final short lowerBlockID = (short) EuropaBlocks.EuropaIce.blockID;
+//	final short lowerBlockID = (short) Block.waterMoving.blockID;
 	final byte lowerBlockMeta = 4;
 
 	private final Random rand;
