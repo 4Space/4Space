@@ -3,7 +3,6 @@ package mattparks.mods.space.europa.client;
 import java.util.Random;
 
 import mattparks.mods.space.io.GCIo;
-import mattparks.mods.space.jupiter.GCJupiter;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import micdoodle8.mods.galacticraft.moon.dimension.GCMoonWorldProvider;
 import net.minecraft.client.Minecraft;

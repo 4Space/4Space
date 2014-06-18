@@ -20,7 +20,7 @@ public class ClientProxy extends CommonProxy
 	{
 		TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
 	}
-	
+
 	public static class TickHandlerClient implements ITickHandler
 	{
 		@Override

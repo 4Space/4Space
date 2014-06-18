@@ -70,6 +70,7 @@ public class ConfigManager
     public static int idArmorVenusGemBoots;
     public static int idVenusJetpack;
     public static int idVenusGemJetpack;
+    public static int idArmorVenusThermalLeggings;
 
     public static int idToolVenusSulfurSword;
     public static int idToolVenusSulfurPickaxe;
@@ -213,7 +214,8 @@ public class ConfigManager
             ConfigManager.idToolVenusSulfurSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurSpade", 7891).getInt(7891);
             ConfigManager.idToolVenusSulfurHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurHoe", 7892).getInt(7892);
             ConfigManager.idToolVenusSulfurAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurAxe", 7893).getInt(7893);
-
+            ConfigManager.idArmorVenusThermalLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusThermalLeggings", 7894).getInt(7894);
+            
             ConfigManager.idItemVenusBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusItemBasic", 7898).getInt(7898);
 
             ConfigManager.idEntityVenusEvolvedBlaze = ConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);

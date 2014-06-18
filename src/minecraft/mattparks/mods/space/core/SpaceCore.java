@@ -5,12 +5,10 @@ import java.io.File;
 import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.space.io.GCIo;
-import mattparks.mods.space.venus.GCVenus;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -37,6 +35,9 @@ public class SpaceCore
 	@SidedProxy(clientSide = "mattparks.mods.space.core.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
 	public static CommonProxy proxy;
 
+	public static final String TEXTURE_DOMAIN = "galacticraftspace";
+	public static final String TEXTURE_PREFIX = GCIo.TEXTURE_DOMAIN + ":";
+	
 	@Instance(SpaceCore.MODID)
 	public static SpaceCore instance;
 

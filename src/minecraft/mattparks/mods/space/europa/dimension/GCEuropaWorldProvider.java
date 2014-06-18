@@ -1,12 +1,12 @@
 package mattparks.mods.space.europa.dimension;
 
+import mattparks.mods.space.api.IThermal;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.europa.world.gen.GCEuropaChunkProvider;
 import mattparks.mods.space.europa.world.gen.GCEuropaWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
-import micdoodle8.mods.galacticraft.moon.world.gen.GCMoonWorldChunkManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
@@ -16,7 +16,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
+public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel, IThermal
 {
 	@Override
 	public void setDimension(int var1)
@@ -261,5 +261,11 @@ public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraf
 	public float getSoundVolReductionAmount()
 	{
 		return 20.0F;
+	}
+
+	@Override
+	public int getThermalLevelModifier() 
+	{
+		return -1;
 	}
 }

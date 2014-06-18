@@ -1,7 +1,6 @@
 package mattparks.mods.space.europa;
 
 import mattparks.mods.MattparksCore.Version;
-import mattparks.mods.space.core.PacketHandlerServer;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import mattparks.mods.space.europa.dimension.GCEuropaTeleportType;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
@@ -21,9 +20,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = GCEuropa.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION + "-" + Version.LOCALGITVERSION, useMetadata = true, modid = GCEuropa.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
 @NetworkMod(channels = { GCEuropa.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
@@ -58,7 +55,7 @@ public class GCEuropa
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		NetworkRegistry.instance().registerChannel(new PacketHandlerServer(), GCEuropa.CHANNEL, Side.SERVER);
+		;
 	}
 
 	public void registerTileEntities()
