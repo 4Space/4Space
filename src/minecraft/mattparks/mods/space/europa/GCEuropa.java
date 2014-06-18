@@ -1,10 +1,10 @@
 package mattparks.mods.space.europa;
 
 import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.PacketHandlerServer;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import mattparks.mods.space.europa.dimension.GCEuropaTeleportType;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
-import mattparks.mods.space.europa.network.GCEuropaPacketHandlerServer;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
@@ -58,7 +58,7 @@ public class GCEuropa
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		NetworkRegistry.instance().registerChannel(new GCEuropaPacketHandlerServer(), GCEuropa.CHANNEL, Side.SERVER);
+		NetworkRegistry.instance().registerChannel(new PacketHandlerServer(), GCEuropa.CHANNEL, Side.SERVER);
 	}
 
 	public void registerTileEntities()

@@ -4,7 +4,6 @@ import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.space.io.blocks.IoBlocks;
 import mattparks.mods.space.io.dimension.GCIoTeleportType;
 import mattparks.mods.space.io.dimension.GCIoWorldProvider;
-import mattparks.mods.space.io.network.GCIoPacketHandlerServer;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
@@ -58,7 +57,7 @@ public class GCIo
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		NetworkRegistry.instance().registerChannel(new GCIoPacketHandlerServer(), GCIo.CHANNEL, Side.SERVER);
+		;
 	}
 
 	public void registerTileEntities()

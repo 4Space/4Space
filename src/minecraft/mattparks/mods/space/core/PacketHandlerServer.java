@@ -1,4 +1,4 @@
-package mattparks.mods.space.venus.network;
+package mattparks.mods.space.core;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -17,7 +17,7 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.network.IPacketHandler;
 import cpw.mods.fml.common.network.Player;
 
-public class GCVenusPacketHandlerServer implements IPacketHandler
+public class PacketHandlerServer implements IPacketHandler
 {
 	@Override
 	public void onPacketData(INetworkManager manager, Packet250CustomPayload packet, Player p)
@@ -51,11 +51,11 @@ public class GCVenusPacketHandlerServer implements IPacketHandler
 		}
 		else if (packetType == 1)
 		{
-			FMLLog.severe("Galacticraft Venus: Received bad packet!");
+			FMLLog.severe("Galacticraft Mercury: Received bad packet!");
 		}
 		else if (packetType == 2)
 		{
-			FMLLog.severe("Galacticraft Venus: Received bad packet!");
+			FMLLog.severe("Galacticraft Mercury: Received bad packet!");
 		}
 		else if (packetType == 3)
 		{

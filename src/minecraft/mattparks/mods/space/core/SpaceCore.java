@@ -4,6 +4,10 @@ import java.io.File;
 
 import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.io.GCIo;
+import mattparks.mods.space.venus.GCVenus;
+import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
+import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -17,10 +21,12 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = SpaceCore.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION + "-" + Version.LOCALGITVERSION, useMetadata = true, modid = SpaceCore.MODID, dependencies = "required-after:" + MattCore.MODID + ";")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(channels = { SpaceCore.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class SpaceCore
 {
 	public static final String NAME = "Space Core";
@@ -28,7 +34,7 @@ public class SpaceCore
 	public static final String CHANNEL = "SpaceCore";
 	public static final String CHANNELENTITIES = "SpaceCoreEntities";
 
-	@SidedProxy(clientSide = "mattparks.mods.space.core.client.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
+	@SidedProxy(clientSide = "mattparks.mods.space.core.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
 	public static CommonProxy proxy;
 
 	@Instance(SpaceCore.MODID)
@@ -85,7 +91,7 @@ public class SpaceCore
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		;
+		NetworkRegistry.instance().registerChannel(new PacketHandlerServer(), SpaceCore.CHANNEL, Side.SERVER);
 	}
 
 	public void registerTileEntities()

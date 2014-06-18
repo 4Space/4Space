@@ -2,6 +2,7 @@ package mattparks.mods.space.europa.client;
 
 import java.util.Random;
 
+import mattparks.mods.space.io.GCIo;
 import mattparks.mods.space.jupiter.GCJupiter;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import micdoodle8.mods.galacticraft.moon.dimension.GCMoonWorldProvider;
@@ -21,8 +22,8 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class GCEuropaSkyProvider extends IRenderHandler
 {
-	private static final ResourceLocation jupiterTexture = new ResourceLocation(GCJupiter.TEXTURE_DOMAIN, "textures/gui/planets/Jupiter.png");
-	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
+	private static final ResourceLocation jupiterTexture = new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/planets/jupiter.png");
+	private static final ResourceLocation sunTexture = new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/planets/sun.png");
 
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
@@ -145,10 +146,10 @@ public class GCEuropaSkyProvider extends IRenderHandler
 		var12 = 30.0F;
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.sunTexture);
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, 400.0D, -var12, 0.0D, 0.0D);
-		var23.addVertexWithUV(var12, 400.0D, -var12, 1.0D, 0.0D);
-		var23.addVertexWithUV(var12, 400.0D, var12, 1.0D, 1.0D);
-		var23.addVertexWithUV(-var12, 400.0D, var12, 0.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 755.0D, -var12, 0.0D, 0.0D);
+		var23.addVertexWithUV(var12, 755.0D, -var12, 1.0D, 0.0D);
+		var23.addVertexWithUV(var12, 755.0D, var12, 1.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 755.0D, var12, 0.0D, 1.0D);
 		var23.draw();
 
 		GL11.glPopMatrix();
@@ -167,10 +168,10 @@ public class GCEuropaSkyProvider extends IRenderHandler
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.jupiterTexture);
 		world.getMoonPhase();
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -15.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -15.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -15.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -15.0D, -var12, 0, 0);
+		var23.addVertexWithUV(-var12, 75.0D, -var12, 0.0D, 0.0D);
+		var23.addVertexWithUV(var12, 75.0D, -var12, 1.0D, 0.0D);
+		var23.addVertexWithUV(var12, 75.0D, var12, 1.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 75.0D, var12, 0.0D, 1.0D);
 		var23.draw();
 
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

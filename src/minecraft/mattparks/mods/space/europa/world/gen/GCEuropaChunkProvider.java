@@ -1,5 +1,7 @@
 package mattparks.mods.space.europa.world.gen;
 
+import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -23,6 +25,8 @@ import net.minecraft.world.biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderGenerate;
+import net.minecraft.world.gen.MapGenBase;
+import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class GCEuropaChunkProvider extends ChunkProviderGenerate
 {
@@ -41,31 +45,39 @@ public class GCEuropaChunkProvider extends ChunkProviderGenerate
 	private final NoiseModule noiseGen3;
 	private final NoiseModule noiseGen4;
 
-	public GCEuropaBiomeDecorator biomedecoratorplanet = new GCEuropaBiomeDecorator();
+	public GCEuropaBiomeDecorator biomedecoratorplanet = new GCEuropaBiomeDecorator(GCEuropaBiomeGenBase.europaFlat);
 
+	private MapGenBase ravineGenerator = new GCEuropaGenCaves();
+    {
+        ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
+    }
+	
 	private final World worldObj;
+//	private final GCEuropaMapGenVillage villageGenerator = new GCEuropaMapGenVillage();
 
-//	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(MercuryBlocks.MercuryBrick.blockID, 14, 8, 16, 3);
+//	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(GCCoreBlocks.blockEuropa.blockID, 14, 8, 16, 3);
 
 	{
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.bossRooms.add(new GCMercuryRoomBoss(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.treasureRooms.add(new GCMercuryRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCEuropaRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.bossRooms.add(new GCEuropaRoomBoss(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.treasureRooms.add(new GCEuropaRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
 	}
 
 	private BiomeGenBase[] biomesForGeneration = { GCEuropaBiomeGenBase.europaFlat };
 
-	private static final int CRATER_PROB = 300;
+//	private final GCEuropaGenCaves caveGenerator = new GCEuropaGenCaves();
+
+	private static final int CRATER_PROB = 30000000;
 
 	// DO NOT CHANGE
 	private static final int MID_HEIGHT = 63;
@@ -214,6 +226,9 @@ public class GCEuropaChunkProvider extends ChunkProviderGenerate
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.createCraters(par1, par2, ids, meta);
 		this.replaceBlocksForBiome(par1, par2, ids, meta, this.biomesForGeneration);
+		byte[] abyte = new byte[32768];
+		this.ravineGenerator.generate(this, this.worldObj, par1, par2, abyte);
+//		this.caveGenerator.generate(this, this.worldObj, par1, par2, meta);
 //		this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 25, par2 * 16, par1, par2, ids, meta);
 
 		final Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
@@ -354,7 +369,7 @@ public class GCEuropaChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "MercuryLevelSource";
+		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "EuropaLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

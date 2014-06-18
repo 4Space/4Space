@@ -3,58 +3,61 @@ package mattparks.mods.space.europa.world.gen;
 import java.util.Random;
 
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
+import micdoodle8.mods.galacticraft.core.blocks.GCCoreBlocks;
+import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
 public class GCEuropaBiomeDecorator
 {
-	protected World currentWorld;
-	protected Random rand;
+	protected World worldObj;
+	protected Random randomGenerator;
 
 	protected int chunkX;
 	protected int chunkZ;
 
-//   protected WorldGenerator waterGen;
+//	protected WorldGenerator dirtGen;
 
-	public GCEuropaBiomeDecorator()
+	public GCEuropaBiomeDecorator(BiomeGenBase par1BiomeGenBase)
 	{
-//        this.waterGen = new GCCoreWorldGenMinableMeta(Block.waterMoving.blockID, 250, 6, false, EuropaBlocks.EuropaIce.blockID, 9); 
+//		this.dirtGen = new GCCoreWorldGenMinableMeta(GCCoreBlocks.blockMoon.blockID, 32, 3, true, GCCoreBlocks.blockMoon.blockID, 4);
 	}
 
-	public void decorate(World world, Random random, int chunkX, int chunkZ)
+	public void decorate(World worldObj, Random rand, int chunkX, int chunkZ)
 	{
-		if (this.currentWorld != null)
+		if (this.worldObj != null)
 		{
 			throw new RuntimeException("Already decorating!!");
 		}
 		else
 		{
-			this.currentWorld = world;
-			this.rand = random;
+			this.worldObj = worldObj;
+			this.randomGenerator = rand;
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
 			this.generateEuropa();
-			this.currentWorld = null;
-			this.rand = null;
+			this.worldObj = null;
+			this.randomGenerator = null;
 		}
 	}
 
-	protected void generateOre(int amountPerChunk, WorldGenerator worldGenerator, int minY, int maxY)
+	protected void genStandardOre1(int amountPerChunk, WorldGenerator worldGenerator, int minY, int maxY)
 	{
 		for (int var5 = 0; var5 < amountPerChunk; ++var5)
 		{
-			final int var6 = this.chunkX + this.rand.nextInt(16);
-			final int var7 = this.rand.nextInt(maxY - minY) + minY;
-			final int var8 = this.chunkZ + this.rand.nextInt(16);
-			worldGenerator.generate(this.currentWorld, this.rand, var6, var7, var8);
+			final int var6 = this.chunkX + this.randomGenerator.nextInt(16);
+			final int var7 = this.randomGenerator.nextInt(maxY - minY) + minY;
+			final int var8 = this.chunkZ + this.randomGenerator.nextInt(16);
+			worldGenerator.generate(this.worldObj, this.randomGenerator, var6, var7, var8);
 		}
 	}
 
 	protected void generateEuropa()
 	{
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
- //       this.generateOre(20, this.waterGen, 0, 100);
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
+		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
+//		this.genStandardOre1(20, this.dirtGen, 0, 200);
+		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}
 }

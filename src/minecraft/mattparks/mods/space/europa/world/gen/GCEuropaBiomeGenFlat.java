@@ -7,7 +7,7 @@ public class GCEuropaBiomeGenFlat extends GCEuropaBiomeGenBase
 		super(par1);
 		this.setBiomeName("europaFlat");
 		this.setColor(16711680);
-		this.minHeight = 2.5F;
+		this.minHeight = 0.4F;
 		this.maxHeight = 0.4F;
 	}
 }

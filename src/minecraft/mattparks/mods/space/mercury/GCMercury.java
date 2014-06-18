@@ -6,7 +6,6 @@ import mattparks.mods.space.mercury.dimension.GCMercuryTeleportType;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
 import mattparks.mods.space.mercury.event.GCMercuryEvents;
 import mattparks.mods.space.mercury.items.GCMercuryItems;
-import mattparks.mods.space.mercury.network.GCMercuryPacketHandlerServer;
 import mattparks.mods.space.mercury.recipe.GCMercuryRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
@@ -82,7 +81,7 @@ public class GCMercury
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		NetworkRegistry.instance().registerChannel(new GCMercuryPacketHandlerServer(), GCMercury.CHANNEL, Side.SERVER);
+		;
 	}
 
 	public void registerTileEntities()

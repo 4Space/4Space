@@ -9,7 +9,6 @@ import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.space.venus.entities.GCVenusEntityVenusianVillager;
 import mattparks.mods.space.venus.event.GCVenusEvents;
 import mattparks.mods.space.venus.items.GCVenusItems;
-import mattparks.mods.space.venus.network.GCVenusPacketHandlerServer;
 import mattparks.mods.space.venus.recipe.GCVenusRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
@@ -92,7 +91,7 @@ public class GCVenus
 	@EventHandler
 	public void serverStarting(FMLServerStartingEvent event)
 	{
-		NetworkRegistry.instance().registerChannel(new GCVenusPacketHandlerServer(), GCVenus.CHANNEL, Side.SERVER);
+		;
 	}
 
 	public void registerTileEntities()
