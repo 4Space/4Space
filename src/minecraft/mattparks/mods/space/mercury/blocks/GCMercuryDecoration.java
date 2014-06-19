@@ -1,5 +1,6 @@
-package mattparks.mods.space.venus.blocks;
+package mattparks.mods.space.mercury.blocks;
 
+import mattparks.mods.space.mercury.GCMercury;
 import mattparks.mods.space.venus.GCVenus;
 import micdoodle8.mods.galacticraft.api.block.IPartialSealableBlock;
 import net.minecraft.block.Block;
@@ -11,33 +12,22 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCVenusCrystalBlock extends Block implements IPartialSealableBlock
+public class GCMercuryDecoration extends Block implements IPartialSealableBlock
 {
-    public GCVenusCrystalBlock(int par1, String name)
+    public GCMercuryDecoration(int par1, String name)
     {
-        super(par1, Material.glass);
+        super(par1, Material.rock);
         this.setUnlocalizedName(name);
-        this.setStepSound(new StepSound("glass", 0.0F, 1.0F));
+        this.setStepSound(new StepSound("stone", 0.0F, 1.0F));
     }
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public CreativeTabs getCreativeTabToDisplayOn()
 	{
-		return GCVenus.galacticraftVenusTab;
+		return GCMercury.galacticraftMercuryTab;
 	}
 
-    @SideOnly(Side.CLIENT)
-    public int getRenderBlockPass()
-    {
-        return 1;
-    }
-    
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-    
 	@Override
 	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
 	{

@@ -42,11 +42,11 @@ public class VenusBlocks
 		
 		VenusBlocks.EvolvedBlazeEgg = new GCVenusEgg(ConfigManager.idBlockVenusBlazeEgg).setHardness(15.0F).setResistance(0.0F).setUnlocalizedName("EvolvedBlazeEgg").setTextureName("galacticraftvenus:evolvedBlazeEgg");
 	
-		VenusBlocks.VenusRedGemBlock = new GCVenusBlock(ConfigManager.idBlockVenusRedGemBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusGemBlock").setTextureName("galacticraftvenus:gemBlock");
+		VenusBlocks.VenusRedGemBlock = new GCVenusDecoration(ConfigManager.idBlockVenusRedGemBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusGemBlock").setTextureName("galacticraftvenus:gemBlock");
 
-		VenusBlocks.VenusSulfurBlock = new GCVenusBlock(ConfigManager.idBlockVenusSulfurBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusSulfurBlock").setTextureName("galacticraftvenus:sulfurBlock");
+		VenusBlocks.VenusSulfurBlock = new GCVenusDecoration(ConfigManager.idBlockVenusSulfurBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusSulfurBlock").setTextureName("galacticraftvenus:sulfurBlock");
 
-		VenusBlocks.VenusUraniumBlock = new GCVenusBlock(ConfigManager.idBlockVenusUraniumBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusUraniumBlock").setTextureName("galacticraftvenus:uraniumBlock");
+		VenusBlocks.VenusUraniumBlock = new GCVenusDecoration(ConfigManager.idBlockVenusUraniumBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("VenusUraniumBlock").setTextureName("galacticraftvenus:uraniumBlock");
 
 		VenusBlocks.VenusCrystalBlock = new GCVenusCrystalBlock(ConfigManager.idBlockVenusCrystalBlock, null).setHardness(0.75F).setResistance(0.75F).setUnlocalizedName("VenusCrystalBlock").setTextureName("galacticraftvenus:VenusCrystalBlock");
 

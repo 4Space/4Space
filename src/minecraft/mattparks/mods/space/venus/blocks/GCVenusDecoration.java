@@ -11,13 +11,13 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCVenusCrystalBlock extends Block implements IPartialSealableBlock
+public class GCVenusDecoration extends Block implements IPartialSealableBlock
 {
-    public GCVenusCrystalBlock(int par1, String name)
+    public GCVenusDecoration(int par1, String name)
     {
-        super(par1, Material.glass);
+        super(par1, Material.rock);
         this.setUnlocalizedName(name);
-        this.setStepSound(new StepSound("glass", 0.0F, 1.0F));
+        this.setStepSound(new StepSound("stone", 0.0F, 1.0F));
     }
 
 	@Override
@@ -27,17 +27,6 @@ public class GCVenusCrystalBlock extends Block implements IPartialSealableBlock
 		return GCVenus.galacticraftVenusTab;
 	}
 
-    @SideOnly(Side.CLIENT)
-    public int getRenderBlockPass()
-    {
-        return 1;
-    }
-    
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-    
 	@Override
 	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
 	{

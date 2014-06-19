@@ -5,6 +5,7 @@ item.iridiumCrystals.name=Иридиум Кристаллы
 item.iridiumPlate.name=Иридиум плиты
 item.iridiumPlate.name=Иридиум плиты
 item.plateHeavyT4.name=сверхпрочных плита
+item.redSlimeball.name=Красный Слизьбал
 
 # TOOLS
 item.iridiumAxe.name=Иридиум топор
@@ -33,6 +34,7 @@ tile.MercuryStone.name=Меркурий Камень
 tile.MercuryTinOre.name=Оловянная руда
 tile.CaravanModule.name=Портативный Космический Палатка
 tile.CaravanModulePart.name=Караван Модуль Часть
+tile.MercurySlimeBlock.name=Красный Слизь Блок
 
 # GUI
 gui.choosePlanet.desc.mercury=Жилые#нет кислорода#тяжести: 38%
@@ -46,5 +48,6 @@ dimension.Mercury.name=Меркурий
 # Schematics
 
 # Entity
+entity.EvolvedSlime.name=эволюционировали Слизь
 
-
+entity.GalacticraftCore.EvolvedSlime.name=эволюционировали Слизь

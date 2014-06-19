@@ -1,5 +1,6 @@
 package mattparks.mods.space.mercury.entity;
 
+import mattparks.mods.space.mercury.items.GCMercuryItems;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -66,7 +67,7 @@ public class GCMercuryEntityEvolvedSlime extends EntityLiving implements IMob, I
 
     protected String getEvolvedSlimeParticle()
     {
-        return "slime";
+        return "";
     }
 
     protected String getJumpSound()
@@ -163,7 +164,7 @@ public class GCMercuryEntityEvolvedSlime extends EntityLiving implements IMob, I
 
     protected void alterSquishAmount()
     {
-        this.squishAmount *= 0.6F;
+        this.squishAmount *= 0.9F;
     }
 
     protected int getJumpDelay()
@@ -233,7 +234,7 @@ public class GCMercuryEntityEvolvedSlime extends EntityLiving implements IMob, I
 
     protected int getDropItemId()
     {
-        return this.getEvolvedSlimeSize() == 1 ? Item.slimeBall.itemID : 0;
+        return this.getEvolvedSlimeSize() == 1 ? GCMercuryItems.redSlimeball.itemID : 0;
     }
 
 //    public boolean getCanSpawnHere()

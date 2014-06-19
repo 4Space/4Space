@@ -2,11 +2,14 @@ package mattparks.mods.space.mercury.blocks;
 
 import java.util.Random;
 
+import micdoodle8.mods.galacticraft.api.block.IPartialSealableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
-public class GCCaravanPart extends Block
+public class GCCaravanPart extends Block implements IPartialSealableBlock
 {
     public GCCaravanPart(int par1, String name)
     {
@@ -19,4 +22,10 @@ public class GCCaravanPart extends Block
     {
         return 0;
     }
+    
+	@Override
+	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
+	{
+		return true;
+	}
 }

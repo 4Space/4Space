@@ -2,9 +2,10 @@ package mattparks.mods.space.mercury.client;
 
 import java.util.Random;
 
+import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
 import mattparks.mods.space.venus.GCVenus;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
-import micdoodle8.mods.galacticraft.moon.dimension.GCMoonWorldProvider;
+import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GLAllocation;
@@ -21,7 +22,8 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class GCMercurySkyProvider extends IRenderHandler
 {
-	private static final ResourceLocation venusTexture = new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/gui/planets/Venus.png");	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
+	private static final ResourceLocation venusTexture = new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/gui/planets/Venus.png");	
+	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
 
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
@@ -78,11 +80,11 @@ public class GCMercurySkyProvider extends IRenderHandler
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc)
 	{
-		GCMoonWorldProvider gcProvider = null;
+		GCMercuryWorldProvider gcProvider = null;
 
-		if (world.provider instanceof GCMoonWorldProvider)
+		if (world.provider instanceof GCMercuryWorldProvider)
 		{
-			gcProvider = (GCMoonWorldProvider) world.provider;
+			gcProvider = (GCMercuryWorldProvider) world.provider;
 		}
 
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -138,18 +140,17 @@ public class GCMercurySkyProvider extends IRenderHandler
 
 		GL11.glPushMatrix();
 
-		//SUN:
-        GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-        var12 = 30.0F;
-        FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCMercurySkyProvider.sunTexture);
-        var23.startDrawingQuads();
-        var23.addVertexWithUV(-var12, 75.0D, -var12, 0.0D, 0.0D);
-        var23.addVertexWithUV(var12, 75.0D, -var12, 1.0D, 0.0D);
-        var23.addVertexWithUV(var12, 75.0D, var12, 1.0D, 1.0D);
-        var23.addVertexWithUV(-var12, 75.0D, var12, 0.0D, 1.0D);
-        var23.draw();
+		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 5F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		var12 = 30.0F;
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCMercurySkyProvider.sunTexture);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, 75.0D, -var12, 0.0D, 0.0D);
+		var23.addVertexWithUV(var12, 75.0D, -var12, 1.0D, 0.0D);
+		var23.addVertexWithUV(var12, 75.0D, var12, 1.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 75.0D, var12, 0.0D, 1.0D);
+		var23.draw();
 
 		GL11.glPopMatrix();
 

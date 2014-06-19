@@ -2,18 +2,15 @@
 {
   "modid": "MattCore",
   "name": "Mattparks Core",
-  "description": "Allows all of mattparks's mods to work in unison. It also adds capes if you have donated or contributed to one of mattparks mods",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "mcversion": "1.6.4",
-  "url": "http://mattparks5855.webege.com",
-  "updateUrl": "http://mattparks5855.webege.com",
-  "authors": [
-    "mattparks"
-  ],
-  "credits": "",
+  "description": "Mattparks Core allows any mod made by mattparks to work in unison.",
+  "credits": "Created by Mattparks",
   "logoFile": "",
-  "screenshots": [
-  ],
-  "parent":""
+  "url": "http://mattparks.hostei.com/",
+  "updateUrl": "",
+  "authors": [ "Mattparks" ],
+  "parent": "",
+  "screenshots": []
 }
 ]

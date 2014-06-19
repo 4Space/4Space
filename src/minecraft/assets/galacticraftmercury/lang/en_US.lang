@@ -5,6 +5,7 @@ item.iridiumCrystals.name=Iridium Crystals
 item.iridiumPlate.name=Iridium Plate
 item.iridiumPlate.name=Iridium Plate
 item.plateHeavyT4.name=Heavy-Duty Plate
+item.redSlimeball.name=Red Slimeball
 
 # TOOLS
 item.iridiumAxe.name=Iridium Axe
@@ -33,6 +34,7 @@ tile.MercuryStone.name=Mercury Stone
 tile.MercuryTinOre.name=Tin Ore
 tile.CaravanModule.name=Portable Space Tent
 tile.CaravanModulePart.name=Caravan Module Part
+tile.MercurySlimeBlock.name=Red Slime Block
 
 # GUI
 gui.choosePlanet.desc.mercury=Habitable#No Oxygen#Gravity: 38%
@@ -46,4 +48,7 @@ dimension.Mercury.name=Mercury
 # Schematics
 
 # Entity
+entity.EvolvedSlime.name=Evolved Slime
+
+entity.GalacticraftCore.EvolvedSlime.name=Evolved Slime
 

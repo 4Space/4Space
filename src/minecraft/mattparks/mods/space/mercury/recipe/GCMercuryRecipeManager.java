@@ -19,6 +19,7 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
       	OreDictionary.registerOre("iridiumPlate", new ItemStack(GCMercuryItems.mercuryItemBasic, 1, 2));
       	OreDictionary.registerOre("meteorBlock", new ItemStack(MercuryBlocks.MercuryMeteorBlock));
     	OreDictionary.registerOre("meteoricIronIngot", new ItemStack(GCCoreItems.meteoricIronIngot, 1, 0));
+    	OreDictionary.registerOre("redSlimeball", new ItemStack(GCMercuryItems.redSlimeball, 1, 0));
 
     	// ARMOR AND TOOLS CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumBoots), new Object[] {  "X X", "X X", 'X', "iridiumCrystals" });
@@ -33,10 +34,13 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.iridiumAxe), new Object[] { "XX", "XY", " Y", 'X', "iridiumCrystals", 'Y', Item.stick });
 
         // ITEM TO BLOCK
+        RecipeUtil.addRecipe(new ItemStack(Block.pistonStickyBase, 1, 1), new Object[] {"S", "P", 'S', "redSlimeball", 'P', Block.pistonBase});
+        
         RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.CaravanModule), new Object[] { "XYZ", "GJG", "GGG", 'X', Block.furnaceIdle, 'Y', Block.workbench , 'Z', Block.chest, 'G' , GCCoreItems.canvas, 'J' , new ItemStack(GCCoreItems.canister, 1, 0) });
 
         RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.MercuryIridiumBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "iridiumCrystals" });
         RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.MercuryMeteorBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "meteoricIronIngot" });
+        RecipeUtil.addRecipe(new ItemStack(MercuryBlocks.MercurySlimeBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "redSlimeball" });
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.BlackGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 0), new ItemStack(Block.glowStone, 1, 0));
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.BlueGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(Block.glowStone, 1, 0));
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.BrownGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 3), new ItemStack(Block.glowStone, 1, 0));
@@ -55,6 +59,7 @@ public class GCMercuryRecipeManager  //TODO CREATE CRAFTING
 //        GameRegistry.addShapelessRecipe(new ItemStack(MercuryBlocks.YellowGlowstone, 1, 0), new ItemStack(Item.dyePowder, 1, 11), new ItemStack(Block.glowStone, 1, 0));        
       
         // BLOCK TO ITEM
+        RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.redSlimeball, 9, 0), new Object[] { "X", 'X', MercuryBlocks.MercurySlimeBlock });
         RecipeUtil.addRecipe(new ItemStack(GCMercuryItems.mercuryItemBasic, 9, 0), new Object[] { "X", 'X', MercuryBlocks.MercuryIridiumBlock });
         RecipeUtil.addRecipe(new ItemStack(GCCoreItems.meteoricIronIngot, 9, 0), new Object[] { "X", 'X', MercuryBlocks.MercuryMeteorBlock });
 

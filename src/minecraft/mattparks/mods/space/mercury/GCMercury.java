@@ -1,5 +1,7 @@
 package mattparks.mods.space.mercury;
 
+import java.util.Random;
+
 import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
@@ -61,6 +63,8 @@ public class GCMercury
 	public static final String TEXTURE_DOMAIN = "galacticraftmercury";
 	public static final String TEXTURE_PREFIX = GCMercury.TEXTURE_DOMAIN + ":";
 
+	public static Random rand = new Random();
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -93,7 +97,7 @@ public class GCMercury
 
 	public void registerCreatures()
 	{
-        GCCoreUtil.registerGalacticraftCreature(GCMercuryEntityEvolvedSlime.class, "EvolvedSlime", ConfigManager.idEntityMercuryEvolvedSlime, 5349438, 8306542);
+        GCCoreUtil.registerGalacticraftCreature(GCMercuryEntityEvolvedSlime.class, "EvolvedSlime", ConfigManager.idEntityMercuryEvolvedSlime, 10489616, 8306542);
 	}
 
 	public void registerOtherEntities()

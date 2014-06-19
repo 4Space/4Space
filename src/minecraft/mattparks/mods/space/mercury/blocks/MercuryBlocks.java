@@ -23,6 +23,7 @@ public class MercuryBlocks
 	public static Block MercuryCopperOre;
 	public static Block CaravanModule;
 	public static Block CaravanModulePart;
+	public static Block MercurySlimeBlock;
 
 	
 	public static void initBlocks()
@@ -35,9 +36,9 @@ public class MercuryBlocks
 
 		MercuryBlocks.MercuryBrick = new GCMercuryBrick(ConfigManager.idBlockMercuryBrick, null).setHardness(1.0F).setResistance(0.0F).setUnlocalizedName( "MercuryBrick").setTextureName("galacticraftmercury:mercuryBrick");
 
-		MercuryBlocks.MercuryIridiumBlock = new GCMercuryBlock(ConfigManager.idBlockMercuryIridiumBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName( "MercuryIridiumBlock").setTextureName("galacticraftmercury:iridiumBlock");
+		MercuryBlocks.MercuryIridiumBlock = new GCMercuryDecoration(ConfigManager.idBlockMercuryIridiumBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName( "MercuryIridiumBlock").setTextureName("galacticraftmercury:iridiumBlock");
 
-		MercuryBlocks.MercuryMeteorBlock = new GCMercuryBlock(ConfigManager.idBlockMercuryMeteorBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("MercuryMeteorBlock").setTextureName("galacticraftmercury:meteorBlock");
+		MercuryBlocks.MercuryMeteorBlock = new GCMercuryDecoration(ConfigManager.idBlockMercuryMeteorBlock, null).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName("MercuryMeteorBlock").setTextureName("galacticraftmercury:meteorBlock");
 
 		MercuryBlocks.MercuryIridiumOre = new GCMercuryOre(ConfigManager.idBlockMercuryIridiumOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName( "MercuryIridiumOre").setTextureName("galacticraftmercury:iridiumOre");
 
@@ -52,6 +53,9 @@ public class MercuryBlocks
 		MercuryBlocks.CaravanModule = new GCCaravanModule(ConfigManager.idBlockMercuryCaravanModule, null).setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("CaravanModule").setTextureName("galacticraftmercury:caravanModule");
 
 		MercuryBlocks.CaravanModulePart = new GCCaravanPart(ConfigManager.idBlockMercuryCaravanModulePart, null).setHardness(1.0F).setResistance(2.0F).setUnlocalizedName("CaravanModulePart").setTextureName("galacticraftmercury:caravanModulePart");
+	
+		MercuryBlocks.MercurySlimeBlock = new GCMercurySlimeBlock(ConfigManager.idBlockMercurySlimeBlock, null).setHardness(1.0F).setResistance(2.0F).setUnlocalizedName("MercurySlimeBlock").setTextureName("galacticraftmercury:redSlimeBlock");
+
 	}
 
 	public static void setHarvestLevels()
@@ -83,5 +87,6 @@ public class MercuryBlocks
 		GameRegistry.registerBlock(MercuryBlocks.MercuryGoldOre, ItemBlock.class, MercuryBlocks.MercuryGoldOre.getUnlocalizedName(), GCMercury.MODID);
 		GameRegistry.registerBlock(MercuryBlocks.CaravanModule, ItemBlock.class, MercuryBlocks.CaravanModule.getUnlocalizedName(), GCMercury.MODID);
 		GameRegistry.registerBlock(MercuryBlocks.CaravanModulePart, ItemBlock.class, MercuryBlocks.CaravanModulePart.getUnlocalizedName(), GCMercury.MODID);	
+		GameRegistry.registerBlock(MercuryBlocks.MercurySlimeBlock, ItemBlock.class, MercuryBlocks.MercurySlimeBlock.getUnlocalizedName(), GCMercury.MODID);	
 	}
 }
