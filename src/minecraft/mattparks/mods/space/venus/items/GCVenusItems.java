@@ -35,21 +35,17 @@ public class GCVenusItems
     public static Item gemChestplate;
     public static Item gemLeggings;
     public static Item gemBoots;
-    
-    public static Item thermalLeggings;
-    
+
     public static Item venusRod;
     
     public static Item venusSulfurBattery;
     public static Item venusUraniumBattery;
     
     public static EnumArmorMaterial ARMORSULFUR = EnumHelper.addArmorMaterial("SULFUR", 15, new int[] { 1, 4, 2, 1 }, 7);
-    public static EnumToolMaterial TOOLSULFUR = EnumHelper.addToolMaterial("SULFUR", 3, 216, 2.5F, 0, 2);
+    public static EnumToolMaterial TOOLSULFUR = EnumHelper.addToolMaterial("SULFUR", 3, 416, 6.0F, 1, 2);
     
     public static EnumArmorMaterial ARMORGEM = EnumHelper.addArmorMaterial("GEM", 30, new int[] { 3, 8, 6, 3 }, 12);
     public static EnumToolMaterial TOOLGEM = EnumHelper.addToolMaterial("GEM", 3, 768, 5.0F, 2, 8);
-    
-    public static EnumArmorMaterial THERMALLEGGINGS = EnumHelper.addArmorMaterial("THERMALLEGGINGS", 200, new int[] { 0, 0, 0, 0 }, 0);
     
     public static EnumArmorMaterial ARMORJETPACK = EnumHelper.addArmorMaterial("JETPACK", 200, new int[] { 0, 0, 0, 0 }, 0);
     public static EnumArmorMaterial ARMORGEMJETPACK = EnumHelper.addArmorMaterial("GEMJETPACK", 30, new int[] { 0, 8, 0, 0 }, 8);
@@ -81,8 +77,6 @@ public class GCVenusItems
         GCVenusItems.gemChestplate = new GCVenusItemGemArmor(ConfigManager.idArmorVenusGemChestplate, GCVenusItems.ARMORGEM, 7, 1, false).setUnlocalizedName("gemChestplate");
         GCVenusItems.gemLeggings = new GCVenusItemGemArmor(ConfigManager.idArmorVenusGemLeggings, GCVenusItems.ARMORGEM, 7, 2, false).setUnlocalizedName("gemLeggings");
         GCVenusItems.gemBoots = new GCVenusItemGemArmor(ConfigManager.idArmorVenusGemBoots, GCVenusItems.ARMORGEM, 7, 3, false).setUnlocalizedName("gemBoots");
-
-        GCVenusItems.thermalLeggings = new GCVenusItemThermalArmor(ConfigManager.idArmorVenusThermalLeggings, GCVenusItems.THERMALLEGGINGS, 7, 2, false).setUnlocalizedName("thermalLeggings");
 
         GCVenusItems.venusRod = new GCVenusRod(ConfigManager.idItemVenusRod, null).setUnlocalizedName("venusRod").setTextureName("galacticraftvenus:venusRod");
         

@@ -1,6 +1,5 @@
 package mattparks.mods.space.io.dimension;
 
-import mattparks.mods.space.api.IThermal;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.io.world.gen.GCIoChunkProvider;
 import mattparks.mods.space.io.world.gen.GCIoWorldChunkManager;
@@ -15,7 +14,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, IThermal
+public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWorldProvider
 {
 	@Override
 	public void setDimension(int var1)
@@ -217,7 +216,7 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier >= ConfigManager.jupiterTierLevel;
+		return tier >= 2;
 	}
 
 	@Override
@@ -230,11 +229,5 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	public float getSoundVolReductionAmount()
 	{
 		return 10.0F;
-	}
-
-	@Override
-	public int getThermalLevelModifier() 
-	{
-		return 1;
 	}
 }

@@ -51,11 +51,11 @@ public class PacketHandlerServer implements IPacketHandler
 		}
 		else if (packetType == 1)
 		{
-			FMLLog.severe("Space Core: Received bad packet!");
+			FMLLog.severe("4-Space Core: Received bad packet!");
 		}
 		else if (packetType == 2)
 		{
-			FMLLog.severe("Space Core: Received bad packet!");
+			FMLLog.severe("4-Space Core: Received bad packet!");
 		}
 		else if (packetType == 3)
 		{

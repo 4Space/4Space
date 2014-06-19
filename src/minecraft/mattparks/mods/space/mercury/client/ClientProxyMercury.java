@@ -7,15 +7,23 @@ import java.util.EnumSet;
 
 import mattparks.mods.space.mercury.CommonProxyMercury;
 import mattparks.mods.space.mercury.GCMercury;
+import mattparks.mods.space.mercury.client.model.GCMercuryModelEvolvedSlime;
+import mattparks.mods.space.mercury.client.render.entitys.GCMercuryRenderEvolvedSlime;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
+import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
+import mattparks.mods.space.venus.client.render.entities.GCVenusRenderEvolvedBlaze;
+import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundPoolEntry;
 import net.minecraft.client.entity.EntityClientPlayerMP;
+import net.minecraft.client.model.ModelSlime;
 import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.client.renderer.entity.RenderSlime;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
@@ -173,9 +181,8 @@ public class ClientProxyMercury extends CommonProxyMercury
     @Override
     public void registerRenderInformation()
     {
-        RenderingRegistry.addNewArmourRendererPrefix("gem");
-        RenderingRegistry.addNewArmourRendererPrefix("sulfur");
-        RenderingRegistry.addNewArmourRendererPrefix("jetpack");
-        RenderingRegistry.addNewArmourRendererPrefix("pJetpack");
+        RenderingRegistry.addNewArmourRendererPrefix("iridium");
+        
+        RenderingRegistry.registerEntityRenderingHandler(GCMercuryEntityEvolvedSlime.class, new GCMercuryRenderEvolvedSlime(new GCMercuryModelEvolvedSlime(16), new GCMercuryModelEvolvedSlime(0), 0.25F));
     }
 }

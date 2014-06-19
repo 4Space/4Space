@@ -1,6 +1,5 @@
 package mattparks.mods.space.europa.dimension;
 
-import mattparks.mods.space.api.IThermal;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.europa.world.gen.GCEuropaChunkProvider;
 import mattparks.mods.space.europa.world.gen.GCEuropaWorldChunkManager;
@@ -16,7 +15,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel, IThermal
+public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
 {
 	@Override
 	public void setDimension(int var1)
@@ -248,7 +247,7 @@ public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraf
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ConfigManager.jupiterTierLevel;
+		return tier >= 2;
 	}
 
 	@Override
@@ -261,11 +260,5 @@ public class GCEuropaWorldProvider extends WorldProvider implements IGalacticraf
 	public float getSoundVolReductionAmount()
 	{
 		return 20.0F;
-	}
-
-	@Override
-	public int getThermalLevelModifier() 
-	{
-		return -1;
 	}
 }

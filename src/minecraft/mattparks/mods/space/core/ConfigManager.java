@@ -49,8 +49,9 @@ public class ConfigManager
     public static int idBlockMercuryCaravanModule;
     public static int idBlockMercuryCaravanModulePart;
     
+    public static int idEntityMercuryEvolvedSlime;
+    
     public static int dimensionIDMercury;
-    public static int mercuryTierLevel;
     public static boolean mercuryGenerateOtherMods;
     
     // VENUS
@@ -70,7 +71,6 @@ public class ConfigManager
     public static int idArmorVenusGemBoots;
     public static int idVenusJetpack;
     public static int idVenusGemJetpack;
-    public static int idArmorVenusThermalLeggings;
 
     public static int idToolVenusSulfurSword;
     public static int idToolVenusSulfurPickaxe;
@@ -102,31 +102,24 @@ public class ConfigManager
     public static int idBlockVurnBerryBush;
     public static int idBlockVenusUraniumBlock;
     public static int idBlockVenusCrystalBlock;
+    public static int idBlockVenusSulfurTorch;
     
     public static int idEntityVenusEvolvedBlaze;
-    public static int idEntityVenusGiantBlaze;
     public static int idEntityVenusianVillager;
 
     public static int dimensionIDVenus;
-    public static int venusTierLevel;
     public static boolean venusGenerateOtherMods;
     public static boolean disableVenusVillageGen;
     
-    // GASS PLANETS
-    public static int jupiterTierLevel;
+    // GAS PLANETS
     public static int dimensionIDEuropa;
     public static int idBlockEuropaSurface;
     public static int idBlockEuropaIce;
+    
     public static int dimensionIDIo;
     public static int idBlockIoSlab;
     public static int idBlockIoFull;
     public static int idBlockIoStone;
-    
-    public static int saturnTierLevel;
-    
-    public static int uranusTierLevel;
-    
-    public static int neptuneTierLevel;
     
     
 	private void setDefaultValues()
@@ -163,8 +156,9 @@ public class ConfigManager
 
             ConfigManager.idItemMercuryBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryBasic", 7855).getInt(7855);
 
+            ConfigManager.idEntityMercuryEvolvedSlime = ConfigManager.configuration.get("Entities", "idEntityMercuryEvolvedSlime", 196).getInt(196);
+            
             ConfigManager.dimensionIDMercury = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Dimension ID", -40).getInt(-40);
-            ConfigManager.mercuryTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Tier Level", 2).getInt(2);
             ConfigManager.mercuryGenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Mercury", false).getBoolean(false);        
         
             //VENUS
@@ -187,6 +181,7 @@ public class ConfigManager
             ConfigManager.idBlockVenusCrystalOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCrystalOre", 776).getInt(776);
             ConfigManager.idBlockVenusFossilizedPlantOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusFossilizedPlantOre", 777).getInt(777);
             ConfigManager.idBlockVurnBerryBush = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVurnBerryBush", 778).getInt(778);
+            ConfigManager.idBlockVenusSulfurTorch = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurTorch", 779).getInt(779);
 
             ConfigManager.idItemVurnBerry = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVurnBerry", 7870).getInt(7870);
             ConfigManager.idItemVenusSulfurBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusSulfurBattery", 7871).getInt(7871);
@@ -214,37 +209,29 @@ public class ConfigManager
             ConfigManager.idToolVenusSulfurSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurSpade", 7891).getInt(7891);
             ConfigManager.idToolVenusSulfurHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurHoe", 7892).getInt(7892);
             ConfigManager.idToolVenusSulfurAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurAxe", 7893).getInt(7893);
-            ConfigManager.idArmorVenusThermalLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusThermalLeggings", 7894).getInt(7894);
-            
+
             ConfigManager.idItemVenusBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusItemBasic", 7898).getInt(7898);
 
             ConfigManager.idEntityVenusEvolvedBlaze = ConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
             ConfigManager.idEntityVenusianVillager = ConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);
-            ConfigManager.idEntityVenusGiantBlaze = ConfigManager.configuration.get("Entities", "idEntityGiantBlaze", 195).getInt(195);
 
             ConfigManager.dimensionIDVenus = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Dimension ID", -41).getInt(-41);
-	        ConfigManager.venusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Tier Level", 2).getInt(2);
             ConfigManager.venusGenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Venus", false).getBoolean(false);        
             ConfigManager.disableVenusVillageGen = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Disable Venus Village Gen", false).getBoolean(false);  
         
-            // GASS PLANETS
-	        ConfigManager.jupiterTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Jupiter Tier Level", 2).getInt(2);
+            // GAS PLANETS
             ConfigManager.dimensionIDEuropa = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension ID", -50).getInt(-50);
             ConfigManager.idBlockEuropaSurface = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaSurface", 809).getInt(809);
             ConfigManager.idBlockEuropaIce = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaIce", 810).getInt(810);
+            
             ConfigManager.dimensionIDIo = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Io Dimension ID", -51).getInt(-51);
             ConfigManager.idBlockIoSlab = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoSlab", 820).getInt(820);
             ConfigManager.idBlockIoFull = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoFull", 821).getInt(821);
-            ConfigManager.idBlockIoStone = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoStone", 822).getInt(822);
-            
-	        ConfigManager.saturnTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Saturn Tier Level", 2).getInt(2);
-	        ConfigManager.uranusTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Uranus Tier Level", 2).getInt(2);
-	        ConfigManager.neptuneTierLevel = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Neptune Tier Level", 2).getInt(2);
- 
+            ConfigManager.idBlockIoStone = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoStone", 822).getInt(822); 
 		}
         catch (final Exception e)
         {
-            FMLLog.log(Level.SEVERE, e, "Mattparks Config has a problem loading it's configuration");
+            FMLLog.log(Level.SEVERE, e, "4-Space Core Config has a problem loading it's configuration");
         }
         finally
         {

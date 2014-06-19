@@ -26,7 +26,7 @@ public class ClientProxy extends CommonProxy
 		@Override
 		public String getLabel()
 		{
-			return "Space Core Client";
+			return "4-Space Core Client";
 		}
 
 		@Override

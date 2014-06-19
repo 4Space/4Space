@@ -6,6 +6,7 @@ import java.util.Random;
 
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
+import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
 import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomBoss;
 import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomChests;
 import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomEmpty;
@@ -378,6 +379,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
+			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 1, 1, 1));
 			return monsters;
 		}
 		else

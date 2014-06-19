@@ -1,0 +1,5 @@
+# Mattparks Core Language File = RUSSIA RUSSIAN
+
+# OTHER
+mattcore.failed.name=MattparksCore проверка обновлений не удалось! Попытка снова в 15 секунд
+mattcore.success.name=Найдено Mod версии Нового Mattparks в:

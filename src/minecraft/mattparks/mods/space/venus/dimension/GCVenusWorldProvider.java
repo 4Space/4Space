@@ -1,6 +1,5 @@
 package mattparks.mods.space.venus.dimension;
 
-import mattparks.mods.space.api.IThermal;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.world.gen.GCVenusChunkProvider;
 import mattparks.mods.space.venus.world.gen.GCVenusWorldChunkManager;
@@ -15,7 +14,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCVenusWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, IThermal
+public class GCVenusWorldProvider extends WorldProvider implements IGalacticraftWorldProvider
 {
 	@Override
 	public void setDimension(int var1)
@@ -234,7 +233,7 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier >= ConfigManager.venusTierLevel;
+		return tier >= 2;
 	}
 
 	@Override
@@ -247,11 +246,5 @@ public class GCVenusWorldProvider extends WorldProvider implements IGalacticraft
 	public float getSoundVolReductionAmount()
 	{
 		return 6.0F;
-	}
-
-	@Override
-	public int getThermalLevelModifier() 
-	{
-		return 1;
 	}
 }

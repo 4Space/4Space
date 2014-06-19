@@ -63,6 +63,7 @@ tile.VenusStone.name=Венера Камень
 tile.VenusSulfurBlock.name=Блок серы
 tile.VenusSulfurOre.name=серы руды
 tile.VenusTinOre.name=Оловянная руда
+tile.SulfurTorch.name=серы факел
 
 # GUI
 gui.choosePlanet.desc.venus=Жилая#Нет Кислород#вес: 90%

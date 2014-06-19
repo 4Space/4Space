@@ -12,9 +12,9 @@ public class GCEuropaBlock extends Block
 {
     public GCEuropaBlock(int par1, String name)
     {
-        super(par1, Material.ice);
+        super(par1, Material.rock);
         this.setUnlocalizedName(name);
-        this.setStepSound(new StepSound("ice", 0.0F, 1.0F));
+        this.setStepSound(new StepSound("rock", 0.0F, 1.0F));
     }
 
 	@Override

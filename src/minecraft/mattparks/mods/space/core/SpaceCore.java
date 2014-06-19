@@ -4,7 +4,6 @@ import java.io.File;
 
 import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.MattparksCore.Version;
-import mattparks.mods.space.io.GCIo;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;
@@ -23,20 +22,17 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = SpaceCore.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION + "-" + Version.LOCALGITVERSION, useMetadata = true, modid = SpaceCore.MODID, dependencies = "required-after:" + MattCore.MODID + ";")
+@Mod(name = SpaceCore.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = SpaceCore.MODID, dependencies = "required-after:" + MattCore.MODID + ";")
 @NetworkMod(channels = { SpaceCore.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class SpaceCore
 {
-	public static final String NAME = "Space Core";
+	public static final String NAME = "4-Space Core";
 	public static final String MODID = "SpaceCore";
 	public static final String CHANNEL = "SpaceCore";
 	public static final String CHANNELENTITIES = "SpaceCoreEntities";
 
 	@SidedProxy(clientSide = "mattparks.mods.space.core.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
 	public static CommonProxy proxy;
-
-	public static final String TEXTURE_DOMAIN = "galacticraftspace";
-	public static final String TEXTURE_PREFIX = GCIo.TEXTURE_DOMAIN + ":";
 	
 	@Instance(SpaceCore.MODID)
 	public static SpaceCore instance;

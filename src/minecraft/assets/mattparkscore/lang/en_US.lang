@@ -1,0 +1,5 @@
+# Mattparks Core Language File = UNITED STATES ENGLISH
+
+# OTHER
+mattcore.failed.name=MattparksCore update check failed! Trying again in 15 seconds
+mattcore.success.name=New Mattparks's Mod Versions found:

@@ -47,7 +47,7 @@ public class GCEuropaChunkProvider extends ChunkProviderGenerate
 
 	public GCEuropaBiomeDecorator biomedecoratorplanet = new GCEuropaBiomeDecorator(GCEuropaBiomeGenBase.europaFlat);
 
-	private MapGenBase ravineGenerator = new GCEuropaGenCaves();
+	private MapGenBase ravineGenerator = new GCEuropaGenRavine();
     {
         ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
     }

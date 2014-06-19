@@ -37,7 +37,7 @@ public class GCVenusItem extends Item
 			par3List.add(StatCollector.translateToLocal("item.tier3.desc"));
 		}
 	}
-	
+
     @Override
     public CreativeTabs getCreativeTab()
     {

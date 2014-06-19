@@ -1,6 +1,5 @@
 package mattparks.mods.space.mercury.dimension;
 
-import mattparks.mods.space.api.IThermal;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.world.gen.GCMercuryChunkProvider;
 import mattparks.mods.space.mercury.world.gen.GCMercuryWorldChunkManager;
@@ -16,7 +15,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCMercuryWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel, IThermal
+public class GCMercuryWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
 {
 	@Override
 	public void setDimension(int var1)
@@ -248,7 +247,7 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	@Override
 	public boolean canSpaceshipTierPass(int tier)
 	{
-		return tier > ConfigManager.mercuryTierLevel;
+		return tier >= 2;
 	}
 
 	@Override
@@ -261,11 +260,5 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	public float getSoundVolReductionAmount()
 	{
 		return 20.0F;
-	}
-
-	@Override
-	public int getThermalLevelModifier() 
-	{
-		return 1;
 	}
 }

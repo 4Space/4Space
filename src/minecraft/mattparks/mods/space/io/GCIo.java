@@ -22,7 +22,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-@Mod(name = GCIo.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION + "-" + Version.LOCALGITVERSION, useMetadata = true, modid = GCIo.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCIo.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCIo.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
 @NetworkMod(channels = { GCIo.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCIo
 {

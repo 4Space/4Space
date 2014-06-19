@@ -26,8 +26,8 @@ public class EuropaBlocks
 
 	public static void setHarvestLevels()
 	{
-		MinecraftForge.setBlockHarvestLevel(EuropaBlocks.EuropaSurface, "shovel", 1);
-		MinecraftForge.setBlockHarvestLevel(EuropaBlocks.EuropaIce, "shovel", 1);
+		MinecraftForge.setBlockHarvestLevel(EuropaBlocks.EuropaSurface, "pickaxe", 1);
+//		MinecraftForge.setBlockHarvestLevel(EuropaBlocks.EuropaIce, "shovel", 1);
 //		MinecraftForge.setBlockHarvestLevel(EuropaBlocks.EuropaMeteorOre, "pickaxe", 1);
 	}
 

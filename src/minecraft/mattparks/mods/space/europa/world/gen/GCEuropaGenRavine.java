@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
 
-public class GCEuropaGenCaves extends MapGenBase
+public class GCEuropaGenRavine extends MapGenBase
 {
     private float[] field_75046_d = new float[1024];
 
