@@ -28,7 +28,7 @@ public class ConfigManager
         {
             ConfigManager.configuration.load();
             
-            ConfigManager.capesEnabled = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Mattparks Capes", true).getBoolean(true);
+            ConfigManager.capesEnabled = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Mattparks donator capes", true).getBoolean(true);
         }
         catch (final Exception e)
         {

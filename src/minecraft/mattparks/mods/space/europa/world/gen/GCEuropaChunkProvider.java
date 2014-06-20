@@ -369,7 +369,7 @@ public class GCEuropaChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "EuropaLevelSource";
+		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "EuropaLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

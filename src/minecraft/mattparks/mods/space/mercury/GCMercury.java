@@ -11,7 +11,6 @@ import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
 import mattparks.mods.space.mercury.event.GCMercuryEvents;
 import mattparks.mods.space.mercury.items.GCMercuryItems;
 import mattparks.mods.space.mercury.recipe.GCMercuryRecipeManager;
-import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;

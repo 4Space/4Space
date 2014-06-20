@@ -45,22 +45,22 @@ public class GCIoChunkProvider extends ChunkProviderGenerate
 
 	private final World worldObj;
 
-//	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(MercuryBlocks.MercuryBrick.blockID, 14, 8, 16, 3);
+//	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(IoBlocks.IoBrick.blockID, 14, 8, 16, 3);
 
 	{
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.otherRooms.add(new GCMercuryRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.bossRooms.add(new GCMercuryRoomBoss(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-//		this.dungeonGenerator.treasureRooms.add(new GCMercuryRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomEmpty(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomSpawner(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.otherRooms.add(new GCIoRoomChests(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.bossRooms.add(new GCIoRoomBoss(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+//		this.dungeonGenerator.treasureRooms.add(new GCIoRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
 	}
 
 	private BiomeGenBase[] biomesForGeneration = { GCIoBiomeGenBase.europaFlat };
@@ -354,7 +354,7 @@ public class GCIoChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "MercuryLevelSource";
+		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "IoLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

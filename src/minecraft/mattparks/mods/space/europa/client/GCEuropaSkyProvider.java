@@ -23,6 +23,7 @@ public class GCEuropaSkyProvider extends IRenderHandler
 	private static final ResourceLocation jupiterTexture = new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/planets/jupiter.png");
 	private static final ResourceLocation sunTexture = new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/planets/sun.png");
 
+	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int starList;
 	public int glSkyList;
 	public int glSkyList2;
@@ -36,12 +37,12 @@ public class GCEuropaSkyProvider extends IRenderHandler
 		
 		// Bind stars to display list
 		GL11.glPushMatrix();
-		GL11.glNewList(this.starList, GL11.GL_COMPILE);
+		GL11.glNewList(this.starGLCallList, GL11.GL_COMPILE);
 		this.renderStars();
 		GL11.glEndList();
 		GL11.glPopMatrix();
-		
 		final Tessellator tessellator = Tessellator.instance;
+		this.glSkyList = this.starGLCallList + 1;
 		GL11.glNewList(this.glSkyList, GL11.GL_COMPILE);
 		final byte byte2 = 64;
 		final int i = 256 / byte2 + 2;
@@ -59,8 +60,9 @@ public class GCEuropaSkyProvider extends IRenderHandler
 				tessellator.draw();
 			}
 		}
-
+		
 		GL11.glEndList();
+		this.glSkyList2 = this.starGLCallList + 2;
 		GL11.glNewList(this.glSkyList2, GL11.GL_COMPILE);
 		f = -16F;
 		tessellator.startDrawingQuads();
@@ -158,6 +160,36 @@ public class GCEuropaSkyProvider extends IRenderHandler
         byte b0 = 16;
         tessellator1.setColorRGBA_F(afloat[0], afloat[1], afloat[2], 0.0F);
 
+        // Render sun aura
+        f10 = 20.0F;
+        tessellator1.addVertex((double)-f10, 500.0D, (double)-f10);
+        tessellator1.addVertex((double)0, 500.0D, (double)-f10 * 1.5F);
+        tessellator1.addVertex((double)f10, 500.0D, (double)-f10);
+        tessellator1.addVertex((double)f10 * 1.5F, 500.0D, (double)0);
+        tessellator1.addVertex((double)f10, 500.0D, (double)f10);
+        tessellator1.addVertex((double)0, 500.0D, (double)f10 * 1.5F);
+        tessellator1.addVertex((double)-f10, 500.0D, (double)f10);
+        tessellator1.addVertex((double)-f10 * 1.5F, 500.0D, (double)0);
+        tessellator1.addVertex((double)-f10, 500.0D, (double)-f10);
+
+        tessellator1.draw();
+        tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
+        tessellator1.setColorRGBA_F(f6, f7, f8, afloat[3]);
+        tessellator1.addVertex(0.0D, 100.0D, 0.0D);
+        tessellator1.setColorRGBA_F(afloat[0], afloat[1], afloat[2], 0.0F);
+
+        // Render larger sun aura
+        f10 = 40.0F;
+        tessellator1.addVertex((double)-f10, 500.0D, (double)-f10);
+        tessellator1.addVertex((double)0, 500.0D, (double)-f10 * 1.5F);
+        tessellator1.addVertex((double)f10, 500.0D, (double)-f10);
+        tessellator1.addVertex((double)f10 * 1.5F, 500.0D, (double)0);
+        tessellator1.addVertex((double)f10, 500.0D, (double)f10);
+        tessellator1.addVertex((double)0, 500.0D, (double)f10 * 1.5F);
+        tessellator1.addVertex((double)-f10, 500.0D, (double)f10);
+        tessellator1.addVertex((double)-f10 * 1.5F, 500.0D, (double)0);
+        tessellator1.addVertex((double)-f10, 500.0D, (double)-f10);
+
         tessellator1.draw();
         GL11.glPopMatrix();
         GL11.glShadeModel(GL11.GL_FLAT);
@@ -172,7 +204,6 @@ public class GCEuropaSkyProvider extends IRenderHandler
         GL11.glTranslatef(f7, f8, f9);
         GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-        
         // Render sun
         f10 = 14.0F;
         mc.renderEngine.bindTexture(sunTexture);
@@ -193,10 +224,10 @@ public class GCEuropaSkyProvider extends IRenderHandler
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(GCEuropaSkyProvider.jupiterTexture);
 		world.getMoonPhase();
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -65.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -65.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -65.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -65.0D, -var12, 0, 0);
+		var23.addVertexWithUV(-var12, -75.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -75.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -75.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -75.0D, -var12, 0, 0);
 		var23.draw();
 		
         GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -263,16 +294,16 @@ public class GCEuropaSkyProvider extends IRenderHandler
 
 	private void renderStars()
 	{
-		final Random rand = new Random(10842L);
+		final Random var1 = new Random(10842L);
 		final Tessellator var2 = Tessellator.instance;
 		var2.startDrawingQuads();
 
-		for (int starIndex = 0; starIndex < (GCCoreConfigManager.moreStars ? 35000 : 6000); ++starIndex)
+		for (int var3 = 0; var3 < (GCCoreConfigManager.moreStars ? 20000 : 6000); ++var3)
 		{
-			double var4 = rand.nextFloat() * 2.0F - 1.0F;
-			double var6 = rand.nextFloat() * 2.0F - 1.0F;
-			double var8 = rand.nextFloat() * 2.0F - 1.0F;
-			final double var10 = 0.15F + rand.nextFloat() * 0.1F;
+			double var4 = var1.nextFloat() * 2.0F - 1.0F;
+			double var6 = var1.nextFloat() * 2.0F - 1.0F;
+			double var8 = var1.nextFloat() * 2.0F - 1.0F;
+			final double var10 = 0.15F + var1.nextFloat() * 0.1F;
 			double var12 = var4 * var4 + var6 * var6 + var8 * var8;
 
 			if (var12 < 1.0D && var12 > 0.01D)
@@ -281,16 +312,16 @@ public class GCEuropaSkyProvider extends IRenderHandler
 				var4 *= var12;
 				var6 *= var12;
 				var8 *= var12;
-				final double var14 = var4 * (GCCoreConfigManager.moreStars ? rand.nextDouble() * 150D + 130D : 100.0D);
-				final double var16 = var6 * (GCCoreConfigManager.moreStars ? rand.nextDouble() * 150D + 130D : 100.0D);
-				final double var18 = var8 * (GCCoreConfigManager.moreStars ? rand.nextDouble() * 150D + 130D : 100.0D);
+				final double var14 = var4 * (GCCoreConfigManager.moreStars ? var1.nextDouble() * 100D + 150D : 100.0D);
+				final double var16 = var6 * (GCCoreConfigManager.moreStars ? var1.nextDouble() * 100D + 150D : 100.0D);
+				final double var18 = var8 * (GCCoreConfigManager.moreStars ? var1.nextDouble() * 100D + 150D : 100.0D);
 				final double var20 = Math.atan2(var4, var8);
 				final double var22 = Math.sin(var20);
 				final double var24 = Math.cos(var20);
 				final double var26 = Math.atan2(Math.sqrt(var4 * var4 + var8 * var8), var6);
 				final double var28 = Math.sin(var26);
 				final double var30 = Math.cos(var26);
-				final double var32 = rand.nextDouble() * Math.PI * 2.0D;
+				final double var32 = var1.nextDouble() * Math.PI * 2.0D;
 				final double var34 = Math.sin(var32);
 				final double var36 = Math.cos(var32);
 

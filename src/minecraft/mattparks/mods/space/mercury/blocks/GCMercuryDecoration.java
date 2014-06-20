@@ -1,7 +1,6 @@
 package mattparks.mods.space.mercury.blocks;
 
 import mattparks.mods.space.mercury.GCMercury;
-import mattparks.mods.space.venus.GCVenus;
 import micdoodle8.mods.galacticraft.api.block.IPartialSealableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StepSound;

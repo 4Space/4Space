@@ -20,10 +20,11 @@ public class ConfigManager
 			this.setDefaultValues();
 		}
 	}
+	
+    public static boolean GenerateOtherMods;
     
     // MERCURY    
     public static int idItemMercuryBasic;
-    
     public static int idItemMercuryRedSlimeball;
     
     public static int idArmorMercuryIridiumHelmet;
@@ -54,8 +55,8 @@ public class ConfigManager
     
     public static int idEntityMercuryEvolvedSlime;
     
+    public static int slimeSpawn;
     public static int dimensionIDMercury;
-    public static boolean mercuryGenerateOtherMods;
     
     // VENUS
     public static int idItemVenusBasic;
@@ -63,6 +64,8 @@ public class ConfigManager
     public static int idItemVenusUraniumBattery;
     public static int idItemVenusRod;
     public static int idItemVurnBerry;
+    public static int idVenusJetpack;
+    public static int idVenusGemJetpack;
 
     public static int idArmorVenusSulfurHelmet;
     public static int idArmorVenusSulfurChestplate;
@@ -72,8 +75,6 @@ public class ConfigManager
     public static int idArmorVenusGemChestplate;
     public static int idArmorVenusGemLeggings;
     public static int idArmorVenusGemBoots;
-    public static int idVenusJetpack;
-    public static int idVenusGemJetpack;
 
     public static int idToolVenusSulfurSword;
     public static int idToolVenusSulfurPickaxe;
@@ -111,7 +112,6 @@ public class ConfigManager
     public static int idEntityVenusianVillager;
 
     public static int dimensionIDVenus;
-    public static boolean venusGenerateOtherMods;
     public static boolean disableVenusVillageGen;
     
     // GAS PLANETS
@@ -130,8 +130,23 @@ public class ConfigManager
 		try
 		{
             ConfigManager.configuration.load();
-
+            ConfigManager.GenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on any 4-Space world", false).getBoolean(false);        
+            
             //MERCURY
+            ConfigManager.idItemMercuryBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryBasic", 7855).getInt(7855);
+            ConfigManager.idItemMercuryRedSlimeball = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryRedSlimeball", 7850).getInt(7850);
+
+            ConfigManager.idArmorMercuryIridiumHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumHelmet", 7841).getInt(7841);
+            ConfigManager.idArmorMercuryIridiumChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumChestplate", 7842).getInt(7842);
+            ConfigManager.idArmorMercuryIridiumLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumLeggings", 7843).getInt(7843);
+            ConfigManager.idArmorMercuryIridiumBoots = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumBoots", 7844).getInt(7844);
+            
+            ConfigManager.idToolMercuryIridiumSword = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumSword", 7845).getInt(7845);
+            ConfigManager.idToolMercuryIridiumPickaxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumPickaxe", 7846).getInt(7846);
+            ConfigManager.idToolMercuryIridiumSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumSpade", 7847).getInt(7847);
+            ConfigManager.idToolMercuryIridiumHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumHoe", 7848).getInt(7848);
+            ConfigManager.idToolMercuryIridiumAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumAxe", 7849).getInt(7849);
+            
             ConfigManager.idBlockMercuryGrass = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryGrass", 629).getInt(629);
             ConfigManager.idBlockMercuryDirt = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryDirt", 630).getInt(630);
             ConfigManager.idBlockMercuryStone = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryStone", 631).getInt(631);
@@ -146,27 +161,43 @@ public class ConfigManager
             ConfigManager.idBlockMercuryCaravanModule = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryCaravanModule", 640).getInt(640);
             ConfigManager.idBlockMercuryCaravanModulePart = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryCaravanModulePart", 641).getInt(641);
             ConfigManager.idBlockMercurySlimeBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercurySlimeBlock", 642).getInt(642);
-            
-            ConfigManager.idArmorMercuryIridiumHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumHelmet", 7841).getInt(7841);
-            ConfigManager.idArmorMercuryIridiumChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumChestplate", 7842).getInt(7842);
-            ConfigManager.idArmorMercuryIridiumLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumLeggings", 7843).getInt(7843);
-            ConfigManager.idArmorMercuryIridiumBoots = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumBoots", 7844).getInt(7844);
-            
-            ConfigManager.idToolMercuryIridiumSword = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumSword", 7845).getInt(7845);
-            ConfigManager.idToolMercuryIridiumPickaxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumPickaxe", 7846).getInt(7846);
-            ConfigManager.idToolMercuryIridiumSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumSpade", 7847).getInt(7847);
-            ConfigManager.idToolMercuryIridiumHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumHoe", 7848).getInt(7848);
-            ConfigManager.idToolMercuryIridiumAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolMercuryIridiumAxe", 7849).getInt(7849);
-            ConfigManager.idItemMercuryRedSlimeball = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryRedSlimeball", 7850).getInt(7850);
-
-            ConfigManager.idItemMercuryBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryBasic", 7855).getInt(7855);
 
             ConfigManager.idEntityMercuryEvolvedSlime = ConfigManager.configuration.get("Entities", "idEntityMercuryEvolvedSlime", 196).getInt(196);
             
+            ConfigManager.slimeSpawn = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Disable mercury Slime spawn. 0 = No spawn. 1 = Some spawn and 2 = Many spawn", 1).getInt(1);
+            
             ConfigManager.dimensionIDMercury = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Dimension ID", -40).getInt(-40);
-            ConfigManager.mercuryGenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Mercury", false).getBoolean(false);        
-        
+
+            
             //VENUS
+            ConfigManager.idItemVenusBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusItemBasic", 7898).getInt(7898);
+            ConfigManager.idItemVenusSulfurBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusSulfurBattery", 7871).getInt(7871);
+            ConfigManager.idItemVenusUraniumBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusUraniumBattery", 7872).getInt(7872);
+            ConfigManager.idItemVenusRod = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 7873).getInt(7873);
+            ConfigManager.idItemVurnBerry = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVurnBerry", 7870).getInt(7870);
+            ConfigManager.idVenusJetpack = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusJetpack", 7882).getInt(7882);       
+            ConfigManager.idVenusGemJetpack = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemJetpack", 7883).getInt(7883);
+            
+            ConfigManager.idArmorVenusGemHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemHelmet", 7874).getInt(7874);
+            ConfigManager.idArmorVenusGemChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemChestplate", 7875).getInt(7875);
+            ConfigManager.idArmorVenusGemLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemLeggings", 7876).getInt(7876);
+            ConfigManager.idArmorVenusGemBoots = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemBoots", 7877).getInt(7877);
+            ConfigManager.idArmorVenusSulfurHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurHelmet", 7878).getInt(7878);
+            ConfigManager.idArmorVenusSulfurChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurChestplate", 7879).getInt(7879);
+            ConfigManager.idArmorVenusSulfurLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurLeggings", 7880).getInt(7880);
+            ConfigManager.idArmorVenusSulfurBoots = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurBoots", 7881).getInt(7881);
+
+            ConfigManager.idToolVenusGemSword = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemSword", 7884).getInt(7884);
+            ConfigManager.idToolVenusGemPickaxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemPickaxe", 7885).getInt(7885);
+            ConfigManager.idToolVenusGemSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemSpade", 7886).getInt(7886);
+            ConfigManager.idToolVenusGemHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemHoe", 7887).getInt(7887);
+            ConfigManager.idToolVenusGemAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemAxe", 7888).getInt(7888);
+            ConfigManager.idToolVenusSulfurSword = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurSword", 7889).getInt(7889);
+            ConfigManager.idToolVenusSulfurPickaxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurPickaxe", 7890).getInt(7890);
+            ConfigManager.idToolVenusSulfurSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurSpade", 7891).getInt(7891);
+            ConfigManager.idToolVenusSulfurHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurHoe", 7892).getInt(7892);
+            ConfigManager.idToolVenusSulfurAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurAxe", 7893).getInt(7893);
+
             ConfigManager.idBlockVenusGrass = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusGrass", 760).getInt(760);
             ConfigManager.idBlockVenusDirt = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusDirt", 761).getInt(761);
             ConfigManager.idBlockVenusStone = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusStone", 762).getInt(762);
@@ -187,43 +218,15 @@ public class ConfigManager
             ConfigManager.idBlockVenusFossilizedPlantOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusFossilizedPlantOre", 777).getInt(777);
             ConfigManager.idBlockVurnBerryBush = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVurnBerryBush", 778).getInt(778);
             ConfigManager.idBlockVenusSulfurTorch = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurTorch", 779).getInt(779);
-
-            ConfigManager.idItemVurnBerry = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVurnBerry", 7870).getInt(7870);
-            ConfigManager.idItemVenusSulfurBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusSulfurBattery", 7871).getInt(7871);
-            ConfigManager.idItemVenusUraniumBattery = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusUraniumBattery", 7872).getInt(7872);
-            ConfigManager.idItemVenusRod = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusRod", 7873).getInt(7873);
             
-            ConfigManager.idArmorVenusGemHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemHelmet", 7874).getInt(7874);
-            ConfigManager.idArmorVenusGemChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemChestplate", 7875).getInt(7875);
-            ConfigManager.idArmorVenusGemLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemLeggings", 7876).getInt(7876);
-            ConfigManager.idArmorVenusGemBoots = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemBoots", 7877).getInt(7877);
-            ConfigManager.idArmorVenusSulfurHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurHelmet", 7878).getInt(7878);
-            ConfigManager.idArmorVenusSulfurChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurChestplate", 7879).getInt(7879);
-            ConfigManager.idArmorVenusSulfurLeggings = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurLeggings", 7880).getInt(7880);
-            ConfigManager.idArmorVenusSulfurBoots = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusSulfurBoots", 7881).getInt(7881);
-            ConfigManager.idVenusJetpack = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusJetpack", 7882).getInt(7882);       
-            ConfigManager.idVenusGemJetpack = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorVenusGemJetpack", 7883).getInt(7883);
-            
-            ConfigManager.idToolVenusGemSword = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemSword", 7884).getInt(7884);
-            ConfigManager.idToolVenusGemPickaxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemPickaxe", 7885).getInt(7885);
-            ConfigManager.idToolVenusGemSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemSpade", 7886).getInt(7886);
-            ConfigManager.idToolVenusGemHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemHoe", 7887).getInt(7887);
-            ConfigManager.idToolVenusGemAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusGemAxe", 7888).getInt(7888);
-            ConfigManager.idToolVenusSulfurSword = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurSword", 7889).getInt(7889);
-            ConfigManager.idToolVenusSulfurPickaxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurPickaxe", 7890).getInt(7890);
-            ConfigManager.idToolVenusSulfurSpade = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurSpade", 7891).getInt(7891);
-            ConfigManager.idToolVenusSulfurHoe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurHoe", 7892).getInt(7892);
-            ConfigManager.idToolVenusSulfurAxe = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idToolVenusSulfurAxe", 7893).getInt(7893);
-
-            ConfigManager.idItemVenusBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemVenusItemBasic", 7898).getInt(7898);
-
             ConfigManager.idEntityVenusEvolvedBlaze = ConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
             ConfigManager.idEntityVenusianVillager = ConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);
-
-            ConfigManager.dimensionIDVenus = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Dimension ID", -41).getInt(-41);
-            ConfigManager.venusGenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on Venus", false).getBoolean(false);        
+            
             ConfigManager.disableVenusVillageGen = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Disable Venus Village Gen", false).getBoolean(false);  
-        
+            
+            ConfigManager.dimensionIDVenus = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Dimension ID", -41).getInt(-41);
+
+            
             // GAS PLANETS
             ConfigManager.dimensionIDEuropa = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension ID", -50).getInt(-50);
             ConfigManager.idBlockEuropaSurface = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockEuropaSurface", 809).getInt(809);

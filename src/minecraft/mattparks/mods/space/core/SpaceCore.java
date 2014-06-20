@@ -40,7 +40,7 @@ public class SpaceCore
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		new ConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/mattparks.conf"));
+		new ConfigManager(new File(event.getModConfigurationDirectory(), "Galacticraft/4-Space.conf"));
 		
 		SpaceCore.proxy.preInit(event);
 	}

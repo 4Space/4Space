@@ -365,7 +365,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.mercuryGenerateOtherMods ? "RandomLevelSource" : "MercuryLevelSource";
+		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "MercuryLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -379,7 +379,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 1, 1, 1));
+			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, (ConfigManager.slimeSpawn), 2, 3));
 			return monsters;
 		}
 		else
