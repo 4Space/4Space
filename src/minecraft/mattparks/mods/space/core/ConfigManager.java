@@ -54,8 +54,7 @@ public class ConfigManager
     public static int idBlockMercurySlimeBlock;
     
     public static int idEntityMercuryEvolvedSlime;
-    
-    public static int slimeSpawn;
+
     public static int dimensionIDMercury;
     
     // VENUS
@@ -163,9 +162,7 @@ public class ConfigManager
             ConfigManager.idBlockMercurySlimeBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercurySlimeBlock", 642).getInt(642);
 
             ConfigManager.idEntityMercuryEvolvedSlime = ConfigManager.configuration.get("Entities", "idEntityMercuryEvolvedSlime", 196).getInt(196);
-            
-            ConfigManager.slimeSpawn = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Disable mercury Slime spawn. 0 = No spawn. 1 = Some spawn and 2 = Many spawn", 1).getInt(1);
-            
+
             ConfigManager.dimensionIDMercury = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Dimension ID", -40).getInt(-40);
 
             
@@ -237,10 +234,12 @@ public class ConfigManager
             ConfigManager.idBlockIoFull = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoFull", 821).getInt(821);
             ConfigManager.idBlockIoStone = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockIoStone", 822).getInt(822); 
 		}
+		
         catch (final Exception e)
         {
             FMLLog.log(Level.SEVERE, e, "4-Space Core Config has a problem loading it's configuration");
         }
+		
         finally
         {
             ConfigManager.configuration.save();

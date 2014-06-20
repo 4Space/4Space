@@ -379,7 +379,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, (ConfigManager.slimeSpawn), 2, 3));
+			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 1000, 1000, 1000));
 			return monsters;
 		}
 		else

@@ -48,7 +48,6 @@ public class SpaceCore
     @EventHandler
     public void init (FMLInitializationEvent event)
     {
-    	;
     }
 
 	@EventHandler
@@ -82,7 +81,6 @@ public class SpaceCore
 	@EventHandler
 	public void serverInit(FMLServerStartedEvent event)
 	{
-		;
 	}
 
 	@EventHandler
@@ -93,16 +91,13 @@ public class SpaceCore
 
 	public void registerTileEntities()
 	{
-		;
 	}
 
 	public void registerCreatures()
 	{
-		;
 	}
 
 	public void registerOtherEntities()
 	{
-		;
 	}
 }

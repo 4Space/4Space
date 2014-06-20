@@ -2,7 +2,7 @@
 {
   "modid": "SpaceCore",
   "name": "4-Space Core",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "4-Space adds all of the missing planets from galacticraft to Minecraft.",
   "credits": "Created by Mattparks",
@@ -16,7 +16,7 @@
 {
   "modid": "GCMercury",
   "name": "Galacticraft Mercury",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Mercury addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -30,7 +30,7 @@
 {
   "modid": "GCVenus",
   "name": "Galacticraft Venus",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Venus addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -44,7 +44,7 @@
 {
   "modid": "GCJupiter",
   "name": "Galacticraft Jupiter",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Jupiter addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -58,7 +58,7 @@
 {
   "modid": "GCIo",
   "name": "Galacticraft Io",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Io addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -72,7 +72,7 @@
 {
   "modid": "GCEuropa",
   "name": "Galacticraft Europa",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Europa addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -86,7 +86,7 @@
 {
   "modid": "GCSaturn",
   "name": "Galacticraft Saturn",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Saturn addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -100,7 +100,7 @@
 {
   "modid": "GCUranus",
   "name": "Galacticraft Uranus",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Uranus addon for Galacticraft.",
   "credits": "Created by Mattparks",
@@ -114,7 +114,7 @@
 {
   "modid": "GCNeptune",
   "name": "Galacticraft Neptune",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "mcversion": "1.6.4",
   "description": "Neptune addon for Galacticraft.",
   "credits": "Created by Mattparks",

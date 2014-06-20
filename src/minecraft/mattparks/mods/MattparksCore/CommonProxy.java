@@ -6,28 +6,23 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy 
 {
-        public void registerRenderers() 
-        {
-        	;
-        }
+	public void registerRenderers() 
+	{
+	}
 
-		public void init(FMLInitializationEvent event) 
-		{
-			;
-		}
+	public void init(FMLInitializationEvent event) 
+	{
+	}
 
-		public void preInit(FMLPreInitializationEvent event) 
-		{
-			;
-		}
+	public void preInit(FMLPreInitializationEvent event) 
+	{
+	}
 
-		public void postInit(FMLPostInitializationEvent event) 
-		{
-			;
-		}
+	public void postInit(FMLPostInitializationEvent event) 
+	{
+	}
 
-		public void registerRenderInformation() 
-		{
-			;
-		}
+	public void registerRenderInformation() 
+	{
+	}
 }

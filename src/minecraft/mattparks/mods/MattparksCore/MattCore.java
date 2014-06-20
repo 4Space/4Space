@@ -13,7 +13,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -36,7 +35,7 @@ public class MattCore
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		new ConfigManager(new File(event.getModConfigurationDirectory(), "mattparks.conf"));
+		new ConfigManager(new File(event.getModConfigurationDirectory(), "MattparksCore.conf"));
 		
 		MattCore.proxy.preInit(event);
 	}
@@ -72,9 +71,6 @@ public class MattCore
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
 		MattCore.proxy.init(event);
 	}
 	
@@ -83,26 +79,4 @@ public class MattCore
 	{
 		Util.checkVersion(Side.SERVER);
 	}
-	
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-	
-	public void registerTileEntities()
-	{
-		;
-	}
-
-	public void registerCreatures()
-	{
-		;
-	}
-
-	public void registerOtherEntities()
-	{
-		;
-	}
-
 }

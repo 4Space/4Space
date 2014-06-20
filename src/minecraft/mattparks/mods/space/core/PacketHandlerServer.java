@@ -35,32 +35,32 @@ public class PacketHandlerServer implements IPacketHandler
 		}
 
 		final DataInputStream data = new DataInputStream(new ByteArrayInputStream(packet.data));
-
 		final int packetType = PacketUtil.readPacketID(data);
-
 		final EntityPlayerMP player = (EntityPlayerMP) p;
-
 		GCCorePlayerMP gcPlayer = PlayerUtil.getPlayerBaseServerFromPlayer(player, false);
 
 		if (packetType == 0)
 		{
 			Class<?>[] decodeAs = { Integer.class, Integer.class, String.class };
 			Object[] packetReadout = PacketUtil.readPacketData(data, decodeAs);
-
 			Entity entity = player.worldObj.getEntityByID((Integer) packetReadout[0]);
 		}
+		
 		else if (packetType == 1)
 		{
 			FMLLog.severe("4-Space Core: Received bad packet!");
 		}
+		
 		else if (packetType == 2)
 		{
 			FMLLog.severe("4-Space Core: Received bad packet!");
 		}
+		
 		else if (packetType == 3)
 		{
 			gcPlayer.wakeUpPlayer(false, true, true, true);
 		}
+		
 		else if (packetType == 4)
 		{
 			final Class<?>[] decodeAs = { Integer.class };
@@ -72,20 +72,19 @@ public class PacketHandlerServer implements IPacketHandler
 				player.playerNetServerHandler.sendPacketToPlayer(GCCorePacketLanderUpdate.buildKeyPacket(e));
 			}
 		}
+		
 		else if (packetType == 5)
 		{
 			Class<?>[] decodeAs = { Integer.class, Integer.class, Integer.class, Integer.class, Integer.class };
 			Object[] packetReadout = PacketUtil.readPacketData(data, decodeAs);
-
 			TileEntity tile = player.worldObj.getBlockTileEntity((Integer) packetReadout[1], (Integer) packetReadout[2], (Integer) packetReadout[3]);
 		}
+		
 		else if (packetType == 6)
 		{
 			Class<?>[] decodeAs = { Integer.class, Integer.class };
 			Object[] packetReadout = PacketUtil.readPacketData(data, decodeAs);
-
 			Entity entity = player.worldObj.getEntityByID((Integer) packetReadout[0]);
-
 		}
 	}
 }

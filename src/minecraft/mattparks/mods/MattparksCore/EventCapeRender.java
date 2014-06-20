@@ -44,6 +44,7 @@ public class EventCapeRender
         {
             return;
         }
+        
         if (event.entityPlayer instanceof AbstractClientPlayer)
         {
             AbstractClientPlayer abstractClientPlayer = (AbstractClientPlayer) event.entityPlayer;
@@ -68,6 +69,7 @@ public class EventCapeRender
     public void buildCloakURLDatabase (String location)
     {
         URL url;
+        
         try
         {
             url = new URL(location);
@@ -79,6 +81,7 @@ public class EventCapeRender
 
             String str;
             int linetracker = 1;
+            
             while ((str = br.readLine()) != null)
             {
                 if (!str.startsWith("--"))
@@ -90,6 +93,7 @@ public class EventCapeRender
                         new Thread(new CloakPreload(link)).start();
                         cloaks.put(nick, link);
                     }
+                    
                     else
                     {
                         System.err.println("[Mattparks Core] [skins.txt] Syntax error on line " + linetracker + ": " + str);
@@ -100,10 +104,12 @@ public class EventCapeRender
 
             br.close();
         }
+        
         catch (MalformedURLException e)
         {
             e.printStackTrace();
         }
+        
         catch (IOException e)
         {
             e.printStackTrace();
@@ -132,6 +138,7 @@ public class EventCapeRender
                 bo.getGraphics().drawImage(cape, 0, 0, null);
                 abstractClientPlayer.getTextureCape().bufferedImage = bo;
             }
+            
             catch (MalformedURLException e)
             {
                 e.printStackTrace();
@@ -155,6 +162,7 @@ public class EventCapeRender
             {
                 TEST_GRAPHICS.drawImage(new ImageIcon(new URL(cloakURL)).getImage(), 0, 0, null);
             }
+            
             catch (MalformedURLException e)
             {
                 e.printStackTrace();
