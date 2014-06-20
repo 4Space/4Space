@@ -1,13 +1,12 @@
 package mattparks.mods.space.venus;
 
-import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.Version;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import mattparks.mods.space.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.space.venus.dimension.GCVenusWorldProvider;
 import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.space.venus.entities.GCVenusEntityVenusianVillager;
-import mattparks.mods.space.venus.event.GCVenusEvents;
 import mattparks.mods.space.venus.items.GCVenusItems;
 import mattparks.mods.space.venus.recipe.GCVenusRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;

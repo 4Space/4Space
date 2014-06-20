@@ -13,9 +13,9 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCCaravanModule extends Block implements IPartialSealableBlock
+public class GCMercuryCaravanModule extends Block implements IPartialSealableBlock
 {        
-    public GCCaravanModule(int par1, String name)
+    public GCMercuryCaravanModule(int par1, String name)
     {
         super(par1, Material.cloth);
         this.setUnlocalizedName(name);

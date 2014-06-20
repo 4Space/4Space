@@ -4,7 +4,6 @@ import java.util.Random;
 
 import mattparks.mods.space.europa.GCEuropa;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
-import mattparks.mods.space.io.GCIo;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;

@@ -2,13 +2,12 @@ package mattparks.mods.space.mercury;
 
 import java.util.Random;
 
-import mattparks.mods.MattparksCore.Version;
 import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.Version;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import mattparks.mods.space.mercury.dimension.GCMercuryTeleportType;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
 import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
-import mattparks.mods.space.mercury.event.GCMercuryEvents;
 import mattparks.mods.space.mercury.items.GCMercuryItems;
 import mattparks.mods.space.mercury.recipe.GCMercuryRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;

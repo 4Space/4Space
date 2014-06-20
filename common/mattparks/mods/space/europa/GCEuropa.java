@@ -1,6 +1,6 @@
 package mattparks.mods.space.europa;
 
-import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.Version;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import mattparks.mods.space.europa.dimension.GCEuropaTeleportType;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;

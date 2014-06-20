@@ -1,12 +1,11 @@
-package mattparks.mods.space.venus.event;
+package mattparks.mods.space.europa;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import mattparks.mods.space.venus.GCVenus;
-import mattparks.mods.space.venus.client.ClientProxyVenus;
+import mattparks.mods.space.europa.client.ClientProxyEuropa;
 import net.minecraft.client.audio.SoundPool;
 import net.minecraft.client.audio.SoundPoolEntry;
 import net.minecraft.client.audio.SoundPoolProtocolHandler;
@@ -16,16 +15,13 @@ import net.minecraftforge.event.ForgeSubscribe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCVenusEvents
+public class GCEuropaEvents
 {
 	@SideOnly(Side.CLIENT)
 	@ForgeSubscribe
 	public void onSoundLoad(SoundLoadEvent event)
-	{
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_1.ogg"));
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_2.ogg"));
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Ambience.ogg"));
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Bells.ogg"));
+	{  
+		ClientProxyEuropa.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCEuropa.TEXTURE_PREFIX + "music/Europa_Snowstorm.ogg"));
 	}
 
 	@SideOnly(Side.CLIENT)

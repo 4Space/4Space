@@ -13,7 +13,7 @@ import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomEmpty;
 import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomSpawner;
 import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomTreasure;
 import mattparks.mods.space.venus.world.gen.pit.GCVenusMapGenBlazeNest;
-import mattparks.mods.space.venus.world.village.GCVenusMapGenVillage;
+import mattparks.mods.space.venus.world.gen.village.GCVenusMapGenVillage;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;

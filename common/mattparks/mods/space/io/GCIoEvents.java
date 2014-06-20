@@ -1,10 +1,11 @@
-package mattparks.mods.space.mercury.event;
+package mattparks.mods.space.io;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import mattparks.mods.space.io.client.ClientProxyIo;
 import net.minecraft.client.audio.SoundPool;
 import net.minecraft.client.audio.SoundPoolEntry;
 import net.minecraft.client.audio.SoundPoolProtocolHandler;
@@ -14,16 +15,13 @@ import net.minecraftforge.event.ForgeSubscribe;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCMercuryEvents
+public class GCIoEvents
 {
 	@SideOnly(Side.CLIENT)
 	@ForgeSubscribe
 	public void onSoundLoad(SoundLoadEvent event)
-	{  //TODO ADD MUSIC
-//		ClientProxyMercury.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCMercury.TEXTURE_PREFIX + "music/Venus_1.ogg"));
-//		ClientProxyMercury.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCMercury.TEXTURE_PREFIX + "music/Venus_2.ogg"));
-//		ClientProxyMercury.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCMercury.TEXTURE_PREFIX + "music/Venus_Ambience.ogg"));
-//		ClientProxyMercury.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCMercury.TEXTURE_PREFIX + "music/Venus_Bells.ogg"));
+	{  
+		ClientProxyIo.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCIo.TEXTURE_PREFIX + "music/Io_Magma.ogg"));
 	}
 
 	@SideOnly(Side.CLIENT)

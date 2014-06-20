@@ -3,7 +3,6 @@ package mattparks.mods.space.core;
 import java.io.File;
 
 import mattparks.mods.MattparksCore.MattCore;
-import mattparks.mods.MattparksCore.Version;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;

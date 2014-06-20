@@ -1,4 +1,4 @@
-package mattparks.mods.space.venus.world.village;
+package mattparks.mods.space.venus.world.gen.village;
 
 import java.util.ArrayList;
 import java.util.Random;

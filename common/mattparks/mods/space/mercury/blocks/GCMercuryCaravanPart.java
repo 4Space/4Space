@@ -9,9 +9,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
-public class GCCaravanPart extends Block implements IPartialSealableBlock
+public class GCMercuryCaravanPart extends Block implements IPartialSealableBlock
 {
-    public GCCaravanPart(int par1, String name)
+    public GCMercuryCaravanPart(int par1, String name)
     {
         super(par1, Material.cloth);
         this.setUnlocalizedName(name);

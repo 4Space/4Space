@@ -1,4 +1,4 @@
-package mattparks.mods.space.venus.world.village;
+package mattparks.mods.space.venus.world.gen.village;
 
 public abstract class GCVenusComponentVillageRoadPiece extends GCVenusComponentVillage
 {

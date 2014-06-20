@@ -1,6 +1,6 @@
 package mattparks.mods.space.jupiter;
 
-import mattparks.mods.MattparksCore.Version;
+import mattparks.mods.space.core.Version;
 import mattparks.mods.space.io.blocks.IoBlocks;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
