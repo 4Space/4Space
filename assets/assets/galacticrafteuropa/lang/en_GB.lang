@@ -1,0 +1,21 @@
+# Galacticraft Europa Language File = British English
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.EuropaSurface.name=Europa Surface-Ice
+tile.EuropaIce.name=Europa Under-Ice
+
+# GUI
+gui.choosePlanet.desc.europa=Moon#*Very Cold#Watery
+
+dimension.Europa.name=Europa
+
+# Schematics
+
+# Entity
+

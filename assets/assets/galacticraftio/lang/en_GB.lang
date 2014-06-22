@@ -1,0 +1,22 @@
+# Galacticraft Io Language File = British English
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.IoSlab.name=Io Basalt Slab
+tile.IoFull.name=Io Basalt
+tile.IoStone.name=Io Stone
+
+# GUI
+gui.choosePlanet.desc.io=Moon#*Very Hot#Dry
+
+dimension.Io.name=Io
+
+# Schematics
+
+# Entity
+

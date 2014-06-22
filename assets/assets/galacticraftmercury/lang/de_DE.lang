@@ -1,0 +1,54 @@
+# Galacticraft Mercury Language File = GERMANY GERMAN
+
+# GENERAL ITEMS
+item.iridiumCrystals.name=Iridium Kristalle 
+item.iridiumPlate.name=Iridium-Kennzeichen 
+item.iridiumPlate.name=Iridium-Kennzeichen 
+item.plateHeavyT4.name=Heavy-Duty-Kennzeichen 
+item.redSlimeball.name=Rot Slimeball
+
+# TOOLS
+item.iridiumAxe.name=Iridium Axe 
+item.iridiumHoe.name=Iridium Hoe 
+item.iridiumPick.name=Iridium Spitzhacke 
+item.iridiumSpade.name=Iridium Schaufel 
+item.iridiumSword.name=Iridium Schwert
+
+# ARMOR
+item.iridiumBoots.name=Iridium Boots 
+item.iridiumChestplate.name=Iridium Brustplatte 
+item.iridiumHelmet.name=Iridium Helm 
+item.iridiumLeggings.name=Iridium Leggings
+
+# BLOCKS
+tile.MercuryBrick.name=Mercury Brick 
+tile.MercuryCopperOre.name=Kupfererz 
+tile.MercuryDirt.name=Quecksilber Dirt 
+tile.MercuryMeteorBlock.name=Block Meteor 
+tile.MercuryMeteorOre.name=Meteor Ore 
+tile.MercuryGoldOre.name=Gold Ore 
+tile.MercuryIridiumBlock.name=Sperren von Iridium 
+tile.MercuryIridiumOre.name=Iridium-Erz 
+tile.MercuryGrass.name=Quecksilber Grass 
+tile.MercuryStone.name=Quecksilber Stein 
+tile.MercuryTinOre.name=Zinnerz 
+tile.CaravanModule.name=Tragbare Raumzelt 
+tile.CaravanModulePart.name=Wohnwagen Modulteil 
+tile.MercurySlimeBlock.name=Red Slime-Block
+
+# GUI
+gui.choosePlanet.desc.mercury=Bewohnbare#Keine Sauerstoff#Gravity: 38%
+
+item.tier4.desc=Stufe 4
+
+itemGroup.galacticraftMercuryTab=Galacticraft Merkur
+
+dimension.Mercury.name=Merkur
+
+# Schematics
+
+# Entity
+entity.EvolvedSlime.name=Evolved Slime
+
+entity.GalacticraftCore.EvolvedSlime.name=Evolved Slime
+
