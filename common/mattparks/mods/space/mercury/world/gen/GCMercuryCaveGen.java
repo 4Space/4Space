@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class GCMercuryCaveGen extends GCCoreMapGenBaseMeta
 {
 
-	public static final int BREAK_THROUGH_CHANCE = 50; // 1 in n chance
+	public static final int BREAK_THROUGH_CHANCE = 25; // 1 in n chance
 
 	protected void generateLargeCaveNode(long par1, int par3, int par4, short[] blockIdArray, byte[] metaArray, double par6, double par8, double par10)
 	{

@@ -7,11 +7,7 @@ import java.util.Random;
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
-import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomBoss;
-import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomChests;
-import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomEmpty;
-import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomSpawner;
-import mattparks.mods.space.mercury.world.gen.dungeon.GCMercuryRoomTreasure;
+import mattparks.mods.space.mercury.world.gen.dungeon.*;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;
@@ -49,7 +45,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 	private final NoiseModule noiseGen3;
 	private final NoiseModule noiseGen4;
 
-	public GCMercuryBiomeDecorator biomedecoratorplanet = new GCMercuryBiomeDecorator();
+	public GCMercuryBiomeDecorator biomedecoratorplanet = new GCMercuryBiomeDecorator(GCMercuryBiomeGenBase.mercuryFlat);
 
 	private final World worldObj;
 
@@ -344,8 +340,6 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 		final long var9 = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
 
-		this.dungeonGenerator.handleTileEntities(this.rand);
-
 		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
 		BlockSand.fallInstantly = false;
 	}
@@ -379,7 +373,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 1000, 1000, 1000));
+			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 8, 2, 3));
 			return monsters;
 		}
 		else

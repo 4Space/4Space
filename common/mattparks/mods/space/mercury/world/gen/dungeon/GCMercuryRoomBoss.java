@@ -56,7 +56,7 @@ public class GCMercuryRoomBoss extends GCCoreDungeonRoom
 					}
 					else if (j == this.posY && (i <= this.posX + 1 || i >= this.posX + this.sizeX - 2 || k == this.posZ + 1 || k == this.posZ + this.sizeZ - 2) && this.rand.nextInt(6) == 0)
 					{
-//						this.placeBlock(chunk, meta, i, j, k, cx, cz, GCMercury.EvolvedBlazeEgg.blockID, 0);
+//						this.placeBlock(chunk, meta, i, j, k, cx, cz, GCMarsBlocks.creeperEgg.blockID, 0);
 					}
 					else
 					{

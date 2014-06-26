@@ -1,8 +1,5 @@
 package mattparks.mods.space.mercury.world.gen;
 
-import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
-import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
-import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityZombie;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -19,11 +16,8 @@ public class GCMercuryBiomeGenBase extends BiomeGenBase
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
-		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 10, 2, 2));
-		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntityZombie.class, 10, 2, 2));
-		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntityCreeper.class, 4, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 1000, 1000, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntityZombie.class, 10, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntitySpider.class, 10, 4, 4));
 		this.rainfall = 0F;
 	}
 
