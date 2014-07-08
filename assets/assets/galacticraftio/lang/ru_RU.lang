@@ -7,12 +7,12 @@
 # ARMOR
 
 # BLOCKS
-tile.IoSlab.name=Ио Базальт плиты
+tile.IoSlab.name=Ио Базальтовые плиты
 tile.IoFull.name=Ио Базальт
 tile.IoStone.name=Ио Камень
 
 # GUI
-gui.choosePlanet.desc.io=Луна#*Очень популярная#Сухая
+gui.choosePlanet.desc.io=Спутник Юпитера#*Очень вулканистый#Сухой
 
 dimension.Io.name=Ио
 

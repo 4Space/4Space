@@ -4,40 +4,40 @@
 item.iridiumCrystals.name=Иридиум Кристаллы
 item.iridiumPlate.name=Иридиум плиты
 item.iridiumPlate.name=Иридиум плиты
-item.plateHeavyT4.name=сверхпрочных плита
-item.redSlimeball.name=Красный Слизьбал
+item.plateHeavyT4.name=Сверхпрочное покрытие
+item.redSlimeball.name=Красный сгусток слизи
 
 # TOOLS
-item.iridiumAxe.name=Иридиум топор
-item.iridiumHoe.name=Иридиум мотыга
-item.iridiumPick.name=Иридиум Киркомотыга
-item.iridiumSpade.name=Иридиум Лопата
-item.iridiumSword.name=Иридиум Меч
+item.iridiumAxe.name=Топор из Иридиума
+item.iridiumHoe.name=Мотыга из Иридиума
+item.iridiumPick.name=Кирка из Иридиума
+item.iridiumSpade.name=Лопата из Иридиума
+item.iridiumSword.name=Меч из Иридиума
 
 # ARMOR
-item.iridiumBoots.name=Иридиум Сапоги
-item.iridiumChestplate.name=Иридиум Бригантина
-item.iridiumHelmet.name=Иридиум шлем
-item.iridiumLeggings.name=Иридиум Леггинсы
+item.iridiumBoots.name=Сапоги из Иридиума
+item.iridiumChestplate.name=Нагрудник из Иридиума
+item.iridiumHelmet.name=Шлем из Иридиума
+item.iridiumLeggings.name=Штаны из Иридиума
 
 # BLOCKS
-tile.MercuryBrick.name=Меркурий Кирпич
+tile.MercuryBrick.name=Меркурианский Кирпич
 tile.MercuryCopperOre.name=Медная руда
-tile.MercuryDirt.name=Меркурий Грязь
-tile.MercuryMeteorBlock.name=Блок Метеор
-tile.MercuryMeteorOre.name=Метеор руды
+tile.MercuryDirt.name=Грунт Меркурия
+tile.MercuryMeteorBlock.name=Блок Метеоритной руды
+tile.MercuryMeteorOre.name=Метеоритная руды
 tile.MercuryGoldOre.name=Золотая руда
-tile.MercuryIridiumBlock.name=Блок Иридиум
-tile.MercuryIridiumOre.name=Иридиум руды
-tile.MercuryGrass.name=Меркурий Трава
-tile.MercuryStone.name=Меркурий Камень
+tile.MercuryIridiumBlock.name=Блок Иридиума
+tile.MercuryIridiumOre.name=Иридиум руда
+tile.MercuryGrass.name=Грунт Меркурия
+tile.MercuryStone.name=Камень Меркурия
 tile.MercuryTinOre.name=Оловянная руда
-tile.CaravanModule.name=Портативный Космический Палатка
-tile.CaravanModulePart.name=Караван Модуль Часть
-tile.MercurySlimeBlock.name=Красный Слизь Блок
+tile.CaravanModule.name=Портативный космический дом
+tile.CaravanModulePart.name=Обшивка портативного дома
+tile.MercurySlimeBlock.name=Красный слизневый блок
 
 # GUI
-gui.choosePlanet.desc.mercury=Жилые#нет кислорода#тяжести: 38%
+gui.choosePlanet.desc.mercury=Обитаем#Нет кислорода#Гравитация: 38%
 
 item.tier4.desc=Tier 4
 
@@ -48,6 +48,6 @@ dimension.Mercury.name=Меркурий
 # Schematics
 
 # Entity
-entity.EvolvedSlime.name=эволюционировали Слизь
+entity.EvolvedSlime.name=Эволюцианировавший Слизень
 
-entity.GalacticraftCore.EvolvedSlime.name=эволюционировали Слизь
+entity.GalacticraftCore.EvolvedSlime.name=Эволюцианировавший Слизень
