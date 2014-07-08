@@ -2,6 +2,7 @@ package mattparks.mods.space.venus.world.gen.dungeon;
 
 import java.util.Random;
 
+import mattparks.mods.space.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.GCCoreTileEntityDungeonSpawner;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.GCCoreDungeonBoundingBox;
@@ -14,15 +15,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraftforge.common.ForgeDirection;
 
-/**
- * GCMarsRoomBoss.java
- * 
- * This file is part of the Galacticraft project
- * 
- * @author micdoodle8
- * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
- */
 public class GCVenusRoomBoss extends GCCoreDungeonRoom
 {
 	public int sizeX;
@@ -65,7 +57,7 @@ public class GCVenusRoomBoss extends GCCoreDungeonRoom
 					}
 					else if (j == this.posY && (i <= this.posX + 1 || i >= this.posX + this.sizeX - 2 || k == this.posZ + 1 || k == this.posZ + this.sizeZ - 2) && this.rand.nextInt(6) == 0)
 					{
-						this.placeBlock(chunk, meta, i, j, k, cx, cz, GCMarsBlocks.creeperEgg.blockID, 0);
+						this.placeBlock(chunk, meta, i, j, k, cx, cz, VenusBlocks.EvolvedBlazeEgg.blockID, 0);
 					}
 					else
 					{

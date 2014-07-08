@@ -6,6 +6,7 @@ import java.util.Random;
 
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
+import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.space.venus.world.gen.dungeon.*;
 import mattparks.mods.space.venus.world.gen.pit.GCVenusMapGenBlazeNest;
 import mattparks.mods.space.venus.world.gen.village.GCVenusMapGenVillage;
@@ -421,11 +422,19 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
         if (!ConfigManager.disableVenusVillageGen)
         {
             this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-        }
-        
+        }   
         
 		BlockSand.fallInstantly = false;
 	}
+	
+	@Override
+	public void recreateStructures(int par1, int par2)
+	{
+		if (!ConfigManager.disableVenusVillageGen)
+	         {
+	        	 this.villageGenerator.generate(this, this.worldObj, par1, par2, (byte[]) null);
+	         }
+	     }
 
 	@Override
 	public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
@@ -442,7 +451,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "MarsLevelSource";
+		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "VenusLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -456,6 +465,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
+			monsters.add(new SpawnListEntry(GCVenusEntityEvolvedBlaze.class, 8, 2, 3));
 			return monsters;
 		}
 		else
