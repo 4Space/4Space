@@ -57,7 +57,7 @@ public class GCVenusItemGemJetpack extends ItemArmor
         {
             if (stack.getItem().itemID == GCVenusItems.gemJetpack.itemID)
             {
-                return "textures/model/armor/gemJetpack.png";
+                return "textures/model/armor/redGemJetpack.png";
             }
         }
 

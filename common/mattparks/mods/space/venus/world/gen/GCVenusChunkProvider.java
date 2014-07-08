@@ -6,12 +6,7 @@ import java.util.Random;
 
 import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
-import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
-import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomBoss;
-import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomChests;
-import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomEmpty;
-import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomSpawner;
-import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomTreasure;
+import mattparks.mods.space.venus.world.gen.dungeon.*;
 import mattparks.mods.space.venus.world.gen.pit.GCVenusMapGenBlazeNest;
 import mattparks.mods.space.venus.world.gen.village.GCVenusMapGenVillage;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
@@ -36,11 +31,11 @@ import net.minecraftforge.common.ForgeDirection;
 public class GCVenusChunkProvider extends ChunkProviderGenerate
 {
 	final short topBlockID = (short) VenusBlocks.VenusGrass.blockID;
-	final byte topBlockMeta = 5;
+	final byte topBlockMeta = 0;
 	final short fillBlockID = (short) VenusBlocks.VenusDirt.blockID;
-	final byte fillBlockMeta = 6;
+	final byte fillBlockMeta = 0;
 	final short lowerBlockID = (short) VenusBlocks.VenusStone.blockID;
-	final byte lowerBlockMeta = 9;
+	final byte lowerBlockMeta = 0;
 
 	private final Random rand;
 
@@ -55,13 +50,13 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 
 	private final World worldObj;
 
+	public static List blazeDungeonLocations;
+	private final GCVenusMapGenBlazeNest blazeNest = new GCVenusMapGenBlazeNest();
+	    
+	private final GCVenusMapGenVillage villageGenerator = new GCVenusMapGenVillage();
+	    
 	private final GCVenusCaveGen caveGenerator = new GCVenusCaveGen();
 
-    public static List blazeDungeonLocations;
-    private final GCVenusMapGenBlazeNest blazeNest = new GCVenusMapGenBlazeNest();
-    
-    private final GCVenusMapGenVillage villageGenerator = new GCVenusMapGenVillage();
-    
 	private final GCCoreMapGenDungeon dungeonGenerator = new GCCoreMapGenDungeon(VenusBlocks.VenusBrick.blockID, 7, 8, 16, 6);
 
 	{
@@ -94,7 +89,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	private static final double TERRAIN_HEIGHT_MOD = 12;
 	private static final double SMALL_FEATURE_HEIGHT_MOD = 26;
 	private static final double MOUNTAIN_HEIGHT_MOD = 95;
-	private static final double VALLEY_HEIGHT_MOD = 50;
+	private static final double VALLEY_HEIGHT_MOD = 35;
 	private static final int CRATER_PROB = 7000;
 
 	// DO NOT CHANGE
@@ -307,7 +302,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 		this.replaceBlocksForBiome(par1, par2, ids, meta, this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, par1, par2, ids, meta);
 		this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 30, par2 * 16, par1, par2, ids, meta);
-        
+
 		int[] var3 = null;
 		this.blazeNest.generate(this, this.worldObj, par1, par2, var3);
 		
@@ -428,17 +423,9 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
             this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
         }
         
+        
 		BlockSand.fallInstantly = false;
 	}
-	
-    @Override
-    public void recreateStructures(int par1, int par2)
-    {
-        if (!ConfigManager.disableVenusVillageGen)
-        {
-            this.villageGenerator.generate(this, this.worldObj, par1, par2, (byte[]) null);
-        }
-    }
 
 	@Override
 	public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
@@ -455,7 +442,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "VenusLevelSource";
+		return ConfigManager.GenerateOtherMods ? "RandomLevelSource" : "MarsLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -469,7 +456,6 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(GCVenusEntityEvolvedBlaze.class, 8, 2, 3));
 			return monsters;
 		}
 		else

@@ -6,8 +6,8 @@ public class GCMercuryBiomeGenFlat extends GCMercuryBiomeGenBase
 	{
 		super(par1);
 		this.setBiomeName("mercuryFlat");
-		this.setColor(16711680);
-		this.minHeight = 2.5F;
+		this.setColor(11111111);
+		this.minHeight = 1.5F;
 		this.maxHeight = 0.4F;
 	}
 }

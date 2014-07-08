@@ -5,10 +5,20 @@ import java.util.Random;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
+import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
+/**
+ * GCMarsBiomeDecorator.java
+ * 
+ * This file is part of the Galacticraft project
+ * 
+ * @author micdoodle8
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 public class GCVenusBiomeDecorator
 {
 	protected World currentWorld;
@@ -54,7 +64,7 @@ public class GCVenusBiomeDecorator
 			this.rand = random;
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
-			this.generateVenus();
+			this.generateMars();
 			this.currentWorld = null;
 			this.rand = null;
 		}
@@ -71,19 +81,19 @@ public class GCVenusBiomeDecorator
 		}
 	}
 
-	protected void generateVenus()
+	protected void generateMars()
 	{
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
         this.generateOre(20, this.dirtGen, 0, 150);
         this.generateOre(23, this.sulfurGen, 0, 100);
         this.generateOre(36, this.coalGen, 0, 70);
-        this.generateOre(35, this.ironGen, 0, 60);
+        this.generateOre(35, this.ironGen, 0, 68);
         this.generateOre(35, this.tinGen, 0, 60);
         this.generateOre(36, this.copperGen, 0, 60);
         this.generateOre(36, this.crystalGen, 0, 60);
-        this.generateOre(26, this.gemGen, 0, 20);
-        this.generateOre(36, this.fossilizedPlantGen, 0, 15);
-        this.generateOre(36, this.uraniumGen, 0, 15);
+        this.generateOre(26, this.gemGen, 0, 12);
+        this.generateOre(36, this.fossilizedPlantGen, 0, 100);
+        this.generateOre(36, this.uraniumGen, 0, 100);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
 	}
 }

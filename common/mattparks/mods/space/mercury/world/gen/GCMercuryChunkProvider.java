@@ -8,6 +8,7 @@ import mattparks.mods.space.core.ConfigManager;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
 import mattparks.mods.space.mercury.world.gen.dungeon.*;
+import micdoodle8.mods.galacticraft.core.blocks.GCCoreBlocks;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;
@@ -32,11 +33,11 @@ import net.minecraftforge.common.ForgeDirection;
 public class GCMercuryChunkProvider extends ChunkProviderGenerate
 {
 	final short topBlockID = (short) MercuryBlocks.MercuryGrass.blockID;
-	final byte topBlockMeta = 5;
+	final byte topBlockMeta = 0;
 	final short fillBlockID = (short) MercuryBlocks.MercuryDirt.blockID;
-	final byte fillBlockMeta = 3;
+	final byte fillBlockMeta = 0;
 	final short lowerBlockID = (short) MercuryBlocks.MercuryStone.blockID;
-	final byte lowerBlockMeta = 4;
+	final byte lowerBlockMeta = 0;
 
 	private final Random rand;
 
@@ -69,7 +70,7 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 
 	private BiomeGenBase[] biomesForGeneration = { GCMercuryBiomeGenBase.mercuryFlat };
 
-	private final GCCoreMapGenBaseMeta caveGenerator = new GCMercuryCaveGen();
+	private final GCCoreMapGenBaseMeta caveGenerator = new GCMercuryGenCaves();
 
 	private static final int CRATER_PROB = 300;
 
@@ -340,6 +341,8 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 		final long var9 = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
 
+		this.dungeonGenerator.handleTileEntities(this.rand);
+
 		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
 		BlockSand.fallInstantly = false;
 	}
@@ -369,16 +372,22 @@ public class GCMercuryChunkProvider extends ChunkProviderGenerate
 		if (par1EnumCreatureType == EnumCreatureType.monster)
 		{
 			final List monsters = new ArrayList();
+			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityZombie.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntitySkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(GCCoreEntityCreeper.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(GCMercuryEntityEvolvedSlime.class, 8, 2, 3));
 			return monsters;
 		}
 		else
 		{
 			return null;
 		}
+	}
+
+	@Override
+	public void recreateStructures(int par1, int par2)
+	{
+		;
 	}
 }

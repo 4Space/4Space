@@ -1,23 +1,21 @@
 package mattparks.mods.space.mercury.world.gen;
 
-import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySpider;
-import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityZombie;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.SpawnListEntry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCMercuryBiomeGenBase extends BiomeGenBase
 {
-	public static final BiomeGenBase mercuryFlat = new GCMercuryBiomeGenFlat(103).setBiomeName("mercuryFlat");
+	public static final BiomeGenBase mercuryFlat = new GCMercuryBiomeGenFlat(102).setBiomeName("mercuryFlat");
 
-	@SuppressWarnings("unchecked")
 	public GCMercuryBiomeGenBase(int var1)
 	{
 		super(var1);
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
-		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntityZombie.class, 10, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(GCCoreEntitySpider.class, 10, 4, 4));
 		this.rainfall = 0F;
 	}
 
@@ -30,6 +28,15 @@ public class GCMercuryBiomeGenBase extends BiomeGenBase
 	@Override
 	public float getSpawningChance()
 	{
-		return 0.01F;
+		return 0.1F;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getBiomeGrassColor()
+	{
+		double d0 = MathHelper.clamp_float(this.getFloatTemperature(), 0.0F, 1.0F);
+		double d1 = MathHelper.clamp_float(this.getFloatRainfall(), 0.0F, 1.0F);
+		return this.getModdedBiomeGrassColor(ColorizerGrass.getGrassColor(d0, d1));
 	}
 }

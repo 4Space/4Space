@@ -4,6 +4,7 @@ import java.util.Random;
 
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
+import micdoodle8.mods.galacticraft.core.blocks.GCCoreBlocks;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -25,7 +26,7 @@ public class GCMercuryBiomeDecorator
 	protected WorldGenerator goldGen;
 	protected WorldGenerator iridiumGen;
 
-	public GCMercuryBiomeDecorator(BiomeGenBase mercuryflat)
+	public GCMercuryBiomeDecorator(BiomeGenBase par1BiomeGenBase)
 	{
 		this.dirtGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryDirt.blockID, 32, 6, true, MercuryBlocks.MercuryStone.blockID, 0);
 		this.copperGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryCopperOre.blockID, 4, 0, true, MercuryBlocks.MercuryStone.blockID, 0);
@@ -71,8 +72,8 @@ public class GCMercuryBiomeDecorator
 		this.genStandardOre1(26, this.copperGen, 0, 60);
 		this.genStandardOre1(23, this.tinGen, 0, 60);
 		this.genStandardOre1(15, this.meteorGen, 0, 128);
-		this.genStandardOre1(20, this.goldGen, 0, 32);
-		this.genStandardOre1(20, this.iridiumGen, 0, 16);
+		this.genStandardOre1(20, this.goldGen, 0, 29);
+		this.genStandardOre1(20, this.iridiumGen, 0, 12);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}
 }

@@ -59,6 +59,7 @@ tile.VenusGrass.name=Venus Grass
 tile.VenusIronOre.name=Iron Ore 
 tile.VenusUraniumBlock.name=Sperren von Uranium 
 tile.VenusCrystalBlock.name=Sperren von Crystal 
+tile.VenusCompositeBlock.name=Venus Composite Block
 tile.VenusStone.name=Venus Stein 
 tile.VenusSulfurBlock.name=Block of Sulfur 
 tile.VenusSulfurOre.name=Schwefel Ore 

@@ -7,9 +7,8 @@ import micdoodle8.mods.galacticraft.core.world.gen.GCCoreMapGenBaseMeta;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class GCMercuryCaveGen extends GCCoreMapGenBaseMeta
+public class GCMercuryGenCaves extends GCCoreMapGenBaseMeta
 {
-
 	public static final int BREAK_THROUGH_CHANCE = 25; // 1 in n chance
 
 	protected void generateLargeCaveNode(long par1, int par3, int par4, short[] blockIdArray, byte[] metaArray, double par6, double par8, double par10)
@@ -170,11 +169,11 @@ public class GCMercuryCaveGen extends GCCoreMapGenBaseMeta
 										{
 											if (blockIdArray[coords] == MercuryBlocks.MercuryStone.blockID)
 											{
-												if (metaArray[coords] == 6 || metaArray[coords] == 9)
+												if (metaArray[coords] == 3 || metaArray[coords] == 4)
 												{
 													blockIdArray[coords] = 0;
 												}
-												else if (metaArray[coords] == 5 && random.nextInt(GCMercuryCaveGen.BREAK_THROUGH_CHANCE) == 0)
+												else if (metaArray[coords] == 5 && random.nextInt(GCMercuryGenCaves.BREAK_THROUGH_CHANCE) == 0)
 												{
 													blockIdArray[coords] = 0;
 												}

@@ -93,6 +93,9 @@ public class ConfigManager
     public static int idBlockVenusBrick;
     public static int idBlockVenusRedGemBlock;
     public static int idBlockVenusSulfurBlock;
+    public static int idBlockVenusUraniumBlock;
+    public static int idBlockVenusCrystalBlock;
+    public static int idBlockVenusCompositeBlock;
     public static int idBlockVenusSulfurOre;
     public static int idBlockVenusRedGemOre;
     public static int idBlockVenusIronOre;
@@ -103,8 +106,6 @@ public class ConfigManager
     public static int idBlockVenusUraniumOre;
     public static int idBlockVenusFossilizedPlantOre;
     public static int idBlockVurnBerryBush;
-    public static int idBlockVenusUraniumBlock;
-    public static int idBlockVenusCrystalBlock;
     public static int idBlockVenusSulfurTorch;
     
     public static int idEntityVenusEvolvedBlaze;
@@ -204,17 +205,19 @@ public class ConfigManager
             ConfigManager.idBlockVenusSulfurBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurBlock", 766).getInt(766);
             ConfigManager.idBlockVenusUraniumBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusUraniumBlock", 767).getInt(767);
             ConfigManager.idBlockVenusCrystalBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCrystalBlock", 768).getInt(768);
-            ConfigManager.idBlockVenusSulfurOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurOre", 769).getInt(769);
-            ConfigManager.idBlockVenusRedGemOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusRedGemOre", 770).getInt(770);
-            ConfigManager.idBlockVenusUraniumOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusUraniumOre", 771).getInt(771);
-            ConfigManager.idBlockVenusIronOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusIronOre", 772).getInt(772);
-            ConfigManager.idBlockVenusCoalOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCoalOre", 773).getInt(773);
-            ConfigManager.idBlockVenusTinOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusTinOre", 774).getInt(774);
-            ConfigManager.idBlockVenusCopperOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCopperOre", 775).getInt(775);
-            ConfigManager.idBlockVenusCrystalOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCrystalOre", 776).getInt(776);
-            ConfigManager.idBlockVenusFossilizedPlantOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusFossilizedPlantOre", 777).getInt(777);
-            ConfigManager.idBlockVurnBerryBush = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVurnBerryBush", 778).getInt(778);
-            ConfigManager.idBlockVenusSulfurTorch = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurTorch", 779).getInt(779);
+            ConfigManager.idBlockVenusCompositeBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCompositeBlock", 769).getInt(769);
+                       
+            ConfigManager.idBlockVenusSulfurOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurOre", 779).getInt(779);
+            ConfigManager.idBlockVenusRedGemOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusRedGemOre", 780).getInt(780);
+            ConfigManager.idBlockVenusUraniumOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusUraniumOre", 781).getInt(781);
+            ConfigManager.idBlockVenusIronOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusIronOre", 782).getInt(782);
+            ConfigManager.idBlockVenusCoalOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCoalOre", 783).getInt(783);
+            ConfigManager.idBlockVenusTinOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusTinOre", 784).getInt(784);
+            ConfigManager.idBlockVenusCopperOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCopperOre", 785).getInt(785);
+            ConfigManager.idBlockVenusCrystalOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusCrystalOre", 786).getInt(786);
+            ConfigManager.idBlockVenusFossilizedPlantOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusFossilizedPlantOre", 787).getInt(787);
+            ConfigManager.idBlockVurnBerryBush = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVurnBerryBush", 788).getInt(788);
+            ConfigManager.idBlockVenusSulfurTorch = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockVenusSulfurTorch", 789).getInt(789);
             
             ConfigManager.idEntityVenusEvolvedBlaze = ConfigManager.configuration.get("Entities", "idEntityEvolvedBlaze", 193).getInt(193);
             ConfigManager.idEntityVenusianVillager = ConfigManager.configuration.get("Entities", "idEntityVenusianVillager", 194).getInt(194);

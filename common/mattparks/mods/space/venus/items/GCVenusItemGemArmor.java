@@ -30,15 +30,15 @@ public class GCVenusItemGemArmor extends ItemArmor
         {
             if (stack.getItem().itemID == GCVenusItems.gemHelmet.itemID)
             {
-                return "textures/model/armor/gem_1.png";
+                return "textures/model/armor/redGem_1.png";
             }
             else if (stack.getItem().itemID == GCVenusItems.gemChestplate.itemID || stack.getItem().itemID == GCVenusItems.gemBoots.itemID)
             {
-                return "textures/model/armor/gem_2.png";
+                return "textures/model/armor/redGem_2.png";
             }
             else if (stack.getItem().itemID == GCVenusItems.gemLeggings.itemID)
             {
-                return "textures/model/armor/gem_3.png";
+                return "textures/model/armor/redGem_3.png";
             }
         }
 

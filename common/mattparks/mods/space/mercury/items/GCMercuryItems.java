@@ -70,6 +70,8 @@ public class GCMercuryItems
  		registerItem(iridiumChestplate);
  		registerItem(iridiumLeggings);
  		registerItem(iridiumBoots);
+ 		
+ 		registerItem(redSlimeball);
  	}
  	
  	private static void registerItem(Item item)

@@ -3,7 +3,7 @@ package mattparks.mods.space.venus.world.gen.village;
 import java.util.List;
 import java.util.Random;
 
-import micdoodle8.mods.galacticraft.core.blocks.GCCoreBlocks;
+import mattparks.mods.space.venus.blocks.VenusBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
@@ -72,10 +72,10 @@ public class GCVenusComponentVillageTorch extends GCVenusComponentVillage
 		this.placeBlockAtCurrentPosition(par1World, Block.fence.blockID, 0, 1, 1, 0, par3StructureBoundingBox);
 		this.placeBlockAtCurrentPosition(par1World, Block.fence.blockID, 0, 1, 2, 0, par3StructureBoundingBox);
 		this.placeBlockAtCurrentPosition(par1World, Block.cloth.blockID, 15, 1, 3, 0, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 0, 3, 0, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 1, 3, 1, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 2, 3, 0, par3StructureBoundingBox);
-		this.placeBlockAtCurrentPosition(par1World, GCCoreBlocks.glowstoneTorch.blockID, 15, 1, 3, -1, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, VenusBlocks.SulfurTorch.blockID, 0, 0, 3, 0, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, VenusBlocks.SulfurTorch.blockID, 0, 1, 3, 1, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, VenusBlocks.SulfurTorch.blockID, 0, 2, 3, 0, par3StructureBoundingBox);
+		this.placeBlockAtCurrentPosition(par1World, VenusBlocks.SulfurTorch.blockID, 0, 1, 3, -1, par3StructureBoundingBox);
 		return true;
 	}
 }

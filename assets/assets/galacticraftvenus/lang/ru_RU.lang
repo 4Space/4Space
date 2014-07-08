@@ -59,6 +59,7 @@ tile.VenusGrass.name=Венерианская Трава
 tile.VenusIronOre.name=Железная руда
 tile.VenusUraniumBlock.name=Блок урана
 tile.VenusCrystalBlock.name=Блок Венерианского кристалла
+tile.VenusCompositeBlock.name=Venus Composite Block
 tile.VenusStone.name=Венерианский камень
 tile.VenusSulfurBlock.name=Блок серы
 tile.VenusSulfurOre.name=Серная руда
