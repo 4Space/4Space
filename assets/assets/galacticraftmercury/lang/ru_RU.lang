@@ -1,43 +1,42 @@
 # Galacticraft Mercury Language File = RUSSIA RUSSIAN
 
 # GENERAL ITEMS
-item.iridiumCrystals.name=Иридиум Кристаллы
-item.iridiumPlate.name=Иридиум плиты
-item.iridiumPlate.name=Иридиум плиты
-item.plateHeavyT4.name=сверхпрочных плита
-item.redSlimeball.name=Красный Слизьбал
+item.iridiumCrystals.name=Иридиевые кристаллы
+item.iridiumPlate.name=Иридиевая пластина
+item.plateHeavyT4.name=Сверхпрочная пластина
+item.redSlimeball.name=Красный слизневый шарик
 
 # TOOLS
-item.iridiumAxe.name=Иридиум топор
-item.iridiumHoe.name=Иридиум мотыга
-item.iridiumPick.name=Иридиум Киркомотыга
-item.iridiumSpade.name=Иридиум Лопата
-item.iridiumSword.name=Иридиум Меч
+item.iridiumAxe.name=Иридиевый топор
+item.iridiumHoe.name=Иридиевая мотыга
+item.iridiumPick.name=Иридиевая кирка
+item.iridiumSpade.name=Иридиевая лопата
+item.iridiumSword.name=Иридиевый меч
 
 # ARMOR
-item.iridiumBoots.name=Иридиум Сапоги
-item.iridiumChestplate.name=Иридиум Бригантина
-item.iridiumHelmet.name=Иридиум шлем
-item.iridiumLeggings.name=Иридиум Леггинсы
+item.iridiumBoots.name=Иридиевый сапоги
+item.iridiumChestplate.name=Иридиевый нагрудник
+item.iridiumHelmet.name=Иридиевый шлем
+item.iridiumLeggings.name=Иридиевые поножи
 
 # BLOCKS
-tile.MercuryBrick.name=Меркурий Кирпич
+tile.MercuryBrick.name=Меркурианский Кирпич
 tile.MercuryCopperOre.name=Медная руда
-tile.MercuryDirt.name=Меркурий Грязь
-tile.MercuryMeteorBlock.name=Блок Метеор
-tile.MercuryMeteorOre.name=Метеор руды
+tile.MercuryDirt.name=Меркурианская земля
+tile.MercuryMeteorBlock.name=Метеор
+tile.MercuryMeteorOre.name=Метеоритная руды
 tile.MercuryGoldOre.name=Золотая руда
-tile.MercuryIridiumBlock.name=Блок Иридиум
+tile.MercuryIridiumBlock.name=Блок Иридия
 tile.MercuryIridiumOre.name=Иридиум руды
-tile.MercuryGrass.name=Меркурий Трава
-tile.MercuryStone.name=Меркурий Камень
+tile.MercuryGrass.name=Меркурианская Трава
+tile.MercuryStone.name=Меркурианский Камень
 tile.MercuryTinOre.name=Оловянная руда
-tile.CaravanModule.name=Портативный Космический Палатка
-tile.CaravanModulePart.name=Караван Модуль Часть
-tile.MercurySlimeBlock.name=Красный Слизь Блок
+tile.CaravanModule.name=Портативная Космическая Палатка
+tile.CaravanModulePart.name=Часть космической палатки
+tile.MercurySlimeBlock.name=Блок красной слизи
 
 # GUI
-gui.choosePlanet.desc.mercury=Жилые#нет кислорода#тяжести: 38%
+gui.choosePlanet.desc.mercury=Обитаем#нет кислорода#сила тяжести: 38%
 
 item.tier4.desc=Tier 4
 
@@ -48,6 +47,6 @@ dimension.Mercury.name=Меркурий
 # Schematics
 
 # Entity
-entity.EvolvedSlime.name=эволюционировали Слизь
+entity.EvolvedSlime.name=Эволюционировавший Слизень
 
-entity.GalacticraftCore.EvolvedSlime.name=эволюционировали Слизь
+entity.GalacticraftCore.EvolvedSlime.name=Эволюционировавший Слизень
