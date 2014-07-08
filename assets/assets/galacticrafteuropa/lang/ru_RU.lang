@@ -7,13 +7,13 @@
 # ARMOR
 
 # BLOCKS
-tile.EuropaSurface.name=европа поверхности-льда
-tile.EuropaIce.name=европа подледных
+tile.EuropaSurface.name=Лёд с поверхности Европы
+tile.EuropaIce.name=Лёд с Европы
 
 # GUI
 gui.choosePlanet.desc.europa=Луна#*Очень холодная#Водянистая
 
-dimension.Europa.name=европа
+dimension.Europa.name=Европа
 
 # Schematics
 
