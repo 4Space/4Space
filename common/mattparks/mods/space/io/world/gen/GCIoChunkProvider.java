@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.io.blocks.IoBlocks;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;
@@ -63,7 +63,7 @@ public class GCIoChunkProvider extends ChunkProviderGenerate
 //		this.dungeonGenerator.treasureRooms.add(new GCIoRoomTreasure(null, 0, 0, 0, ForgeDirection.UNKNOWN));
 	}
 
-	private BiomeGenBase[] biomesForGeneration = { GCIoBiomeGenBase.europaFlat };
+	private BiomeGenBase[] biomesForGeneration = { GCIoBiomeGenBase.ioFlat };
 
 	private static final int CRATER_PROB = 300;
 

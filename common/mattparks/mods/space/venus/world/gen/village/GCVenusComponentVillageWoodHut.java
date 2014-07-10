@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.space.venus.blocks.VenusBlocks;
-import micdoodle8.mods.galacticraft.core.blocks.GCCoreBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;

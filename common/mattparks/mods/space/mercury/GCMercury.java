@@ -2,8 +2,8 @@ package mattparks.mods.space.mercury;
 
 import java.util.Random;
 
-import mattparks.mods.space.core.ConfigManager;
-import mattparks.mods.space.core.Version;
+import mattparks.mods.space.core.util.ConfigManager;
+import mattparks.mods.space.core.util.Version;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import mattparks.mods.space.mercury.dimension.GCMercuryTeleportType;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;

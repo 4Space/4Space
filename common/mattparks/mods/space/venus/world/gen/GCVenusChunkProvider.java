@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
-import mattparks.mods.space.venus.world.gen.dungeon.*;
+import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomBoss;
+import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomChests;
+import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomEmpty;
+import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomSpawner;
+import mattparks.mods.space.venus.world.gen.dungeon.GCVenusRoomTreasure;
 import mattparks.mods.space.venus.world.gen.pit.GCVenusMapGenBlazeNest;
 import mattparks.mods.space.venus.world.gen.village.GCVenusMapGenVillage;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
@@ -90,8 +94,8 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	private static final double TERRAIN_HEIGHT_MOD = 12;
 	private static final double SMALL_FEATURE_HEIGHT_MOD = 26;
 	private static final double MOUNTAIN_HEIGHT_MOD = 95;
-	private static final double VALLEY_HEIGHT_MOD = 35;
-	private static final int CRATER_PROB = 7000;
+	private static final double VALLEY_HEIGHT_MOD = 0;
+	private static final int CRATER_PROB = 24000;
 
 	// DO NOT CHANGE
 	private static final int MID_HEIGHT = 93;

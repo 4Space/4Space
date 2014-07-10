@@ -1,7 +1,7 @@
 package mattparks.mods.space.venus;
 
-import mattparks.mods.space.core.ConfigManager;
-import mattparks.mods.space.core.Version;
+import mattparks.mods.space.core.util.ConfigManager;
+import mattparks.mods.space.core.util.Version;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import mattparks.mods.space.venus.dimension.GCVenusTeleportType;
 import mattparks.mods.space.venus.dimension.GCVenusWorldProvider;

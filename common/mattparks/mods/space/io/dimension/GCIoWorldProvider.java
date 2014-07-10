@@ -1,9 +1,10 @@
 package mattparks.mods.space.io.dimension;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.io.world.gen.GCIoChunkProvider;
 import mattparks.mods.space.io.world.gen.GCIoWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
+import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.GCCoreConfigManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
@@ -14,7 +15,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWorldProvider
+public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
 {
 	@Override
 	public void setDimension(int var1)
@@ -41,11 +42,11 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 		return null;
 	}
 
-    @Override
-    public void registerWorldChunkManager()
-    {
-        this.worldChunkMgr = new GCIoWorldChunkManager();
-    }
+	@Override
+	public void registerWorldChunkManager()
+	{
+		this.worldChunkMgr = new GCIoWorldChunkManager();
+	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -61,29 +62,71 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public float getStarBrightness(float par1)
+	public float calculateCelestialAngle(long par1, float par3)
 	{
-        float f1 = this.worldObj.getCelestialAngle(par1);
-        float f2 = 1.0F - (MathHelper.cos(f1 * (float)Math.PI * 2.0F) * 2.0F + 0.25F);
+		if (!ConfigManager.NormalDays)
+		{
+			final int var4 = (int) (par1 % 24000L);
+		
+			float var5 = (var4 + par3) / 24000.0F - 0.25F;
 
-        if (f2 < 0.0F)
-        {
-            f2 = 0.0F;
-        }
+			if (var5 < 0.0F)
+			{
+				++var5;
+			}
 
-        if (f2 > 1.0F)
-        {
-            f2 = 1.0F;
-        }
+			if (var5 > 1.0F)
+			{
+				--var5;
+			}
 
-        return f2 * f2 * 0.75F;
+			final float var6 = var5;
+			var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+			var5 = var6 + (var5 - var6) / 3.0F;
+			return var5;
+		}
+		
+		else
+		{
+			final int var4 = (int) (par1 % 42000L);
+		
+			float var5 = (var4 + par3) / 42000.0F - 0.25F;
+
+			if (var5 < 0.0F)
+			{
+				++var5;
+			}
+
+			if (var5 > 1.0F)
+			{
+				--var5;
+			}
+
+			final float var6 = var5;
+			var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+			var5 = var6 + (var5 - var6) / 3.0F;
+			return var5;
+		}
 	}
 
 	@Override
-	public float calculateCelestialAngle(long par1, float par3)
+	@SideOnly(Side.CLIENT)
+	public float getStarBrightness(float par1)
 	{
-		return super.calculateCelestialAngle(par1, par3);
+		final float var2 = this.worldObj.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+
+		if (var3 < 0.0F)
+		{
+			var3 = 0.0F;
+		}
+
+		if (var3 > 1.0F)
+		{
+			var3 = 1.0F;
+		}
+
+		return var3 * var3 * 0.5F + 0.3F;
 	}
 
 	public float calculatePhobosAngle(long par1, float par3)
@@ -96,25 +139,27 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
 	}
 
-    @Override
-    public IChunkProvider createChunkGenerator()
-    {
-        return new GCIoChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
-    }
+	@Override
+	public IChunkProvider createChunkGenerator()
+	{
+		return new GCIoChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+	}
 
 	@Override
-	public void updateWeather()
-	{
+    public void updateWeather()
+    {
 		this.worldObj.getWorldInfo().setRainTime(0);
 		this.worldObj.getWorldInfo().setRaining(false);
 		this.worldObj.getWorldInfo().setThunderTime(0);
 		this.worldObj.getWorldInfo().setThundering(false);
-	}
+    	this.worldObj.rainingStrength = 0.0F;
+    	this.worldObj.thunderingStrength = 0.0F;
+    }
 
 	@Override
 	public boolean isSkyColored()
 	{
-		return true;
+		return false;
 	}
 
 	@Override
@@ -150,7 +195,7 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	@Override
 	public String getSaveFolder()
 	{
-		return "DIM" + ConfigManager.dimensionIDIo;
+		return "DIM" + ConfigManager.dimensionIDMercury;
 	}
 
 	@Override
@@ -172,6 +217,12 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	}
 
 	@Override
+	public boolean canSnowAt(int x, int y, int z)
+	{
+		return false;
+	}
+
+	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
 	{
 		return false;
@@ -180,7 +231,7 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	@Override
 	public boolean canDoLightning(Chunk chunk)
 	{
-		return true;
+		return false;
 	}
 
 	@Override
@@ -204,13 +255,19 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	@Override
 	public double getMeteorFrequency()
 	{
-		return 10.0D;
+		return 7.0D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier()
 	{
-		return 0.9D;
+		return 0.7D;
+	}
+
+	@Override
+	public double getSolarEnergyMultiplier()
+	{
+		return 1.4D;
 	}
 
 	@Override
@@ -222,12 +279,12 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	@Override
 	public float getFallDamageModifier()
 	{
-		return 0.38F;
+		return 0.18F;
 	}
 
 	@Override
 	public float getSoundVolReductionAmount()
 	{
-		return 10.0F;
+		return 20.0F;
 	}
 }

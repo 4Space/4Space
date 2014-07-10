@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntityCreeper;
 import micdoodle8.mods.galacticraft.core.entities.GCCoreEntitySkeleton;

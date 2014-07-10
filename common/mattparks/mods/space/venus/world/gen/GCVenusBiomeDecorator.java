@@ -5,7 +5,6 @@ import java.util.Random;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import micdoodle8.mods.galacticraft.core.world.gen.GCCoreWorldGenMinableMeta;
-import micdoodle8.mods.galacticraft.mars.blocks.GCMarsBlocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;

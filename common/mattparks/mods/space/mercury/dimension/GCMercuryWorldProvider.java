@@ -1,6 +1,6 @@
 package mattparks.mods.space.mercury.dimension;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.mercury.world.gen.GCMercuryChunkProvider;
 import mattparks.mods.space.mercury.world.gen.GCMercuryWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
@@ -64,23 +64,49 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
 	{
-		final int var4 = (int) (par1 % 5832000L);
-		float var5 = (var4 + par3) / 5832000.0F - 0.25F;
-
-		if (var5 < 0.0F)
+		if (!ConfigManager.NormalDays)
 		{
-			++var5;
-		}
+			final int var4 = (int) (par1 % 24000L);
+		
+			float var5 = (var4 + par3) / 24000.0F - 0.25F;
 
-		if (var5 > 1.0F)
+			if (var5 < 0.0F)
+			{
+				++var5;
+			}
+
+			if (var5 > 1.0F)
+			{
+				--var5;
+			}
+
+			final float var6 = var5;
+			var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+			var5 = var6 + (var5 - var6) / 3.0F;
+			return var5;
+		}
+		
+		else
 		{
-			--var5;
-		}
+			final int var4 = (int) (par1 % 5832000L);
+		
+			float var5 = (var4 + par3) / 5832000.0F - 0.25F;
 
-		final float var6 = var5;
-		var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
-		var5 = var6 + (var5 - var6) / 3.0F;
-		return var5;
+			if (var5 < 0.0F)
+			{
+				++var5;
+			}
+
+			if (var5 > 1.0F)
+			{
+				--var5;
+			}
+
+			final float var6 = var5;
+			var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+			var5 = var6 + (var5 - var6) / 3.0F;
+			return var5;
+		}
 	}
 
 	@Override
@@ -175,13 +201,13 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 	@Override
 	public String getWelcomeMessage()
 	{
-		return "Entering The Mercury";
+		return "Entering Mercury";
 	}
 
 	@Override
 	public String getDepartMessage()
 	{
-		return "Leaving The Mercury";
+		return "Leaving Mercury";
 	}
 
 	@Override

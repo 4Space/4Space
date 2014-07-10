@@ -1,6 +1,6 @@
 package mattparks.mods.space.io;
 
-import mattparks.mods.space.core.Version;
+import mattparks.mods.space.core.util.Version;
 import mattparks.mods.space.io.blocks.IoBlocks;
 import mattparks.mods.space.io.dimension.GCIoTeleportType;
 import mattparks.mods.space.io.dimension.GCIoWorldProvider;

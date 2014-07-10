@@ -2,9 +2,8 @@ package mattparks.mods.space.mercury.blocks;
 
 import java.util.ArrayList;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.mercury.GCMercury;
-import micdoodle8.mods.galacticraft.core.blocks.GCCoreBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.MinecraftForge;

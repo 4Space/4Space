@@ -20,7 +20,7 @@ public class GCIoWorldChunkManager extends WorldChunkManager
 	{
 		this.biomeCache = new BiomeCache(this);
 		this.biomesToSpawnIn = new ArrayList<BiomeGenBase>();
-		this.biomesToSpawnIn.add(GCIoBiomeGenBase.europaFlat);
+		this.biomesToSpawnIn.add(GCIoBiomeGenBase.ioFlat);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class GCIoWorldChunkManager extends WorldChunkManager
 	@Override
 	public BiomeGenBase getBiomeGenAt(int par1, int par2)
 	{
-		return GCIoBiomeGenBase.europaFlat;
+		return GCIoBiomeGenBase.ioFlat;
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class GCIoWorldChunkManager extends WorldChunkManager
 
 		for (int var7 = 0; var7 < par4 * par5; ++var7)
 		{
-			float var8 = GCIoBiomeGenBase.europaFlat.getIntTemperature() / 65536.0F;
+			float var8 = GCIoBiomeGenBase.ioFlat.getIntTemperature() / 65536.0F;
 
 			if (var8 > 1.0F)
 			{
@@ -90,7 +90,7 @@ public class GCIoWorldChunkManager extends WorldChunkManager
 
 		for (int var7 = 0; var7 < par4 * par5; ++var7)
 		{
-			par1ArrayOfBiomeGenBase[var7] = GCIoBiomeGenBase.europaFlat;
+			par1ArrayOfBiomeGenBase[var7] = GCIoBiomeGenBase.ioFlat;
 		}
 
 		return par1ArrayOfBiomeGenBase;
@@ -122,7 +122,7 @@ public class GCIoWorldChunkManager extends WorldChunkManager
 		{
 			for (int var8 = 0; var8 < par4 * par5; ++var8)
 			{
-				par1ArrayOfBiomeGenBase[var8] = GCIoBiomeGenBase.europaFlat;
+				par1ArrayOfBiomeGenBase[var8] = GCIoBiomeGenBase.ioFlat;
 			}
 
 			return par1ArrayOfBiomeGenBase;
@@ -142,7 +142,7 @@ public class GCIoWorldChunkManager extends WorldChunkManager
 
 		for (int var12 = 0; var12 < var9 * var10; ++var12)
 		{
-			final BiomeGenBase var13 = GCIoBiomeGenBase.europaFlat;
+			final BiomeGenBase var13 = GCIoBiomeGenBase.ioFlat;
 
 			if (!par4List.contains(var13))
 			{

@@ -1,6 +1,6 @@
 package mattparks.mods.space.io;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.io.client.GCMapEuropa;
 import mattparks.mods.space.io.dimension.GCIoWorldProvider;
 import mattparks.mods.space.jupiter.GCJupiter;

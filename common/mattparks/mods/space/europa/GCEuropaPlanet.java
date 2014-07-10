@@ -1,6 +1,6 @@
 package mattparks.mods.space.europa;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.europa.client.GCMapEuropa;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
 import mattparks.mods.space.jupiter.GCJupiter;

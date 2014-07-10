@@ -1,4 +1,4 @@
-package mattparks.mods.space.core;
+package mattparks.mods.space.core.network;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;

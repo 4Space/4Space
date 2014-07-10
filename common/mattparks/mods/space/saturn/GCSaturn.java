@@ -1,6 +1,6 @@
 package mattparks.mods.space.saturn;
 
-import mattparks.mods.space.core.Version;
+import mattparks.mods.space.core.util.Version;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;

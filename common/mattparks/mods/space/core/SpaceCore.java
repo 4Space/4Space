@@ -3,6 +3,9 @@ package mattparks.mods.space.core;
 import java.io.File;
 
 import mattparks.mods.MattparksCore.MattCore;
+import mattparks.mods.space.core.network.PacketHandlerServer;
+import mattparks.mods.space.core.util.ConfigManager;
+import mattparks.mods.space.core.util.Version;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;
@@ -30,7 +33,7 @@ public class SpaceCore
 	public static final String CHANNEL = "SpaceCore";
 	public static final String CHANNELENTITIES = "SpaceCoreEntities";
 
-	@SidedProxy(clientSide = "mattparks.mods.space.core.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
+	@SidedProxy(clientSide = "mattparks.mods.space.core.client.ClientProxy", serverSide = "mattparks.mods.space.core.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@Instance(SpaceCore.MODID)

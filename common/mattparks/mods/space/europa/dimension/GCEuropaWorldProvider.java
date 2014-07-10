@@ -1,6 +1,6 @@
 package mattparks.mods.space.europa.dimension;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.europa.world.gen.GCEuropaChunkProvider;
 import mattparks.mods.space.europa.world.gen.GCEuropaWorldChunkManager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;

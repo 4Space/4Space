@@ -1,6 +1,6 @@
 package mattparks.mods.space.europa.blocks;
 
-import mattparks.mods.space.core.ConfigManager;
+import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.europa.GCEuropa;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

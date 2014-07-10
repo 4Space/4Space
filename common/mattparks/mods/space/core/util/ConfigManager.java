@@ -1,4 +1,4 @@
-package mattparks.mods.space.core;
+package mattparks.mods.space.core.util;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -22,6 +22,7 @@ public class ConfigManager
 	}
 	
     public static boolean GenerateOtherMods;
+    public static boolean NormalDays;
     
     // MERCURY    
     public static int idItemMercuryBasic;
@@ -131,6 +132,8 @@ public class ConfigManager
 		{
             ConfigManager.configuration.load();
             ConfigManager.GenerateOtherMods = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Generate other mod's features on any 4-Space world", false).getBoolean(false);        
+            
+            ConfigManager.NormalDays = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "If set to false, days will become the length of a normal overworld day.", true).getBoolean(true);        
             
             //MERCURY
             ConfigManager.idItemMercuryBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryBasic", 7855).getInt(7855);
