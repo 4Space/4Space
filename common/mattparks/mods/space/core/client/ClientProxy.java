@@ -1,7 +1,7 @@
 package mattparks.mods.space.core.client;
 
 import java.util.EnumSet;
-
+         
 import mattparks.mods.space.core.CommonProxy;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
