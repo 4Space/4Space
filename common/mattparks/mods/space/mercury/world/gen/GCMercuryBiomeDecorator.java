@@ -27,12 +27,12 @@ public class GCMercuryBiomeDecorator
 
 	public GCMercuryBiomeDecorator(BiomeGenBase par1BiomeGenBase)
 	{
-		this.dirtGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryDirt.blockID, 32, 6, true, MercuryBlocks.MercuryStone.blockID, 0);
-		this.copperGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryCopperOre.blockID, 4, 0, true, MercuryBlocks.MercuryStone.blockID, 0);
-		this.tinGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryTinOre.blockID, 4, 1, true, MercuryBlocks.MercuryStone.blockID, 0);
-        this.meteorGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryMeteorOre.blockID, 4, 3, false, MercuryBlocks.MercuryStone.blockID, 0);
+		this.dirtGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryDirt.blockID, 32, 9, true, MercuryBlocks.MercuryStone.blockID, 0);
+		this.copperGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryCopperOre.blockID, 4, 3, true, MercuryBlocks.MercuryStone.blockID, 0);
+		this.tinGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryTinOre.blockID, 4, 3, true, MercuryBlocks.MercuryStone.blockID, 0);
+        this.meteorGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryMeteorOre.blockID, 1, 1, false, MercuryBlocks.MercuryStone.blockID, 0);
 		this.goldGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryGoldOre.blockID, 4, 2, true, MercuryBlocks.MercuryStone.blockID, 0);
-		this.iridiumGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryIridiumOre.blockID, 8, 3, true, MercuryBlocks.MercuryStone.blockID, 0);
+		this.iridiumGen = new GCCoreWorldGenMinableMeta(MercuryBlocks.MercuryIridiumOre.blockID, 7, 3, true, MercuryBlocks.MercuryStone.blockID, 0);
 	}
 
 	public void decorate(World worldObj, Random rand, int chunkX, int chunkZ)

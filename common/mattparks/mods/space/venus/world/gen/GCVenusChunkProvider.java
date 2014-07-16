@@ -92,7 +92,7 @@ public class GCVenusChunkProvider extends ChunkProviderGenerate
 	int[][] field_914_i = new int[32][32];
 
 	private static final double TERRAIN_HEIGHT_MOD = 12;
-	private static final double SMALL_FEATURE_HEIGHT_MOD = 26;
+	private static final double SMALL_FEATURE_HEIGHT_MOD = 12;
 	private static final double MOUNTAIN_HEIGHT_MOD = 95;
 	private static final double VALLEY_HEIGHT_MOD = 0;
 	private static final int CRATER_PROB = 24000;
