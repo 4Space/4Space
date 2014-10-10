@@ -27,45 +27,53 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         this.experienceValue = 10;
     }
 
-    protected void applyEntityAttributes()
+    @Override
+	protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(6.0D);
     }
 
-    protected void entityInit()
+    @Override
+	protected void entityInit()
     {
         super.entityInit();
         this.dataWatcher.addObject(16, new Byte((byte)0));
     }
 
-    protected String getLivingSound()
+    @Override
+	protected String getLivingSound()
     {
         return "mob.blaze.breathe";
     }
 
-    protected String getHurtSound()
+    @Override
+	protected String getHurtSound()
     {
         return "mob.blaze.hit";
     }
 
-    protected String getDeathSound()
+    @Override
+	protected String getDeathSound()
     {
         return "mob.blaze.death";
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public int getBrightnessForRender(float par1)
     {
         return 15728880;
     }
 
-    public float getBrightness(float par1)
+    @Override
+	public float getBrightness(float par1)
     {
         return 1.0F;
     }
 
-    public void onLivingUpdate()
+    @Override
+	public void onLivingUpdate()
     {
         if (!this.worldObj.isRemote)
         {
@@ -82,7 +90,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
                 this.heightOffset = 0.5F + (float)this.rand.nextGaussian() * 3.0F;
             }
 
-            if (this.getEntityToAttack() != null && this.getEntityToAttack().posY + (double)this.getEntityToAttack().getEyeHeight() > this.posY + (double)this.getEyeHeight() + (double)this.heightOffset)
+            if (this.getEntityToAttack() != null && this.getEntityToAttack().posY + this.getEntityToAttack().getEyeHeight() > this.posY + this.getEyeHeight() + this.heightOffset)
             {
                 this.motionY += (0.30000001192092896D - this.motionY) * 0.30000001192092896D;
             }
@@ -100,13 +108,14 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
 
         for (int i = 0; i < 2; ++i)
         {
-            this.worldObj.spawnParticle("largesmoke", this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
+            this.worldObj.spawnParticle("largesmoke", this.posX + (this.rand.nextDouble() - 0.5D) * this.width, this.posY + this.rand.nextDouble() * this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
         }
 
         super.onLivingUpdate();
     }
 
-    protected void attackEntity(Entity par1Entity, float par2)
+    @Override
+	protected void attackEntity(Entity par1Entity, float par2)
     {
         if (this.attackTime <= 0 && par2 < 2.0F && par1Entity.boundingBox.maxY > this.boundingBox.minY && par1Entity.boundingBox.minY < this.boundingBox.maxY)
         {
@@ -116,7 +125,7 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         else if (par2 < 30.0F)
         {
             double d0 = par1Entity.posX - this.posX;
-            double d1 = par1Entity.boundingBox.minY + (double)(par1Entity.height / 2.0F) - (this.posY + (double)(this.height / 2.0F));
+            double d1 = par1Entity.boundingBox.minY + par1Entity.height / 2.0F - (this.posY + this.height / 2.0F);
             double d2 = par1Entity.posZ - this.posZ;
 
             if (this.attackTime == 0)
@@ -146,8 +155,8 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
 
                     for (int i = 0; i < 1; ++i)
                     {
-                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.worldObj, this, d0 + this.rand.nextGaussian() * (double)f1, d1, d2 + this.rand.nextGaussian() * (double)f1);
-                        entitysmallfireball.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
+                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.worldObj, this, d0 + this.rand.nextGaussian() * f1, d1, d2 + this.rand.nextGaussian() * f1);
+                        entitysmallfireball.posY = this.posY + this.height / 2.0F + 0.5D;
                         this.worldObj.spawnEntityInWorld(entitysmallfireball);
                     }
                 }
@@ -158,19 +167,23 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         }
     }
 
-    protected void fall(float par1) {}
+    @Override
+	protected void fall(float par1) {}
 
-    protected int getDropItemId()
+    @Override
+	protected int getDropItemId()
     {
         return GCVenusItems.venusRod.itemID;
     }
 
-    public boolean isBurning()
+    @Override
+	public boolean isBurning()
     {
         return this.func_70845_n();
     }
 
-    protected void dropFewItems(boolean par1, int par2)
+    @Override
+	protected void dropFewItems(boolean par1, int par2)
     {
         if (par1)
         {
@@ -204,7 +217,8 @@ public class GCVenusEntityEvolvedBlaze extends EntityMob implements IEntityBreat
         this.dataWatcher.updateObject(16, Byte.valueOf(b0));
     }
 
-    protected boolean isValidLightLevel()
+    @Override
+	protected boolean isValidLightLevel()
     {
         return true;
     }

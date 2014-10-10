@@ -30,7 +30,8 @@ public class GCVenusModelEvolvedBlaze extends ModelBase
         return 8;
     }
 
-    public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
+    @Override
+	public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
     {
         this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
         this.evolvedBlazeHead.render(par7);
@@ -41,14 +42,15 @@ public class GCVenusModelEvolvedBlaze extends ModelBase
         }
     }
 
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
+    @Override
+	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
     {
         float f6 = par3 * (float)Math.PI * -0.1F;
         int i;
 
         for (i = 0; i < 4; ++i)
         {
-            this.evolvedBlazeSticks[i].rotationPointY = -2.0F + MathHelper.cos(((float)(i * 2) + par3) * 0.25F);
+            this.evolvedBlazeSticks[i].rotationPointY = -2.0F + MathHelper.cos((i * 2 + par3) * 0.25F);
             this.evolvedBlazeSticks[i].rotationPointX = MathHelper.cos(f6) * 9.0F;
             this.evolvedBlazeSticks[i].rotationPointZ = MathHelper.sin(f6) * 9.0F;
             ++f6;
@@ -58,7 +60,7 @@ public class GCVenusModelEvolvedBlaze extends ModelBase
 
         for (i = 4; i < 8; ++i)
         {
-            this.evolvedBlazeSticks[i].rotationPointY = 2.0F + MathHelper.cos(((float)(i * 2) + par3) * 0.25F);
+            this.evolvedBlazeSticks[i].rotationPointY = 2.0F + MathHelper.cos((i * 2 + par3) * 0.25F);
             this.evolvedBlazeSticks[i].rotationPointX = MathHelper.cos(f6) * 7.0F;
             this.evolvedBlazeSticks[i].rotationPointZ = MathHelper.sin(f6) * 7.0F;
             ++f6;
@@ -68,7 +70,7 @@ public class GCVenusModelEvolvedBlaze extends ModelBase
 
         for (i = 8; i < 12; ++i)
         {
-            this.evolvedBlazeSticks[i].rotationPointY = 11.0F + MathHelper.cos(((float)i * 1.5F + par3) * 0.5F);
+            this.evolvedBlazeSticks[i].rotationPointY = 11.0F + MathHelper.cos((i * 1.5F + par3) * 0.5F);
             this.evolvedBlazeSticks[i].rotationPointX = MathHelper.cos(f6) * 5.0F;
             this.evolvedBlazeSticks[i].rotationPointZ = MathHelper.sin(f6) * 5.0F;
             ++f6;

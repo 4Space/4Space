@@ -34,22 +34,26 @@ public class GCVenusSulfurTorch extends Block
 		return GCVenus.galacticraftVenusTab;
 	}
 
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    @Override
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
     {
         return null;
     }
 
-    public boolean isOpaqueCube()
+    @Override
+	public boolean isOpaqueCube()
     {
         return false;
     }
 
-    public boolean renderAsNormalBlock()
+    @Override
+	public boolean renderAsNormalBlock()
     {
         return false;
     }
 
-    public int getRenderType()
+    @Override
+	public int getRenderType()
     {
         return 2;
     }
@@ -67,7 +71,8 @@ public class GCVenusSulfurTorch extends Block
         }
     }
 
-    public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
+    @Override
+	public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
     {
         return par1World.isBlockSolidOnSide(par2 - 1, par3, par4, EAST,  true) ||
                par1World.isBlockSolidOnSide(par2 + 1, par3, par4, WEST,  true) ||
@@ -76,7 +81,8 @@ public class GCVenusSulfurTorch extends Block
                canPlaceTorchOn(par1World, par2, par3 - 1, par4);
     }
 
-    public int onBlockPlaced(World par1World, int par2, int par3, int par4, int par5, float par6, float par7, float par8, int par9)
+    @Override
+	public int onBlockPlaced(World par1World, int par2, int par3, int par4, int par5, float par6, float par7, float par8, int par9)
     {
         int j1 = par9;
 
@@ -108,7 +114,8 @@ public class GCVenusSulfurTorch extends Block
         return j1;
     }
 
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    @Override
+	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         super.updateTick(par1World, par2, par3, par4, par5Random);
 
@@ -118,7 +125,8 @@ public class GCVenusSulfurTorch extends Block
         }
     }
 
-    public void onBlockAdded(World par1World, int par2, int par3, int par4)
+    @Override
+	public void onBlockAdded(World par1World, int par2, int par3, int par4)
     {
         if (par1World.getBlockMetadata(par2, par3, par4) == 0)
         {
@@ -147,7 +155,8 @@ public class GCVenusSulfurTorch extends Block
         this.dropTorchIfCantStay(par1World, par2, par3, par4);
     }
 
-    public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
+    @Override
+	public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
     {
         this.func_94397_d(par1World, par2, par3, par4, par5);
     }
@@ -219,7 +228,8 @@ public class GCVenusSulfurTorch extends Block
         }
     }
 
-    public MovingObjectPosition collisionRayTrace(World par1World, int par2, int par3, int par4, Vec3 par5Vec3, Vec3 par6Vec3)
+    @Override
+	public MovingObjectPosition collisionRayTrace(World par1World, int par2, int par3, int par4, Vec3 par5Vec3, Vec3 par6Vec3)
     {
         int l = par1World.getBlockMetadata(par2, par3, par4) & 7;
         float f = 0.15F;
@@ -249,7 +259,8 @@ public class GCVenusSulfurTorch extends Block
         return super.collisionRayTrace(par1World, par2, par3, par4, par5Vec3, par6Vec3);
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
 
     /**
      * A randomly called display update to be able to add particles or other items for display
@@ -257,9 +268,9 @@ public class GCVenusSulfurTorch extends Block
     public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         int l = par1World.getBlockMetadata(par2, par3, par4);
-        double d0 = (double)((float)par2 + 0.5F);
-        double d1 = (double)((float)par3 + 0.7F);
-        double d2 = (double)((float)par4 + 0.5F);
+        double d0 = par2 + 0.5F;
+        double d1 = par3 + 0.7F;
+        double d2 = par4 + 0.5F;
         double d3 = 0.2199999988079071D;
         double d4 = 0.27000001072883606D;
 

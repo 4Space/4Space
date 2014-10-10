@@ -41,22 +41,26 @@ public class GCVenusRenderEvolvedBlaze extends RenderLiving
         return evolvedBlazeTextures;
     }
 
-    public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
+    @Override
+	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
     {
         this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1EntityLiving, par2, par4, par6, par8, par9);
     }
 
-    public void renderPlayer(EntityLivingBase par1EntityLivingBase, double par2, double par4, double par6, float par8, float par9)
+    @Override
+	public void renderPlayer(EntityLivingBase par1EntityLivingBase, double par2, double par4, double par6, float par8, float par9)
     {
         this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1EntityLivingBase, par2, par4, par6, par8, par9);
     }
 
-    protected ResourceLocation getEntityTexture(Entity par1Entity)
+    @Override
+	protected ResourceLocation getEntityTexture(Entity par1Entity)
     {
         return this.getEvolvedBlazeTextures((GCVenusEntityEvolvedBlaze)par1Entity);
     }
 
-    public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
+    @Override
+	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
     {
         this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1Entity, par2, par4, par6, par8, par9);
     }

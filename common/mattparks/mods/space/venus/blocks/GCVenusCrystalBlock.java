@@ -27,13 +27,15 @@ public class GCVenusCrystalBlock extends Block implements IPartialSealableBlock
 		return GCVenus.galacticraftVenusTab;
 	}
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public int getRenderBlockPass()
     {
         return 1;
     }
     
-    public boolean renderAsNormalBlock()
+    @Override
+	public boolean renderAsNormalBlock()
     {
         return false;
     }

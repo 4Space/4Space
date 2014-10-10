@@ -18,7 +18,8 @@ public class GCMercuryCaravanPart extends Block implements IPartialSealableBlock
         this.setStepSound(new StepSound("cloth", 0.0F, 1.0F));
     }
     
-    public int quantityDropped(Random par1Random)
+    @Override
+	public int quantityDropped(Random par1Random)
     {
         return 0;
     }

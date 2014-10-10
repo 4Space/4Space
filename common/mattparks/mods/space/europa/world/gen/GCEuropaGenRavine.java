@@ -15,8 +15,8 @@ public class GCEuropaGenRavine extends MapGenBase
     protected void generateRavine(long par1, int par3, int par4, byte[] par5ArrayOfByte, double par6, double par8, double par10, float par12, float par13, float par14, int par15, int par16, double par17)
     {
         Random random = new Random(par1);
-        double d4 = (double)(par3 * 16 + 8);
-        double d5 = (double)(par4 * 16 + 8);
+        double d4 = par3 * 16 + 8;
+        double d5 = par4 * 16 + 8;
         float f3 = 0.0F;
         float f4 = 0.0F;
 
@@ -48,15 +48,15 @@ public class GCEuropaGenRavine extends MapGenBase
 
         for (; par15 < par16; ++par15)
         {
-            double d6 = 1.5D + (double)(MathHelper.sin((float)par15 * (float)Math.PI / (float)par16) * par12 * 1.0F);
+            double d6 = 1.5D + MathHelper.sin(par15 * (float)Math.PI / par16) * par12 * 1.0F;
             double d7 = d6 * par17;
-            d6 *= (double)random.nextFloat() * 0.25D + 0.75D;
-            d7 *= (double)random.nextFloat() * 0.25D + 0.75D;
+            d6 *= random.nextFloat() * 0.25D + 0.75D;
+            d7 *= random.nextFloat() * 0.25D + 0.75D;
             float f6 = MathHelper.cos(par14);
             float f7 = MathHelper.sin(par14);
-            par6 += (double)(MathHelper.cos(par13) * f6);
-            par8 += (double)f7;
-            par10 += (double)(MathHelper.sin(par13) * f6);
+            par6 += MathHelper.cos(par13) * f6;
+            par8 += f7;
+            par10 += MathHelper.sin(par13) * f6;
             par14 *= 0.7F;
             par14 += f4 * 0.05F;
             par13 += f3 * 0.05F;
@@ -69,8 +69,8 @@ public class GCEuropaGenRavine extends MapGenBase
             {
                 double d8 = par6 - d4;
                 double d9 = par10 - d5;
-                double d10 = (double)(par16 - par15);
-                double d11 = (double)(par12 + 2.0F + 16.0F);
+                double d10 = par16 - par15;
+                double d11 = par12 + 2.0F + 16.0F;
 
                 if (d8 * d8 + d9 * d9 - d10 * d10 > d11 * d11)
                 {
@@ -148,11 +148,11 @@ public class GCEuropaGenRavine extends MapGenBase
                     {
                         for (j3 = l1; j3 < i2; ++j3)
                         {
-                            double d12 = ((double)(j3 + par3 * 16) + 0.5D - par6) / d6;
+                            double d12 = (j3 + par3 * 16 + 0.5D - par6) / d6;
 
                             for (k3 = l2; k3 < i3; ++k3)
                             {
-                                double d13 = ((double)(k3 + par4 * 16) + 0.5D - par10) / d6;
+                                double d13 = (k3 + par4 * 16 + 0.5D - par10) / d6;
                                 int j4 = (j3 * 16 + k3) * 128 + k2;
                                 boolean flag2 = false;
 
@@ -160,9 +160,9 @@ public class GCEuropaGenRavine extends MapGenBase
                                 {
                                     for (int k4 = k2 - 1; k4 >= j2; --k4)
                                     {
-                                        double d14 = ((double)k4 + 0.5D - par8) / d7;
+                                        double d14 = (k4 + 0.5D - par8) / d7;
 
-                                        if ((d12 * d12 + d13 * d13) * (double)this.field_75046_d[k4] + d14 * d14 / 6.0D < 1.0D)
+                                        if ((d12 * d12 + d13 * d13) * this.field_75046_d[k4] + d14 * d14 / 6.0D < 1.0D)
                                         {
                                             if (isTopBlock(par5ArrayOfByte, j4, j3, k4, k3, par3, par4))
                                             {
@@ -191,13 +191,14 @@ public class GCEuropaGenRavine extends MapGenBase
     /**
      * Recursively called by generate() (generate) and optionally by itself.
      */
-    protected void recursiveGenerate(World par1World, int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
+    @Override
+	protected void recursiveGenerate(World par1World, int par2, int par3, int par4, int par5, byte[] par6ArrayOfByte)
     {
         if (this.rand.nextInt(50) == 0)
         {
-            double d0 = (double)(par2 * 16 + this.rand.nextInt(16));
-            double d1 = (double)(this.rand.nextInt(this.rand.nextInt(40) + 8) + 20);
-            double d2 = (double)(par3 * 16 + this.rand.nextInt(16));
+            double d0 = par2 * 16 + this.rand.nextInt(16);
+            double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
+            double d2 = par3 * 16 + this.rand.nextInt(16);
             byte b0 = 1;
 
             for (int i1 = 0; i1 < b0; ++i1)

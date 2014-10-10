@@ -157,15 +157,15 @@ public class GCVenusSkyProvider extends IRenderHandler
 
         // Render sun aura
         f10 = 20.0F;
-        tessellator1.addVertex((double)-f10, 150.0D, (double)-f10);
-        tessellator1.addVertex((double)0, 150.0D, (double)-f10 * 1.5F);
-        tessellator1.addVertex((double)f10, 150.0D, (double)-f10);
-        tessellator1.addVertex((double)f10 * 1.5F, 150.0D, (double)0);
-        tessellator1.addVertex((double)f10, 150.0D, (double)f10);
-        tessellator1.addVertex((double)0, 150.0D, (double)f10 * 1.5F);
-        tessellator1.addVertex((double)-f10, 150.0D, (double)f10);
-        tessellator1.addVertex((double)-f10 * 1.5F, 150.0D, (double)0);
-        tessellator1.addVertex((double)-f10, 150.0D, (double)-f10);
+        tessellator1.addVertex(-f10, 150.0D, -f10);
+        tessellator1.addVertex(0, 150.0D, (double)-f10 * 1.5F);
+        tessellator1.addVertex(f10, 150.0D, -f10);
+        tessellator1.addVertex((double)f10 * 1.5F, 150.0D, 0);
+        tessellator1.addVertex(f10, 150.0D, f10);
+        tessellator1.addVertex(0, 150.0D, (double)f10 * 1.5F);
+        tessellator1.addVertex(-f10, 150.0D, f10);
+        tessellator1.addVertex((double)-f10 * 1.5F, 150.0D, 0);
+        tessellator1.addVertex(-f10, 150.0D, -f10);
 
         tessellator1.draw();
         tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
@@ -175,15 +175,15 @@ public class GCVenusSkyProvider extends IRenderHandler
 
         // Render larger sun aura
         f10 = 40.0F;
-        tessellator1.addVertex((double)-f10, 190.0D, (double)-f10);
-        tessellator1.addVertex((double)0, 190.0D, (double)-f10 * 1.5F);
-        tessellator1.addVertex((double)f10, 190.0D, (double)-f10);
-        tessellator1.addVertex((double)f10 * 1.5F, 190.0D, (double)0);
-        tessellator1.addVertex((double)f10, 190.0D, (double)f10);
-        tessellator1.addVertex((double)0, 190.0D, (double)f10 * 1.5F);
-        tessellator1.addVertex((double)-f10, 190.0D, (double)f10);
-        tessellator1.addVertex((double)-f10 * 1.5F, 190.0D, (double)0);
-        tessellator1.addVertex((double)-f10, 190.0D, (double)-f10);
+        tessellator1.addVertex(-f10, 190.0D, -f10);
+        tessellator1.addVertex(0, 190.0D, (double)-f10 * 1.5F);
+        tessellator1.addVertex(f10, 190.0D, -f10);
+        tessellator1.addVertex((double)f10 * 1.5F, 190.0D, 0);
+        tessellator1.addVertex(f10, 190.0D, f10);
+        tessellator1.addVertex(0, 190.0D, (double)f10 * 1.5F);
+        tessellator1.addVertex(-f10, 190.0D, f10);
+        tessellator1.addVertex((double)-f10 * 1.5F, 190.0D, 0);
+        tessellator1.addVertex(-f10, 190.0D, -f10);
 
         tessellator1.draw();
         GL11.glPopMatrix();
@@ -204,10 +204,10 @@ public class GCVenusSkyProvider extends IRenderHandler
         f10 = 14.0F;
         mc.renderEngine.bindTexture(sunTexture);
         tessellator1.startDrawingQuads();
-        tessellator1.addVertexWithUV((double)(-f10), 250.0D, (double)(-f10), 0.0D, 0.0D);
-        tessellator1.addVertexWithUV((double)f10, 250.0D, (double)(-f10), 1.0D, 0.0D);
-        tessellator1.addVertexWithUV((double)f10, 250.0D, (double)f10, 1.0D, 1.0D);
-        tessellator1.addVertexWithUV((double)(-f10), 250.0D, (double)f10, 0.0D, 1.0D);
+        tessellator1.addVertexWithUV((-f10), 250.0D, (-f10), 0.0D, 0.0D);
+        tessellator1.addVertexWithUV(f10, 250.0D, (-f10), 1.0D, 0.0D);
+        tessellator1.addVertexWithUV(f10, 250.0D, f10, 1.0D, 1.0D);
+        tessellator1.addVertexWithUV((-f10), 250.0D, f10, 0.0D, 1.0D);
         tessellator1.draw();
 
         GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -232,26 +232,26 @@ public class GCVenusSkyProvider extends IRenderHandler
             f10 = -f8;
             tessellator1.startDrawingQuads();
             tessellator1.setColorRGBA_I(0, 255);
-            tessellator1.addVertex((double)(-f8), (double)f9, (double)f8);
-            tessellator1.addVertex((double)f8, (double)f9, (double)f8);
-            tessellator1.addVertex((double)f8, (double)f10, (double)f8);
-            tessellator1.addVertex((double)(-f8), (double)f10, (double)f8);
-            tessellator1.addVertex((double)(-f8), (double)f10, (double)(-f8));
-            tessellator1.addVertex((double)f8, (double)f10, (double)(-f8));
-            tessellator1.addVertex((double)f8, (double)f9, (double)(-f8));
-            tessellator1.addVertex((double)(-f8), (double)f9, (double)(-f8));
-            tessellator1.addVertex((double)f8, (double)f10, (double)(-f8));
-            tessellator1.addVertex((double)f8, (double)f10, (double)f8);
-            tessellator1.addVertex((double)f8, (double)f9, (double)f8);
-            tessellator1.addVertex((double)f8, (double)f9, (double)(-f8));
-            tessellator1.addVertex((double)(-f8), (double)f9, (double)(-f8));
-            tessellator1.addVertex((double)(-f8), (double)f9, (double)f8);
-            tessellator1.addVertex((double)(-f8), (double)f10, (double)f8);
-            tessellator1.addVertex((double)(-f8), (double)f10, (double)(-f8));
-            tessellator1.addVertex((double)(-f8), (double)f10, (double)(-f8));
-            tessellator1.addVertex((double)(-f8), (double)f10, (double)f8);
-            tessellator1.addVertex((double)f8, (double)f10, (double)f8);
-            tessellator1.addVertex((double)f8, (double)f10, (double)(-f8));
+            tessellator1.addVertex((-f8), f9, f8);
+            tessellator1.addVertex(f8, f9, f8);
+            tessellator1.addVertex(f8, f10, f8);
+            tessellator1.addVertex((-f8), f10, f8);
+            tessellator1.addVertex((-f8), f10, (-f8));
+            tessellator1.addVertex(f8, f10, (-f8));
+            tessellator1.addVertex(f8, f9, (-f8));
+            tessellator1.addVertex((-f8), f9, (-f8));
+            tessellator1.addVertex(f8, f10, (-f8));
+            tessellator1.addVertex(f8, f10, f8);
+            tessellator1.addVertex(f8, f9, f8);
+            tessellator1.addVertex(f8, f9, (-f8));
+            tessellator1.addVertex((-f8), f9, (-f8));
+            tessellator1.addVertex((-f8), f9, f8);
+            tessellator1.addVertex((-f8), f10, f8);
+            tessellator1.addVertex((-f8), f10, (-f8));
+            tessellator1.addVertex((-f8), f10, (-f8));
+            tessellator1.addVertex((-f8), f10, f8);
+            tessellator1.addVertex(f8, f10, f8);
+            tessellator1.addVertex(f8, f10, (-f8));
             tessellator1.draw();
         }
 
