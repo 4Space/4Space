@@ -2,12 +2,10 @@ package mattparks.mods.space.mercury;
 
 import java.util.Random;
 
-import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.core.util.Version;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import mattparks.mods.space.mercury.dimension.GCMercuryTeleportType;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
-import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
 import mattparks.mods.space.mercury.items.GCMercuryItems;
 import mattparks.mods.space.mercury.recipe.GCMercuryRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
@@ -16,7 +14,6 @@ import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
-import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -95,7 +92,7 @@ public class GCMercury
 
 	public void registerCreatures()
 	{
-        GCCoreUtil.registerGalacticraftCreature(GCMercuryEntityEvolvedSlime.class, "EvolvedSlime", ConfigManager.idEntityMercuryEvolvedSlime, 10489616, 8306542);
+		;
 	}
 
 	public void registerOtherEntities()

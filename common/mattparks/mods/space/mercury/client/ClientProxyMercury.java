@@ -7,10 +7,7 @@ import java.util.EnumSet;
 
 import mattparks.mods.space.mercury.CommonProxyMercury;
 import mattparks.mods.space.mercury.GCMercury;
-import mattparks.mods.space.mercury.client.model.GCMercuryModelEvolvedSlime;
-import mattparks.mods.space.mercury.client.render.entitys.GCMercuryRenderEvolvedSlime;
 import mattparks.mods.space.mercury.dimension.GCMercuryWorldProvider;
-import mattparks.mods.space.mercury.entity.GCMercuryEntityEvolvedSlime;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
 import net.minecraft.block.material.Material;
@@ -177,7 +174,5 @@ public class ClientProxyMercury extends CommonProxyMercury
     public void registerRenderInformation()
     {
         RenderingRegistry.addNewArmourRendererPrefix("iridium");
-        
-        RenderingRegistry.registerEntityRenderingHandler(GCMercuryEntityEvolvedSlime.class, new GCMercuryRenderEvolvedSlime(new GCMercuryModelEvolvedSlime(16), new GCMercuryModelEvolvedSlime(0), 0.25F));
     }
 }

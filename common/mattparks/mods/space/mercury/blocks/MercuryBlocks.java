@@ -25,7 +25,6 @@ public class MercuryBlocks
 	public static Block MercuryCopperOre;
 	public static Block CaravanModule;
 	public static Block CaravanModulePart;
-	public static Block MercurySlimeBlock;
 
 	public static ArrayList<Integer> hiddenBlocks = new ArrayList<Integer>();
 	
@@ -44,8 +43,6 @@ public class MercuryBlocks
 		MercuryBlocks.MercuryCopperOre = new GCMercuryOre(ConfigManager.idBlockMercuryCopperOre, null).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName( "MercuryCopperOre").setTextureName("galacticraftmercury:copperOre");
 		MercuryBlocks.CaravanModule = new GCMercuryCaravanModule(ConfigManager.idBlockMercuryCaravanModule, null).setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("CaravanModule").setTextureName("galacticraftmercury:caravanModule");
 		MercuryBlocks.CaravanModulePart = new GCMercuryCaravanPart(ConfigManager.idBlockMercuryCaravanModulePart, null).setHardness(1.0F).setResistance(2.0F).setUnlocalizedName("CaravanModulePart").setTextureName("galacticraftmercury:caravanModulePart");
-		MercuryBlocks.MercurySlimeBlock = new GCMercurySlimeBlock(ConfigManager.idBlockMercurySlimeBlock, null).setHardness(1.0F).setResistance(2.0F).setUnlocalizedName("MercurySlimeBlock").setTextureName("galacticraftmercury:redSlimeBlock");
-
 	}
 
 	public static void setHarvestLevels()
@@ -77,7 +74,6 @@ public class MercuryBlocks
 		GameRegistry.registerBlock(MercuryBlocks.MercuryGoldOre, ItemBlock.class, MercuryBlocks.MercuryGoldOre.getUnlocalizedName(), GCMercury.MODID);
 		GameRegistry.registerBlock(MercuryBlocks.CaravanModule, ItemBlock.class, MercuryBlocks.CaravanModule.getUnlocalizedName(), GCMercury.MODID);
 		GameRegistry.registerBlock(MercuryBlocks.CaravanModulePart, ItemBlock.class, MercuryBlocks.CaravanModulePart.getUnlocalizedName(), GCMercury.MODID);	
-		GameRegistry.registerBlock(MercuryBlocks.MercurySlimeBlock, ItemBlock.class, MercuryBlocks.MercurySlimeBlock.getUnlocalizedName(), GCMercury.MODID);	
 	
 		// Hide some blocks from NEI
 		MercuryBlocks.hiddenBlocks.add(MercuryBlocks.CaravanModulePart.blockID);

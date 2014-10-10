@@ -12,6 +12,9 @@ import mattparks.mods.space.venus.client.render.entities.GCVenusRenderVenusianVi
 import mattparks.mods.space.venus.dimension.GCVenusWorldProvider;
 import mattparks.mods.space.venus.entities.GCVenusEntityEvolvedBlaze;
 import mattparks.mods.space.venus.entities.GCVenusEntityVenusianVillager;
+import mattparks.mods.space.venus.items.GCVenusItemGemJetpack;
+import mattparks.mods.space.venus.items.GCVenusItemJetpack;
+import mattparks.mods.space.venus.items.GCVenusItems;
 import micdoodle8.mods.galacticraft.core.client.GCCoreCloudRenderer;
 import micdoodle8.mods.galacticraft.core.util.PacketUtil;
 import net.minecraft.block.material.Material;
@@ -114,9 +117,24 @@ public class ClientProxyVenus extends CommonProxyVenus
 
             final EntityClientPlayerMP player = minecraft.thePlayer;
     		
-
+    		if (type.equals(EnumSet.of(TickType.CLIENT)))
             {
-
+        		if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == GCVenusItems.jetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
+        		{
+        			((GCVenusItemJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
+        			player.motionY -= 0.05D;
+        			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.063;
+        			player.fallDistance = 0.0F;
+            		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);
+        		}
+        		else if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem().itemID == GCVenusItems.gemJetpack.itemID && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.pressed && player.posY < 360)
+        		{
+        			((GCVenusItemGemJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
+        			player.motionY -= 0.05D;
+        			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.063;
+        			player.fallDistance = 0.0F;
+            		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);
+        		}
         		
             if (type.equals(EnumSet.of(TickType.CLIENT)))
             {

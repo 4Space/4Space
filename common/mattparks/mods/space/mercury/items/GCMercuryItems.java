@@ -22,8 +22,7 @@ public class GCMercuryItems
     public static Item iridiumChestplate;
     public static Item iridiumLeggings;
     public static Item iridiumBoots;
-    
-    public static Item redSlimeball;
+
 
     public static EnumArmorMaterial ARMORIRIDIUM = EnumHelper.addArmorMaterial("IRIDIUM", 30, new int[] { 3, 8, 6, 3 }, 12);
     public static EnumToolMaterial TOOLIRIDIUM = EnumHelper.addToolMaterial("IRIDIUM", 3, 768, 5.0F, 2, 8);
@@ -42,9 +41,7 @@ public class GCMercuryItems
         GCMercuryItems.iridiumChestplate = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumChestplate, GCMercuryItems.ARMORIRIDIUM, 7, 1, false).setUnlocalizedName("iridiumChestplate");
         GCMercuryItems.iridiumLeggings = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumLeggings, GCMercuryItems.ARMORIRIDIUM, 7, 2, false).setUnlocalizedName("iridiumLeggings");
         GCMercuryItems.iridiumBoots = new GCMercuryItemIridiumArmor(ConfigManager.idArmorMercuryIridiumBoots, GCMercuryItems.ARMORIRIDIUM, 7, 3, false).setUnlocalizedName("iridiumBoots");
-       
-        GCMercuryItems.redSlimeball = new GCMercuryRedSlimeball(ConfigManager.idItemMercuryRedSlimeball, null).setUnlocalizedName("redSlimeball").setTextureName("galacticraftmercury:redSlimeball");
-        
+
     	registerItems();
     }
     
@@ -70,8 +67,7 @@ public class GCMercuryItems
  		registerItem(iridiumChestplate);
  		registerItem(iridiumLeggings);
  		registerItem(iridiumBoots);
- 		
- 		registerItem(redSlimeball);
+
  	}
  	
  	private static void registerItem(Item item)

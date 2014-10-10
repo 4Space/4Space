@@ -25,9 +25,11 @@ public class GCVenusRecipeManager
     	OreDictionary.registerOre("uraniumPlate", new ItemStack(GCVenusItems.venusItemBasic, 1, 7));
 
     	OreDictionary.registerOre("venusRodDust", new ItemStack(GCVenusItems.venusItemBasic, 1, 9));
-    	OreDictionary.registerOre("VenusPowerCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 10));
+    	OreDictionary.registerOre("VenusPowerCrystal", new ItemStack(GCVenusItems.venusItemBasic, 1, 12));
 //    	OreDictionary.registerOre("FossilizedPlant", new ItemStack(GCVenusItems.venusItemBasic, 1, 13));
     	
+    	OreDictionary.registerOre("jetpackThruster", new ItemStack(GCVenusItems.venusItemBasic, 1, 10));
+    	OreDictionary.registerOre("jetpackBody", new ItemStack(GCVenusItems.venusItemBasic, 1, 11));
     	
 //    	OreDictionary.registerOre("vurnBerry", new ItemStack(GCVenusItems.vurnBerry, 1, 1));
 
@@ -54,9 +56,12 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurSpade), new Object[] { "X", "Y", "Y", 'X', "ingotSulfur", 'Y', Item.stick });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurHoe), new Object[] { "XX", " Y", " Y", 'X', "ingotSulfur", 'Y', Item.stick });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.sulfurAxe), new Object[] { "XX", "XY", " Y", 'X', "ingotSulfur", 'Y', Item.stick });
-
+    	
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.jetpack), new Object[] {  "TBT", 'B', "jetpackBody", 'T', "jetpackThruster" });
+    	RecipeUtil.addRecipe(new ItemStack(GCVenusItems.gemJetpack), new Object[] {  "TBT", " C ", 'T', "jetpackThruster", 'B', "jetpackBody", 'C', GCVenusItems.gemChestplate });
+    	
         // OTHERS CRAFTING
-        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 10), new Object[] { "D D", " C ", "D D", 'D', "venusRodDust", 'C', "VenusCrystal" });
+        RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 12), new Object[] { "D D", " C ", "D D", 'D', "venusRodDust", 'C', "VenusCrystal" });
 
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 1), new Object[] { "XX", 'X', "dustSulfur" });
 		RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 2, 0), new Object[] { "X", 'X', "ingotSulfur" });

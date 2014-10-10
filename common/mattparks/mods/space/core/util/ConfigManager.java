@@ -26,7 +26,6 @@ public class ConfigManager
     
     // MERCURY    
     public static int idItemMercuryBasic;
-    public static int idItemMercuryRedSlimeball;
     
     public static int idArmorMercuryIridiumHelmet;
     public static int idArmorMercuryIridiumChestplate;
@@ -52,9 +51,6 @@ public class ConfigManager
     public static int idBlockMercuryMeteorOre;
     public static int idBlockMercuryCaravanModule;
     public static int idBlockMercuryCaravanModulePart;
-    public static int idBlockMercurySlimeBlock;
-    
-    public static int idEntityMercuryEvolvedSlime;
 
     public static int dimensionIDMercury;
     
@@ -137,7 +133,6 @@ public class ConfigManager
             
             //MERCURY
             ConfigManager.idItemMercuryBasic = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryBasic", 7855).getInt(7855);
-            ConfigManager.idItemMercuryRedSlimeball = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idItemMercuryRedSlimeball", 7850).getInt(7850);
 
             ConfigManager.idArmorMercuryIridiumHelmet = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumHelmet", 7841).getInt(7841);
             ConfigManager.idArmorMercuryIridiumChestplate = ConfigManager.configuration.get(Configuration.CATEGORY_ITEM, "idArmorMercuryIridiumChestplate", 7842).getInt(7842);
@@ -163,9 +158,6 @@ public class ConfigManager
             ConfigManager.idBlockMercuryCopperOre = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryCopperOre", 639).getInt(639);
             ConfigManager.idBlockMercuryCaravanModule = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryCaravanModule", 640).getInt(640);
             ConfigManager.idBlockMercuryCaravanModulePart = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercuryCaravanModulePart", 641).getInt(641);
-            ConfigManager.idBlockMercurySlimeBlock = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idBlockMercurySlimeBlock", 642).getInt(642);
-
-            ConfigManager.idEntityMercuryEvolvedSlime = ConfigManager.configuration.get("Entities", "idEntityMercuryEvolvedSlime", 196).getInt(196);
 
             ConfigManager.dimensionIDMercury = ConfigManager.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Dimension ID", -40).getInt(-40);
 

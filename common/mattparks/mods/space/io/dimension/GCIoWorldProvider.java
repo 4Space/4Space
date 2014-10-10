@@ -195,7 +195,7 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 	@Override
 	public String getSaveFolder()
 	{
-		return "DIM" + ConfigManager.dimensionIDMercury;
+		return "DIM" + ConfigManager.dimensionIDIo;
 	}
 
 	@Override

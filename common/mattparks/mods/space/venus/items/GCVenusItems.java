@@ -24,6 +24,8 @@ public class GCVenusItems
     public static Item sulfurLeggings;
     public static Item sulfurBoots;
     
+    public static Item gemJetpack;
+    public static Item jetpack;
     public static Item gemPickaxe;
     public static Item gemAxe;
     public static Item gemHoe;
@@ -78,6 +80,8 @@ public class GCVenusItems
 
         GCVenusItems.venusRod = new GCVenusRod(ConfigManager.idItemVenusRod, null).setUnlocalizedName("venusRod").setTextureName("galacticraftvenus:venusRod");
         
+        GCVenusItems.gemJetpack = new GCVenusItemGemJetpack(ConfigManager.idVenusGemJetpack, GCVenusItems.ARMORGEMJETPACK, 7, 1, false).setUnlocalizedName("gemJetpack");
+        GCVenusItems.jetpack = new GCVenusItemJetpack(ConfigManager.idVenusJetpack, GCVenusItems.ARMORJETPACK, 7, 1, false).setUnlocalizedName("jetpack");
         GCVenusItems.venusSulfurBattery = new GCVenusItemSulfurBattery(ConfigManager.idItemVenusSulfurBattery, "venusSulfurBattery");
         GCVenusItems.venusUraniumBattery = new GCVenusItemUraniumBattery(ConfigManager.idItemVenusUraniumBattery, "venusUraniumBattery");
         
@@ -122,7 +126,9 @@ public class GCVenusItems
  		registerItem(gemChestplate);
  		registerItem(gemLeggings);
  		registerItem(gemBoots);
-
+		
+ 		registerItem(gemJetpack);
+ 		registerItem(jetpack);
  		registerItem(venusSulfurBattery);
  		registerItem(venusUraniumBattery);
  		registerItem(venusRod);

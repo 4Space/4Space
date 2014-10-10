@@ -5,7 +5,6 @@ item.iridiumCrystals.name=Iridium Kristalle
 item.iridiumPlate.name=Iridium-Kennzeichen 
 item.iridiumPlate.name=Iridium-Kennzeichen 
 item.plateHeavyT4.name=Heavy-Duty-Kennzeichen 
-item.redSlimeball.name=Rot Slimeball
 
 # TOOLS
 item.iridiumAxe.name=Iridium Axe 
@@ -34,7 +33,6 @@ tile.MercuryStone.name=Quecksilber Stein
 tile.MercuryTinOre.name=Zinnerz 
 tile.CaravanModule.name=Tragbare Raumzelt 
 tile.CaravanModulePart.name=Wohnwagen Modulteil 
-tile.MercurySlimeBlock.name=Red Slime-Block
 
 # GUI
 gui.choosePlanet.desc.mercury=Bewohnbare#Keine Sauerstoff#Gravity: 38%
@@ -48,7 +46,3 @@ dimension.Mercury.name=Merkur
 # Schematics
 
 # Entity
-entity.EvolvedSlime.name=Evolved Slime
-
-entity.GalacticraftCore.EvolvedSlime.name=Evolved Slime
-
