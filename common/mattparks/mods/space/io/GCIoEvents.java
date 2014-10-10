@@ -17,12 +17,25 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCIoEvents
 {
-	@SideOnly(Side.CLIENT)
-	@ForgeSubscribe
-	public void onSoundLoad(SoundLoadEvent event)
-	{  
-		ClientProxyIo.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCIo.TEXTURE_PREFIX + "music/Io_Magma.ogg"));
+	private static class SoundPlayEntry
+	{
+		private final String name;
+		private final float x;
+		private final float y;
+		private final float z;
+		private final float volume;
+
+		private SoundPlayEntry(String name, float x, float y, float z, float volume)
+		{
+			this.name = name;
+			this.volume = volume;
+			this.x = x;
+			this.y = y;
+			this.z = z;
+		}
 	}
+
+	private List<SoundPlayEntry> soundPlayList = new ArrayList<SoundPlayEntry>();
 
 	@SideOnly(Side.CLIENT)
 	private SoundPoolEntry func_110654_c(SoundPool pool, String par1Str)
@@ -42,23 +55,10 @@ public class GCIoEvents
 		return null;
 	}
 
-	private List<SoundPlayEntry> soundPlayList = new ArrayList<SoundPlayEntry>();
-
-	private static class SoundPlayEntry
-	{
-		private final String name;
-		private final float x;
-		private final float y;
-		private final float z;
-		private final float volume;
-
-		private SoundPlayEntry(String name, float x, float y, float z, float volume)
-		{
-			this.name = name;
-			this.volume = volume;
-			this.x = x;
-			this.y = y;
-			this.z = z;
-		}
+	@SideOnly(Side.CLIENT)
+	@ForgeSubscribe
+	public void onSoundLoad(SoundLoadEvent event)
+	{  
+		ClientProxyIo.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCIo.TEXTURE_PREFIX + "music/Io_Magma.ogg"));
 	}
 }

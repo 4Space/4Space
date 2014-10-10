@@ -61,6 +61,27 @@ public class GCMercury
 	public static Random rand = new Random();
 	
 	@EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		this.registerTileEntities();
+		this.registerCreatures();
+		this.registerOtherEntities();
+		GCMercury.proxy.init(event);
+		
+        GalacticraftRegistry.registerTeleportType(GCMercuryWorldProvider.class, new GCMercuryTeleportType());
+        GalacticraftRegistry.registerCelestialBody(new GCMercuryPlanet());
+        GalacticraftRegistry.registerRocketGui(GCMercuryWorldProvider.class, new ResourceLocation(GCMercury.TEXTURE_DOMAIN, "textures/gui/mercuryRocketGui.png"));
+	}
+
+	@EventHandler
+	public void postLoad(FMLPostInitializationEvent event)
+	{
+		GCMercury.proxy.postInit(event);
+		GCMercury.proxy.registerRenderInformation();
+		GCMercuryRecipeManager.loadRecipes();
+	}
+
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		MinecraftForge.EVENT_BUS.register(new GCMercuryEvents());
@@ -79,33 +100,9 @@ public class GCMercury
 
 	}
 
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-
-	public void registerTileEntities()
-	{
-		;
-	}
-
 	public void registerCreatures()
 	{
 		;
-	}
-
-	public void registerOtherEntities()
-	{
-		;
-	}
-
-	@EventHandler
-	public void postLoad(FMLPostInitializationEvent event)
-	{
-		GCMercury.proxy.postInit(event);
-		GCMercury.proxy.registerRenderInformation();
-		GCMercuryRecipeManager.loadRecipes();
 	}
 
 	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
@@ -119,17 +116,20 @@ public class GCMercury
 		EntityList.addMapping(var0, var1, id);
 		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
 	}
+
+	public void registerOtherEntities()
+	{
+		;
+	}
+
+	public void registerTileEntities()
+	{
+		;
+	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
+	public void serverStarting(FMLServerStartingEvent event)
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-		GCMercury.proxy.init(event);
-		
-        GalacticraftRegistry.registerTeleportType(GCMercuryWorldProvider.class, new GCMercuryTeleportType());
-        GalacticraftRegistry.registerCelestialBody(new GCMercuryPlanet());
-        GalacticraftRegistry.registerRocketGui(GCMercuryWorldProvider.class, new ResourceLocation(GCMercury.TEXTURE_DOMAIN, "textures/gui/mercuryRocketGui.png"));
+		;
 	}
 }

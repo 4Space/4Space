@@ -25,18 +25,18 @@ public class GCIoSlab extends Block
     }
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public CreativeTabs getCreativeTabToDisplayOn()
-	{
-		return GCJupiter.galacticraftJupiterTab;
-	}
-	
-    @Override
 	public void addCollisionBoxesToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity)
     {
         this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
         super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
     }
+	
+    @Override
+	@SideOnly(Side.CLIENT)
+	public CreativeTabs getCreativeTabToDisplayOn()
+	{
+		return GCJupiter.galacticraftJupiterTab;
+	}
 
     @Override
 	public boolean isOpaqueCube()

@@ -26,14 +26,14 @@ public class GCEuropaBiomeGenBase extends BiomeGenBase
 	}
 
 	@Override
-	public GCEuropaBiomeGenBase setColor(int var1)
-	{
-		return (GCEuropaBiomeGenBase) super.setColor(var1);
-	}
-
-	@Override
 	public float getSpawningChance()
 	{
 		return 0.01F;
+	}
+
+	@Override
+	public GCEuropaBiomeGenBase setColor(int var1)
+	{
+		return (GCEuropaBiomeGenBase) super.setColor(var1);
 	}
 }

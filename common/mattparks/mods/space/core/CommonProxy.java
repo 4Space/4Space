@@ -6,11 +6,11 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy 
 {
-	public void registerRenderers() 
+	public void init(FMLInitializationEvent event) 
 	{
 	}
 
-	public void init(FMLInitializationEvent event) 
+	public void postInit(FMLPostInitializationEvent event) 
 	{
 	}
 
@@ -18,7 +18,7 @@ public class CommonProxy
 	{
 	}
 
-	public void postInit(FMLPostInitializationEvent event) 
+	public void registerRenderers() 
 	{
 	}
 

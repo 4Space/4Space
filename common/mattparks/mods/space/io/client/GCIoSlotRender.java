@@ -8,15 +8,15 @@ import net.minecraft.util.ResourceLocation;
 public class GCIoSlotRender implements ICelestialBodyRenderer
 {
 	@Override
-	public ResourceLocation getPlanetSprite() 
-	{
-		return new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/planets/Io.png");
-	}
-
-	@Override
 	public String getPlanetName() 
 	{
 		return "Io";
+	}
+
+	@Override
+	public ResourceLocation getPlanetSprite() 
+	{
+		return new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/planets/Io.png");
 	}
 
 	@Override

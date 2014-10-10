@@ -9,28 +9,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class VenusBlocks
 {
-	public static Block VenusGrass;
-	public static Block VenusDirt;
-	public static Block VenusStone;
-	public static Block VenusBrick;
-	public static Block EvolvedBlazeEgg;
-	public static Block VenusRedGemBlock;
-	public static Block VenusSulfurBlock;
-	public static Block VenusUraniumBlock;
-	public static Block VenusCrystalBlock;
-	public static Block VenusCompositeBlock;
-	public static Block VenusSulfurOre;
-	public static Block VenusRedGemOre;
-	public static Block VenusUraniumOre;
-	public static Block VenusIronOre;
-	public static Block VenusCoalOre;
-	public static Block VenusTinOre;
-	public static Block VenusCopperOre;
-	public static Block VenusCrystalOre;
-	public static Block FossilizedPlantOre;
-	public static Block SulfurTorch;
-//	public static Block VurnBerryBush;
-	
 	public static void initBlocks()
 	{
 		VenusBlocks.VenusGrass = new GCVenusGrass(ConfigManager.idBlockVenusGrass, null).setHardness(0.6F).setResistance(0.0F).setUnlocalizedName("VenusGrass").setTextureName("galacticraftvenus:grassVenus");
@@ -75,48 +53,6 @@ public class VenusBlocks
 
 //		VenusBlocks.VurnBerryBush = (new GCVenusVurnBerryBush(ConfigManager.idBlockVurnBerryBush)).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush");
 	}
-
-	public static void setHarvestLevels()
-	{
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusGrass, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusDirt, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusStone, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusBrick, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.EvolvedBlazeEgg, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusRedGemBlock, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusSulfurBlock, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusUraniumBlock, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCrystalBlock, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCompositeBlock, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusSulfurOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusRedGemOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusIronOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCoalOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusTinOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCopperOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCrystalOre, "pickaxe", 1);
-		
-		MinecraftForge.setBlockHarvestLevel(VenusBlocks.FossilizedPlantOre, "pickaxe", 1);
-		
-//		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VurnBerryBush, "pickaxe", 1);
-	}
-
 	public static void registerBlocks()
 	{
 		GameRegistry.registerBlock(VenusBlocks.VenusGrass, ItemBlock.class, VenusBlocks.VenusGrass.getUnlocalizedName(), GCVenus.MODID);
@@ -161,4 +97,68 @@ public class VenusBlocks
 		
 //		GameRegistry.registerBlock(VenusBlocks.VurnBerryBush, ItemBlock.class, VenusBlocks.VurnBerryBush.getUnlocalizedName(), GCVenus.MODID);
 	}
+	public static void setHarvestLevels()
+	{
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusGrass, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusDirt, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusStone, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusBrick, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.EvolvedBlazeEgg, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusRedGemBlock, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusSulfurBlock, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusUraniumBlock, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCrystalBlock, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCompositeBlock, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusSulfurOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusRedGemOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusIronOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCoalOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusTinOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCopperOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VenusCrystalOre, "pickaxe", 1);
+		
+		MinecraftForge.setBlockHarvestLevel(VenusBlocks.FossilizedPlantOre, "pickaxe", 1);
+		
+//		MinecraftForge.setBlockHarvestLevel(VenusBlocks.VurnBerryBush, "pickaxe", 1);
+	}
+	public static Block VenusGrass;
+	public static Block VenusDirt;
+	public static Block VenusStone;
+	public static Block VenusBrick;
+	public static Block EvolvedBlazeEgg;
+	public static Block VenusRedGemBlock;
+	public static Block VenusSulfurBlock;
+	public static Block VenusUraniumBlock;
+	public static Block VenusCrystalBlock;
+	public static Block VenusCompositeBlock;
+	public static Block VenusSulfurOre;
+	public static Block VenusRedGemOre;
+	public static Block VenusUraniumOre;
+	public static Block VenusIronOre;
+	public static Block VenusCoalOre;
+	public static Block VenusTinOre;
+	public static Block VenusCopperOre;
+	
+	public static Block VenusCrystalOre;
+
+	public static Block FossilizedPlantOre;
+
+	public static Block SulfurTorch;
+//	public static Block VurnBerryBush;
 }

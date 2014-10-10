@@ -29,19 +29,19 @@ public class GCVenusComponentVillageStartPiece extends GCVenusComponentVillageWe
 	}
 
 	@Override
-	protected void func_143012_a(NBTTagCompound nbt)
-	{
-		super.func_143012_a(nbt);
-
-		nbt.setInteger("TerrainType", this.terrainType);
-	}
-
-	@Override
 	protected void func_143011_b(NBTTagCompound nbt)
 	{
 		super.func_143011_b(nbt);
 
 		this.terrainType = nbt.getInteger("TerrainType");
+	}
+
+	@Override
+	protected void func_143012_a(NBTTagCompound nbt)
+	{
+		super.func_143012_a(nbt);
+
+		nbt.setInteger("TerrainType", this.terrainType);
 	}
 
 	public WorldChunkManager getWorldChunkManager()

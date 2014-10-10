@@ -40,6 +40,13 @@ public class GCIoBiomeDecorator
 		}
 	}
 
+	protected void generateIo()
+	{
+		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
+ //       this.generateOre(20, this.waterGen, 0, 100);
+		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
+	}
+
 	protected void generateOre(int amountPerChunk, WorldGenerator worldGenerator, int minY, int maxY)
 	{
 		for (int var5 = 0; var5 < amountPerChunk; ++var5)
@@ -49,12 +56,5 @@ public class GCIoBiomeDecorator
 			final int var8 = this.chunkZ + this.rand.nextInt(16);
 			worldGenerator.generate(this.currentWorld, this.rand, var6, var7, var8);
 		}
-	}
-
-	protected void generateIo()
-	{
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
- //       this.generateOre(20, this.waterGen, 0, 100);
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.currentWorld, this.rand, this.chunkX, this.chunkZ));
 	}
 }

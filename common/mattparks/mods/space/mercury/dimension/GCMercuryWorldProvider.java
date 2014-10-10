@@ -18,47 +18,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class GCMercuryWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
 {
 	@Override
-	public void setDimension(int var1)
-	{
-		this.dimensionId = var1;
-		super.setDimension(var1);
-	}
-
-	@Override
-	protected void generateLightBrightnessTable()
-	{
-		final float var1 = 0.0F;
-
-		for (int var2 = 0; var2 <= 15; ++var2)
-		{
-			final float var3 = 1.0F - var2 / 15.0F;
-			this.lightBrightnessTable[var2] = (1.0F - var3) / (var3 * 3.0F + 1.0F) * (1.0F - var1) + var1;
-		}
-	}
-
-	@Override
 	public float[] calcSunriseSunsetColors(float var1, float var2)
 	{
 		return null;
-	}
-
-	@Override
-	public void registerWorldChunkManager()
-	{
-		this.worldChunkMgr = new GCMercuryWorldChunkManager();
-	}
-
-	@SideOnly(Side.CLIENT)
-	@Override
-	public Vec3 getFogColor(float var1, float var2)
-	{
-		return this.worldObj.getWorldVec3Pool().getVecFromPool((double) 0F / 255F, (double) 0F / 255F, (double) 0F / 255F);
-	}
-
-	@Override
-	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
-	{
-		return this.worldObj.getWorldVec3Pool().getVecFromPool(0, 0, 0);
 	}
 
 	@Override
@@ -109,6 +71,161 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 		}
 	}
 
+	public float calculateDeimosAngle(long par1, float par3)
+	{
+		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
+	}
+
+	public float calculatePhobosAngle(long par1, float par3)
+	{
+		return this.calculateCelestialAngle(par1, par3) * 3000;
+	}
+
+	@Override
+	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canCoordinateBeSpawn(int var1, int var2)
+	{
+		return true;
+	}
+
+	@Override
+	public boolean canDoLightning(Chunk chunk)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canRespawnHere()
+	{
+		return !GCCoreConfigManager.forceOverworldRespawn;
+	}
+
+	@Override
+	public boolean canSnowAt(int x, int y, int z)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canSpaceshipTierPass(int tier)
+	{
+		return tier >= 2;
+	}
+
+	@Override
+	public IChunkProvider createChunkGenerator()
+	{
+		return new GCMercuryChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+	}
+
+	@Override
+	protected void generateLightBrightnessTable()
+	{
+		final float var1 = 0.0F;
+
+		for (int var2 = 0; var2 <= 15; ++var2)
+		{
+			final float var3 = 1.0F - var2 / 15.0F;
+			this.lightBrightnessTable[var2] = (1.0F - var3) / (var3 * 3.0F + 1.0F) * (1.0F - var1) + var1;
+		}
+	}
+
+	@Override
+	public int getAverageGroundLevel()
+	{
+		return 44;
+	}
+
+	@Override
+	public String getDepartMessage()
+	{
+		return "Leaving Mercury";
+	}
+
+	@Override
+	public String getDimensionName()
+	{
+		return "Mercury";
+	}
+
+	@Override
+	public float getFallDamageModifier()
+	{
+		return 0.18F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public Vec3 getFogColor(float var1, float var2)
+	{
+		return this.worldObj.getWorldVec3Pool().getVecFromPool((double) 0F / 255F, (double) 0F / 255F, (double) 0F / 255F);
+	}
+
+	@Override
+	public double getFuelUsageMultiplier()
+	{
+		return 0.7D;
+	}
+
+	@Override
+	public float getGravity()
+	{
+		return 0.058F;
+	}
+
+	@Override
+	public int getHeight()
+	{
+		return 800;
+	}
+
+	@Override
+	public double getHorizon()
+	{
+		return 44.0D;
+	}
+
+	@Override
+	public double getMeteorFrequency()
+	{
+		return 7.0D;
+	}
+
+	@Override
+	public String getSaveFolder()
+	{
+		return "DIM" + ConfigManager.dimensionIDMercury;
+	}
+
+	@Override
+	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
+	{
+		return this.worldObj.getWorldVec3Pool().getVecFromPool(0, 0, 0);
+	}
+
+	@Override
+	public double getSolarEnergyMultiplier()
+	{
+		return 1.4D;
+	}
+
+	@Override
+	public float getSoundVolReductionAmount()
+	{
+		return 20.0F;
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1)
@@ -129,20 +246,35 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
 		return var3 * var3 * 0.5F + 0.3F;
 	}
 
-	public float calculatePhobosAngle(long par1, float par3)
+	@Override
+	public String getWelcomeMessage()
 	{
-		return this.calculateCelestialAngle(par1, par3) * 3000;
-	}
-
-	public float calculateDeimosAngle(long par1, float par3)
-	{
-		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
+		return "Entering Mercury";
 	}
 
 	@Override
-	public IChunkProvider createChunkGenerator()
+	public boolean isSkyColored()
 	{
-		return new GCMercuryChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+		return false;
+	}
+
+	@Override
+	public boolean isSurfaceWorld()
+	{
+		return true;
+	}
+
+	@Override
+	public void registerWorldChunkManager()
+	{
+		this.worldChunkMgr = new GCMercuryWorldChunkManager();
+	}
+
+	@Override
+	public void setDimension(int var1)
+	{
+		this.dimensionId = var1;
+		super.setDimension(var1);
 	}
 
 	@Override
@@ -155,136 +287,4 @@ public class GCMercuryWorldProvider extends WorldProvider implements IGalacticra
     	this.worldObj.rainingStrength = 0.0F;
     	this.worldObj.thunderingStrength = 0.0F;
     }
-
-	@Override
-	public boolean isSkyColored()
-	{
-		return false;
-	}
-
-	@Override
-	public double getHorizon()
-	{
-		return 44.0D;
-	}
-
-	@Override
-	public int getAverageGroundLevel()
-	{
-		return 44;
-	}
-
-	@Override
-	public boolean isSurfaceWorld()
-	{
-		return true;
-	}
-
-	@Override
-	public boolean canCoordinateBeSpawn(int var1, int var2)
-	{
-		return true;
-	}
-
-	@Override
-	public boolean canRespawnHere()
-	{
-		return !GCCoreConfigManager.forceOverworldRespawn;
-	}
-
-	@Override
-	public String getSaveFolder()
-	{
-		return "DIM" + ConfigManager.dimensionIDMercury;
-	}
-
-	@Override
-	public String getWelcomeMessage()
-	{
-		return "Entering Mercury";
-	}
-
-	@Override
-	public String getDepartMessage()
-	{
-		return "Leaving Mercury";
-	}
-
-	@Override
-	public String getDimensionName()
-	{
-		return "Mercury";
-	}
-
-	@Override
-	public boolean canSnowAt(int x, int y, int z)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean canDoLightning(Chunk chunk)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean canDoRainSnowIce(Chunk chunk)
-	{
-		return false;
-	}
-
-	@Override
-	public float getGravity()
-	{
-		return 0.058F;
-	}
-
-	@Override
-	public int getHeight()
-	{
-		return 800;
-	}
-
-	@Override
-	public double getMeteorFrequency()
-	{
-		return 7.0D;
-	}
-
-	@Override
-	public double getFuelUsageMultiplier()
-	{
-		return 0.7D;
-	}
-
-	@Override
-	public double getSolarEnergyMultiplier()
-	{
-		return 1.4D;
-	}
-
-	@Override
-	public boolean canSpaceshipTierPass(int tier)
-	{
-		return tier >= 2;
-	}
-
-	@Override
-	public float getFallDamageModifier()
-	{
-		return 0.18F;
-	}
-
-	@Override
-	public float getSoundVolReductionAmount()
-	{
-		return 20.0F;
-	}
 }

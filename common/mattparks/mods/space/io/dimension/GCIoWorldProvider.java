@@ -18,47 +18,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWorldProvider, ISolarLevel
 {
 	@Override
-	public void setDimension(int var1)
-	{
-		this.dimensionId = var1;
-		super.setDimension(var1);
-	}
-
-	@Override
-	protected void generateLightBrightnessTable()
-	{
-		final float var1 = 0.0F;
-
-		for (int var2 = 0; var2 <= 15; ++var2)
-		{
-			final float var3 = 1.0F - var2 / 15.0F;
-			this.lightBrightnessTable[var2] = (1.0F - var3) / (var3 * 3.0F + 1.0F) * (1.0F - var1) + var1;
-		}
-	}
-
-	@Override
 	public float[] calcSunriseSunsetColors(float var1, float var2)
 	{
 		return null;
-	}
-
-	@Override
-	public void registerWorldChunkManager()
-	{
-		this.worldChunkMgr = new GCIoWorldChunkManager();
-	}
-
-	@SideOnly(Side.CLIENT)
-	@Override
-	public Vec3 getFogColor(float var1, float var2)
-	{
-		return this.worldObj.getWorldVec3Pool().getVecFromPool((double) 210F / 255F, (double) 120F / 255F, (double) 59F / 255F);
-	}
-
-	@Override
-	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
-	{
-		return this.worldObj.getWorldVec3Pool().getVecFromPool(154 / 255.0F, 114 / 255.0F, 66 / 255.0F);
 	}
 
 	@Override
@@ -109,6 +71,161 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 		}
 	}
 
+	public float calculateDeimosAngle(long par1, float par3)
+	{
+		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
+	}
+
+	public float calculatePhobosAngle(long par1, float par3)
+	{
+		return this.calculateCelestialAngle(par1, par3) * 3000;
+	}
+
+	@Override
+	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canCoordinateBeSpawn(int var1, int var2)
+	{
+		return true;
+	}
+
+	@Override
+	public boolean canDoLightning(Chunk chunk)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canRespawnHere()
+	{
+		return !GCCoreConfigManager.forceOverworldRespawn;
+	}
+
+	@Override
+	public boolean canSnowAt(int x, int y, int z)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean canSpaceshipTierPass(int tier)
+	{
+		return tier >= 2;
+	}
+
+	@Override
+	public IChunkProvider createChunkGenerator()
+	{
+		return new GCIoChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+	}
+
+	@Override
+	protected void generateLightBrightnessTable()
+	{
+		final float var1 = 0.0F;
+
+		for (int var2 = 0; var2 <= 15; ++var2)
+		{
+			final float var3 = 1.0F - var2 / 15.0F;
+			this.lightBrightnessTable[var2] = (1.0F - var3) / (var3 * 3.0F + 1.0F) * (1.0F - var1) + var1;
+		}
+	}
+
+	@Override
+	public int getAverageGroundLevel()
+	{
+		return 44;
+	}
+
+	@Override
+	public String getDepartMessage()
+	{
+		return "Leaving Io";
+	}
+
+	@Override
+	public String getDimensionName()
+	{
+		return "Io";
+	}
+
+	@Override
+	public float getFallDamageModifier()
+	{
+		return 0.18F;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public Vec3 getFogColor(float var1, float var2)
+	{
+		return this.worldObj.getWorldVec3Pool().getVecFromPool((double) 210F / 255F, (double) 120F / 255F, (double) 59F / 255F);
+	}
+
+	@Override
+	public double getFuelUsageMultiplier()
+	{
+		return 0.7D;
+	}
+
+	@Override
+	public float getGravity()
+	{
+		return 0.058F;
+	}
+
+	@Override
+	public int getHeight()
+	{
+		return 800;
+	}
+
+	@Override
+	public double getHorizon()
+	{
+		return 44.0D;
+	}
+
+	@Override
+	public double getMeteorFrequency()
+	{
+		return 7.0D;
+	}
+
+	@Override
+	public String getSaveFolder()
+	{
+		return "DIM" + ConfigManager.dimensionIDIo;
+	}
+
+	@Override
+	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
+	{
+		return this.worldObj.getWorldVec3Pool().getVecFromPool(154 / 255.0F, 114 / 255.0F, 66 / 255.0F);
+	}
+
+	@Override
+	public double getSolarEnergyMultiplier()
+	{
+		return 1.4D;
+	}
+
+	@Override
+	public float getSoundVolReductionAmount()
+	{
+		return 20.0F;
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1)
@@ -129,20 +246,35 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
 		return var3 * var3 * 0.5F + 0.3F;
 	}
 
-	public float calculatePhobosAngle(long par1, float par3)
+	@Override
+	public String getWelcomeMessage()
 	{
-		return this.calculateCelestialAngle(par1, par3) * 3000;
-	}
-
-	public float calculateDeimosAngle(long par1, float par3)
-	{
-		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
+		return "Entering Io";
 	}
 
 	@Override
-	public IChunkProvider createChunkGenerator()
+	public boolean isSkyColored()
 	{
-		return new GCIoChunkProvider(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+		return false;
+	}
+
+	@Override
+	public boolean isSurfaceWorld()
+	{
+		return true;
+	}
+
+	@Override
+	public void registerWorldChunkManager()
+	{
+		this.worldChunkMgr = new GCIoWorldChunkManager();
+	}
+
+	@Override
+	public void setDimension(int var1)
+	{
+		this.dimensionId = var1;
+		super.setDimension(var1);
 	}
 
 	@Override
@@ -155,136 +287,4 @@ public class GCIoWorldProvider extends WorldProvider implements IGalacticraftWor
     	this.worldObj.rainingStrength = 0.0F;
     	this.worldObj.thunderingStrength = 0.0F;
     }
-
-	@Override
-	public boolean isSkyColored()
-	{
-		return false;
-	}
-
-	@Override
-	public double getHorizon()
-	{
-		return 44.0D;
-	}
-
-	@Override
-	public int getAverageGroundLevel()
-	{
-		return 44;
-	}
-
-	@Override
-	public boolean isSurfaceWorld()
-	{
-		return true;
-	}
-
-	@Override
-	public boolean canCoordinateBeSpawn(int var1, int var2)
-	{
-		return true;
-	}
-
-	@Override
-	public boolean canRespawnHere()
-	{
-		return !GCCoreConfigManager.forceOverworldRespawn;
-	}
-
-	@Override
-	public String getSaveFolder()
-	{
-		return "DIM" + ConfigManager.dimensionIDIo;
-	}
-
-	@Override
-	public String getWelcomeMessage()
-	{
-		return "Entering Io";
-	}
-
-	@Override
-	public String getDepartMessage()
-	{
-		return "Leaving Io";
-	}
-
-	@Override
-	public String getDimensionName()
-	{
-		return "Io";
-	}
-
-	@Override
-	public boolean canSnowAt(int x, int y, int z)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean canDoLightning(Chunk chunk)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean canDoRainSnowIce(Chunk chunk)
-	{
-		return false;
-	}
-
-	@Override
-	public float getGravity()
-	{
-		return 0.058F;
-	}
-
-	@Override
-	public int getHeight()
-	{
-		return 800;
-	}
-
-	@Override
-	public double getMeteorFrequency()
-	{
-		return 7.0D;
-	}
-
-	@Override
-	public double getFuelUsageMultiplier()
-	{
-		return 0.7D;
-	}
-
-	@Override
-	public double getSolarEnergyMultiplier()
-	{
-		return 1.4D;
-	}
-
-	@Override
-	public boolean canSpaceshipTierPass(int tier)
-	{
-		return tier >= 2;
-	}
-
-	@Override
-	public float getFallDamageModifier()
-	{
-		return 0.18F;
-	}
-
-	@Override
-	public float getSoundVolReductionAmount()
-	{
-		return 20.0F;
-	}
 }

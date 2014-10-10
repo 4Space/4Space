@@ -26,14 +26,14 @@ public class GCIoBiomeGenBase extends BiomeGenBase
 	}
 
 	@Override
-	public GCIoBiomeGenBase setColor(int var1)
-	{
-		return (GCIoBiomeGenBase) super.setColor(var1);
-	}
-
-	@Override
 	public float getSpawningChance()
 	{
 		return 0.01F;
+	}
+
+	@Override
+	public GCIoBiomeGenBase setColor(int var1)
+	{
+		return (GCIoBiomeGenBase) super.setColor(var1);
 	}
 }

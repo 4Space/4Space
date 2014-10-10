@@ -22,14 +22,14 @@ public class GCVenusBiomeGenBase extends BiomeGenBase
 	}
 
 	@Override
-	public GCVenusBiomeGenBase setColor(int var1)
-	{
-		return (GCVenusBiomeGenBase) super.setColor(var1);
-	}
-
-	@Override
 	public float getSpawningChance()
 	{
 		return 0.01F;
+	}
+
+	@Override
+	public GCVenusBiomeGenBase setColor(int var1)
+	{
+		return (GCVenusBiomeGenBase) super.setColor(var1);
 	}
 }

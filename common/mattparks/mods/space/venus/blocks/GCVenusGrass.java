@@ -24,13 +24,6 @@ public class GCVenusGrass extends Block implements ITerraformableBlock, IPlantab
     }
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public CreativeTabs getCreativeTabToDisplayOn()
-	{
-		return GCVenus.galacticraftVenusTab;
-	}
-	
-    @Override
     public boolean canSustainPlant(World world, int x, int y, int z, ForgeDirection direction, IPlantable plant)
     {
         final int metadata = world.getBlockMetadata(x, y, z);
@@ -49,6 +42,13 @@ public class GCVenusGrass extends Block implements ITerraformableBlock, IPlantab
 
         return false;
     }
+	
+    @Override
+	@SideOnly(Side.CLIENT)
+	public CreativeTabs getCreativeTabToDisplayOn()
+	{
+		return GCVenus.galacticraftVenusTab;
+	}
 
     @Override
     public boolean isPlantable(int metadata)

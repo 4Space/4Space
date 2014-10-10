@@ -63,6 +63,29 @@ public class GCVenus
 	public static final String TEXTURE_PREFIX = GCVenus.TEXTURE_DOMAIN + ":";
 
 	@EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		this.registerTileEntities();
+		this.registerCreatures();
+		this.registerOtherEntities();
+		
+		
+		GCVenus.proxy.init(event);
+		
+        GalacticraftRegistry.registerTeleportType(GCVenusWorldProvider.class, new GCVenusTeleportType());
+        GalacticraftRegistry.registerCelestialBody(new GCVenusPlanet());
+        GalacticraftRegistry.registerRocketGui(GCVenusWorldProvider.class, new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/gui/venusRocketGui.png"));
+	}
+
+	@EventHandler
+	public void postLoad(FMLPostInitializationEvent event)
+	{
+		GCVenus.proxy.postInit(event);
+		GCVenus.proxy.registerRenderInformation();
+		GCVenusRecipeManager.loadRecipes();
+	}
+
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		MinecraftForge.EVENT_BUS.register(new GCVenusEvents());
@@ -85,34 +108,10 @@ public class GCVenus
 		CompressorRecipes.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 1, 8), "SUR", 'S', new ItemStack(GCVenusItems.venusItemBasic, 1, 5), 'U', new ItemStack(GCVenusItems.venusItemBasic, 1, 6), 'R', new ItemStack(GCVenusItems.venusItemBasic, 1, 7));
 	}
 
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-
-	public void registerTileEntities()
-	{
-		;
-	}
-
 	public void registerCreatures()
 	{
 	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityVenusianVillager.class, "VenusianVillager", ConfigManager.idEntityVenusianVillager, GCCoreUtil.convertTo32BitColor(255, 103, 181, 145), 16167425);
 	        GCCoreUtil.registerGalacticraftCreature(GCVenusEntityEvolvedBlaze.class, "EvolvedBlaze", ConfigManager.idEntityVenusEvolvedBlaze, 16167425, 16775294);
-	}
-
-	public void registerOtherEntities()
-	{
-		;
-	}
-
-	@EventHandler
-	public void postLoad(FMLPostInitializationEvent event)
-	{
-		GCVenus.proxy.postInit(event);
-		GCVenus.proxy.registerRenderInformation();
-		GCVenusRecipeManager.loadRecipes();
 	}
 
 	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
@@ -126,19 +125,20 @@ public class GCVenus
 		EntityList.addMapping(var0, var1, id);
 		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
 	}
+
+	public void registerOtherEntities()
+	{
+		;
+	}
+
+	public void registerTileEntities()
+	{
+		;
+	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
+	public void serverStarting(FMLServerStartingEvent event)
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-		
-		
-		GCVenus.proxy.init(event);
-		
-        GalacticraftRegistry.registerTeleportType(GCVenusWorldProvider.class, new GCVenusTeleportType());
-        GalacticraftRegistry.registerCelestialBody(new GCVenusPlanet());
-        GalacticraftRegistry.registerRocketGui(GCVenusWorldProvider.class, new ResourceLocation(GCVenus.TEXTURE_DOMAIN, "textures/gui/venusRocketGui.png"));
+		;
 	}
 }

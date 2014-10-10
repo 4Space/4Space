@@ -17,15 +17,25 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class GCVenusEvents
 {
-	@SideOnly(Side.CLIENT)
-	@ForgeSubscribe
-	public void onSoundLoad(SoundLoadEvent event)
+	private static class SoundPlayEntry
 	{
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_1.ogg"));
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_2.ogg"));
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Ambience.ogg"));
-		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Bells.ogg"));
+		private final String name;
+		private final float x;
+		private final float y;
+		private final float z;
+		private final float volume;
+
+		private SoundPlayEntry(String name, float x, float y, float z, float volume)
+		{
+			this.name = name;
+			this.volume = volume;
+			this.x = x;
+			this.y = y;
+			this.z = z;
+		}
 	}
+
+	private List<SoundPlayEntry> soundPlayList = new ArrayList<SoundPlayEntry>();
 
 	@SideOnly(Side.CLIENT)
 	private SoundPoolEntry func_110654_c(SoundPool pool, String par1Str)
@@ -45,23 +55,13 @@ public class GCVenusEvents
 		return null;
 	}
 
-	private List<SoundPlayEntry> soundPlayList = new ArrayList<SoundPlayEntry>();
-
-	private static class SoundPlayEntry
+	@SideOnly(Side.CLIENT)
+	@ForgeSubscribe
+	public void onSoundLoad(SoundLoadEvent event)
 	{
-		private final String name;
-		private final float x;
-		private final float y;
-		private final float z;
-		private final float volume;
-
-		private SoundPlayEntry(String name, float x, float y, float z, float volume)
-		{
-			this.name = name;
-			this.volume = volume;
-			this.x = x;
-			this.y = y;
-			this.z = z;
-		}
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_1.ogg"));
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_2.ogg"));
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Ambience.ogg"));
+		ClientProxyVenus.newMusic.add(this.func_110654_c(event.manager.soundPoolMusic, GCVenus.TEXTURE_PREFIX + "music/Venus_Bells.ogg"));
 	}
 }

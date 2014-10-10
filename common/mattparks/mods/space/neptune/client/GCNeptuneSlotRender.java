@@ -8,15 +8,15 @@ import net.minecraft.util.ResourceLocation;
 public class GCNeptuneSlotRender implements ICelestialBodyRenderer
 {
 	@Override
-	public ResourceLocation getPlanetSprite() 
-	{
-		return new ResourceLocation(GCNeptune.TEXTURE_DOMAIN, "textures/gui/planets/Neptune.png");
-	}
-
-	@Override
 	public String getPlanetName() 
 	{
 		return "Neptune";
+	}
+
+	@Override
+	public ResourceLocation getPlanetSprite() 
+	{
+		return new ResourceLocation(GCNeptune.TEXTURE_DOMAIN, "textures/gui/planets/Neptune.png");
 	}
 
 	@Override

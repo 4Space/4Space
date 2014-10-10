@@ -12,22 +12,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class MercuryBlocks
 {
-	public static Block MercuryGrass;
-	public static Block MercuryDirt;
-	public static Block MercuryStone;
-	public static Block MercuryBrick;
-	public static Block MercuryIridiumBlock;
-	public static Block MercuryMeteorBlock;
-	public static Block MercuryIridiumOre;
-	public static Block MercuryMeteorOre;
-	public static Block MercuryTinOre;
-	public static Block MercuryGoldOre;
-	public static Block MercuryCopperOre;
-	public static Block CaravanModule;
-	public static Block CaravanModulePart;
-
-	public static ArrayList<Integer> hiddenBlocks = new ArrayList<Integer>();
-	
 	public static void initBlocks()
 	{
 		MercuryBlocks.MercuryGrass = new GCMercuryGrass(ConfigManager.idBlockMercuryGrass, null).setHardness(0.6F).setResistance(0.0F).setUnlocalizedName( "MercuryGrass").setTextureName("galacticraftmercury:grassMercury");
@@ -44,21 +28,6 @@ public class MercuryBlocks
 		MercuryBlocks.CaravanModule = new GCMercuryCaravanModule(ConfigManager.idBlockMercuryCaravanModule, null).setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("CaravanModule").setTextureName("galacticraftmercury:caravanModule");
 		MercuryBlocks.CaravanModulePart = new GCMercuryCaravanPart(ConfigManager.idBlockMercuryCaravanModulePart, null).setHardness(1.0F).setResistance(2.0F).setUnlocalizedName("CaravanModulePart").setTextureName("galacticraftmercury:caravanModulePart");
 	}
-
-	public static void setHarvestLevels()
-	{
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryGrass, "shovel", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryDirt, "shovel", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryStone, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryBrick, "brickPickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryIridiumBlock, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryIridiumOre, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryTinOre, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryCopperOre, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryGoldOre, "pickaxe", 1);
-		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryMeteorOre, "pickaxe", 1);
-	}
-
 	public static void registerBlocks()
 	{
 		GameRegistry.registerBlock(MercuryBlocks.MercuryGrass, ItemBlock.class, MercuryBlocks.MercuryGrass.getUnlocalizedName(), GCMercury.MODID);
@@ -78,4 +47,35 @@ public class MercuryBlocks
 		// Hide some blocks from NEI
 		MercuryBlocks.hiddenBlocks.add(MercuryBlocks.CaravanModulePart.blockID);
 	}
+	public static void setHarvestLevels()
+	{
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryGrass, "shovel", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryDirt, "shovel", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryStone, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryBrick, "brickPickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryIridiumBlock, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryIridiumOre, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryTinOre, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryCopperOre, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryGoldOre, "pickaxe", 1);
+		MinecraftForge.setBlockHarvestLevel(MercuryBlocks.MercuryMeteorOre, "pickaxe", 1);
+	}
+	public static Block MercuryGrass;
+	public static Block MercuryDirt;
+	public static Block MercuryStone;
+	public static Block MercuryBrick;
+	public static Block MercuryIridiumBlock;
+	public static Block MercuryMeteorBlock;
+	public static Block MercuryIridiumOre;
+	public static Block MercuryMeteorOre;
+	public static Block MercuryTinOre;
+	public static Block MercuryGoldOre;
+
+	public static Block MercuryCopperOre;
+	
+	public static Block CaravanModule;
+
+	public static Block CaravanModulePart;
+
+	public static ArrayList<Integer> hiddenBlocks = new ArrayList<Integer>();
 }

@@ -13,9 +13,26 @@ import net.minecraftforge.common.ForgeDirection;
 
 public class GCMercuryRoomSpawner extends GCCoreDungeonRoom
 {
+	private static String getMob(Random rand)
+	{
+		switch (rand.nextInt(6))
+		{
+		case 0:
+			return "EvolvedSpider";
+		case 1:
+			return "EvolvedZombie";
+		case 2:
+			return "EvolvedCreeper";
+		case 3:
+			return "EvolvedSkeleton";
+		default:
+			return "EvolvedCreeper";
+		}
+	}
 	int sizeX;
 	int sizeY;
 	int sizeZ;
+
 	Random rand;
 
 	private final ArrayList<ChunkCoordinates> spawners = new ArrayList<ChunkCoordinates>();
@@ -73,12 +90,6 @@ public class GCMercuryRoomSpawner extends GCCoreDungeonRoom
 	}
 
 	@Override
-	protected GCCoreDungeonRoom makeRoom(GCCoreMapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
-	{
-		return new GCMercuryRoomSpawner(dungeon, x, y, z, dir);
-	}
-
-	@Override
 	protected void handleTileEntities(Random rand)
 	{
 		for (final ChunkCoordinates spawnerCoords : this.spawners)
@@ -94,20 +105,9 @@ public class GCMercuryRoomSpawner extends GCCoreDungeonRoom
 		}
 	}
 
-	private static String getMob(Random rand)
+	@Override
+	protected GCCoreDungeonRoom makeRoom(GCCoreMapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
 	{
-		switch (rand.nextInt(6))
-		{
-		case 0:
-			return "EvolvedSpider";
-		case 1:
-			return "EvolvedZombie";
-		case 2:
-			return "EvolvedCreeper";
-		case 3:
-			return "EvolvedSkeleton";
-		default:
-			return "EvolvedCreeper";
-		}
+		return new GCMercuryRoomSpawner(dungeon, x, y, z, dir);
 	}
 }

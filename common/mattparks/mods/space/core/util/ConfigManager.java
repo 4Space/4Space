@@ -12,33 +12,25 @@ public class ConfigManager
 
 	static Configuration configuration;
 
-	public ConfigManager(File file)
-	{
-		if (!ConfigManager.loaded)
-		{
-			ConfigManager.configuration = new Configuration(file);
-			this.setDefaultValues();
-		}
-	}
+	public static boolean GenerateOtherMods;
 	
-    public static boolean GenerateOtherMods;
     public static boolean NormalDays;
-    
     // MERCURY    
     public static int idItemMercuryBasic;
     
     public static int idArmorMercuryIridiumHelmet;
+    
     public static int idArmorMercuryIridiumChestplate;
     public static int idArmorMercuryIridiumLeggings;
     public static int idArmorMercuryIridiumBoots;
-    
     public static int idToolMercuryIridiumSword;
+    
     public static int idToolMercuryIridiumPickaxe;
     public static int idToolMercuryIridiumAxe;
     public static int idToolMercuryIridiumSpade;
     public static int idToolMercuryIridiumHoe;
-    
     public static int idBlockMercuryGrass;
+    
     public static int idBlockMercuryDirt;
     public static int idBlockMercuryStone;
     public static int idBlockMercuryBrick;
@@ -51,19 +43,19 @@ public class ConfigManager
     public static int idBlockMercuryMeteorOre;
     public static int idBlockMercuryCaravanModule;
     public static int idBlockMercuryCaravanModulePart;
-
     public static int dimensionIDMercury;
-    
+
     // VENUS
     public static int idItemVenusBasic;
+    
     public static int idItemVenusSulfurBattery;
     public static int idItemVenusUraniumBattery;
     public static int idItemVenusRod;
     public static int idItemVurnBerry;
     public static int idVenusJetpack;
     public static int idVenusGemJetpack;
-
     public static int idArmorVenusSulfurHelmet;
+
     public static int idArmorVenusSulfurChestplate;
     public static int idArmorVenusSulfurLeggings;
     public static int idArmorVenusSulfurBoots;
@@ -71,8 +63,8 @@ public class ConfigManager
     public static int idArmorVenusGemChestplate;
     public static int idArmorVenusGemLeggings;
     public static int idArmorVenusGemBoots;
-
     public static int idToolVenusSulfurSword;
+
     public static int idToolVenusSulfurPickaxe;
     public static int idToolVenusSulfurAxe;
     public static int idToolVenusSulfurSpade;
@@ -82,8 +74,8 @@ public class ConfigManager
     public static int idToolVenusGemAxe;
     public static int idToolVenusGemSpade;
     public static int idToolVenusGemHoe;
-
     public static int idBlockVenusBlazeEgg;
+
     public static int idBlockVenusGrass;
     public static int idBlockVenusDirt;
     public static int idBlockVenusStone;
@@ -104,22 +96,30 @@ public class ConfigManager
     public static int idBlockVenusFossilizedPlantOre;
     public static int idBlockVurnBerryBush;
     public static int idBlockVenusSulfurTorch;
-    
     public static int idEntityVenusEvolvedBlaze;
-    public static int idEntityVenusianVillager;
-
-    public static int dimensionIDVenus;
-    public static boolean disableVenusVillageGen;
     
+    public static int idEntityVenusianVillager;
+    public static int dimensionIDVenus;
+
+    public static boolean disableVenusVillageGen;
     // GAS PLANETS
     public static int dimensionIDEuropa;
+    
     public static int idBlockEuropaSurface;
     public static int idBlockEuropaIce;
-    
     public static int dimensionIDIo;
+    
     public static int idBlockIoSlab;
     public static int idBlockIoFull;
     public static int idBlockIoStone;
+    public ConfigManager(File file)
+	{
+		if (!ConfigManager.loaded)
+		{
+			ConfigManager.configuration = new Configuration(file);
+			this.setDefaultValues();
+		}
+	}
     
     
 	private void setDefaultValues()

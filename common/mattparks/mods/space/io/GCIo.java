@@ -43,6 +43,26 @@ public class GCIo
 	public static final String TEXTURE_PREFIX = GCIo.TEXTURE_DOMAIN + ":";
 
 	@EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		this.registerTileEntities();
+		this.registerCreatures();
+		this.registerOtherEntities();
+		GCIo.proxy.init(event);
+		
+        GalacticraftRegistry.registerTeleportType(GCIoWorldProvider.class, new GCIoTeleportType());
+        GalacticraftRegistry.registerCelestialBody(new GCIoPlanet());
+        GalacticraftRegistry.registerRocketGui(GCIoWorldProvider.class, new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/ioRocketGui.png"));
+   	}
+
+	@EventHandler
+	public void postLoad(FMLPostInitializationEvent event)
+	{
+		GCIo.proxy.postInit(event);
+		GCIo.proxy.registerRenderInformation();
+	}
+
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		IoBlocks.initBlocks();
@@ -52,32 +72,9 @@ public class GCIo
 		GCIo.proxy.preInit(event);
 	}
 
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-
-	public void registerTileEntities()
-	{
-		;
-	}
-
 	public void registerCreatures()
 	{
 		;
-	}
-
-	public void registerOtherEntities()
-	{
-		;
-	}
-
-	@EventHandler
-	public void postLoad(FMLPostInitializationEvent event)
-	{
-		GCIo.proxy.postInit(event);
-		GCIo.proxy.registerRenderInformation();
 	}
 
 	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
@@ -91,17 +88,20 @@ public class GCIo
 		EntityList.addMapping(var0, var1, id);
 		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
 	}
+
+	public void registerOtherEntities()
+	{
+		;
+	}
+
+	public void registerTileEntities()
+	{
+		;
+	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
+	public void serverStarting(FMLServerStartingEvent event)
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-		GCIo.proxy.init(event);
-		
-        GalacticraftRegistry.registerTeleportType(GCIoWorldProvider.class, new GCIoTeleportType());
-        GalacticraftRegistry.registerCelestialBody(new GCIoPlanet());
-        GalacticraftRegistry.registerRocketGui(GCIoWorldProvider.class, new ResourceLocation(GCIo.TEXTURE_DOMAIN, "textures/gui/ioRocketGui.png"));
-   	}
+		;
+	}
 }

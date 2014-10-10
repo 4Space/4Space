@@ -78,12 +78,6 @@ public class GCMercuryRoomBoss extends GCCoreDungeonRoom
 	}
 
 	@Override
-	protected GCCoreDungeonRoom makeRoom(GCCoreMapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
-	{
-		return new GCMercuryRoomBoss(dungeon, x, y, z, dir);
-	}
-
-	@Override
 	protected void handleTileEntities(Random rand)
 	{
 		if (this.spawnerCoords == null)
@@ -105,6 +99,12 @@ public class GCMercuryRoomBoss extends GCCoreDungeonRoom
 		{
 			((GCCoreTileEntityDungeonSpawner) tile).setRoom(new Vector3(this.posX, this.posY, this.posZ), new Vector3(this.sizeX, this.sizeY, this.sizeZ));
 		}
+	}
+
+	@Override
+	protected GCCoreDungeonRoom makeRoom(GCCoreMapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
+	{
+		return new GCMercuryRoomBoss(dungeon, x, y, z, dir);
 	}
 
 }

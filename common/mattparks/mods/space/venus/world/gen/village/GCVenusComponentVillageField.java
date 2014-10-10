@@ -12,6 +12,13 @@ import net.minecraft.world.gen.structure.StructureComponent;
 
 public class GCVenusComponentVillageField extends GCVenusComponentVillage
 {
+	@SuppressWarnings("rawtypes")
+	public static GCVenusComponentVillageField func_74900_a(GCVenusComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+	{
+		final StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
+		return StructureComponent.findIntersecting(par1List, var8) == null ? new GCVenusComponentVillageField(par0ComponentVillageStartPiece, par7, par2Random, var8, par6) : null;
+	}
+
 	private int averageGroundLevel = -1;
 
 	public GCVenusComponentVillageField()
@@ -23,29 +30,6 @@ public class GCVenusComponentVillageField extends GCVenusComponentVillage
 		super(par1ComponentVillageStartPiece, par2);
 		this.coordBaseMode = par5;
 		this.boundingBox = par4StructureBoundingBox;
-	}
-
-	@Override
-	protected void func_143012_a(NBTTagCompound nbt)
-	{
-		super.func_143012_a(nbt);
-
-		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
-	}
-
-	@Override
-	protected void func_143011_b(NBTTagCompound nbt)
-	{
-		super.func_143011_b(nbt);
-
-		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
-	}
-
-	@SuppressWarnings("rawtypes")
-	public static GCVenusComponentVillageField func_74900_a(GCVenusComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
-		final StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
-		return StructureComponent.findIntersecting(par1List, var8) == null ? new GCVenusComponentVillageField(par0ComponentVillageStartPiece, par7, par2Random, var8, par6) : null;
 	}
 
 	@Override
@@ -105,5 +89,21 @@ public class GCVenusComponentVillageField extends GCVenusComponentVillage
 		}
 
 		return true;
+	}
+
+	@Override
+	protected void func_143011_b(NBTTagCompound nbt)
+	{
+		super.func_143011_b(nbt);
+
+		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
+	}
+
+	@Override
+	protected void func_143012_a(NBTTagCompound nbt)
+	{
+		super.func_143012_a(nbt);
+
+		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
 	}
 }

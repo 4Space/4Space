@@ -12,6 +12,46 @@ public class GCEuropaGenRavine extends MapGenBase
 {
     private float[] field_75046_d = new float[1024];
 
+    /**
+     * Digs out the current block, default implementation removes stone, filler, and top block
+     * Sets the block to lava if y is less then 10, and air other wise.
+     * If setting to air, it also checks to see if we've broken the surface and if so 
+     * tries to make the floor the biome's top block
+     * 
+     * @param data Block data array
+     * @param index Pre-calculated index into block data
+     * @param x local X position
+     * @param y local Y position
+     * @param z local Z position
+     * @param chunkX Chunk X position
+     * @param chunkZ Chunk Y position
+     * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
+     */
+    protected void digBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop)
+    {
+        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
+        int top    = (isExceptionBiome(biome) ? Block.grass.blockID : biome.topBlock);
+        int filler = (isExceptionBiome(biome) ? Block.dirt.blockID  : biome.fillerBlock);
+        int block  = data[index];
+
+        if (block == Block.stone.blockID || block == filler || block == top)
+        {
+            if (y < 10)
+            {
+                data[index] = (byte)Block.lavaMoving.blockID;
+            }
+            else
+            {
+                data[index] = 0;
+
+                if (foundTop && data[index - 1] == filler)
+                {
+                    data[index - 1] = (byte)top;
+                }
+            }
+        }
+    }
+
     protected void generateRavine(long par1, int par3, int par4, byte[] par5ArrayOfByte, double par6, double par8, double par10, float par12, float par13, float par14, int par15, int par16, double par17)
     {
         Random random = new Random(par1);
@@ -188,6 +228,28 @@ public class GCEuropaGenRavine extends MapGenBase
         }
     }
 
+    //Exception biomes to make sure we generate like vanilla
+    private boolean isExceptionBiome(BiomeGenBase biome)
+    {
+        if (biome == BiomeGenBase.mushroomIsland) return true;
+        if (biome == BiomeGenBase.beach) return true;
+        if (biome == BiomeGenBase.desert) return true;
+        return false;
+    }
+
+    protected boolean isOceanBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
+    {
+        return data[index] == Block.waterMoving.blockID || data[index] == Block.waterStill.blockID;
+    }
+
+    //Determine if the block at the specified location is the top block for the biome, we take into account
+    //Vanilla bugs to make sure that we generate the map the same way vanilla does.
+    private boolean isTopBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
+    {
+        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
+        return (isExceptionBiome(biome) ? data[index] == Block.grass.blockID : data[index] == biome.topBlock);
+    }
+
     /**
      * Recursively called by generate() (generate) and optionally by itself.
      */
@@ -207,68 +269,6 @@ public class GCEuropaGenRavine extends MapGenBase
                 float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
                 float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) * 2.0F;
                 this.generateRavine(this.rand.nextLong(), par4, par5, par6ArrayOfByte, d0, d1, d2, f2, f, f1, 0, 0, 3.0D);
-            }
-        }
-    }
-
-    protected boolean isOceanBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
-    {
-        return data[index] == Block.waterMoving.blockID || data[index] == Block.waterStill.blockID;
-    }
-
-    //Exception biomes to make sure we generate like vanilla
-    private boolean isExceptionBiome(BiomeGenBase biome)
-    {
-        if (biome == BiomeGenBase.mushroomIsland) return true;
-        if (biome == BiomeGenBase.beach) return true;
-        if (biome == BiomeGenBase.desert) return true;
-        return false;
-    }
-
-    //Determine if the block at the specified location is the top block for the biome, we take into account
-    //Vanilla bugs to make sure that we generate the map the same way vanilla does.
-    private boolean isTopBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
-    {
-        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        return (isExceptionBiome(biome) ? data[index] == Block.grass.blockID : data[index] == biome.topBlock);
-    }
-
-    /**
-     * Digs out the current block, default implementation removes stone, filler, and top block
-     * Sets the block to lava if y is less then 10, and air other wise.
-     * If setting to air, it also checks to see if we've broken the surface and if so 
-     * tries to make the floor the biome's top block
-     * 
-     * @param data Block data array
-     * @param index Pre-calculated index into block data
-     * @param x local X position
-     * @param y local Y position
-     * @param z local Z position
-     * @param chunkX Chunk X position
-     * @param chunkZ Chunk Y position
-     * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
-     */
-    protected void digBlock(byte[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop)
-    {
-        BiomeGenBase biome = worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-        int top    = (isExceptionBiome(biome) ? Block.grass.blockID : biome.topBlock);
-        int filler = (isExceptionBiome(biome) ? Block.dirt.blockID  : biome.fillerBlock);
-        int block  = data[index];
-
-        if (block == Block.stone.blockID || block == filler || block == top)
-        {
-            if (y < 10)
-            {
-                data[index] = (byte)Block.lavaMoving.blockID;
-            }
-            else
-            {
-                data[index] = 0;
-
-                if (foundTop && data[index - 1] == filler)
-                {
-                    data[index - 1] = (byte)top;
-                }
             }
         }
     }

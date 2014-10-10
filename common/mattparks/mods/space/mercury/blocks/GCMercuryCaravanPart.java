@@ -19,14 +19,14 @@ public class GCMercuryCaravanPart extends Block implements IPartialSealableBlock
     }
     
     @Override
-	public int quantityDropped(Random par1Random)
-    {
-        return 0;
-    }
-    
-	@Override
 	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
 	{
 		return true;
 	}
+    
+	@Override
+	public int quantityDropped(Random par1Random)
+    {
+        return 0;
+    }
 }

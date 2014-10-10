@@ -37,15 +37,9 @@ public class GCMercuryItem extends Item
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
+	public CreativeTabs getCreativeTab()
 	{
-		int i = 0;
-
-		for (String name : GCMercuryItem.names)
-		{
-			this.icons[i++] = iconRegister.registerIcon("galacticraftmercury:" + name);
-		}
+		return GCMercury.galacticraftMercuryTab;
 	}
 
 	@Override
@@ -57,6 +51,12 @@ public class GCMercuryItem extends Item
 		}
 
 		return super.getIconFromDamage(damage);
+	}
+
+	@Override
+	public int getMetadata(int par1)
+	{
+		return par1;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -81,14 +81,14 @@ public class GCMercuryItem extends Item
 	}
 
 	@Override
-	public int getMetadata(int par1)
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister)
 	{
-		return par1;
-	}
+		int i = 0;
 
-	@Override
-	public CreativeTabs getCreativeTab()
-	{
-		return GCMercury.galacticraftMercuryTab;
+		for (String name : GCMercuryItem.names)
+		{
+			this.icons[i++] = iconRegister.registerIcon("galacticraftmercury:" + name);
+		}
 	}
 }

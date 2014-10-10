@@ -18,23 +18,6 @@ import net.minecraft.world.WorldServer;
 public class GCIoTeleportType implements ITeleportType
 {
 	@Override
-	public boolean useParachute()
-	{
-		return GCCoreConfigManager.disableLander;
-	}
-
-	@Override
-	public Vector3 getPlayerSpawnLocation(WorldServer world, EntityPlayerMP player)
-	{
-		if (player instanceof GCCorePlayerMP)
-		{
-			return new Vector3(((GCCorePlayerMP) player).getCoordsTeleportedFromX(), GCCoreConfigManager.disableLander ? 250.0 : 900.0, ((GCCorePlayerMP) player).getCoordsTeleportedFromZ());
-		}
-
-		return null;
-	}
-
-	@Override
 	public Vector3 getEntitySpawnLocation(WorldServer world, Entity entity)
 	{
 		return new Vector3(entity.posX, GCCoreConfigManager.disableLander ? 250.0 : 900.0, entity.posZ);
@@ -48,6 +31,17 @@ public class GCIoTeleportType implements ITeleportType
 			final double x = (rand.nextDouble() * 2 - 1.0D) * 5.0D;
 			final double z = (rand.nextDouble() * 2 - 1.0D) * 5.0D;
 			return new Vector3(x, 220.0D, z);
+		}
+
+		return null;
+	}
+
+	@Override
+	public Vector3 getPlayerSpawnLocation(WorldServer world, EntityPlayerMP player)
+	{
+		if (player instanceof GCCorePlayerMP)
+		{
+			return new Vector3(((GCCorePlayerMP) player).getCoordsTeleportedFromX(), GCCoreConfigManager.disableLander ? 250.0 : 900.0, ((GCCorePlayerMP) player).getCoordsTeleportedFromZ());
 		}
 
 		return null;
@@ -82,5 +76,11 @@ public class GCIoTeleportType implements ITeleportType
 
 			gcPlayer.setTeleportCooldown(10);
 		}
+	}
+
+	@Override
+	public boolean useParachute()
+	{
+		return GCCoreConfigManager.disableLander;
 	}
 }

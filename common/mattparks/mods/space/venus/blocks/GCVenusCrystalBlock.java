@@ -35,14 +35,14 @@ public class GCVenusCrystalBlock extends Block implements IPartialSealableBlock
     }
     
     @Override
-	public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-    
-	@Override
 	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
 	{
 		return true;
 	}
+    
+	@Override
+	public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
 }

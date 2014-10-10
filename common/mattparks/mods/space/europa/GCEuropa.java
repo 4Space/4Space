@@ -43,6 +43,26 @@ public class GCEuropa
 	public static final String TEXTURE_PREFIX = GCEuropa.TEXTURE_DOMAIN + ":";
 
 	@EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		this.registerTileEntities();
+		this.registerCreatures();
+		this.registerOtherEntities();
+		GCEuropa.proxy.init(event);
+		
+        GalacticraftRegistry.registerTeleportType(GCEuropaWorldProvider.class, new GCEuropaTeleportType());
+        GalacticraftRegistry.registerCelestialBody(new GCEuropaPlanet());
+        GalacticraftRegistry.registerRocketGui(GCEuropaWorldProvider.class, new ResourceLocation(GCEuropa.TEXTURE_DOMAIN, "textures/gui/europaRocketGui.png"));
+   	}
+
+	@EventHandler
+	public void postLoad(FMLPostInitializationEvent event)
+	{
+		GCEuropa.proxy.postInit(event);
+		GCEuropa.proxy.registerRenderInformation();
+	}
+
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		EuropaBlocks.initBlocks();
@@ -52,32 +72,9 @@ public class GCEuropa
 		GCEuropa.proxy.preInit(event);
 	}
 
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-
-	public void registerTileEntities()
-	{
-		;
-	}
-
 	public void registerCreatures()
 	{
 		;
-	}
-
-	public void registerOtherEntities()
-	{
-		;
-	}
-
-	@EventHandler
-	public void postLoad(FMLPostInitializationEvent event)
-	{
-		GCEuropa.proxy.postInit(event);
-		GCEuropa.proxy.registerRenderInformation();
 	}
 
 	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
@@ -91,17 +88,20 @@ public class GCEuropa
 		EntityList.addMapping(var0, var1, id);
 		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
 	}
+
+	public void registerOtherEntities()
+	{
+		;
+	}
+
+	public void registerTileEntities()
+	{
+		;
+	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
+	public void serverStarting(FMLServerStartingEvent event)
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-		GCEuropa.proxy.init(event);
-		
-        GalacticraftRegistry.registerTeleportType(GCEuropaWorldProvider.class, new GCEuropaTeleportType());
-        GalacticraftRegistry.registerCelestialBody(new GCEuropaPlanet());
-        GalacticraftRegistry.registerRocketGui(GCEuropaWorldProvider.class, new ResourceLocation(GCEuropa.TEXTURE_DOMAIN, "textures/gui/europaRocketGui.png"));
-   	}
+		;
+	}
 }

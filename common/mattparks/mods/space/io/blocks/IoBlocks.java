@@ -10,11 +10,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class IoBlocks
 {
-	public static Block IoSlab;
-	public static Block IoFull;
-	public static Block IoStone;
-
-	
 	public static void initBlocks()
 	{
 		IoBlocks.IoSlab = new GCIoSlab(ConfigManager.idBlockIoSlab, null).setHardness(0.6F).setResistance(0.0F).setUnlocalizedName( "IoSlab").setTextureName("galacticraftio:IoSlab");
@@ -23,7 +18,12 @@ public class IoBlocks
 
 		IoBlocks.IoStone = new GCIoBlock(ConfigManager.idBlockIoStone, null).setHardness(1.0F).setResistance(0.0F).setUnlocalizedName( "IoStone").setTextureName("galacticraftio:IoStone");
 	}
-
+	public static void registerBlocks()
+	{
+		GameRegistry.registerBlock(IoBlocks.IoSlab, ItemBlock.class, IoBlocks.IoSlab.getUnlocalizedName(), GCIo.MODID);
+		GameRegistry.registerBlock(IoBlocks.IoFull, ItemBlock.class, IoBlocks.IoFull.getUnlocalizedName(), GCIo.MODID);
+		GameRegistry.registerBlock(IoBlocks.IoStone, ItemBlock.class, IoBlocks.IoStone.getUnlocalizedName(), GCIo.MODID);
+	}
 	public static void setHarvestLevels()
 	{
 		MinecraftForge.setBlockHarvestLevel(IoBlocks.IoSlab, "pickaxe", 1);
@@ -31,10 +31,10 @@ public class IoBlocks
 		MinecraftForge.setBlockHarvestLevel(IoBlocks.IoStone, "pickaxe", 1);
 	}
 
-	public static void registerBlocks()
-	{
-		GameRegistry.registerBlock(IoBlocks.IoSlab, ItemBlock.class, IoBlocks.IoSlab.getUnlocalizedName(), GCIo.MODID);
-		GameRegistry.registerBlock(IoBlocks.IoFull, ItemBlock.class, IoBlocks.IoFull.getUnlocalizedName(), GCIo.MODID);
-		GameRegistry.registerBlock(IoBlocks.IoStone, ItemBlock.class, IoBlocks.IoStone.getUnlocalizedName(), GCIo.MODID);
-	}
+	
+	public static Block IoSlab;
+
+	public static Block IoFull;
+
+	public static Block IoStone;
 }

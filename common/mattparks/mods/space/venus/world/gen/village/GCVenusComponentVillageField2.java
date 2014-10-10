@@ -12,11 +12,18 @@ import net.minecraft.world.gen.structure.StructureComponent;
 
 public class GCVenusComponentVillageField2 extends GCVenusComponentVillage
 {
-	private int averageGroundLevel = -1;
+	@SuppressWarnings("rawtypes")
+	public static GCVenusComponentVillageField2 func_74900_a(GCVenusComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+	{
+		final StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
+		return GCVenusComponentVillage.canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(par1List, structureboundingbox) == null ? new GCVenusComponentVillageField2(par0ComponentVillageStartPiece, par7, par2Random, structureboundingbox, par6) : null;
+	}
 
+	private int averageGroundLevel = -1;
 	private int cropTypeA;
 	private int cropTypeB;
 	private int cropTypeC;
+
 	private int cropTypeD;
 
 	public GCVenusComponentVillageField2()
@@ -32,50 +39,6 @@ public class GCVenusComponentVillageField2 extends GCVenusComponentVillage
 		this.cropTypeB = this.getRandomCrop(par3Random);
 		this.cropTypeC = this.getRandomCrop(par3Random);
 		this.cropTypeD = this.getRandomCrop(par3Random);
-	}
-
-	@Override
-	protected void func_143012_a(NBTTagCompound nbt)
-	{
-		super.func_143012_a(nbt);
-
-		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
-		nbt.setInteger("CropTypeA", this.cropTypeA);
-		nbt.setInteger("CropTypeB", this.cropTypeB);
-		nbt.setInteger("CropTypeC", this.cropTypeC);
-		nbt.setInteger("CropTypeD", this.cropTypeD);
-	}
-
-	@Override
-	protected void func_143011_b(NBTTagCompound nbt)
-	{
-		super.func_143011_b(nbt);
-
-		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
-		this.cropTypeA = nbt.getInteger("CropTypeA");
-		this.cropTypeB = nbt.getInteger("CropTypeB");
-		this.cropTypeC = nbt.getInteger("CropTypeC");
-		this.cropTypeD = nbt.getInteger("CropTypeD");
-	}
-
-	private int getRandomCrop(Random par1Random)
-	{
-		switch (par1Random.nextInt(5))
-		{
-		case 0:
-			return Block.carrot.blockID;
-		case 1:
-			return Block.potato.blockID;
-		default:
-			return Block.crops.blockID;
-		}
-	}
-
-	@SuppressWarnings("rawtypes")
-	public static GCVenusComponentVillageField2 func_74900_a(GCVenusComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
-		final StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
-		return GCVenusComponentVillage.canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(par1List, structureboundingbox) == null ? new GCVenusComponentVillageField2(par0ComponentVillageStartPiece, par7, par2Random, structureboundingbox, par6) : null;
 	}
 
 	/**
@@ -133,5 +96,42 @@ public class GCVenusComponentVillageField2 extends GCVenusComponentVillage
 		}
 
 		return true;
+	}
+
+	@Override
+	protected void func_143011_b(NBTTagCompound nbt)
+	{
+		super.func_143011_b(nbt);
+
+		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
+		this.cropTypeA = nbt.getInteger("CropTypeA");
+		this.cropTypeB = nbt.getInteger("CropTypeB");
+		this.cropTypeC = nbt.getInteger("CropTypeC");
+		this.cropTypeD = nbt.getInteger("CropTypeD");
+	}
+
+	@Override
+	protected void func_143012_a(NBTTagCompound nbt)
+	{
+		super.func_143012_a(nbt);
+
+		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
+		nbt.setInteger("CropTypeA", this.cropTypeA);
+		nbt.setInteger("CropTypeB", this.cropTypeB);
+		nbt.setInteger("CropTypeC", this.cropTypeC);
+		nbt.setInteger("CropTypeD", this.cropTypeD);
+	}
+
+	private int getRandomCrop(Random par1Random)
+	{
+		switch (par1Random.nextInt(5))
+		{
+		case 0:
+			return Block.carrot.blockID;
+		case 1:
+			return Block.potato.blockID;
+		default:
+			return Block.crops.blockID;
+		}
 	}
 }

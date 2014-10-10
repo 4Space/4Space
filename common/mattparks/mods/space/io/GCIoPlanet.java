@@ -14,27 +14,9 @@ public class GCIoPlanet implements IMoon
 	private final IMapObject io = new GCMapEuropa();
 
 	@Override
-	public String getName()
-	{
-		return "Io";
-	}
-
-	@Override
-	public boolean isReachable()
+	public boolean addToList()
 	{
 		return true;
-	}
-
-	@Override
-	public IPlanet getParentPlanet()
-	{
-		return GCJupiter.jupiter;
-	}
-
-	@Override
-	public IMapObject getMapObject()
-	{
-		return this.io;
 	}
 
 	@Override
@@ -44,15 +26,9 @@ public class GCIoPlanet implements IMoon
 	}
 
 	@Override
-	public boolean addToList()
+	public boolean forceStaticLoad()
 	{
 		return true;
-	}
-
-	@Override
-	public Class<? extends WorldProvider> getWorldProvider()
-	{
-		return GCIoWorldProvider.class;
 	}
 
 	@Override
@@ -62,7 +38,31 @@ public class GCIoPlanet implements IMoon
 	}
 
 	@Override
-	public boolean forceStaticLoad()
+	public IMapObject getMapObject()
+	{
+		return this.io;
+	}
+
+	@Override
+	public String getName()
+	{
+		return "Io";
+	}
+
+	@Override
+	public IPlanet getParentPlanet()
+	{
+		return GCJupiter.jupiter;
+	}
+
+	@Override
+	public Class<? extends WorldProvider> getWorldProvider()
+	{
+		return GCIoWorldProvider.class;
+	}
+
+	@Override
+	public boolean isReachable()
 	{
 		return true;
 	}

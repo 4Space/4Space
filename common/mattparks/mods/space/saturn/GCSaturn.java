@@ -41,30 +41,14 @@ public class GCSaturn
 	public static final String TEXTURE_PREFIX = GCSaturn.TEXTURE_DOMAIN + ":";
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
+	public void load(FMLInitializationEvent event)
 	{
-		GCSaturn.proxy.preInit(event);
-	}
+		this.registerTileEntities();
+		this.registerCreatures();
+		this.registerOtherEntities();
+		GCSaturn.proxy.init(event);
 
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-
-	public void registerTileEntities()
-	{
-		;
-	}
-
-	public void registerCreatures()
-	{
-		;
-	}
-
-	public void registerOtherEntities()
-	{
-		;
+        GalacticraftRegistry.registerCelestialBody(new GCSaturnPlanet());
 	}
 
 	@EventHandler
@@ -72,6 +56,17 @@ public class GCSaturn
 	{
 		GCSaturn.proxy.postInit(event);
 		GCSaturn.proxy.registerRenderInformation();
+	}
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		GCSaturn.proxy.preInit(event);
+	}
+
+	public void registerCreatures()
+	{
+		;
 	}
 
 	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
@@ -85,15 +80,20 @@ public class GCSaturn
 		EntityList.addMapping(var0, var1, id);
 		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
 	}
+
+	public void registerOtherEntities()
+	{
+		;
+	}
+
+	public void registerTileEntities()
+	{
+		;
+	}
 	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
+	public void serverStarting(FMLServerStartingEvent event)
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-		GCSaturn.proxy.init(event);
-
-        GalacticraftRegistry.registerCelestialBody(new GCSaturnPlanet());
+		;
 	}
 }

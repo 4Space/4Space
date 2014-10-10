@@ -29,6 +29,26 @@ public class GCVenusItemGemJetpack extends ItemArmor
     }
     
 	@Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
+    {
+        if (this.material == GCVenusItems.ARMORGEMJETPACK)
+        {
+            if (stack.getItem().itemID == GCVenusItems.gemJetpack.itemID)
+            {
+                return "textures/model/armor/redGemJetpack.png";
+            }
+        }
+
+        return null;
+    }
+
+	@Override
+    public CreativeTabs getCreativeTab()
+    {
+        return GCVenus.galacticraftVenusTab;
+    }
+
+    @Override
     public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) 
     {
     	if (entity instanceof EntityPlayer)
@@ -45,37 +65,17 @@ public class GCVenusItemGemJetpack extends ItemArmor
     	}
     }
 
-	public void setActive()
-	{
-		this.active = true;
-	}
-
-    @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
-    {
-        if (this.material == GCVenusItems.ARMORGEMJETPACK)
-        {
-            if (stack.getItem().itemID == GCVenusItems.gemJetpack.itemID)
-            {
-                return "textures/model/armor/redGemJetpack.png";
-            }
-        }
-
-        return null;
-    }
-
-    @Override
-    public CreativeTabs getCreativeTab()
-    {
-        return GCVenus.galacticraftVenusTab;
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister)
     {
         this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", "galacticraftvenus:"));
     }
+
+    public void setActive()
+	{
+		this.active = true;
+	}
 
     @Override
     public Item setUnlocalizedName(String par1Str)

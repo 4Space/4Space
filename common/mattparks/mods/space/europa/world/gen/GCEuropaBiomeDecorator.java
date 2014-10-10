@@ -41,6 +41,13 @@ public class GCEuropaBiomeDecorator
 		}
 	}
 
+	protected void generateEuropa()
+	{
+		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
+//		this.genStandardOre1(20, this.dirtGen, 0, 200);
+		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
+	}
+
 	protected void genStandardOre1(int amountPerChunk, WorldGenerator worldGenerator, int minY, int maxY)
 	{
 		for (int var5 = 0; var5 < amountPerChunk; ++var5)
@@ -50,12 +57,5 @@ public class GCEuropaBiomeDecorator
 			final int var8 = this.chunkZ + this.randomGenerator.nextInt(16);
 			worldGenerator.generate(this.worldObj, this.randomGenerator, var6, var7, var8);
 		}
-	}
-
-	protected void generateEuropa()
-	{
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-//		this.genStandardOre1(20, this.dirtGen, 0, 200);
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}
 }

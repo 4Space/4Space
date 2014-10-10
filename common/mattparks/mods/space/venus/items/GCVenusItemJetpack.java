@@ -24,12 +24,7 @@ public class GCVenusItemJetpack extends ItemArmor
         this.attachedMask = breathable;
     }
 
-	public void setActive()
-	{
-		this.active = true;
-	}
-
-    @Override
+	@Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
     {
         if (this.material == GCVenusItems.ARMORJETPACK)
@@ -55,6 +50,11 @@ public class GCVenusItemJetpack extends ItemArmor
     {
         this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", "galacticraftvenus:"));
     }
+
+    public void setActive()
+	{
+		this.active = true;
+	}
 
     @Override
     public Item setUnlocalizedName(String par1Str)

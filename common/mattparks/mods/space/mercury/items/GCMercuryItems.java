@@ -11,22 +11,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GCMercuryItems
 {
-    public static Item mercuryItemBasic;
-
-    public static Item iridiumPickaxe;
-    public static Item iridiumAxe;
-    public static Item iridiumHoe;
-    public static Item iridiumSpade;
-    public static Item iridiumSword;
-    public static Item iridiumHelmet;
-    public static Item iridiumChestplate;
-    public static Item iridiumLeggings;
-    public static Item iridiumBoots;
-
-
-    public static EnumArmorMaterial ARMORIRIDIUM = EnumHelper.addArmorMaterial("IRIDIUM", 30, new int[] { 3, 8, 6, 3 }, 12);
-    public static EnumToolMaterial TOOLIRIDIUM = EnumHelper.addToolMaterial("IRIDIUM", 3, 768, 5.0F, 2, 8);
-
     public static void initItems()
     {    	
         GCMercuryItems.mercuryItemBasic = new GCMercuryItem(ConfigManager.idItemMercuryBasic);
@@ -44,7 +28,7 @@ public class GCMercuryItems
 
     	registerItems();
     }
-    
+
     public static void registerHarvestLevels()
     {
     	MinecraftForge.setToolClass(GCMercuryItems.iridiumPickaxe, "pickaxe", 4);
@@ -52,8 +36,11 @@ public class GCMercuryItems
 		MinecraftForge.setToolClass(GCMercuryItems.iridiumAxe, "axe", 4);
 		MinecraftForge.setToolClass(GCMercuryItems.iridiumSpade, "shovel", 4);
     }
-    
- 	private static void registerItems()
+    private static void registerItem(Item item)
+ 	{
+ 		GameRegistry.registerItem(item, item.getUnlocalizedName(), GCMercury.MODID);
+ 	}
+    private static void registerItems()
  	{
  		registerItem(mercuryItemBasic);
 
@@ -69,9 +56,22 @@ public class GCMercuryItems
  		registerItem(iridiumBoots);
 
  	}
+    public static Item mercuryItemBasic;
+    public static Item iridiumPickaxe;
+    public static Item iridiumAxe;
+    public static Item iridiumHoe;
+    public static Item iridiumSpade;
+    public static Item iridiumSword;
+
+
+    public static Item iridiumHelmet;
+    public static Item iridiumChestplate;
+
+    public static Item iridiumLeggings;
+    
+    public static Item iridiumBoots;
+    
+ 	public static EnumArmorMaterial ARMORIRIDIUM = EnumHelper.addArmorMaterial("IRIDIUM", 30, new int[] { 3, 8, 6, 3 }, 12);
  	
- 	private static void registerItem(Item item)
- 	{
- 		GameRegistry.registerItem(item, item.getUnlocalizedName(), GCMercury.MODID);
- 	}
+ 	public static EnumToolMaterial TOOLIRIDIUM = EnumHelper.addToolMaterial("IRIDIUM", 3, 768, 5.0F, 2, 8);
 }

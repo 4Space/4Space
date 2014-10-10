@@ -10,13 +10,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class EuropaBlocks
 {
-	public static Block EuropaSurface;
-	public static Block EuropaIce;
-
 	public static void initBlocks()
 	{
 		EuropaBlocks.EuropaSurface = new GCEuropaBlock(ConfigManager.idBlockEuropaSurface, null).setHardness(0.6F).setResistance(0.0F).setUnlocalizedName( "EuropaSurface").setTextureName("galacticrafteuropa:SurfaceEuropa");
 		EuropaBlocks.EuropaIce = new GCEuropaBlock(ConfigManager.idBlockEuropaIce, null).setHardness(1.0F).setResistance(0.0F).setUnlocalizedName( "EuropaIce").setTextureName("galacticrafteuropa:BottemEuropa");
+	}
+	public static void registerBlocks()
+	{
+		GameRegistry.registerBlock(EuropaBlocks.EuropaSurface, ItemBlock.class, EuropaBlocks.EuropaSurface.getUnlocalizedName(), GCEuropa.MODID);
+		GameRegistry.registerBlock(EuropaBlocks.EuropaIce, ItemBlock.class, EuropaBlocks.EuropaIce.getUnlocalizedName(), GCEuropa.MODID);
 	}
 
 	public static void setHarvestLevels()
@@ -24,9 +26,7 @@ public class EuropaBlocks
 		MinecraftForge.setBlockHarvestLevel(EuropaBlocks.EuropaSurface, "pickaxe", 1);
 	}
 
-	public static void registerBlocks()
-	{
-		GameRegistry.registerBlock(EuropaBlocks.EuropaSurface, ItemBlock.class, EuropaBlocks.EuropaSurface.getUnlocalizedName(), GCEuropa.MODID);
-		GameRegistry.registerBlock(EuropaBlocks.EuropaIce, ItemBlock.class, EuropaBlocks.EuropaIce.getUnlocalizedName(), GCEuropa.MODID);
-	}
+	public static Block EuropaSurface;
+
+	public static Block EuropaIce;
 }

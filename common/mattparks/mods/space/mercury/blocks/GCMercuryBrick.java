@@ -22,16 +22,16 @@ public class GCMercuryBrick extends Block implements IPartialSealableBlock
     }
 
 	@Override
+	public boolean canHarvestBlock(EntityPlayer player, int meta)
+	{
+		return false;
+	}
+    
+	@Override
 	@SideOnly(Side.CLIENT)
 	public CreativeTabs getCreativeTabToDisplayOn()
 	{
 		return GCMercury.galacticraftMercuryTab;
-	}
-    
-	@Override
-	public boolean canHarvestBlock(EntityPlayer player, int meta)
-	{
-		return false;
 	}
 	
 	@Override

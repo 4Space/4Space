@@ -135,8 +135,6 @@ public class ClientProxyIo extends CommonProxyIo
     }
 
     
-    public static ArrayList<SoundPoolEntry> newMusic = new ArrayList<SoundPoolEntry>();
-
     public static boolean handleLavaMovement(EntityPlayer player)
     {
         return player.worldObj.isMaterialInBB(player.boundingBox.expand(-0.10000000149011612D, -0.4000000059604645D, -0.10000000149011612D), Material.lava);
@@ -146,6 +144,8 @@ public class ClientProxyIo extends CommonProxyIo
     {
         return player.worldObj.isMaterialInBB(player.boundingBox.expand(-0.10000000149011612D, -0.4000000059604645D, -0.10000000149011612D), Material.water);
     }
+
+    public static ArrayList<SoundPoolEntry> newMusic = new ArrayList<SoundPoolEntry>();
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)

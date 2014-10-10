@@ -19,34 +19,28 @@ public class GCVenusEgg extends BlockDragonEgg
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
-	{
-		this.blockIcon = iconRegister.registerIcon(GCVenus.TEXTURE_PREFIX + "evolvedBlazeEgg");
-	}
-
-	@Override
-	public boolean isOpaqueCube()
-	{
-		return false;
-	}
-
-	@Override
 	public CreativeTabs getCreativeTabToDisplayOn()
 	{
 		return GCVenus.galacticraftVenusTab;
 	}
 
 	@Override
-	public boolean renderAsNormalBlock()
-	{
-		return false;
-	}
-
-	@Override
 	public int getRenderType()
 	{
 		return 27;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int idPicked(World par1World, int par2, int par3, int par4)
+	{
+		return 0;
+	}
+
+	@Override
+	public boolean isOpaqueCube()
+	{
+		return false;
 	}
 
 	@Override
@@ -62,13 +56,6 @@ public class GCVenusEgg extends BlockDragonEgg
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public int idPicked(World par1World, int par2, int par3, int par4)
-	{
-		return 0;
-	}
-
-	@Override
 	public void onBlockExploded(World world, int x, int y, int z, Explosion explosion)
 	{
 		if (!world.isRemote)
@@ -80,5 +67,18 @@ public class GCVenusEgg extends BlockDragonEgg
 
 		world.setBlockToAir(x, y, z);
 		this.onBlockDestroyedByExplosion(world, x, y, z, explosion);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister)
+	{
+		this.blockIcon = iconRegister.registerIcon(GCVenus.TEXTURE_PREFIX + "evolvedBlazeEgg");
+	}
+
+	@Override
+	public boolean renderAsNormalBlock()
+	{
+		return false;
 	}
 }

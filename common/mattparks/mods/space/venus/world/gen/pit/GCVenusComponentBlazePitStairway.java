@@ -24,12 +24,6 @@ public class GCVenusComponentBlazePitStairway extends GCCoreStructureComponent
 	}
 
 	@Override
-	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random)
-    {
-		;
-    }
-
-	@Override
 	public boolean addComponentParts(World par1World, Random var2, StructureBoundingBox var3) 
 	{
 		final int x1 = this.getBoundingBox().minX;
@@ -46,13 +40,19 @@ public class GCVenusComponentBlazePitStairway extends GCCoreStructureComponent
 	}
 
 	@Override
-	protected void func_143012_a(NBTTagCompound nbttagcompound) 
+	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random)
+    {
+		;
+    }
+
+	@Override
+	protected void func_143011_b(NBTTagCompound nbttagcompound) 
 	{
 		;
 	}
 
 	@Override
-	protected void func_143011_b(NBTTagCompound nbttagcompound) 
+	protected void func_143012_a(NBTTagCompound nbttagcompound) 
 	{
 		;
 	}

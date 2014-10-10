@@ -35,32 +35,6 @@ public class GCVenusComponentVillageWell extends GCVenusComponentVillage
 	}
 
 	@Override
-	protected void func_143012_a(NBTTagCompound nbt)
-	{
-		super.func_143012_a(nbt);
-
-		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
-	}
-
-	@Override
-	protected void func_143011_b(NBTTagCompound nbt)
-	{
-		super.func_143011_b(nbt);
-
-		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
-	}
-
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@Override
-	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random)
-	{
-		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX - 1, this.boundingBox.maxY - 4, this.boundingBox.minZ + 1, 1, this.getComponentType());
-		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX + 1, this.boundingBox.maxY - 4, this.boundingBox.minZ + 1, 3, this.getComponentType());
-		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX + 1, this.boundingBox.maxY - 4, this.boundingBox.minZ - 1, 2, this.getComponentType());
-		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX + 1, this.boundingBox.maxY - 4, this.boundingBox.maxZ + 1, 0, this.getComponentType());
-	}
-
-	@Override
 	public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
 	{
 		if (this.averageGroundLevel < 0)
@@ -105,6 +79,16 @@ public class GCVenusComponentVillageWell extends GCVenusComponentVillage
 		return true;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random)
+	{
+		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX - 1, this.boundingBox.maxY - 4, this.boundingBox.minZ + 1, 1, this.getComponentType());
+		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX + 1, this.boundingBox.maxY - 4, this.boundingBox.minZ + 1, 3, this.getComponentType());
+		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX + 1, this.boundingBox.maxY - 4, this.boundingBox.minZ - 1, 2, this.getComponentType());
+		GCVenusStructureVillagePieces.getNextStructureComponentVillagePath((GCVenusComponentVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX + 1, this.boundingBox.maxY - 4, this.boundingBox.maxZ + 1, 0, this.getComponentType());
+	}
+
 	protected void fillWithBlocksAndMetadata(World par1World, StructureBoundingBox par2StructureBoundingBox, int par3, int par4, int par5, int par6, int par7, int par8, int par9, int par10, boolean par11)
 	{
 		final int var12 = this.getBiomeSpecificBlock(par9, 0);
@@ -112,5 +96,21 @@ public class GCVenusComponentVillageWell extends GCVenusComponentVillage
 		final int var14 = this.getBiomeSpecificBlock(par10, 0);
 		final int var15 = this.getBiomeSpecificBlockMetadata(par10, 0);
 		super.fillWithMetadataBlocks(par1World, par2StructureBoundingBox, par3, par4, par5, par6, par7, par8, var12, var13, var14, var15, par11);
+	}
+
+	@Override
+	protected void func_143011_b(NBTTagCompound nbt)
+	{
+		super.func_143011_b(nbt);
+
+		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
+	}
+
+	@Override
+	protected void func_143012_a(NBTTagCompound nbt)
+	{
+		super.func_143012_a(nbt);
+
+		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
 	}
 }

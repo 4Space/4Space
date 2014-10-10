@@ -68,12 +68,6 @@ public class GCVenusRoomChests extends GCCoreDungeonRoom
 	}
 
 	@Override
-	protected GCCoreDungeonRoom makeRoom(GCCoreMapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
-	{
-		return new GCVenusRoomChests(dungeon, x, y, z, dir);
-	}
-
-	@Override
 	protected void handleTileEntities(Random rand)
 	{
 		if (!this.chests.isEmpty())
@@ -95,5 +89,11 @@ public class GCVenusRoomChests extends GCCoreDungeonRoom
 
 			this.chests.clear();
 		}
+	}
+
+	@Override
+	protected GCCoreDungeonRoom makeRoom(GCCoreMapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
+	{
+		return new GCVenusRoomChests(dungeon, x, y, z, dir);
 	}
 }

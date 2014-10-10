@@ -23,16 +23,106 @@ public class GCVenusWorldChunkManager extends WorldChunkManager
 		this.biomesToSpawnIn.add(GCVenusBiomeGenBase.venusFlat);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
-	public List<BiomeGenBase> getBiomesToSpawnIn()
+	public boolean areBiomesViable(int par1, int par2, int par3, List par4List)
 	{
-		return this.biomesToSpawnIn;
+		final int var5 = par1 - par3 >> 2;
+		final int var6 = par2 - par3 >> 2;
+		final int var7 = par1 + par3 >> 2;
+		final int var8 = par2 + par3 >> 2;
+		final int var9 = var7 - var5 + 1;
+		final int var10 = var8 - var6 + 1;
+
+		for (int var12 = 0; var12 < var9 * var10; ++var12)
+		{
+			final BiomeGenBase var13 = GCVenusBiomeGenBase.venusFlat;
+
+			if (!par4List.contains(var13))
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	@Override
+	public void cleanupCache()
+	{
+		this.biomeCache.cleanupCache();
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public ChunkPosition findBiomePosition(int par1, int par2, int par3, List par4List, Random par5Random)
+	{
+		final int var6 = par1 - par3 >> 2;
+		final int var7 = par2 - par3 >> 2;
+		final int var8 = par1 + par3 >> 2;
+		final int var10 = var8 - var6 + 1;
+
+		final int var16 = var6 + 0 % var10 << 2;
+		final int var17 = var7 + 0 / var10 << 2;
+
+		return new ChunkPosition(var16, 0, var17);
+	}
+
+	@Override
+	public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5, boolean par6)
+	{
+		IntCache.resetIntCache();
+
+		if (par1ArrayOfBiomeGenBase == null || par1ArrayOfBiomeGenBase.length < par4 * par5)
+		{
+			par1ArrayOfBiomeGenBase = new BiomeGenBase[par4 * par5];
+		}
+
+		if (par6 && par4 == 16 && par5 == 16 && (par2 & 15) == 0 && (par3 & 15) == 0)
+		{
+			final BiomeGenBase[] var9 = this.biomeCache.getCachedBiomes(par2, par3);
+			System.arraycopy(var9, 0, par1ArrayOfBiomeGenBase, 0, par4 * par5);
+			return par1ArrayOfBiomeGenBase;
+		}
+		else
+		{
+			for (int var8 = 0; var8 < par4 * par5; ++var8)
+			{
+				par1ArrayOfBiomeGenBase[var8] = GCVenusBiomeGenBase.venusFlat;
+			}
+
+			return par1ArrayOfBiomeGenBase;
+		}
 	}
 
 	@Override
 	public BiomeGenBase getBiomeGenAt(int par1, int par2)
 	{
 		return GCVenusBiomeGenBase.venusFlat;
+	}
+
+	@Override
+	public BiomeGenBase[] getBiomesForGeneration(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5)
+	{
+		IntCache.resetIntCache();
+
+		if (par1ArrayOfBiomeGenBase == null || par1ArrayOfBiomeGenBase.length < par4 * par5)
+		{
+			par1ArrayOfBiomeGenBase = new BiomeGenBase[par4 * par5];
+		}
+
+		for (int var7 = 0; var7 < par4 * par5; ++var7)
+		{
+			par1ArrayOfBiomeGenBase[var7] = GCVenusBiomeGenBase.venusFlat;
+		}
+
+		return par1ArrayOfBiomeGenBase;
+	}
+
+	@Override
+	public List<BiomeGenBase> getBiomesToSpawnIn()
+	{
+		return this.biomesToSpawnIn;
 	}
 
 	@Override
@@ -79,98 +169,8 @@ public class GCVenusWorldChunkManager extends WorldChunkManager
 	}
 
 	@Override
-	public BiomeGenBase[] getBiomesForGeneration(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5)
-	{
-		IntCache.resetIntCache();
-
-		if (par1ArrayOfBiomeGenBase == null || par1ArrayOfBiomeGenBase.length < par4 * par5)
-		{
-			par1ArrayOfBiomeGenBase = new BiomeGenBase[par4 * par5];
-		}
-
-		for (int var7 = 0; var7 < par4 * par5; ++var7)
-		{
-			par1ArrayOfBiomeGenBase[var7] = GCVenusBiomeGenBase.venusFlat;
-		}
-
-		return par1ArrayOfBiomeGenBase;
-	}
-
-	@Override
 	public BiomeGenBase[] loadBlockGeneratorData(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5)
 	{
 		return this.getBiomeGenAt(par1ArrayOfBiomeGenBase, par2, par3, par4, par5, true);
-	}
-
-	@Override
-	public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5, boolean par6)
-	{
-		IntCache.resetIntCache();
-
-		if (par1ArrayOfBiomeGenBase == null || par1ArrayOfBiomeGenBase.length < par4 * par5)
-		{
-			par1ArrayOfBiomeGenBase = new BiomeGenBase[par4 * par5];
-		}
-
-		if (par6 && par4 == 16 && par5 == 16 && (par2 & 15) == 0 && (par3 & 15) == 0)
-		{
-			final BiomeGenBase[] var9 = this.biomeCache.getCachedBiomes(par2, par3);
-			System.arraycopy(var9, 0, par1ArrayOfBiomeGenBase, 0, par4 * par5);
-			return par1ArrayOfBiomeGenBase;
-		}
-		else
-		{
-			for (int var8 = 0; var8 < par4 * par5; ++var8)
-			{
-				par1ArrayOfBiomeGenBase[var8] = GCVenusBiomeGenBase.venusFlat;
-			}
-
-			return par1ArrayOfBiomeGenBase;
-		}
-	}
-
-	@SuppressWarnings("rawtypes")
-	@Override
-	public boolean areBiomesViable(int par1, int par2, int par3, List par4List)
-	{
-		final int var5 = par1 - par3 >> 2;
-		final int var6 = par2 - par3 >> 2;
-		final int var7 = par1 + par3 >> 2;
-		final int var8 = par2 + par3 >> 2;
-		final int var9 = var7 - var5 + 1;
-		final int var10 = var8 - var6 + 1;
-
-		for (int var12 = 0; var12 < var9 * var10; ++var12)
-		{
-			final BiomeGenBase var13 = GCVenusBiomeGenBase.venusFlat;
-
-			if (!par4List.contains(var13))
-			{
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	@SuppressWarnings("rawtypes")
-	@Override
-	public ChunkPosition findBiomePosition(int par1, int par2, int par3, List par4List, Random par5Random)
-	{
-		final int var6 = par1 - par3 >> 2;
-		final int var7 = par2 - par3 >> 2;
-		final int var8 = par1 + par3 >> 2;
-		final int var10 = var8 - var6 + 1;
-
-		final int var16 = var6 + 0 % var10 << 2;
-		final int var17 = var7 + 0 / var10 << 2;
-
-		return new ChunkPosition(var16, 0, var17);
-	}
-
-	@Override
-	public void cleanupCache()
-	{
-		this.biomeCache.cleanupCache();
 	}
 }

@@ -31,6 +31,27 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
     }
     
     @Override
+    public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
+    {
+        if (this.averageGroundLevel < 0)
+        {
+            this.averageGroundLevel = this.getAverageGroundLevel(par1World, par3StructureBoundingBox);
+
+            if (this.averageGroundLevel < 0)
+            {
+                return true;
+            }
+
+            this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 3, 0);
+        }
+
+    	this.makeWallsDown(par1World);
+    	this.makePlatforms(par1World, par2Random);
+    	
+		return true;
+    }
+    
+    @Override
     public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random) 
     {
         int var4;
@@ -40,6 +61,45 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
             final int[] var5 = this.getValidOpening(par3Random, var4);
             
             this.makeCorridor(par2List, par3Random, 1, var5[0], var5[1], var5[2], this.width, 7, var4);
+        }
+    }
+    
+    @Override
+	protected void func_143011_b(NBTTagCompound nbttagcompound) 
+	{
+		;
+	}
+    
+    @Override
+	protected void func_143012_a(NBTTagCompound nbttagcompound) 
+	{
+		;
+	}
+
+    protected int getAverageGroundLevel(World par1World, StructureBoundingBox par2StructureBoundingBox)
+    {
+        int var3 = 0;
+        int var4 = 0;
+
+        for (int var5 = this.boundingBox.minZ; var5 <= this.boundingBox.maxZ; ++var5)
+        {
+            for (int var6 = this.boundingBox.minX; var6 <= this.boundingBox.maxX; ++var6)
+            {
+                if (par2StructureBoundingBox.isVecInside(var6, 64, var5))
+                {
+                    var3 += Math.max(par1World.getTopSolidOrLiquidBlock(var6, var5), par1World.provider.getAverageGroundLevel());
+                    ++var4;
+                }
+            }
+        }
+
+        if (var4 == 0)
+        {
+            return -1;
+        }
+        else
+        {
+            return var3 / var4;
         }
     }
     
@@ -74,56 +134,6 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
     		;
     	}
         return true;
-    }
-    
-    protected int[] offsetCorridorCoords(int x, int y, int z, int width, int cbm)
-    {
-        final int var6 = this.getXWithOffset(x, z);
-        final int var7 = this.getYWithOffset(y);
-        final int var8 = this.getZWithOffset(x, z);
-        return cbm == 0 ? new int[] {var6 + 1, var7 - 1, var8 - width / 2}: cbm == 1 ? new int[] {var6 + width / 2, var7 - 1, var8 + 1}: cbm == 2 ? new int[] {var6 - 1, var7 - 1, var8 + width / 2}: cbm == 3 ? new int[] {var6 - width / 2, var7 - 1, var8 - 1}: new int[] {x, y, z};
-    }
-
-    @Override
-    public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
-    {
-        if (this.averageGroundLevel < 0)
-        {
-            this.averageGroundLevel = this.getAverageGroundLevel(par1World, par3StructureBoundingBox);
-
-            if (this.averageGroundLevel < 0)
-            {
-                return true;
-            }
-
-            this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 3, 0);
-        }
-
-    	this.makeWallsDown(par1World);
-    	this.makePlatforms(par1World, par2Random);
-    	
-		return true;
-    }
-    
-    public void makeWallsDown(World world)
-    {
-    	for (int y = 0; y < this.height; y++)
-    	{
-    		for (int x = 0; x < 7; x++)
-    		{
-    			for (int z = 0; z < 7; z++)
-    			{
-    				if ((x == 0 || x == 6 || z == 0 || z == 6) && (y == 0 || y > 7))
-    				{
-    					this.placeBlockAtCurrentPosition(world, VenusBlocks.VenusBrick.blockID, 0, x, y, z, this.getBoundingBox());
-    				}
-    				else
-    				{
-    					this.placeBlockAtCurrentPosition(world, 0, 0, x, y, z, this.getBoundingBox());
-    				}
-    			}
-    		}
-    	}
     }
     
     public void makePlatforms(World world, Random rand)
@@ -185,43 +195,33 @@ public class GCVenusComponentBlazePitRoom extends GCCoreStructureComponent
     		}
     	}
     }
-    
-    protected int getAverageGroundLevel(World par1World, StructureBoundingBox par2StructureBoundingBox)
+
+	public void makeWallsDown(World world)
     {
-        int var3 = 0;
-        int var4 = 0;
-
-        for (int var5 = this.boundingBox.minZ; var5 <= this.boundingBox.maxZ; ++var5)
-        {
-            for (int var6 = this.boundingBox.minX; var6 <= this.boundingBox.maxX; ++var6)
-            {
-                if (par2StructureBoundingBox.isVecInside(var6, 64, var5))
-                {
-                    var3 += Math.max(par1World.getTopSolidOrLiquidBlock(var6, var5), par1World.provider.getAverageGroundLevel());
-                    ++var4;
-                }
-            }
-        }
-
-        if (var4 == 0)
-        {
-            return -1;
-        }
-        else
-        {
-            return var3 / var4;
-        }
+    	for (int y = 0; y < this.height; y++)
+    	{
+    		for (int x = 0; x < 7; x++)
+    		{
+    			for (int z = 0; z < 7; z++)
+    			{
+    				if ((x == 0 || x == 6 || z == 0 || z == 6) && (y == 0 || y > 7))
+    				{
+    					this.placeBlockAtCurrentPosition(world, VenusBlocks.VenusBrick.blockID, 0, x, y, z, this.getBoundingBox());
+    				}
+    				else
+    				{
+    					this.placeBlockAtCurrentPosition(world, 0, 0, x, y, z, this.getBoundingBox());
+    				}
+    			}
+    		}
+    	}
     }
 
-	@Override
-	protected void func_143012_a(NBTTagCompound nbttagcompound) 
-	{
-		;
-	}
-
-	@Override
-	protected void func_143011_b(NBTTagCompound nbttagcompound) 
-	{
-		;
-	}
+	protected int[] offsetCorridorCoords(int x, int y, int z, int width, int cbm)
+    {
+        final int var6 = this.getXWithOffset(x, z);
+        final int var7 = this.getYWithOffset(y);
+        final int var8 = this.getZWithOffset(x, z);
+        return cbm == 0 ? new int[] {var6 + 1, var7 - 1, var8 - width / 2}: cbm == 1 ? new int[] {var6 + width / 2, var7 - 1, var8 + 1}: cbm == 2 ? new int[] {var6 - 1, var7 - 1, var8 + width / 2}: cbm == 3 ? new int[] {var6 - width / 2, var7 - 1, var8 - 1}: new int[] {x, y, z};
+    }
 }

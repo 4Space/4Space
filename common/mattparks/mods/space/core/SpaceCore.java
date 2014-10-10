@@ -39,17 +39,18 @@ public class SpaceCore
 	public static SpaceCore instance;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
-		new ConfigManager(new File(event.getModConfigurationDirectory(), "4Space.conf"));
-		
-		SpaceCore.proxy.preInit(event);
-	}
-
-    @EventHandler
     public void init (FMLInitializationEvent event)
     {
     }
+
+    @EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		this.registerTileEntities();
+		this.registerCreatures();
+		this.registerOtherEntities();
+		SpaceCore.proxy.init(event);
+	}
 
 	@EventHandler
 	public void postLoad(FMLPostInitializationEvent event)
@@ -58,27 +59,38 @@ public class SpaceCore
 		SpaceCore.proxy.registerRenderInformation();
 	}
 
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		new ConfigManager(new File(event.getModConfigurationDirectory(), "4Space.conf"));
+		
+		SpaceCore.proxy.preInit(event);
+	}
+
+	public void registerCreatures()
+	{
+	}
+	
 	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
 	{
 		EntityRegistry.registerGlobalEntityID(var0, var1, id, back, fore);
 		EntityRegistry.registerModEntity(var0, var1, id, SpaceCore.instance, 80, 3, true);
 	}
-
+	
 	public void registerGalacticraftNonMobEntity(Class<? extends Entity> var0, String var1, int id, int trackingDistance, int updateFreq, boolean sendVel)
 	{
 		EntityList.addMapping(var0, var1, id);
 		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
 	}
-	
-	@EventHandler
-	public void load(FMLInitializationEvent event)
+
+	public void registerOtherEntities()
 	{
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-		SpaceCore.proxy.init(event);
 	}
-	
+
+	public void registerTileEntities()
+	{
+	}
+
 	@EventHandler
 	public void serverInit(FMLServerStartedEvent event)
 	{
@@ -88,17 +100,5 @@ public class SpaceCore
 	public void serverStarting(FMLServerStartingEvent event)
 	{
 		NetworkRegistry.instance().registerChannel(new PacketHandlerServer(), SpaceCore.CHANNEL, Side.SERVER);
-	}
-
-	public void registerTileEntities()
-	{
-	}
-
-	public void registerCreatures()
-	{
-	}
-
-	public void registerOtherEntities()
-	{
 	}
 }

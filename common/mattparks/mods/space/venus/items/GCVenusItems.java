@@ -11,45 +11,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class GCVenusItems
 {
-    public static Item venusItemBasic;
-//    public static Item vurnBerry;
-
-    public static Item sulfurPickaxe;
-    public static Item sulfurAxe;
-    public static Item sulfurHoe;
-    public static Item sulfurSpade;
-    public static Item sulfurSword;
-    public static Item sulfurHelmet;
-    public static Item sulfurChestplate;
-    public static Item sulfurLeggings;
-    public static Item sulfurBoots;
-    
-    public static Item gemJetpack;
-    public static Item jetpack;
-    public static Item gemPickaxe;
-    public static Item gemAxe;
-    public static Item gemHoe;
-    public static Item gemSpade;
-    public static Item gemSword;
-    public static Item gemHelmet;
-    public static Item gemChestplate;
-    public static Item gemLeggings;
-    public static Item gemBoots;
-
-    public static Item venusRod;
-    
-    public static Item venusSulfurBattery;
-    public static Item venusUraniumBattery;
-    
-    public static EnumArmorMaterial ARMORSULFUR = EnumHelper.addArmorMaterial("SULFUR", 15, new int[] { 1, 4, 2, 1 }, 7);
-    public static EnumToolMaterial TOOLSULFUR = EnumHelper.addToolMaterial("SULFUR", 3, 416, 6.0F, 1, 2);
-    
-    public static EnumArmorMaterial ARMORGEM = EnumHelper.addArmorMaterial("GEM", 30, new int[] { 3, 8, 6, 3 }, 12);
-    public static EnumToolMaterial TOOLGEM = EnumHelper.addToolMaterial("GEM", 3, 768, 5.0F, 2, 8);
-    
-    public static EnumArmorMaterial ARMORJETPACK = EnumHelper.addArmorMaterial("JETPACK", 200, new int[] { 0, 0, 0, 0 }, 0);
-    public static EnumArmorMaterial ARMORGEMJETPACK = EnumHelper.addArmorMaterial("GEMJETPACK", 30, new int[] { 0, 8, 0, 0 }, 8);
-    
     public static void initItems()
     {    	
         GCVenusItems.venusItemBasic = new GCVenusItem(ConfigManager.idItemVenusBasic);
@@ -88,7 +49,7 @@ public class GCVenusItems
     
     	registerItems();
     }
-    
+
     public static void registerHarvestLevels()
     {
 		MinecraftForge.setToolClass(GCVenusItems.gemPickaxe, "pickaxe", 4);
@@ -99,8 +60,11 @@ public class GCVenusItems
 		MinecraftForge.setToolClass(GCVenusItems.sulfurAxe, "axe", 4);
 		MinecraftForge.setToolClass(GCVenusItems.sulfurSpade, "shovel", 4);
     }
-    
- 	private static void registerItems()
+    private static void registerItem(Item item)
+ 	{
+ 		GameRegistry.registerItem(item, item.getUnlocalizedName(), GCVenus.MODID);
+ 	}
+    private static void registerItems()
  	{
 		registerItem(venusItemBasic);
 //		registerItem(vurnBerry);
@@ -133,9 +97,45 @@ public class GCVenusItems
  		registerItem(venusUraniumBattery);
  		registerItem(venusRod);
  	}
+    public static Item venusItemBasic;
+//    public static Item vurnBerry;
+    public static Item sulfurPickaxe;
+    public static Item sulfurAxe;
+    public static Item sulfurHoe;
+    public static Item sulfurSpade;
+    public static Item sulfurSword;
+    
+    public static Item sulfurHelmet;
+    public static Item sulfurChestplate;
+    public static Item sulfurLeggings;
+    public static Item sulfurBoots;
+    public static Item gemJetpack;
+    public static Item jetpack;
+    public static Item gemPickaxe;
+    public static Item gemAxe;
+    public static Item gemHoe;
+    public static Item gemSpade;
+    public static Item gemSword;
+
+    public static Item gemHelmet;
+    
+    public static Item gemChestplate;
+    public static Item gemLeggings;
+    
+    public static Item gemBoots;
+    public static Item venusRod;
+    
+    public static Item venusSulfurBattery;
+    public static Item venusUraniumBattery;
+    
+    public static EnumArmorMaterial ARMORSULFUR = EnumHelper.addArmorMaterial("SULFUR", 15, new int[] { 1, 4, 2, 1 }, 7);
+    public static EnumToolMaterial TOOLSULFUR = EnumHelper.addToolMaterial("SULFUR", 3, 416, 6.0F, 1, 2);
+    
+    public static EnumArmorMaterial ARMORGEM = EnumHelper.addArmorMaterial("GEM", 30, new int[] { 3, 8, 6, 3 }, 12);
+    
+    public static EnumToolMaterial TOOLGEM = EnumHelper.addToolMaterial("GEM", 3, 768, 5.0F, 2, 8);
+    
+ 	public static EnumArmorMaterial ARMORJETPACK = EnumHelper.addArmorMaterial("JETPACK", 200, new int[] { 0, 0, 0, 0 }, 0);
  	
- 	private static void registerItem(Item item)
- 	{
- 		GameRegistry.registerItem(item, item.getUnlocalizedName(), GCVenus.MODID);
- 	}
+ 	public static EnumArmorMaterial ARMORGEMJETPACK = EnumHelper.addArmorMaterial("GEMJETPACK", 30, new int[] { 0, 8, 0, 0 }, 8);
 }

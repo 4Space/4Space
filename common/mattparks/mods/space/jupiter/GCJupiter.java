@@ -51,58 +51,12 @@ public class GCJupiter
 	public static final String TEXTURE_PREFIX = GCJupiter.TEXTURE_DOMAIN + ":";
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
-		GCJupiter.proxy.preInit(event);
-	}
-
-	@EventHandler
-	public void serverStarting(FMLServerStartingEvent event)
-	{
-		;
-	}
-
-	public void registerTileEntities()
-	{
-		;
-	}
-
-	public void registerCreatures()
-	{
-		;
-	}
-
-	public void registerOtherEntities()
-	{
-		;
-	}
-
-	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
 		GCJupiter.jupiter = new GCJupiterPlanet();
 		GalacticraftRegistry.registerCelestialBody(GCJupiter.jupiter);
 	}
-	
-	@EventHandler
-	public void postLoad(FMLPostInitializationEvent event)
-	{
-		GCJupiter.proxy.postInit(event);
-		GCJupiter.proxy.registerRenderInformation();
-	}
 
-	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
-	{
-		EntityRegistry.registerGlobalEntityID(var0, var1, id, back, fore);
-		EntityRegistry.registerModEntity(var0, var1, id, GCJupiter.instance, 80, 3, true);
-	}
-
-	public void registerGalacticraftNonMobEntity(Class<? extends Entity> var0, String var1, int id, int trackingDistance, int updateFreq, boolean sendVel)
-	{
-		EntityList.addMapping(var0, var1, id);
-		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
-	}
-	
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
@@ -112,5 +66,51 @@ public class GCJupiter
 		GCJupiter.proxy.init(event);
 
         GalacticraftRegistry.registerCelestialBody(new GCJupiterPlanet());
+	}
+
+	@EventHandler
+	public void postLoad(FMLPostInitializationEvent event)
+	{
+		GCJupiter.proxy.postInit(event);
+		GCJupiter.proxy.registerRenderInformation();
+	}
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		GCJupiter.proxy.preInit(event);
+	}
+
+	public void registerCreatures()
+	{
+		;
+	}
+
+	public void registerGalacticraftCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
+	{
+		EntityRegistry.registerGlobalEntityID(var0, var1, id, back, fore);
+		EntityRegistry.registerModEntity(var0, var1, id, GCJupiter.instance, 80, 3, true);
+	}
+	
+	public void registerGalacticraftNonMobEntity(Class<? extends Entity> var0, String var1, int id, int trackingDistance, int updateFreq, boolean sendVel)
+	{
+		EntityList.addMapping(var0, var1, id);
+		EntityRegistry.registerModEntity(var0, var1, id, this, trackingDistance, updateFreq, sendVel);
+	}
+
+	public void registerOtherEntities()
+	{
+		;
+	}
+
+	public void registerTileEntities()
+	{
+		;
+	}
+	
+	@EventHandler
+	public void serverStarting(FMLServerStartingEvent event)
+	{
+		;
 	}
 }

@@ -23,6 +23,29 @@ public class GCVenusRenderEvolvedBlaze extends RenderLiving
         this.field_77068_a = ((GCVenusModelEvolvedBlaze)this.mainModel).func_78104_a();
     }
 
+    @Override
+	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
+    {
+        this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1Entity, par2, par4, par6, par8, par9);
+    }
+
+    @Override
+	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
+    {
+        this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1EntityLiving, par2, par4, par6, par8, par9);
+    }
+
+    @Override
+	protected ResourceLocation getEntityTexture(Entity par1Entity)
+    {
+        return this.getEvolvedBlazeTextures((GCVenusEntityEvolvedBlaze)par1Entity);
+    }
+
+    protected ResourceLocation getEvolvedBlazeTextures(GCVenusEntityEvolvedBlaze par1EntityBlaze)
+    {
+        return evolvedBlazeTextures;
+    }
+
     public void renderEvolvedBlaze(GCVenusEntityEvolvedBlaze par1EntityEvolvedBlaze, double par2, double par4, double par6, float par8, float par9)
     {
         int i = ((GCVenusModelEvolvedBlaze)this.mainModel).func_78104_a();
@@ -36,32 +59,9 @@ public class GCVenusRenderEvolvedBlaze extends RenderLiving
         super.doRenderLiving(par1EntityEvolvedBlaze, par2, par4, par6, par8, par9);
     }
 
-    protected ResourceLocation getEvolvedBlazeTextures(GCVenusEntityEvolvedBlaze par1EntityBlaze)
-    {
-        return evolvedBlazeTextures;
-    }
-
-    @Override
-	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
-    {
-        this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1EntityLiving, par2, par4, par6, par8, par9);
-    }
-
     @Override
 	public void renderPlayer(EntityLivingBase par1EntityLivingBase, double par2, double par4, double par6, float par8, float par9)
     {
         this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1EntityLivingBase, par2, par4, par6, par8, par9);
-    }
-
-    @Override
-	protected ResourceLocation getEntityTexture(Entity par1Entity)
-    {
-        return this.getEvolvedBlazeTextures((GCVenusEntityEvolvedBlaze)par1Entity);
-    }
-
-    @Override
-	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
-    {
-        this.renderEvolvedBlaze((GCVenusEntityEvolvedBlaze)par1Entity, par2, par4, par6, par8, par9);
     }
 }

@@ -11,23 +11,17 @@ import cpw.mods.fml.relauncher.Side;
 
 public class ClientProxy extends CommonProxy
 {
-    @Override
-    public void init(FMLInitializationEvent event)
-    {
-        TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
-    }
-
-	public static void registerHandlers()
-	{
-		TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
-	}
-
-	public static class TickHandlerClient implements ITickHandler
+    public static class TickHandlerClient implements ITickHandler
 	{
 		@Override
 		public String getLabel()
 		{
 			return "4-Space Core Client";
+		}
+
+		@Override
+		public void tickEnd(EnumSet<TickType> type, Object... tickData) 
+		{
 		}
 
 		@Override
@@ -40,10 +34,16 @@ public class ClientProxy extends CommonProxy
 		public void tickStart(EnumSet<TickType> type, Object... tickData) 
 		{
 		}
-
-		@Override
-		public void tickEnd(EnumSet<TickType> type, Object... tickData) 
-		{
-		}
 	}
+
+	public static void registerHandlers()
+	{
+		TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
+	}
+
+	@Override
+    public void init(FMLInitializationEvent event)
+    {
+        TickRegistry.registerTickHandler(new TickHandlerClient(), Side.CLIENT);
+    }
 }

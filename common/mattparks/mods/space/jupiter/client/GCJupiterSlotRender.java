@@ -8,15 +8,15 @@ import net.minecraft.util.ResourceLocation;
 public class GCJupiterSlotRender implements ICelestialBodyRenderer
 {
 	@Override
-	public ResourceLocation getPlanetSprite() 
-	{
-		return new ResourceLocation(GCJupiter.TEXTURE_DOMAIN, "textures/gui/planets/Jupiter.png");
-	}
-
-	@Override
 	public String getPlanetName() 
 	{
 		return "Jupiter";
+	}
+
+	@Override
+	public ResourceLocation getPlanetSprite() 
+	{
+		return new ResourceLocation(GCJupiter.TEXTURE_DOMAIN, "textures/gui/planets/Jupiter.png");
 	}
 
 	@Override

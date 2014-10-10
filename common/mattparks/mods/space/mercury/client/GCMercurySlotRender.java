@@ -8,15 +8,15 @@ import net.minecraft.util.ResourceLocation;
 public class GCMercurySlotRender implements ICelestialBodyRenderer
 {
 	@Override
-	public ResourceLocation getPlanetSprite() 
-	{
-		return new ResourceLocation(GCMercury.TEXTURE_DOMAIN, "textures/gui/planets/Mercury.png");
-	}
-
-	@Override
 	public String getPlanetName() 
 	{
 		return "Mercury";
+	}
+
+	@Override
+	public ResourceLocation getPlanetSprite() 
+	{
+		return new ResourceLocation(GCMercury.TEXTURE_DOMAIN, "textures/gui/planets/Mercury.png");
 	}
 
 	@Override

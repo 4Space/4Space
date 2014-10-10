@@ -53,17 +53,6 @@ public class GCMercuryBiomeDecorator
 		}
 	}
 
-	protected void genStandardOre1(int amountPerChunk, WorldGenerator worldGenerator, int minY, int maxY)
-	{
-		for (int var5 = 0; var5 < amountPerChunk; ++var5)
-		{
-			final int var6 = this.chunkX + this.randomGenerator.nextInt(16);
-			final int var7 = this.randomGenerator.nextInt(maxY - minY) + minY;
-			final int var8 = this.chunkZ + this.randomGenerator.nextInt(16);
-			worldGenerator.generate(this.worldObj, this.randomGenerator, var6, var7, var8);
-		}
-	}
-
 	protected void generateMercury()
 	{
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
@@ -74,5 +63,16 @@ public class GCMercuryBiomeDecorator
 		this.genStandardOre1(20, this.goldGen, 0, 29);
 		this.genStandardOre1(20, this.iridiumGen, 0, 12);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
+	}
+
+	protected void genStandardOre1(int amountPerChunk, WorldGenerator worldGenerator, int minY, int maxY)
+	{
+		for (int var5 = 0; var5 < amountPerChunk; ++var5)
+		{
+			final int var6 = this.chunkX + this.randomGenerator.nextInt(16);
+			final int var7 = this.randomGenerator.nextInt(maxY - minY) + minY;
+			final int var8 = this.chunkZ + this.randomGenerator.nextInt(16);
+			worldGenerator.generate(this.worldObj, this.randomGenerator, var6, var7, var8);
+		}
 	}
 }

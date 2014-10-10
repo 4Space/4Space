@@ -23,13 +23,6 @@ public class GCMercuryCaravanModule extends Block implements IPartialSealableBlo
     }
 
 	@Override
-	@SideOnly(Side.CLIENT)
-	public CreativeTabs getCreativeTabToDisplayOn()
-	{
-		return GCMercury.galacticraftMercuryTab;
-	}
-	
-    @Override
     public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)
     {        
 
@@ -186,7 +179,7 @@ public class GCMercuryCaravanModule extends Block implements IPartialSealableBlo
 
             this.breakBlocks(par1World, par2 - 1, par3 + 1, par4 - 1, false);
     }
-    
+	
     private void breakBlocks(World par1World, int x, int y, int z, boolean item)
     {
             if(par1World.blockExists(x, y, z))
@@ -214,10 +207,23 @@ public class GCMercuryCaravanModule extends Block implements IPartialSealableBlo
     }
     
     @Override
+	@SideOnly(Side.CLIENT)
+	public CreativeTabs getCreativeTabToDisplayOn()
+	{
+		return GCMercury.galacticraftMercuryTab;
+	}
+    
+    @Override
     public int getMobilityFlag()
     {
         return 2;
     }
+    
+    @Override
+	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
+	{
+		return true;
+	}
     
     @Override
     public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
@@ -444,7 +450,7 @@ public class GCMercuryCaravanModule extends Block implements IPartialSealableBlo
         return true;
     }
     
-    private void setBlocks(World par1World, int x, int y, int z, boolean item, int blockid)
+	private void setBlocks(World par1World, int x, int y, int z, boolean item, int blockid)
     {
             if(par1World.blockExists(x, y, z))
             {
@@ -456,10 +462,4 @@ public class GCMercuryCaravanModule extends Block implements IPartialSealableBlo
                     par1World.setBlock(x, y, z, blockid);
             }
     }
-    
-	@Override
-	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
-	{
-		return true;
-	}
 }

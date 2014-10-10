@@ -79,6 +79,29 @@ public class GCVenusSkyProvider extends IRenderHandler
 		GL11.glEndList();
 	}
 
+	private Vec3 getCustomSkyColor()
+	{
+		return Vec3.fakePool.getVecFromPool(0.26796875D, 0.1796875D, 0.0D);
+	}
+
+	public float getSkyBrightness(float par1)
+	{
+		final float var2 = FMLClientHandler.instance().getClient().theWorld.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+
+		if (var3 < 0.0F)
+		{
+			var3 = 0.0F;
+		}
+
+		if (var3 > 1.0F)
+		{
+			var3 = 1.0F;
+		}
+
+		return var3 * var3 * 1F;
+	}
+
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc)
 	{
@@ -322,28 +345,5 @@ public class GCVenusSkyProvider extends IRenderHandler
 		}
 
 		var2.draw();
-	}
-
-	private Vec3 getCustomSkyColor()
-	{
-		return Vec3.fakePool.getVecFromPool(0.26796875D, 0.1796875D, 0.0D);
-	}
-
-	public float getSkyBrightness(float par1)
-	{
-		final float var2 = FMLClientHandler.instance().getClient().theWorld.getCelestialAngle(par1);
-		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
-
-		if (var3 < 0.0F)
-		{
-			var3 = 0.0F;
-		}
-
-		if (var3 > 1.0F)
-		{
-			var3 = 1.0F;
-		}
-
-		return var3 * var3 * 1F;
 	}
 }

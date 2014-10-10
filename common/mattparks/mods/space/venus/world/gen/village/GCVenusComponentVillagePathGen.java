@@ -13,6 +13,22 @@ import net.minecraft.world.gen.structure.StructureComponent;
 
 public class GCVenusComponentVillagePathGen extends GCVenusComponentVillageRoadPiece
 {
+	@SuppressWarnings("rawtypes")
+	public static StructureBoundingBox func_74933_a(GCVenusComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6)
+	{
+		for (int var7 = 7 * MathHelper.getRandomIntegerInRange(par2Random, 3, 5); var7 >= 7; var7 -= 7)
+		{
+			final StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 3, 3, var7, par6);
+
+			if (StructureComponent.findIntersecting(par1List, var8) == null)
+			{
+				return var8;
+			}
+		}
+
+		return null;
+	}
+
 	private int averageGroundLevel;
 
 	public GCVenusComponentVillagePathGen()
@@ -27,20 +43,28 @@ public class GCVenusComponentVillagePathGen extends GCVenusComponentVillageRoadP
 		this.averageGroundLevel = Math.max(par4StructureBoundingBox.getXSize(), par4StructureBoundingBox.getZSize());
 	}
 
+	/**
+	 * second Part of Structure generating, this for example places Spiderwebs,
+	 * Mob Spawners, it closes Mineshafts at the end, it adds Fences...
+	 */
 	@Override
-	protected void func_143012_a(NBTTagCompound nbt)
+	public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
 	{
-		super.func_143012_a(nbt);
+		final int var4 = this.getBiomeSpecificBlock(Block.planks.blockID, 0);
 
-		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
-	}
+		for (int var5 = this.boundingBox.minX; var5 <= this.boundingBox.maxX; ++var5)
+		{
+			for (int var6 = this.boundingBox.minZ; var6 <= this.boundingBox.maxZ; ++var6)
+			{
+				if (par3StructureBoundingBox.isVecInside(var5, 64, var6) && (par1World.getBlockId(var5, par1World.getTopSolidOrLiquidBlock(var5, var6) - 1, var6) == GCCoreBlocks.blockMoon.blockID && par1World.getBlockMetadata(var5, par1World.getTopSolidOrLiquidBlock(var5, var6) - 1, var6) == 5 || par1World.getBlockId(var5, par1World.getTopSolidOrLiquidBlock(var5, var6) - 1, var6) == 0))
+				{
+					final int var7 = par1World.getTopSolidOrLiquidBlock(var5, var6) - 1;
+					par1World.setBlock(var5, var7, var6, var4, 1, 3);
+				}
+			}
+		}
 
-	@Override
-	protected void func_143011_b(NBTTagCompound nbt)
-	{
-		super.func_143011_b(nbt);
-
-		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
+		return true;
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -110,43 +134,19 @@ public class GCVenusComponentVillagePathGen extends GCVenusComponentVillageRoadP
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
-	public static StructureBoundingBox func_74933_a(GCVenusComponentVillageStartPiece par0ComponentVillageStartPiece, List par1List, Random par2Random, int par3, int par4, int par5, int par6)
+	@Override
+	protected void func_143011_b(NBTTagCompound nbt)
 	{
-		for (int var7 = 7 * MathHelper.getRandomIntegerInRange(par2Random, 3, 5); var7 >= 7; var7 -= 7)
-		{
-			final StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 3, 3, var7, par6);
+		super.func_143011_b(nbt);
 
-			if (StructureComponent.findIntersecting(par1List, var8) == null)
-			{
-				return var8;
-			}
-		}
-
-		return null;
+		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
 	}
 
-	/**
-	 * second Part of Structure generating, this for example places Spiderwebs,
-	 * Mob Spawners, it closes Mineshafts at the end, it adds Fences...
-	 */
 	@Override
-	public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
+	protected void func_143012_a(NBTTagCompound nbt)
 	{
-		final int var4 = this.getBiomeSpecificBlock(Block.planks.blockID, 0);
+		super.func_143012_a(nbt);
 
-		for (int var5 = this.boundingBox.minX; var5 <= this.boundingBox.maxX; ++var5)
-		{
-			for (int var6 = this.boundingBox.minZ; var6 <= this.boundingBox.maxZ; ++var6)
-			{
-				if (par3StructureBoundingBox.isVecInside(var5, 64, var6) && (par1World.getBlockId(var5, par1World.getTopSolidOrLiquidBlock(var5, var6) - 1, var6) == GCCoreBlocks.blockMoon.blockID && par1World.getBlockMetadata(var5, par1World.getTopSolidOrLiquidBlock(var5, var6) - 1, var6) == 5 || par1World.getBlockId(var5, par1World.getTopSolidOrLiquidBlock(var5, var6) - 1, var6) == 0))
-				{
-					final int var7 = par1World.getTopSolidOrLiquidBlock(var5, var6) - 1;
-					par1World.setBlock(var5, var7, var6, var4, 1, 3);
-				}
-			}
-		}
-
-		return true;
+		nbt.setInteger("AvgGroundLevel", this.averageGroundLevel);
 	}
 }

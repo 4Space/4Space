@@ -8,15 +8,15 @@ import net.minecraft.util.ResourceLocation;
 public class GCEuropaSlotRender implements ICelestialBodyRenderer
 {
 	@Override
-	public ResourceLocation getPlanetSprite() 
-	{
-		return new ResourceLocation(GCEuropa.TEXTURE_DOMAIN, "textures/gui/planets/Europa.png");
-	}
-
-	@Override
 	public String getPlanetName() 
 	{
 		return "Europa";
+	}
+
+	@Override
+	public ResourceLocation getPlanetSprite() 
+	{
+		return new ResourceLocation(GCEuropa.TEXTURE_DOMAIN, "textures/gui/planets/Europa.png");
 	}
 
 	@Override

@@ -8,15 +8,15 @@ import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 public class GCMapEuropa implements IMapObject
 {
 	@Override
-	public float getPlanetSize()
-	{
-		return 0.31666666666666666666666666666667F;
-	}
-
-	@Override
 	public float getDistanceFromCenter()
 	{
 		return 38.0F;
+	}
+
+	@Override
+	public IGalaxy getParentGalaxy()
+	{
+		return GalacticraftCore.galaxyMilkyWay;
 	}
 
 	@Override
@@ -26,9 +26,9 @@ public class GCMapEuropa implements IMapObject
 	}
 
 	@Override
-	public float getStretchValue()
+	public float getPlanetSize()
 	{
-		return 0.01F;
+		return 0.31666666666666666666666666666667F;
 	}
 
 	@Override
@@ -38,8 +38,8 @@ public class GCMapEuropa implements IMapObject
 	}
 
 	@Override
-	public IGalaxy getParentGalaxy()
+	public float getStretchValue()
 	{
-		return GalacticraftCore.galaxyMilkyWay;
+		return 0.01F;
 	}
 }
