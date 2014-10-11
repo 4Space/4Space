@@ -1,11 +1,11 @@
 package mattparks.mods.space.europa;
 
+import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.core.util.Version;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import mattparks.mods.space.europa.dimension.GCEuropaTeleportType;
 import mattparks.mods.space.europa.dimension.GCEuropaWorldProvider;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;
@@ -22,7 +22,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-@Mod(name = GCEuropa.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCEuropa.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCEuropa.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCEuropa.MODID, dependencies = "required-after:" + SpaceCore.MODID + ";")
 @NetworkMod(channels = { GCEuropa.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCEuropa
 {

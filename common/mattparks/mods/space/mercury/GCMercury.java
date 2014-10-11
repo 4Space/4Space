@@ -2,6 +2,7 @@ package mattparks.mods.space.mercury;
 
 import java.util.Random;
 
+import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.core.util.Version;
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
 import mattparks.mods.space.mercury.dimension.GCMercuryTeleportType;
@@ -10,7 +11,6 @@ import mattparks.mods.space.mercury.items.GCMercuryItems;
 import mattparks.mods.space.mercury.recipe.GCMercuryRecipeManager;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.items.GCCoreItems;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
@@ -31,7 +31,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-@Mod(name = GCMercury.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCMercury.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCMercury.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCMercury.MODID, dependencies = "required-after:" + SpaceCore.MODID + ";")
 @NetworkMod(channels = { GCMercury.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCMercury
 {

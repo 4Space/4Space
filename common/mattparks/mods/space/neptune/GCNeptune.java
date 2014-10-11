@@ -1,8 +1,8 @@
 package mattparks.mods.space.neptune;
 
+import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.core.util.Version;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.network.GCCoreConnectionHandler;
 import micdoodle8.mods.galacticraft.core.network.GCCorePacketManager;
 import net.minecraft.entity.Entity;
@@ -18,7 +18,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-@Mod(name = GCNeptune.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCNeptune.MODID, dependencies = "required-after:" + GalacticraftCore.MODID + ";")
+@Mod(name = GCNeptune.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = GCNeptune.MODID, dependencies = "required-after:" + SpaceCore.MODID + ";")
 @NetworkMod(channels = { GCNeptune.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class GCNeptune
 {

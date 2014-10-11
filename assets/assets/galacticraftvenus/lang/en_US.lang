@@ -15,6 +15,8 @@ item.venusPowerCrystal.name=Venus Power Crystal
 item.venusRod.name=Venus Rod
 item.venusRodDust.name=Venus Rod Dust
 item.vurnBerry.name=Vurn Berry
+item.jetpackThruster.name=Jetpack Engine
+item.jetpackBody.name=Jetpack Body
 item.ingotUranium.name=Uranium Ingot
 item.uraniumPlate.name=Uranium Plate
 
@@ -39,6 +41,8 @@ item.sulfurBoots.name=Sulfur Boots
 item.sulfurChestplate.name=Sulfur Chestplate
 item.sulfurHelmet.name=Sulfur Helmet
 item.sulfurLeggings.name=Sulfur Leggings
+item.jetpack.name=Jetpack
+item.gemJetpack.name=Red-Gem Jetpack
 
 # BLOCKS
 tile.EvolvedBlazeEgg.name=Evolved Blaze Egg

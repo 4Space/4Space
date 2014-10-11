@@ -2,6 +2,7 @@ package mattparks.mods.space.core;
 
 import java.io.File;
 
+import mattparks.mods.MattparksCore.MattCore;
 import mattparks.mods.space.core.network.PacketHandlerServer;
 import mattparks.mods.space.core.util.ConfigManager;
 import mattparks.mods.space.core.util.Version;
@@ -22,8 +23,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.relauncher.Side;
-
-@Mod(name = SpaceCore.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = SpaceCore.MODID)
+//, dependencies = "required-after:" + GalacticraftCore.MODID + ";"
+@Mod(name = SpaceCore.NAME, version = Version.LOCALMAJVERSION + "." + Version.LOCALMINVERSION + "." + Version.LOCALBUILDVERSION, useMetadata = true, modid = SpaceCore.MODID, dependencies = "required-after:" + MattCore.MODID + ";")
 @NetworkMod(channels = { SpaceCore.CHANNEL }, clientSideRequired = true, serverSideRequired = false, connectionHandler = GCCoreConnectionHandler.class, packetHandler = GCCorePacketManager.class)
 public class SpaceCore
 {
