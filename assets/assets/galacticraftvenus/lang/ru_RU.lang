@@ -65,6 +65,7 @@ tile.VenusSulfurBlock.name=Блок серы
 tile.VenusSulfurOre.name=Серная руда
 tile.VenusTinOre.name=Оловянная руда
 tile.SulfurTorch.name=Серный факел
+tile.VenusSpaceStone.name=Космический камень
 
 # GUI
 gui.choosePlanet.desc.venus=Обитаема#Нет кислорода#Гравитация: 90%

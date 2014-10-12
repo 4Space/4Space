@@ -51,6 +51,8 @@ public class VenusBlocks
 	    
 		VenusBlocks.SulfurTorch = new GCVenusSulfurTorch(ConfigManager.idBlockVenusSulfurTorch).setHardness(0.1F).setUnlocalizedName("SulfurTorch").setTextureName("galacticraftvenus:sulfurTorch");
 
+		VenusBlocks.VenusSpaceStone = new GCVenusSpaceStone(ConfigManager.idBlockVenusSpaceStone, null).setHardness(0.1F).setLightValue(1.0F).setUnlocalizedName("VenusSpaceStone").setTextureName("galacticraftvenus:spaceStone");
+
 //		VenusBlocks.VurnBerryBush = (new GCVenusVurnBerryBush(ConfigManager.idBlockVurnBerryBush)).setUnlocalizedName("VurnBerryBush").setTextureName("galacticraftvenus:VurnBerryBush");
 	}
 	public static void registerBlocks()
@@ -94,6 +96,8 @@ public class VenusBlocks
 		GameRegistry.registerBlock(VenusBlocks.FossilizedPlantOre, ItemBlock.class, VenusBlocks.FossilizedPlantOre.getUnlocalizedName(), GCVenus.MODID);
 		
 		GameRegistry.registerBlock(VenusBlocks.SulfurTorch, ItemBlock.class, VenusBlocks.SulfurTorch.getUnlocalizedName(), GCVenus.MODID);
+		
+		GameRegistry.registerBlock(VenusBlocks.VenusSpaceStone, ItemBlock.class, VenusBlocks.VenusSpaceStone.getUnlocalizedName(), GCVenus.MODID);
 		
 //		GameRegistry.registerBlock(VenusBlocks.VurnBerryBush, ItemBlock.class, VenusBlocks.VurnBerryBush.getUnlocalizedName(), GCVenus.MODID);
 	}
@@ -154,6 +158,7 @@ public class VenusBlocks
 	public static Block VenusCoalOre;
 	public static Block VenusTinOre;
 	public static Block VenusCopperOre;
+	public static Block VenusSpaceStone;
 	
 	public static Block VenusCrystalOre;
 

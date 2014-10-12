@@ -65,6 +65,7 @@ tile.VenusSulfurBlock.name=Block of Sulfur
 tile.VenusSulfurOre.name=Schwefel Ore 
 tile.VenusTinOre.name=Zinnerz 
 tile.SulfurTorch.name=Schwefel Torch
+tile.VenusSpaceStone.name=Raum Stein
 
 # GUI
 gui.choosePlanet.desc.venus=Bewohnbare#Keine Sauerstoff#Gravity: 90%

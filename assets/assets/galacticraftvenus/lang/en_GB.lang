@@ -65,6 +65,7 @@ tile.VenusSulfurBlock.name=Block of Sulfur
 tile.VenusSulfurOre.name=Sulfur Ore
 tile.VenusTinOre.name=Tin Ore
 tile.SulfurTorch.name=Sulfur Torch
+tile.VenusSpaceStone.name=Space Stone
 
 # GUI
 gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
