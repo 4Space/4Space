@@ -78,7 +78,9 @@ public class GCVenusRecipeManager
         RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusCompositeBlock, 16, 1), new Object[] { "XXX", "TST", "XXX", 'X', "ingotSulfur", 'T', "ingotTin", 'S', VenusBlocks.VenusStone });
         RecipeUtil.addRecipe(new ItemStack(VenusBlocks.SulfurTorch, 4, 1), new Object[] { "X", "Y", 'X', "dustSulfur", 'Y', Item.stick });
         RecipeUtil.addRecipe(new ItemStack(VenusBlocks.SulfurTorch, 4, 1), new Object[] { "X", "Y", 'X', "itemSulfurDust", 'Y', Item.stick });
-
+        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusSpaceStone, 6, 1), new Object[] { "X", "Y", 'X', "dustSulfur", 'Y', VenusBlocks.VenusGrass });
+        RecipeUtil.addRecipe(new ItemStack(VenusBlocks.VenusSpaceStone, 6, 1), new Object[] { "X", "Y", 'X', "itemSulfurDust", 'Y', VenusBlocks.VenusGrass });
+        
         // BLOCK TO ITEM
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 9, 1), new Object[] { "X", 'X', VenusBlocks.VenusSulfurBlock });
         RecipeUtil.addRecipe(new ItemStack(GCVenusItems.venusItemBasic, 9, 2), new Object[] { "X", 'X', VenusBlocks.VenusRedGemBlock });
