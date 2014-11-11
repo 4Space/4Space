@@ -1,0 +1,42 @@
+# Starcraft Sedna Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.tier5.desc=Tier 5
+
+# ITEMS
+item.plateHeavyT8.name=Heavy-Duty Plate
+item.rawPalladium.name=Raw Palladium
+item.refinedPalladium.name=Refined Palladium
+item.ingotPalladium.name=Palladium Ingot
+item.palladiumPlate.name=Palladium Plate
+item.spaceshipTier6.name=Tier 6 Rocket
+
+# TOOLS
+
+# ARMOR
+item.gravityHelmet.name=Gravity Helmet
+item.gravityChestplate.name=Gravity Chestplate
+item.gravityLeggings.name=Gravity Leggings
+item.gravityBoots.name=Gravity Boots
+
+# BLOCKS
+tile.grassSedna.name=Sedna Grass
+tile.dirtSedna.name=Sedna Dirt
+tile.stoneSedna.name=Sedna Stone
+tile.cobblestoneSedna.name=Sedna Cobblestone
+tile.sednaBrick.name=Sedna Brick
+
+tile.PalladiumOre.name=Palladium Ore
+tile.PalladiumBlock.name=Palladium Block
+
+# ENTITYS
+
+# GUI
+itemGroup.starcraftSednaTab=Spacecraft Sedna
+
+gui.choosePlanet.desc.sedna=No Life#*Very Far Away#*Gravity: 0.27%
+
+dimension.Sedna.name=Sedna
+
+# Schematics
+schematic.rocketT6.name=Tier 6 Rocket

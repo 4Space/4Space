@@ -1,0 +1,86 @@
+# Galacticraft Venus Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.FossilizedPlant.name=Fossilized Plant
+item.ingotSulfur.name=Sulfur Ingot
+item.plateHeavyT3.name=Heavy-Duty Plate
+item.redGem.name=Red-Gem
+item.redGemPlate.name=Red-Gem Plate
+item.sulfurDust.name=Sulfur Dust
+item.sulfurPlate.name=Sulfur Plate
+item.venusSulfurBattery.name=Sulfur-Celled Battery
+item.venusUraniumBattery.name=Uranium-Celled Battery
+item.venusCrystal.name=Venus Crystal
+item.venusPowerCrystal.name=Venus Power Crystal
+item.venusRod.name=Venus Rod
+item.venusRodDust.name=Venus Rod Dust
+item.vurnBerry.name=Vurn Berry
+item.jetpackThruster.name=Jetpack Engine
+item.jetpackBody.name=Jetpack Body
+item.ingotUranium.name=Uranium Ingot
+item.uraniumPlate.name=Uranium Plate
+
+# TOOLS
+item.gemAxe.name=Red-Gem Axe
+item.gemHoe.name=Red-Gem Hoe
+item.gemPick.name=Red-Gem Pickaxe
+item.gemSpade.name=Red-Gem Shovel
+item.gemSword.name=Red-Gem Sword
+item.sulfurAxe.name=Sulfur Axe
+item.sulfurHoe.name=Sulfur Hoe
+item.sulfurPick.name=Sulfur Pickaxe
+item.sulfurSpade.name=Sulfur Shovel
+item.sulfurSword.name=Sulfur Sword
+
+# ARMOR
+item.gemBoots.name=Red-Gem Boots
+item.gemChestplate.name=Red-Gem Chestplate
+item.gemHelmet.name=Red-Gem Helmet
+item.gemLeggings.name=Red-Gem Leggings
+item.sulfurBoots.name=Sulfur Boots
+item.sulfurChestplate.name=Sulfur Chestplate
+item.sulfurHelmet.name=Sulfur Helmet
+item.sulfurLeggings.name=Sulfur Leggings
+item.jetpack.name=Jetpack
+item.gemJetpack.name=Red-Gem Jetpack
+
+# BLOCKS
+tile.EvolvedBlazeEgg.name=Evolved Blaze Egg
+tile.FossilizedPlantOre.name=Fossilised Plant Ore
+tile.VenusBrick.name=Venus Brick
+tile.VenusCoalOre.name=Coal Ore
+tile.VenusCopperOre.name=Copper Ore
+tile.VenusCrystalOre.name=Crystal Ore
+tile.VenusDirt.name=Venus Dirt
+tile.VenusGemBlock.name=Block of Red-Gem
+tile.VenusGemOre.name=Red-Gem Ore
+tile.VenusUraniumOre.name=Uranium Ore
+tile.VenusGrass.name=Venus Grass
+tile.VenusIronOre.name=Iron Ore
+tile.VenusUraniumBlock.name=Block of Uranium
+tile.VenusCrystalBlock.name=Block of Crystal
+tile.VenusStone.name=Venus Stone
+tile.VenusSulfurBlock.name=Block of Sulfur
+tile.VenusSulfurOre.name=Sulfur Ore
+tile.VenusTinOre.name=Tin Ore
+tile.SulfurTorch.name=Sulfur Torch
+
+# GUI
+gui.choosePlanet.desc.venus=Habitable#No Oxygen#Gravity: 90%
+
+item.tier3.desc=Tier 3
+
+itemGroup.galacticraftVenusTab=Galacticraft Venus
+
+dimension.Venus.name=Venus
+
+# Schematics
+
+# Entity
+entity.EvolvedBlaze.name=Evolved Blaze
+entity.EvolvedBlazeBoss.name=Evolved Blaze Boss
+entity.VenusianVillager.name=Venusian Villager
+
+entity.GalacticraftCore.EvolvedBlaze.name=Evolved Blaze
+entity.GalacticraftCore.EvolvedBlazeBoss.name=Evolved Blaze Boss
+entity.GalacticraftCore.VenusianVillager.name=Venusian Villager

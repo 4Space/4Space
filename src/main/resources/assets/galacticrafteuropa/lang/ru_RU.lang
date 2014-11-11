@@ -1,0 +1,21 @@
+# Galacticraft Europa Language File = RUSSIA RUSSIAN
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.EuropaSurface.name=европа поверхности-льда
+tile.EuropaIce.name=европа подледных
+
+# GUI
+gui.choosePlanet.desc.europa=Луна#*Очень холодная#Водянистая
+
+dimension.Europa.name=европа
+
+# Schematics
+
+# Entity
+

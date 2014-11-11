@@ -1,0 +1,26 @@
+# Starcraft Vesta Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+
+# ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.VestaGrass.name=Vesta Grass
+tile.VestaDirt.name=Vesta Dirt
+tile.VestaStone.name=Vesta Stone
+tile.VestaBrick.name=Vesta Brick
+
+# ENTITYS
+
+# GUI
+gui.choosePlanet.desc.vesta=Asteroid#Little Surface#*Gravity: ?%
+
+itemGroup.starcraftVestaTab=Spacecraft Vesta
+
+dimension.Vesta.name=Vesta
+
+# Schematics

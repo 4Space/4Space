@@ -1,0 +1,24 @@
+# Starcraft Pluto Language File = RUSSIAN
+
+# GENERAL ITEMS
+
+# ITEMS
+item.plutoPlate.name=Пластина плутона
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.grassPluto.name=Плутонская трава
+tile.dirtPluto.name=Плутонский грунт
+tile.stonePluto.name=Плутонский камень
+tile.cobblestonePluto.name=Плутонский булыжник
+tile.plutoBrick.name=Плутонский кирпич
+				
+# ENTITYS
+
+# GUI
+gui.choosePlanet.desc.pluto=Очень холодно#Замёрзшая земля#Гравитация: 8%
+
+dimension.Pluto.name=Плутон

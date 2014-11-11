@@ -1,0 +1,21 @@
+# Starcraft Saturn Language File = RUSSIAN
+
+# GENERAL ITEMS
+
+# ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.saturnNitrogen.name=Газ нитрогена с Сатурна
+tile.saturnHelium.name=Газ гелия с Сатурна
+tile.saturnHydrogen.name=Газ хидрогена с Сатурна
+
+# ENTITYS
+
+# GUI
+gui.choosePlanet.desc.saturn=Газовый гигант#*Атмосферы нету#Гравитация: 106%
+
+dimension.Saturn.name=Сатурн
