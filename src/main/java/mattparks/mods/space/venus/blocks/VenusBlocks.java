@@ -1,49 +1,47 @@
 package mattparks.mods.space.venus.blocks;
 
-import mattparks.mods.space.core.SpaceCore;
-import mattparks.mods.space.venus.itemblocks.ItemBlockOreVenus;
-import mattparks.mods.space.venus.itemblocks.ItemBlockVenus;
-import micdoodle8.mods.galacticraft.core.items.ItemBlockGC;
+import mattparks.mods.space.core.util.ItemBlockUtil;
+import mattparks.mods.space.venus.VenusCore;
+import mattparks.mods.space.venus.itemblocks.ItemBlockBasicVenus;
+import mattparks.mods.space.venus.itemblocks.ItemBlockDecorVenus;
 import net.minecraft.block.Block;
 
 public class VenusBlocks
 {
 	public static Block venusBasicBlock;
-	public static Block venusOreBlock;
+	public static Block venusDecorBlock;
 	public static Block evolvedBlazeEgg;
 	public static Block sulfurTorch;
-	public static Block venusianTnt;
-	public static Block burnStone;
-	public static Block venusTreasureChest;
-	public static Block spaceStone;
-
-	public static void init()
-	{
-		initBlocks();
-		registerBlocks();
-	}
+	public static Block venusianTNT;
+	public static Block vurnStone;
 
 	private static void initBlocks()
 	{
-		VenusBlocks.venusBasicBlock = new BlockBasicVenus("venus_block");
-		VenusBlocks.venusOreBlock = new BlockOreVenus("venus_ore_block");
+		VenusBlocks.venusBasicBlock = new BlockBasicVenus("venus_basic");
+		VenusBlocks.venusDecorBlock = new BlockDecorVenus("venus_decor");
 		VenusBlocks.evolvedBlazeEgg = new BlockEvolvedBlazeEgg("evolved_blaze_egg");
 		VenusBlocks.sulfurTorch = new BlockSulfurTorch("sulfur_torch");
-		VenusBlocks.venusianTnt = new BlockVenusianTNT("venusian_tnt");
-		VenusBlocks.burnStone = new BlockBurnStone("burn_stone");
-		VenusBlocks.venusTreasureChest = new BlockT4VenusTreasureChest("venus_treasure_chest");
-		VenusBlocks.spaceStone = new BlockSpaceStone("space_stone");
+		VenusBlocks.venusianTNT = new BlockVenusianTNT("venusian_tnt");
+		VenusBlocks.vurnStone = new BlockVurnStone("vurn_stone");
+	}
+	
+	public static void setHarvestLevels()
+	{
 	}
 
 	private static void registerBlocks()
 	{
-		SpaceCore.registerBlock(VenusBlocks.venusBasicBlock, ItemBlockVenus.class);
-		SpaceCore.registerBlock(VenusBlocks.venusOreBlock, ItemBlockOreVenus.class);
-		SpaceCore.registerBlock(VenusBlocks.venusianTnt, ItemBlockGC.class);
-		SpaceCore.registerBlock(VenusBlocks.burnStone, ItemBlockGC.class);
-		SpaceCore.registerBlock(VenusBlocks.spaceStone, ItemBlockGC.class);
-		SpaceCore.registerBlock(VenusBlocks.venusTreasureChest, ItemBlockGC.class);
-		SpaceCore.registerBlock(VenusBlocks.evolvedBlazeEgg, ItemBlockGC.class);
-		SpaceCore.registerBlock(VenusBlocks.sulfurTorch, ItemBlockGC.class);
+		VenusCore.registerBlock(VenusBlocks.venusBasicBlock, ItemBlockBasicVenus.class);
+		VenusCore.registerBlock(VenusBlocks.venusDecorBlock, ItemBlockDecorVenus.class);
+		VenusCore.registerBlock(VenusBlocks.venusianTNT, ItemBlockUtil.class);
+		VenusCore.registerBlock(VenusBlocks.vurnStone, ItemBlockUtil.class);
+		VenusCore.registerBlock(VenusBlocks.evolvedBlazeEgg, ItemBlockUtil.class);
+		VenusCore.registerBlock(VenusBlocks.sulfurTorch, ItemBlockUtil.class);
+	}
+	
+	public static void init()
+	{
+		initBlocks();
+		registerBlocks();
 	}
 }

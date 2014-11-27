@@ -1,5 +1,6 @@
 package mattparks.mods.space.venus.render.entities;
 
+import mattparks.mods.space.venus.VenusCore;
 import mattparks.mods.space.venus.entities.EntityVenusianVillager;
 import micdoodle8.mods.galacticraft.core.client.model.ModelAlienVillager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -16,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderVenusianVillager extends RenderLiving
 {
-	private static final ResourceLocation villagerTexture = new ResourceLocation("galacticraftvenus:textures/model/venusVillager.png");
+	private static final ResourceLocation villagerTexture = new ResourceLocation(VenusCore.TEXTURE_PREFIX + "textures/model/venusVillager.png");
 
 	protected ModelAlienVillager villagerModel;
 

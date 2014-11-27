@@ -3,8 +3,9 @@ package mattparks.mods.space.io.items;
 import java.util.List;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.proxy.ClientProxy;
+import mattparks.mods.space.io.IoCore;
 import mattparks.mods.space.io.blocks.IoBlocks;
-import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -44,7 +45,7 @@ public class ItemIoBucket extends Item
 	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack)
 	{
-		return ClientProxyCore.galacticraftItem;
+		return ClientProxy.spaceItem;
 	}
 
 	@Override
@@ -287,11 +288,11 @@ public class ItemIoBucket extends Item
 	public void registerIcons(IIconRegister iconRegister)
 	{
 		this.textures = new IIcon[5];
-		this.textures[0] = iconRegister.registerIcon("galacticraftio:titaniumBucket");
-		this.textures[1] = iconRegister.registerIcon("galacticraftio:ioLavaBucket");
-		this.textures[2] = iconRegister.registerIcon("galacticraftio:liquidRedSulfurBucket");
-		this.textures[3] = iconRegister.registerIcon("galacticraftio:liquidYellowSulfurBucket");
-		this.textures[4] = iconRegister.registerIcon("galacticraftio:liquidOrangeSulfurBucket");
+		this.textures[0] = iconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "titaniumBucket");
+		this.textures[1] = iconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "ioLavaBucket");
+		this.textures[2] = iconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "liquidRedSulfurBucket");
+		this.textures[3] = iconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "liquidYellowSulfurBucket");
+		this.textures[4] = iconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "liquidOrangeSulfurBucket");
 	}
 
 	@Override

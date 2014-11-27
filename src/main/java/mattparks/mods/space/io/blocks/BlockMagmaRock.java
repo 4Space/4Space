@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.io.IoCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -30,8 +31,8 @@ public class BlockMagmaRock extends Block
 	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister)
 	{
-		this.rockIcon[0] = par1IconRegister.registerIcon("galacticraftio:magmaRock");
-		this.rockIcon[1] = par1IconRegister.registerIcon("galacticraftio:sulfurRock");
+		this.rockIcon[0] = par1IconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "magmaRock");
+		this.rockIcon[1] = par1IconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "sulfurRock");
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package mattparks.mods.space.europa.items;
 
-import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.europa.EuropaCore;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -15,6 +15,7 @@ public class EuropaItems
 	{
 		initItems();
 		registerItems();
+		registerHarvestLevels();
 		registerFluidContainer();
 	}
 
@@ -23,9 +24,13 @@ public class EuropaItems
 		EuropaItems.europaWaterBucket = new ItemEuropaWaterBucket("europa_water_bucket");
 	}
 
+	private static void registerHarvestLevels()
+	{
+	}
+
 	private static void registerItems()
 	{
-		SpaceCore.registerItem(europaWaterBucket);
+		EuropaCore.registerItem(europaWaterBucket);
 	}
 	
 	private static void registerFluidContainer()

@@ -1,0 +1,77 @@
+# 4Space Venus Language File = BRITISH ENGLISH
+
+# GENERAL ITEMS
+item.ingotSulfur.name=Sulfur Ingot
+item.tier4HeavyDutyPlate.name=Heavy-Duty Plate
+item.redGem.name=Red-Gem
+item.redGemPlate.name=Red-Gem Plate
+item.sulfurDust.name=Sulfur Dust
+item.sulfurPlate.name=Sulfur Plate
+item.venusSulfurBattery.name=Sulfur-Celled Battery
+item.venusUraniumBattery.name=Uranium-Celled Battery
+item.venusCrystal.name=Venus Crystal
+item.venusPowerCrystal.name=Venus Power Crystal
+item.venusRod.name=Venus Rod
+item.venusRodDust.name=Venus Rod Dust
+item.ingotUranium.name=Uranium Ingot
+item.uraniumPlate.name=Uranium Plate
+item.sulfur_battery.name=Sulfur Battery
+item.uranium_battery.name=Uranium Battery
+item.jetpackThruster.name=Jetpack Engine
+item.jetpackBody.name=Jetpack Body
+
+# TOOLS
+item.gem_axe.name=Red-Gem Axe
+item.gem_hoe.name=Red-Gem Hoe
+item.gem_pickaxe.name=Red-Gem Pickaxe
+item.gem_spade.name=Red-Gem Shovel
+item.gem_sword.name=Red-Gem Sword
+item.sulfur_axe.name=Sulfur Axe
+item.sulfur_hoe.name=Sulfur Hoe
+item.sulfur_pickaxe.name=Sulfur Pickaxe
+item.sulfur_spade.name=Sulfur Shovel
+item.sulfur_sword.name=Sulfur Sword
+
+# ARMOR
+item.gem_boots.name=Red-Gem Boots
+item.gem_chestplate.name=Red-Gem Chestplate
+item.gem_helmet.name=Red-Gem Helmet
+item.gem_leggings.name=Red-Gem Leggings
+item.sulfur_boots.name=Sulfur Boots
+item.sulfur_chestplate.name=Sulfur Chestplate
+item.sulfur_helmet.name=Sulfur Helmet
+item.sulfur_leggings.name=Sulfur Leggings
+item.jetpack.name=Jetpack
+
+# BLOCKS
+tile.venus_basic.surfaceRock.name=Venus Surface Rock
+tile.venus_basic.subSurface.name=Venus Sub-Surface Rock
+tile.venus_basic.rock.name=Venus Rock
+tile.venus_basic.cobblestone.name=Venus Cobblestone
+tile.venus_basic.dungeonBrick.name=Venus Dungeon Brick
+tile.venus_basic.coalOre.name=Venus Coal Ore
+tile.venus_basic.copperOre.name=Venus Copper Ore
+tile.venus_basic.crystalOre.name=Venus Crystal Ore
+tile.venus_basic.gemOre.name=Venus Red-Gem Ore
+tile.venus_basic.uraniumOre.name=Venus Uranium Ore
+tile.venus_basic.ironOre.name=Venus Iron Ore
+tile.venus_basic.sulfurOre.name=Venus Sulfur Ore
+tile.venus_basic.tinOre.name=Venus Tin Ore
+tile.venus_decor.uraniumBlock.name=Block of Uranium
+tile.venus_decor.crystalBlock.name=Block of Crystal
+tile.venus_decor.gemBlock.name=Block of Red-Gem
+tile.venus_decor.sulfurBlock.name=Block of Sulfur
+tile.sulfur_torch.name=Sulfur Torch
+tile.evolved_blaze_egg.name=Evolved Blaze Egg
+tile.vurn_stone.name=Vurn Stone
+tile.venusian_tnt.name=Venusian TNT
+
+# GUI
+
+# Schematics
+entity.SpaceCore.EvolvedBlaze.name=Evolved Blaze
+entity.SpaceCore.Flameling.name=Flameling
+entity.SpaceCore.VenusianVillager.name=Venusian Villager
+
+# Entity
+

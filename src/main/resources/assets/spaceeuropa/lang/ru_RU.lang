@@ -1,0 +1,22 @@
+# 4Space Europa Language File = RUSSIA RUSSIAN
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.europa_block.surface.name=Europa поверхности льда
+tile.europa_block.hardenedIce.name=Europa закаленного льда
+tile.europa_ice.ice.name=Europa Ice
+tile.europa_ice.dirty.name=Europa грязного льда
+tile.europa_ice.dense.name=Europa Плотная Ice
+tile.packed_europa_ice.name=Europa Упакованные Ice
+
+# GUI
+
+# Schematics
+
+# Entity
+

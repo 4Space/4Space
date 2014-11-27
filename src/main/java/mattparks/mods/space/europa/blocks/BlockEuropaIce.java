@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.europa.EuropaCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -147,13 +149,24 @@ public class BlockEuropaIce extends BlockBreakable
 	{
 		return 0;
 	}
+	
+    public MapColor getMapColor(int meta)
+    {
+        switch (meta)
+        {
+        case 0:
+            return MapColor.blueColor;
+        default:
+            return MapColor.blueColor;
+        }
+    }
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		this.iceIcon[0] = iconRegister.registerIcon("galacticrafteuropa:europaIce");
-		this.iceIcon[1] = iconRegister.registerIcon("galacticrafteuropa:dirtyEuropaIce");
-		this.iceIcon[2] = iconRegister.registerIcon("galacticrafteuropa:denseEuropaIce");
+		this.iceIcon[0] = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "europaIce");
+		this.iceIcon[1] = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "dirtyEuropaIce");
+		this.iceIcon[2] = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "denseEuropaIce");
 	}
 }

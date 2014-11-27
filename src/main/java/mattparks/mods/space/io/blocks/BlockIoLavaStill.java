@@ -2,6 +2,7 @@ package mattparks.mods.space.io.blocks;
 
 import java.util.Random;
 
+import mattparks.mods.space.io.IoCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -47,7 +48,7 @@ public class BlockIoLavaStill extends BlockIoLiquid
 	{
 		if (!this.usingMinecraftDirectory)
 		{
-			this.ioLavaIcon = new IIcon[] {icon.registerIcon("galacticraftio:" + this.stillTexture), icon.registerIcon("galacticraftio:" + this.flowingTexture)};
+			this.ioLavaIcon = new IIcon[] {icon.registerIcon(IoCore.TEXTURE_PREFIX + this.stillTexture), icon.registerIcon(IoCore.TEXTURE_PREFIX + this.flowingTexture)};
 		}
 		else
 		{

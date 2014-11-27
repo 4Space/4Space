@@ -3,6 +3,7 @@ package mattparks.mods.space.venus.blocks;
 import java.util.Random;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.venus.VenusCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -30,7 +31,7 @@ public class BlockSulfurTorch extends BlockTorch
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon("galacticraftvenus:sulfurTorch");
+		this.blockIcon = iconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "sulfurTorch");
 	}
 
 	@Override

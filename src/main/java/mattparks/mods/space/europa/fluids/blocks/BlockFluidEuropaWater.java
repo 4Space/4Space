@@ -2,7 +2,7 @@ package mattparks.mods.space.europa.fluids.blocks;
 
 import java.util.Random;
 
-import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.europa.EuropaCore;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
@@ -61,8 +61,8 @@ public class BlockFluidEuropaWater extends BlockFluidClassic
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister par1IconRegister)
 	{
-		BlockFluidEuropaWater.europaWaterStillIcon = par1IconRegister.registerIcon("galacticrafteuropa:europaWater_flowing");
-		BlockFluidEuropaWater.europaWaterFlowingIcon = par1IconRegister.registerIcon("galacticrafteuropa:europaWater_still");
+		BlockFluidEuropaWater.europaWaterStillIcon = par1IconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "europaWater_flowing");
+		BlockFluidEuropaWater.europaWaterFlowingIcon = par1IconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "europaWater_still");
 	}
 
 	@Override
@@ -96,7 +96,7 @@ public class BlockFluidEuropaWater extends BlockFluidClassic
 			final double d5 = x + rand.nextFloat();
 			final double d6 = y - 1.05D;
 			final double d7 = z + rand.nextFloat();
-			SpaceCore.proxy.spawnParticle("europaWaterDrip", d5, d6, d7);
+			EuropaCore.proxy.spawnParticle("europaWaterDrip", d5, d6, d7);
 		}
 	}
 }

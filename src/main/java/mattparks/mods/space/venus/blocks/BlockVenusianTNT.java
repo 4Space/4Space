@@ -3,6 +3,7 @@ package mattparks.mods.space.venus.blocks;
 import java.util.Random;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.venus.VenusCore;
 import mattparks.mods.space.venus.entities.EntityVenusianTNT;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -142,8 +143,8 @@ public class BlockVenusianTNT extends Block
 	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister)
 	{
-		this.TNTSide = par1IconRegister.registerIcon("galacticraftvenus:venusianTNTSide");
-		this.TNTTop = par1IconRegister.registerIcon("galacticraftvenus:venusianTNTTop");
-		this.TNTBottom = par1IconRegister.registerIcon("galacticraftvenus:venusianTNTBottom");
+		this.TNTSide = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "venusianTNTSide");
+		this.TNTTop = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "venusianTNTTop");
+		this.TNTBottom = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "venusianTNTBottom");
 	}
 }

@@ -1,0 +1,24 @@
+# 4Space Europa Language File = UNITED STATES ENGLISH
+
+# ITEMS
+item.europa_water_bucket.name=Europa Water Bucket
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.europa_block.surface.name=Europa Surface Ice
+tile.europa_block.hardenedIce.name=Europa Hardened Ice
+tile.europa_ice.ice.name=Europa Ice
+tile.europa_ice.dirty.name=Europa Dirty Ice
+tile.europa_ice.dense.name=Europa Dense Ice
+tile.packed_europa_ice.name=Europa Packed Ice
+
+# GUI
+
+# PLANET
+
+# SCHEMATICS
+
+# ENTITIES

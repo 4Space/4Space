@@ -1,0 +1,36 @@
+# 4Space Io Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.io_bucket.titaniumBucket.name=Titanium Bucket
+item.io_bucket.ioLavaBucket.name=Sulfur Bucket
+item.io_bucket.liquidRedSulfurBucket.name=Red Sulfur Bucket
+item.io_bucket.liquidOrangeSulfurBucket.name=Orange Sulfur Bucket
+item.io_bucket.liquidYellowSulfurBucket.name=Yellow Sulfur Bucket
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.io_basic.surface.name=Io Surface Stone
+tile.io_basic.subSurface.name=Io Sub-Surface Stone
+tile.io_basic.stone.name=Io Stone
+tile.io_basic.cobblestone.name=Io Cobblestone
+tile.io_basic.sulfurOre.name=Io Sulfur Ore
+tile.io_basic.ashStone.name=Io Ash Stone
+tile.io_basic.ashCobblestone.name=Io Ash Cobblestone
+tile.io_basic.basalt.name=Io Basalt
+tile.io_basic.silicate.name=Io Silicate
+tile.io_basic.dungeonBrick.name=Io Dungeon Brick
+tile.magma_rock.magma.name=Io Magma
+tile.magma_rock.sulfur.name=Io Sulfur
+
+# GUI
+
+# PLANET
+planet.io=Io
+moon.io=Io
+
+# SCHEMATICS
+
+# ENTITIES

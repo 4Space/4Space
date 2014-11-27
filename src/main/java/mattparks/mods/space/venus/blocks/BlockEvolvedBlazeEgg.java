@@ -1,7 +1,9 @@
 package mattparks.mods.space.venus.blocks;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.venus.VenusCore;
 import mattparks.mods.space.venus.entities.EntityEvolvedBlaze;
+//import mattparks.mods.space.venus.entities.EntityEvolvedBlaze;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.BlockDragonEgg;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -27,7 +29,7 @@ public class BlockEvolvedBlazeEgg extends BlockDragonEgg
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon("galacticraftvenus:evolvedBlazeEgg");
+		this.blockIcon = iconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "evolvedBlazeEgg");
 	}
 
 	@Override
@@ -69,10 +71,12 @@ public class BlockEvolvedBlazeEgg extends BlockDragonEgg
 	public boolean canHarvestBlock(EntityPlayer player, int metadata)
 	{
 		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (stack == null)
 		{
 			return player.canHarvestBlock(this);
 		}
+		
 		return stack.getItem() == MarsItems.deshPickSlime;
 	}
 
@@ -80,10 +84,12 @@ public class BlockEvolvedBlazeEgg extends BlockDragonEgg
 	public float getPlayerRelativeBlockHardness(EntityPlayer player, World p_149737_2_, int p_149737_3_, int p_149737_4_, int p_149737_5_)
 	{
 		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (stack != null && stack.getItem() == MarsItems.deshPickSlime)
 		{
 			return 0.2F;
 		}
+		
 		return ForgeHooks.blockStrength(this, player, p_149737_2_, p_149737_3_, p_149737_4_, p_149737_5_);
 	}
 
@@ -103,6 +109,7 @@ public class BlockEvolvedBlazeEgg extends BlockDragonEgg
 			blaze.setPosition(x + 0.5, y + 1, z + 0.5);
 			world.spawnEntityInWorld(blaze);
 		}
+		
 		world.setBlockToAir(x, y, z);
 		this.onBlockDestroyedByExplosion(world, x, y, z, explosion);
 	}

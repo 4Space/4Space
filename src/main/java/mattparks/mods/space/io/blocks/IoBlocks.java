@@ -1,9 +1,9 @@
 package mattparks.mods.space.io.blocks;
 
-import mattparks.mods.space.core.SpaceCore;
-import mattparks.mods.space.io.itemblocks.ItemBlockIo;
+import mattparks.mods.space.core.util.ItemBlockUtil;
+import mattparks.mods.space.io.IoCore;
+import mattparks.mods.space.io.itemblocks.ItemBlockBasicIo;
 import mattparks.mods.space.io.itemblocks.ItemBlockMagmaRock;
-import micdoodle8.mods.galacticraft.core.items.ItemBlockGC;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 
@@ -20,16 +20,9 @@ public class IoBlocks
 	public static BlockLiquid liquidOrangeSulfurStill;
 	public static BlockLiquid ioLavaStill;
 
-	public static void init()
-	{
-		initBlocks();
-		setHarvestLevels();
-		registerBlocks();
-	}
-
 	private static void initBlocks()
 	{
-		IoBlocks.ioBasicBlock = new BlockBasicIo("io_block");
+		IoBlocks.ioBasicBlock = new BlockBasicIo("io_basic");
 		IoBlocks.ioMagmaRock = new BlockMagmaRock("magma_rock");
 
 		// Fluid Blocks
@@ -43,23 +36,28 @@ public class IoBlocks
 		IoBlocks.ioLavaFlowing = new BlockIoLavaFlowing("io_lava_flowing", "lava_still", "lava_flow", true);
 		IoBlocks.ioLavaStill = new BlockIoLavaStill("io_lava_still", "lava_still", "lava_flow", true);
 	}
-
-	private static void setHarvestLevels()
+	
+	public static void setHarvestLevels()
 	{
-		IoBlocks.ioBasicBlock.setHarvestLevel("pickaxe", 2);
 	}
 
 	private static void registerBlocks()
 	{
-		SpaceCore.registerBlock(IoBlocks.ioBasicBlock, ItemBlockIo.class);
-		SpaceCore.registerBlock(IoBlocks.ioMagmaRock, ItemBlockMagmaRock.class);
-		SpaceCore.registerBlock(IoBlocks.liquidRedSulfurFlowing, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.liquidRedSulfurStill, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.liquidYellowSulfurFlowing, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.liquidYellowSulfurStill, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.liquidOrangeSulfurFlowing, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.liquidOrangeSulfurStill, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.ioLavaFlowing, ItemBlockGC.class);
-		SpaceCore.registerBlock(IoBlocks.ioLavaStill, ItemBlockGC.class);
+		IoCore.registerBlock(IoBlocks.ioBasicBlock, ItemBlockBasicIo.class);
+		IoCore.registerBlock(IoBlocks.ioMagmaRock, ItemBlockMagmaRock.class);
+		IoCore.registerBlock(IoBlocks.liquidRedSulfurFlowing, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.liquidRedSulfurStill, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.liquidYellowSulfurFlowing, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.liquidYellowSulfurStill, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.liquidOrangeSulfurFlowing, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.liquidOrangeSulfurStill, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.ioLavaFlowing, ItemBlockUtil.class);
+		IoCore.registerBlock(IoBlocks.ioLavaStill, ItemBlockUtil.class);
+	}
+	
+	public static void init()
+	{
+		initBlocks();
+		registerBlocks();
 	}
 }

@@ -1,0 +1,35 @@
+# 4Space Io Language File = RUSSIA RUSSIAN
+
+# GENERAL ITEMS
+item.io_bucket.titaniumBucket.name=Titanium Ведро
+item.io_bucket.ioLavaBucket.name=серы Ведро
+item.io_bucket.liquidRedSulfurBucket.name=красный серы Ведро
+item.io_bucket.liquidOrangeSulfurBucket.name=оранжевый серы Ведро
+item.io_bucket.liquidYellowSulfurBucket.name=желтый серы Ведро
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.io_basic.surface.name=Io поверхности камня
+tile.io_basic.subSurface.name=Io Sub-Surface камень
+tile.io_basic.stone.name=Io камень
+tile.io_basic.cobblestone.name=Io Булыжник
+tile.io_basic.sulfurOre.name=Io серной руды
+tile.io_basic.ashStone.name=Io Ash камень
+tile.io_basic.ashCobblestone.name=Io Ash Булыжник
+tile.io_basic.basalt.name=Io Базальт
+tile.io_basic.silicate.name=Io силикатный
+tile.io_basic.dungeonBrick.name=Io Dungeon Кирпич
+tile.magma_rock.magma.name=Io Magma
+tile.magma_rock.sulfur.name=Io Сера
+
+# GUI
+planet.io=Io
+moon.io=Io
+
+# Schematics
+
+# Entity
+

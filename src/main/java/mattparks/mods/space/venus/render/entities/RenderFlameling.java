@@ -13,7 +13,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderFlameling extends RenderLiving
 {
-	private static final ResourceLocation sludgelingTexture = new ResourceLocation("galacticraftvenus:textures/model/flameling.png");
+	private static final ResourceLocation sludgelingTexture = new ResourceLocation(/*VenusCore.TEXTURE_PREFIX + */"spacevenus:textures/model/flameling.png");
 
 	public RenderFlameling()
 	{

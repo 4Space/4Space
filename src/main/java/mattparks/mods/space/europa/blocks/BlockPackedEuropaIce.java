@@ -3,7 +3,9 @@ package mattparks.mods.space.europa.blocks;
 import java.util.Random;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.europa.EuropaCore;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -45,10 +47,21 @@ public class BlockPackedEuropaIce extends Block
 		return 0;
 	}
 
+    public MapColor getMapColor(int meta)
+    {
+        switch (meta)
+        {
+        case 0:
+            return MapColor.blueColor;
+        default:
+            return MapColor.blueColor;
+        }
+    }
+    
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		this.blockIcon = iconRegister.registerIcon("galacticrafteuropa:packedEuropaIce");
+		this.blockIcon = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "packedEuropaIce");
 	}
 }

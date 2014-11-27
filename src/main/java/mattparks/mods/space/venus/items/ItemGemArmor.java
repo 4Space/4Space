@@ -1,7 +1,8 @@
 package mattparks.mods.space.venus.items;
 
 import mattparks.mods.space.core.SpaceCore;
-import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
+import mattparks.mods.space.core.proxy.ClientProxy;
+import mattparks.mods.space.venus.VenusCore;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -26,7 +27,7 @@ public class ItemGemArmor extends ItemArmor
 	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack)
 	{
-		return ClientProxyCore.galacticraftItem;
+		return ClientProxy.spaceItem;
 	}
 
 	@Override
@@ -36,15 +37,15 @@ public class ItemGemArmor extends ItemArmor
 		{
 			if (stack.getItem() == VenusItems.gemHelmet)
 			{
-				return "textures/model/armor/gem_1.png";
+				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/gem_1.png";
 			}
 			else if (stack.getItem() == VenusItems.gemChestplate || stack.getItem() == VenusItems.gemBoots)
 			{
-				return "textures/model/armor/gem_2.png";
+				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/gem_2.png";
 			}
 			else if (stack.getItem() == VenusItems.gemLeggings)
 			{
-				return "textures/model/armor/gem_3.png";
+				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/gem_3.png";
 			}
 		}
 
@@ -61,7 +62,7 @@ public class ItemGemArmor extends ItemArmor
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister)
 	{
-		this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", "galacticraftvenus:"));
+		this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", VenusCore.TEXTURE_PREFIX));
 	}
 
 	@Override

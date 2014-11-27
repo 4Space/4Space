@@ -1,11 +1,11 @@
 package mattparks.mods.space.europa.blocks;
 
-import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.util.ItemBlockUtil;
+import mattparks.mods.space.europa.EuropaCore;
 import mattparks.mods.space.europa.fluids.EuropaWaterFluid;
 import mattparks.mods.space.europa.fluids.blocks.BlockFluidEuropaWater;
-import mattparks.mods.space.europa.itemblocks.ItemBlockEuropa;
+import mattparks.mods.space.europa.itemblocks.ItemBlockBasicEuropa;
 import mattparks.mods.space.europa.itemblocks.ItemBlockEuropaIce;
-import micdoodle8.mods.galacticraft.core.items.ItemBlockGC;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;
@@ -19,14 +19,7 @@ public class EuropaBlocks
 	public static Block europaWaterFluidBlock;
 
 	public static Fluid europaWaterFluid;
-
-	public static void init()
-	{
-		initBlocks();
-		setHarvestLevels();
-		registerBlocks();
-	}
-
+	
 	private static void initBlocks()
 	{
 		EuropaBlocks.europaBasicBlock = new BlockBasicEuropa("europa_block");
@@ -37,7 +30,7 @@ public class EuropaBlocks
 		FluidRegistry.registerFluid(EuropaBlocks.europaWaterFluid);
 		EuropaBlocks.europaWaterFluidBlock = new BlockFluidEuropaWater("europa_water_fluid", EuropaBlocks.europaWaterFluid, Material.water);
 	}
-
+	
 	private static void setHarvestLevels()
 	{
 		EuropaBlocks.europaBasicBlock.setHarvestLevel("pickaxe", 1);
@@ -45,9 +38,15 @@ public class EuropaBlocks
 
 	private static void registerBlocks()
 	{
-		SpaceCore.registerBlock(EuropaBlocks.europaBasicBlock, ItemBlockEuropa.class);
-		SpaceCore.registerBlock(EuropaBlocks.europaIce, ItemBlockEuropaIce.class);
-		SpaceCore.registerBlock(EuropaBlocks.packedEuropaIce, ItemBlockGC.class);
-		SpaceCore.registerBlock(EuropaBlocks.europaWaterFluidBlock, ItemBlockGC.class);
+		EuropaCore.registerBlock(EuropaBlocks.europaBasicBlock, ItemBlockBasicEuropa.class);
+		EuropaCore.registerBlock(EuropaBlocks.europaIce, ItemBlockEuropaIce.class);
+		EuropaCore.registerBlock(EuropaBlocks.packedEuropaIce, ItemBlockUtil.class);
+		EuropaCore.registerBlock(EuropaBlocks.europaWaterFluidBlock, ItemBlockUtil.class);
+	}
+	
+	public static void init()
+	{
+		initBlocks();
+		registerBlocks();
 	}
 }

@@ -1,5 +1,6 @@
 package mattparks.mods.space.venus.render.entities;
 
+import mattparks.mods.space.venus.VenusCore;
 import mattparks.mods.space.venus.entities.EntityEvolvedBlaze;
 import net.minecraft.client.model.ModelBlaze;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -13,7 +14,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderEvolvedBlaze extends RenderLiving
 {
-	private static final ResourceLocation evolvedBlazeTextures = new ResourceLocation("galacticraftvenus:textures/model/evolvedBlaze.png");
+	private static final ResourceLocation evolvedBlazeTextures = new ResourceLocation(VenusCore.TEXTURE_PREFIX + "textures/model/evolvedBlaze.png");
 	private int field_77068_a;
 
 	public RenderEvolvedBlaze()

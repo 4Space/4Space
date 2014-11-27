@@ -1,0 +1,35 @@
+# 4Space Io Language File = GERMANY GERMAN
+
+# GENERAL ITEMS
+item.io_bucket.titaniumBucket.name=Titanium Bucket
+item.io_bucket.ioLavaBucket.name=Schwefel Bucket
+item.io_bucket.liquidRedSulfurBucket.name=Rote Schwefel Bucket
+item.io_bucket.liquidOrangeSulfurBucket.name=orange Schwefel Bucket
+item.io_bucket.liquidYellowSulfurBucket.name=Gelber Schwefel Bucket
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.io_basic.surface.name=Io Boden Naturstein
+tile.io_basic.subSurface.name=Io Unterboden Naturstein
+tile.io_basic.stone.name=Io Stein
+tile.io_basic.cobblestone.name=Io Cobblestone
+tile.io_basic.sulfurOre.name=Io Schwefel Ore
+tile.io_basic.ashStone.name=Io Ash Stein
+tile.io_basic.ashCobblestone.name=Io Ash Cobblestone
+tile.io_basic.basalt.name=Io Basalt
+tile.io_basic.silicate.name=Io Silicatforschung
+tile.io_basic.dungeonBrick.name=Io Dungeon Brick
+tile.magma_rock.magma.name=Io Magma
+tile.magma_rock.sulfur.name=Io Schwefel
+
+# GUI
+planet.io=Io
+moon.io=Io
+
+# Schematics
+
+# Entity
+

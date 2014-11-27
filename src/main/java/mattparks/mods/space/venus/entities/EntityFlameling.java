@@ -1,5 +1,6 @@
 package mattparks.mods.space.venus.entities;
 
+import mattparks.mods.space.venus.util.ConfigManagerVenus;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -26,12 +27,17 @@ public class EntityFlameling extends EntityMob implements IEntityBreathable
 		this.setSize(0.2F, 0.2F);
 		this.isImmuneToFire = true;
 		this.tasks.addTask(1, new EntityAIAttackOnCollide(this, 0.25F, true));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, false, true));
+//		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, false, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityEvolvedZombie.class, 0, false, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityEvolvedSkeleton.class, 0, false, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityEvolvedSpider.class, 0, false, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityEvolvedCreeper.class, 0, false, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityEvolvedBlaze.class, 0, false, true));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntitySlimeling.class, 200, false));
+		
+    	if (ConfigManagerVenus.idFlamelingCreeper == true)
+    	{
+    		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityEvolvedCreeper.class, 0, false, true));    		
+    	}
 	}
 
 	@Override

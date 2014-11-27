@@ -46,7 +46,7 @@ public class RenderVenusianTNT extends Render
 
 		var10 = (1.0F - (tnt.fuse - par6 + 1.0F) / 100.0F) * 0.8F;
 		this.bindEntityTexture(tnt);
-		this.blockRenderer.renderBlockAsItem(VenusBlocks.venusianTnt, 0, tnt.getBrightness(par6));
+		this.blockRenderer.renderBlockAsItem(VenusBlocks.venusianTNT, 0, tnt.getBrightness(par6));
 
 		if (tnt.fuse / 5 % 2 == 0)
 		{
@@ -55,7 +55,7 @@ public class RenderVenusianTNT extends Render
 			GL11.glEnable(GL11.GL_BLEND);
 			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_DST_ALPHA);
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, var10);
-			this.blockRenderer.renderBlockAsItem(VenusBlocks.venusianTnt, 0, 1.0F);
+			this.blockRenderer.renderBlockAsItem(VenusBlocks.venusianTNT, 0, 1.0F);
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glDisable(GL11.GL_BLEND);
 			GL11.glEnable(GL11.GL_LIGHTING);

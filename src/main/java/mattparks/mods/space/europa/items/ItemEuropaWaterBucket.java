@@ -1,8 +1,9 @@
 package mattparks.mods.space.europa.items;
 
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.proxy.ClientProxy;
+import mattparks.mods.space.europa.EuropaCore;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
-import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -28,7 +29,7 @@ public class ItemEuropaWaterBucket extends ItemBucket
 	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack)
 	{
-		return ClientProxyCore.galacticraftItem;
+		return ClientProxy.spaceItem;
 	}
 
 	@Override
@@ -77,6 +78,6 @@ public class ItemEuropaWaterBucket extends ItemBucket
 	@Override
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		this.itemIcon = iconRegister.registerIcon("galacticrafteuropa:europaWaterBucket");
+		this.itemIcon = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "europaWaterBucket");
 	}
 }

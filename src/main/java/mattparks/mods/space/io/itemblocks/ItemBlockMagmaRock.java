@@ -1,6 +1,6 @@
 package mattparks.mods.space.io.itemblocks;
 
-import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
+import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemBlock;
@@ -28,7 +28,7 @@ public class ItemBlockMagmaRock extends ItemBlock
 	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack)
 	{
-		return ClientProxyCore.galacticraftItem;
+		return ClientProxy.spaceItem;
 	}
 
 	@Override
