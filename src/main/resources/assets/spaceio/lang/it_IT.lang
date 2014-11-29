@@ -1,0 +1,36 @@
+# 4Space Io Language File = ITALY ITALIAN
+
+# GENERAL ITEMS
+item.io_bucket.titaniumBucket.name=Secchio di Titanio
+item.io_bucket.ioLavaBucket.name=Secchio di Zolfo
+item.io_bucket.liquidRedSulfurBucket.name=Secchio di Zolfo Rosso
+item.io_bucket.liquidOrangeSulfurBucket.name=Secchio di Zolfo Arancione
+item.io_bucket.liquidYellowSulfurBucket.name=Secchio di Zolfo Giallo
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.io_basic.surface.name=Superficie Rocciosa di Io
+tile.io_basic.subSurface.name=Sottosuperficie Rocciosa di Io
+tile.io_basic.stone.name=Pietra di Io
+tile.io_basic.cobblestone.name=Pietrame di Io
+tile.io_basic.sulfurOre.name=Zolfo Grezzo di Io
+tile.io_basic.ashStone.name=Polvere di Pietra di Io
+tile.io_basic.ashCobblestone.name=Polvere di Pietrame di Io
+tile.io_basic.basalt.name=Basalto di Io
+tile.io_basic.silicate.name=Silicato di Io
+tile.io_basic.dungeonBrick.name=Mattoni di Io
+tile.magma_rock.magma.name=Magma di Io
+tile.magma_rock.sulfur.name=Zolfo di Io
+
+# GUI
+
+# PLANET
+planet.io=Io
+moon.io=Io
+
+# SCHEMATICS
+
+# ENTITIES
