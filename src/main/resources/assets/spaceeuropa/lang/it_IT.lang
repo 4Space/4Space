@@ -1,0 +1,24 @@
+# 4Space Europa Language File = ITALY ITALIAN
+
+# ITEMS
+item.europa_water_bucket.name=Secchio d'acqua di Europa
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.europa_block.surface.name=Superficie Ghiacciata di Europa
+tile.europa_block.hardenedIce.name=Ghiaccio Indurito di Europa
+tile.europa_ice.ice.name=Ghiaccio di Europa
+tile.europa_ice.dirty.name=Ghiaccio Sporco di Europa
+tile.europa_ice.dense.name=Ghiaccio Denso di Europa
+tile.packed_europa_ice.name=Ghiaccio Compatto di Europa
+
+# GUI
+
+# PLANET
+
+# SCHEMATICS
+
+# ENTITIES
