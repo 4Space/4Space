@@ -36,7 +36,7 @@ public class IoCore
 	
     public static Moon moonIo;
     
-	@SidedProxy(clientSide = "mattparks.mods.space.io.proxy.ClientProxyIo", serverSide = "mattparks.mods.space.venus.io.CommonProxyIo")
+	@SidedProxy(clientSide = "mattparks.mods.space.io.proxy.ClientProxyIo", serverSide = "mattparks.mods.space.io.proxy.CommonProxyIo")
 	public static CommonProxyIo proxy;
 	
 	@EventHandler

@@ -36,7 +36,7 @@ public class EuropaCore
 	
     public static Moon moonEuropa;
     
-	@SidedProxy(clientSide = "mattparks.mods.space.europa.proxy.ClientProxyEuropa", serverSide = "mattparks.mods.space.venus.europa.CommonProxyEuropa")
+	@SidedProxy(clientSide = "mattparks.mods.space.europa.proxy.ClientProxyEuropa", serverSide = "mattparks.mods.space.europa.proxy.CommonProxyEuropa")
 	public static CommonProxyEuropa proxy;
 	
 	@EventHandler
