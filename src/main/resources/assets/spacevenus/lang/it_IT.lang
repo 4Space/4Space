@@ -1,0 +1,77 @@
+# 4Space Venus Language File = ITALY ITALIAN
+
+# GENERAL ITEMS
+item.ingotSulfur.name=Lingotto di Zolfo
+item.tier4HeavyDutyPlate.name=Piastra di Acciaio
+item.redGem.name=Gemma Rossa
+item.redGemPlate.name=Piastra di Gemma Rossa
+item.sulfurDust.name=Polvere di Zolfo
+item.sulfurPlate.name=Piastra di Zolfo
+item.venusSulfurBattery.name=Cella di Zolfo
+item.venusUraniumBattery.name=Cella di Uranio
+item.venusCrystal.name=Cristallo di Venere
+item.venusPowerCrystal.name=Cristallo Energetico di Venere
+item.venusRod.name=Verga di Venere
+item.venusRodDust.name=Polvere di Verga di Venere
+item.ingotUranium.name=Lingotto di Uranio
+item.uraniumPlate.name=Piastra di Uranio
+item.sulfur_battery.name=Batteria di Zolfo
+item.uranium_battery.name=Batteria di Uranio
+item.jetpackThruster.name=Motore del Jetpack
+item.jetpackBody.name=Struttura del Jetpack
+
+# TOOLS
+item.gem_axe.name=Ascia di Gemma Rossa
+item.gem_hoe.name=Zappa di Gemma Rossa
+item.gem_pickaxe.name=Piccone di Gemma Rossa
+item.gem_spade.name=Pala di Gemma Rossa
+item.gem_sword.name=Spada di Gemma Rossa
+item.sulfur_axe.name=Ascia di Zolfo
+item.sulfur_hoe.name=Zappa di Zolfo
+item.sulfur_pickaxe.name=Piccone di Zolfo
+item.sulfur_spade.name=Pala di Zolfo
+item.sulfur_sword.name=Spada di Zolfo
+
+# ARMOR
+item.gem_boots.name=Stivali di Gemma Rossa
+item.gem_chestplate.name=Corazza di Gemma Rossa
+item.gem_helmet.name=Elmo di Gemma Rossa
+item.gem_leggings.name=Pantaloni di Gemma Rossa
+item.sulfur_boots.name=Stivali di Zolfo
+item.sulfur_chestplate.name=Corazza di Zolfo
+item.sulfur_helmet.name=Elmo di Zolfo
+item.sulfur_leggings.name=Pantaloni di Zolfo
+item.jetpack.name=Jetpack
+
+# BLOCKS
+tile.venus_basic.surfaceRock.name=Superficie Rocciosa di Venere
+tile.venus_basic.subSurface.name=Sottosuperficie Rocciosa di Venere
+tile.venus_basic.rock.name=Pietra di Venere
+tile.venus_basic.cobblestone.name=Pietrame di Venere
+tile.venus_basic.dungeonBrick.name=Mattoni di Venere
+tile.venus_basic.coalOre.name=Carbone Grezzo di Venere
+tile.venus_basic.copperOre.name=Rame Grezzo di Venere
+tile.venus_basic.crystalOre.name=Cristallo Grezzo di Venere
+tile.venus_basic.gemOre.name=Gemma Rossa Grezza di Venere
+tile.venus_basic.uraniumOre.name=Uranio Grezzo di Venere
+tile.venus_basic.ironOre.name=Ferro Grezzo di Venere
+tile.venus_basic.sulfurOre.name=Zolfo Grezzo di Venere
+tile.venus_basic.tinOre.name=Venus Stagno Grezzo di Venere
+tile.venus_decor.uraniumBlock.name=Blocco di Uranio
+tile.venus_decor.crystalBlock.name=Blocco di Cristallo
+tile.venus_decor.gemBlock.name=Blocco di Gemma Rossa
+tile.venus_decor.sulfurBlock.name=Blocco di Zolfo
+tile.sulfur_torch.name=Torcia di Zolfo
+tile.evolved_blaze_egg.name=Uovo di Vampo Evoluto
+tile.vurn_stone.name=Pietra Vurn
+tile.venusian_tnt.name=TNT Venusiana
+
+# GUI
+
+# Schematics
+
+# Entity
+entity.SpaceCore.EvolvedBlaze.name=Vampo Evoluto
+entity.SpaceCore.Flameling.name=Flameling
+entity.SpaceCore.VenusianVillager.name=Villico Venusiano
+
