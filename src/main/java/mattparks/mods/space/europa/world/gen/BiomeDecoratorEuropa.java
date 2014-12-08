@@ -1,6 +1,5 @@
 package mattparks.mods.space.europa.world.gen;
 
-import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
 import net.minecraft.world.World;
 

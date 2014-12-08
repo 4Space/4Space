@@ -13,6 +13,8 @@ import cpw.mods.fml.relauncher.Side;
 
 public class SpaceUtil
 {
+	public static int nextID = 0;
+	
     public static int to32BitColor(int a, int r, int g, int b)
     {
         a = a << 24;
@@ -44,22 +46,31 @@ public class SpaceUtil
         return (comment > 0) ? result.substring(0, comment).trim() : result;
     }
     
-	public static void registerSpaceCreature(Class<? extends Entity> var0, String var1, int id, int back, int fore)
-	{
-		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
-		{
-			LanguageRegistry.instance().addStringLocalization("entity." + var1 + ".name", StatCollector.translateToLocal("entity.SpaceCore." + var1 + ".name"));
-		}
-		EntityRegistry.registerGlobalEntityID(var0, var1, id, back, fore);
-		EntityRegistry.registerModEntity(var0, var1, id, SpaceCore.instance, 80, 3, true);
-	}
+    public static int nextInternalID()
+    {
+    	SpaceUtil.nextID++;
+    	return SpaceUtil.nextID - 1;
+    }
+    
+    public static void registerSpaceCreature(Class<? extends Entity> var0, String var1, int back, int fore)
+    {
+        if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
+        {
+            LanguageRegistry.instance().addStringLocalization("entity." + var1 + ".name", SpaceUtil.translate("entity.SpaceCore." + var1 + ".name"));
+        }
 
-	public static void registerSpaceNonMobEntity(Class<? extends Entity> var0, String var1, int id, int trackingDistance, int updateFreq, boolean sendVel)
-	{
-		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
-		{
-			LanguageRegistry.instance().addStringLocalization("entity." + var1 + ".name", StatCollector.translateToLocal("entity.SpaceCore." + var1 + ".name"));
-		}
-		EntityRegistry.registerModEntity(var0, var1, id, SpaceCore.instance, trackingDistance, updateFreq, sendVel);
-	}
+        int newID = EntityRegistry.instance().findGlobalUniqueEntityId();
+        EntityRegistry.registerGlobalEntityID(var0, var1, newID, back, fore);
+        EntityRegistry.registerModEntity(var0, var1, nextInternalID(), SpaceCore.instance, 80, 3, true);
+    }
+
+    public static void registerSpaceNonMobEntity(Class<? extends Entity> var0, String var1, int trackingDistance, int updateFreq, boolean sendVel)
+    {
+        if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
+        {
+            LanguageRegistry.instance().addStringLocalization("entity." + var1 + ".name", SpaceUtil.translate("entity.SpaceCore." + var1 + ".name"));
+        }
+
+        EntityRegistry.registerModEntity(var0, var1, nextInternalID(), SpaceCore.instance, trackingDistance, updateFreq, sendVel);
+    }
 }

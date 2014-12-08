@@ -1710,7 +1710,7 @@ implements IResourceManagerReloadListener
 					GL11.glFogf(2915, f1 * 0.05F);
 					GL11.glFogf(2916, Math.min(f1, 192.0F) * 0.5F);
 				}
-				MinecraftForge.EVENT_BUS.post(new EntityViewRenderEvent.RenderFogEvent(this, entitylivingbase, block, p_78468_2_, p_78468_1_, f1));
+//				MinecraftForge.EVENT_BUS.post(new EntityViewRenderEvent.RenderFogEvent(this, entitylivingbase, block, p_78468_2_, p_78468_1_, f1));
 			}
 			GL11.glEnable(2903);
 			GL11.glColorMaterial(1028, 4608);

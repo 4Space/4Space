@@ -109,14 +109,14 @@ public class VenusCore
 	
 	private void registerCreatures()
 	{
-		SpaceUtil.registerSpaceCreature(EntityEvolvedBlaze.class, "EvolvedBlaze", ConfigManagerVenus.idEntityEvolvedBlaze, -771829, -870131);
-		SpaceUtil.registerSpaceCreature(EntityFlameling.class, "Flameling", ConfigManagerVenus.idEntityFlameling, 16167425, 16775294);
-		SpaceUtil.registerSpaceCreature(EntityVenusianVillager.class, "VenusianVillager", ConfigManagerVenus.idEntityVenusianVillager, SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
+		SpaceUtil.registerSpaceCreature(EntityEvolvedBlaze.class, "EvolvedBlaze", -771829, -870131);
+		SpaceUtil.registerSpaceCreature(EntityFlameling.class, "Flameling", 16167425, 16775294);
+		SpaceUtil.registerSpaceCreature(EntityVenusianVillager.class, "VenusianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
 	}
 
 	private void registerOtherEntities()
 	{
-		SpaceUtil.registerSpaceNonMobEntity(EntityVenusianTNT.class, "VenusianTNT", ConfigManagerVenus.idEntityVenusianTNT, 150, 1, true);
+		SpaceUtil.registerSpaceNonMobEntity(EntityVenusianTNT.class, "VenusianTNT", 150, 1, true);
 	}
     
 	@EventHandler

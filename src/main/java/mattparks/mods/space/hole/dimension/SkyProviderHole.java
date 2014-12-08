@@ -1,9 +1,9 @@
-package mattparks.mods.space.europa.dimension;
+package mattparks.mods.space.hole.dimension;
 
 import java.util.Random;
 
+import mattparks.mods.space.hole.HoleCore;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.planets.mars.dimension.WorldProviderMars;
 import net.minecraft.client.Minecraft;
@@ -20,10 +20,10 @@ import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.FMLClientHandler;
 
-public class SkyProviderEuropa extends IRenderHandler
+public class SkyProviderHole extends IRenderHandler
 {
 	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
-    private static final ResourceLocation jupiterTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/jupiter.png");
+	private static final ResourceLocation holeTexture = new ResourceLocation(HoleCore.TEXTURE_PREFIX + "textures/gui/holeRocketGui.png");
 
     public int starGLCallList = GLAllocation.generateDisplayLists(3);
     public int glSkyList;
@@ -31,7 +31,7 @@ public class SkyProviderEuropa extends IRenderHandler
     
     private float sunSize;
 
-    public SkyProviderEuropa(IGalacticraftWorldProvider asteroidsProvider)
+    public SkyProviderHole(IGalacticraftWorldProvider asteroidsProvider)
     {
         this.sunSize = 17.5F * asteroidsProvider.getSolarSize();
 
@@ -141,7 +141,7 @@ public class SkyProviderEuropa extends IRenderHandler
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
         var12 = this.sunSize;
-        FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.sunTexture);
+        FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderHole.sunTexture);
 
         // Draw it a few times...
         for (int i = 0; i < 4; i++)
@@ -168,7 +168,7 @@ public class SkyProviderEuropa extends IRenderHandler
 		GL11.glRotatef(jupiterRotation, 1.0F, 0.0F, 0.0F);
 		GL11.glRotatef(1.0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.jupiterTexture);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderHole.holeTexture);
 		world.getMoonPhase();
 		var23.startDrawingQuads();
 		var23.addVertexWithUV(-var12, -5.0D, var12, 0, 1);

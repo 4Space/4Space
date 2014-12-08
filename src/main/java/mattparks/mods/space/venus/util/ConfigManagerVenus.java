@@ -2,7 +2,6 @@ package mattparks.mods.space.venus.util;
 
 import java.io.File;
 
-import mattparks.mods.space.core.util.ConfigAddon;
 import net.minecraftforge.common.config.Configuration;
 
 import org.apache.logging.log4j.Level;
@@ -29,11 +28,6 @@ public class ConfigManagerVenus
 	public static boolean idFlamelingCreeper;
 	public static int idBiomeVenus;
 
-	public static int idEntityEvolvedBlaze;
-	public static int idEntityFlameling;
-	public static int idEntityVenusianVillager;
-	public static int idEntityVenusianTNT;
-
 	private void setDefaultValues()
 	{
 		try
@@ -44,11 +38,6 @@ public class ConfigManagerVenus
 			ConfigManagerVenus.idDayLength = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Day Length Realistic", true).getBoolean(true);
 			ConfigManagerVenus.idFlamelingCreeper = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Enable this if you want creepers to have a enemy...", false).getBoolean(false);
 			ConfigManagerVenus.idBiomeVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Biome", 207).getInt(207);
-
-			ConfigManagerVenus.idEntityEvolvedBlaze = ConfigManagerVenus.configuration.get(ConfigAddon.CATEGORY_ENTITIES, "Evolved Blaze", 193).getInt(193);
-			ConfigManagerVenus.idEntityVenusianVillager = ConfigManagerVenus.configuration.get(ConfigAddon.CATEGORY_ENTITIES, "Venusian Villager", 194).getInt(194);
-			ConfigManagerVenus.idEntityFlameling = ConfigManagerVenus.configuration.get(ConfigAddon.CATEGORY_ENTITIES, "Flameling", 195).getInt(195);
-			ConfigManagerVenus.idEntityVenusianTNT = ConfigManagerVenus.configuration.get(ConfigAddon.CATEGORY_ENTITIES, "Venusian TNT", 438).getInt(438);
 		}
 
 		catch (final Exception e)

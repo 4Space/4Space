@@ -1,0 +1,21 @@
+# 4Space Worm Hole Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.hole.surfaceRock.name=Make-Make Surface Rock
+tile.hole.subSurface.name=Make-Make Sub-Surface Rock
+tile.hole.rock.name=Make-Make Rock
+tile.hole.cobblestone.name=Make-Make Cobblestone
+
+# GUI
+moon.hole=Worm Hole
+
+# Schematics
+
+# Entity
+
