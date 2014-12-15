@@ -33,9 +33,9 @@ public class ConfigManagerEuropa
 		{
 			ConfigManagerEuropa.configuration.load();
 
-			ConfigManagerEuropa.idDimensionEuropa = ConfigManagerEuropa.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension", -46).getInt(-46);
+			ConfigManagerEuropa.idDimensionEuropa = ConfigManagerEuropa.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Dimension", -43).getInt(-43);
 			ConfigManagerEuropa.idDayLength = ConfigManagerEuropa.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Day Length Realistic", true).getBoolean(true);
-			ConfigManagerEuropa.idBiomeEuropa = ConfigManagerEuropa.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Biome", 210).getInt(210);
+			ConfigManagerEuropa.idBiomeEuropa = ConfigManagerEuropa.configuration.get(Configuration.CATEGORY_GENERAL, "Europa Biome", 212).getInt(212);
 		}
 
 		catch (final Exception e)

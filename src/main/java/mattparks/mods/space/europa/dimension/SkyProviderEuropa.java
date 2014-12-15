@@ -5,7 +5,6 @@ import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import micdoodle8.mods.galacticraft.planets.mars.dimension.WorldProviderMars;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GLAllocation;
@@ -84,21 +83,16 @@ public class SkyProviderEuropa extends IRenderHandler
     @Override
     public void render(float partialTicks, WorldClient world, Minecraft mc)
     {
-        WorldProviderMars gcProvider = null;
+        WorldProviderEuropa gcProvider = null;
 
-        if (world.provider instanceof WorldProviderMars)
+        if (world.provider instanceof WorldProviderEuropa)
         {
-            gcProvider = (WorldProviderMars) world.provider;
+            gcProvider = (WorldProviderEuropa) world.provider;
         }
 
-        float var10;
-        float var11;
-        float var12;
-        final Tessellator var23 = Tessellator.instance;
-
         GL11.glDisable(GL11.GL_TEXTURE_2D);
-
         GL11.glColor3f(1, 1, 1);
+        final Tessellator var23 = Tessellator.instance;
         GL11.glDepthMask(false);
         GL11.glEnable(GL11.GL_FOG);
         GL11.glColor3f(0, 0, 0);
@@ -108,52 +102,42 @@ public class SkyProviderEuropa extends IRenderHandler
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         RenderHelper.disableStandardItemLighting();
+        float var10;
+        float var11;
+        float var12;
 
-        float var20 = 0.55F;
+        float var20 = 0;
+
+        if (gcProvider != null)
+        {
+            var20 = gcProvider.getStarBrightness(partialTicks);
+        }
 
         if (var20 > 0.0F)
         {
-            GL11.glDisable(GL11.GL_TEXTURE_2D);
-            GL11.glColor4f(var20, var20, var20, var20);
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, var20);
             GL11.glCallList(this.starGLCallList);
-            GL11.glEnable(GL11.GL_TEXTURE_2D);
         }
-
-        GL11.glPushMatrix();
-
-        GL11.glDisable(GL11.GL_BLEND);
 
         GL11.glEnable(GL11.GL_TEXTURE_2D);
-
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        GL11.glDisable(GL11.GL_BLEND);
-        GL11.glEnable(GL11.GL_ALPHA_TEST);
-        GL11.glEnable(GL11.GL_FOG);
-        GL11.glPopMatrix();
-
-        GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
+        GL11.glPushMatrix();
+
+        GL11.glPopMatrix();
 
         GL11.glPushMatrix();
 
-        // Sun:
         GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+        GL11.glColor4f(1.0F, 1.0F, 1.0F, 5F);
         GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-        var12 = this.sunSize;
+        var12 = 30.0F;
         FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.sunTexture);
-
-        // Draw it a few times...
-        for (int i = 0; i < 4; i++)
-        {
-            var23.startDrawingQuads();
-            //110 distance instead of the normal 100, because there is no atmosphere to make the disk seem larger
-            var23.addVertexWithUV(-var12, 5.0D, -var12, 0.0D, 0.0D);
-            var23.addVertexWithUV(var12, 5.0D, -var12, 1.0D, 0.0D);
-            var23.addVertexWithUV(var12, 5.0D, var12, 1.0D, 1.0D);
-            var23.addVertexWithUV(-var12, 5.0D, var12, 0.0D, 1.0D);
-            var23.draw();
-        }
+        var23.startDrawingQuads();
+        var23.addVertexWithUV(-var12, 150.0D, -var12, 0.0D, 0.0D);
+        var23.addVertexWithUV(var12, 150.0D, -var12, 1.0D, 0.0D);
+        var23.addVertexWithUV(var12, 150.0D, var12, 1.0D, 1.0D);
+        var23.addVertexWithUV(-var12, 150.0D, var12, 0.0D, 1.0D);
+        var23.draw();
 
         GL11.glPopMatrix();
 
@@ -161,72 +145,71 @@ public class SkyProviderEuropa extends IRenderHandler
 
         GL11.glDisable(GL11.GL_BLEND);
 
-		// JUPITER:
-		var12 = 10.0F;
-		final float jupiterRotation = (float) (world.getSpawnPoint().posZ - mc.thePlayer.posZ) * 0.01F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(jupiterRotation, 1.0F, 0.0F, 0.0F);
-		GL11.glRotatef(1.0F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.jupiterTexture);
-		world.getMoonPhase();
-		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -5.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -5.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -5.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -5.0D, -var12, 0, 0);
-		var23.draw();
+        // HOME:
+        var12 = 50.0F;
+        final float earthRotation = (float) (world.getSpawnPoint().posZ - mc.thePlayer.posZ) * 0.01F;
+        GL11.glScalef(0.6F, 0.6F, 0.6F);
+        GL11.glRotatef(earthRotation, 1.0F, 0.0F, 0.0F);
+        GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
+        GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+        FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.jupiterTexture);
+        world.getMoonPhase();
+        var23.startDrawingQuads();
+        var23.addVertexWithUV(-var12, -500.0D, var12, 0, 1);
+        var23.addVertexWithUV(var12, -500.0D, var12, 1, 1);
+        var23.addVertexWithUV(var12, -500.0D, -var12, 1, 0);
+        var23.addVertexWithUV(-var12, -500.0D, -var12, 0, 0);
+        var23.draw();
 
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glEnable(GL11.GL_ALPHA_TEST);
         GL11.glEnable(GL11.GL_FOG);
         GL11.glPopMatrix();
-
         GL11.glDisable(GL11.GL_TEXTURE_2D);
         GL11.glColor3f(0.0F, 0.0F, 0.0F);
         final double var25 = mc.thePlayer.getPosition(partialTicks).yCoord - world.getHorizon();
 
-        //		if (var25 < 0.0D)
-        //		{
-        //			GL11.glPushMatrix();
-        //			GL11.glTranslatef(0.0F, 12.0F, 0.0F);
-        //			GL11.glCallList(this.glSkyList2);
-        //			GL11.glPopMatrix();
-        //			var10 = 1.0F;
-        //			var11 = -((float) (var25 + 65.0D));
-        //			var12 = -var10;
-        //			var23.startDrawingQuads();
-        //			var23.setColorRGBA_I(0, 255);
-        //			var23.addVertex(-var10, var11, var10);
-        //			var23.addVertex(var10, var11, var10);
-        //			var23.addVertex(var10, var12, var10);
-        //			var23.addVertex(-var10, var12, var10);
-        //			var23.addVertex(-var10, var12, -var10);
-        //			var23.addVertex(var10, var12, -var10);
-        //			var23.addVertex(var10, var11, -var10);
-        //			var23.addVertex(-var10, var11, -var10);
-        //			var23.addVertex(var10, var12, -var10);
-        //			var23.addVertex(var10, var12, var10);
-        //			var23.addVertex(var10, var11, var10);
-        //			var23.addVertex(var10, var11, -var10);
-        //			var23.addVertex(-var10, var11, -var10);
-        //			var23.addVertex(-var10, var11, var10);
-        //			var23.addVertex(-var10, var12, var10);
-        //			var23.addVertex(-var10, var12, -var10);
-        //			var23.addVertex(-var10, var12, -var10);
-        //			var23.addVertex(-var10, var12, var10);
-        //			var23.addVertex(var10, var12, var10);
-        //			var23.addVertex(var10, var12, -var10);
-        //			var23.draw();
-        //		}
+        if (var25 < 0.0D)
+        {
+            GL11.glPushMatrix();
+            GL11.glTranslatef(0.0F, 12.0F, 0.0F);
+            GL11.glCallList(this.glSkyList2);
+            GL11.glPopMatrix();
+            var10 = 1.0F;
+            var11 = -((float) (var25 + 65.0D));
+            var12 = -var10;
+            var23.startDrawingQuads();
+            var23.setColorRGBA_I(0, 255);
+            var23.addVertex(-var10, var11, var10);
+            var23.addVertex(var10, var11, var10);
+            var23.addVertex(var10, var12, var10);
+            var23.addVertex(-var10, var12, var10);
+            var23.addVertex(-var10, var12, -var10);
+            var23.addVertex(var10, var12, -var10);
+            var23.addVertex(var10, var11, -var10);
+            var23.addVertex(-var10, var11, -var10);
+            var23.addVertex(var10, var12, -var10);
+            var23.addVertex(var10, var12, var10);
+            var23.addVertex(var10, var11, var10);
+            var23.addVertex(var10, var11, -var10);
+            var23.addVertex(-var10, var11, -var10);
+            var23.addVertex(-var10, var11, var10);
+            var23.addVertex(-var10, var12, var10);
+            var23.addVertex(-var10, var12, -var10);
+            var23.addVertex(-var10, var12, -var10);
+            var23.addVertex(-var10, var12, var10);
+            var23.addVertex(var10, var12, var10);
+            var23.addVertex(var10, var12, -var10);
+            var23.draw();
+        }
 
         GL11.glColor3f(70F / 256F, 70F / 256F, 70F / 256F);
 
-        //		GL11.glPushMatrix();
-        //		GL11.glTranslatef(0.0F, -((float) (var25 - 16.0D)), 0.0F);
-        //		GL11.glCallList(this.glSkyList2);
-        //		GL11.glPopMatrix();
+        GL11.glPushMatrix();
+        GL11.glTranslatef(0.0F, -((float) (var25 - 16.0D)), 0.0F);
+        GL11.glCallList(this.glSkyList2);
+        GL11.glPopMatrix();
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glDepthMask(true);
     }
@@ -237,7 +220,7 @@ public class SkyProviderEuropa extends IRenderHandler
         final Tessellator var2 = Tessellator.instance;
         var2.startDrawingQuads();
 
-        for (int var3 = 0; var3 < (ConfigManagerCore.moreStars ? 35000 : 6000); ++var3)
+        for (int var3 = 0; var3 < (ConfigManagerCore.moreStars ? 20000 : 6000); ++var3)
         {
             double var4 = var1.nextFloat() * 2.0F - 1.0F;
             double var6 = var1.nextFloat() * 2.0F - 1.0F;
@@ -251,9 +234,9 @@ public class SkyProviderEuropa extends IRenderHandler
                 var4 *= var12;
                 var6 *= var12;
                 var8 *= var12;
-                final double var14 = var4 * (ConfigManagerCore.moreStars ? var1.nextDouble() * 150D + 130D : 100.0D);
-                final double var16 = var6 * (ConfigManagerCore.moreStars ? var1.nextDouble() * 150D + 130D : 100.0D);
-                final double var18 = var8 * (ConfigManagerCore.moreStars ? var1.nextDouble() * 150D + 130D : 100.0D);
+                final double var14 = var4 * (ConfigManagerCore.moreStars ? var1.nextDouble() * 100D + 150D : 100.0D);
+                final double var16 = var6 * (ConfigManagerCore.moreStars ? var1.nextDouble() * 100D + 150D : 100.0D);
+                final double var18 = var8 * (ConfigManagerCore.moreStars ? var1.nextDouble() * 100D + 150D : 100.0D);
                 final double var20 = Math.atan2(var4, var8);
                 final double var22 = Math.sin(var20);
                 final double var24 = Math.cos(var20);

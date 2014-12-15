@@ -1,0 +1,42 @@
+package mattparks.mods.space.mercury.blocks;
+
+import mattparks.mods.space.core.util.ItemBlockUtil;
+import mattparks.mods.space.mercury.MercuryCore;
+import mattparks.mods.space.mercury.itemblocks.ItemBlockBasicMercury;
+import mattparks.mods.space.mercury.itemblocks.ItemBlockGlowstoneMercury;
+import net.minecraft.block.Block;
+
+public class MercuryBlocks
+{
+	public static Block mercuryBasicBlock;
+	public static Block caravanModule;
+	public static Block caravanModuleDummy;
+	public static Block mercuryGlowstone;
+	public static Block mercuryTreasureChest;
+
+	private static void initBlocks()
+	{
+		MercuryBlocks.mercuryBasicBlock = new BlockBasicMercury("mercury_block");
+		MercuryBlocks.caravanModule = new BlockCaravanModule("caravan_module");
+		MercuryBlocks.caravanModuleDummy = new BlockCaravanModuleDummy("caravan_module_dummy");
+		MercuryBlocks.mercuryGlowstone = new BlockMercuryGlowstone("mercury_glowstone");
+	}
+	
+	public static void setHarvestLevels()
+	{
+	}
+
+	private static void registerBlocks()
+	{
+		MercuryCore.registerBlock(MercuryBlocks.mercuryBasicBlock, ItemBlockBasicMercury.class);
+		MercuryCore.registerBlock(MercuryBlocks.mercuryGlowstone, ItemBlockGlowstoneMercury.class);
+		MercuryCore.registerBlock(MercuryBlocks.caravanModule, ItemBlockUtil.class);
+		MercuryCore.registerBlock(MercuryBlocks.caravanModuleDummy, ItemBlockUtil.class);
+	}
+	
+	public static void init()
+	{
+		initBlocks();
+		registerBlocks();
+	}
+}

@@ -14,6 +14,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -124,6 +125,19 @@ public class BlockBasicIo extends Block implements IDetectableResource, IPartial
 
 		return 1.0F;
 	}
+	
+    @Override
+    public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
+    {
+        int metadata = world.getBlockMetadata(x, y, z);
+
+        if (metadata == 9)
+        {
+            return 40.0F;
+        }
+
+        return super.getExplosionResistance(par1Entity, world, x, y, z, explosionX, explosionY, explosionZ);
+    }
 	
     public MapColor getMapColor(int meta)
     {

@@ -4,9 +4,9 @@ import java.util.Random;
 
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.ITeleportType;
+import micdoodle8.mods.galacticraft.core.entities.EntityLander;
 import micdoodle8.mods.galacticraft.core.entities.player.GCPlayerStats;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import micdoodle8.mods.galacticraft.planets.mars.entities.EntityLandingBalloons;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
@@ -17,7 +17,7 @@ public class TeleportTypeEuropa implements ITeleportType
     @Override
     public boolean useParachute()
     {
-        return false;
+        return ConfigManagerCore.disableLander;
     }
 
     @Override
@@ -41,27 +41,36 @@ public class TeleportTypeEuropa implements ITeleportType
     @Override
     public Vector3 getParaChestSpawnLocation(WorldServer world, EntityPlayerMP player, Random rand)
     {
+        if (ConfigManagerCore.disableLander)
+        {
+            final double x = (rand.nextDouble() * 2 - 1.0D) * 5.0D;
+            final double z = (rand.nextDouble() * 2 - 1.0D) * 5.0D;
+            return new Vector3(x, 220.0D, z);
+        }
+
         return null;
     }
 
     @Override
     public void onSpaceDimensionChanged(World newWorld, EntityPlayerMP player, boolean ridingAutoRocket)
     {
-        if (!ridingAutoRocket && player != null && GCPlayerStats.get(player).teleportCooldown <= 0)
+        GCPlayerStats stats = GCPlayerStats.get(player);
+        if (!ridingAutoRocket && !ConfigManagerCore.disableLander && stats.teleportCooldown <= 0)
         {
             if (player.capabilities.isFlying)
             {
                 player.capabilities.isFlying = false;
             }
 
-            EntityLandingBalloons lander = new EntityLandingBalloons(player);
+            EntityLander lander = new EntityLander(player);
+            lander.setPosition(player.posX, player.posY, player.posZ);
 
             if (!newWorld.isRemote)
             {
                 newWorld.spawnEntityInWorld(lander);
             }
 
-            GCPlayerStats.get(player).teleportCooldown = 10;
+            stats.teleportCooldown = 10;
         }
     }
 }

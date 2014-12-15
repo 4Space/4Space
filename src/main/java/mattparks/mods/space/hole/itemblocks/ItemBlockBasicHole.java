@@ -13,6 +13,7 @@ public class ItemBlockBasicHole extends ItemBlock
 		"subSurface",
 		"rock",
 		"cobblestone",
+		"brick",
 	};
 
 	public ItemBlockBasicHole(Block par1)

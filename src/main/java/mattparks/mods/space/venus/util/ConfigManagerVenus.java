@@ -37,7 +37,7 @@ public class ConfigManagerVenus
 			ConfigManagerVenus.idDimensionVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Dimension", -41).getInt(-41);
 			ConfigManagerVenus.idDayLength = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Day Length Realistic", true).getBoolean(true);
 			ConfigManagerVenus.idFlamelingCreeper = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Enable this if you want creepers to have a enemy...", false).getBoolean(false);
-			ConfigManagerVenus.idBiomeVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Biome", 207).getInt(207);
+			ConfigManagerVenus.idBiomeVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Biome", 211).getInt(211);
 		}
 
 		catch (final Exception e)

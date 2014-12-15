@@ -26,7 +26,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_HOLE, name = Constants.MOD_NAME_HOLE, version = Constants.VERSION, dependencies = "required-after:MattCore; required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_HOLE, name = Constants.MOD_NAME_HOLE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
 public class HoleCore 
 {
     public static final String ASSET_PREFIX = "spacehole";

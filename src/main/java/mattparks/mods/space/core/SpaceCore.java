@@ -20,7 +20,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Constants.MOD_ID_CORE, name = Constants.MOD_NAME_CORE, version = Constants.VERSION, dependencies = "required-after:MattCore; required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_CORE, name = Constants.MOD_NAME_CORE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
 public class SpaceCore 
 {
 	public static CreativeTabs spaceBlocksTab;

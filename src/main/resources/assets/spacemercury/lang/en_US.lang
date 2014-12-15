@@ -1,0 +1,60 @@
+# 4Space Mercury Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.iridiumCrystals.name=Iridium Crystals
+item.iridiumPlate.name=Iridium Plate
+item.iridiumPlate.name=Iridium Plate
+item.plateHeavyT4.name=Heavy-Duty Plate
+
+# TOOLS
+item.iridium_axe.name=Iridium Axe
+item.iridium_hoe.name=Iridium Hoe
+item.iridium_pickaxe.name=Iridium Pickaxe
+item.iridium_spade.name=Iridium Shovel
+item.iridium_sword.name=Iridium Sword
+
+# ARMOR
+item.iridium_boots.name=Iridium Boots
+item.iridium_chestplate.name=Iridium Chestplate
+item.iridium_helmet.name=Iridium Helmet
+item.iridium_leggings.name=Iridium Leggings
+
+# BLOCKS
+tile.mercury_block.surfaceRock.name=Mercury Surface Rock
+tile.mercury_block.subSurface.name=Mercury Sub-Surface Rock
+tile.mercury_block.rock.name=Mercury Rock
+tile.mercury_block.cobblestone.name=Mercury Cobblestone
+tile.mercury_block.dungeonBrick.name=Mercury Dungeon Brick
+tile.mercury_block.iridium.name=Mercury Iridium Ore
+tile.mercury_block.copper.name=Mercury Copper Ore
+tile.mercury_block.crystal.name=Mercury Crystal Ore
+tile.mercury_block.meteor.name=Mercury Meteor Ore
+tile.mercury_block.gold.name=Mercury Gold Ore
+tile.mercury_block.tin.name=Mercury Tin Ore
+tile.mercury_block.iridiumBlock.name=Block of Iridium
+tile.mercury_block.meteorBlock.name=Block of Meteor
+tile.mercury_glowstone.white.name=White Mercury Glowstone
+tile.mercury_glowstone.orange.name=Orange Mercury Glowstone
+tile.mercury_glowstone.magenta.name=Magenta Mercury Glowstone
+tile.mercury_glowstone.light_blue.name=Light Blue Mercury Glowstone
+tile.mercury_glowstone.yellow.name=Yellow Mercury Glowstone
+tile.mercury_glowstone.lime.name=Lime Mercury Glowstone
+tile.mercury_glowstone.pink.name=Pink Mercury Glowstone
+tile.mercury_glowstone.gray.name=Gray Mercury Glowstone
+tile.mercury_glowstone.silver.name=Silver Mercury Glowstone
+tile.mercury_glowstone.cyan.name=Cyan Mercury Glowstone
+tile.mercury_glowstone.purple.name=Purple Mercury Glowstone
+tile.mercury_glowstone.blue.name=Blue Mercury Glowstone
+tile.mercury_glowstone.brown.name=Brown Mercury Glowstone
+tile.mercury_glowstone.green.name=Green Mercury Glowstone
+tile.mercury_glowstone.red.name=Red Mercury Glowstone
+tile.mercury_glowstone.black.name=Black Mercury Glowstone
+tile.caravan_module.name=Caravan Module
+
+# GUI
+planet.Mercury.name=Mercury
+
+# Schematics
+
+# Entity
+

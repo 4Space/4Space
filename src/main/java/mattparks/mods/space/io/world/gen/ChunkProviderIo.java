@@ -399,7 +399,7 @@ public class ChunkProviderIo extends ChunkProviderGenerate
 	@Override
 	public String makeString()
 	{
-		return "VenusLevelSource";
+		return "IoLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

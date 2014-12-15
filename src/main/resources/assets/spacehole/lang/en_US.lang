@@ -7,10 +7,11 @@
 # ARMOR
 
 # BLOCKS
-tile.hole.surfaceRock.name=Make-Make Surface Rock
-tile.hole.subSurface.name=Make-Make Sub-Surface Rock
-tile.hole.rock.name=Make-Make Rock
-tile.hole.cobblestone.name=Make-Make Cobblestone
+tile.hole_basic.surfaceRock.name=Make-Make Surface Rock
+tile.hole_basic.subSurface.name=Make-Make Sub-Surface Rock
+tile.hole_basic.rock.name=Make-Make Rock
+tile.hole_basic.cobblestone.name=Make-Make Cobblestone
+tile.hole_basic.brick.name=Make-Make Dungeon Brick
 
 # GUI
 moon.hole=Worm Hole

@@ -1,0 +1,59 @@
+# 4Space Mercury Language File = GERMANY GERMAN
+
+# GENERAL ITEMS
+item.iridiumCrystals.name=Iridium Crystals
+item.iridiumPlate.name=Iridium Platte
+item.iridiumPlate.name=Iridium Platte
+item.plateHeavyT4.name=Heavy-Duty-Kennzeichen
+
+# TOOLS
+item.iridium_axe.name=Iridium Axe
+item.iridium_hoe.name=Iridium Hoe
+item.iridium_pickaxe.name=Iridium Spitzhacke
+item.iridium_spade.name=Iridium Shovel
+item.iridium_sword.name=Iridium Schwert
+
+# ARMOR
+item.iridium_boots.name=Iridium Stiefel
+item.iridium_chestplate.name=Iridium Brustplatte
+item.iridium_helmet.name=Iridium Helm
+item.iridium_leggings.name=Iridium Leggings
+
+# BLOCKS
+tile.mercury_block.surfaceRock.name=Quecksilber Oberflächenfels
+tile.mercury_block.subSurface.name=Quecksilber Unterflur Felsen
+tile.mercury_block.rock.name=Quecksilber Felsen
+tile.mercury_block.cobblestone.name=Quecksilber Cobblestone
+tile.mercury_block.dungeonBrick.name=Quecksilber Dungeon Brick
+tile.mercury_block.iridium.name=Quecksilber Iridium-Erz
+tile.mercury_block.copper.name=Quecksilber Kupfererz
+tile.mercury_block.crystal.name=Quecksilber Kristallerz
+tile.mercury_block.meteor.name=Quecksilber Meteor Ore
+tile.mercury_block.gold.name=Quecksilber Golderz
+tile.mercury_block.tin.name=Quecksilber Zinnerz
+tile.mercury_block.iridiumBlock.name=Sperren von Iridium
+tile.mercury_block.meteorBlock.name=Block Meteor
+tile.mercury_glowstone.white.name=Weiß Mercury Glowstone
+tile.mercury_glowstone.orange.name=orange Mercury Glowstone
+tile.mercury_glowstone.magenta.name=Magenta Mercury Glowstone
+tile.mercury_glowstone.light_blue.name=Light Blue Mercury Glowstone
+tile.mercury_glowstone.yellow.name=Gelb Mercury Glowstone
+tile.mercury_glowstone.lime.name=Lime Mercury Glowstone
+tile.mercury_glowstone.pink.name=Rosa Mercury Glowstone
+tile.mercury_glowstone.gray.name=Grau Mercury Glowstone
+tile.mercury_glowstone.silver.name=Silber Mercury Glowstone
+tile.mercury_glowstone.cyan.name=Cyan Mercury Glowstone
+tile.mercury_glowstone.purple.name=Lila Mercury Glowstone
+tile.mercury_glowstone.blue.name=Blau Mercury Glowstone
+tile.mercury_glowstone.brown.name=Brown Mercury Glowstone
+tile.mercury_glowstone.green.name=Grün Mercury Glowstone
+tile.mercury_glowstone.red.name=Red Mercury Glowstone
+tile.mercury_glowstone.black.name=Schwarz Mercury Glowstone
+tile.caravan_module.name=Wohnwagen-Modul
+
+# GUI
+planet.Mercury.name=Quecksilber
+
+# Schematics
+
+# Entity

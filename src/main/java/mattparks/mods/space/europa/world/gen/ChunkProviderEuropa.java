@@ -32,10 +32,10 @@ public class ChunkProviderEuropa extends ChunkProviderGenerate
 {
 	final Block topBlockID = EuropaBlocks.europaBasicBlock;
 	final byte topBlockMeta = 0;
-	final Block fillBlockID = EuropaBlocks.europaIce;
-	final byte fillBlockMeta = 0;
-	final Block lowerBlockID = EuropaBlocks.europaBasicBlock;
-	final byte lowerBlockMeta = 1;
+	final Block fillBlockID = EuropaBlocks.europaBasicBlock;
+	final byte fillBlockMeta = 1;
+	final Block lowerBlockID = EuropaBlocks.europaIce;
+	final byte lowerBlockMeta = 0;
 
 	private final Random rand;
 

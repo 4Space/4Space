@@ -12,6 +12,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -30,11 +31,12 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
 	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister)
 	{
-		this.venusBlockIcon = new IIcon[4];
+		this.venusBlockIcon = new IIcon[5];
 		this.venusBlockIcon[0] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeSurfaceRock");
 		this.venusBlockIcon[1] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeSubRock");
 		this.venusBlockIcon[2] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeRock");
 		this.venusBlockIcon[3] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeCobblestone");
+		this.venusBlockIcon[4] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeBrick");
 	}
 
 	@Override
@@ -52,7 +54,7 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
 	@Override
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list)
 	{
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 5; ++i)
 		{
 			list.add(new ItemStack(this, 1, i));
 		}
@@ -82,6 +84,26 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
 		{
 			return 2.5F;
 		}
+		
+		if (meta == 4)
+		{
+			return 2.0F;
+		}
+		
+		if (meta == 5)
+		{
+			return 0.5F;
+		}
+		
+		if (meta == 6)
+		{
+			return 0.1F;
+		}
+		
+		if (meta == 7)
+		{
+			return 2.0F;
+		}
 
 		return 1.0F;
 	}
@@ -91,10 +113,23 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
         switch (meta)
         {
         case 0:
-            return MapColor.redColor;
+            return MapColor.greenColor;
         default:
-            return MapColor.redColor;
+            return MapColor.greenColor;
         }
+    }
+    
+    @Override
+    public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
+    {
+        int metadata = world.getBlockMetadata(x, y, z);
+
+        if (metadata == 4)
+        {
+            return 40.0F;
+        }
+
+        return super.getExplosionResistance(par1Entity, world, x, y, z, explosionX, explosionY, explosionZ);
     }
 
 	@Override

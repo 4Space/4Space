@@ -35,6 +35,6 @@ public class EuropaItems
 	
 	private static void registerFluidContainer()
 	{
-		FluidContainerRegistry.registerFluidContainer(EuropaBlocks.europaWaterFluid, new ItemStack(europaWaterBucket), new ItemStack(Items.bucket));
+		FluidContainerRegistry.registerFluidContainer(EuropaBlocks.europaWaterFluid, new ItemStack(europaWaterBucket), new ItemStack(Items.bucket)); // TODO USE EUROPA BUCKET
 	}
 }

@@ -28,7 +28,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:MattCore; required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
 public class IoCore 
 {
     public static final String ASSET_PREFIX = "spaceio";
