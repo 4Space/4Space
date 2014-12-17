@@ -10,10 +10,10 @@ public class RecipeManagerHole
     private static void addUniversalRecipes()
     {
 		// ORE DICTIONARY
-		OreDictionary.registerOre("holeStone", new ItemStack(HoleBlocks.holeBasicBlock, 1, 0));
+		OreDictionary.registerOre("holeStone", new ItemStack(HoleBlocks.holeBasicBlock, 1, 3));
 
 		// Smelting
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(HoleBlocks.holeBasicBlock, 2, 2), OreDictionary.getOres("holeStone").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(HoleBlocks.holeBasicBlock, 2, 4), OreDictionary.getOres("holeStone").get(0), 0.2F);
     }
 
     public static void loadRecipes()

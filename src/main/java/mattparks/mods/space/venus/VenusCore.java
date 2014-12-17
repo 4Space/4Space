@@ -86,7 +86,7 @@ public class VenusCore
 		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 2));
 		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 7), new ItemStack(VenusItems.venusBasicItem, 1, 3));
 		
-		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 3, 8), new ItemStack(VenusItems.venusBasicItem, 2, 5), new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 7));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 3, 8), new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 7));
 		  
 		this.registerTileEntities();
 		this.registerCreatures();

@@ -320,7 +320,14 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 	@Override
 	public float getThermalLevelModifier()
 	{
-		return -10.0F;
+		if (this.isDaytime())
+		{
+			return 15.0F;
+		}
+		else
+		{
+			return -15.0F;
+		}
 	}
 
 	@Override
