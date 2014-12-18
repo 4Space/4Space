@@ -4,9 +4,12 @@ import java.io.File;
 
 import mattparks.mods.space.core.Constants;
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.util.SpaceUtil;
 import mattparks.mods.space.hole.blocks.HoleBlocks;
 import mattparks.mods.space.hole.dimension.TeleportTypeHole;
 import mattparks.mods.space.hole.dimension.WorldProviderHole;
+import mattparks.mods.space.hole.entites.EntityMakianVillager;
+import mattparks.mods.space.hole.items.HoleItems;
 import mattparks.mods.space.hole.proxy.CommonProxyHole;
 import mattparks.mods.space.hole.util.ConfigManagerHole;
 import mattparks.mods.space.hole.util.RecipeManagerHole;
@@ -43,6 +46,7 @@ public class HoleCore
 		new ConfigManagerHole(new File(event.getModConfigurationDirectory(), "4Space/hole.cfg"));
 
 		HoleBlocks.init();	
+		HoleItems.init();
 		
 		this.proxy.preInit(event);
 	}
@@ -91,6 +95,7 @@ public class HoleCore
 	
 	private void registerCreatures()
 	{
+		SpaceUtil.registerSpaceCreature(EntityMakianVillager.class, "MakianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
 	}
 
 	private void registerOtherEntities()

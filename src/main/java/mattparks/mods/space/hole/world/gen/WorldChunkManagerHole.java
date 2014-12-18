@@ -8,6 +8,6 @@ public class WorldChunkManagerHole extends WorldChunkManagerSpace
 	@Override
 	public BiomeGenBase getBiome()
 	{
-		return BiomeGenBaseHole.holeFlat;
+		return BiomeGenBaseHole.hole;
 	}
 }

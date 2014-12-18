@@ -27,4 +27,9 @@ public class CommonProxyHole
 	{
 		return -1;
 	}
+
+	public int getFlameiteArmorRenderIndex() 
+	{
+		return 0;
+	}
 }

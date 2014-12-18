@@ -31,12 +31,14 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
 	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister)
 	{
-		this.venusBlockIcon = new IIcon[5];
+		this.venusBlockIcon = new IIcon[7];
 		this.venusBlockIcon[0] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeSurfaceRock");
 		this.venusBlockIcon[1] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeSubRock");
 		this.venusBlockIcon[2] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeRock");
 		this.venusBlockIcon[3] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeCobblestone");
 		this.venusBlockIcon[4] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "holeBrick");
+		this.venusBlockIcon[5] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "flameiteOre");
+		this.venusBlockIcon[6] = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "flameiteBlock");
 	}
 
 	@Override
@@ -54,7 +56,7 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
 	@Override
 	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list)
 	{
-		for (int i = 0; i < 5; ++i)
+		for (int i = 0; i < 7; ++i)
 		{
 			list.add(new ItemStack(this, 1, i));
 		}
@@ -92,17 +94,12 @@ public class BlockBasicHole extends Block implements IPlantableBlock, ITerraform
 		
 		if (meta == 5)
 		{
-			return 0.5F;
+			return 2.5F;
 		}
 		
 		if (meta == 6)
 		{
-			return 0.1F;
-		}
-		
-		if (meta == 7)
-		{
-			return 2.0F;
+			return 2.5F;
 		}
 
 		return 1.0F;

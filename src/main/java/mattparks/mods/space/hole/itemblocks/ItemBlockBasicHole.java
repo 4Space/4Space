@@ -14,6 +14,8 @@ public class ItemBlockBasicHole extends ItemBlock
 		"rock",
 		"cobblestone",
 		"brick",
+		"flameiteOre",
+		"flameiteBlock",
 	};
 
 	public ItemBlockBasicHole(Block par1)

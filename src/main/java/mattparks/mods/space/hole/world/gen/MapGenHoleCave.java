@@ -2,6 +2,7 @@ package mattparks.mods.space.hole.world.gen;
 
 import java.util.Random;
 
+import mattparks.mods.space.hole.blocks.HoleBlocks;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.MapGenBaseMeta;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -167,7 +168,7 @@ public class MapGenHoleCave extends MapGenBaseMeta
 
 										if (yfactor > -0.7D && xfactorSq + yfactorSq + zfactorSq < 1.0D)
 										{
-											if (blockIdArray[coords] == Blocks.stone)
+											if (blockIdArray[coords] == HoleBlocks.holeBasicBlock)
 											{
 												if (metaArray[coords] == 1 || metaArray[coords] == 2)
 												{
