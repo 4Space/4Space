@@ -77,7 +77,7 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
     @Override
     public long getDayLength()
     {
-    	if (ConfigManagerEuropa.idDayLength = false)
+    	if (ConfigManagerEuropa.idDayLength == false)
     	{
     		return 24000L;
     	}

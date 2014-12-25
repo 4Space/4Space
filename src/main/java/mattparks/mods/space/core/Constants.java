@@ -2,7 +2,7 @@ package mattparks.mods.space.core;
 
 public class Constants 
 {
-	public static final String VERSION = "4.0.9";
+	public static final String VERSION = "4.1.0";
 
 	/* Core */
 	public static final String MOD_ID_CORE = "SpaceCore";
@@ -16,15 +16,19 @@ public class Constants
 	public static final String MOD_ID_VENUS = "SpaceVenus";
 	public static final String MOD_NAME_VENUS = "4Space Venus";
 
-	/* Worm Hole */
-	public static final String MOD_ID_HOLE = "SpaceHole";
-	public static final String MOD_NAME_HOLE = "4Space Worm Hole";
-	
-	/* Jupiters Io */
+	/* Jupiter : Io */
 	public static final String MOD_ID_IO = "SpaceIo";
 	public static final String MOD_NAME_IO = "4Space Io";
 	
-	/* Jupiters Europa */
+	/* Jupiter : Europa */
 	public static final String MOD_ID_EUROPA = "SpaceEuropa";
 	public static final String MOD_NAME_EUROPA = "4Space Europa";
+	
+	/* Saturn : Worm Hole */
+	public static final String MOD_ID_HOLE = "SpaceHole";
+	public static final String MOD_NAME_HOLE = "4Space Worm Hole";
+	
+	/* Pluto */
+	public static final String MOD_ID_PLUTO = "SpacePluto";
+	public static final String MOD_NAME_PLUTO = "4Space Pluto";
 }

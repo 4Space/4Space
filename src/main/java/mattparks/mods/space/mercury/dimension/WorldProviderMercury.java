@@ -77,7 +77,7 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
     @Override
     public long getDayLength()
     {
-    	if (ConfigManagerMercury.idDayLength = false)
+    	if (ConfigManagerMercury.idDayLength == false)
     	{
     		return 24000L;
     	}

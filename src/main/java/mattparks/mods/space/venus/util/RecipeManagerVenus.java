@@ -89,9 +89,9 @@ public class RecipeManagerVenus
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 9, 4), new Object[] { "X", 'X', "crystalDecor" });
 
 		// Smelting
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 2, 2), OreDictionary.getOres("vurnStone").get(0), 0.2F);
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 4, 3), OreDictionary.getOres("venusStone").get(0), 0.2F);
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 4, 4), OreDictionary.getOres("dustSulfur").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 2), OreDictionary.getOres("vurnStone").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 3), OreDictionary.getOres("venusStone").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 2, 4), OreDictionary.getOres("dustSulfur").get(0), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 11), new ItemStack(Items.coal), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 10), new ItemStack(Items.iron_ingot), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 9), OreDictionary.getOres("ingotCopper").get(0), 0.2F);

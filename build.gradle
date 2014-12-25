@@ -21,8 +21,8 @@ buildscript
 
 apply plugin: 'forge'
 
-version = "1.7-p4.0.8"
-group= "mattparks.mods" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = "1.7-p4.1.0"
+group= "mattparks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "4Space"
 
 sourceSets 
@@ -43,7 +43,7 @@ sourceSets
 
 minecraft 
 {
-    version = "1.7.10-10.13.0.1180"
+    version = "1.7.10-10.13.2.1264"
     runDir = "eclipse/assets"
 }
 

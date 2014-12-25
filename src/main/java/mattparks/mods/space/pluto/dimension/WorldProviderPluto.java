@@ -1,35 +1,33 @@
-package mattparks.mods.space.io.dimension;
+package mattparks.mods.space.pluto.dimension;
 
-import mattparks.mods.space.io.IoCore;
-import mattparks.mods.space.io.util.ConfigManagerIo;
-import mattparks.mods.space.io.world.gen.ChunkProviderIo;
-import mattparks.mods.space.io.world.gen.WorldChunkManagerIo;
+import mattparks.mods.space.pluto.PlutoCore;
+import mattparks.mods.space.pluto.util.ConfigManagerPluto;
+import mattparks.mods.space.pluto.world.gen.ChunkProviderPluto;
+import mattparks.mods.space.pluto.world.gen.WorldChunkManagerPluto;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class WorldProviderIo extends WorldProviderSpace implements IGalacticraftWorldProvider
+public class WorldProviderPluto extends WorldProviderSpace implements IGalacticraftWorldProvider
 {
 	@Override
 	public Vector3 getFogColor()
 	{
-		return new Vector3(182, 108, 10);
+		return new Vector3(0, 0, 0);
 	}
 
 	@Override
 	public Vector3 getSkyColor()
 	{
-		return new Vector3(242, 145, 13);
+		return new Vector3(0, 0, 0);
 	}
 
     @Override
@@ -38,6 +36,38 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
         return false;
     }
 
+	@Override
+	public float calculateCelestialAngle(long par1, float par3)
+	{
+		final int var4 = (int) (par1 % 58320L);
+		float var5 = (var4 + par3) / 58320.0F - 0.25F;
+
+		if (var5 < 0.0F)
+		{
+			++var5;
+		}
+
+		if (var5 > 1.0F)
+		{
+			--var5;
+		}
+
+		final float var6 = var5;
+		var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+		var5 = var6 + (var5 - var6) / 3.0F;
+		return var5;
+	}
+	
+	public float calculateDeimosAngle(long par1, float par3)
+	{
+		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
+	}
+
+	public float calculatePhobosAngle(long par1, float par3)
+	{
+		return this.calculateCelestialAngle(par1, par3) * 3000;
+	}
+	
     @Override
     public boolean hasSunset()
     {
@@ -47,14 +77,14 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
     @Override
     public long getDayLength()
     {
-    	if (ConfigManagerIo.idDayLength == false)
+    	if (ConfigManagerPluto.idDayLength == false)
     	{
     		return 24000L;
     	}
     	
     	else
     	{
-    		return 60000L;
+    		return 156000L;
     	}
     }
 
@@ -67,13 +97,13 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
     @Override
     public Class<? extends IChunkProvider> getChunkProviderClass()
     {
-        return ChunkProviderIo.class;
+        return ChunkProviderPluto.class;
     }
 
     @Override
     public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
     {
-        return WorldChunkManagerIo.class;
+        return WorldChunkManagerPluto.class;
     }
 
     @Override
@@ -104,42 +134,29 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 	@Override
 	public void registerWorldChunkManager()
 	{
-		this.worldChunkMgr = new WorldChunkManagerIo();
+		this.worldChunkMgr = new WorldChunkManagerPluto();
 	}
-
+	
+	@Override
 	@SideOnly(Side.CLIENT)
-	@Override
-	public Vec3 getFogColor(float var1, float var2)
+	public float getStarBrightness(float par1)
 	{
-		return Vec3.createVectorHelper((double) 210F / 255F, (double) 120F / 255F, (double) 59F / 255F);
+		final float var2 = this.worldObj.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+
+		if (var3 < 0.0F)
+		{
+			var3 = 0.0F;
+		}
+
+		if (var3 > 1.0F)
+		{
+			var3 = 1.0F;
+		}
+
+		return var3 * var3 * 0.5F + 0.3F;
 	}
-
-	@Override
-	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
-	{
-		return Vec3.createVectorHelper(154 / 255.0F, 114 / 255.0F, 66 / 255.0F);
-	}
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public float getStarBrightness(float par1)
-    {
-        float f1 = this.worldObj.getCelestialAngle(par1);
-        float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
-
-        if (f2 < 0.0F)
-        {
-            f2 = 0.0F;
-        }
-
-        if (f2 > 1.0F)
-        {
-            f2 = 1.0F;
-        }
-
-        return f2 * f2 * 0.75F;
-    }
-
+/*
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
 	{
@@ -155,11 +172,11 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 	{
 		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
 	}
-
+*/
 	@Override
 	public IChunkProvider createChunkGenerator()
 	{
-		return new ChunkProviderIo(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
+		return new ChunkProviderPluto(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
 	}
 
 	@Override
@@ -201,25 +218,25 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 	@Override
 	public String getSaveFolder()
 	{
-		return "DIM" + ConfigManagerIo.idDimensionIo;
+		return "DIM" + ConfigManagerPluto.idDimensionPluto;
 	}
 
 	@Override
 	public String getWelcomeMessage()
 	{
-		return "Entering Io";
+		return "Entering Pluto";
 	}
 
 	@Override
 	public String getDepartMessage()
 	{
-		return "Leaving Io";
+		return "Leaving Pluto";
 	}
 
 	@Override
 	public String getDimensionName()
 	{
-		return "Io";
+		return "Pluto";
 	}
 
 //    	@Override
@@ -249,7 +266,7 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 	@Override
 	public float getGravity()
 	{
-		return 0.032F;
+		return 0.058F;
 	}
 
     @Override
@@ -291,7 +308,7 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
     @Override
     public CelestialBody getCelestialBody()
     {
-        return IoCore.moonIo;
+        return PlutoCore.planetPluto;
     }
 
     @Override
@@ -303,12 +320,12 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 	@Override
 	public float getThermalLevelModifier()
 	{
-		return 4.0F;
+		return -15.0F;
 	}
 
 	@Override
 	public float getWindLevel()
 	{
-		return 0.8F;
+		return 0.0F;
 	}
 }

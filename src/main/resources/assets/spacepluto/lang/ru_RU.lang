@@ -1,0 +1,44 @@
+# 4Space Pluto Language File = RUSSIA RUSSIAN
+
+# GENERAL ITEMS
+item.blueGem.name=синий-Gem
+item.blueGemPlate.name=Blue-Джем плиты
+item.ununpetiumRaw.name=Raw Ununpetium
+item.ununpetiumPlate.name=Ununpetium плиты
+item.ingotFrozenIron.name=Frozen Iron слиток
+item.frozenIronPlate.name=Frozen железной пластиной
+item.plateHeavyT6.name=Heavy-Duty Plate T6
+
+# TOOLS
+item.blueGem_axe.name=синий-Джем топор
+item.blueGem_hoe.name=синий-Джем Hoe
+item.blueGem_pickaxe.name=синий-Джем кирку
+item.blueGem_spade.name=синий-Джем лопата
+item.blueGem_sword.name=синий-Джем Меч
+
+# ARMOR
+item.blueGem_boots.name=синий-Джем Сапоги
+item.blueGem_chestplate.name=синий-Джем Бригантина
+item.blueGem_helmet.name=синий-Джем шлем
+item.blueGem_leggings.name=синий-Джем Леггинсы
+
+# BLOCKS
+tile.pluto_block.surfaceRock.name=Плутон поверхности породы
+tile.pluto_block.subSurface.name=Плутон Sub-Surface Рок
+tile.pluto_block.rock.name=Плутон Рок
+tile.pluto_block.cobblestone.name=Плутон Булыжник
+tile.pluto_block.dungeonBrick.name=Плутон Dungeon Кирпич
+tile.pluto_block.blueGem.name=Плутон Blue-Джем руды
+tile.pluto_block.ununpentium.name=Плутон Унунпентий руды
+tile.pluto_block.frozenIron.name=Плутон Замороженные Руда
+tile.pluto_block.blueGemBlock.name=Блок Blue-Gem
+tile.pluto_block.frozenIronBlock.name=Блок Frozen Iron
+tile.pluto_block.ununpentiumBlock.name=Блок Унунпентий
+
+# GUI
+planet.Pluto.name=Плутон
+
+# Schematics
+
+# Entity
+
