@@ -9,9 +9,9 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockEuropaIce extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"ice",
-		"dirty",
-		"dense"
+			"ice",
+			"dirty",
+			"dense"
 	};
 
 	public ItemBlockEuropaIce(Block par1)

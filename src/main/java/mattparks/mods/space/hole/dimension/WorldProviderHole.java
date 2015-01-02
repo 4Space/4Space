@@ -23,52 +23,52 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 	@Override
 	public Vector3 getFogColor()
 	{
-		return new Vector3(182, 108, 10);
+		return new Vector3(180, 100, 10);
 	}
 
 	@Override
 	public Vector3 getSkyColor()
 	{
-		return new Vector3(242, 145, 13);
+		return new Vector3(180, 100, 10);
 	}
 
-    @Override
-    public boolean canRainOrSnow()
-    {
-        return true;
-    }
+	@Override
+	public boolean canRainOrSnow()
+	{
+		return true;
+	}
 
-    @Override
-    public boolean hasSunset()
-    {
-        return true;
-    }
+	@Override
+	public boolean hasSunset()
+	{
+		return true;
+	}
 
-    @Override
-    public long getDayLength()
-    {
-    	return 24000L;
-    }
+	@Override
+	public long getDayLength()
+	{
+		return 24000L;
+	}
 
-    @Override
-    public boolean shouldForceRespawn()
-    {
-        return !ConfigManagerCore.forceOverworldRespawn;
-    }
+	@Override
+	public boolean shouldForceRespawn()
+	{
+		return !ConfigManagerCore.forceOverworldRespawn;
+	}
 
-    @Override
-    public Class<? extends IChunkProvider> getChunkProviderClass()
-    {
-        return ChunkProviderHole.class;
-    }
+	@Override
+	public Class<? extends IChunkProvider> getChunkProviderClass()
+	{
+		return ChunkProviderHole.class;
+	}
 
-    @Override
-    public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
-    {
-        return WorldChunkManagerHole.class;
-    }
+	@Override
+	public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
+	{
+		return WorldChunkManagerHole.class;
+	}
 
-    @Override
+	@Override
 	public void setDimension(int var1)
 	{
 		this.dimensionId = var1;
@@ -112,25 +112,25 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 		return Vec3.createVectorHelper(154 / 255.0F, 114 / 255.0F, 66 / 255.0F);
 	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public float getStarBrightness(float par1)
-    {
-        float f1 = this.worldObj.getCelestialAngle(par1);
-        float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+	@Override
+	@SideOnly(Side.CLIENT)
+	public float getStarBrightness(float par1)
+	{
+		float f1 = this.worldObj.getCelestialAngle(par1);
+		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-        if (f2 < 0.0F)
-        {
-            f2 = 0.0F;
-        }
+		if (f2 < 0.0F)
+		{
+			f2 = 0.0F;
+		}
 
-        if (f2 > 1.0F)
-        {
-            f2 = 1.0F;
-        }
+		if (f2 > 1.0F)
+		{
+			f2 = 1.0F;
+		}
 
-        return f2 * f2 * 0.75F;
-    }
+		return f2 * f2 * 0.75F;
+	}
 
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
@@ -160,17 +160,17 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 		return false;
 	}
 
-    @Override
-    public double getHorizon()
-    {
-        return 44.0D;
-    }
+	@Override
+	public double getHorizon()
+	{
+		return 44.0D;
+	}
 
-    @Override
-    public int getAverageGroundLevel()
-    {
-        return 44;
-    }
+	@Override
+	public int getAverageGroundLevel()
+	{
+		return 44;
+	}
 
 	@Override
 	public boolean isSurfaceWorld()
@@ -178,11 +178,11 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 		return true;
 	}
 
-    @Override
-    public boolean canCoordinateBeSpawn(int var1, int var2)
-    {
-        return true;
-    }
+	@Override
+	public boolean canCoordinateBeSpawn(int var1, int var2)
+	{
+		return true;
+	}
 
 	@Override
 	public boolean canRespawnHere()
@@ -214,11 +214,11 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 		return "Worm Hole";
 	}
 
-//    	@Override
-//    	public boolean canSnowAt(int x, int y, int z)
-//    	{
-//    		return false;
-//    	}
+	// @Override
+	// public boolean canSnowAt(int x, int y, int z)
+	// {
+	// return false;
+	// }
 
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
@@ -244,29 +244,29 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 		return 0.022F;
 	}
 
-    @Override
-    public int getHeight()
-    {
-        return 800;
-    }
+	@Override
+	public int getHeight()
+	{
+		return 800;
+	}
 
-    @Override
-    public double getMeteorFrequency()
-    {
-        return 10.0D;
-    }
+	@Override
+	public double getMeteorFrequency()
+	{
+		return 10.0D;
+	}
 
-    @Override
-    public double getFuelUsageMultiplier()
-    {
-        return 0.9D;
-    }
+	@Override
+	public double getFuelUsageMultiplier()
+	{
+		return 0.9D;
+	}
 
-    @Override
-    public boolean canSpaceshipTierPass(int tier)
-    {
-        return tier >= 3;
-    }
+	@Override
+	public boolean canSpaceshipTierPass(int tier)
+	{
+		return tier >= 3;
+	}
 
 	@Override
 	public float getFallDamageModifier()
@@ -274,23 +274,23 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 		return 0.50F;
 	}
 
-    @Override
-    public float getSoundVolReductionAmount()
-    {
-        return 0.0F;
-    }
+	@Override
+	public float getSoundVolReductionAmount()
+	{
+		return 0.0F;
+	}
 
-    @Override
-    public CelestialBody getCelestialBody()
-    {
-        return HoleCore.moonHole;
-    }
+	@Override
+	public CelestialBody getCelestialBody()
+	{
+		return HoleCore.moonHole;
+	}
 
-    @Override
-    public boolean hasBreathableAtmosphere()
-    {
-        return true;
-    }
+	@Override
+	public boolean hasBreathableAtmosphere()
+	{
+		return true;
+	}
 
 	@Override
 	public float getThermalLevelModifier()

@@ -16,3 +16,6 @@ itemGroup.SpaceBlocks=4Space Blocks
 
 # Entity
 
+# Other
+4update.failed.name=4Space Update-Prüfung fehlgeschlagen! Erneut versuchen in 15 Sekunden
+4update.success.name=4Space Remote-Version gefunden:

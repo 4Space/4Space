@@ -1,0 +1,46 @@
+# 4Space Pluto Language File = ITALY ITALIAN
+
+# GENERAL ITEMS
+item.blueGem.name=Blue-Gem
+item.blueGemPlate.name=Blue-Gem Piatto
+item.ununpetiumRaw.name=Raw Ununpetium
+item.ununpetiumPlate.name=Piastra Ununpetium
+item.ingotFrozenIron.name=congelato Ferro Lingotto
+item.frozenIronPlate.name=congelato Ferro Piatto
+item.plateHeavyT6.name=Heavy-Duty Piastra T6
+
+# TOOLS
+item.blueGem_axe.name=Blue-Gem Axe
+item.blueGem_hoe.name=Blue-Gem Hoe
+item.blueGem_pickaxe.name=Blue-Gem Piccone
+item.blueGem_spade.name=Blue-Gem Shovel
+item.blueGem_sword.name=Blue-Gem Sword
+
+# ARMOR
+item.blueGem_boots.name=Blue-Gem Boots
+item.blueGem_chestplate.name=Blue-Gem Chestplate
+item.blueGem_helmet.name=Blu Gem-Helmet
+item.blueGem_leggings.name=Blue-Gem Leggings
+
+# BLOCKS
+tile.pluto_block.surfaceRock.name=Pluto superficie della roccia
+tile.pluto_block.subSurface.name=Pluto Sub-Surface Roccia
+tile.pluto_block.rock.name=Pluto Roccia
+tile.pluto_block.cobblestone.name=Pluto Cobblestone
+tile.pluto_block.dungeonBrick.name=Pluto Dungeon Brick
+tile.pluto_block.blueGem.name=Pluto Blue-Gem Ore
+tile.pluto_block.ununpentium.name=Pluto Ununpentium Ore
+tile.pluto_block.frozenIron.name=Pluto congelato Iron Ore
+tile.pluto_block.blueGemBlock.name=Blocco di Blue-Gem
+tile.pluto_block.frozenIronBlock.name=Blocco di congelato Ferro
+tile.pluto_block.ununpentiumBlock.name=Blocco di Ununpentium
+
+# GUI
+
+# PLANETS
+planet.pluto.name=Pluto
+
+# Schematics
+
+# Entity
+

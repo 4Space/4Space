@@ -20,12 +20,12 @@ public class RenderEvolvedBlaze extends RenderLiving
 	public RenderEvolvedBlaze()
 	{
 		super(new ModelBlaze(), 0.5F);
-		this.field_77068_a = ((ModelBlaze)this.mainModel).func_78104_a();
+		this.field_77068_a = ((ModelBlaze) this.mainModel).func_78104_a();
 	}
 
 	public void renderEvolvedBlaze(EntityEvolvedBlaze par1EntityEvolvedBlaze, double par2, double par4, double par6, float par8, float par9)
 	{
-		final int i = ((ModelBlaze)this.mainModel).func_78104_a();
+		final int i = ((ModelBlaze) this.mainModel).func_78104_a();
 
 		if (i != this.field_77068_a)
 		{
@@ -42,23 +42,23 @@ public class RenderEvolvedBlaze extends RenderLiving
 
 	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
 	{
-		this.renderEvolvedBlaze((EntityEvolvedBlaze)par1EntityLiving, par2, par4, par6, par8, par9);
+		this.renderEvolvedBlaze((EntityEvolvedBlaze) par1EntityLiving, par2, par4, par6, par8, par9);
 	}
 
 	public void renderPlayer(EntityLivingBase par1EntityLivingBase, double par2, double par4, double par6, float par8, float par9)
 	{
-		this.renderEvolvedBlaze((EntityEvolvedBlaze)par1EntityLivingBase, par2, par4, par6, par8, par9);
+		this.renderEvolvedBlaze((EntityEvolvedBlaze) par1EntityLivingBase, par2, par4, par6, par8, par9);
 	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(Entity par1Entity)
 	{
-		return this.getEvolvedBlazeTextures((EntityEvolvedBlaze)par1Entity);
+		return this.getEvolvedBlazeTextures((EntityEvolvedBlaze) par1Entity);
 	}
 
 	@Override
 	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
 	{
-		this.renderEvolvedBlaze((EntityEvolvedBlaze)par1Entity, par2, par4, par6, par8, par9);
+		this.renderEvolvedBlaze((EntityEvolvedBlaze) par1Entity, par2, par4, par6, par8, par9);
 	}
 }

@@ -381,19 +381,19 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
 		BlockFalling.fallInstantly = false;
 
-//		if (!ConfigManagerHole.disableHoleVillageGen)
-//		{
-			this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-//		}
+		// if (!ConfigManagerHole.disableHoleVillageGen)
+		// {
+		this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+		// }
 	}
 
 	@Override
 	public void recreateStructures(int par1, int par2)
 	{
-//		if (!ConfigManagerHole.disableHoleVillageGen)
-//		{
-			this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[]) null);
-//		}
+		// if (!ConfigManagerHole.disableHoleVillageGen)
+		// {
+		this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[]) null);
+		// }
 	}
 
 	@Override

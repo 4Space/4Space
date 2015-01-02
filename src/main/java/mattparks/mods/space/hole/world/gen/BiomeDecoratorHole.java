@@ -10,7 +10,7 @@ public class BiomeDecoratorHole extends BiomeDecoratorSpace
 {
 	protected WorldGenerator dirtGen;
 	protected WorldGenerator flameGen;
-	
+
 	private World currentWorld;
 
 	public BiomeDecoratorHole()
@@ -19,20 +19,20 @@ public class BiomeDecoratorHole extends BiomeDecoratorSpace
 		this.flameGen = new WorldGenMinableMeta(HoleBlocks.holeBasicBlock, 16, 5, true, HoleBlocks.holeBasicBlock, 2);
 	}
 
-    @Override
-    protected void decorate()
-    {
+	@Override
+	protected void decorate()
+	{
 		this.generateOre(32, this.dirtGen, 0, 256);
 		this.generateOre(32, this.flameGen, 0, 256);
-    }
-    
-    protected void setCurrentWorld(World world)
-    {
-    	this.currentWorld = world;
-    }
-    
-    protected World getCurrentWorld()
-    {
-    	return this.currentWorld;
-    }
+	}
+
+	protected void setCurrentWorld(World world)
+	{
+		this.currentWorld = world;
+	}
+
+	protected World getCurrentWorld()
+	{
+		return this.currentWorld;
+	}
 }

@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import mattparks.mods.space.venus.dimension.SkyProviderVenus;
 import mattparks.mods.space.venus.dimension.WorldProviderVenus;
 import mattparks.mods.space.venus.entities.EntityEvolvedBlaze;
-import mattparks.mods.space.venus.entities.EntityFlameling;
 import mattparks.mods.space.venus.entities.EntityVenusianTNT;
 import mattparks.mods.space.venus.entities.EntityVenusianVillager;
 import mattparks.mods.space.venus.entities.render.RenderEvolvedBlaze;
-import mattparks.mods.space.venus.entities.render.RenderFlameling;
 import mattparks.mods.space.venus.entities.render.RenderVenusianTNT;
 import mattparks.mods.space.venus.entities.render.RenderVenusianVillager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
@@ -29,105 +27,102 @@ import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ClientProxyVenus extends CommonProxyVenus 
+public class ClientProxyVenus extends CommonProxyVenus
 {
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
-	
+
 	private static int renderIndexGemArmor;
 	private static int renderIndexSulfurArmor;
 	private static int renderIndexJetpack;
-		
+
 	public static ArrayList<SoundPoolEntry> newMusic = new ArrayList<SoundPoolEntry>();
 
-    
-    @Override
-    public void preInit(FMLPreInitializationEvent event) 
-    {
-        ClientProxyVenus.renderIndexGemArmor = RenderingRegistry.addNewArmourRendererPrefix("gem");
-        ClientProxyVenus.renderIndexSulfurArmor = RenderingRegistry.addNewArmourRendererPrefix("sulfur");
-        ClientProxyVenus.renderIndexJetpack = RenderingRegistry.addNewArmourRendererPrefix("jetpack");
-        
-        super.preInit(event);
-    }
-    
-    @Override
-    public int getGemArmorRenderIndex()
-    {
-        return ClientProxyVenus.renderIndexGemArmor;
-    }
+	@Override
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		ClientProxyVenus.renderIndexGemArmor = RenderingRegistry.addNewArmourRendererPrefix("gem");
+		ClientProxyVenus.renderIndexSulfurArmor = RenderingRegistry.addNewArmourRendererPrefix("sulfur");
+		ClientProxyVenus.renderIndexJetpack = RenderingRegistry.addNewArmourRendererPrefix("jetpack");
 
-    @Override
-    public int getSulfurArmorRenderIndex()
-    {
-        return ClientProxyVenus.renderIndexSulfurArmor;
-    }
-    
-    @Override
-    public int getJetpackArmorRenderIndex()
-    {
-        return ClientProxyVenus.renderIndexJetpack;
-    }
+		super.preInit(event);
+	}
 
-    
-    public static void registerEntityRenderers()
-    {
-    	RenderingRegistry.registerEntityRenderingHandler(EntityEvolvedBlaze.class, new RenderEvolvedBlaze());
-		RenderingRegistry.registerEntityRenderingHandler(EntityFlameling.class, new RenderFlameling());
-		RenderingRegistry.registerEntityRenderingHandler(EntityVenusianVillager.class, new RenderVenusianVillager());    
-    }
+	@Override
+	public int getGemArmorRenderIndex()
+	{
+		return ClientProxyVenus.renderIndexGemArmor;
+	}
 
-    @Override
-    public void init(FMLInitializationEvent event) 
-    {
-        FMLCommonHandler.instance().bus().register(new TickHandlerClient());
+	@Override
+	public int getSulfurArmorRenderIndex()
+	{
+		return ClientProxyVenus.renderIndexSulfurArmor;
+	}
+
+	@Override
+	public int getJetpackArmorRenderIndex()
+	{
+		return ClientProxyVenus.renderIndexJetpack;
+	}
+
+	public static void registerEntityRenderers()
+	{
+		RenderingRegistry.registerEntityRenderingHandler(EntityEvolvedBlaze.class, new RenderEvolvedBlaze());
+		RenderingRegistry.registerEntityRenderingHandler(EntityVenusianVillager.class, new RenderVenusianVillager());
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event)
+	{
+		FMLCommonHandler.instance().bus().register(new TickHandlerClient());
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityVenusianTNT.class, new RenderVenusianTNT());
-		
-        super.init(event);
-    }
 
-    @Override
-    public void postInit(FMLPostInitializationEvent event)
-    {
-        ClientProxyVenus.registerEntityRenderers();
-        super.postInit(event);
-    }
-    
-	public void registerRenderInfo() 
+		super.init(event);
+	}
+
+	@Override
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		ClientProxyVenus.registerEntityRenderers();
+		super.postInit(event);
+	}
+
+	public void registerRenderInfo()
 	{
 	}
-	
+
 	@Override
 	public int getBlockRender(Block block)
 	{
 		return -1;
 	}
-	
-    public static class TickHandlerClient
-    {
-        @SideOnly(Side.CLIENT)
-        @SubscribeEvent
-        public void onClientTick(ClientTickEvent event)
-        {
-            final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-            final WorldClient world = minecraft.theWorld;
+	public static class TickHandlerClient
+	{
+		@SideOnly(Side.CLIENT)
+		@SubscribeEvent
+		public void onClientTick(ClientTickEvent event)
+		{
+			final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-            if (world != null)
-            {
-                if (world.provider instanceof WorldProviderVenus)
-                {
-                    if (world.provider.getSkyRenderer() == null)
-                    {
-                        world.provider.setSkyRenderer(new SkyProviderVenus((IGalacticraftWorldProvider) world.provider));
-                    }
+			final WorldClient world = minecraft.theWorld;
 
-                    if (world.provider.getCloudRenderer() == null)
-                    {
-                        world.provider.setCloudRenderer(new CloudRenderer());
-                    }
-                }
-            }
-        }
-    }
+			if (world != null)
+			{
+				if (world.provider instanceof WorldProviderVenus)
+				{
+					if (world.provider.getSkyRenderer() == null)
+					{
+						world.provider.setSkyRenderer(new SkyProviderVenus((IGalacticraftWorldProvider) world.provider));
+					}
+
+					if (world.provider.getCloudRenderer() == null)
+					{
+						world.provider.setCloudRenderer(new CloudRenderer());
+					}
+				}
+			}
+		}
+	}
 }

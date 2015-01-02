@@ -57,7 +57,7 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock
 	}
 
 	@Override
-	public float getBlockHardness(World par1World, int par2, int par3, int par4) //FIX
+	public float getBlockHardness(World par1World, int par2, int par3, int par4) // FIX
 	{
 		final int meta = par1World.getBlockMetadata(par2, par3, par4);
 
@@ -65,17 +65,17 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock
 		{
 			return 4.0F;
 		}
-		
+
 		if (meta == 1)
 		{
 			return 4.0F;
 		}
-		
+
 		if (meta == 2)
 		{
 			return 4.0F;
 		}
-		
+
 		if (meta == 3)
 		{
 			return 4.0F;
@@ -85,8 +85,8 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock
 	}
 
 	@Override
-	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
-	{		
+	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction)
+	{
 		return true;
 	}
 }

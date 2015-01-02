@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RegisterHelperMercury 
+public class RegisterHelperMercury
 {
 	public static void registerBlock(Block block)
 	{

@@ -9,17 +9,17 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockBasicPluto extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"surfaceRock",
-		"subSurface",
-		"rock",
-		"cobblestone",
-		"blueGem",
-		"frozenIron",
-		"ununpentium",
-		"blueGemBlock",
-		"frozenIronBlock",
-		"ununpentiumBlock",
-		"dungeonBrick"
+			"surfaceRock",
+			"subSurface",
+			"rock",
+			"cobblestone",
+			"blueGem",
+			"frozenIron",
+			"ununpentium",
+			"blueGemBlock",
+			"frozenIronBlock",
+			"ununpentiumBlock",
+			"dungeonBrick"
 	};
 
 	public ItemBlockBasicPluto(Block par1)
@@ -44,12 +44,12 @@ public class ItemBlockBasicPluto extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
 	{
 		int meta = itemstack.getItemDamage();
-		
+
 		if (meta < 0 || meta >= ItemBlockBasicPluto.types.length)
 		{
 			meta = 0;
 		}
-		
+
 		return super.getUnlocalizedName() + "." + ItemBlockBasicPluto.types[meta];
 	}
 }

@@ -50,7 +50,7 @@ public class MapGenEuropaRavine extends MapGenBase
 
 		for (; par15 < par16; ++par15)
 		{
-			double d6 = 1.5D + MathHelper.sin(par15 * (float)Math.PI / par16) * par12 * 1.0F;
+			double d6 = 1.5D + MathHelper.sin(par15 * (float) Math.PI / par16) * par12 * 1.0F;
 			double d7 = d6 * par17;
 			d6 *= random.nextFloat() * 0.25D + 0.75D;
 			d7 *= random.nextFloat() * 0.25D + 0.75D;
@@ -204,7 +204,7 @@ public class MapGenEuropaRavine extends MapGenBase
 
 			for (int i1 = 0; i1 < b0; ++i1)
 			{
-				final float f = this.rand.nextFloat() * (float)Math.PI * 2.0F;
+				final float f = this.rand.nextFloat() * (float) Math.PI * 2.0F;
 				final float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
 				final float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) * 2.0F;
 				this.generateRavine(this.rand.nextLong(), par4, par5, par6ArrayOfByte, d0, d1, d2, f2, f, f1, 0, 0, 3.0D);
@@ -217,23 +217,28 @@ public class MapGenEuropaRavine extends MapGenBase
 		return data[index] == Blocks.water || data[index] == Blocks.flowing_water;
 	}
 
-	//Exception biomes to make sure we generate like vanilla
+	// Exception biomes to make sure we generate like vanilla
 	private boolean isExceptionBiome(BiomeGenBase biome)
 	{
-		if (biome == BiomeGenBase.mushroomIsland) {
+		if (biome == BiomeGenBase.mushroomIsland)
+		{
 			return true;
 		}
-		if (biome == BiomeGenBase.beach) {
+		if (biome == BiomeGenBase.beach)
+		{
 			return true;
 		}
-		if (biome == BiomeGenBase.desert) {
+		if (biome == BiomeGenBase.desert)
+		{
 			return true;
 		}
 		return false;
 	}
 
-	//Determine if the block at the specified location is the top block for the biome, we take into account
-	//Vanilla bugs to make sure that we generate the map the same way vanilla does.
+	// Determine if the block at the specified location is the top block for the
+	// biome, we take into account
+	// Vanilla bugs to make sure that we generate the map the same way vanilla
+	// does.
 	private boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ)
 	{
 		final BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
@@ -241,26 +246,35 @@ public class MapGenEuropaRavine extends MapGenBase
 	}
 
 	/**
-	 * Digs out the current block, default implementation removes stone, filler, and top block
-	 * Sets the block to lava if y is less then 10, and air other wise.
-	 * If setting to air, it also checks to see if we've broken the surface and if so
-	 * tries to make the floor the biome's top block
+	 * Digs out the current block, default implementation removes stone, filler,
+	 * and top block Sets the block to lava if y is less then 10, and air other
+	 * wise. If setting to air, it also checks to see if we've broken the
+	 * surface and if so tries to make the floor the biome's top block
 	 * 
-	 * @param data Block data array
-	 * @param index Pre-calculated index into block data
-	 * @param x local X position
-	 * @param y local Y position
-	 * @param z local Z position
-	 * @param chunkX Chunk X position
-	 * @param chunkZ Chunk Y position
-	 * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
+	 * @param data
+	 *            Block data array
+	 * @param index
+	 *            Pre-calculated index into block data
+	 * @param x
+	 *            local X position
+	 * @param y
+	 *            local Y position
+	 * @param z
+	 *            local Z position
+	 * @param chunkX
+	 *            Chunk X position
+	 * @param chunkZ
+	 *            Chunk Y position
+	 * @param foundTop
+	 *            True if we've encountered the biome's top block. Ideally if
+	 *            we've broken the surface.
 	 */
 	protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop)
 	{
 		final BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
-		final Block top    = this.isExceptionBiome(biome) ? EuropaBlocks.europaBasicBlock : biome.topBlock;
-		final Block filler = this.isExceptionBiome(biome) ? EuropaBlocks.europaBasicBlock  : biome.fillerBlock;
-		final Block block  = data[index];
+		final Block top = this.isExceptionBiome(biome) ? EuropaBlocks.europaBasicBlock : biome.topBlock;
+		final Block filler = this.isExceptionBiome(biome) ? EuropaBlocks.europaBasicBlock : biome.fillerBlock;
+		final Block block = data[index];
 
 		if (block == EuropaBlocks.europaBasicBlock || block == filler || block == top)
 		{

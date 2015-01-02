@@ -32,13 +32,13 @@ public class PlutoItems
 	private static void initItems()
 	{
 		PlutoItems.plutoBasicItem = new ItemBasicPluto();
-		
+
 		PlutoItems.blueGemPickaxe = new ItemPickaxePluto("blueGem_pickaxe", PlutoItems.TOOL_BLUEGEM);
 		PlutoItems.blueGemAxe = new ItemAxePluto("blueGem_axe", PlutoItems.TOOL_BLUEGEM);
 		PlutoItems.blueGemHoe = new ItemHoePluto("blueGem_hoe", PlutoItems.TOOL_BLUEGEM);
 		PlutoItems.blueGemSpade = new ItemSpadePluto("blueGem_spade", PlutoItems.TOOL_BLUEGEM);
 		PlutoItems.blueGemSword = new ItemSwordPluto("blueGem_sword", PlutoItems.TOOL_BLUEGEM);
-		
+
 		PlutoItems.blueGemHelmet = new ItemBlueGemArmor("blueGem_helmet", PlutoItems.ARMOR_BLUEGEM, 7, 0);
 		PlutoItems.blueGemChestplate = new ItemBlueGemArmor("blueGem_chestplate", PlutoItems.ARMOR_BLUEGEM, 7, 1);
 		PlutoItems.blueGemLeggings = new ItemBlueGemArmor("blueGem_leggings", PlutoItems.ARMOR_BLUEGEM, 7, 2);
@@ -55,13 +55,13 @@ public class PlutoItems
 	private static void registerItems()
 	{
 		PlutoCore.registerItem(plutoBasicItem);
-		
+
 		PlutoCore.registerItem(blueGemPickaxe);
 		PlutoCore.registerItem(blueGemAxe);
 		PlutoCore.registerItem(blueGemHoe);
 		PlutoCore.registerItem(blueGemSpade);
 		PlutoCore.registerItem(blueGemSword);
-		
+
 		PlutoCore.registerItem(blueGemHelmet);
 		PlutoCore.registerItem(blueGemChestplate);
 		PlutoCore.registerItem(blueGemLeggings);

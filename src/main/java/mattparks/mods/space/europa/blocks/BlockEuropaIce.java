@@ -149,17 +149,17 @@ public class BlockEuropaIce extends BlockBreakable
 	{
 		return 0;
 	}
-	
-    public MapColor getMapColor(int meta)
-    {
-        switch (meta)
-        {
-        case 0:
-            return MapColor.blueColor;
-        default:
-            return MapColor.blueColor;
-        }
-    }
+
+	public MapColor getMapColor(int meta)
+	{
+		switch (meta)
+		{
+			case 0:
+				return MapColor.blueColor;
+			default:
+				return MapColor.blueColor;
+		}
+	}
 
 	@Override
 	@SideOnly(Side.CLIENT)

@@ -32,51 +32,51 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return new Vector3(242, 145, 13);
 	}
 
-    @Override
-    public boolean canRainOrSnow()
-    {
-        return false;
-    }
+	@Override
+	public boolean canRainOrSnow()
+	{
+		return false;
+	}
 
-    @Override
-    public boolean hasSunset()
-    {
-        return false;
-    }
+	@Override
+	public boolean hasSunset()
+	{
+		return false;
+	}
 
-    @Override
-    public long getDayLength()
-    {
-    	if (ConfigManagerIo.idDayLength == false)
-    	{
-    		return 24000L;
-    	}
-    	
-    	else
-    	{
-    		return 60000L;
-    	}
-    }
+	@Override
+	public long getDayLength()
+	{
+		if (ConfigManagerIo.idDayLength == false)
+		{
+			return 24000L;
+		}
 
-    @Override
-    public boolean shouldForceRespawn()
-    {
-        return !ConfigManagerCore.forceOverworldRespawn;
-    }
+		else
+		{
+			return 60000L;
+		}
+	}
 
-    @Override
-    public Class<? extends IChunkProvider> getChunkProviderClass()
-    {
-        return ChunkProviderIo.class;
-    }
+	@Override
+	public boolean shouldForceRespawn()
+	{
+		return !ConfigManagerCore.forceOverworldRespawn;
+	}
 
-    @Override
-    public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
-    {
-        return WorldChunkManagerIo.class;
-    }
+	@Override
+	public Class<? extends IChunkProvider> getChunkProviderClass()
+	{
+		return ChunkProviderIo.class;
+	}
 
-    @Override
+	@Override
+	public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
+	{
+		return WorldChunkManagerIo.class;
+	}
+
+	@Override
 	public void setDimension(int var1)
 	{
 		this.dimensionId = var1;
@@ -120,25 +120,25 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return Vec3.createVectorHelper(154 / 255.0F, 114 / 255.0F, 66 / 255.0F);
 	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public float getStarBrightness(float par1)
-    {
-        float f1 = this.worldObj.getCelestialAngle(par1);
-        float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+	@Override
+	@SideOnly(Side.CLIENT)
+	public float getStarBrightness(float par1)
+	{
+		float f1 = this.worldObj.getCelestialAngle(par1);
+		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-        if (f2 < 0.0F)
-        {
-            f2 = 0.0F;
-        }
+		if (f2 < 0.0F)
+		{
+			f2 = 0.0F;
+		}
 
-        if (f2 > 1.0F)
-        {
-            f2 = 1.0F;
-        }
+		if (f2 > 1.0F)
+		{
+			f2 = 1.0F;
+		}
 
-        return f2 * f2 * 0.75F;
-    }
+		return f2 * f2 * 0.75F;
+	}
 
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
@@ -168,17 +168,17 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return true;
 	}
 
-    @Override
-    public double getHorizon()
-    {
-        return 44.0D;
-    }
+	@Override
+	public double getHorizon()
+	{
+		return 44.0D;
+	}
 
-    @Override
-    public int getAverageGroundLevel()
-    {
-        return 44;
-    }
+	@Override
+	public int getAverageGroundLevel()
+	{
+		return 44;
+	}
 
 	@Override
 	public boolean isSurfaceWorld()
@@ -186,11 +186,11 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return true;
 	}
 
-    @Override
-    public boolean canCoordinateBeSpawn(int var1, int var2)
-    {
-        return true;
-    }
+	@Override
+	public boolean canCoordinateBeSpawn(int var1, int var2)
+	{
+		return true;
+	}
 
 	@Override
 	public boolean canRespawnHere()
@@ -222,11 +222,11 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return "Io";
 	}
 
-//    	@Override
-//    	public boolean canSnowAt(int x, int y, int z)
-//    	{
-//    		return false;
-//    	}
+	// @Override
+	// public boolean canSnowAt(int x, int y, int z)
+	// {
+	// return false;
+	// }
 
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
@@ -252,29 +252,29 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return 0.032F;
 	}
 
-    @Override
-    public int getHeight()
-    {
-        return 800;
-    }
+	@Override
+	public int getHeight()
+	{
+		return 800;
+	}
 
-    @Override
-    public double getMeteorFrequency()
-    {
-        return 10.0D;
-    }
+	@Override
+	public double getMeteorFrequency()
+	{
+		return 10.0D;
+	}
 
-    @Override
-    public double getFuelUsageMultiplier()
-    {
-        return 0.9D;
-    }
+	@Override
+	public double getFuelUsageMultiplier()
+	{
+		return 0.9D;
+	}
 
-    @Override
-    public boolean canSpaceshipTierPass(int tier)
-    {
-        return tier >= 3;
-    }
+	@Override
+	public boolean canSpaceshipTierPass(int tier)
+	{
+		return tier >= 3;
+	}
 
 	@Override
 	public float getFallDamageModifier()
@@ -282,23 +282,23 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 		return 0.26F;
 	}
 
-    @Override
-    public float getSoundVolReductionAmount()
-    {
-        return 10.0F;
-    }
+	@Override
+	public float getSoundVolReductionAmount()
+	{
+		return 10.0F;
+	}
 
-    @Override
-    public CelestialBody getCelestialBody()
-    {
-        return IoCore.moonIo;
-    }
+	@Override
+	public CelestialBody getCelestialBody()
+	{
+		return IoCore.moonIo;
+	}
 
-    @Override
-    public boolean hasBreathableAtmosphere()
-    {
-        return false;
-    }
+	@Override
+	public boolean hasBreathableAtmosphere()
+	{
+		return false;
+	}
 
 	@Override
 	public float getThermalLevelModifier()

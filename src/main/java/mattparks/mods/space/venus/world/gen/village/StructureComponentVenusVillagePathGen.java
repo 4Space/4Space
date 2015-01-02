@@ -78,17 +78,17 @@ public class StructureComponentVenusVillagePathGen extends StructureComponentVen
 		{
 			switch (this.coordBaseMode)
 			{
-			case 0:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX - 1, this.boundingBox.minY, this.boundingBox.maxZ - 2, 1, this.getComponentType());
-				break;
-			case 1:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX, this.boundingBox.minY, this.boundingBox.minZ - 1, 2, this.getComponentType());
-				break;
-			case 2:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX - 1, this.boundingBox.minY, this.boundingBox.minZ, 1, this.getComponentType());
-				break;
-			case 3:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX - 2, this.boundingBox.minY, this.boundingBox.minZ - 1, 2, this.getComponentType());
+				case 0:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX - 1, this.boundingBox.minY, this.boundingBox.maxZ - 2, 1, this.getComponentType());
+					break;
+				case 1:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX, this.boundingBox.minY, this.boundingBox.minZ - 1, 2, this.getComponentType());
+					break;
+				case 2:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX - 1, this.boundingBox.minY, this.boundingBox.minZ, 1, this.getComponentType());
+					break;
+				case 3:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX - 2, this.boundingBox.minY, this.boundingBox.minZ - 1, 2, this.getComponentType());
 			}
 		}
 
@@ -96,17 +96,17 @@ public class StructureComponentVenusVillagePathGen extends StructureComponentVen
 		{
 			switch (this.coordBaseMode)
 			{
-			case 0:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX + 1, this.boundingBox.minY, this.boundingBox.maxZ - 2, 3, this.getComponentType());
-				break;
-			case 1:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX, this.boundingBox.minY, this.boundingBox.maxZ + 1, 0, this.getComponentType());
-				break;
-			case 2:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX + 1, this.boundingBox.minY, this.boundingBox.minZ, 3, this.getComponentType());
-				break;
-			case 3:
-				StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX - 2, this.boundingBox.minY, this.boundingBox.maxZ + 1, 0, this.getComponentType());
+				case 0:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX + 1, this.boundingBox.minY, this.boundingBox.maxZ - 2, 3, this.getComponentType());
+					break;
+				case 1:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.minX, this.boundingBox.minY, this.boundingBox.maxZ + 1, 0, this.getComponentType());
+					break;
+				case 2:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX + 1, this.boundingBox.minY, this.boundingBox.minZ, 3, this.getComponentType());
+					break;
+				case 3:
+					StructureVillagePiecesVenus.getNextStructureComponentVillagePath((StructureComponentVenusVillageStartPiece) par1StructureComponent, par2List, par3Random, this.boundingBox.maxX - 2, this.boundingBox.minY, this.boundingBox.maxZ + 1, 0, this.getComponentType());
 			}
 		}
 	}

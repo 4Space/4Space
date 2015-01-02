@@ -136,7 +136,7 @@ public class StructureVillagePiecesHole
 	 * attempts to find a next Structure Component to be spawned, private
 	 * Village function
 	 */
-	 private static StructureComponent getNextVillageStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+	private static StructureComponent getNextVillageStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
 	{
 		if (par7 > 50)
 		{
@@ -161,43 +161,43 @@ public class StructureVillagePiecesHole
 		}
 	}
 
-	 private static StructureComponent getNextComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	 {
-		 if (par7 > 3 + par0ComponentVillageStartPiece.terrainType)
-		 {
-			 return null;
-		 }
-		 else if (Math.abs(par3 - par0ComponentVillageStartPiece.getBoundingBox().minX) <= 112 && Math.abs(par5 - par0ComponentVillageStartPiece.getBoundingBox().minZ) <= 112)
-		 {
-			 final StructureBoundingBox var8 = StructureComponentHoleVillagePathGen.func_74933_a(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6);
+	private static StructureComponent getNextComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+	{
+		if (par7 > 3 + par0ComponentVillageStartPiece.terrainType)
+		{
+			return null;
+		}
+		else if (Math.abs(par3 - par0ComponentVillageStartPiece.getBoundingBox().minX) <= 112 && Math.abs(par5 - par0ComponentVillageStartPiece.getBoundingBox().minZ) <= 112)
+		{
+			final StructureBoundingBox var8 = StructureComponentHoleVillagePathGen.func_74933_a(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6);
 
-			 if (var8 != null && var8.minY > 10)
-			 {
-				 final StructureComponentHoleVillagePathGen var9 = new StructureComponentHoleVillagePathGen(par0ComponentVillageStartPiece, par7, par2Random, var8, par6);
+			if (var8 != null && var8.minY > 10)
+			{
+				final StructureComponentHoleVillagePathGen var9 = new StructureComponentHoleVillagePathGen(par0ComponentVillageStartPiece, par7, par2Random, var8, par6);
 
-				 par1List.add(var9);
-				 par0ComponentVillageStartPiece.field_74930_j.add(var9);
-				 return var9;
-			 }
+				par1List.add(var9);
+				par0ComponentVillageStartPiece.field_74930_j.add(var9);
+				return var9;
+			}
 
-			 return null;
-		 }
-		 else
-		 {
-			 return null;
-		 }
-	 }
+			return null;
+		}
+		else
+		{
+			return null;
+		}
+	}
 
-	 /**
-	  * attempts to find a next Structure Component to be spawned
-	  */
-	  static StructureComponent getNextStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	  {
-		  return StructureVillagePiecesHole.getNextVillageStructureComponent(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7);
-	  }
+	/**
+	 * attempts to find a next Structure Component to be spawned
+	 */
+	static StructureComponent getNextStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+	{
+		return StructureVillagePiecesHole.getNextVillageStructureComponent(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7);
+	}
 
-	  static StructureComponent getNextStructureComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	  {
-		  return StructureVillagePiecesHole.getNextComponentVillagePath(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7);
-	  }
+	static StructureComponent getNextStructureComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
+	{
+		return StructureVillagePiecesHole.getNextComponentVillagePath(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7);
+	}
 }

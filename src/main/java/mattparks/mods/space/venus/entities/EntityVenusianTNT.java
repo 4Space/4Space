@@ -25,10 +25,10 @@ public class EntityVenusianTNT extends Entity
 	{
 		this(world);
 		this.setPosition(x, y, z);
-		final float f = (float)(Math.random() * 3.141592741012573D * 2.0D);
-		this.motionX = -(float)Math.sin(f) * 0.02F;
+		final float f = (float) (Math.random() * 3.141592741012573D * 2.0D);
+		this.motionX = -(float) Math.sin(f) * 0.02F;
 		this.motionY = 0.2000000029802322D;
-		this.motionZ = -(float)Math.cos(f) * 0.02F;
+		this.motionZ = -(float) Math.cos(f) * 0.02F;
 		this.fuse = 80;
 		this.prevPosX = x;
 		this.prevPosY = y;
@@ -37,7 +37,9 @@ public class EntityVenusianTNT extends Entity
 	}
 
 	@Override
-	protected void entityInit() {}
+	protected void entityInit()
+	{
+	}
 
 	@Override
 	protected boolean canTriggerWalking()

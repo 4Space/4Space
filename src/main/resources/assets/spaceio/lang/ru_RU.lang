@@ -26,10 +26,10 @@ tile.magma_rock.magma.name=Io Magma
 tile.magma_rock.sulfur.name=Io Сера
 
 # GUI
-planet.io=Io
+
+# PLANET
 moon.io=Io
 
 # Schematics
 
-# Entity
-
+# ENTITIES

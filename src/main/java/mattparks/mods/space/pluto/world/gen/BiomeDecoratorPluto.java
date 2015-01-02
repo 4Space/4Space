@@ -22,22 +22,22 @@ public class BiomeDecoratorPluto extends BiomeDecoratorSpace
 		this.ununpentiumGen = new WorldGenMinableMeta(PlutoBlocks.plutoBasicBlock, 4, 6, true, PlutoBlocks.plutoBasicBlock, 2);
 	}
 
-    @Override
-    protected void decorate()
-    {
+	@Override
+	protected void decorate()
+	{
 		this.generateOre(32, this.dirtGen, 0, 256);
 		this.generateOre(16, this.blueGemGen, 0, 60);
 		this.generateOre(16, this.frozenIronGen, 0, 60);
 		this.generateOre(4, this.ununpentiumGen, 0, 128);
-    }
-    
-    protected void setCurrentWorld(World world)
-    {
-    	this.currentWorld = world;
-    }
-    
-    protected World getCurrentWorld()
-    {
-    	return this.currentWorld;
-    }
+	}
+
+	protected void setCurrentWorld(World world)
+	{
+		this.currentWorld = world;
+	}
+
+	protected World getCurrentWorld()
+	{
+		return this.currentWorld;
+	}
 }

@@ -1,7 +1,6 @@
 package mattparks.mods.space.hole.world.gen;
 
 import mattparks.mods.space.venus.entities.EntityEvolvedBlaze;
-import mattparks.mods.space.venus.entities.EntityFlameling;
 import mattparks.mods.space.venus.util.ConfigManagerVenus;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
@@ -22,7 +21,6 @@ public class BiomeGenBaseHole extends BiomeGenBase
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 3, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedBlaze.class, 4, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityFlameling.class, 4, 1, 1));
 		this.rainfall = 0F;
 	}
 

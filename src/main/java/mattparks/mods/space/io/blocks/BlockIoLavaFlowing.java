@@ -49,11 +49,11 @@ public class BlockIoLavaFlowing extends BlockIoLiquid
 	{
 		if (!this.usingMinecraftDirectory)
 		{
-			this.ioLavaIcon = new IIcon[] {icon.registerIcon(IoCore.TEXTURE_PREFIX + this.stillTexture), icon.registerIcon(IoCore.TEXTURE_PREFIX + this.flowingTexture)};
+			this.ioLavaIcon = new IIcon[] { icon.registerIcon(IoCore.TEXTURE_PREFIX + this.stillTexture), icon.registerIcon(IoCore.TEXTURE_PREFIX + this.flowingTexture) };
 		}
 		else
 		{
-			this.ioLavaIcon = new IIcon[] {icon.registerIcon(this.stillTexture), icon.registerIcon(this.flowingTexture)};
+			this.ioLavaIcon = new IIcon[] { icon.registerIcon(this.stillTexture), icon.registerIcon(this.flowingTexture) };
 		}
 	}
 

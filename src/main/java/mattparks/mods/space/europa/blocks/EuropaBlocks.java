@@ -19,7 +19,7 @@ public class EuropaBlocks
 	public static Block europaWaterFluidBlock;
 
 	public static Fluid europaWaterFluid;
-	
+
 	private static void initBlocks()
 	{
 		EuropaBlocks.europaBasicBlock = new BlockBasicEuropa("europa_block");
@@ -30,7 +30,7 @@ public class EuropaBlocks
 		FluidRegistry.registerFluid(EuropaBlocks.europaWaterFluid);
 		EuropaBlocks.europaWaterFluidBlock = new BlockFluidEuropaWater("europa_water_fluid", EuropaBlocks.europaWaterFluid, Material.water);
 	}
-	
+
 	private static void setHarvestLevels()
 	{
 		EuropaBlocks.europaBasicBlock.setHarvestLevel("pickaxe", 1);
@@ -43,10 +43,16 @@ public class EuropaBlocks
 		EuropaCore.registerBlock(EuropaBlocks.packedEuropaIce, ItemBlockUtil.class);
 		EuropaCore.registerBlock(EuropaBlocks.europaWaterFluidBlock, ItemBlockUtil.class);
 	}
-	
+
+	public static void oreDictRegistration()
+	{
+	}
+
 	public static void init()
 	{
 		initBlocks();
+		setHarvestLevels();
 		registerBlocks();
+		oreDictRegistration();
 	}
 }

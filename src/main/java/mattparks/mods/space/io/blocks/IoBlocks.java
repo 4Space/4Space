@@ -6,6 +6,8 @@ import mattparks.mods.space.io.itemblocks.ItemBlockBasicIo;
 import mattparks.mods.space.io.itemblocks.ItemBlockMagmaRock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class IoBlocks
 {
@@ -26,7 +28,8 @@ public class IoBlocks
 		IoBlocks.ioMagmaRock = new BlockMagmaRock("magma_rock");
 
 		// Fluid Blocks
-		// DANGER : DON'T CHANGE LIQUID SULFUR NAME! IT MAKE FLUID BUG AND DO NOT CHANGE ANYTHING ON THIS STUFF!
+		// DANGER : DON'T CHANGE LIQUID SULFUR NAME! IT MAKE FLUID BUG AND DO
+		// NOT CHANGE ANYTHING ON THIS STUFF!
 		IoBlocks.liquidRedSulfurFlowing = new BlockIoLavaFlowing("liquid_red_sulfur_flowing", "liquid_red_sulfur_still", "liquid_red_sulfur_flowing");
 		IoBlocks.liquidRedSulfurStill = new BlockIoLavaStill("liquid_red_sulfur_still", "liquid_red_sulfur_still", "liquid_red_sulfur_flowing");
 		IoBlocks.liquidYellowSulfurFlowing = new BlockIoLavaFlowing("liquid_yellow_sulfur_flowing", "liquid_yellow_sulfur_still", "liquid_yellow_sulfur_flowing");
@@ -36,7 +39,7 @@ public class IoBlocks
 		IoBlocks.ioLavaFlowing = new BlockIoLavaFlowing("io_lava_flowing", "lava_still", "lava_flow", true);
 		IoBlocks.ioLavaStill = new BlockIoLavaStill("io_lava_still", "lava_still", "lava_flow", true);
 	}
-	
+
 	public static void setHarvestLevels()
 	{
 	}
@@ -54,10 +57,17 @@ public class IoBlocks
 		IoCore.registerBlock(IoBlocks.ioLavaFlowing, ItemBlockUtil.class);
 		IoCore.registerBlock(IoBlocks.ioLavaStill, ItemBlockUtil.class);
 	}
-	
+
+	public static void oreDictRegistration()
+	{
+		OreDictionary.registerOre("oreSulfur", new ItemStack(IoBlocks.ioBasicBlock, 1, 4));
+	}
+
 	public static void init()
 	{
 		initBlocks();
+		setHarvestLevels();
 		registerBlocks();
+		oreDictRegistration();
 	}
 }

@@ -63,12 +63,12 @@ public class StructureComponentHoleVillageField2 extends StructureComponentHoleV
 	{
 		switch (par1Random.nextInt(5))
 		{
-		case 0:
-			return Blocks.carrots;
-		case 1:
-			return Blocks.potatoes;
-		default:
-			return Blocks.wheat;
+			case 0:
+				return Blocks.carrots;
+			case 1:
+				return Blocks.potatoes;
+			default:
+				return Blocks.wheat;
 		}
 	}
 

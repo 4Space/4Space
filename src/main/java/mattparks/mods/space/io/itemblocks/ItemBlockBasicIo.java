@@ -9,16 +9,16 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockBasicIo extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"surface",
-		"subSurface",
-		"stone",
-		"cobblestone",
-		"sulfurOre",
-		"ashStone",
-		"ashCobblestone",
-		"basalt",
-		"silicate",
-		"dungeonBrick"
+			"surface",
+			"subSurface",
+			"stone",
+			"cobblestone",
+			"sulfurOre",
+			"ashStone",
+			"ashCobblestone",
+			"basalt",
+			"silicate",
+			"dungeonBrick"
 	};
 
 	public ItemBlockBasicIo(Block par1)

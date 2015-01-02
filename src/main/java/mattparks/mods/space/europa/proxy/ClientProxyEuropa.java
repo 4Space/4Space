@@ -23,73 +23,73 @@ import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ClientProxyEuropa extends CommonProxyEuropa 
+public class ClientProxyEuropa extends CommonProxyEuropa
 {
 	public static ArrayList<SoundPoolEntry> newMusic = new ArrayList<SoundPoolEntry>();
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
-	    
-    @Override
-    public void preInit(FMLPreInitializationEvent event) 
-    {
-        super.preInit(event);
-    }
-    
-    public static void registerEntityRenderers()
-    {
-    }
 
-    @Override
-    public void init(FMLInitializationEvent event) 
-    {
-        FMLCommonHandler.instance().bus().register(new TickHandlerClient());
-		
-        super.init(event);
-    }
+	@Override
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		super.preInit(event);
+	}
 
-    @Override
-    public void postInit(FMLPostInitializationEvent event) 
-    {
-    	ClientProxyEuropa.registerEntityRenderers();
-        super.postInit(event);
-    }
-    
-	public void registerRenderInfo() 
+	public static void registerEntityRenderers()
 	{
 	}
-	
+
+	@Override
+	public void init(FMLInitializationEvent event)
+	{
+		FMLCommonHandler.instance().bus().register(new TickHandlerClient());
+
+		super.init(event);
+	}
+
+	@Override
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		ClientProxyEuropa.registerEntityRenderers();
+		super.postInit(event);
+	}
+
+	public void registerRenderInfo()
+	{
+	}
+
 	@Override
 	public int getBlockRender(Block block)
 	{
 		return -1;
 	}
-	
-    public static class TickHandlerClient
-    {
-        @SideOnly(Side.CLIENT)
-        @SubscribeEvent
-        public void onClientTick(ClientTickEvent event)
-        {
-            final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-            final WorldClient world = minecraft.theWorld;
+	public static class TickHandlerClient
+	{
+		@SideOnly(Side.CLIENT)
+		@SubscribeEvent
+		public void onClientTick(ClientTickEvent event)
+		{
+			final Minecraft minecraft = FMLClientHandler.instance().getClient();
 
-    		if (world != null)
-    		{
-    			if (world.provider instanceof WorldProviderEuropa)
-    			{
-    				if (world.provider.getSkyRenderer() == null)
-    				{
-    					world.provider.setSkyRenderer(new SkyProviderEuropa((IGalacticraftWorldProvider) world.provider));
-    				}
-    				if (world.provider.getCloudRenderer() == null)
-    				{
-    					world.provider.setCloudRenderer(new CloudRenderer());
-    				}
-    			}
-            }
-        }
-    }
-    
+			final WorldClient world = minecraft.theWorld;
+
+			if (world != null)
+			{
+				if (world.provider instanceof WorldProviderEuropa)
+				{
+					if (world.provider.getSkyRenderer() == null)
+					{
+						world.provider.setSkyRenderer(new SkyProviderEuropa((IGalacticraftWorldProvider) world.provider));
+					}
+					if (world.provider.getCloudRenderer() == null)
+					{
+						world.provider.setCloudRenderer(new CloudRenderer());
+					}
+				}
+			}
+		}
+	}
+
 	@Override
 	public void spawnParticle(String string, double x, double y, double z)
 	{

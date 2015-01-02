@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockMagmaRock extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"magma",
-		"sulfur",
+			"magma",
+			"sulfur",
 	};
 
 	public ItemBlockMagmaRock(Block par1)

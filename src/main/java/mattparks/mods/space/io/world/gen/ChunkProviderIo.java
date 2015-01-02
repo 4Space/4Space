@@ -413,7 +413,8 @@ public class ChunkProviderIo extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
-//			monsters.add(new SpawnListEntry(EntityEvolvedBlaze.class, 8, 2, 3));
+			// monsters.add(new SpawnListEntry(EntityEvolvedBlaze.class, 8, 2,
+			// 3));
 			return monsters;
 		}
 		else

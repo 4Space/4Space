@@ -10,8 +10,8 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeManagerHole
 {
-    private static void addUniversalRecipes()
-    {
+	private static void addUniversalRecipes()
+	{
 		// ORE DICTIONARY
 		OreDictionary.registerOre("holeStone", new ItemStack(HoleBlocks.holeBasicBlock, 1, 3));
 		OreDictionary.registerOre("flameiteBlock", new ItemStack(HoleBlocks.holeBasicBlock, 1, 6));
@@ -29,20 +29,20 @@ public class RecipeManagerHole
 		RecipeUtil.addRecipe(new ItemStack(HoleItems.flameiteSpade), new Object[] { "X", "Y", "Y", 'X', "ingotFlameite", 'Y', Items.stick });
 		RecipeUtil.addRecipe(new ItemStack(HoleItems.flameiteHoe), new Object[] { "XX", " Y", " Y", 'X', "ingotFlameite", 'Y', Items.stick });
 		RecipeUtil.addRecipe(new ItemStack(HoleItems.flameiteAxe), new Object[] { "XX", "XY", " Y", 'X', "ingotFlameite", 'Y', Items.stick });
-		
+
 		// ITEM TO BLOCK
 		RecipeUtil.addRecipe(new ItemStack(HoleBlocks.holeBasicBlock, 1, 6), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotFlameite" });
-		
+
 		// BLOCK TO ITEM
 		RecipeUtil.addRecipe(new ItemStack(HoleItems.holeBasicItem, 9, 1), new Object[] { "X", 'X', "flameiteBlock" });
-		
+
 		// Smelting
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(HoleBlocks.holeBasicBlock, 2, 4), OreDictionary.getOres("holeStone").get(0), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(HoleBlocks.holeBasicBlock, 1, 6), OreDictionary.getOres("dustFlameite").get(0), 0.2F);
-    }
+	}
 
-    public static void loadRecipes()
-    {
-        RecipeManagerHole.addUniversalRecipes();
-    }
+	public static void loadRecipes()
+	{
+		RecipeManagerHole.addUniversalRecipes();
+	}
 }

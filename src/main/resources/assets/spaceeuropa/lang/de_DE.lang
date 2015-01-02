@@ -1,6 +1,7 @@
 # 4Space Europa Language File = GERMANY GERMAN
 
 # GENERAL ITEMS
+item.europa_water_bucket.name=Europa Wassereimer
 
 # TOOLS
 
@@ -15,6 +16,9 @@ tile.europa_ice.dense.name=Europa Dense Ice
 tile.packed_europa_ice.name=Europa Lunch Ice
 
 # GUI
+
+# PLANET
+moon.europa=Europa
 
 # Schematics
 

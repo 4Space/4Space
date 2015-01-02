@@ -72,6 +72,4 @@ tile.venusian_tnt.name=Venusian TNT
 
 # Entity
 entity.SpaceCore.EvolvedBlaze.name=Evolved Blaze
-entity.SpaceCore.Flameling.name=Flameling
 entity.SpaceCore.VenusianVillager.name=Venusian Villager
-

@@ -26,12 +26,12 @@ public class StructureComponentHoleVillageWell extends StructureComponentHoleVil
 
 		switch (this.coordBaseMode)
 		{
-		case 0:
-		case 2:
-			this.boundingBox = new StructureBoundingBox(par4, 64, par5, par4 + 6 - 1, 78, par5 + 6 - 1);
-			break;
-		default:
-			this.boundingBox = new StructureBoundingBox(par4, 64, par5, par4 + 6 - 1, 78, par5 + 6 - 1);
+			case 0:
+			case 2:
+				this.boundingBox = new StructureBoundingBox(par4, 64, par5, par4 + 6 - 1, 78, par5 + 6 - 1);
+				break;
+			default:
+				this.boundingBox = new StructureBoundingBox(par4, 64, par5, par4 + 6 - 1, 78, par5 + 6 - 1);
 		}
 	}
 

@@ -302,7 +302,7 @@ public class BlockCaravanModule extends Block implements IPartialSealableBlock
 
 		this.setBlocks(par1World, par2, par3, par4 - 1, true, MercuryBlocks.caravanModuleDummy);
 		this.setBlocks(par1World, par2 + 1, par3, par4 - 1, true, MercuryBlocks.caravanModuleDummy);
-		this.setBlocks(par1World, par2 +1, par3, par4, true, MercuryBlocks.caravanModuleDummy);
+		this.setBlocks(par1World, par2 + 1, par3, par4, true, MercuryBlocks.caravanModuleDummy);
 		this.setBlocks(par1World, par2 + 1, par3, par4 + 1, true, MercuryBlocks.caravanModuleDummy);
 		this.setBlocks(par1World, par2, par3, par4 + 1, true, MercuryBlocks.caravanModuleDummy);
 		this.setBlocks(par1World, par2 - 1, par3, par4 + 1, true, MercuryBlocks.caravanModuleDummy);

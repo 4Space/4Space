@@ -38,7 +38,7 @@ public class EntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 	protected void entityInit()
 	{
 		super.entityInit();
-		this.dataWatcher.addObject(16, new Byte((byte)0));
+		this.dataWatcher.addObject(16, new Byte((byte) 0));
 	}
 
 	@Override
@@ -87,7 +87,7 @@ public class EntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 			if (this.heightOffsetUpdateTime <= 0)
 			{
 				this.heightOffsetUpdateTime = 100;
-				this.heightOffset = 0.5F + (float)this.rand.nextGaussian() * 3.0F;
+				this.heightOffset = 0.5F + (float) this.rand.nextGaussian() * 3.0F;
 			}
 
 			if (this.getEntityToAttack() != null && this.getEntityToAttack().posY + this.getEntityToAttack().getEyeHeight() > this.posY + this.getEyeHeight() + this.heightOffset)
@@ -150,7 +150,7 @@ public class EntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 				if (this.field_70846_g > 1)
 				{
 					final float f1 = MathHelper.sqrt_float(par2) * 0.5F;
-					this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+					this.worldObj.playAuxSFXAtEntity((EntityPlayer) null, 1009, (int) this.posX, (int) this.posY, (int) this.posZ, 0);
 
 					for (int i = 0; i < 1; ++i)
 					{
@@ -161,13 +161,15 @@ public class EntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 				}
 			}
 
-			this.rotationYaw = (float)(Math.atan2(d2, d0) * 180.0D / Math.PI) - 90.0F;
+			this.rotationYaw = (float) (Math.atan2(d2, d0) * 180.0D / Math.PI) - 90.0F;
 			this.hasAttacked = true;
 		}
 	}
 
 	@Override
-	protected void fall(float par1) {}
+	protected void fall(float par1)
+	{
+	}
 
 	@Override
 	public boolean isBurning()
@@ -200,7 +202,7 @@ public class EntityEvolvedBlaze extends EntityMob implements IEntityBreathable
 
 		if (par1)
 		{
-			b0 = (byte)(b0 | 1);
+			b0 = (byte) (b0 | 1);
 		}
 		else
 		{

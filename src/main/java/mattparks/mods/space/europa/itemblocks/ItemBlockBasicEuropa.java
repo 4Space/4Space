@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockBasicEuropa extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"surface",
-		"hardenedIce",
+			"surface",
+			"hardenedIce",
 	};
 
 	public ItemBlockBasicEuropa(Block par1)

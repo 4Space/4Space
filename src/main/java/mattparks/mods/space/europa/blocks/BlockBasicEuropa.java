@@ -52,20 +52,20 @@ public class BlockBasicEuropa extends Block
 			list.add(new ItemStack(this, 1, i));
 		}
 	}
-	
-    public MapColor getMapColor(int meta)
-    {
-        switch (meta)
-        {
-        case 0:
-            return MapColor.blueColor;
-        default:
-            return MapColor.blueColor;
-        }
-    }
+
+	public MapColor getMapColor(int meta)
+	{
+		switch (meta)
+		{
+			case 0:
+				return MapColor.blueColor;
+			default:
+				return MapColor.blueColor;
+		}
+	}
 
 	@Override
-	public float getBlockHardness(World par1World, int par2, int par3, int par4) //FIX
+	public float getBlockHardness(World par1World, int par2, int par3, int par4) // FIX
 	{
 		final int meta = par1World.getBlockMetadata(par2, par3, par4);
 
@@ -73,7 +73,7 @@ public class BlockBasicEuropa extends Block
 		{
 			return 1.25F;
 		}
-		
+
 		if (meta == 1)
 		{
 			return 2.0F;

@@ -22,7 +22,7 @@ public class RenderVenusianTNT extends Render
 	public void doRender(EntityVenusianTNT tnt, double x, double y, double z, float par5, float par6)
 	{
 		GL11.glPushMatrix();
-		GL11.glTranslatef((float)x, (float)y, (float)z);
+		GL11.glTranslatef((float) x, (float) y, (float) z);
 		float var10;
 
 		if (tnt.fuse - par6 + 1.0F < 10.0F)
@@ -72,12 +72,12 @@ public class RenderVenusianTNT extends Render
 	@Override
 	protected ResourceLocation getEntityTexture(Entity tnt)
 	{
-		return this.getEntityTexture((EntityVenusianTNT)tnt);
+		return this.getEntityTexture((EntityVenusianTNT) tnt);
 	}
 
 	@Override
 	public void doRender(Entity entity, double x, double y, double z, float par5, float par6)
 	{
-		this.doRender((EntityVenusianTNT)entity, x, y, z, par5, par6);
+		this.doRender((EntityVenusianTNT) entity, x, y, z, par5, par6);
 	}
 }

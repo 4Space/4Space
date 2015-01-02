@@ -48,22 +48,22 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 	{
 		if (var2 == 0)
 		{
-			return new int[] {this.width - 1, 0, 1};
+			return new int[] { this.width - 1, 0, 1 };
 		}
 		else if (var2 == 1)
 		{
-			return new int[] {1, 0, this.width - 1};
+			return new int[] { 1, 0, this.width - 1 };
 		}
 		else if (var2 == 2)
 		{
-			return new int[] {0, 0, 1};
+			return new int[] { 0, 0, 1 };
 		}
 		else if (var2 == 3)
 		{
-			return new int[] {1, 0, 0};
+			return new int[] { 1, 0, 0 };
 		}
 
-		return new int[] {0, 0, 0};
+		return new int[] { 0, 0, 0 };
 	}
 
 	public boolean makeCorridor(List list, Random random, int type, int x, int y, int z, int width, int height, int cbm)
@@ -73,7 +73,7 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 
 		{
 		}
-		
+
 		return true;
 	}
 
@@ -82,7 +82,7 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 		final int var6 = this.getXWithOffset(x, z);
 		final int var7 = this.getYWithOffset(y);
 		final int var8 = this.getZWithOffset(x, z);
-		return cbm == 0 ? new int[] {var6 + 1, var7 - 1, var8 - width / 2}: cbm == 1 ? new int[] {var6 + width / 2, var7 - 1, var8 + 1}: cbm == 2 ? new int[] {var6 - 1, var7 - 1, var8 + width / 2}: cbm == 3 ? new int[] {var6 - width / 2, var7 - 1, var8 - 1}: new int[] {x, y, z};
+		return cbm == 0 ? new int[] { var6 + 1, var7 - 1, var8 - width / 2 } : cbm == 1 ? new int[] { var6 + width / 2, var7 - 1, var8 + 1 } : cbm == 2 ? new int[] { var6 - 1, var7 - 1, var8 + width / 2 } : cbm == 3 ? new int[] { var6 - width / 2, var7 - 1, var8 - 1 } : new int[] { x, y, z };
 	}
 
 	@Override
@@ -137,10 +137,10 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 				{
 					if (y % 4 == 0 && rand.nextInt(20) == 0)
 					{
-						if (world.getBlock(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z) == VenusBlocks.venusBasicBlock) 
+						if (world.getBlock(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z) == VenusBlocks.venusBasicBlock)
 						{
 						}
-						
+
 						{
 							for (int i = -2; i < 2; i++)
 							{
@@ -175,7 +175,7 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 										this.placeBlockAtCurrentPosition(world, VenusBlocks.evolvedBlazeEgg, 0, x, y + 2, z, this.getBoundingBox());
 									}
 
-									final TileEntityMobSpawner var7 = (TileEntityMobSpawner)world.getTileEntity(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z);
+									final TileEntityMobSpawner var7 = (TileEntityMobSpawner) world.getTileEntity(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z);
 
 									if (var7 != null)
 									{

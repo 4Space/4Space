@@ -89,7 +89,7 @@ public class BlockVenusianTNT extends Block
 	@Override
 	public void onBlockDestroyedByPlayer(World par1World, int par2, int par3, int par4, int par5)
 	{
-		this.primeTnt(par1World, par2, par3, par4, par5, (EntityLivingBase)null);
+		this.primeTnt(par1World, par2, par3, par4, par5, (EntityLivingBase) null);
 	}
 
 	public void primeTnt(World par1World, int par2, int par3, int par4, int par5, EntityLivingBase par6EntityLivingBase)
@@ -123,11 +123,11 @@ public class BlockVenusianTNT extends Block
 	{
 		if (par5Entity instanceof EntityArrow && !par1World.isRemote)
 		{
-			final EntityArrow entityarrow = (EntityArrow)par5Entity;
+			final EntityArrow entityarrow = (EntityArrow) par5Entity;
 
 			if (entityarrow.isBurning())
 			{
-				this.primeTnt(par1World, par2, par3, par4, 1, entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase)entityarrow.shootingEntity : null);
+				this.primeTnt(par1World, par2, par3, par4, 1, entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase) entityarrow.shootingEntity : null);
 				par1World.setBlockToAir(par2, par3, par4);
 			}
 		}

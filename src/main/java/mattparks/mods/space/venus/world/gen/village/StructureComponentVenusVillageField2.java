@@ -63,12 +63,12 @@ public class StructureComponentVenusVillageField2 extends StructureComponentVenu
 	{
 		switch (par1Random.nextInt(5))
 		{
-		case 0:
-			return Blocks.carrots;
-		case 1:
-			return Blocks.potatoes;
-		default:
-			return Blocks.wheat;
+			case 0:
+				return Blocks.carrots;
+			case 1:
+				return Blocks.potatoes;
+			default:
+				return Blocks.wheat;
 		}
 	}
 

@@ -9,19 +9,19 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockBasicVenus extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"surfaceRock",
-		"subSurface",
-		"rock",
-		"cobblestone",
-		"sulfurOre",
-		"uraniumOre",
-		"gemOre",
-		"crystalOre",
-		"tinOre",
-		"copperOre",
-		"ironOre",
-		"coalOre",
-		"dungeonBrick"
+			"surfaceRock",
+			"subSurface",
+			"rock",
+			"cobblestone",
+			"sulfurOre",
+			"uraniumOre",
+			"gemOre",
+			"crystalOre",
+			"tinOre",
+			"copperOre",
+			"ironOre",
+			"coalOre",
+			"dungeonBrick"
 	};
 
 	public ItemBlockBasicVenus(Block par1)
@@ -46,12 +46,12 @@ public class ItemBlockBasicVenus extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
 	{
 		int meta = itemstack.getItemDamage();
-		
+
 		if (meta < 0 || meta >= ItemBlockBasicVenus.types.length)
 		{
 			meta = 0;
 		}
-		
+
 		return super.getUnlocalizedName() + "." + ItemBlockBasicVenus.types[meta];
 	}
 }

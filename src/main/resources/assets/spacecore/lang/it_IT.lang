@@ -15,3 +15,7 @@ itemGroup.SpaceBlocks=4Space Blocks
 # SCHEMATICS
 
 # Entity
+
+# Other
+4update.failed.name=4Space update check failed! Trying again in 15 seconds # TRANSLATE
+4update.success.name=4Space remote version found: # TRANSLATE

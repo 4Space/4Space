@@ -25,11 +25,11 @@ public class ItemIoBucket extends Item
 	private Block isFull;
 
 	private static final String[] bucketTypes = new String[] {
-		"titaniumBucket",
-		"ioLavaBucket",
-		"liquidRedSulfurBucket",
-		"liquidYellowSulfurBucket",
-		"liquidOrangeSulfurBucket"
+			"titaniumBucket",
+			"ioLavaBucket",
+			"liquidRedSulfurBucket",
+			"liquidYellowSulfurBucket",
+			"liquidOrangeSulfurBucket"
 	};
 
 	private IIcon[] textures;
@@ -251,15 +251,15 @@ public class ItemIoBucket extends Item
 	{
 		switch (meta)
 		{
-		case 1:
-		default:
-			return IoBlocks.ioLavaFlowing;
-		case 2:
-			return IoBlocks.liquidRedSulfurFlowing;
-		case 3:
-			return IoBlocks.liquidYellowSulfurFlowing;
-		case 4:
-			return IoBlocks.liquidOrangeSulfurFlowing;
+			case 1:
+			default:
+				return IoBlocks.ioLavaFlowing;
+			case 2:
+				return IoBlocks.liquidRedSulfurFlowing;
+			case 3:
+				return IoBlocks.liquidYellowSulfurFlowing;
+			case 4:
+				return IoBlocks.liquidOrangeSulfurFlowing;
 		}
 	}
 

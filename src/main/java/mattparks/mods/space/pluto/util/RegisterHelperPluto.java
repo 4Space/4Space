@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RegisterHelperPluto 
+public class RegisterHelperPluto
 {
 	public static void registerBlock(Block block)
 	{

@@ -5,6 +5,8 @@ import mattparks.mods.space.mercury.MercuryCore;
 import mattparks.mods.space.mercury.itemblocks.ItemBlockBasicMercury;
 import mattparks.mods.space.mercury.itemblocks.ItemBlockGlowstoneMercury;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class MercuryBlocks
 {
@@ -21,7 +23,7 @@ public class MercuryBlocks
 		MercuryBlocks.caravanModuleDummy = new BlockCaravanModuleDummy("caravan_module_dummy");
 		MercuryBlocks.mercuryGlowstone = new BlockMercuryGlowstone("mercury_glowstone");
 	}
-	
+
 	public static void setHarvestLevels()
 	{
 	}
@@ -33,10 +35,21 @@ public class MercuryBlocks
 		MercuryCore.registerBlock(MercuryBlocks.caravanModule, ItemBlockUtil.class);
 		MercuryCore.registerBlock(MercuryBlocks.caravanModuleDummy, ItemBlockUtil.class);
 	}
-	
+
+	public static void oreDictRegistration()
+	{
+		OreDictionary.registerOre("oreIridium", new ItemStack(MercuryBlocks.mercuryBasicBlock, 1, 4));
+		OreDictionary.registerOre("oreMeteor", new ItemStack(MercuryBlocks.mercuryBasicBlock, 1, 5));
+		OreDictionary.registerOre("oreTin", new ItemStack(MercuryBlocks.mercuryBasicBlock, 1, 6));
+		OreDictionary.registerOre("oreCopper", new ItemStack(MercuryBlocks.mercuryBasicBlock, 1, 7));
+		OreDictionary.registerOre("oreGold", new ItemStack(MercuryBlocks.mercuryBasicBlock, 1, 8));
+	}
+
 	public static void init()
 	{
 		initBlocks();
+		setHarvestLevels();
 		registerBlocks();
+		oreDictRegistration();
 	}
 }

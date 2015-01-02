@@ -9,10 +9,10 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockDecorVenus extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"sulfurBlock",
-		"uraniumBlock",
-		"gemBlock",
-		"crystalBlock",
+			"sulfurBlock",
+			"uraniumBlock",
+			"gemBlock",
+			"crystalBlock",
 	};
 
 	public ItemBlockDecorVenus(Block par1)
@@ -37,12 +37,12 @@ public class ItemBlockDecorVenus extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
 	{
 		int meta = itemstack.getItemDamage();
-		
+
 		if (meta < 0 || meta >= ItemBlockDecorVenus.types.length)
 		{
 			meta = 0;
 		}
-		
+
 		return super.getUnlocalizedName() + "." + ItemBlockDecorVenus.types[meta];
 	}
 }

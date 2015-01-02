@@ -9,13 +9,13 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockBasicHole extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"surfaceRock",
-		"subSurface",
-		"rock",
-		"cobblestone",
-		"brick",
-		"flameiteOre",
-		"flameiteBlock",
+			"surfaceRock",
+			"subSurface",
+			"rock",
+			"cobblestone",
+			"brick",
+			"flameiteOre",
+			"flameiteBlock",
 	};
 
 	public ItemBlockBasicHole(Block par1)
@@ -40,12 +40,12 @@ public class ItemBlockBasicHole extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
 	{
 		int meta = itemstack.getItemDamage();
-		
+
 		if (meta < 0 || meta >= ItemBlockBasicHole.types.length)
 		{
 			meta = 0;
 		}
-		
+
 		return super.getUnlocalizedName() + "." + ItemBlockBasicHole.types[meta];
 	}
 }

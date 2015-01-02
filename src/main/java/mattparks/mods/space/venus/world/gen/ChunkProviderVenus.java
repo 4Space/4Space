@@ -6,7 +6,6 @@ import java.util.Random;
 
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import mattparks.mods.space.venus.entities.EntityEvolvedBlaze;
-import mattparks.mods.space.venus.entities.EntityFlameling;
 import mattparks.mods.space.venus.world.gen.dungeon.RoomBossVenus;
 import mattparks.mods.space.venus.world.gen.dungeon.RoomChestsVenus;
 import mattparks.mods.space.venus.world.gen.dungeon.RoomEmptyVenus;
@@ -388,19 +387,19 @@ public class ChunkProviderVenus extends ChunkProviderGenerate
 		this.blazeNest.generateStructuresInChunk(this.worldObj, new Random(), par2, par3);
 		BlockFalling.fallInstantly = false;
 
-//		if (!ConfigManagerVenus.disableVenusVillageGen)
-//		{
-			this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
-//		}
+		// if (!ConfigManagerVenus.disableVenusVillageGen)
+		// {
+		this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
+		// }
 	}
 
 	@Override
 	public void recreateStructures(int par1, int par2)
 	{
-//		if (!ConfigManagerVenus.disableVenusVillageGen)
-//		{
-			this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[]) null);
-//		}
+		// if (!ConfigManagerVenus.disableVenusVillageGen)
+		// {
+		this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[]) null);
+		// }
 	}
 
 	@Override
@@ -433,9 +432,9 @@ public class ChunkProviderVenus extends ChunkProviderGenerate
 			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedBlaze.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(EntityFlameling.class, 8, 2, 3));
 			return monsters;
 		}
+
 		else
 		{
 			return null;

@@ -71,7 +71,7 @@ public class BlockBasicMercury extends Block implements IDetectableResource, IPa
 	}
 
 	@Override
-	public float getBlockHardness(World par1World, int par2, int par3, int par4) //FIX
+	public float getBlockHardness(World par1World, int par2, int par3, int par4) // FIX
 	{
 		final int meta = par1World.getBlockMetadata(par2, par3, par4);
 
@@ -79,52 +79,52 @@ public class BlockBasicMercury extends Block implements IDetectableResource, IPa
 		{
 			return 1.25F;
 		}
-		
+
 		if (meta == 1)
 		{
 			return 1.0F;
 		}
-		
+
 		if (meta == 2)
 		{
 			return 1.5F;
 		}
-		
+
 		if (meta == 3)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 4)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 5)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 6)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 7)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 8)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 9)
 		{
 			return 2.5F;
 		}
-		
+
 		if (meta == 10)
 		{
 			return 2.5F;
@@ -137,30 +137,30 @@ public class BlockBasicMercury extends Block implements IDetectableResource, IPa
 
 		return 1.0F;
 	}
-	
-    @Override
-    public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
-    {
-        int metadata = world.getBlockMetadata(x, y, z);
 
-        if (metadata == 11)
-        {
-            return 40.0F;
-        }
+	@Override
+	public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
+	{
+		int metadata = world.getBlockMetadata(x, y, z);
 
-        return super.getExplosionResistance(par1Entity, world, x, y, z, explosionX, explosionY, explosionZ);
-    }
-	
-    public MapColor getMapColor(int meta)
-    {
-        switch (meta)
-        {
-        case 0:
-            return MapColor.redColor;
-        default:
-            return MapColor.redColor;
-        }
-    }
+		if (metadata == 11)
+		{
+			return 40.0F;
+		}
+
+		return super.getExplosionResistance(par1Entity, world, x, y, z, explosionX, explosionY, explosionZ);
+	}
+
+	public MapColor getMapColor(int meta)
+	{
+		switch (meta)
+		{
+			case 0:
+				return MapColor.redColor;
+			default:
+				return MapColor.redColor;
+		}
+	}
 
 	@Override
 	public int damageDropped(int meta)
@@ -169,61 +169,61 @@ public class BlockBasicMercury extends Block implements IDetectableResource, IPa
 		{
 			return 3;
 		}
-		
+
 		return meta;
 	}
 
 	@Override
-	public boolean isTerraformable(World world, int x, int y, int z) 
+	public boolean isTerraformable(World world, int x, int y, int z)
 	{
 		return world.getBlockMetadata(x, y, z) == 0 && world.getBlock(x, y + 1, z) instanceof BlockAir;
 	}
 
 	@Override
-	public int requiredLiquidBlocksNearby() 
+	public int requiredLiquidBlocksNearby()
 	{
 		return 4;
 	}
 
 	@Override
-	public boolean isPlantable(int metadata) 
+	public boolean isPlantable(int metadata)
 	{
-        switch (metadata)
-        {
-	        case 0:
-	            return true;
-	        case 1:
-	            return true;
-	        default:
-	            return false;
-        }
+		switch (metadata)
+		{
+			case 0:
+				return true;
+			case 1:
+				return true;
+			default:
+				return false;
+		}
 	}
 
 	@Override
-	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) 
+	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction)
 	{
 		return false;
 	}
 
 	@Override
-	public boolean isValueable(int metadata) 
+	public boolean isValueable(int metadata)
 	{
-        switch (metadata)
-        {
-	        case 4:
-	            return true;
-	        case 5:
-	            return true;
-	        case 6:
-	            return true;
-	        case 7:
-	            return true;
-	        case 8:
-	            return true;
-	        case 9:
-	            return true;
-	        default:
-	            return false;
-        }
+		switch (metadata)
+		{
+			case 4:
+				return true;
+			case 5:
+				return true;
+			case 6:
+				return true;
+			case 7:
+				return true;
+			case 8:
+				return true;
+			case 9:
+				return true;
+			default:
+				return false;
+		}
 	}
 }

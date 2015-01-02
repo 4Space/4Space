@@ -30,11 +30,11 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		return new Vector3(0, 0, 0);
 	}
 
-    @Override
-    public boolean canRainOrSnow()
-    {
-        return false;
-    }
+	@Override
+	public boolean canRainOrSnow()
+	{
+		return false;
+	}
 
 	@Override
 	public float calculateCelestialAngle(long par1, float par3)
@@ -57,7 +57,7 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		var5 = var6 + (var5 - var6) / 3.0F;
 		return var5;
 	}
-	
+
 	public float calculateDeimosAngle(long par1, float par3)
 	{
 		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
@@ -67,46 +67,46 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 	{
 		return this.calculateCelestialAngle(par1, par3) * 3000;
 	}
-	
-    @Override
-    public boolean hasSunset()
-    {
-        return false;
-    }
 
-    @Override
-    public long getDayLength()
-    {
-    	if (ConfigManagerPluto.idDayLength == false)
-    	{
-    		return 24000L;
-    	}
-    	
-    	else
-    	{
-    		return 156000L;
-    	}
-    }
+	@Override
+	public boolean hasSunset()
+	{
+		return false;
+	}
 
-    @Override
-    public boolean shouldForceRespawn()
-    {
-        return !ConfigManagerCore.forceOverworldRespawn;
-    }
+	@Override
+	public long getDayLength()
+	{
+		if (ConfigManagerPluto.idDayLength == false)
+		{
+			return 24000L;
+		}
 
-    @Override
-    public Class<? extends IChunkProvider> getChunkProviderClass()
-    {
-        return ChunkProviderPluto.class;
-    }
+		else
+		{
+			return 156000L;
+		}
+	}
 
-    @Override
-    public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
-    {
-        return WorldChunkManagerPluto.class;
-    }
+	@Override
+	public boolean shouldForceRespawn()
+	{
+		return !ConfigManagerCore.forceOverworldRespawn;
+	}
 
-    @Override
+	@Override
+	public Class<? extends IChunkProvider> getChunkProviderClass()
+	{
+		return ChunkProviderPluto.class;
+	}
+
+	@Override
+	public Class<? extends WorldChunkManager> getWorldChunkManagerClass()
+	{
+		return WorldChunkManagerPluto.class;
+	}
+
+	@Override
 	public void setDimension(int var1)
 	{
 		this.dimensionId = var1;
@@ -136,7 +136,7 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 	{
 		this.worldChunkMgr = new WorldChunkManagerPluto();
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1)
@@ -156,23 +156,17 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 
 		return var3 * var3 * 0.5F + 0.3F;
 	}
-/*
-	@Override
-	public float calculateCelestialAngle(long par1, float par3)
-	{
-		return super.calculateCelestialAngle(par1, par3);
-	}
 
-	public float calculatePhobosAngle(long par1, float par3)
-	{
-		return this.calculateCelestialAngle(par1, par3) * 3000;
-	}
-
-	public float calculateDeimosAngle(long par1, float par3)
-	{
-		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
-	}
-*/
+	/*
+	 * @Override public float calculateCelestialAngle(long par1, float par3) {
+	 * return super.calculateCelestialAngle(par1, par3); }
+	 * 
+	 * public float calculatePhobosAngle(long par1, float par3) { return
+	 * this.calculateCelestialAngle(par1, par3) * 3000; }
+	 * 
+	 * public float calculateDeimosAngle(long par1, float par3) { return
+	 * this.calculatePhobosAngle(par1, par3) * 0.0000000001F; }
+	 */
 	@Override
 	public IChunkProvider createChunkGenerator()
 	{
@@ -185,17 +179,17 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		return true;
 	}
 
-    @Override
-    public double getHorizon()
-    {
-        return 44.0D;
-    }
+	@Override
+	public double getHorizon()
+	{
+		return 44.0D;
+	}
 
-    @Override
-    public int getAverageGroundLevel()
-    {
-        return 44;
-    }
+	@Override
+	public int getAverageGroundLevel()
+	{
+		return 44;
+	}
 
 	@Override
 	public boolean isSurfaceWorld()
@@ -203,11 +197,11 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		return true;
 	}
 
-    @Override
-    public boolean canCoordinateBeSpawn(int var1, int var2)
-    {
-        return true;
-    }
+	@Override
+	public boolean canCoordinateBeSpawn(int var1, int var2)
+	{
+		return true;
+	}
 
 	@Override
 	public boolean canRespawnHere()
@@ -239,11 +233,11 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		return "Pluto";
 	}
 
-//    	@Override
-//    	public boolean canSnowAt(int x, int y, int z)
-//    	{
-//    		return false;
-//    	}
+	// @Override
+	// public boolean canSnowAt(int x, int y, int z)
+	// {
+	// return false;
+	// }
 
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater)
@@ -269,29 +263,29 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		return 0.058F;
 	}
 
-    @Override
-    public int getHeight()
-    {
-        return 800;
-    }
+	@Override
+	public int getHeight()
+	{
+		return 800;
+	}
 
-    @Override
-    public double getMeteorFrequency()
-    {
-        return 10.0D;
-    }
+	@Override
+	public double getMeteorFrequency()
+	{
+		return 10.0D;
+	}
 
-    @Override
-    public double getFuelUsageMultiplier()
-    {
-        return 0.9D;
-    }
+	@Override
+	public double getFuelUsageMultiplier()
+	{
+		return 0.9D;
+	}
 
-    @Override
-    public boolean canSpaceshipTierPass(int tier)
-    {
-        return tier >= 3;
-    }
+	@Override
+	public boolean canSpaceshipTierPass(int tier)
+	{
+		return tier >= 3;
+	}
 
 	@Override
 	public float getFallDamageModifier()
@@ -299,23 +293,23 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 		return 0.26F;
 	}
 
-    @Override
-    public float getSoundVolReductionAmount()
-    {
-        return 10.0F;
-    }
+	@Override
+	public float getSoundVolReductionAmount()
+	{
+		return 10.0F;
+	}
 
-    @Override
-    public CelestialBody getCelestialBody()
-    {
-        return PlutoCore.planetPluto;
-    }
+	@Override
+	public CelestialBody getCelestialBody()
+	{
+		return PlutoCore.planetPluto;
+	}
 
-    @Override
-    public boolean hasBreathableAtmosphere()
-    {
-        return false;
-    }
+	@Override
+	public boolean hasBreathableAtmosphere()
+	{
+		return false;
+	}
 
 	@Override
 	public float getThermalLevelModifier()

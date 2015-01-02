@@ -15,3 +15,7 @@ itemGroup.SpaceBlocks=4Space Блоки
 # Schematics
 
 # Entity
+
+# Other
+4update.failed.name=4Space проверка обновлений не удалось! Попытка снова в 15 секунд
+4update.success.name=4Space дистанционного версия найдено:

@@ -9,18 +9,18 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockBasicMercury extends ItemBlock
 {
 	private static final String[] types = new String[] {
-		"surfaceRock",
-		"subSurface",
-		"rock",
-		"cobblestone",
-		"iridium",
-		"meteor",
-		"tin",
-		"copper",
-		"gold",
-		"iridiumBlock",
-		"meteorBlock",
-		"dungeonBrick"
+			"surfaceRock",
+			"subSurface",
+			"rock",
+			"cobblestone",
+			"iridium",
+			"meteor",
+			"tin",
+			"copper",
+			"gold",
+			"iridiumBlock",
+			"meteorBlock",
+			"dungeonBrick"
 	};
 
 	public ItemBlockBasicMercury(Block par1)
@@ -45,12 +45,12 @@ public class ItemBlockBasicMercury extends ItemBlock
 	public String getUnlocalizedName(ItemStack itemstack)
 	{
 		int meta = itemstack.getItemDamage();
-		
+
 		if (meta < 0 || meta >= ItemBlockBasicMercury.types.length)
 		{
 			meta = 0;
 		}
-		
+
 		return super.getUnlocalizedName() + "." + ItemBlockBasicMercury.types[meta];
 	}
 }

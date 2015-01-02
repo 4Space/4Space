@@ -32,9 +32,12 @@ public class EuropaItems
 	{
 		EuropaCore.registerItem(europaWaterBucket);
 	}
-	
+
 	private static void registerFluidContainer()
 	{
-		FluidContainerRegistry.registerFluidContainer(EuropaBlocks.europaWaterFluid, new ItemStack(europaWaterBucket), new ItemStack(Items.bucket)); // TODO USE EUROPA BUCKET
+		FluidContainerRegistry.registerFluidContainer(EuropaBlocks.europaWaterFluid, new ItemStack(europaWaterBucket), new ItemStack(Items.bucket)); // TODO
+																																						// USE
+																																						// EUROPA
+																																						// BUCKET
 	}
 }

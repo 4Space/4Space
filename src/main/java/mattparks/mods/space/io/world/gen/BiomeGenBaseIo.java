@@ -19,7 +19,8 @@ public class BiomeGenBaseIo extends BiomeGenBase
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 5, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 3, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
-//		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedBlaze.class, 4, 1, 1));
+		// this.spawnableMonsterList.add(new
+		// SpawnListEntry(EntityEvolvedBlaze.class, 4, 1, 1));
 		this.rainfall = 0F;
 	}
 

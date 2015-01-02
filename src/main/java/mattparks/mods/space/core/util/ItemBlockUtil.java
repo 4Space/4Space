@@ -10,15 +10,15 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBlockUtil extends ItemBlock
 {
-    public ItemBlockUtil(Block block)
-    {
-        super(block);
-    }
+	public ItemBlockUtil(Block block)
+	{
+		super(block);
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
-        return ClientProxy.spaceItem;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public EnumRarity getRarity(ItemStack par1ItemStack)
+	{
+		return ClientProxy.spaceItem;
+	}
 }

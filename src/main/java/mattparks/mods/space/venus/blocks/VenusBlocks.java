@@ -5,6 +5,8 @@ import mattparks.mods.space.venus.VenusCore;
 import mattparks.mods.space.venus.itemblocks.ItemBlockBasicVenus;
 import mattparks.mods.space.venus.itemblocks.ItemBlockDecorVenus;
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class VenusBlocks
 {
@@ -24,7 +26,7 @@ public class VenusBlocks
 		VenusBlocks.venusianTNT = new BlockVenusianTNT("venusian_tnt");
 		VenusBlocks.vurnStone = new BlockVurnStone("vurn_stone");
 	}
-	
+
 	public static void setHarvestLevels()
 	{
 	}
@@ -38,10 +40,24 @@ public class VenusBlocks
 		VenusCore.registerBlock(VenusBlocks.evolvedBlazeEgg, ItemBlockUtil.class);
 		VenusCore.registerBlock(VenusBlocks.sulfurTorch, ItemBlockUtil.class);
 	}
-	
+
+	public static void oreDictRegistration()
+	{
+		OreDictionary.registerOre("oreSulfur", new ItemStack(VenusBlocks.venusBasicBlock, 1, 4));
+		OreDictionary.registerOre("oreUranium", new ItemStack(VenusBlocks.venusBasicBlock, 1, 5));
+		OreDictionary.registerOre("oreRedGem", new ItemStack(VenusBlocks.venusBasicBlock, 1, 6));
+		OreDictionary.registerOre("oreCrystal", new ItemStack(VenusBlocks.venusBasicBlock, 1, 7));
+		OreDictionary.registerOre("oreTin", new ItemStack(VenusBlocks.venusBasicBlock, 1, 8));
+		OreDictionary.registerOre("oreCopper", new ItemStack(VenusBlocks.venusBasicBlock, 1, 9));
+		OreDictionary.registerOre("oreIron", new ItemStack(VenusBlocks.venusBasicBlock, 1, 10));
+		OreDictionary.registerOre("oreCoal", new ItemStack(VenusBlocks.venusBasicBlock, 1, 11));
+	}
+
 	public static void init()
 	{
 		initBlocks();
+		setHarvestLevels();
 		registerBlocks();
+		oreDictRegistration();
 	}
 }
