@@ -9,13 +9,13 @@
 # BLOCKS
 
 # GUI
-itemGroup.SpaceItems=4Space товары
-itemGroup.SpaceBlocks=4Space Блоки
+itemGroup.SpaceItems=4Space: Предметы
+itemGroup.SpaceBlocks=4Space: Блоки
 
-# Schematics
+# SCHEMATICS
 
 # Entity
 
-# Other
-4update.failed.name=4Space проверка обновлений не удалось! Попытка снова в 15 секунд
-4update.success.name=4Space дистанционного версия найдено:
+# OTHER
+4update.failed.name=Проверка обновлений 4Space не удалась! Повторная проверка через 15 секунд
+4update.success.name=Новая версия 4Space найдена:

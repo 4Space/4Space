@@ -1,35 +1,35 @@
 # 4Space Io Language File = RUSSIA RUSSIAN
 
 # GENERAL ITEMS
-item.io_bucket.titaniumBucket.name=Titanium Ведро
-item.io_bucket.ioLavaBucket.name=серы Ведро
-item.io_bucket.liquidRedSulfurBucket.name=красный серы Ведро
-item.io_bucket.liquidOrangeSulfurBucket.name=оранжевый серы Ведро
-item.io_bucket.liquidYellowSulfurBucket.name=желтый серы Ведро
+item.io_bucket.titaniumBucket.name=Титановое ведро
+item.io_bucket.ioLavaBucket.name=Ведро серы
+item.io_bucket.liquidRedSulfurBucket.name=Ведро красной серы
+item.io_bucket.liquidOrangeSulfurBucket.name=Ведро оранжевой серы
+item.io_bucket.liquidYellowSulfurBucket.name=Ведро жёлтой серы
 
 # TOOLS
 
 # ARMOR
 
 # BLOCKS
-tile.io_basic.surface.name=Io поверхности камня
-tile.io_basic.subSurface.name=Io Sub-Surface камень
-tile.io_basic.stone.name=Io камень
-tile.io_basic.cobblestone.name=Io Булыжник
-tile.io_basic.sulfurOre.name=Io серной руды
-tile.io_basic.ashStone.name=Io Ash камень
-tile.io_basic.ashCobblestone.name=Io Ash Булыжник
-tile.io_basic.basalt.name=Io Базальт
-tile.io_basic.silicate.name=Io силикатный
-tile.io_basic.dungeonBrick.name=Io Dungeon Кирпич
-tile.magma_rock.magma.name=Io Magma
-tile.magma_rock.sulfur.name=Io Сера
+tile.io_basic.surface.name=Поверхностный камень Ио
+tile.io_basic.subSurface.name=Подповерхностный камень Ио
+tile.io_basic.stone.name=Камень Ио
+tile.io_basic.cobblestone.name=Булыжник Ио
+tile.io_basic.sulfurOre.name=Серная руда Ио
+tile.io_basic.ashStone.name=Пепельный камень Ио
+tile.io_basic.ashCobblestone.name=Пепельный булыжник Ио
+tile.io_basic.basalt.name=Базальт Ио
+tile.io_basic.silicate.name=Силикат Ио
+tile.io_basic.dungeonBrick.name=Кирпич сокровищницы Ио
+tile.magma_rock.magma.name=Магма Ио
+tile.magma_rock.sulfur.name=Сера Ио
 
 # GUI
 
 # PLANET
-moon.io=Io
+moon.io=Ио
 
-# Schematics
+# SCHEMATICS
 
 # ENTITIES
