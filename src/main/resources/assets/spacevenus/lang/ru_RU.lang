@@ -1,72 +1,75 @@
 # 4Space Venus Language File = RUSSIA RUSSIAN
 
 # GENERAL ITEMS
-item.ingotSulfur.name=серы слиток
-item.tier4HeavyDutyPlate.name=Heavy-Duty плиты
-item.redGem.name=красный-Gem
-item.redGemPlate.name=Red-Джем плиты
-item.sulfurDust.name=серы пыли
-item.sulfurPlate.name=серы плиты
-item.venusSulfurBattery.name=серы одноклеточных батареи
-item.venusUraniumBattery.name=урана одноклеточных батареи
-item.venusCrystal.name=Венера Кристалл
-item.venusPowerCrystal.name=Венера питания Кристалл
-item.venusRod.name=Венера штанга
-item.venusRodDust.name=Венера Род Пыль
-item.ingotUranium.name=урана слиток
-item.uraniumPlate.name=урана плиты
-item.sulfur_battery.name=серы батареи
-item.uranium_battery.name=урана батареи
+item.ingotSulfur.name=Серный слиток
+item.tier4HeavyDutyPlate.name=Сверхпрочное покрытие
+item.redGem.name=Красный драгоценный камень
+item.redGemPlate.name=Пластина из красного драгоценного камня
+item.sulfurDust.name=Серная пыль
+item.sulfurPlate.name=Серная пластина
+item.venusSulfurBattery.name=Серная ячейка аккумулятора
+item.venusUraniumBattery.name=Урановая ячейка аккумулятора
+item.venusCrystal.name=Кристалл Венеры
+item.venusPowerCrystal.name=Энергетический кристалл Венеры
+item.venusRod.name=Стержень Венеры
+item.venusRodDust.name=Пыль стержня Венеры
+item.ingotUranium.name=Урановый слиток
+item.uraniumPlate.name=Урановая пластина
+item.sulfur_battery.name=Серный аккумулятор
+item.uranium_battery.name=Урановый аккумулятор
+item.jetpackThruster.name=Двигатель реактивного ранца
+item.jetpackBody.name=Основа реактивного ранца
 
 # TOOLS
-item.gem_axe.name=красный-Джем топор
-item.gem_hoe.name=красный-Джем Hoe
-item.gem_pickaxe.name=красный-Джем кирку
-item.gem_spade.name=красный-Джем лопата
-item.gem_sword.name=красный-Джем Меч
-item.sulfur_axe.name=серы топор
-item.sulfur_hoe.name=серы Hoe
-item.sulfur_pickaxe.name=Сера Pickaxe
-item.sulfur_spade.name=серы лопата
-item.sulfur_sword.name=Сера Меч
+item.gem_axe.name=Топор из красного драгоценного камня
+item.gem_hoe.name=Мотыга из красного драгоценного камня
+item.gem_pickaxe.name=Кирка из красного драгоценного камня
+item.gem_spade.name=Лопата из красного драгоценного камня
+item.gem_sword.name=Меч из красного драгоценного камня
+item.sulfur_axe.name=Серный топор
+item.sulfur_hoe.name=Серная мотыга
+item.sulfur_pickaxe.name=Серная кирка
+item.sulfur_spade.name=Серная лопата
+item.sulfur_sword.name=Серный меч
 
 # ARMOR
-item.gem_boots.name=красный-Джем Сапоги
-item.gem_chestplate.name=красный-Джем Бригантина
-item.gem_helmet.name=красный-Джем шлем
-item.gem_leggings.name=красный-Джем Леггинсы
-item.sulfur_boots.name=Сера Сапоги
-item.sulfur_chestplate.name=серы Бригантина
-item.sulfur_helmet.name=серы шлем
-item.sulfur_leggings.name=Сера Леггинсы
+item.gem_boots.name=Ботинки из красного драгоценного камня
+item.gem_chestplate.name=Кираса из красного драгоценного камня
+item.gem_helmet.name=Шлем из красного драгоценного камня
+item.gem_leggings.name=Поножи из красного драгоценного камня
+item.sulfur_boots.name=Серный ботинки
+item.sulfur_chestplate.name=Серная кираса
+item.sulfur_helmet.name=Серный шлем
+item.sulfur_leggings.name=Серные поножи
+item.jetpack.name=Реактивный ранец
 
 # BLOCKS
-tile.venus_basic.surfaceRock.name=поверхности Венеры Рок
-tile.venus_basic.subSurface.name=Венера Sub-Surface Рок
-tile.venus_basic.rock.name=Венера Рок
-tile.venus_basic.cobblestone.name=Венера Булыжник
-tile.venus_basic.dungeonBrick.name=Венера Dungeon Кирпич
-tile.venus_basic.coalOre.name=Венера Уголь Руда
-tile.venus_basic.copperOre.name=Венера Медная руда
-tile.venus_basic.crystalOre.name=Венера Кристалл Руда
-tile.venus_basic.gemOre.name=Венера красных Gem руды
-tile.venus_basic.uraniumOre.name=Венера урановой руды
-tile.venus_basic.ironOre.name=Венера Iron Ore
-tile.venus_basic.sulfurOre.name=Венера серной руды
-tile.venus_basic.tinOre.name=Венера Оловянная руда
+tile.venus_basic.surfaceRock.name=Поверхностный камень Венеры
+tile.venus_basic.subSurface.name=Подповерхностный камень Венеры
+tile.venus_basic.rock.name=Камень Венеры
+tile.venus_basic.cobblestone.name=Булыжник Венеры
+tile.venus_basic.dungeonBrick.name=Кирпич сокровищницы Венеры
+tile.venus_basic.coalOre.name=Угольная руда Венеры
+tile.venus_basic.copperOre.name=Медная руда Венеры
+tile.venus_basic.crystalOre.name=Кристальная руда Венеры
+tile.venus_basic.gemOre.name=Руда красного драгоценного камня Венеры
+tile.venus_basic.uraniumOre.name=Урановая руда Венеры
+tile.venus_basic.ironOre.name=Железная руда Венеры
+tile.venus_basic.sulfurOre.name=Серная руда Венеры
+tile.venus_basic.tinOre.name=Оловянная руда Венеры
 tile.venus_decor.uraniumBlock.name=Блок урана
 tile.venus_decor.crystalBlock.name=Блок Кристалл
-tile.venus_decor.gemBlock.name=Блок красно-Gem
-tile.venus_decor.sulfurBlock.name=Блок серы
-tile.sulfur_torch.name=Сера факел
-tile.evolved_blaze_egg.name=Evolved Blaze Яйцо
-tile.vurn_stone.name=Vurn камень
-tile.venusian_tnt.name=венерианский TNT
+tile.venus_decor.gemBlock.name=Блок красного драгоценного камня
+tile.venus_decor.sulfurBlock.name=Серный блок
+tile.sulfur_torch.name=Серный факел
+tile.evolved_blaze_egg.name=Яйцо эволюционировавшего ифрита
+tile.vurn_stone.name=Вёрн-камень
+tile.venusian_tnt.name=Венерианский динамит
 
 # GUI
 
 # Schematics
 
 # Entity
-entity.SpaceCore.EvolvedBlaze.name=Evolved Blaze
-entity.SpaceCore.VenusianVillager.name=венерианский Селянин
+entity.SpaceCore.EvolvedBlaze.name=Эволюционировавший ифрит
+entity.SpaceCore.VenusianVillager.name=Венерианский житель

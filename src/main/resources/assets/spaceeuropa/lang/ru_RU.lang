@@ -1,26 +1,25 @@
 # 4Space Europa Language File = RUSSIA RUSSIAN
 
-# GENERAL ITEMS
-item.europa_water_bucket.name=Europa Water Bucket
+# ITEMS
+item.europa_water_bucket.name=Ведро воды Европы
 
 # TOOLS
 
 # ARMOR
 
 # BLOCKS
-tile.europa_block.surface.name=Europa поверхности льда
-tile.europa_block.hardenedIce.name=Europa закаленного льда
-tile.europa_ice.ice.name=Europa Ice
-tile.europa_ice.dirty.name=Europa грязного льда
-tile.europa_ice.dense.name=Europa Плотная Ice
-tile.packed_europa_ice.name=Europa Упакованные Ice
+tile.europa_block.surface.name=Поверхностный лёд Европы
+tile.europa_block.hardenedIce.name=Закалённый лёд Европы
+tile.europa_ice.ice.name=Лёд Европы
+tile.europa_ice.dirty.name=Грязный лёд Европы
+tile.europa_ice.dense.name=Густой лёд Европы
+tile.packed_europa_ice.name=Плотный лёд Европы
 
 # GUI
 
 # PLANET
-moon.europa=Europa
+moon.europa=Европа
 
-# Schematics
+# SCHEMATICS
 
-# Entity
-
+# ENTITIES

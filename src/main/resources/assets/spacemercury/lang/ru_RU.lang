@@ -1,58 +1,58 @@
 # 4Space Mercury Language File = RUSSIA RUSSIAN
 
 # GENERAL ITEMS
-item.iridiumCrystals.name=Iridium кристаллы
-item.iridiumPlate.name=Iridium пластины
-item.iridiumPlate.name=Iridium пластины
-item.plateHeavyT4.name=Heavy-Duty плиты
+item.iridiumCrystals.name=Иридиевые кристаллы
+item.iridiumPlate.name=Иридиевая пластина
+item.iridiumPlate.name=Иридиевая пластина
+item.plateHeavyT4.name=Сверхпрочное покрытие T4
 
 # TOOLS
-item.iridium_axe.name=Iridium Axe
-item.iridium_hoe.name=Iridium Мотыга
-item.iridium_pickaxe.name=Iridium кирку
-item.iridium_spade.name=Iridium лопата
-item.iridium_sword.name=Iridium Меч
+item.iridium_axe.name=Иридиевый топор
+item.iridium_hoe.name=Иридиевая мотыга
+item.iridium_pickaxe.name=Иридиевая кирка
+item.iridium_spade.name=Иридиевая лопата
+item.iridium_sword.name=Иридиевый меч
 
 # ARMOR
-item.iridium_boots.name=Iridium Сапоги
-item.iridium_chestplate.name=Iridium Бригантина
-item.iridium_helmet.name=Iridium шлем
-item.iridium_leggings.name=Iridium поножи
+item.iridium_boots.name=Иридиевые ботинки
+item.iridium_chestplate.name=Иридиевая кираса
+item.iridium_helmet.name=Иридиевый шлем
+item.iridium_leggings.name=Иридиевые поножи
 
 # BLOCKS
-tile.mercury_block.surfaceRock.name=Меркурий поверхности породы
-tile.mercury_block.subSurface.name=Меркурий Sub-Surface Рок
-tile.mercury_block.rock.name=Mercury Rock
-tile.mercury_block.cobblestone.name=Меркурий Булыжник
-tile.mercury_block.dungeonBrick.name=Меркурий Dungeon Кирпич
-tile.mercury_block.iridium.name=Меркурий Iridium руды
-tile.mercury_block.copper.name=Меркурий Медная руда
-tile.mercury_block.crystal.name=Меркурий Кристалл Руда
-tile.mercury_block.meteor.name=Меркурий Метеор руды
-tile.mercury_block.gold.name=Меркурий Золотая руда
-tile.mercury_block.tin.name=Меркурий Оловянная руда
-tile.mercury_block.iridiumBlock.name=Блок Iridium
-tile.mercury_block.meteorBlock.name=Блок Метеор
-tile.mercury_glowstone.white.name=Белый Mercury Glowstone
-tile.mercury_glowstone.orange.name=оранжевый Mercury Glowstone
-tile.mercury_glowstone.magenta.name=Magenta Mercury Glowstone
-tile.mercury_glowstone.light_blue.name=Light Blue Mercury Glowstone
-tile.mercury_glowstone.yellow.name=желтый Mercury Glowstone
-tile.mercury_glowstone.lime.name=Lime Mercury Glowstone
-tile.mercury_glowstone.pink.name=Розовый Mercury Glowstone
-tile.mercury_glowstone.gray.name=Серый Mercury Glowstone
-tile.mercury_glowstone.silver.name=Серебряный Меркурий Glowstone
-tile.mercury_glowstone.cyan.name=голубой Меркурий Glowstone
-tile.mercury_glowstone.purple.name=Фиолетовый Mercury Glowstone
-tile.mercury_glowstone.blue.name=Синий Меркурий Glowstone
-tile.mercury_glowstone.brown.name=коричневый Mercury Glowstone
-tile.mercury_glowstone.green.name=зеленый Mercury Glowstone
-tile.mercury_glowstone.red.name=Красная Ртуть Glowstone
-tile.mercury_glowstone.black.name=Black Mercury Glowstone
-tile.caravan_module.name=Караван Модуль
+tile.mercury_block.surfaceRock.name=Поверхностный камень Меркурия
+tile.mercury_block.subSurface.name=Подповерхностный камень Меркурия
+tile.mercury_block.rock.name=Камень Меркурия
+tile.mercury_block.cobblestone.name=Булыжник Меркурия
+tile.mercury_block.dungeonBrick.name=Кирпич сокровищницы Меркурия
+tile.mercury_block.iridium.name=Иридиевая руда Меркурия
+tile.mercury_block.copper.name=Медная руда Меркурия
+tile.mercury_block.crystal.name=Кристальная руда Меркурия
+tile.mercury_block.meteor.name=Метеоритная руда Меркурия
+tile.mercury_block.gold.name=Золотая руда Меркурия
+tile.mercury_block.tin.name=Оловянная руда Меркурия
+tile.mercury_block.iridiumBlock.name=Иридиевый блок
+tile.mercury_block.meteorBlock.name=Метеоритный блок
+tile.mercury_glowstone.white.name=Белый светящийся камень Меркурия
+tile.mercury_glowstone.orange.name=Оранжевый светящийся камень Меркурия
+tile.mercury_glowstone.magenta.name=Сиреневый светящийся камень Меркурия
+tile.mercury_glowstone.light_blue.name=Светло-синий светящийся камень Меркурия
+tile.mercury_glowstone.yellow.name=Жёлтый светящийся камень Меркурия
+tile.mercury_glowstone.lime.name=Лаймовый светящийся камень Меркурия
+tile.mercury_glowstone.pink.name=Розовый светящийся камень Меркурия
+tile.mercury_glowstone.gray.name=Серый светящийся камень Меркурия
+tile.mercury_glowstone.silver.name=Светло-серый светящийся камень Меркурия
+tile.mercury_glowstone.cyan.name=Бирюзовый светящийся камень Меркурия
+tile.mercury_glowstone.purple.name=Фиолетовый светящийся камень Меркурия
+tile.mercury_glowstone.blue.name=Синий светящийся камень Меркурия
+tile.mercury_glowstone.brown.name=Коричневый светящийся камень Меркурия
+tile.mercury_glowstone.green.name=Зелёный светящийся камень Меркурия
+tile.mercury_glowstone.red.name=Красный светящийся камень Меркурия
+tile.mercury_glowstone.black.name=Чёрный светящийся камень Меркурия
+tile.caravan_module.name=Модуль «Караван»
 
 # GUI
-planet.Mercury.name=Mercury
+planet.Mercury.name=Меркурий
 
 # Schematics
 

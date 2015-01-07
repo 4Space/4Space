@@ -1,44 +1,45 @@
 # 4Space Pluto Language File = RUSSIA RUSSIAN
 
 # GENERAL ITEMS
-item.blueGem.name=синий-Gem
-item.blueGemPlate.name=Blue-Джем плиты
-item.ununpetiumRaw.name=Raw Ununpetium
-item.ununpetiumPlate.name=Ununpetium плиты
-item.ingotFrozenIron.name=Frozen Iron слиток
-item.frozenIronPlate.name=Frozen железной пластиной
-item.plateHeavyT6.name=Heavy-Duty Plate T6
+item.blueGem.name=Синий драгоценный камень
+item.blueGemPlate.name=Пластина из синего драгоценного камня
+item.ununpetiumRaw.name=Необработанный унунпентий
+item.ununpetiumPlate.name=Пластина из унунпентия
+item.ingotFrozenIron.name=Слиток замороженного железа
+item.frozenIronPlate.name=Пластина из замороженного железа
+item.plateHeavyT6.name=Сверхпрочное покрытие T6
 
 # TOOLS
-item.blueGem_axe.name=синий-Джем топор
-item.blueGem_hoe.name=синий-Джем Hoe
-item.blueGem_pickaxe.name=синий-Джем кирку
-item.blueGem_spade.name=синий-Джем лопата
-item.blueGem_sword.name=синий-Джем Меч
+item.blueGem_axe.name=Топор из синего драгоценного камня
+item.blueGem_hoe.name=Мотыга из синего драгоценного камня
+item.blueGem_pickaxe.name=Кирка из синего драгоценного камня
+item.blueGem_spade.name=Лопата из синего драгоценного камня
+item.blueGem_sword.name=Меч из синего драгоценного камня
 
 # ARMOR
-item.blueGem_boots.name=синий-Джем Сапоги
-item.blueGem_chestplate.name=синий-Джем Бригантина
-item.blueGem_helmet.name=синий-Джем шлем
-item.blueGem_leggings.name=синий-Джем Леггинсы
+item.blueGem_boots.name=Ботинки из синего драгоценного камня
+item.blueGem_chestplate.name=Кираса из синего драгоценного камня
+item.blueGem_helmet.name=Шлем из синего драгоценного камня
+item.blueGem_leggings.name=Поножи из синего драгоценного камня
 
 # BLOCKS
-tile.pluto_block.surfaceRock.name=Плутон поверхности породы
-tile.pluto_block.subSurface.name=Плутон Sub-Surface Рок
-tile.pluto_block.rock.name=Плутон Рок
-tile.pluto_block.cobblestone.name=Плутон Булыжник
-tile.pluto_block.dungeonBrick.name=Плутон Dungeon Кирпич
-tile.pluto_block.blueGem.name=Плутон Blue-Джем руды
-tile.pluto_block.ununpentium.name=Плутон Унунпентий руды
-tile.pluto_block.frozenIron.name=Плутон Замороженные Руда
-tile.pluto_block.blueGemBlock.name=Блок Blue-Gem
-tile.pluto_block.frozenIronBlock.name=Блок Frozen Iron
-tile.pluto_block.ununpentiumBlock.name=Блок Унунпентий
+tile.pluto_block.surfaceRock.name=Поверхностный камень Плутона
+tile.pluto_block.subSurface.name=Подповерхностный камень Плутона
+tile.pluto_block.rock.name=Камень Плутона
+tile.pluto_block.cobblestone.name=Булыжник Плутона
+tile.pluto_block.dungeonBrick.name=Кирпич сокровищницы Плутона
+tile.pluto_block.blueGem.name=Руда синего драгоценного камня Плутона
+tile.pluto_block.ununpentium.name=Руда унунпентия Плутона
+tile.pluto_block.frozenIron.name=Руда замороженного железа Плутона
+tile.pluto_block.blueGemBlock.name=Блок синего драгоценного камня
+tile.pluto_block.frozenIronBlock.name=Блок замороженного железа
+tile.pluto_block.ununpentiumBlock.name=Блок унунпентия
 
 # GUI
-planet.Pluto.name=Плутон
+
+# PLANETS
+planet.pluto.name=Плутон
 
 # Schematics
 
 # Entity
-
