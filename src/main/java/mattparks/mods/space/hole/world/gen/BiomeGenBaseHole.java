@@ -9,7 +9,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenBaseHole extends BiomeGenBase
 {
-	public static final BiomeGenBase hole = new BiomeGenBaseHole(ConfigManagerVenus.idBiomeVenus).setBiomeName("Hole");
+	public static final BiomeGenBase hole = new BiomeGenBaseHole(ConfigManagerHole.idBiomeHole).setBiomeName("Hole");
 
 	public BiomeGenBaseHole(int var1)
 	{
