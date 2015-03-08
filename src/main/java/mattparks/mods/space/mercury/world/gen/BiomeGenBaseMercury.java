@@ -6,12 +6,10 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class BiomeGenBaseMercury extends BiomeGenBase
-{
+public class BiomeGenBaseMercury extends BiomeGenBase {
 	public static final BiomeGenBase mercury = new BiomeGenBaseMercury(ConfigManagerMercury.idBiomeMercury).setBiomeName("Mercury");
 
-	public BiomeGenBaseMercury(int var1)
-	{
+	public BiomeGenBaseMercury(int var1) {
 		super(var1);
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
@@ -23,14 +21,12 @@ public class BiomeGenBaseMercury extends BiomeGenBase
 	}
 
 	@Override
-	public BiomeGenBaseMercury setColor(int var1)
-	{
+	public BiomeGenBaseMercury setColor(int var1) {
 		return (BiomeGenBaseMercury) super.setColor(var1);
 	}
 
 	@Override
-	public float getSpawningChance()
-	{
+	public float getSpawningChance() {
 		return 0.01F;
 	}
 }

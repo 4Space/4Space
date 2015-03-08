@@ -9,10 +9,8 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 
-public class StructureVillagePiecesHole
-{
-	public static ArrayList<StructureVillagePieceWeightHole> getStructureVillageWeightedPieceList(Random par0Random, int par1)
-	{
+public class StructureVillagePiecesHole {
+	public static ArrayList<StructureVillagePieceWeightHole> getStructureVillageWeightedPieceList(Random par0Random, int par1) {
 		final ArrayList<StructureVillagePieceWeightHole> var2 = new ArrayList<StructureVillagePieceWeightHole>();
 		var2.add(new StructureVillagePieceWeightHole(StructureComponentHoleVillageWoodHut.class, 5, MathHelper.getRandomIntegerInRange(par0Random, 2 + par1, 5 + par1 * 3)));
 		var2.add(new StructureVillagePieceWeightHole(StructureComponentHoleVillageField.class, 5, MathHelper.getRandomIntegerInRange(par0Random, 3 + par1, 5 + par1)));
@@ -20,10 +18,8 @@ public class StructureVillagePiecesHole
 
 		final Iterator<StructureVillagePieceWeightHole> var3 = var2.iterator();
 
-		while (var3.hasNext())
-		{
-			if (var3.next().villagePiecesLimit == 0)
-			{
+		while (var3.hasNext()) {
+			if (var3.next().villagePiecesLimit == 0) {
 				var3.remove();
 			}
 		}
@@ -31,18 +27,15 @@ public class StructureVillagePiecesHole
 		return var2;
 	}
 
-	private static int func_75079_a(List<StructureVillagePieceWeightHole> par0List)
-	{
+	private static int func_75079_a(List<StructureVillagePieceWeightHole> par0List) {
 		boolean var1 = false;
 		int var2 = 0;
 		StructureVillagePieceWeightHole var4;
 
-		for (final Iterator<StructureVillagePieceWeightHole> var3 = par0List.iterator(); var3.hasNext(); var2 += var4.villagePieceWeight)
-		{
+		for (final Iterator<StructureVillagePieceWeightHole> var3 = par0List.iterator(); var3.hasNext(); var2 += var4.villagePieceWeight) {
 			var4 = var3.next();
 
-			if (var4.villagePiecesLimit > 0 && var4.villagePiecesSpawned < var4.villagePiecesLimit)
-			{
+			if (var4.villagePiecesLimit > 0 && var4.villagePiecesSpawned < var4.villagePiecesLimit) {
 				var1 = true;
 			}
 		}
@@ -50,66 +43,50 @@ public class StructureVillagePiecesHole
 		return var1 ? var2 : -1;
 	}
 
-	private static StructureComponentHoleVillage func_75083_a(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, StructureVillagePieceWeightHole par1StructureVillagePieceWeight, List<StructureComponent> par2List, Random par3Random, int par4, int par5, int par6, int par7, int par8)
-	{
+	private static StructureComponentHoleVillage func_75083_a(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, StructureVillagePieceWeightHole par1StructureVillagePieceWeight, List<StructureComponent> par2List, Random par3Random, int par4, int par5, int par6, int par7, int par8) {
 		final Class<?> var9 = par1StructureVillagePieceWeight.villagePieceClass;
 		Object var10 = null;
 
-		if (var9 == StructureComponentHoleVillageWoodHut.class)
-		{
+		if (var9 == StructureComponentHoleVillageWoodHut.class) {
 			var10 = StructureComponentHoleVillageWoodHut.func_74908_a(par0ComponentVillageStartPiece, par2List, par3Random, par4, par5, par6, par7, par8);
-		}
-		else if (var9 == StructureComponentHoleVillageField.class)
-		{
+		} else if (var9 == StructureComponentHoleVillageField.class) {
 			var10 = StructureComponentHoleVillageField.func_74900_a(par0ComponentVillageStartPiece, par2List, par3Random, par4, par5, par6, par7, par8);
-		}
-		else if (var9 == StructureComponentHoleVillageHouse.class)
-		{
+		} else if (var9 == StructureComponentHoleVillageHouse.class) {
 			var10 = StructureComponentHoleVillageHouse.func_74921_a(par0ComponentVillageStartPiece, par2List, par3Random, par4, par5, par6, par7, par8);
 		}
 
 		return (StructureComponentHoleVillage) var10;
 	}
 
-	private static StructureComponentHoleVillage getNextVillageComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
+	private static StructureComponentHoleVillage getNextVillageComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7) {
 		final int var8 = StructureVillagePiecesHole.func_75079_a(par0ComponentVillageStartPiece.structureVillageWeightedPieceList);
 
-		if (var8 <= 0)
-		{
+		if (var8 <= 0) {
 			return null;
-		}
-		else
-		{
+		} else {
 			int var9 = 0;
 
-			while (var9 < 5)
-			{
+			while (var9 < 5) {
 				++var9;
 				int var10 = par2Random.nextInt(var8);
 				final Iterator<StructureVillagePieceWeightHole> var11 = par0ComponentVillageStartPiece.structureVillageWeightedPieceList.iterator();
 
-				while (var11.hasNext())
-				{
+				while (var11.hasNext()) {
 					final StructureVillagePieceWeightHole var12 = var11.next();
 					var10 -= var12.villagePieceWeight;
 
-					if (var10 < 0)
-					{
-						if (!var12.canSpawnMoreVillagePiecesOfType(par7) || var12 == par0ComponentVillageStartPiece.structVillagePieceWeight && par0ComponentVillageStartPiece.structureVillageWeightedPieceList.size() > 1)
-						{
+					if (var10 < 0) {
+						if (!var12.canSpawnMoreVillagePiecesOfType(par7) || var12 == par0ComponentVillageStartPiece.structVillagePieceWeight && par0ComponentVillageStartPiece.structureVillageWeightedPieceList.size() > 1) {
 							break;
 						}
 
 						final StructureComponentHoleVillage var13 = StructureVillagePiecesHole.func_75083_a(par0ComponentVillageStartPiece, var12, par1List, par2Random, par3, par4, par5, par6, par7);
 
-						if (var13 != null)
-						{
+						if (var13 != null) {
 							++var12.villagePiecesSpawned;
 							par0ComponentVillageStartPiece.structVillagePieceWeight = var12;
 
-							if (!var12.canSpawnMoreVillagePieces())
-							{
+							if (!var12.canSpawnMoreVillagePieces()) {
 								par0ComponentVillageStartPiece.structureVillageWeightedPieceList.remove(var12);
 							}
 
@@ -121,58 +98,42 @@ public class StructureVillagePiecesHole
 
 			final StructureBoundingBox var14 = StructureComponentHoleVillageTorch.func_74904_a(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6);
 
-			if (var14 != null)
-			{
+			if (var14 != null) {
 				return new StructureComponentHoleVillageTorch(par0ComponentVillageStartPiece, par7, par2Random, var14, par6);
-			}
-			else
-			{
+			} else {
 				return null;
 			}
 		}
 	}
 
 	/**
-	 * attempts to find a next Structure Component to be spawned, private
-	 * Village function
+	 * attempts to find a next Structure Component to be spawned, private Village function
 	 */
-	private static StructureComponent getNextVillageStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
-		if (par7 > 50)
-		{
+	private static StructureComponent getNextVillageStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7) {
+		if (par7 > 50) {
 			return null;
-		}
-		else if (Math.abs(par3 - par0ComponentVillageStartPiece.getBoundingBox().minX) <= 112 && Math.abs(par5 - par0ComponentVillageStartPiece.getBoundingBox().minZ) <= 112)
-		{
+		} else if (Math.abs(par3 - par0ComponentVillageStartPiece.getBoundingBox().minX) <= 112 && Math.abs(par5 - par0ComponentVillageStartPiece.getBoundingBox().minZ) <= 112) {
 			final StructureComponentHoleVillage var8 = StructureVillagePiecesHole.getNextVillageComponent(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7 + 1);
 
-			if (var8 != null)
-			{
+			if (var8 != null) {
 				par1List.add(var8);
 				par0ComponentVillageStartPiece.field_74932_i.add(var8);
 				return var8;
 			}
 
 			return null;
-		}
-		else
-		{
+		} else {
 			return null;
 		}
 	}
 
-	private static StructureComponent getNextComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
-		if (par7 > 3 + par0ComponentVillageStartPiece.terrainType)
-		{
+	private static StructureComponent getNextComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7) {
+		if (par7 > 3 + par0ComponentVillageStartPiece.terrainType) {
 			return null;
-		}
-		else if (Math.abs(par3 - par0ComponentVillageStartPiece.getBoundingBox().minX) <= 112 && Math.abs(par5 - par0ComponentVillageStartPiece.getBoundingBox().minZ) <= 112)
-		{
+		} else if (Math.abs(par3 - par0ComponentVillageStartPiece.getBoundingBox().minX) <= 112 && Math.abs(par5 - par0ComponentVillageStartPiece.getBoundingBox().minZ) <= 112) {
 			final StructureBoundingBox var8 = StructureComponentHoleVillagePathGen.func_74933_a(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6);
 
-			if (var8 != null && var8.minY > 10)
-			{
+			if (var8 != null && var8.minY > 10) {
 				final StructureComponentHoleVillagePathGen var9 = new StructureComponentHoleVillagePathGen(par0ComponentVillageStartPiece, par7, par2Random, var8, par6);
 
 				par1List.add(var9);
@@ -181,9 +142,7 @@ public class StructureVillagePiecesHole
 			}
 
 			return null;
-		}
-		else
-		{
+		} else {
 			return null;
 		}
 	}
@@ -191,13 +150,11 @@ public class StructureVillagePiecesHole
 	/**
 	 * attempts to find a next Structure Component to be spawned
 	 */
-	static StructureComponent getNextStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
+	static StructureComponent getNextStructureComponent(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7) {
 		return StructureVillagePiecesHole.getNextVillageStructureComponent(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7);
 	}
 
-	static StructureComponent getNextStructureComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7)
-	{
+	static StructureComponent getNextStructureComponentVillagePath(StructureComponentHoleVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7) {
 		return StructureVillagePiecesHole.getNextComponentVillagePath(par0ComponentVillageStartPiece, par1List, par2Random, par3, par4, par5, par6, par7);
 	}
 }

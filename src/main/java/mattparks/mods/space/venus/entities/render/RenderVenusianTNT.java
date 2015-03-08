@@ -10,32 +10,26 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-public class RenderVenusianTNT extends Render
-{
+public class RenderVenusianTNT extends Render {
 	private final RenderBlocks blockRenderer = new RenderBlocks();
 
-	public RenderVenusianTNT()
-	{
+	public RenderVenusianTNT() {
 		this.shadowSize = 0.5F;
 	}
 
-	public void doRender(EntityVenusianTNT tnt, double x, double y, double z, float par5, float par6)
-	{
+	public void doRender(EntityVenusianTNT tnt, double x, double y, double z, float par5, float par6) {
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) x, (float) y, (float) z);
 		float var10;
 
-		if (tnt.fuse - par6 + 1.0F < 10.0F)
-		{
+		if (tnt.fuse - par6 + 1.0F < 10.0F) {
 			var10 = 1.0F - (tnt.fuse - par6 + 1.0F) / 10.0F;
 
-			if (var10 < 0.0F)
-			{
+			if (var10 < 0.0F) {
 				var10 = 0.0F;
 			}
 
-			if (var10 > 1.0F)
-			{
+			if (var10 > 1.0F) {
 				var10 = 1.0F;
 			}
 			var10 *= var10;
@@ -48,8 +42,7 @@ public class RenderVenusianTNT extends Render
 		this.bindEntityTexture(tnt);
 		this.blockRenderer.renderBlockAsItem(VenusBlocks.venusianTNT, 0, tnt.getBrightness(par6));
 
-		if (tnt.fuse / 5 % 2 == 0)
-		{
+		if (tnt.fuse / 5 % 2 == 0) {
 			GL11.glDisable(GL11.GL_TEXTURE_2D);
 			GL11.glDisable(GL11.GL_LIGHTING);
 			GL11.glEnable(GL11.GL_BLEND);
@@ -64,20 +57,17 @@ public class RenderVenusianTNT extends Render
 		GL11.glPopMatrix();
 	}
 
-	protected ResourceLocation getEntityTexture(EntityVenusianTNT tnt)
-	{
+	protected ResourceLocation getEntityTexture(EntityVenusianTNT tnt) {
 		return TextureMap.locationBlocksTexture;
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity tnt)
-	{
+	protected ResourceLocation getEntityTexture(Entity tnt) {
 		return this.getEntityTexture((EntityVenusianTNT) tnt);
 	}
 
 	@Override
-	public void doRender(Entity entity, double x, double y, double z, float par5, float par6)
-	{
+	public void doRender(Entity entity, double x, double y, double z, float par5, float par6) {
 		this.doRender((EntityVenusianTNT) entity, x, y, z, par5, par6);
 	}
 }

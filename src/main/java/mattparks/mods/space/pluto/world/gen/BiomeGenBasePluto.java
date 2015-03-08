@@ -6,12 +6,10 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class BiomeGenBasePluto extends BiomeGenBase
-{
+public class BiomeGenBasePluto extends BiomeGenBase {
 	public static final BiomeGenBase pluto = new BiomeGenBasePluto(ConfigManagerPluto.idBiomePluto).setBiomeName("Pluto");
 
-	public BiomeGenBasePluto(int var1)
-	{
+	public BiomeGenBasePluto(int var1) {
 		super(var1);
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
@@ -23,14 +21,12 @@ public class BiomeGenBasePluto extends BiomeGenBase
 	}
 
 	@Override
-	public BiomeGenBasePluto setColor(int var1)
-	{
+	public BiomeGenBasePluto setColor(int var1) {
 		return (BiomeGenBasePluto) super.setColor(var1);
 	}
 
 	@Override
-	public float getSpawningChance()
-	{
+	public float getSpawningChance() {
 		return 0.01F;
 	}
 }

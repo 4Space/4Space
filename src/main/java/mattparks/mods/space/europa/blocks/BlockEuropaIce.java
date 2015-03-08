@@ -25,12 +25,10 @@ import net.minecraftforge.event.ForgeEventFactory;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockEuropaIce extends BlockBreakable
-{
+public class BlockEuropaIce extends BlockBreakable {
 	private IIcon[] iceIcon = new IIcon[3];
 
-	public BlockEuropaIce(String name)
-	{
+	public BlockEuropaIce(String name) {
 		super("", Material.ice, false);
 		this.slipperiness = 0.98F;
 		this.setTickRandomly(true);
@@ -40,72 +38,58 @@ public class BlockEuropaIce extends BlockBreakable
 	}
 
 	@Override
-	public CreativeTabs getCreativeTabToDisplayOn()
-	{
+	public CreativeTabs getCreativeTabToDisplayOn() {
 		return SpaceCore.spaceBlocksTab;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public int getRenderBlockPass()
-	{
+	public int getRenderBlockPass() {
 		return 1;
 	}
 
 	@Override
-	public IIcon getIcon(int side, int meta)
-	{
+	public IIcon getIcon(int side, int meta) {
 		return this.iceIcon[meta];
 	}
 
 	@Override
-	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list)
-	{
-		for (int i = 0; i < 3; ++i)
-		{
+	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
+		for (int i = 0; i < 3; ++i) {
 			list.add(new ItemStack(this, 1, i));
 		}
 	}
 
 	@Override
-	public int damageDropped(int meta)
-	{
+	public int damageDropped(int meta) {
 		return meta;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side)
-	{
+	public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side) {
 		return super.shouldSideBeRendered(world, x, y, z, 1 - side);
 	}
 
 	@Override
-	public void harvestBlock(World world, EntityPlayer player, int x, int y, int z, int meta)
-	{
+	public void harvestBlock(World world, EntityPlayer player, int x, int y, int z, int meta) {
 		player.addStat(StatList.mineBlockStatArray[Block.getIdFromBlock(this)], 1);
 		player.addExhaustion(0.025F);
 
-		if (this.canSilkHarvest(world, player, x, y, z, meta) && EnchantmentHelper.getSilkTouchModifier(player))
-		{
+		if (this.canSilkHarvest(world, player, x, y, z, meta) && EnchantmentHelper.getSilkTouchModifier(player)) {
 			final ArrayList<ItemStack> items = new ArrayList<ItemStack>();
 			final ItemStack itemstack = this.createStackedBlock(meta);
 
-			if (itemstack != null)
-			{
+			if (itemstack != null) {
 				items.add(itemstack);
 			}
 
 			ForgeEventFactory.fireBlockHarvesting(items, world, this, x, y, z, meta, 0, 1.0f, true, player);
-			for (final ItemStack is : items)
-			{
+			for (final ItemStack is : items) {
 				this.dropBlockAsItem(world, x, y, z, is);
 			}
-		}
-		else
-		{
-			if (world.provider.isHellWorld)
-			{
+		} else {
+			if (world.provider.isHellWorld) {
 				world.setBlockToAir(x, y, z);
 				return;
 			}
@@ -116,26 +100,21 @@ public class BlockEuropaIce extends BlockBreakable
 			this.harvesters.set(null);
 			final Material material = world.getBlock(x, y - 1, z).getMaterial();
 
-			if (material.blocksMovement() || material.isLiquid())
-			{
+			if (material.blocksMovement() || material.isLiquid()) {
 				world.setBlock(x, y, z, EuropaBlocks.europaWaterFluidBlock);
 			}
 		}
 	}
 
 	@Override
-	public int quantityDropped(Random rand)
-	{
+	public int quantityDropped(Random rand) {
 		return 0;
 	}
 
 	@Override
-	public void updateTick(World world, int x, int y, int z, Random rand)
-	{
-		if (world.getSavedLightValue(EnumSkyBlock.Block, x, y, z) > 11 - this.getLightOpacity())
-		{
-			if (world.provider.isHellWorld)
-			{
+	public void updateTick(World world, int x, int y, int z, Random rand) {
+		if (world.getSavedLightValue(EnumSkyBlock.Block, x, y, z) > 11 - this.getLightOpacity()) {
+			if (world.provider.isHellWorld) {
 				world.setBlockToAir(x, y, z);
 				return;
 			}
@@ -145,26 +124,22 @@ public class BlockEuropaIce extends BlockBreakable
 	}
 
 	@Override
-	public int getMobilityFlag()
-	{
+	public int getMobilityFlag() {
 		return 0;
 	}
 
-	public MapColor getMapColor(int meta)
-	{
-		switch (meta)
-		{
-			case 0:
-				return MapColor.blueColor;
-			default:
-				return MapColor.blueColor;
+	public MapColor getMapColor(int meta) {
+		switch (meta) {
+		case 0:
+			return MapColor.blueColor;
+		default:
+			return MapColor.blueColor;
 		}
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister)
-	{
+	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.iceIcon[0] = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "europaIce");
 		this.iceIcon[1] = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "dirtyEuropaIce");
 		this.iceIcon[2] = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "denseEuropaIce");

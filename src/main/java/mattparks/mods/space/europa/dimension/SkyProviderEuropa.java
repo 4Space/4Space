@@ -19,8 +19,7 @@ import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.FMLClientHandler;
 
-public class SkyProviderEuropa extends IRenderHandler
-{
+public class SkyProviderEuropa extends IRenderHandler {
 	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
 	private static final ResourceLocation jupiterTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/jupiter.png");
 
@@ -30,8 +29,7 @@ public class SkyProviderEuropa extends IRenderHandler
 
 	private float sunSize;
 
-	public SkyProviderEuropa(IGalacticraftWorldProvider asteroidsProvider)
-	{
+	public SkyProviderEuropa(IGalacticraftWorldProvider asteroidsProvider) {
 		this.sunSize = 17.5F * asteroidsProvider.getSolarSize();
 
 		GL11.glPushMatrix();
@@ -46,10 +44,8 @@ public class SkyProviderEuropa extends IRenderHandler
 		final int i = 256 / byte2 + 2;
 		float f = 16F;
 
-		for (int j = -byte2 * i; j <= byte2 * i; j += byte2)
-		{
-			for (int l = -byte2 * i; l <= byte2 * i; l += byte2)
-			{
+		for (int j = -byte2 * i; j <= byte2 * i; j += byte2) {
+			for (int l = -byte2 * i; l <= byte2 * i; l += byte2) {
 				tessellator.startDrawingQuads();
 				tessellator.addVertex(j + 0, f, l + 0);
 				tessellator.addVertex(j + byte2, f, l + 0);
@@ -65,10 +61,8 @@ public class SkyProviderEuropa extends IRenderHandler
 		f = -16F;
 		tessellator.startDrawingQuads();
 
-		for (int k = -byte2 * i; k <= byte2 * i; k += byte2)
-		{
-			for (int i1 = -byte2 * i; i1 <= byte2 * i; i1 += byte2)
-			{
+		for (int k = -byte2 * i; k <= byte2 * i; k += byte2) {
+			for (int i1 = -byte2 * i; i1 <= byte2 * i; i1 += byte2) {
 				tessellator.addVertex(k + byte2, f, i1 + 0);
 				tessellator.addVertex(k + 0, f, i1 + 0);
 				tessellator.addVertex(k + 0, f, i1 + byte2);
@@ -81,12 +75,10 @@ public class SkyProviderEuropa extends IRenderHandler
 	}
 
 	@Override
-	public void render(float partialTicks, WorldClient world, Minecraft mc)
-	{
+	public void render(float partialTicks, WorldClient world, Minecraft mc) {
 		WorldProviderEuropa gcProvider = null;
 
-		if (world.provider instanceof WorldProviderEuropa)
-		{
+		if (world.provider instanceof WorldProviderEuropa) {
 			gcProvider = (WorldProviderEuropa) world.provider;
 		}
 
@@ -108,13 +100,11 @@ public class SkyProviderEuropa extends IRenderHandler
 
 		float var20 = 0;
 
-		if (gcProvider != null)
-		{
+		if (gcProvider != null) {
 			var20 = gcProvider.getStarBrightness(partialTicks);
 		}
 
-		if (var20 > 0.0F)
-		{
+		if (var20 > 0.0F) {
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, var20);
 			GL11.glCallList(this.starGLCallList);
 		}
@@ -170,8 +160,7 @@ public class SkyProviderEuropa extends IRenderHandler
 		GL11.glColor3f(0.0F, 0.0F, 0.0F);
 		final double var25 = mc.thePlayer.getPosition(partialTicks).yCoord - world.getHorizon();
 
-		if (var25 < 0.0D)
-		{
+		if (var25 < 0.0D) {
 			GL11.glPushMatrix();
 			GL11.glTranslatef(0.0F, 12.0F, 0.0F);
 			GL11.glCallList(this.glSkyList2);
@@ -214,22 +203,19 @@ public class SkyProviderEuropa extends IRenderHandler
 		GL11.glDepthMask(true);
 	}
 
-	private void renderStars()
-	{
+	private void renderStars() {
 		final Random var1 = new Random(10842L);
 		final Tessellator var2 = Tessellator.instance;
 		var2.startDrawingQuads();
 
-		for (int var3 = 0; var3 < (ConfigManagerCore.moreStars ? 20000 : 6000); ++var3)
-		{
+		for (int var3 = 0; var3 < (ConfigManagerCore.moreStars ? 20000 : 6000); ++var3) {
 			double var4 = var1.nextFloat() * 2.0F - 1.0F;
 			double var6 = var1.nextFloat() * 2.0F - 1.0F;
 			double var8 = var1.nextFloat() * 2.0F - 1.0F;
 			final double var10 = 0.15F + var1.nextFloat() * 0.1F;
 			double var12 = var4 * var4 + var6 * var6 + var8 * var8;
 
-			if (var12 < 1.0D && var12 > 0.01D)
-			{
+			if (var12 < 1.0D && var12 > 0.01D) {
 				var12 = 1.0D / Math.sqrt(var12);
 				var4 *= var12;
 				var6 *= var12;
@@ -247,8 +233,7 @@ public class SkyProviderEuropa extends IRenderHandler
 				final double var34 = Math.sin(var32);
 				final double var36 = Math.cos(var32);
 
-				for (int var38 = 0; var38 < 4; ++var38)
-				{
+				for (int var38 = 0; var38 < 4; ++var38) {
 					final double var39 = 0.0D;
 					final double var41 = ((var38 & 2) - 1) * var10;
 					final double var43 = ((var38 + 1 & 2) - 1) * var10;
@@ -266,23 +251,19 @@ public class SkyProviderEuropa extends IRenderHandler
 		var2.draw();
 	}
 
-	private Vec3 getCustomSkyColor()
-	{
+	private Vec3 getCustomSkyColor() {
 		return Vec3.createVectorHelper(0.26796875D, 0.1796875D, 0.0D);
 	}
 
-	public float getSkyBrightness(float par1)
-	{
+	public float getSkyBrightness(float par1) {
 		final float var2 = FMLClientHandler.instance().getClient().theWorld.getCelestialAngle(par1);
 		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-		if (var3 < 0.0F)
-		{
+		if (var3 < 0.0F) {
 			var3 = 0.0F;
 		}
 
-		if (var3 > 1.0F)
-		{
+		if (var3 > 1.0F) {
 			var3 = 1.0F;
 		}
 

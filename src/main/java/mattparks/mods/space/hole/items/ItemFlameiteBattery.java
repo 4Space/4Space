@@ -12,42 +12,35 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemFlameiteBattery extends ItemElectricBase implements IItemElectric
-{
-	public ItemFlameiteBattery(String name)
-	{
+public class ItemFlameiteBattery extends ItemElectricBase implements IItemElectric {
+	public ItemFlameiteBattery(String name) {
 		super();
 		this.setUnlocalizedName(name);
 	}
 
 	@Override
-	public CreativeTabs getCreativeTab()
-	{
+	public CreativeTabs getCreativeTab() {
 		return SpaceCore.spaceItemsTab;
 	}
 
 	@Override
-	public EnumRarity getRarity(ItemStack par1ItemStack)
-	{
+	public EnumRarity getRarity(ItemStack par1ItemStack) {
 		return ClientProxy.spaceItem;
 	}
 
 	@Override
-	public float getMaxElectricityStored(ItemStack itemStack)
-	{
+	public float getMaxElectricityStored(ItemStack itemStack) {
 		return 19200;
 	}
 
 	@Override
-	public int getTierGC(ItemStack itemStack)
-	{
+	public int getTierGC(ItemStack itemStack) {
 		return 3;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister par1IconRegister)
-	{
+	public void registerIcons(IIconRegister par1IconRegister) {
 		this.itemIcon = par1IconRegister.registerIcon(HoleCore.TEXTURE_PREFIX + "flameiteBattery");
 	}
 }

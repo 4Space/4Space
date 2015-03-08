@@ -26,13 +26,11 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityMakianVillager extends EntityAgeable implements IEntityBreathable
-{
+public class EntityMakianVillager extends EntityAgeable implements IEntityBreathable {
 	private int randomTickDivider;
 	private Village villageObj;
 
-	public EntityMakianVillager(World par1World)
-	{
+	public EntityMakianVillager(World par1World) {
 		super(par1World);
 		this.randomTickDivider = 0;
 		this.villageObj = null;
@@ -51,48 +49,40 @@ public class EntityMakianVillager extends EntityAgeable implements IEntityBreath
 	}
 
 	@Override
-	protected void applyEntityAttributes()
-	{
+	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
 	}
 
 	@Override
-	public boolean canBreath()
-	{
+	public boolean canBreath() {
 		return true;
 	}
 
 	@Override
-	protected boolean canDespawn()
-	{
+	protected boolean canDespawn() {
 		return false;
 	}
 
 	@Override
-	public EntityAgeable createChild(EntityAgeable par1EntityAgeable)
-	{
+	public EntityAgeable createChild(EntityAgeable par1EntityAgeable) {
 		return this.func_90012_b(par1EntityAgeable);
 	}
 
 	@Override
-	protected void entityInit()
-	{
+	protected void entityInit() {
 		super.entityInit();
 		this.dataWatcher.addObject(16, Integer.valueOf(0));
 	}
 
-	public EntityMakianVillager func_90012_b(EntityAgeable par1EntityAgeable)
-	{
+	public EntityMakianVillager func_90012_b(EntityAgeable par1EntityAgeable) {
 		final EntityMakianVillager entityvillager = new EntityMakianVillager(this.worldObj);
 		return entityvillager;
 	}
 
 	@SideOnly(Side.CLIENT)
-	private void generateRandomParticles(String par1Str)
-	{
-		for (int i = 0; i < 5; ++i)
-		{
+	private void generateRandomParticles(String par1Str) {
+		for (int i = 0; i < 5; ++i) {
 			final double d0 = this.rand.nextGaussian() * 0.02D;
 			final double d1 = this.rand.nextGaussian() * 0.02D;
 			final double d2 = this.rand.nextGaussian() * 0.02D;
@@ -101,75 +91,54 @@ public class EntityMakianVillager extends EntityAgeable implements IEntityBreath
 	}
 
 	@Override
-	protected String getLivingSound()
-	{
+	protected String getLivingSound() {
 		return "mob.villager.idle";
 	}
 
 	@Override
-	protected String getHurtSound()
-	{
+	protected String getHurtSound() {
 		return "mob.villager.hit";
 	}
 
 	@Override
-	protected String getDeathSound()
-	{
+	protected String getDeathSound() {
 		return "mob.villager.death";
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void handleHealthUpdate(byte par1)
-	{
-		if (par1 == 12)
-		{
+	public void handleHealthUpdate(byte par1) {
+		if (par1 == 12) {
 			this.generateRandomParticles("heart");
-		}
-		else if (par1 == 13)
-		{
+		} else if (par1 == 13) {
 			this.generateRandomParticles("angryVillager");
-		}
-		else if (par1 == 14)
-		{
+		} else if (par1 == 14) {
 			this.generateRandomParticles("happyVillager");
-		}
-		else
-		{
+		} else {
 			super.handleHealthUpdate(par1);
 		}
 	}
 
 	@Override
-	public boolean isAIEnabled()
-	{
+	public boolean isAIEnabled() {
 		return true;
 	}
 
 	@Override
-	public void onDeath(DamageSource par1DamageSource)
-	{
-		if (this.villageObj != null)
-		{
+	public void onDeath(DamageSource par1DamageSource) {
+		if (this.villageObj != null) {
 			final Entity entity = par1DamageSource.getEntity();
 
-			if (entity != null)
-			{
-				if (entity instanceof EntityPlayer)
-				{
+			if (entity != null) {
+				if (entity instanceof EntityPlayer) {
 					this.villageObj.setReputationForPlayer(((EntityPlayer) entity).getCommandSenderName(), -2);
-				}
-				else if (entity instanceof IMob)
-				{
+				} else if (entity instanceof IMob) {
 					this.villageObj.endMatingSeason();
 				}
-			}
-			else if (entity == null)
-			{
+			} else if (entity == null) {
 				final EntityPlayer entityplayer = this.worldObj.getClosestPlayerToEntity(this, 16.0D);
 
-				if (entityplayer != null)
-				{
+				if (entityplayer != null) {
 					this.villageObj.endMatingSeason();
 				}
 			}
@@ -178,33 +147,27 @@ public class EntityMakianVillager extends EntityAgeable implements IEntityBreath
 	}
 
 	@Override
-	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
-	{
+	public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {
 		super.readEntityFromNBT(par1NBTTagCompound);
 	}
 
 	@Override
-	public void setRevengeTarget(EntityLivingBase par1EntityLiving)
-	{
+	public void setRevengeTarget(EntityLivingBase par1EntityLiving) {
 		super.setRevengeTarget(par1EntityLiving);
 
-		if (this.villageObj != null && par1EntityLiving != null)
-		{
+		if (this.villageObj != null && par1EntityLiving != null) {
 			this.villageObj.addOrRenewAgressor(par1EntityLiving);
 
-			if (par1EntityLiving instanceof EntityPlayer)
-			{
+			if (par1EntityLiving instanceof EntityPlayer) {
 				byte b0 = -1;
 
-				if (this.isChild())
-				{
+				if (this.isChild()) {
 					b0 = -3;
 				}
 
 				this.villageObj.setReputationForPlayer(((EntityPlayer) par1EntityLiving).getCommandSenderName(), b0);
 
-				if (this.isEntityAlive())
-				{
+				if (this.isEntityAlive()) {
 					this.worldObj.setEntityState(this, (byte) 13);
 				}
 			}
@@ -212,20 +175,15 @@ public class EntityMakianVillager extends EntityAgeable implements IEntityBreath
 	}
 
 	@Override
-	protected void updateAITick()
-	{
-		if (--this.randomTickDivider <= 0)
-		{
+	protected void updateAITick() {
+		if (--this.randomTickDivider <= 0) {
 			this.worldObj.villageCollectionObj.addVillagerPosition(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ));
 			this.randomTickDivider = 70 + this.rand.nextInt(50);
 			this.villageObj = this.worldObj.villageCollectionObj.findNearestVillage(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ), 32);
 
-			if (this.villageObj == null)
-			{
+			if (this.villageObj == null) {
 				this.detachHome();
-			}
-			else
-			{
+			} else {
 				final ChunkCoordinates chunkcoordinates = this.villageObj.getCenter();
 				this.setHomeArea(chunkcoordinates.posX, chunkcoordinates.posY, chunkcoordinates.posZ, (int) (this.villageObj.getVillageRadius() * 0.6F));
 			}
@@ -234,8 +192,7 @@ public class EntityMakianVillager extends EntityAgeable implements IEntityBreath
 	}
 
 	@Override
-	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
-	{
+	public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {
 		super.writeEntityToNBT(par1NBTTagCompound);
 	}
 }

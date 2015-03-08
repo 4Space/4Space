@@ -8,16 +8,13 @@ import org.apache.logging.log4j.Level;
 
 import cpw.mods.fml.common.FMLLog;
 
-public class ConfigManagerVenus
-{
+public class ConfigManagerVenus {
 	public static boolean loaded;
 
 	static Configuration configuration;
 
-	public ConfigManagerVenus(File file)
-	{
-		if (!ConfigManagerVenus.loaded)
-		{
+	public ConfigManagerVenus(File file) {
+		if (!ConfigManagerVenus.loaded) {
 			ConfigManagerVenus.configuration = new Configuration(file);
 			this.setDefaultValues();
 		}
@@ -28,10 +25,8 @@ public class ConfigManagerVenus
 	public static boolean idFlamelingCreeper;
 	public static int idBiomeVenus;
 
-	private void setDefaultValues()
-	{
-		try
-		{
+	private void setDefaultValues() {
+		try {
 			ConfigManagerVenus.configuration.load();
 
 			ConfigManagerVenus.idDimensionVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Dimension", -41).getInt(-41);
@@ -40,13 +35,11 @@ public class ConfigManagerVenus
 			ConfigManagerVenus.idBiomeVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Biome", 211).getInt(211);
 		}
 
-		catch (final Exception e)
-		{
+		catch (final Exception e) {
 			FMLLog.log(Level.ERROR, e, "4Space Venus Config has a problem loading it's configuration");
 		}
 
-		finally
-		{
+		finally {
 			ConfigManagerVenus.configuration.save();
 			ConfigManagerVenus.loaded = true;
 		}

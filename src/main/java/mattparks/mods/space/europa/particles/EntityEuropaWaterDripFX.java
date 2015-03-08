@@ -9,18 +9,15 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class EntityEuropaWaterDripFX extends EntityFX
-{
+public class EntityEuropaWaterDripFX extends EntityFX {
 	private final Material materialType;
 	private int bobTimer;
 
-	public EntityEuropaWaterDripFX(World par1World, double par2, double par4, double par6, Material par8Material)
-	{
+	public EntityEuropaWaterDripFX(World par1World, double par2, double par4, double par6, Material par8Material) {
 		super(par1World, par2, par4, par6, 0.0D, 0.0D, 0.0D);
 		this.motionX = this.motionY = this.motionZ = 0.0D;
 
-		if (par8Material == Material.water)
-		{
+		if (par8Material == Material.water) {
 			this.particleGreen = 0.7F;
 			this.particleBlue = 0.85F;
 			this.particleRed = 0.7F;
@@ -41,26 +38,22 @@ public class EntityEuropaWaterDripFX extends EntityFX
 	}
 
 	@Override
-	public int getBrightnessForRender(float par1)
-	{
+	public int getBrightnessForRender(float par1) {
 		return super.getBrightnessForRender(par1);
 	}
 
 	@Override
-	public float getBrightness(float par1)
-	{
+	public float getBrightness(float par1) {
 		return super.getBrightness(par1);
 	}
 
 	@Override
-	public void onUpdate()
-	{
+	public void onUpdate() {
 		this.prevPosX = this.posX;
 		this.prevPosY = this.posY;
 		this.prevPosZ = this.posZ;
 
-		if (this.materialType == Material.water)
-		{
+		if (this.materialType == Material.water) {
 			this.particleGreen = 0.7F;
 			this.particleBlue = 0.85F;
 			this.particleRed = 0.7F;
@@ -69,15 +62,12 @@ public class EntityEuropaWaterDripFX extends EntityFX
 
 		this.motionY -= this.particleGravity;
 
-		if (this.bobTimer-- > 0)
-		{
+		if (this.bobTimer-- > 0) {
 			this.motionX *= 0.02D;
 			this.motionY *= 0.02D;
 			this.motionZ *= 0.02D;
 			this.setParticleTextureIndex(113);
-		}
-		else
-		{
+		} else {
 			this.setParticleTextureIndex(112);
 		}
 
@@ -86,13 +76,11 @@ public class EntityEuropaWaterDripFX extends EntityFX
 		this.motionY *= 0.9800000190734863D;
 		this.motionZ *= 0.9800000190734863D;
 
-		if (this.particleMaxAge-- <= 0)
-		{
+		if (this.particleMaxAge-- <= 0) {
 			this.setDead();
 		}
 
-		if (this.onGround)
-		{
+		if (this.onGround) {
 			this.setDead();
 			this.motionX *= 0.699999988079071D;
 			this.motionZ *= 0.699999988079071D;
@@ -100,12 +88,10 @@ public class EntityEuropaWaterDripFX extends EntityFX
 
 		final Material var1 = this.worldObj.getBlock(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)).getMaterial();
 
-		if (var1.isLiquid() || var1.isSolid())
-		{
+		if (var1.isLiquid() || var1.isSolid()) {
 			final double var2 = MathHelper.floor_double(this.posY) + 1 - BlockLiquid.getLiquidHeightPercent(this.worldObj.getBlockMetadata(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)));
 
-			if (this.posY < var2)
-			{
+			if (this.posY < var2) {
 				this.setDead();
 			}
 		}

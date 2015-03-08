@@ -29,8 +29,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
-public class IoCore
-{
+public class IoCore {
 	public static final String ASSET_PREFIX = "spaceio";
 	public static final String TEXTURE_PREFIX = IoCore.ASSET_PREFIX + ":";
 
@@ -40,8 +39,7 @@ public class IoCore
 	public static CommonProxyIo proxy;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerIo(new File(event.getModConfigurationDirectory(), "4Space/io.cfg"));
 
 		IoBlocks.init();
@@ -50,20 +48,17 @@ public class IoCore
 		this.proxy.preInit(event);
 	}
 
-	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass)
-	{
+	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass) {
 		GameRegistry.registerBlock(block, itemBlockClass, block.getUnlocalizedName().replace("tile.", ""));
 	}
 
-	public static void registerItem(Item item)
-	{
+	public static void registerItem(Item item) {
 		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
-		IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.01F);
+	public void init(FMLInitializationEvent event) {
+		IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.025F);
 		IoCore.moonIo.setDimensionInfo(ConfigManagerIo.idDimensionIo, WorldProviderIo.class).setTierRequired(3);
 		IoCore.moonIo.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/io.png"));
 
@@ -81,28 +76,23 @@ public class IoCore
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event) {
 		RecipeManagerIo.loadRecipes();
 
 		this.proxy.postInit(event);
 	}
 
-	private void registerTileEntities()
-	{
+	private void registerTileEntities() {
 	}
 
-	private void registerCreatures()
-	{
+	private void registerCreatures() {
 	}
 
-	private void registerOtherEntities()
-	{
+	private void registerOtherEntities() {
 	}
 
 	@EventHandler
-	public static void PreLoad(FMLPreInitializationEvent PreEvent)
-	{
+	public static void PreLoad(FMLPreInitializationEvent PreEvent) {
 		proxy.registerRenderInfo();
 	}
 }

@@ -7,34 +7,28 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 
-public class EuropaItems
-{
+public class EuropaItems {
 	public static Item europaWaterBucket;
 
-	public static void init()
-	{
+	public static void init() {
 		initItems();
 		registerItems();
 		registerHarvestLevels();
 		registerFluidContainer();
 	}
 
-	private static void initItems()
-	{
+	private static void initItems() {
 		EuropaItems.europaWaterBucket = new ItemEuropaWaterBucket("europa_water_bucket");
 	}
 
-	private static void registerHarvestLevels()
-	{
+	private static void registerHarvestLevels() {
 	}
 
-	private static void registerItems()
-	{
+	private static void registerItems() {
 		EuropaCore.registerItem(europaWaterBucket);
 	}
 
-	private static void registerFluidContainer()
-	{
+	private static void registerFluidContainer() {
 		FluidContainerRegistry.registerFluidContainer(EuropaBlocks.europaWaterFluid, new ItemStack(europaWaterBucket), new ItemStack(Items.bucket)); // TODO
 																																						// USE
 																																						// EUROPA

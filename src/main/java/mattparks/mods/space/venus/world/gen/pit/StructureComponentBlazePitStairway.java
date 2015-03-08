@@ -10,22 +10,18 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 
-public class StructureComponentBlazePitStairway extends StructureComponentGC
-{
-	protected StructureComponentBlazePitStairway(StructureComponentBlazePitRoom origRoom, int type, Random rand, int x, int y, int z)
-	{
+public class StructureComponentBlazePitStairway extends StructureComponentGC {
+	protected StructureComponentBlazePitStairway(StructureComponentBlazePitRoom origRoom, int type, Random rand, int x, int y, int z) {
 		super(type);
 		this.boundingBox = new StructureBoundingBox(Math.min(x - 5, x - 2), Math.min(y - 20, y - 20), Math.min(z - 5, z - 2), Math.max(x - 5, x - 2), Math.max(y, y), Math.max(z - 5, z - 2));
 	}
 
 	@Override
-	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random)
-	{
+	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random) {
 	}
 
 	@Override
-	public boolean addComponentParts(World par1World, Random var2, StructureBoundingBox var3)
-	{
+	public boolean addComponentParts(World par1World, Random var2, StructureBoundingBox var3) {
 		final int x1 = this.getBoundingBox().minX;
 		final int y1 = this.getBoundingBox().minY;
 		final int z1 = this.getBoundingBox().minZ;
@@ -40,12 +36,10 @@ public class StructureComponentBlazePitStairway extends StructureComponentGC
 	}
 
 	@Override
-	protected void func_143012_a(NBTTagCompound nbttagcompound)
-	{
+	protected void func_143012_a(NBTTagCompound nbttagcompound) {
 	}
 
 	@Override
-	protected void func_143011_b(NBTTagCompound nbttagcompound)
-	{
+	protected void func_143011_b(NBTTagCompound nbttagcompound) {
 	}
 }

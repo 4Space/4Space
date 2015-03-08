@@ -6,8 +6,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
-public class MercuryItems
-{
+public class MercuryItems {
 	public static Item mercuryBasicItem;
 	public static Item iridiumPickaxe;
 	public static Item iridiumAxe;
@@ -22,15 +21,13 @@ public class MercuryItems
 	public static ArmorMaterial ARMOR_IRIDIUM = EnumHelper.addArmorMaterial("iridium", 30, new int[] { 3, 8, 6, 3 }, 12);
 	public static ToolMaterial TOOL_IRIDIUM = EnumHelper.addToolMaterial("iridium", 3, 768, 5.0F, 2, 8);
 
-	public static void init()
-	{
+	public static void init() {
 		initItems();
 		registerItems();
 		registerHarvestLevels();
 	}
 
-	private static void initItems()
-	{
+	private static void initItems() {
 		MercuryItems.mercuryBasicItem = new ItemBasicMercury();
 
 		MercuryItems.iridiumPickaxe = new ItemPickaxeMercury("iridium_pickaxe", MercuryItems.TOOL_IRIDIUM);
@@ -45,15 +42,13 @@ public class MercuryItems
 		MercuryItems.iridiumBoots = new ItemIridiumArmor("iridium_boots", MercuryItems.ARMOR_IRIDIUM, 7, 3);
 	}
 
-	private static void registerHarvestLevels()
-	{
+	private static void registerHarvestLevels() {
 		MercuryItems.iridiumPickaxe.setHarvestLevel("pickaxe", 4);
 		MercuryItems.iridiumAxe.setHarvestLevel("axe", 4);
 		MercuryItems.iridiumSpade.setHarvestLevel("shovel", 4);
 	}
 
-	private static void registerItems()
-	{
+	private static void registerItems() {
 		MercuryCore.registerItem(mercuryBasicItem);
 
 		MercuryCore.registerItem(iridiumPickaxe);

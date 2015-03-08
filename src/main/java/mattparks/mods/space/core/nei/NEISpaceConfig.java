@@ -6,33 +6,27 @@ import net.minecraft.item.ItemStack;
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
 
-public class NEISpaceConfig implements IConfigureNEI
-{
+public class NEISpaceConfig implements IConfigureNEI {
 	@Override
-	public void loadConfig()
-	{
+	public void loadConfig() {
 		this.registerRecipe();
 	}
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return "4Space NEI Plugin";
 	}
 
 	@Override
-	public String getVersion()
-	{
+	public String getVersion() {
 		return Constants.VERSION;
 	}
 
-	public void registerRecipe()
-	{
+	public void registerRecipe() {
 		this.registerHideBlocks();
 	}
 
-	private void registerHideBlocks()
-	{
+	private void registerHideBlocks() {
 		API.hideItem(new ItemStack(MercuryBlocks.caravanModuleDummy, 1, 0));
 	}
 }

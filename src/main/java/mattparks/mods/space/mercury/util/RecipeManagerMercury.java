@@ -11,10 +11,8 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipeManagerMercury
-{
-	private static void addUniversalRecipes()
-	{
+public class RecipeManagerMercury {
+	private static void addUniversalRecipes() {
 		// ORE DICTIONARY
 		OreDictionary.registerOre("iridiumCrystals", new ItemStack(MercuryItems.mercuryBasicItem, 1, 0));
 		OreDictionary.registerOre("iridiumPlate", new ItemStack(MercuryItems.mercuryBasicItem, 1, 1));
@@ -34,8 +32,7 @@ public class RecipeManagerMercury
 		RecipeUtil.addRecipe(new ItemStack(MercuryItems.iridiumHoe), new Object[] { "XX", " Y", " Y", 'X', "iridiumCrystals", 'Y', Items.stick });
 		RecipeUtil.addRecipe(new ItemStack(MercuryItems.iridiumAxe), new Object[] { "XX", "XY", " Y", 'X', "iridiumCrystals", 'Y', Items.stick });
 
-		for (int var2 = 0; var2 < 16; ++var2)
-		{
+		for (int var2 = 0; var2 < 16; ++var2) {
 			CraftingManager.getInstance().addShapelessRecipe(new ItemStack(MercuryBlocks.mercuryGlowstone, 1, 15 - var2), new Object[] { new ItemStack(Items.dye, 1, var2), Blocks.glowstone });
 		}
 
@@ -53,8 +50,7 @@ public class RecipeManagerMercury
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(MercuryBlocks.mercuryBasicBlock, 1, 8), new ItemStack(Items.gold_ingot), 0.2F);
 	}
 
-	public static void loadRecipes()
-	{
+	public static void loadRecipes() {
 		RecipeManagerMercury.addUniversalRecipes();
 	}
 }

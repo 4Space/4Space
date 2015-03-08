@@ -35,8 +35,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_VENUS, name = Constants.MOD_NAME_VENUS, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
-public class VenusCore
-{
+public class VenusCore {
 	public static final String ASSET_PREFIX = "spacevenus";
 	public static final String TEXTURE_PREFIX = VenusCore.ASSET_PREFIX + ":";
 
@@ -46,8 +45,7 @@ public class VenusCore
 	public static CommonProxyVenus proxy;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerVenus(new File(event.getModConfigurationDirectory(), "4Space/venus.cfg"));
 
 		VenusBlocks.init();
@@ -56,19 +54,16 @@ public class VenusCore
 		this.proxy.preInit(event);
 	}
 
-	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass)
-	{
+	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass) {
 		GameRegistry.registerBlock(block, itemBlockClass, block.getUnlocalizedName().replace("tile.", ""));
 	}
 
-	public static void registerItem(Item item)
-	{
+	public static void registerItem(Item item) {
 		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
+	public void init(FMLInitializationEvent event) {
 		VenusCore.planetVenus = (Planet) new Planet("venus").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(2.0F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(0.75F, 0.75F)).setRelativeOrbitTime(0.61527929901423877327491785323111F);
 		VenusCore.planetVenus.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/venus.png"));
 		VenusCore.planetVenus.setDimensionInfo(ConfigManagerVenus.idDimensionVenus, WorldProviderVenus.class).setTierRequired(2);
@@ -95,31 +90,26 @@ public class VenusCore
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event) {
 		RecipeManagerVenus.loadRecipes();
 
 		this.proxy.postInit(event);
 	}
 
-	private void registerTileEntities()
-	{
+	private void registerTileEntities() {
 	}
 
-	private void registerCreatures()
-	{
+	private void registerCreatures() {
 		SpaceUtil.registerSpaceCreature(EntityEvolvedBlaze.class, "EvolvedBlaze", -771829, -870131);
 		SpaceUtil.registerSpaceCreature(EntityVenusianVillager.class, "VenusianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
 	}
 
-	private void registerOtherEntities()
-	{
+	private void registerOtherEntities() {
 		SpaceUtil.registerSpaceNonMobEntity(EntityVenusianTNT.class, "VenusianTNT", 150, 1, true);
 	}
 
 	@EventHandler
-	public static void PreLoad(FMLPreInitializationEvent PreEvent)
-	{
+	public static void PreLoad(FMLPreInitializationEvent PreEvent) {
 		proxy.registerRenderInfo();
 	}
 }

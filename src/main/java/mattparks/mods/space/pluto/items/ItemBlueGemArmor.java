@@ -13,38 +13,28 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlueGemArmor extends ItemArmor
-{
+public class ItemBlueGemArmor extends ItemArmor {
 	private final ArmorMaterial material;
 
-	public ItemBlueGemArmor(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4)
-	{
+	public ItemBlueGemArmor(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 		super(par2EnumArmorMaterial, par3, par4);
 		this.material = par2EnumArmorMaterial;
 		this.setUnlocalizedName(name);
 	}
 
 	@Override
-	public EnumRarity getRarity(ItemStack par1ItemStack)
-	{
+	public EnumRarity getRarity(ItemStack par1ItemStack) {
 		return ClientProxy.spaceItem;
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
-	{
-		if (this.material == PlutoItems.ARMOR_BLUEGEM)
-		{
-			if (stack.getItem() == PlutoItems.blueGemHelmet)
-			{
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer) {
+		if (this.material == PlutoItems.ARMOR_BLUEGEM) {
+			if (stack.getItem() == PlutoItems.blueGemHelmet) {
 				return PlutoCore.TEXTURE_PREFIX + "textures/model/armor/blueGem_1.png";
-			}
-			else if (stack.getItem() == PlutoItems.blueGemChestplate || stack.getItem() == PlutoItems.blueGemBoots)
-			{
+			} else if (stack.getItem() == PlutoItems.blueGemChestplate || stack.getItem() == PlutoItems.blueGemBoots) {
 				return PlutoCore.TEXTURE_PREFIX + "textures/model/armor/blueGem_2.png";
-			}
-			else if (stack.getItem() == PlutoItems.blueGemLeggings)
-			{
+			} else if (stack.getItem() == PlutoItems.blueGemLeggings) {
 				return PlutoCore.TEXTURE_PREFIX + "textures/model/armor/blueGem_3.png";
 			}
 		}
@@ -53,21 +43,18 @@ public class ItemBlueGemArmor extends ItemArmor
 	}
 
 	@Override
-	public CreativeTabs getCreativeTab()
-	{
+	public CreativeTabs getCreativeTab() {
 		return SpaceCore.spaceItemsTab;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister par1IconRegister)
-	{
+	public void registerIcons(IIconRegister par1IconRegister) {
 		this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", PlutoCore.TEXTURE_PREFIX));
 	}
 
 	@Override
-	public Item setUnlocalizedName(String par1Str)
-	{
+	public Item setUnlocalizedName(String par1Str) {
 		super.setTextureName(par1Str);
 		super.setUnlocalizedName(par1Str);
 		return this;

@@ -6,31 +6,25 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class HoleBlocks
-{
+public class HoleBlocks {
 	public static Block holeBasicBlock;
 
-	private static void initBlocks()
-	{
+	private static void initBlocks() {
 		HoleBlocks.holeBasicBlock = new BlockBasicHole("hole_basic");
 	}
 
-	public static void setHarvestLevels()
-	{
+	public static void setHarvestLevels() {
 	}
 
-	private static void registerBlocks()
-	{
+	private static void registerBlocks() {
 		HoleCore.registerBlock(HoleBlocks.holeBasicBlock, ItemBlockBasicHole.class);
 	}
 
-	public static void oreDictRegistration()
-	{
+	public static void oreDictRegistration() {
 		OreDictionary.registerOre("oreFlameite", new ItemStack(HoleBlocks.holeBasicBlock, 1, 5));
 	}
 
-	public static void init()
-	{
+	public static void init() {
 		initBlocks();
 		setHarvestLevels();
 		registerBlocks();

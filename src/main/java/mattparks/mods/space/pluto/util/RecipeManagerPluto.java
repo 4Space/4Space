@@ -8,10 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipeManagerPluto
-{
-	private static void addUniversalRecipes()
-	{
+public class RecipeManagerPluto {
+	private static void addUniversalRecipes() {
 		// ORE DICTIONARY
 		OreDictionary.registerOre("blueGem", new ItemStack(PlutoItems.plutoBasicItem, 1, 0));
 		OreDictionary.registerOre("ununpetiumRaw", new ItemStack(PlutoItems.plutoBasicItem, 1, 1));
@@ -24,16 +22,16 @@ public class RecipeManagerPluto
 		OreDictionary.registerOre("plutoStone", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 2));
 
 		// ARMOR AND TOOLS CRAFTING
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemBoots), new Object[] { "X X", "X X", 'X', "blueGemCrystals" });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemHelmet), new Object[] { "XXX", "X X", 'X', "blueGemCrystals" });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "blueGemCrystals" });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemLeggings), new Object[] { "XXX", "X X", "X X", 'X', "blueGemCrystals" });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemBoots), new Object[] { "X X", "X X", 'X', "blueGem" });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemHelmet), new Object[] { "XXX", "X X", 'X', "blueGem" });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "blueGem" });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemLeggings), new Object[] { "XXX", "X X", "X X", 'X', "blueGem" });
 
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemSword), new Object[] { "X", "X", "Y", 'X', "blueGemCrystals", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemPickaxe), new Object[] { "XXX", " Y ", " Y ", 'X', "blueGemCrystals", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemSpade), new Object[] { "X", "Y", "Y", 'X', "blueGemCrystals", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemHoe), new Object[] { "XX", " Y", " Y", 'X', "blueGemCrystals", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemAxe), new Object[] { "XX", "XY", " Y", 'X', "blueGemCrystals", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemSword), new Object[] { "X", "X", "Y", 'X', "blueGem", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemPickaxe), new Object[] { "XXX", " Y ", " Y ", 'X', "blueGem", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemSpade), new Object[] { "X", "Y", "Y", 'X', "blueGem", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemHoe), new Object[] { "XX", " Y", " Y", 'X', "blueGem", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(PlutoItems.blueGemAxe), new Object[] { "XX", "XY", " Y", 'X', "blueGem", 'Y', Items.stick });
 
 		// ITEM TO BLOCK
 		RecipeUtil.addRecipe(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 7), new Object[] { "XXX", "XXX", "XXX", 'X', "blueGem" });
@@ -48,12 +46,11 @@ public class RecipeManagerPluto
 		// Smelting
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 3), OreDictionary.getOres("plutoStone").get(0), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 4), OreDictionary.getOres("blueGem").get(0), 0.2F);
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 5), OreDictionary.getOres("ununpetiumRaw").get(0), 0.2F);
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 6), OreDictionary.getOres("ingotFrozenIron").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 6), OreDictionary.getOres("ununpetiumRaw").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 5), OreDictionary.getOres("ingotFrozenIron").get(0), 0.2F);
 	}
 
-	public static void loadRecipes()
-	{
+	public static void loadRecipes() {
 		RecipeManagerPluto.addUniversalRecipes();
 	}
 }

@@ -5,13 +5,11 @@ import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class CreativeTabsSpace extends CreativeTabs
-{
+public class CreativeTabsSpace extends CreativeTabs {
 	private final Item itemForTab;
 	private final int metaForTab;
 
-	public CreativeTabsSpace(int par1, String par2Str, Item itemForTab, int metaForTab)
-	{
+	public CreativeTabsSpace(int par1, String par2Str, Item itemForTab, int metaForTab) {
 		super(par1, par2Str);
 		this.itemForTab = itemForTab;
 		this.metaForTab = metaForTab;
@@ -19,15 +17,13 @@ public class CreativeTabsSpace extends CreativeTabs
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Item getTabIconItem()
-	{
+	public Item getTabIconItem() {
 		return this.itemForTab;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public int func_151243_f()
-	{
+	public int func_151243_f() {
 		return this.metaForTab;
 	}
 }

@@ -9,21 +9,17 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.Phase;
 
-public class TickHandlerClient
-{
+public class TickHandlerClient {
 	public static boolean checkedVersion = true;
 
 	@SubscribeEvent
-	public void onClientTick(ClientTickEvent event)
-	{
+	public void onClientTick(ClientTickEvent event) {
 		final Minecraft minecraft = FMLClientHandler.instance().getClient();
 		final WorldClient world = minecraft.theWorld;
 		final EntityClientPlayerMP player = minecraft.thePlayer;
 
-		if (event.phase == Phase.START)
-		{
-			if (world != null && TickHandlerClient.checkedVersion)
-			{
+		if (event.phase == Phase.START) {
+			if (world != null && TickHandlerClient.checkedVersion) {
 				ThreadVersionCheck.startCheck();
 				TickHandlerClient.checkedVersion = false;
 			}

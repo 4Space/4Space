@@ -6,33 +6,27 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class PlutoBlocks
-{
+public class PlutoBlocks {
 	public static Block plutoBasicBlock;
 
-	private static void initBlocks()
-	{
+	private static void initBlocks() {
 		PlutoBlocks.plutoBasicBlock = new BlockBasicPluto("pluto_block");
 	}
 
-	public static void setHarvestLevels()
-	{
+	public static void setHarvestLevels() {
 	}
 
-	private static void registerBlocks()
-	{
+	private static void registerBlocks() {
 		PlutoCore.registerBlock(PlutoBlocks.plutoBasicBlock, ItemBlockBasicPluto.class);
 	}
 
-	public static void oreDictRegistration()
-	{
+	public static void oreDictRegistration() {
 		OreDictionary.registerOre("oreBlueGem", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 4));
 		OreDictionary.registerOre("oreIron", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 5));
 		OreDictionary.registerOre("oreUnunpentium", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 6));
 	}
 
-	public static void init()
-	{
+	public static void init() {
 		initBlocks();
 		setHarvestLevels();
 		registerBlocks();

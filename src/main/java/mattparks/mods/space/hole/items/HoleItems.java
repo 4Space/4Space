@@ -6,8 +6,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
-public class HoleItems
-{
+public class HoleItems {
 	public static Item holeBasicItem;
 
 	public static Item flameiteSword;
@@ -26,15 +25,13 @@ public class HoleItems
 	public static ArmorMaterial ARMOR_FLAMEITE = EnumHelper.addArmorMaterial("flameite", 15, new int[] { 1, 4, 2, 1 }, 7);
 	public static ToolMaterial TOOL_FLAMEITE = EnumHelper.addToolMaterial("flameite", 3, 416, 6.0F, 1, 2);
 
-	public static void init()
-	{
+	public static void init() {
 		initItems();
 		registerItems();
 		registerHarvestLevels();
 	}
 
-	private static void initItems()
-	{
+	private static void initItems() {
 		HoleItems.holeBasicItem = new ItemBasicHole();
 
 		HoleItems.flameiteSword = new ItemSwordHole("flameite_sword", HoleItems.TOOL_FLAMEITE);
@@ -51,15 +48,13 @@ public class HoleItems
 		HoleItems.flameiteBattery = new ItemFlameiteBattery("flameite_battery");
 	}
 
-	private static void registerHarvestLevels()
-	{
+	private static void registerHarvestLevels() {
 		HoleItems.flameitePickaxe.setHarvestLevel("pickaxe", 4);
 		HoleItems.flameiteAxe.setHarvestLevel("axe", 4);
 		HoleItems.flameiteSpade.setHarvestLevel("shovel", 4);
 	}
 
-	private static void registerItems()
-	{
+	private static void registerItems() {
 		HoleCore.registerItem(holeBasicItem);
 
 		HoleCore.registerItem(flameitePickaxe);

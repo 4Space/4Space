@@ -9,8 +9,7 @@ import net.minecraft.block.BlockLiquid;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class IoBlocks
-{
+public class IoBlocks {
 	public static Block liquidRedSulfurStill;
 	public static Block liquidYellowSulfurStill;
 	public static Block liquidOrangeSulfurFlowing;
@@ -22,8 +21,7 @@ public class IoBlocks
 	public static BlockLiquid liquidOrangeSulfurStill;
 	public static BlockLiquid ioLavaStill;
 
-	private static void initBlocks()
-	{
+	private static void initBlocks() {
 		IoBlocks.ioBasicBlock = new BlockBasicIo("io_basic");
 		IoBlocks.ioMagmaRock = new BlockMagmaRock("magma_rock");
 
@@ -40,12 +38,10 @@ public class IoBlocks
 		IoBlocks.ioLavaStill = new BlockIoLavaStill("io_lava_still", "lava_still", "lava_flow", true);
 	}
 
-	public static void setHarvestLevels()
-	{
+	public static void setHarvestLevels() {
 	}
 
-	private static void registerBlocks()
-	{
+	private static void registerBlocks() {
 		IoCore.registerBlock(IoBlocks.ioBasicBlock, ItemBlockBasicIo.class);
 		IoCore.registerBlock(IoBlocks.ioMagmaRock, ItemBlockMagmaRock.class);
 		IoCore.registerBlock(IoBlocks.liquidRedSulfurFlowing, ItemBlockUtil.class);
@@ -58,13 +54,11 @@ public class IoBlocks
 		IoCore.registerBlock(IoBlocks.ioLavaStill, ItemBlockUtil.class);
 	}
 
-	public static void oreDictRegistration()
-	{
+	public static void oreDictRegistration() {
 		OreDictionary.registerOre("oreSulfur", new ItemStack(IoBlocks.ioBasicBlock, 1, 4));
 	}
 
-	public static void init()
-	{
+	public static void init() {
 		initBlocks();
 		setHarvestLevels();
 		registerBlocks();

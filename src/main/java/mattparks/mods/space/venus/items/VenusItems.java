@@ -6,8 +6,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
-public class VenusItems
-{
+public class VenusItems {
 	public static Item venusBasicItem;
 
 	public static Item sulfurSword;
@@ -45,15 +44,13 @@ public class VenusItems
 	public static ArmorMaterial ARMOR_GEM = EnumHelper.addArmorMaterial("gem", 30, new int[] { 3, 8, 6, 3 }, 12);
 	public static ToolMaterial TOOL_GEM = EnumHelper.addToolMaterial("gem", 3, 768, 5.0F, 2, 8);
 
-	public static void init()
-	{
+	public static void init() {
 		initItems();
 		registerItems();
 		registerHarvestLevels();
 	}
 
-	private static void initItems()
-	{
+	private static void initItems() {
 		VenusItems.venusBasicItem = new ItemBasicVenus();
 
 		VenusItems.sulfurSword = new ItemSwordVenus("sulfur_sword", VenusItems.TOOL_SULFUR);
@@ -84,8 +81,7 @@ public class VenusItems
 		VenusItems.uraniumBattery = new ItemUraniumBattery("uranium_battery");
 	}
 
-	private static void registerHarvestLevels()
-	{
+	private static void registerHarvestLevels() {
 		VenusItems.gemPickaxe.setHarvestLevel("pickaxe", 4);
 		VenusItems.gemAxe.setHarvestLevel("axe", 4);
 		VenusItems.gemSpade.setHarvestLevel("shovel", 4);
@@ -95,8 +91,7 @@ public class VenusItems
 		VenusItems.sulfurSpade.setHarvestLevel("shovel", 4);
 	}
 
-	private static void registerItems()
-	{
+	private static void registerItems() {
 		VenusCore.registerItem(venusBasicItem);
 
 		VenusCore.registerItem(sulfurPickaxe);

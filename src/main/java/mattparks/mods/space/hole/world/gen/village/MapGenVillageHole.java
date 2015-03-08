@@ -11,27 +11,20 @@ import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureStart;
 import cpw.mods.fml.common.FMLLog;
 
-public class MapGenVillageHole extends MapGenStructure
-{
+public class MapGenVillageHole extends MapGenStructure {
 	public static List<BiomeGenBase> villageSpawnBiomes = Arrays.asList(new BiomeGenBase[] { BiomeGenBaseHole.hole });
 	private final int terrainType;
 	private static boolean initialized;
 
-	static
-	{
-		try
-		{
+	static {
+		try {
 			MapGenVillageHole.initiateStructures();
-		}
-		catch (Throwable e)
-		{
+		} catch (Throwable e) {
 		}
 	}
 
-	public static void initiateStructures() throws Throwable
-	{
-		if (!MapGenVillageHole.initialized)
-		{
+	public static void initiateStructures() throws Throwable {
+		if (!MapGenVillageHole.initialized) {
 			MapGenStructureIO.registerStructure(StructureVillageStartHole.class, "HoleVillage");
 			MapGenStructureIO.func_143031_a(StructureComponentHoleVillageField.class, "HoleField1");
 			MapGenStructureIO.func_143031_a(StructureComponentHoleVillageField2.class, "HoleField2");
@@ -45,26 +38,22 @@ public class MapGenVillageHole extends MapGenStructure
 		MapGenVillageHole.initialized = true;
 	}
 
-	public MapGenVillageHole()
-	{
+	public MapGenVillageHole() {
 		this.terrainType = 0;
 	}
 
 	@Override
-	protected boolean canSpawnStructureAtCoords(int i, int j)
-	{
+	protected boolean canSpawnStructureAtCoords(int i, int j) {
 		final byte numChunks = 32;
 		final byte offsetChunks = 8;
 		final int oldi = i;
 		final int oldj = j;
 
-		if (i < 0)
-		{
+		if (i < 0) {
 			i -= numChunks - 1;
 		}
 
-		if (j < 0)
-		{
+		if (j < 0) {
 			j -= numChunks - 1;
 		}
 
@@ -79,15 +68,13 @@ public class MapGenVillageHole extends MapGenStructure
 	}
 
 	@Override
-	protected StructureStart getStructureStart(int par1, int par2)
-	{
+	protected StructureStart getStructureStart(int par1, int par2) {
 		FMLLog.info("Generating Hole Village at x" + par1 * 16 + " z" + par2 * 16);
 		return new StructureVillageStartHole(this.worldObj, this.rand, par1, par2, this.terrainType);
 	}
 
 	@Override
-	public String func_143025_a()
-	{
+	public String func_143025_a() {
 		return "HoleVillage";
 	}
 }

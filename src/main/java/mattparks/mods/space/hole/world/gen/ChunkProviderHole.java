@@ -31,8 +31,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class ChunkProviderHole extends ChunkProviderGenerate
-{
+public class ChunkProviderHole extends ChunkProviderGenerate {
 	Block topBlockID = HoleBlocks.holeBasicBlock;
 	byte topBlockMeta = 0;
 	Block fillBlockID = HoleBlocks.holeBasicBlock;
@@ -93,8 +92,7 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 	private static double LARGE_FEATURE_FILTER_MOD = 8;
 	private static double SMALL_FEATURE_FILTER_MOD = 8;
 
-	public ChunkProviderHole(World par1World, long par2, boolean par4)
-	{
+	public ChunkProviderHole(World par1World, long par2, boolean par4) {
 		super(par1World, par2, par4);
 		this.worldObj = par1World;
 		this.rand = new Random(par2);
@@ -108,8 +106,7 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		this.noiseGen7 = new Gradient(this.rand.nextLong(), 1, 0.25F);
 	}
 
-	public void generateTerrain(int chunkX, int chunkZ, Block[] idArray, byte[] metaArray)
-	{
+	public void generateTerrain(int chunkX, int chunkZ, Block[] idArray, byte[] metaArray) {
 		this.noiseGen1.setFrequency(0.0125F);
 		this.noiseGen2.setFrequency(0.015F);
 		this.noiseGen3.setFrequency(0.01F);
@@ -118,10 +115,8 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		this.noiseGen6.setFrequency(0.001F);
 		this.noiseGen7.setFrequency(0.005F);
 
-		for (int x = 0; x < ChunkProviderHole.CHUNK_SIZE_X; x++)
-		{
-			for (int z = 0; z < ChunkProviderHole.CHUNK_SIZE_Z; z++)
-			{
+		for (int x = 0; x < ChunkProviderHole.CHUNK_SIZE_X; x++) {
+			for (int z = 0; z < ChunkProviderHole.CHUNK_SIZE_Z; z++) {
 				double baseHeight = this.noiseGen1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * ChunkProviderHole.TERRAIN_HEIGHT_MOD;
 				double smallHillHeight = this.noiseGen2.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * ChunkProviderHole.SMALL_FEATURE_HEIGHT_MOD;
 				double mountainHeight = Math.abs(this.noiseGen3.getNoise(chunkX * 16 + x, chunkZ * 16 + z));
@@ -136,10 +131,8 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 				yDev = this.lerp(smallHillHeight, yDev, smallFilter);
 				yDev = this.lerp(baseHeight, yDev, featureFilter);
 
-				for (int y = 0; y < ChunkProviderHole.CHUNK_SIZE_Y; y++)
-				{
-					if (y < ChunkProviderHole.MID_HEIGHT + yDev)
-					{
+				for (int y = 0; y < ChunkProviderHole.CHUNK_SIZE_Y; y++) {
+					if (y < ChunkProviderHole.MID_HEIGHT + yDev) {
 						idArray[this.getIndex(x, y, z)] = this.lowerBlockID;
 						metaArray[this.getIndex(x, y, z)] = this.lowerBlockMeta;
 					}
@@ -148,50 +141,37 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		}
 	}
 
-	private double lerp(double d1, double d2, double t)
-	{
-		if (t < 0.0)
-		{
+	private double lerp(double d1, double d2, double t) {
+		if (t < 0.0) {
 			return d1;
-		}
-		else if (t > 1.0)
-		{
+		} else if (t > 1.0) {
 			return d2;
-		}
-		else
-		{
+		} else {
 			return d1 + (d2 - d1) * t;
 		}
 	}
 
-	private double fade(double n)
-	{
+	private double fade(double n) {
 		return n * n * n * (n * (n * 6 - 15) + 10);
 	}
 
-	private double clamp(double x, double min, double max)
-	{
-		if (x < min)
-		{
+	private double clamp(double x, double min, double max) {
+		if (x < min) {
 			return min;
 		}
-		if (x > max)
-		{
+		if (x > max) {
 			return max;
 		}
 		return x;
 	}
 
 	@Override
-	public void replaceBlocksForBiome(int par1, int par2, Block[] arrayOfIDs, byte[] arrayOfMeta, BiomeGenBase[] par4ArrayOfBiomeGenBase)
-	{
+	public void replaceBlocksForBiome(int par1, int par2, Block[] arrayOfIDs, byte[] arrayOfMeta, BiomeGenBase[] par4ArrayOfBiomeGenBase) {
 		int var5 = 20;
 		float var6 = 0.03125F;
 		this.noiseGen4.setFrequency(var6 * 2);
-		for (int var8 = 0; var8 < 16; ++var8)
-		{
-			for (int var9 = 0; var9 < 16; ++var9)
-			{
+		for (int var8 = 0; var8 < 16; ++var8) {
+			for (int var9 = 0; var9 < 16; ++var9) {
 				int var12 = (int) (this.noiseGen4.getNoise(par1 * 16 + var8, par2 * 16 + var9) / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
 				int var13 = -1;
 				Block var14 = this.topBlockID;
@@ -199,37 +179,26 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 				Block var15 = this.fillBlockID;
 				byte var15m = this.fillBlockMeta;
 
-				for (int var16 = ChunkProviderHole.CHUNK_SIZE_Y - 1; var16 >= 0; --var16)
-				{
+				for (int var16 = ChunkProviderHole.CHUNK_SIZE_Y - 1; var16 >= 0; --var16) {
 					int index = this.getIndex(var8, var16, var9);
 
-					if (var16 <= 0 + this.rand.nextInt(5))
-					{
+					if (var16 <= 0 + this.rand.nextInt(5)) {
 						arrayOfIDs[index] = Blocks.bedrock;
-					}
-					else
-					{
+					} else {
 						Block var18 = arrayOfIDs[index];
 
-						if (Blocks.air == var18)
-						{
+						if (Blocks.air == var18) {
 							var13 = -1;
-						}
-						else if (var18 == this.lowerBlockID)
-						{
+						} else if (var18 == this.lowerBlockID) {
 							arrayOfMeta[index] = this.lowerBlockMeta;
 
-							if (var13 == -1)
-							{
-								if (var12 <= 0)
-								{
+							if (var13 == -1) {
+								if (var12 <= 0) {
 									var14 = Blocks.air;
 									var14m = 0;
 									var15 = this.lowerBlockID;
 									var15m = this.lowerBlockMeta;
-								}
-								else if (var16 >= var5 - -16 && var16 <= var5 + 1)
-								{
+								} else if (var16 >= var5 - -16 && var16 <= var5 + 1) {
 									var14 = this.topBlockID;
 									var14m = this.topBlockMeta;
 									var14 = this.fillBlockID;
@@ -238,19 +207,14 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 
 								var13 = var12;
 
-								if (var16 >= var5 - 1)
-								{
+								if (var16 >= var5 - 1) {
 									arrayOfIDs[index] = var14;
 									arrayOfMeta[index] = var14m;
-								}
-								else
-								{
+								} else {
 									arrayOfIDs[index] = var15;
 									arrayOfMeta[index] = var15m;
 								}
-							}
-							else if (var13 > 0)
-							{
+							} else if (var13 > 0) {
 								--var13;
 								arrayOfIDs[index] = var15;
 								arrayOfMeta[index] = var15m;
@@ -263,8 +227,7 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 	}
 
 	@Override
-	public Chunk provideChunk(int par1, int par2)
-	{
+	public Chunk provideChunk(int par1, int par2) {
 		this.rand.setSeed(par1 * 341873128712L + par2 * 132897987541L);
 		Block[] ids = new Block[32768 * 2];
 		byte[] meta = new byte[32768 * 2];
@@ -277,8 +240,7 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		byte[] var5 = var4.getBiomeArray();
 
-		for (int var6 = 0; var6 < var5.length; ++var6)
-		{
+		for (int var6 = 0; var6 < var5.length; ++var6) {
 			var5[var6] = (byte) this.biomesForGeneration[var6].biomeID;
 		}
 
@@ -286,18 +248,12 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		return var4;
 	}
 
-	public void createCraters(int chunkX, int chunkZ, Block[] chunkArray, byte[] metaArray)
-	{
-		for (int cx = chunkX - 2; cx <= chunkX + 2; cx++)
-		{
-			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++)
-			{
-				for (int x = 0; x < ChunkProviderHole.CHUNK_SIZE_X; x++)
-				{
-					for (int z = 0; z < ChunkProviderHole.CHUNK_SIZE_Z; z++)
-					{
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getNoise(x * ChunkProviderHole.CHUNK_SIZE_X + x, cz * ChunkProviderHole.CHUNK_SIZE_Z + z) / ChunkProviderHole.CRATER_PROB)
-						{
+	public void createCraters(int chunkX, int chunkZ, Block[] chunkArray, byte[] metaArray) {
+		for (int cx = chunkX - 2; cx <= chunkX + 2; cx++) {
+			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
+				for (int x = 0; x < ChunkProviderHole.CHUNK_SIZE_X; x++) {
+					for (int z = 0; z < ChunkProviderHole.CHUNK_SIZE_Z; z++) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getNoise(x * ChunkProviderHole.CHUNK_SIZE_X + x, cz * ChunkProviderHole.CHUNK_SIZE_Z + z) / ChunkProviderHole.CRATER_PROB) {
 							Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
@@ -309,32 +265,25 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		}
 	}
 
-	public void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, Block[] chunkArray, byte[] metaArray)
-	{
-		for (int x = 0; x < ChunkProviderHole.CHUNK_SIZE_X; x++)
-		{
-			for (int z = 0; z < ChunkProviderHole.CHUNK_SIZE_Z; z++)
-			{
+	public void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, Block[] chunkArray, byte[] metaArray) {
+		for (int x = 0; x < ChunkProviderHole.CHUNK_SIZE_X; x++) {
+			for (int z = 0; z < ChunkProviderHole.CHUNK_SIZE_Z; z++) {
 				double xDev = craterX - (chunkX + x);
 				double zDev = craterZ - (chunkZ + z);
-				if (xDev * xDev + zDev * zDev < size * size)
-				{
+				if (xDev * xDev + zDev * zDev < size * size) {
 					xDev /= size;
 					zDev /= size;
 					double sqrtY = xDev * xDev + zDev * zDev;
 					double yDev = sqrtY * sqrtY * 6;
 					yDev = 5 - yDev;
 					int helper = 0;
-					for (int y = 127; y > 0; y--)
-					{
-						if (Blocks.air != chunkArray[this.getIndex(x, y, z)] && helper <= yDev)
-						{
+					for (int y = 127; y > 0; y--) {
+						if (Blocks.air != chunkArray[this.getIndex(x, y, z)] && helper <= yDev) {
 							chunkArray[this.getIndex(x, y, z)] = Blocks.air;
 							metaArray[this.getIndex(x, y, z)] = 0;
 							helper++;
 						}
-						if (helper > yDev)
-						{
+						if (helper > yDev) {
 							break;
 						}
 					}
@@ -343,13 +292,11 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 		}
 	}
 
-	private int getIndex(int x, int y, int z)
-	{
+	private int getIndex(int x, int y, int z) {
 		return (x * 16 + z) * 256 + y;
 	}
 
-	private double randFromPoint(int x, int z)
-	{
+	private double randFromPoint(int x, int z) {
 		int n;
 		n = x + z * 57;
 		n = n << 13 ^ n;
@@ -357,19 +304,16 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 	}
 
 	@Override
-	public boolean chunkExists(int par1, int par2)
-	{
+	public boolean chunkExists(int par1, int par2) {
 		return true;
 	}
 
-	public void decoratePlanet(World par1World, Random par2Random, int par3, int par4)
-	{
+	public void decoratePlanet(World par1World, Random par2Random, int par3, int par4) {
 		this.biomedecoratorplanet.decorate(par1World, par2Random, par3, par4);
 	}
 
 	@Override
-	public void populate(IChunkProvider par1IChunkProvider, int par2, int par3)
-	{
+	public void populate(IChunkProvider par1IChunkProvider, int par2, int par3) {
 		BlockFalling.fallInstantly = true;
 		int var4 = par2 * 16;
 		int var5 = par3 * 16;
@@ -388,8 +332,7 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 	}
 
 	@Override
-	public void recreateStructures(int par1, int par2)
-	{
+	public void recreateStructures(int par1, int par2) {
 		// if (!ConfigManagerHole.disableHoleVillageGen)
 		// {
 		this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[]) null);
@@ -397,38 +340,31 @@ public class ChunkProviderHole extends ChunkProviderGenerate
 	}
 
 	@Override
-	public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate)
-	{
+	public boolean saveChunks(boolean par1, IProgressUpdate par2IProgressUpdate) {
 		return true;
 	}
 
 	@Override
-	public boolean canSave()
-	{
+	public boolean canSave() {
 		return true;
 	}
 
 	@Override
-	public String makeString()
-	{
+	public String makeString() {
 		return "HoleLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int i, int j, int k)
-	{
-		if (par1EnumCreatureType == EnumCreatureType.monster)
-		{
+	public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int i, int j, int k) {
+		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
 			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 8, 2, 3));
 			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
 			return monsters;
-		}
-		else
-		{
+		} else {
 			return null;
 		}
 	}

@@ -15,19 +15,16 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class BlockDecorVenus extends Block implements IPartialSealableBlock
-{
+public class BlockDecorVenus extends Block implements IPartialSealableBlock {
 	private IIcon[] venusBlockIcon;
 
-	public BlockDecorVenus(String name)
-	{
+	public BlockDecorVenus(String name) {
 		super(Material.rock);
 		this.setBlockName(name);
 	}
 
 	@Override
-	public void registerBlockIcons(IIconRegister par1IconRegister)
-	{
+	public void registerBlockIcons(IIconRegister par1IconRegister) {
 		this.venusBlockIcon = new IIcon[4];
 		this.venusBlockIcon[0] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "sulfurBlock");
 		this.venusBlockIcon[1] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "uraniumBlock");
@@ -36,22 +33,18 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock
 	}
 
 	@Override
-	public CreativeTabs getCreativeTabToDisplayOn()
-	{
+	public CreativeTabs getCreativeTabToDisplayOn() {
 		return SpaceCore.spaceBlocksTab;
 	}
 
 	@Override
-	public IIcon getIcon(int side, int meta)
-	{
+	public IIcon getIcon(int side, int meta) {
 		return this.venusBlockIcon[meta];
 	}
 
 	@Override
-	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list)
-	{
-		for (int i = 0; i < 4; ++i)
-		{
+	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
+		for (int i = 0; i < 4; ++i) {
 			list.add(new ItemStack(this, 1, i));
 		}
 	}
@@ -61,23 +54,19 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock
 	{
 		final int meta = par1World.getBlockMetadata(par2, par3, par4);
 
-		if (meta == 0)
-		{
+		if (meta == 0) {
 			return 4.0F;
 		}
 
-		if (meta == 1)
-		{
+		if (meta == 1) {
 			return 4.0F;
 		}
 
-		if (meta == 2)
-		{
+		if (meta == 2) {
 			return 4.0F;
 		}
 
-		if (meta == 3)
-		{
+		if (meta == 3) {
 			return 4.0F;
 		}
 
@@ -85,8 +74,7 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock
 	}
 
 	@Override
-	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction)
-	{
+	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) {
 		return true;
 	}
 }

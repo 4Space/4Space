@@ -12,10 +12,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPackedEuropaIce extends Block
-{
-	public BlockPackedEuropaIce(String name)
-	{
+public class BlockPackedEuropaIce extends Block {
+	public BlockPackedEuropaIce(String name) {
 		super(Material.packedIce);
 		this.slipperiness = 0.99F;
 		this.setHardness(0.5F);
@@ -24,44 +22,37 @@ public class BlockPackedEuropaIce extends Block
 	}
 
 	@Override
-	public CreativeTabs getCreativeTabToDisplayOn()
-	{
+	public CreativeTabs getCreativeTabToDisplayOn() {
 		return SpaceCore.spaceBlocksTab;
 	}
 
 	@Override
-	public boolean canSilkHarvest()
-	{
+	public boolean canSilkHarvest() {
 		return true;
 	}
 
 	@Override
-	public int quantityDropped(Random rand)
-	{
+	public int quantityDropped(Random rand) {
 		return 0;
 	}
 
 	@Override
-	public int getMobilityFlag()
-	{
+	public int getMobilityFlag() {
 		return 0;
 	}
 
-	public MapColor getMapColor(int meta)
-	{
-		switch (meta)
-		{
-			case 0:
-				return MapColor.blueColor;
-			default:
-				return MapColor.blueColor;
+	public MapColor getMapColor(int meta) {
+		switch (meta) {
+		case 0:
+			return MapColor.blueColor;
+		default:
+			return MapColor.blueColor;
 		}
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister)
-	{
+	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon(EuropaCore.TEXTURE_PREFIX + "packedEuropaIce");
 	}
 }

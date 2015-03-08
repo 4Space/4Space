@@ -1,6 +1,7 @@
 package mattparks.mods.space.core;
 
 import mattparks.mods.space.core.proxy.CommonProxy;
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.core.util.CreativeTabsSpace;
 import mattparks.mods.space.core.util.ThreadVersionCheck;
 import mattparks.mods.space.venus.blocks.VenusBlocks;
@@ -23,8 +24,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 
 @Mod(modid = Constants.MOD_ID_CORE, name = Constants.MOD_NAME_CORE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
-public class SpaceCore
-{
+public class SpaceCore {
 	public static CreativeTabs spaceBlocksTab;
 	public static CreativeTabs spaceItemsTab;
 
@@ -40,14 +40,12 @@ public class SpaceCore
 	public static SpaceCore instance;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		this.proxy.preInit(event);
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
+	public void init(FMLInitializationEvent event) {
 		SpaceCore.spaceBlocksTab = new CreativeTabsSpace(CreativeTabs.getNextID(), "SpaceBlocks", Item.getItemFromBlock(VenusBlocks.venusBasicBlock), 4);
 		SpaceCore.spaceItemsTab = new CreativeTabsSpace(CreativeTabs.getNextID(), "SpaceItems", VenusItems.venusBasicItem, 2);
 
@@ -75,14 +73,13 @@ public class SpaceCore
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event) {
 		this.proxy.postInit(event);
 	}
 
 	@EventHandler
-	public void serverInit(FMLServerStartedEvent event)
-	{
-		ThreadVersionCheck.startCheck();
+	public void serverInit(FMLServerStartedEvent event) {
+		if (ConfigManagerCore.updateCheck)
+			ThreadVersionCheck.startCheck();
 	}
 }

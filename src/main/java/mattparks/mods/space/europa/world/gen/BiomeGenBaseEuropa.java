@@ -6,12 +6,10 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class BiomeGenBaseEuropa extends BiomeGenBase
-{
+public class BiomeGenBaseEuropa extends BiomeGenBase {
 	public static final BiomeGenBase europa = new BiomeGenBaseEuropa(ConfigManagerEuropa.idBiomeEuropa).setBiomeName("Europa");
 
-	public BiomeGenBaseEuropa(int var1)
-	{
+	public BiomeGenBaseEuropa(int var1) {
 		super(var1);
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
@@ -23,14 +21,12 @@ public class BiomeGenBaseEuropa extends BiomeGenBase
 	}
 
 	@Override
-	public BiomeGenBaseEuropa setColor(int var1)
-	{
+	public BiomeGenBaseEuropa setColor(int var1) {
 		return (BiomeGenBaseEuropa) super.setColor(var1);
 	}
 
 	@Override
-	public float getSpawningChance()
-	{
+	public float getSpawningChance() {
 		return 0.01F;
 	}
 }

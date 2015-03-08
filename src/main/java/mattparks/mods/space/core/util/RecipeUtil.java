@@ -4,16 +4,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-public class RecipeUtil
-{
+public class RecipeUtil {
 	@SuppressWarnings("unchecked")
-	public static void addRecipe(ItemStack result, Object[] obj)
-	{
+	public static void addRecipe(ItemStack result, Object[] obj) {
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(result, obj));
 	}
 
-	public static void addBlockRecipe(ItemStack result, String oreDictIngot, ItemStack spaceIngot)
-	{
+	public static void addBlockRecipe(ItemStack result, String oreDictIngot, ItemStack spaceIngot) {
 		RecipeUtil.addRecipe(result, new Object[] { "XXX", "XXX", "XXI", 'X', oreDictIngot, 'I', spaceIngot });
 		RecipeUtil.addRecipe(result, new Object[] { "XXX", "XXX", "XIX", 'X', oreDictIngot, 'I', spaceIngot });
 		RecipeUtil.addRecipe(result, new Object[] { "XXX", "XXX", "IXX", 'X', oreDictIngot, 'I', spaceIngot });

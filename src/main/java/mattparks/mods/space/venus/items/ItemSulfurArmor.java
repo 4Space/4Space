@@ -12,38 +12,28 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSulfurArmor extends ItemArmor
-{
+public class ItemSulfurArmor extends ItemArmor {
 	private final ArmorMaterial material;
 
-	public ItemSulfurArmor(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4)
-	{
+	public ItemSulfurArmor(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 		super(par2EnumArmorMaterial, par3, par4);
 		this.material = par2EnumArmorMaterial;
 		this.setUnlocalizedName(name);
 	}
 
 	@Override
-	public EnumRarity getRarity(ItemStack par1ItemStack)
-	{
+	public EnumRarity getRarity(ItemStack par1ItemStack) {
 		return ClientProxy.spaceItem;
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
-	{
-		if (this.material == VenusItems.ARMOR_SULFUR)
-		{
-			if (stack.getItem() == VenusItems.sulfurHelmet)
-			{
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer) {
+		if (this.material == VenusItems.ARMOR_SULFUR) {
+			if (stack.getItem() == VenusItems.sulfurHelmet) {
 				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/sulfur_1.png";
-			}
-			else if (stack.getItem() == VenusItems.sulfurChestplate || stack.getItem() == VenusItems.sulfurBoots)
-			{
+			} else if (stack.getItem() == VenusItems.sulfurChestplate || stack.getItem() == VenusItems.sulfurBoots) {
 				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/sulfur_2.png";
-			}
-			else if (stack.getItem() == VenusItems.sulfurLeggings)
-			{
+			} else if (stack.getItem() == VenusItems.sulfurLeggings) {
 				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/sulfur_3.png";
 			}
 		}
@@ -51,15 +41,13 @@ public class ItemSulfurArmor extends ItemArmor
 	}
 
 	@Override
-	public CreativeTabs getCreativeTab()
-	{
+	public CreativeTabs getCreativeTab() {
 		return SpaceCore.spaceItemsTab;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister par1IconRegister)
-	{
+	public void registerIcons(IIconRegister par1IconRegister) {
 		this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", VenusCore.TEXTURE_PREFIX));
 	}
 }

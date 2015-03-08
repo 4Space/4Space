@@ -30,8 +30,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_HOLE, name = Constants.MOD_NAME_HOLE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
-public class HoleCore
-{
+public class HoleCore {
 	public static final String ASSET_PREFIX = "spacehole";
 	public static final String TEXTURE_PREFIX = HoleCore.ASSET_PREFIX + ":";
 
@@ -41,8 +40,7 @@ public class HoleCore
 	public static CommonProxyHole proxy;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerHole(new File(event.getModConfigurationDirectory(), "4Space/hole.cfg"));
 
 		HoleBlocks.init();
@@ -51,19 +49,16 @@ public class HoleCore
 		this.proxy.preInit(event);
 	}
 
-	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass)
-	{
+	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass) {
 		GameRegistry.registerBlock(block, itemBlockClass, block.getUnlocalizedName().replace("tile.", ""));
 	}
 
-	public static void registerItem(Item item)
-	{
+	public static void registerItem(Item item) {
 		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
+	public void init(FMLInitializationEvent event) {
 		HoleCore.moonHole = (Moon) new Moon("hole").setParentPlanet(SpaceCore.planetSaturn).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.01F);
 		HoleCore.moonHole.setDimensionInfo(ConfigManagerHole.idDimensionHole, WorldProviderHole.class).setTierRequired(3);
 		HoleCore.moonHole.setBodyIcon(new ResourceLocation(HoleCore.ASSET_PREFIX, "textures/gui/celestialbodies/wormhole.png"));
@@ -82,29 +77,24 @@ public class HoleCore
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event) {
 		RecipeManagerHole.loadRecipes();
 
 		this.proxy.postInit(event);
 	}
 
-	private void registerTileEntities()
-	{
+	private void registerTileEntities() {
 	}
 
-	private void registerCreatures()
-	{
+	private void registerCreatures() {
 		SpaceUtil.registerSpaceCreature(EntityMakianVillager.class, "MakianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
 	}
 
-	private void registerOtherEntities()
-	{
+	private void registerOtherEntities() {
 	}
 
 	@EventHandler
-	public static void PreLoad(FMLPreInitializationEvent PreEvent)
-	{
+	public static void PreLoad(FMLPreInitializationEvent PreEvent) {
 		proxy.registerRenderInfo();
 	}
 }

@@ -14,10 +14,8 @@ import net.minecraftforge.common.util.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockCaravanModuleDummy extends Block implements IPartialSealableBlock
-{
-	public BlockCaravanModuleDummy(String name)
-	{
+public class BlockCaravanModuleDummy extends Block implements IPartialSealableBlock {
+	public BlockCaravanModuleDummy(String name) {
 		super(Material.cloth);
 		this.setBlockName(name);
 		this.setHardness(-1.0F);
@@ -27,26 +25,22 @@ public class BlockCaravanModuleDummy extends Block implements IPartialSealableBl
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister iconRegister)
-	{
+	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon("galacticraftcore:deco_aluminium_2");
 	}
 
 	@Override
-	public int quantityDropped(Random par1Random)
-	{
+	public int quantityDropped(Random par1Random) {
 		return 0;
 	}
 
 	@Override
-	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z)
-	{
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
 		return new ItemStack(Item.getItemFromBlock(MercuryBlocks.caravanModule), 1, 0);
 	}
 
 	@Override
-	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction)
-	{
+	public boolean isSealed(World world, int x, int y, int z, ForgeDirection direction) {
 		return true;
 	}
 }

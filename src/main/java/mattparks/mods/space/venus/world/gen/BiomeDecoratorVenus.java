@@ -7,8 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomeDecoratorVenus extends BiomeDecoratorSpace
-{
+public class BiomeDecoratorVenus extends BiomeDecoratorSpace {
 	protected WorldGenerator lavaGen;
 	public int lavaLakesPerChunk;
 
@@ -24,8 +23,7 @@ public class BiomeDecoratorVenus extends BiomeDecoratorSpace
 	protected WorldGenerator fossilizedPlantGen;
 	private World currentWorld;
 
-	public BiomeDecoratorVenus()
-	{
+	public BiomeDecoratorVenus() {
 		this.lavaLakesPerChunk = 5;
 
 		this.dirtGen = new WorldGenMinableMeta(VenusBlocks.venusBasicBlock, 32, 1, true, VenusBlocks.venusBasicBlock, 2);
@@ -40,8 +38,7 @@ public class BiomeDecoratorVenus extends BiomeDecoratorSpace
 	}
 
 	@Override
-	protected void decorate()
-	{
+	protected void decorate() {
 		this.generateOre(32, this.dirtGen, 0, 256);
 		this.generateOre(12, this.sulfurGen, 0, 64);
 		this.generateOre(16, this.coalGen, 0, 128);
@@ -57,8 +54,7 @@ public class BiomeDecoratorVenus extends BiomeDecoratorSpace
 		int var4;
 		int var5;
 
-		for (var2 = 0; var2 < this.lavaLakesPerChunk; ++var2)
-		{
+		for (var2 = 0; var2 < this.lavaLakesPerChunk; ++var2) {
 			var3 = this.chunkX + this.rand.nextInt(16) + 8;
 			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8);
 			var5 = this.chunkZ + this.rand.nextInt(16) + 8;
@@ -66,13 +62,11 @@ public class BiomeDecoratorVenus extends BiomeDecoratorSpace
 		}
 	}
 
-	protected void setCurrentWorld(World world)
-	{
+	protected void setCurrentWorld(World world) {
 		this.currentWorld = world;
 	}
 
-	protected World getCurrentWorld()
-	{
+	protected World getCurrentWorld() {
 		return this.currentWorld;
 	}
 }

@@ -29,8 +29,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_EUROPA, name = Constants.MOD_NAME_EUROPA, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
-public class EuropaCore
-{
+public class EuropaCore {
 	public static final String ASSET_PREFIX = "spaceeuropa";
 	public static final String TEXTURE_PREFIX = EuropaCore.ASSET_PREFIX + ":";
 
@@ -40,8 +39,7 @@ public class EuropaCore
 	public static CommonProxyEuropa proxy;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerEuropa(new File(event.getModConfigurationDirectory(), "4Space/europa.cfg"));
 
 		EuropaBlocks.init();
@@ -50,19 +48,16 @@ public class EuropaCore
 		this.proxy.preInit(event);
 	}
 
-	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass)
-	{
+	public static void registerBlock(Block block, Class<? extends ItemBlock> itemBlockClass) {
 		GameRegistry.registerBlock(block, itemBlockClass, block.getUnlocalizedName().replace("tile.", ""));
 	}
 
-	public static void registerItem(Item item)
-	{
+	public static void registerItem(Item item) {
 		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
+	public void init(FMLInitializationEvent event) {
 		EuropaCore.moonEuropa = (Moon) new Moon("europa").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(25F, 25F)).setRelativeOrbitTime(1 / 0.01F);
 		EuropaCore.moonEuropa.setDimensionInfo(ConfigManagerEuropa.idDimensionEuropa, WorldProviderEuropa.class).setTierRequired(3);
 		EuropaCore.moonEuropa.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/europa.png"));
@@ -81,28 +76,23 @@ public class EuropaCore
 	}
 
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
+	public void postInit(FMLPostInitializationEvent event) {
 		RecipeManagerEuropa.loadRecipes();
 
 		this.proxy.postInit(event);
 	}
 
-	private void registerTileEntities()
-	{
+	private void registerTileEntities() {
 	}
 
-	private void registerCreatures()
-	{
+	private void registerCreatures() {
 	}
 
-	private void registerOtherEntities()
-	{
+	private void registerOtherEntities() {
 	}
 
 	@EventHandler
-	public static void PreLoad(FMLPreInitializationEvent PreEvent)
-	{
+	public static void PreLoad(FMLPreInitializationEvent PreEvent) {
 		proxy.registerRenderInfo();
 	}
 }

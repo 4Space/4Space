@@ -6,8 +6,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
-public class PlutoItems
-{
+public class PlutoItems {
 	public static Item plutoBasicItem;
 	public static Item blueGemPickaxe;
 	public static Item blueGemAxe;
@@ -22,15 +21,13 @@ public class PlutoItems
 	public static ArmorMaterial ARMOR_BLUEGEM = EnumHelper.addArmorMaterial("blueGem", 30, new int[] { 3, 8, 6, 3 }, 12);
 	public static ToolMaterial TOOL_BLUEGEM = EnumHelper.addToolMaterial("blueGem", 3, 768, 5.0F, 2, 8);
 
-	public static void init()
-	{
+	public static void init() {
 		initItems();
 		registerItems();
 		registerHarvestLevels();
 	}
 
-	private static void initItems()
-	{
+	private static void initItems() {
 		PlutoItems.plutoBasicItem = new ItemBasicPluto();
 
 		PlutoItems.blueGemPickaxe = new ItemPickaxePluto("blueGem_pickaxe", PlutoItems.TOOL_BLUEGEM);
@@ -45,15 +42,13 @@ public class PlutoItems
 		PlutoItems.blueGemBoots = new ItemBlueGemArmor("blueGem_boots", PlutoItems.ARMOR_BLUEGEM, 7, 3);
 	}
 
-	private static void registerHarvestLevels()
-	{
+	private static void registerHarvestLevels() {
 		PlutoItems.blueGemPickaxe.setHarvestLevel("pickaxe", 4);
 		PlutoItems.blueGemAxe.setHarvestLevel("axe", 4);
 		PlutoItems.blueGemSpade.setHarvestLevel("shovel", 4);
 	}
 
-	private static void registerItems()
-	{
+	private static void registerItems() {
 		PlutoCore.registerItem(plutoBasicItem);
 
 		PlutoCore.registerItem(blueGemPickaxe);

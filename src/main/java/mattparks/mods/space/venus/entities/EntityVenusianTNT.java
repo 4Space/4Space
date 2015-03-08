@@ -7,13 +7,11 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityVenusianTNT extends Entity
-{
+public class EntityVenusianTNT extends Entity {
 	public int fuse;
 	private EntityLivingBase tntPlacedBy;
 
-	public EntityVenusianTNT(World world)
-	{
+	public EntityVenusianTNT(World world) {
 		super(world);
 		this.fuse = 80;
 		this.preventEntitySpawning = true;
@@ -21,8 +19,7 @@ public class EntityVenusianTNT extends Entity
 		this.yOffset = this.height / 2.0F;
 	}
 
-	public EntityVenusianTNT(World world, double x, double y, double z, EntityLivingBase entityLiving)
-	{
+	public EntityVenusianTNT(World world, double x, double y, double z, EntityLivingBase entityLiving) {
 		this(world);
 		this.setPosition(x, y, z);
 		final float f = (float) (Math.random() * 3.141592741012573D * 2.0D);
@@ -37,25 +34,21 @@ public class EntityVenusianTNT extends Entity
 	}
 
 	@Override
-	protected void entityInit()
-	{
+	protected void entityInit() {
 	}
 
 	@Override
-	protected boolean canTriggerWalking()
-	{
+	protected boolean canTriggerWalking() {
 		return false;
 	}
 
 	@Override
-	public boolean canBeCollidedWith()
-	{
+	public boolean canBeCollidedWith() {
 		return !this.isDead;
 	}
 
 	@Override
-	public void onUpdate()
-	{
+	public void onUpdate() {
 		this.prevPosX = this.posX;
 		this.prevPosY = this.posY;
 		this.prevPosZ = this.posZ;
@@ -66,54 +59,44 @@ public class EntityVenusianTNT extends Entity
 		this.motionY *= 0.9800000190734863D;
 		this.motionZ *= 0.9800000190734863D;
 
-		if (this.onGround)
-		{
+		if (this.onGround) {
 			this.motionX *= 0.699999988079071D;
 			this.motionZ *= 0.699999988079071D;
 			this.motionY *= -0.5D;
 		}
-		if (this.fuse-- <= 0)
-		{
+		if (this.fuse-- <= 0) {
 			this.setDead();
 
-			if (!this.worldObj.isRemote)
-			{
+			if (!this.worldObj.isRemote) {
 				this.explode();
 			}
-		}
-		else
-		{
+		} else {
 			this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
 		}
 	}
 
-	private void explode()
-	{
+	private void explode() {
 		final float f = 5.0F;
 		this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
 	}
 
 	@Override
-	protected void writeEntityToNBT(NBTTagCompound nbt)
-	{
+	protected void writeEntityToNBT(NBTTagCompound nbt) {
 		nbt.setInteger("Fuse", this.fuse);
 	}
 
 	@Override
-	protected void readEntityFromNBT(NBTTagCompound nbt)
-	{
+	protected void readEntityFromNBT(NBTTagCompound nbt) {
 		this.fuse = nbt.getInteger("Fuse");
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public float getShadowSize()
-	{
+	public float getShadowSize() {
 		return 0.0F;
 	}
 
-	public EntityLivingBase getTntPlacedBy()
-	{
+	public EntityLivingBase getTntPlacedBy() {
 		return this.tntPlacedBy;
 	}
 }

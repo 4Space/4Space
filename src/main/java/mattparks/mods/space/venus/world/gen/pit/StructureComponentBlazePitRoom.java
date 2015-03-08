@@ -12,8 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 
-public class StructureComponentBlazePitRoom extends StructureComponentGC
-{
+public class StructureComponentBlazePitRoom extends StructureComponentGC {
 	public int corridorCount;
 	public int originalFourCorridorLength;
 	public int bossEntryCorridor;
@@ -22,8 +21,7 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 	private final int height;
 	private final int width;
 
-	public StructureComponentBlazePitRoom(int type, World world, Random par2Random, int x, int y, int z, int height, int width, int cbm)
-	{
+	public StructureComponentBlazePitRoom(int type, World world, Random par2Random, int x, int y, int z, int height, int width, int cbm) {
 		super(type);
 		this.setCoordBaseMode(cbm);
 		this.height = height;
@@ -32,42 +30,31 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 	}
 
 	@Override
-	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random)
-	{
+	public void buildComponent(StructureComponent par1StructureComponent, List par2List, Random par3Random) {
 		int var4;
 
-		for (var4 = 0; var4 < 4; ++var4)
-		{
+		for (var4 = 0; var4 < 4; ++var4) {
 			final int[] var5 = this.getValidOpening(par3Random, var4);
 
 			this.makeCorridor(par2List, par3Random, 1, var5[0], var5[1], var5[2], this.width, 7, var4);
 		}
 	}
 
-	public int[] getValidOpening(Random var1, int var2)
-	{
-		if (var2 == 0)
-		{
+	public int[] getValidOpening(Random var1, int var2) {
+		if (var2 == 0) {
 			return new int[] { this.width - 1, 0, 1 };
-		}
-		else if (var2 == 1)
-		{
+		} else if (var2 == 1) {
 			return new int[] { 1, 0, this.width - 1 };
-		}
-		else if (var2 == 2)
-		{
+		} else if (var2 == 2) {
 			return new int[] { 0, 0, 1 };
-		}
-		else if (var2 == 3)
-		{
+		} else if (var2 == 3) {
 			return new int[] { 1, 0, 0 };
 		}
 
 		return new int[] { 0, 0, 0 };
 	}
 
-	public boolean makeCorridor(List list, Random random, int type, int x, int y, int z, int width, int height, int cbm)
-	{
+	public boolean makeCorridor(List list, Random random, int type, int x, int y, int z, int width, int height, int cbm) {
 		final int var10 = (this.getCoordBaseMode() + cbm) % 4;
 		this.offsetCorridorCoords(x, y, z, width, var10);
 
@@ -77,8 +64,7 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 		return true;
 	}
 
-	protected int[] offsetCorridorCoords(int x, int y, int z, int width, int cbm)
-	{
+	protected int[] offsetCorridorCoords(int x, int y, int z, int width, int cbm) {
 		final int var6 = this.getXWithOffset(x, z);
 		final int var7 = this.getYWithOffset(y);
 		final int var8 = this.getZWithOffset(x, z);
@@ -86,14 +72,11 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 	}
 
 	@Override
-	public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox)
-	{
-		if (this.averageGroundLevel < 0)
-		{
+	public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox) {
+		if (this.averageGroundLevel < 0) {
 			this.averageGroundLevel = this.getAverageGroundLevel(par1World, par3StructureBoundingBox);
 
-			if (this.averageGroundLevel < 0)
-			{
+			if (this.averageGroundLevel < 0) {
 				return true;
 			}
 
@@ -106,20 +89,13 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 		return true;
 	}
 
-	public void makeWallsDown(World world)
-	{
-		for (int y = 0; y < this.height; y++)
-		{
-			for (int x = 0; x < 7; x++)
-			{
-				for (int z = 0; z < 7; z++)
-				{
-					if ((x == 0 || x == 6 || z == 0 || z == 6) && (y == 0 || y > 7))
-					{
+	public void makeWallsDown(World world) {
+		for (int y = 0; y < this.height; y++) {
+			for (int x = 0; x < 7; x++) {
+				for (int z = 0; z < 7; z++) {
+					if ((x == 0 || x == 6 || z == 0 || z == 6) && (y == 0 || y > 7)) {
 						this.placeBlockAtCurrentPosition(world, VenusBlocks.venusBasicBlock, 12, x, y, z, this.getBoundingBox());
-					}
-					else
-					{
+					} else {
 						this.placeBlockAtCurrentPosition(world, Blocks.air, 0, x, y, z, this.getBoundingBox());
 					}
 				}
@@ -127,58 +103,43 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 		}
 	}
 
-	public void makePlatforms(World world, Random rand)
-	{
-		for (int y = this.height - 1; y > 10; y--)
-		{
-			for (int x = 0; x < this.width; x++)
-			{
-				for (int z = 0; z < this.width; z++)
-				{
-					if (y % 4 == 0 && rand.nextInt(20) == 0)
-					{
-						if (world.getBlock(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z) == VenusBlocks.venusBasicBlock)
-						{
+	public void makePlatforms(World world, Random rand) {
+		for (int y = this.height - 1; y > 10; y--) {
+			for (int x = 0; x < this.width; x++) {
+				for (int z = 0; z < this.width; z++) {
+					if (y % 4 == 0 && rand.nextInt(20) == 0) {
+						if (world.getBlock(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z) == VenusBlocks.venusBasicBlock) {
 						}
 
 						{
-							for (int i = -2; i < 2; i++)
-							{
-								for (int j = -2; j < 2; j++)
-								{
-									if (world.getBlock(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == Blocks.air)
-									{
+							for (int i = -2; i < 2; i++) {
+								for (int j = -2; j < 2; j++) {
+									if (world.getBlock(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == Blocks.air) {
 										this.placeBlockAtCurrentPosition(world, VenusBlocks.venusBasicBlock, 12, x + i, y, z + j, this.getBoundingBox());
 									}
 
-									if (y > 10)
-									{
+									if (y > 10) {
 										this.placeBlockAtCurrentPosition(world, Blocks.air, 0, x - 2, y, z - 2, this.getBoundingBox());
 										this.placeBlockAtCurrentPosition(world, Blocks.air, 0, x + 1, y, z - 2, this.getBoundingBox());
 										this.placeBlockAtCurrentPosition(world, Blocks.air, 0, x - 2, y, z + 1, this.getBoundingBox());
 										this.placeBlockAtCurrentPosition(world, Blocks.air, 0, x + 1, y, z + 1, this.getBoundingBox());
 									}
 
-									if (rand.nextInt(5) == 0 && world.getBlock(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z + j) == Blocks.air && world.getBlock(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == VenusBlocks.venusBasicBlock)
-									{
+									if (rand.nextInt(5) == 0 && world.getBlock(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z + j) == Blocks.air && world.getBlock(this.getBoundingBox().minX + x + i, this.getBoundingBox().minY + y, this.getBoundingBox().minZ + z + j) == VenusBlocks.venusBasicBlock) {
 										this.placeBlockAtCurrentPosition(world, VenusBlocks.evolvedBlazeEgg, 0, x + i, y + 1, z + j, this.getBoundingBox());
 									}
 								}
 							}
 
-							if (rand.nextInt(7) == 0)
-							{
-								if (x > 0 && x < 7 && z > 0 && z < 7)
-								{
-									if (world.getBlock(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z) == Blocks.air)
-									{
+							if (rand.nextInt(7) == 0) {
+								if (x > 0 && x < 7 && z > 0 && z < 7) {
+									if (world.getBlock(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z) == Blocks.air) {
 										this.placeBlockAtCurrentPosition(world, VenusBlocks.evolvedBlazeEgg, 0, x, y + 2, z, this.getBoundingBox());
 									}
 
 									final TileEntityMobSpawner var7 = (TileEntityMobSpawner) world.getTileEntity(this.getBoundingBox().minX + x, this.getBoundingBox().minY + y + 1, this.getBoundingBox().minZ + z);
 
-									if (var7 != null)
-									{
+									if (var7 != null) {
 									}
 								}
 							}
@@ -189,40 +150,31 @@ public class StructureComponentBlazePitRoom extends StructureComponentGC
 		}
 	}
 
-	protected int getAverageGroundLevel(World par1World, StructureBoundingBox par2StructureBoundingBox)
-	{
+	protected int getAverageGroundLevel(World par1World, StructureBoundingBox par2StructureBoundingBox) {
 		int var3 = 0;
 		int var4 = 0;
 
-		for (int var5 = this.boundingBox.minZ; var5 <= this.boundingBox.maxZ; ++var5)
-		{
-			for (int var6 = this.boundingBox.minX; var6 <= this.boundingBox.maxX; ++var6)
-			{
-				if (par2StructureBoundingBox.isVecInside(var6, 64, var5))
-				{
+		for (int var5 = this.boundingBox.minZ; var5 <= this.boundingBox.maxZ; ++var5) {
+			for (int var6 = this.boundingBox.minX; var6 <= this.boundingBox.maxX; ++var6) {
+				if (par2StructureBoundingBox.isVecInside(var6, 64, var5)) {
 					var3 += Math.max(par1World.getTopSolidOrLiquidBlock(var6, var5), par1World.provider.getAverageGroundLevel());
 					++var4;
 				}
 			}
 		}
 
-		if (var4 == 0)
-		{
+		if (var4 == 0) {
 			return -1;
-		}
-		else
-		{
+		} else {
 			return var3 / var4;
 		}
 	}
 
 	@Override
-	protected void func_143012_a(NBTTagCompound nbttagcompound)
-	{
+	protected void func_143012_a(NBTTagCompound nbttagcompound) {
 	}
 
 	@Override
-	protected void func_143011_b(NBTTagCompound nbttagcompound)
-	{
+	protected void func_143011_b(NBTTagCompound nbttagcompound) {
 	}
 }

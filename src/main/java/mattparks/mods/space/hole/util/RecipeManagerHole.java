@@ -8,10 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipeManagerHole
-{
-	private static void addUniversalRecipes()
-	{
+public class RecipeManagerHole {
+	private static void addUniversalRecipes() {
 		// ORE DICTIONARY
 		OreDictionary.registerOre("holeStone", new ItemStack(HoleBlocks.holeBasicBlock, 1, 3));
 		OreDictionary.registerOre("flameiteBlock", new ItemStack(HoleBlocks.holeBasicBlock, 1, 6));
@@ -41,8 +39,7 @@ public class RecipeManagerHole
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(HoleBlocks.holeBasicBlock, 1, 6), OreDictionary.getOres("dustFlameite").get(0), 0.2F);
 	}
 
-	public static void loadRecipes()
-	{
+	public static void loadRecipes() {
 		RecipeManagerHole.addUniversalRecipes();
 	}
 }

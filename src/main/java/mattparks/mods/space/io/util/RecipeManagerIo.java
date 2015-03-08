@@ -8,10 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipeManagerIo
-{
-	private static void addUniversalRecipes()
-	{
+public class RecipeManagerIo {
+	private static void addUniversalRecipes() {
 		OreDictionary.registerOre("dustSulfur", new ItemStack(VenusItems.venusBasicItem, 1, 0));
 		OreDictionary.registerOre("ioStone", new ItemStack(IoBlocks.ioBasicBlock, 1, 2));
 		OreDictionary.registerOre("ashStone", new ItemStack(IoBlocks.ioBasicBlock, 1, 5));
@@ -23,8 +21,7 @@ public class RecipeManagerIo
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(IoBlocks.ioBasicBlock, 2, 6), OreDictionary.getOres("ashStone").get(0), 0.2F);
 	}
 
-	public static void loadRecipes()
-	{
+	public static void loadRecipes() {
 		RecipeManagerIo.addUniversalRecipes();
 	}
 }

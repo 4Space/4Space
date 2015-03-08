@@ -11,8 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class EuropaBlocks
-{
+public class EuropaBlocks {
 	public static Block europaBasicBlock;
 	public static Block europaIce;
 	public static Block packedEuropaIce;
@@ -20,8 +19,7 @@ public class EuropaBlocks
 
 	public static Fluid europaWaterFluid;
 
-	private static void initBlocks()
-	{
+	private static void initBlocks() {
 		EuropaBlocks.europaBasicBlock = new BlockBasicEuropa("europa_block");
 		EuropaBlocks.europaIce = new BlockEuropaIce("europa_ice");
 		EuropaBlocks.packedEuropaIce = new BlockPackedEuropaIce("packed_europa_ice");
@@ -31,25 +29,21 @@ public class EuropaBlocks
 		EuropaBlocks.europaWaterFluidBlock = new BlockFluidEuropaWater("europa_water_fluid", EuropaBlocks.europaWaterFluid, Material.water);
 	}
 
-	private static void setHarvestLevels()
-	{
+	private static void setHarvestLevels() {
 		EuropaBlocks.europaBasicBlock.setHarvestLevel("pickaxe", 1);
 	}
 
-	private static void registerBlocks()
-	{
+	private static void registerBlocks() {
 		EuropaCore.registerBlock(EuropaBlocks.europaBasicBlock, ItemBlockBasicEuropa.class);
 		EuropaCore.registerBlock(EuropaBlocks.europaIce, ItemBlockEuropaIce.class);
 		EuropaCore.registerBlock(EuropaBlocks.packedEuropaIce, ItemBlockUtil.class);
 		EuropaCore.registerBlock(EuropaBlocks.europaWaterFluidBlock, ItemBlockUtil.class);
 	}
 
-	public static void oreDictRegistration()
-	{
+	public static void oreDictRegistration() {
 	}
 
-	public static void init()
-	{
+	public static void init() {
 		initBlocks();
 		setHarvestLevels();
 		registerBlocks();
