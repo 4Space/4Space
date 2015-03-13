@@ -38,7 +38,7 @@ public class ThreadVersionCheck extends Thread {
 
 		while (this.count < 3 && remoteBuildVer == 0) {
 			try {
-				final URL url = new URL("http://4space.webege.com/version.html");
+				final URL url = new URL("http://4space.mods.center/version.html");
 				final HttpURLConnection http = (HttpURLConnection) url.openConnection();
 				http.addRequestProperty("User-Agent", "Mozilla/4.76");
 				final BufferedReader in = new BufferedReader(new InputStreamReader(http.getInputStream()));
@@ -62,11 +62,11 @@ public class ThreadVersionCheck extends Thread {
 							Thread.sleep(5000);
 
 							if (sideToCheck.equals(Side.CLIENT)) {
-								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(new ChatComponentText(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "4Space" + EnumColor.GREY + " version available! v" + String.valueOf(remoteMajVer) + "." + String.valueOf(remoteMinVer) + "." + String.valueOf(remoteBuildVer) + EnumColor.DARK_BLUE + " http://4space.webege.com/"));
+								FMLClientHandler.instance().getClient().thePlayer.addChatMessage(new ChatComponentText(EnumColor.GREY + "New " + EnumColor.DARK_AQUA + "4Space" + EnumColor.GREY + " version available! v" + String.valueOf(remoteMajVer) + "." + String.valueOf(remoteMinVer) + "." + String.valueOf(remoteBuildVer) + EnumColor.DARK_BLUE + " http://4space.mods.center/"));
 							}
 
 							else if (sideToCheck.equals(Side.SERVER)) {
-								SCLog.severe("New 4Space version available! v" + String.valueOf(remoteMajVer) + "." + String.valueOf(remoteMinVer) + "." + String.valueOf(remoteBuildVer) + " http://4space.webege.com/");
+								SCLog.severe("New 4Space version available! v" + String.valueOf(remoteMajVer) + "." + String.valueOf(remoteMinVer) + "." + String.valueOf(remoteBuildVer) + " http://4space.mods.center/");
 							}
 						}
 					}
