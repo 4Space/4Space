@@ -33,16 +33,17 @@ Galacticraft: http://ci.micdoodle8.com/job/Galacticraft/
 
 The Team
 ===========
-* - Not active
-
 Mattparks - Owner, Main Coder and Musician
 
-*BBoldt - Musician
+* - Not active
 
-*Decaxon - Code
+* BBoldt - Musician
 
-*Flashy3 - Textures
+* Decaxon - Code
 
-*Dinammar - Textures
+* Flashy3 - Textures
+
+* Dinammar - Textures
+
 
 Anyone can commit and help out 4Space!
