@@ -14,6 +14,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemJetpack extends ItemArmor {
+	public boolean active;
 	private final ArmorMaterial material;
 
 	public ItemJetpack(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
@@ -54,5 +55,9 @@ public class ItemJetpack extends ItemArmor {
 		super.setTextureName(par1Str);
 		super.setUnlocalizedName(par1Str);
 		return this;
+	}
+
+    public void setActive() {
+		this.active = true;
 	}
 }

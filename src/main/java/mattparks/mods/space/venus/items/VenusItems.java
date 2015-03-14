@@ -75,7 +75,7 @@ public class VenusItems {
 		VenusItems.gemLeggings = new ItemGemArmor("gem_leggings", VenusItems.ARMOR_GEM, 7, 2);
 		VenusItems.gemBoots = new ItemGemArmor("gem_boots", VenusItems.ARMOR_GEM, 7, 3);
 
-		VenusItems.jetpack = new ItemSulfurArmor("jetpack", VenusItems.JETPACK, 7, 1);
+		VenusItems.jetpack = new ItemJetpack("jetpack", VenusItems.JETPACK, 7, 1);
 
 		VenusItems.sulfurBattery = new ItemSulfurBattery("sulfur_battery");
 		VenusItems.uraniumBattery = new ItemUraniumBattery("uranium_battery");

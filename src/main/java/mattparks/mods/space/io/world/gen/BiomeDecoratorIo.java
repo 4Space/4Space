@@ -18,7 +18,7 @@ public class BiomeDecoratorIo extends BiomeDecoratorSpace {
 	private World currentWorld;
 
 	public BiomeDecoratorIo() {
-		this.sulfurGen = new WorldGenMinableMeta(IoBlocks.ioBasicBlock, 16, 8, true, IoBlocks.ioBasicBlock, 4);
+		this.sulfurGen = new WorldGenMinableMeta(IoBlocks.ioBasicBlock, 16, 4, true, IoBlocks.ioBasicBlock, 2);
 
 		this.redLiquidSulfurLakesPerChunk = 1; 
 		this.yellowLiquidSulfurLakesPerChunk = 1; 
