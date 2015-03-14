@@ -36,7 +36,7 @@ tile.pluto_block.frozenIronBlock.name=Block Gefrier Eisen
 tile.pluto_block.ununpentiumBlock.name=Block Ununpentium
 
 # GUI
-planet.Pluto.name=Pluto
+planet.pluto=Pluto
 
 # Schematics
 

@@ -1,36 +1,35 @@
-package mattparks.mods.space.io.world.gen.dungeon;
+package mattparks.mods.space.mercury.world.gen.dungeon;
 
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonBoundingBox;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonRoom;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
+import micdoodle8.mods.galacticraft.planets.mars.blocks.MarsBlocks;
+import micdoodle8.mods.galacticraft.planets.mars.tile.TileEntityTreasureChestMars;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.ChunkCoordinates;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 
-public class RoomChestsIo extends DungeonRoom
+public class RoomTreasureMercury extends DungeonRoom
 {
     int sizeX;
     int sizeY;
     int sizeZ;
 
-    private final ArrayList<ChunkCoordinates> chests = new ArrayList<ChunkCoordinates>();
+    private final HashSet<ChunkCoordinates> chests = new HashSet<ChunkCoordinates>();
 
-    public RoomChestsIo(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
+    public RoomTreasureMercury(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
     {
         super(dungeon, posX, posY, posZ, entranceDir);
         if (this.worldObj != null)
         {
             final Random rand = new Random(this.worldObj.getSeed() * posX * posY * 57 * posZ);
-            this.sizeX = rand.nextInt(5) + 6;
-            this.sizeY = rand.nextInt(2) + 7;
-            this.sizeZ = rand.nextInt(5) + 6;
+            this.sizeX = rand.nextInt(6) + 7;
+            this.sizeY = rand.nextInt(2) + 8;
+            this.sizeZ = rand.nextInt(6) + 7;
         }
     }
 
@@ -39,9 +38,9 @@ public class RoomChestsIo extends DungeonRoom
     {
         for (int i = this.posX - 1; i <= this.posX + this.sizeX; i++)
         {
-            for (int j = this.posY - 1; j <= this.posY + this.sizeY; j++)
+            for (int k = this.posZ - 1; k <= this.posZ + this.sizeZ; k++)
             {
-                for (int k = this.posZ - 1; k <= this.posZ + this.sizeZ; k++)
+                for (int j = this.posY - 1; j <= this.posY + this.sizeY; j++)
                 {
                     if (i == this.posX - 1 || i == this.posX + this.sizeX || j == this.posY - 1 || j == this.posY + this.sizeY || k == this.posZ - 1 || k == this.posZ + this.sizeZ)
                     {
@@ -49,14 +48,21 @@ public class RoomChestsIo extends DungeonRoom
                     }
                     else
                     {
-                        this.placeBlock(chunk, meta, i, j, k, cx, cz, Blocks.air, 0);
+                        if ((i == this.posX || i == this.posX + this.sizeX - 1) && (k == this.posZ || k == this.posZ + this.sizeZ - 1))
+                        {
+                            this.placeBlock(chunk, meta, i, j, k, cx, cz, Blocks.glowstone, 0);
+                        }
+                        else
+                        {
+                            this.placeBlock(chunk, meta, i, j, k, cx, cz, Blocks.air, 0);
+                        }
                     }
                 }
             }
         }
         final int hx = (this.posX + this.posX + this.sizeX) / 2;
         final int hz = (this.posZ + this.posZ + this.sizeZ) / 2;
-        if (this.placeBlock(chunk, meta, hx, this.posY, hz, cx, cz, Blocks.chest, 0))
+        if (this.placeBlock(chunk, meta, hx, this.posY, hz, cx, cz, MarsBlocks.tier2TreasureChest, 0))
         {
             this.chests.add(new ChunkCoordinates(hx, this.posY, hz));
         }
@@ -71,7 +77,7 @@ public class RoomChestsIo extends DungeonRoom
     @Override
     protected DungeonRoom makeRoom(MapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
     {
-        return new RoomChestsIo(dungeon, x, y, z, dir);
+        return new RoomTreasureMercury(dungeon, x, y, z, dir);
     }
 
     @Override
@@ -79,22 +85,16 @@ public class RoomChestsIo extends DungeonRoom
     {
         if (!this.chests.isEmpty())
         {
-            this.worldObj.setBlock(this.chests.get(0).posX, this.chests.get(0).posY, this.chests.get(0).posZ, Blocks.chest, 0, 2);
-            TileEntityChest chest = (TileEntityChest) this.worldObj.getTileEntity(this.chests.get(0).posX, this.chests.get(0).posY, this.chests.get(0).posZ);
+            HashSet<ChunkCoordinates> removeList = new HashSet<ChunkCoordinates>();
 
-            if (chest != null)
+            for (ChunkCoordinates coords : this.chests)
             {
-                for (int i = 0; i < chest.getSizeInventory(); i++)
-                {
-                    chest.setInventorySlotContents(i, null);
-                }
-
-                ChestGenHooks info = ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST);
-
-                WeightedRandomChestContent.generateChestContents(rand, info.getItems(rand), chest, info.getCount(rand));
+                this.worldObj.setBlock(coords.posX, coords.posY, coords.posZ, MarsBlocks.tier2TreasureChest, 0, 3);
+                this.worldObj.setTileEntity(coords.posX, coords.posY, coords.posZ, new TileEntityTreasureChestMars());
+                removeList.add(coords);
             }
 
-            this.chests.clear();
+            this.chests.removeAll(removeList);
         }
     }
 }

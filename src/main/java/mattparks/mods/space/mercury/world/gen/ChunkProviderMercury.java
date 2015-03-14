@@ -5,11 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
-import mattparks.mods.space.mercury.world.gen.dungeon.RoomBossVenus;
-import mattparks.mods.space.mercury.world.gen.dungeon.RoomChestsVenus;
-import mattparks.mods.space.mercury.world.gen.dungeon.RoomEmptyVenus;
-import mattparks.mods.space.mercury.world.gen.dungeon.RoomSpawnerVenus;
-import mattparks.mods.space.mercury.world.gen.dungeon.RoomTreasureVenus;
+import mattparks.mods.space.mercury.world.gen.dungeon.*;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
@@ -52,24 +48,24 @@ public class ChunkProviderMercury extends ChunkProviderGenerate {
 
 	private World worldObj;
 
-	private MapGenVenusMercury caveGenerator = new MapGenVenusMercury();
+	private MapGenMercury caveGenerator = new MapGenMercury();
 
 	private MapGenDungeon dungeonGenerator = new MapGenDungeon(MercuryBlocks.mercuryBasicBlock, 11, 8, 16, 6);
 
 	{
-		this.dungeonGenerator.otherRooms.add(new RoomEmptyVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomChestsVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomChestsVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.bossRooms.add(new RoomBossVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.treasureRooms.add(new RoomTreasureVenus(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomEmptyMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomChestsMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomChestsMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.bossRooms.add(new RoomBossMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.treasureRooms.add(new RoomTreasureMercury(null, 0, 0, 0, ForgeDirection.UNKNOWN));
 	}
 
 	private BiomeGenBase[] biomesForGeneration = { BiomeGenBaseMercury.mercury };

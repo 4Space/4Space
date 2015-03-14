@@ -1,4 +1,4 @@
-package mattparks.mods.space.venus.world.gen.dungeon;
+package mattparks.mods.space.mercury.world.gen.dungeon;
 
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonBoundingBox;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonRoom;
@@ -12,7 +12,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class RoomSpawnerVenus extends DungeonRoom
+public class RoomSpawnerMercury extends DungeonRoom
 {
     int sizeX;
     int sizeY;
@@ -21,7 +21,7 @@ public class RoomSpawnerVenus extends DungeonRoom
 
     private final ArrayList<ChunkCoordinates> spawners = new ArrayList<ChunkCoordinates>();
 
-    public RoomSpawnerVenus(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
+    public RoomSpawnerMercury(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
     {
         super(dungeon, posX, posY, posZ, entranceDir);
         if (this.worldObj != null)
@@ -76,7 +76,7 @@ public class RoomSpawnerVenus extends DungeonRoom
     @Override
     protected DungeonRoom makeRoom(MapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
     {
-        return new RoomSpawnerVenus(dungeon, x, y, z, dir);
+        return new RoomSpawnerMercury(dungeon, x, y, z, dir);
     }
 
     @Override
@@ -89,7 +89,7 @@ public class RoomSpawnerVenus extends DungeonRoom
                 final TileEntityMobSpawner spawner = (TileEntityMobSpawner) this.worldObj.getTileEntity(spawnerCoords.posX, spawnerCoords.posY, spawnerCoords.posZ);
                 if (spawner != null)
                 {
-                    spawner.func_145881_a().setEntityName(RoomSpawnerVenus.getMob(rand));
+                    spawner.func_145881_a().setEntityName(RoomSpawnerMercury.getMob(rand));
                 }
             }
         }

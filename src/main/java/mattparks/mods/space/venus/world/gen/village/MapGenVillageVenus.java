@@ -69,7 +69,6 @@ public class MapGenVillageVenus extends MapGenStructure {
 
 	@Override
 	protected StructureStart getStructureStart(int par1, int par2) {
-		FMLLog.info("Generating Venus Village at x" + par1 * 16 + " z" + par2 * 16);
 		return new StructureVillageStartVenus(this.worldObj, this.rand, par1, par2, this.terrainType);
 	}
 

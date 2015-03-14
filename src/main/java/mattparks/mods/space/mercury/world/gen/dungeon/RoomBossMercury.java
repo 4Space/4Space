@@ -1,4 +1,4 @@
-package mattparks.mods.space.pluto.world.gen.dungeon;
+package mattparks.mods.space.mercury.world.gen.dungeon;
 
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityDungeonSpawner;
@@ -15,7 +15,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
-public class RoomBossPluto extends DungeonRoom
+public class RoomBossMercury extends DungeonRoom
 {
     public int sizeX;
     public int sizeY;
@@ -23,7 +23,7 @@ public class RoomBossPluto extends DungeonRoom
     Random rand;
     ChunkCoordinates spawnerCoords;
 
-    public RoomBossPluto(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
+    public RoomBossMercury(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
     {
         super(dungeon, posX, posY, posZ, entranceDir);
         if (this.worldObj != null)
@@ -81,7 +81,7 @@ public class RoomBossPluto extends DungeonRoom
     @Override
     protected DungeonRoom makeRoom(MapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
     {
-        return new RoomBossPluto(dungeon, x, y, z, dir);
+        return new RoomBossMercury(dungeon, x, y, z, dir);
     }
 
     @Override

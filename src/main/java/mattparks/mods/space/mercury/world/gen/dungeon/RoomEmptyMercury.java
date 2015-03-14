@@ -1,4 +1,4 @@
-package mattparks.mods.space.hole.world.gen.dungeon;
+package mattparks.mods.space.mercury.world.gen.dungeon;
 
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonBoundingBox;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonRoom;
@@ -9,13 +9,13 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
-public class RoomEmptyHole extends DungeonRoom
+public class RoomEmptyMercury extends DungeonRoom
 {
     int sizeX;
     int sizeY;
     int sizeZ;
 
-    public RoomEmptyHole(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
+    public RoomEmptyMercury(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
     {
         super(dungeon, posX, posY, posZ, entranceDir);
         if (this.worldObj != null)
@@ -58,7 +58,7 @@ public class RoomEmptyHole extends DungeonRoom
     @Override
     protected DungeonRoom makeRoom(MapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
     {
-        return new RoomEmptyHole(dungeon, x, y, z, dir);
+        return new RoomEmptyMercury(dungeon, x, y, z, dir);
     }
 
     @Override

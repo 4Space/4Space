@@ -3,7 +3,7 @@ package mattparks.mods.space.core;
 public class Constants {
 	public static final int LOCALMAJVERSION = 4;
 	public static final int LOCALMINVERSION = 1;
-	public static final int LOCALBUILDVERSION = 2;
+	public static final int LOCALBUILDVERSION = 3;
 
 	public static final String VERSION = (LOCALMAJVERSION + "." + LOCALMINVERSION + "." + LOCALBUILDVERSION);
 

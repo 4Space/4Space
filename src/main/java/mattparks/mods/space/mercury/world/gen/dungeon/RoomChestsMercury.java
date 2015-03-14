@@ -1,29 +1,36 @@
-package mattparks.mods.space.hole.world.gen.dungeon;
+package mattparks.mods.space.mercury.world.gen.dungeon;
 
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonBoundingBox;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonRoom;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-public class RoomEmptyHole extends DungeonRoom
+public class RoomChestsMercury extends DungeonRoom
 {
     int sizeX;
     int sizeY;
     int sizeZ;
 
-    public RoomEmptyHole(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
+    private final ArrayList<ChunkCoordinates> chests = new ArrayList<ChunkCoordinates>();
+
+    public RoomChestsMercury(MapGenDungeon dungeon, int posX, int posY, int posZ, ForgeDirection entranceDir)
     {
         super(dungeon, posX, posY, posZ, entranceDir);
         if (this.worldObj != null)
         {
             final Random rand = new Random(this.worldObj.getSeed() * posX * posY * 57 * posZ);
-            this.sizeX = rand.nextInt(4) + 5;
+            this.sizeX = rand.nextInt(5) + 6;
             this.sizeY = rand.nextInt(2) + 7;
-            this.sizeZ = rand.nextInt(4) + 5;
+            this.sizeZ = rand.nextInt(5) + 6;
         }
     }
 
@@ -47,6 +54,12 @@ public class RoomEmptyHole extends DungeonRoom
                 }
             }
         }
+        final int hx = (this.posX + this.posX + this.sizeX) / 2;
+        final int hz = (this.posZ + this.posZ + this.sizeZ) / 2;
+        if (this.placeBlock(chunk, meta, hx, this.posY, hz, cx, cz, Blocks.chest, 0))
+        {
+            this.chests.add(new ChunkCoordinates(hx, this.posY, hz));
+        }
     }
 
     @Override
@@ -58,14 +71,30 @@ public class RoomEmptyHole extends DungeonRoom
     @Override
     protected DungeonRoom makeRoom(MapGenDungeon dungeon, int x, int y, int z, ForgeDirection dir)
     {
-        return new RoomEmptyHole(dungeon, x, y, z, dir);
+        return new RoomChestsMercury(dungeon, x, y, z, dir);
     }
 
     @Override
     protected void handleTileEntities(Random rand)
     {
-        // TODO Auto-generated method stub
+        if (!this.chests.isEmpty())
+        {
+            this.worldObj.setBlock(this.chests.get(0).posX, this.chests.get(0).posY, this.chests.get(0).posZ, Blocks.chest, 0, 2);
+            TileEntityChest chest = (TileEntityChest) this.worldObj.getTileEntity(this.chests.get(0).posX, this.chests.get(0).posY, this.chests.get(0).posZ);
 
+            if (chest != null)
+            {
+                for (int i = 0; i < chest.getSizeInventory(); i++)
+                {
+                    chest.setInventorySlotContents(i, null);
+                }
+
+                ChestGenHooks info = ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST);
+
+                WeightedRandomChestContent.generateChestContents(rand, info.getItems(rand), chest, info.getCount(rand));
+            }
+
+            this.chests.clear();
+        }
     }
-
 }
