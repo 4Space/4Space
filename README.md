@@ -33,10 +33,10 @@ Galacticraft: http://ci.micdoodle8.com/job/Galacticraft/
 
 The Team
 ===========
-Mattparks - Owner, Main Coder and Musician
+Active:
+ * Mattparks - Owner, Main Coder and Musician
 
-* - Not active
-
+Not active:
 * BBoldt - Musician
 
 * Decaxon - Code
