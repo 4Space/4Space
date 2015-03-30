@@ -1,0 +1,23 @@
+# 4Space Callisto Language File = GERMANY GERMAN
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.callisto_block.surfaceRock.name=Callisto Surface Rock
+tile.callisto_block.subSurface.name=Callisto Sub-Surface Rock
+tile.callisto_block.rock.name=Callisto Rock
+tile.callisto_block.cobblestone.name=Callisto Cobblestone
+tile.callisto_block.dungeonBrick.name=Callisto Dungeon Brick
+
+# GUI
+
+# PLANET
+moon.callisto=Callisto
+
+# Schematics
+
+# Entity

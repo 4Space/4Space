@@ -58,7 +58,7 @@ public class EuropaCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		EuropaCore.moonEuropa = (Moon) new Moon("europa").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(25F, 25F)).setRelativeOrbitTime(1 / 0.008125F);
+		EuropaCore.moonEuropa = (Moon) new Moon("europa").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(14F, 14F)).setRelativeOrbitTime(1 / 0.008125F);
 		EuropaCore.moonEuropa.setDimensionInfo(ConfigManagerEuropa.idDimensionEuropa, WorldProviderEuropa.class).setTierRequired(3);
 		EuropaCore.moonEuropa.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/europa.png"));
 

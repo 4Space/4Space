@@ -30,7 +30,7 @@ public class ConfigManagerIo {
 
 			ConfigManagerIo.idDimensionIo = ConfigManagerIo.configuration.get(Configuration.CATEGORY_GENERAL, "Io Dimension", -47).getInt(-47);
 			ConfigManagerIo.idDayLength = ConfigManagerIo.configuration.get(Configuration.CATEGORY_GENERAL, "Io Day Length Realistic", true).getBoolean(true);
-			ConfigManagerIo.idBiomeIo = ConfigManagerIo.configuration.get(Configuration.CATEGORY_GENERAL, "Io Biome", 213).getInt(213);
+			ConfigManagerIo.idBiomeIo = ConfigManagerIo.configuration.get(Configuration.CATEGORY_GENERAL, "Io Biome", 217).getInt(217);
 		}
 
 		catch (final Exception e) {

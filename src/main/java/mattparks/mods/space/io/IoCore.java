@@ -58,7 +58,7 @@ public class IoCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.01F);
+		IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1367F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(10F, 10F)).setRelativeOrbitTime(1 / 0.01F);
 		IoCore.moonIo.setDimensionInfo(ConfigManagerIo.idDimensionIo, WorldProviderIo.class).setTierRequired(3);
 		IoCore.moonIo.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/io.png"));
 

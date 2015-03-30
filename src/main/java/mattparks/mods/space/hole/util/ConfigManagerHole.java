@@ -27,8 +27,8 @@ public class ConfigManagerHole {
 		try {
 			ConfigManagerHole.configuration.load();
 
-			ConfigManagerHole.idDimensionHole = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Hole Dimension", -57).getInt(-50);
-			ConfigManagerHole.idBiomeHole = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Hole Biome", 225).getInt(225);
+			ConfigManagerHole.idDimensionHole = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Hole Dimension", -52).getInt(-52);
+			ConfigManagerHole.idBiomeHole = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Hole Biome", 222).getInt(222);
 		}
 
 		catch (final Exception e) {

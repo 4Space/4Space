@@ -27,6 +27,10 @@ public class Constants {
 	public static final String MOD_ID_EUROPA = "SpaceEuropa";
 	public static final String MOD_NAME_EUROPA = "4Space Europa";
 
+	/* Jupiter : Callisto */
+	public static final String MOD_ID_CALLISTO = "SpaceCallisto";
+	public static final String MOD_NAME_CALLISTO = "4Space Callisto";
+
 	/* Saturn : Worm Hole */
 	public static final String MOD_ID_HOLE = "SpaceHole";
 	public static final String MOD_NAME_HOLE = "4Space Worm Hole";
