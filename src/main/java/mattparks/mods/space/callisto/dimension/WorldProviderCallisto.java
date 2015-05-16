@@ -68,9 +68,7 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 	public long getDayLength() {
 		if (ConfigManagerCallisto.idDayLength == false) {
 			return 24000L;
-		}
-
-		else {
+		} else {
 			return 80000L;
 		}
 	}
@@ -218,7 +216,7 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public float getGravity() {
-		return 0.063F;
+		return 0.066F;
 	}
 
 	@Override
@@ -263,11 +261,11 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public float getThermalLevelModifier() {
-		return -9.0F;
+		return -10.0F;
 	}
 
 	@Override
 	public float getWindLevel() {
-		return 0.1F;
+		return 0.8F;
 	}
 }

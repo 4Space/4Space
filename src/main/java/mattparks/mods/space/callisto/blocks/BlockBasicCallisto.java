@@ -2,8 +2,8 @@ package mattparks.mods.space.callisto.blocks;
 
 import java.util.List;
 
-import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.callisto.CallistoCore;
+import mattparks.mods.space.core.SpaceCore;
 import micdoodle8.mods.galacticraft.api.block.IDetectableResource;
 import micdoodle8.mods.galacticraft.api.block.IPartialSealableBlock;
 import micdoodle8.mods.galacticraft.api.block.IPlantableBlock;

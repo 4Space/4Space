@@ -238,7 +238,7 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= 3;
+		return tier >= 2;
 	}
 
 	@Override

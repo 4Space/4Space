@@ -20,6 +20,7 @@ public class ConfigManagerMercury {
 		}
 	}
 
+	public static boolean idMercuryEnabled;
 	public static int idDimensionMercury;
 	public static boolean idDayLength;
 	public static int idBiomeMercury;
@@ -28,6 +29,7 @@ public class ConfigManagerMercury {
 		try {
 			ConfigManagerMercury.configuration.load();
 
+			ConfigManagerMercury.idMercuryEnabled = ConfigManagerMercury.configuration.get(Configuration.CATEGORY_GENERAL, "Should Mercury, Items and Blocks be registered in the game (Big planet on / off switch.)", true).getBoolean(true);
 			ConfigManagerMercury.idDimensionMercury = ConfigManagerMercury.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Dimension", -40).getInt(-40);
 			ConfigManagerMercury.idDayLength = ConfigManagerMercury.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Day Length Realistic", true).getBoolean(true);
 			ConfigManagerMercury.idBiomeMercury = ConfigManagerMercury.configuration.get(Configuration.CATEGORY_GENERAL, "Mercury Biome", 210).getInt(210);

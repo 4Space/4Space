@@ -18,16 +18,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class BlockMagmaRock extends Block {
-	private IIcon[] rockIcon = new IIcon[2];
+	private IIcon[] rockIcon;
 
 	public BlockMagmaRock(String name) {
 		super(Material.rock);
 		this.setBlockName(name);
-		this.setHardness(3.0F);
 	}
 
 	@Override
 	public void registerBlockIcons(IIconRegister par1IconRegister) {
+		this.rockIcon = new IIcon[2];
 		this.rockIcon[0] = par1IconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "magmaRock");
 		this.rockIcon[1] = par1IconRegister.registerIcon(IoCore.TEXTURE_PREFIX + "sulfurRock");
 	}
@@ -43,11 +43,35 @@ public class BlockMagmaRock extends Block {
 	}
 
 	@Override
+	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
+		for (int i = 0; i < 2; ++i) {
+			list.add(new ItemStack(this, 1, i));
+		}
+	}
+
+	@Override
+	public float getBlockHardness(World par1World, int par2, int par3, int par4) { // FIX
+		final int meta = par1World.getBlockMetadata(par2, par3, par4);
+
+		if (meta == 0) {
+			return 2.25F;
+		}
+
+		if (meta == 1) {
+			return 2.0F;
+		}
+
+		return 1.0F;
+	}
+	
+	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int par2, int par3, int par4) {
 		if (world.getBlockMetadata(par2, par3, par4) == 0) {
 			final float f = 0.1F;
+			
 			return AxisAlignedBB.getBoundingBox(par2, par3, par4, par2 + 1, par3 + 1 - f, par4 + 1);
 		}
+		
 		return super.getCollisionBoundingBoxFromPool(world, par2, par3, par4);
 	}
 
@@ -58,24 +82,8 @@ public class BlockMagmaRock extends Block {
 				return true;
 			}
 		}
+		
 		return super.isFireSource(world, x, y, z, side);
-	}
-
-	@Override
-	public Item getItemDropped(int meta, Random par2Random, int par3) {
-		return Item.getItemFromBlock(this);
-	}
-
-	@Override
-	public void getSubBlocks(Item block, CreativeTabs creativeTabs, List list) {
-		for (int i = 0; i < 2; ++i) {
-			list.add(new ItemStack(this, 1, i));
-		}
-	}
-
-	@Override
-	public int damageDropped(int meta) {
-		return meta;
 	}
 
 	@Override

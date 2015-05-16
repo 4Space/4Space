@@ -14,7 +14,6 @@ public class BiomeDecoratorIo extends BiomeDecoratorSpace {
 	public int orangeLiquidSulfurLakesPerChunk; 
 	public int ioLavaLakesPerChunk;
 
-
 	private World currentWorld;
 
 	public BiomeDecoratorIo() {

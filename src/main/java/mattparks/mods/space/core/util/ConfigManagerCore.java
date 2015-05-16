@@ -20,11 +20,20 @@ public class ConfigManagerCore {
 		}
 	}
 
+	public static boolean idJupiterEnabled;
+	public static boolean idSaturnEnabled;
+	public static boolean idUranusEnabled;
+	public static boolean idNeptuneEnabled;
 	public static boolean updateCheck;
 
 	private void setDefaultValues() {
 		try {
 			ConfigManagerCore.configuration.load();
+			
+			ConfigManagerCore.idJupiterEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Jupiter and all of its Moons?", true).getBoolean(true);
+			ConfigManagerCore.idSaturnEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Saturn and all of its Moons?", true).getBoolean(true);
+			ConfigManagerCore.idUranusEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Neptune and all of its Moons?", true).getBoolean(true);
+			ConfigManagerCore.idNeptuneEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Pluto and all of its Moons?", true).getBoolean(true);
 
 			ConfigManagerCore.updateCheck = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Update Checking?", true).getBoolean(true);
 		}

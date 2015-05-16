@@ -2,10 +2,10 @@ package mattparks.mods.space.europa.blocks;
 
 import mattparks.mods.space.core.util.ItemBlockUtil;
 import mattparks.mods.space.europa.EuropaCore;
+import mattparks.mods.space.europa.blocks.items.ItemBlockBasicEuropa;
+import mattparks.mods.space.europa.blocks.items.ItemBlockEuropaIce;
 import mattparks.mods.space.europa.fluids.EuropaWaterFluid;
 import mattparks.mods.space.europa.fluids.blocks.BlockFluidEuropaWater;
-import mattparks.mods.space.europa.itemblocks.ItemBlockBasicEuropa;
-import mattparks.mods.space.europa.itemblocks.ItemBlockEuropaIce;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fluids.Fluid;

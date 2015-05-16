@@ -197,10 +197,8 @@ public class MapGenCallistoRavine extends MapGenBase {
 		return false;
 	}
 
-	// Determine if the block at the specified location is the top block for the
-	// biome, we take into account
-	// Vanilla bugs to make sure that we generate the map the same way vanilla
-	// does.
+	// Determine if the block at the specified location is the top block for the biome, we take into account
+	// Vanilla bugs to make sure that we generate the map the same way vanilla does.
 	private boolean isTopBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ) {
 		final BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);
 		return this.isExceptionBiome(biome) ? data[index] == CallistoBlocks.callistoBasicBlock : data[index] == biome.topBlock;
@@ -209,22 +207,14 @@ public class MapGenCallistoRavine extends MapGenBase {
 	/**
 	 * Digs out the current block, default implementation removes stone, filler, and top block Sets the block to lava if y is less then 10, and air other wise. If setting to air, it also checks to see if we've broken the surface and if so tries to make the floor the biome's top block
 	 * 
-	 * @param data
-	 *            Block data array
-	 * @param index
-	 *            Pre-calculated index into block data
-	 * @param x
-	 *            local X position
-	 * @param y
-	 *            local Y position
-	 * @param z
-	 *            local Z position
-	 * @param chunkX
-	 *            Chunk X position
-	 * @param chunkZ
-	 *            Chunk Y position
-	 * @param foundTop
-	 *            True if we've encountered the biome's top block. Ideally if we've broken the surface.
+	 * @param data Block data array
+	 * @param index Pre-calculated index into block data
+	 * @param x local X position
+	 * @param y local Y position
+	 * @param z local Z position
+	 * @param chunkX Chunk X position
+	 * @param chunkZ Chunk Y position
+	 * @param foundTop True if we've encountered the biome's top block. Ideally if we've broken the surface.
 	 */
 	protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop) {
 		final BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);

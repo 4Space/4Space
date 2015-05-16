@@ -4,6 +4,7 @@ import java.io.File;
 
 import mattparks.mods.space.core.Constants;
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.europa.blocks.EuropaBlocks;
 import mattparks.mods.space.europa.dimension.TeleportTypeEuropa;
 import mattparks.mods.space.europa.dimension.WorldProviderEuropa;
@@ -28,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_EUROPA, name = Constants.MOD_NAME_EUROPA, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_EUROPA, name = Constants.MOD_NAME_EUROPA, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class EuropaCore {
 	public static final String ASSET_PREFIX = "spaceeuropa";
 	public static final String TEXTURE_PREFIX = EuropaCore.ASSET_PREFIX + ":";
@@ -42,8 +43,10 @@ public class EuropaCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerEuropa(new File(event.getModConfigurationDirectory(), "4Space/europa.cfg"));
 
-		EuropaBlocks.init();
-		EuropaItems.init();
+		if (ConfigManagerEuropa.idEuropaEnabled && ConfigManagerCore.idJupiterEnabled) {
+			EuropaBlocks.init();
+			EuropaItems.init();
+		}
 
 		this.proxy.preInit(event);
 	}
@@ -58,26 +61,30 @@ public class EuropaCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		EuropaCore.moonEuropa = (Moon) new Moon("europa").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(14F, 14F)).setRelativeOrbitTime(1 / 0.008125F);
-		EuropaCore.moonEuropa.setDimensionInfo(ConfigManagerEuropa.idDimensionEuropa, WorldProviderEuropa.class).setTierRequired(3);
-		EuropaCore.moonEuropa.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/europa.png"));
-
-		GalaxyRegistry.registerMoon(EuropaCore.moonEuropa);
-
-		GalacticraftRegistry.registerTeleportType(WorldProviderEuropa.class, new TeleportTypeEuropa());
-
-		GalacticraftRegistry.registerRocketGui(WorldProviderEuropa.class, new ResourceLocation(EuropaCore.TEXTURE_PREFIX + "textures/gui/europaRocketGui.png"));
-
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
+		if (ConfigManagerEuropa.idEuropaEnabled && ConfigManagerCore.idJupiterEnabled) {
+			EuropaCore.moonEuropa = (Moon) new Moon("europa").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(14F, 14F)).setRelativeOrbitTime(1 / 0.008125F);
+			EuropaCore.moonEuropa.setDimensionInfo(ConfigManagerEuropa.idDimensionEuropa, WorldProviderEuropa.class).setTierRequired(3);
+			EuropaCore.moonEuropa.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/europa.png"));
+	
+			GalaxyRegistry.registerMoon(EuropaCore.moonEuropa);
+	
+			GalacticraftRegistry.registerTeleportType(WorldProviderEuropa.class, new TeleportTypeEuropa());
+	
+			GalacticraftRegistry.registerRocketGui(WorldProviderEuropa.class, new ResourceLocation(EuropaCore.TEXTURE_PREFIX + "textures/gui/europaRocketGui.png"));
+	
+			this.registerTileEntities();
+			this.registerCreatures();
+			this.registerOtherEntities();
+		}
 
 		this.proxy.init(event);
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		RecipeManagerEuropa.loadRecipes();
+		if (ConfigManagerEuropa.idEuropaEnabled && ConfigManagerCore.idJupiterEnabled) {
+			RecipeManagerEuropa.loadRecipes();
+		}
 
 		this.proxy.postInit(event);
 	}

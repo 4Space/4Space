@@ -9,7 +9,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureStart;
-import cpw.mods.fml.common.FMLLog;
 
 public class MapGenVillageHole extends MapGenStructure {
 	public static List<BiomeGenBase> villageSpawnBiomes = Arrays.asList(new BiomeGenBase[] { BiomeGenBaseHole.hole });

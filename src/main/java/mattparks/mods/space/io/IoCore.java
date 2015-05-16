@@ -4,6 +4,7 @@ import java.io.File;
 
 import mattparks.mods.space.core.Constants;
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.io.blocks.IoBlocks;
 import mattparks.mods.space.io.dimension.TeleportTypeIo;
 import mattparks.mods.space.io.dimension.WorldProviderIo;
@@ -28,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class IoCore {
 	public static final String ASSET_PREFIX = "spaceio";
 	public static final String TEXTURE_PREFIX = IoCore.ASSET_PREFIX + ":";
@@ -42,8 +43,10 @@ public class IoCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerIo(new File(event.getModConfigurationDirectory(), "4Space/io.cfg"));
 
-		IoBlocks.init();
-		IoItems.init();
+		if (ConfigManagerIo.idIoEnabled && ConfigManagerCore.idJupiterEnabled) {
+			IoBlocks.init();
+			IoItems.init();
+		}
 
 		this.proxy.preInit(event);
 	}
@@ -58,26 +61,30 @@ public class IoCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1367F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(10F, 10F)).setRelativeOrbitTime(1 / 0.01F);
-		IoCore.moonIo.setDimensionInfo(ConfigManagerIo.idDimensionIo, WorldProviderIo.class).setTierRequired(3);
-		IoCore.moonIo.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/io.png"));
-
-		GalaxyRegistry.registerMoon(IoCore.moonIo);
-
-		GalacticraftRegistry.registerTeleportType(WorldProviderIo.class, new TeleportTypeIo());
-
-		GalacticraftRegistry.registerRocketGui(WorldProviderIo.class, new ResourceLocation(IoCore.TEXTURE_PREFIX + "textures/gui/ioRocketGui.png"));
-
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
+		if (ConfigManagerIo.idIoEnabled && ConfigManagerCore.idJupiterEnabled) {
+			IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1367F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(10F, 10F)).setRelativeOrbitTime(1 / 0.00051F);
+			IoCore.moonIo.setDimensionInfo(ConfigManagerIo.idDimensionIo, WorldProviderIo.class).setTierRequired(3);
+			IoCore.moonIo.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/io.png"));
+	
+			GalaxyRegistry.registerMoon(IoCore.moonIo);
+	
+			GalacticraftRegistry.registerTeleportType(WorldProviderIo.class, new TeleportTypeIo());
+	
+			GalacticraftRegistry.registerRocketGui(WorldProviderIo.class, new ResourceLocation(IoCore.TEXTURE_PREFIX + "textures/gui/ioRocketGui.png"));
+	
+			this.registerTileEntities();
+			this.registerCreatures();
+			this.registerOtherEntities();
+		}
 
 		this.proxy.init(event);
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		RecipeManagerIo.loadRecipes();
+		if (ConfigManagerIo.idIoEnabled && ConfigManagerCore.idJupiterEnabled) {
+			RecipeManagerIo.loadRecipes();
+		}
 
 		this.proxy.postInit(event);
 	}

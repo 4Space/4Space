@@ -20,6 +20,7 @@ public class ConfigManagerCallisto {
 		}
 	}
 
+	public static boolean idCallistoEnabled;
 	public static int idDimensionCallisto;
 	public static boolean idDayLength;
 	public static int idBiomeCallisto;
@@ -28,6 +29,7 @@ public class ConfigManagerCallisto {
 		try {
 			ConfigManagerCallisto.configuration.load();
 
+			ConfigManagerCallisto.idCallistoEnabled = ConfigManagerCallisto.configuration.get(Configuration.CATEGORY_GENERAL, "Should Callisto, Items and Blocks be registered in the game (Big planet on / off switch.)", true).getBoolean(true);
 			ConfigManagerCallisto.idDimensionCallisto = ConfigManagerCallisto.configuration.get(Configuration.CATEGORY_GENERAL, "Callisto Dimension", -49).getInt(-49);
 			ConfigManagerCallisto.idDayLength = ConfigManagerCallisto.configuration.get(Configuration.CATEGORY_GENERAL, "Callisto Day Length Realistic", true).getBoolean(true);
 			ConfigManagerCallisto.idBiomeCallisto = ConfigManagerCallisto.configuration.get(Configuration.CATEGORY_GENERAL, "Callisto Biome", 219).getInt(219);

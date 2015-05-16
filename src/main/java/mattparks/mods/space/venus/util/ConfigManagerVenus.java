@@ -20,6 +20,7 @@ public class ConfigManagerVenus {
 		}
 	}
 
+	public static boolean idVenusEnabled;
 	public static int idDimensionVenus;
 	public static boolean idDayLength;
 	public static boolean idFlamelingCreeper;
@@ -29,6 +30,7 @@ public class ConfigManagerVenus {
 		try {
 			ConfigManagerVenus.configuration.load();
 
+			ConfigManagerVenus.idVenusEnabled = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Should Venus, Items and Blocks be registered in the game (Sorry you cannot disable Venus.)", true).getBoolean(true);
 			ConfigManagerVenus.idDimensionVenus = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Dimension", -41).getInt(-41);
 			ConfigManagerVenus.idDayLength = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Venus Day Length Realistic", true).getBoolean(true);
 			ConfigManagerVenus.idFlamelingCreeper = ConfigManagerVenus.configuration.get(Configuration.CATEGORY_GENERAL, "Enable this if you want creepers to have a enemy...", false).getBoolean(false);

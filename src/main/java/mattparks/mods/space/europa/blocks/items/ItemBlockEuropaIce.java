@@ -1,4 +1,4 @@
-package mattparks.mods.space.hole.itemblocks;
+package mattparks.mods.space.europa.blocks.items;
 
 import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.block.Block;
@@ -6,10 +6,10 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockBasicHole extends ItemBlock {
-	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "brick", "flameiteOre", "flameiteBlock", };
+public class ItemBlockEuropaIce extends ItemBlock {
+	private static final String[] types = new String[] { "ice", "dirty", "dense" };
 
-	public ItemBlockBasicHole(Block par1) {
+	public ItemBlockEuropaIce(Block par1) {
 		super(par1);
 		this.setHasSubtypes(true);
 	}
@@ -27,11 +27,9 @@ public class ItemBlockBasicHole extends ItemBlock {
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
 		int meta = itemstack.getItemDamage();
-
-		if (meta < 0 || meta >= ItemBlockBasicHole.types.length) {
+		if (meta < 0 || meta >= ItemBlockEuropaIce.types.length) {
 			meta = 0;
 		}
-
-		return super.getUnlocalizedName() + "." + ItemBlockBasicHole.types[meta];
+		return super.getUnlocalizedName() + "." + ItemBlockEuropaIce.types[meta];
 	}
 }

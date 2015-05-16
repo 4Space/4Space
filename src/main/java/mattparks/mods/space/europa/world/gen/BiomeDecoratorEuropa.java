@@ -14,10 +14,10 @@ public class BiomeDecoratorEuropa extends BiomeDecoratorSpace {
 	private World currentWorld;
 
 	public BiomeDecoratorEuropa() {
-		this.dirtyIce = new WorldGenMinableMeta(EuropaBlocks.europaIce, 8, 1, true, EuropaBlocks.europaIce, 2);
-		this.denceIce = new WorldGenMinableMeta(EuropaBlocks.europaIce, 8, 2, true, EuropaBlocks.europaIce, 2);
+		this.dirtyIce = new WorldGenMinableMeta(EuropaBlocks.europaIce, 8, 1, true, EuropaBlocks.europaIce, 0);
+		this.denceIce = new WorldGenMinableMeta(EuropaBlocks.europaIce, 8, 2, true, EuropaBlocks.europaIce, 0);
 
-		this.europaWaterLakesPerChunk = 6;
+		this.europaWaterLakesPerChunk = 3;
 	}
 
 	@Override

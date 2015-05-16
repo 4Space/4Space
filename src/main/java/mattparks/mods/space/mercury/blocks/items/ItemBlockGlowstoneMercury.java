@@ -1,4 +1,4 @@
-package mattparks.mods.space.mercury.itemblocks;
+package mattparks.mods.space.mercury.blocks.items;
 
 import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.block.Block;

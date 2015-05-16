@@ -5,7 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 import mattparks.mods.space.mercury.blocks.MercuryBlocks;
-import mattparks.mods.space.mercury.world.gen.dungeon.*;
+import mattparks.mods.space.mercury.world.gen.dungeon.RoomBossMercury;
+import mattparks.mods.space.mercury.world.gen.dungeon.RoomChestsMercury;
+import mattparks.mods.space.mercury.world.gen.dungeon.RoomEmptyMercury;
+import mattparks.mods.space.mercury.world.gen.dungeon.RoomSpawnerMercury;
+import mattparks.mods.space.mercury.world.gen.dungeon.RoomTreasureMercury;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;

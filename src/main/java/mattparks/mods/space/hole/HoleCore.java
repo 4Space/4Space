@@ -4,6 +4,7 @@ import java.io.File;
 
 import mattparks.mods.space.core.Constants;
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.core.util.SpaceUtil;
 import mattparks.mods.space.hole.blocks.HoleBlocks;
 import mattparks.mods.space.hole.dimension.TeleportTypeHole;
@@ -29,7 +30,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_HOLE, name = Constants.MOD_NAME_HOLE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_HOLE, name = Constants.MOD_NAME_HOLE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class HoleCore {
 	public static final String ASSET_PREFIX = "spacehole";
 	public static final String TEXTURE_PREFIX = HoleCore.ASSET_PREFIX + ":";
@@ -43,8 +44,10 @@ public class HoleCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerHole(new File(event.getModConfigurationDirectory(), "4Space/hole.cfg"));
 
-		HoleBlocks.init();
-		HoleItems.init();
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled) {
+			HoleBlocks.init();
+			HoleItems.init();
+		}
 
 		this.proxy.preInit(event);
 	}
@@ -59,26 +62,30 @@ public class HoleCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		HoleCore.moonHole = (Moon) new Moon("hole").setParentPlanet(SpaceCore.planetSaturn).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.01F);
-		HoleCore.moonHole.setDimensionInfo(ConfigManagerHole.idDimensionHole, WorldProviderHole.class).setTierRequired(3);
-		HoleCore.moonHole.setBodyIcon(new ResourceLocation(HoleCore.ASSET_PREFIX, "textures/gui/celestialbodies/wormhole.png"));
-
-		GalaxyRegistry.registerMoon(HoleCore.moonHole);
-
-		GalacticraftRegistry.registerTeleportType(WorldProviderHole.class, new TeleportTypeHole());
-
-		GalacticraftRegistry.registerRocketGui(WorldProviderHole.class, new ResourceLocation(HoleCore.TEXTURE_PREFIX + "textures/gui/holeRocketGui.png"));
-
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled) {
+			HoleCore.moonHole = (Moon) new Moon("hole").setParentPlanet(SpaceCore.planetSaturn).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.01F);
+			HoleCore.moonHole.setDimensionInfo(ConfigManagerHole.idDimensionHole, WorldProviderHole.class).setTierRequired(3); // 4
+			HoleCore.moonHole.setBodyIcon(new ResourceLocation(HoleCore.ASSET_PREFIX, "textures/gui/celestialbodies/wormhole.png"));
+	
+			GalaxyRegistry.registerMoon(HoleCore.moonHole);
+	
+			GalacticraftRegistry.registerTeleportType(WorldProviderHole.class, new TeleportTypeHole());
+	
+			GalacticraftRegistry.registerRocketGui(WorldProviderHole.class, new ResourceLocation(HoleCore.TEXTURE_PREFIX + "textures/gui/holeRocketGui.png"));
+	
+			this.registerTileEntities();
+			this.registerCreatures();
+			this.registerOtherEntities();
+		}
 
 		this.proxy.init(event);
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		RecipeManagerHole.loadRecipes();
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled) {
+			RecipeManagerHole.loadRecipes();
+		}
 
 		this.proxy.postInit(event);
 	}

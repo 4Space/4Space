@@ -1,4 +1,4 @@
-package mattparks.mods.space.pluto.itemblocks;
+package mattparks.mods.space.mercury.blocks.items;
 
 import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.block.Block;
@@ -6,10 +6,10 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockBasicPluto extends ItemBlock {
-	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "blueGem", "frozenIron", "ununpentium", "blueGemBlock", "frozenIronBlock", "ununpentiumBlock", "dungeonBrick" };
+public class ItemBlockBasicMercury extends ItemBlock {
+	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "iridium", "meteor", "tin", "copper", "gold", "iridiumBlock", "meteorBlock", "dungeonBrick" };
 
-	public ItemBlockBasicPluto(Block par1) {
+	public ItemBlockBasicMercury(Block par1) {
 		super(par1);
 		this.setHasSubtypes(true);
 	}
@@ -28,10 +28,10 @@ public class ItemBlockBasicPluto extends ItemBlock {
 	public String getUnlocalizedName(ItemStack itemstack) {
 		int meta = itemstack.getItemDamage();
 
-		if (meta < 0 || meta >= ItemBlockBasicPluto.types.length) {
+		if (meta < 0 || meta >= ItemBlockBasicMercury.types.length) {
 			meta = 0;
 		}
 
-		return super.getUnlocalizedName() + "." + ItemBlockBasicPluto.types[meta];
+		return super.getUnlocalizedName() + "." + ItemBlockBasicMercury.types[meta];
 	}
 }

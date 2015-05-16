@@ -1,5 +1,7 @@
 package mattparks.mods.space.venus.world.gen.dungeon;
 
+import java.util.Random;
+
 import mattparks.mods.space.venus.blocks.VenusBlocks;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityDungeonSpawner;
@@ -13,8 +15,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import java.util.Random;
 
 public class RoomBossVenus extends DungeonRoom
 {

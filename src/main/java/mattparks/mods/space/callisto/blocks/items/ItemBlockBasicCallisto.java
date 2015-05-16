@@ -1,4 +1,4 @@
-package mattparks.mods.space.venus.itemblocks;
+package mattparks.mods.space.callisto.blocks.items;
 
 import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.block.Block;
@@ -6,10 +6,16 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockDecorVenus extends ItemBlock {
-	private static final String[] types = new String[] { "sulfurBlock", "uraniumBlock", "gemBlock", "crystalBlock", };
+public class ItemBlockBasicCallisto extends ItemBlock {
+	private static final String[] types = new String[] { 
+		"surfaceRock", 
+		"subSurface", 
+		"rock", 
+		"cobblestone", 
+		"dungeonBrick" 
+	};
 
-	public ItemBlockDecorVenus(Block par1) {
+	public ItemBlockBasicCallisto(Block par1) {
 		super(par1);
 		this.setHasSubtypes(true);
 	}
@@ -27,11 +33,11 @@ public class ItemBlockDecorVenus extends ItemBlock {
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
 		int meta = itemstack.getItemDamage();
-
-		if (meta < 0 || meta >= ItemBlockDecorVenus.types.length) {
+		
+		if (meta < 0 || meta >= ItemBlockBasicCallisto.types.length) {
 			meta = 0;
 		}
-
-		return super.getUnlocalizedName() + "." + ItemBlockDecorVenus.types[meta];
+		
+		return super.getUnlocalizedName() + "." + ItemBlockBasicCallisto.types[meta];
 	}
 }

@@ -1,7 +1,7 @@
 package mattparks.mods.space.pluto.blocks;
 
 import mattparks.mods.space.pluto.PlutoCore;
-import mattparks.mods.space.pluto.itemblocks.ItemBlockBasicPluto;
+import mattparks.mods.space.pluto.blocks.items.ItemBlockBasicPluto;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

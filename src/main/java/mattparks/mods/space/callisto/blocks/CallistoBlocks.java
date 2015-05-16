@@ -1,12 +1,8 @@
 package mattparks.mods.space.callisto.blocks;
 
 import mattparks.mods.space.callisto.CallistoCore;
-import mattparks.mods.space.callisto.itemblocks.ItemBlockBasicCallisto;
-import mattparks.mods.space.core.util.ItemBlockUtil;
+import mattparks.mods.space.callisto.blocks.items.ItemBlockBasicCallisto;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
 
 public class CallistoBlocks {
 	public static Block callistoBasicBlock;

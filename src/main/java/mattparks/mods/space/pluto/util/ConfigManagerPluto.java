@@ -20,6 +20,7 @@ public class ConfigManagerPluto {
 		}
 	}
 
+	public static boolean idPlutoEnabled;
 	public static int idDimensionPluto;
 	public static boolean idDayLength;
 	public static int idBiomePluto;
@@ -28,9 +29,10 @@ public class ConfigManagerPluto {
 		try {
 			ConfigManagerPluto.configuration.load();
 
+			ConfigManagerPluto.idPlutoEnabled = ConfigManagerPluto.configuration.get(Configuration.CATEGORY_GENERAL, "Should Pluto, Items and Blocks be registered in the game (Big planet on / off switch.)", true).getBoolean(true);
 			ConfigManagerPluto.idDimensionPluto = ConfigManagerPluto.configuration.get(Configuration.CATEGORY_GENERAL, "Pluto Dimension", -59).getInt(-55);
 			ConfigManagerPluto.idDayLength = ConfigManagerPluto.configuration.get(Configuration.CATEGORY_GENERAL, "Pluto Day Length Realistic", true).getBoolean(true);
-			ConfigManagerPluto.idBiomePluto = ConfigManagerPluto.configuration.get(Configuration.CATEGORY_GENERAL, "Pluto Biome", 219).getInt(219);
+			ConfigManagerPluto.idBiomePluto = ConfigManagerPluto.configuration.get(Configuration.CATEGORY_GENERAL, "Pluto Biome", 225).getInt(225);
 		}
 
 		catch (final Exception e) {

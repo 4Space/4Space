@@ -224,7 +224,7 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= 3;
+		return tier >= 4;
 	}
 
 	@Override

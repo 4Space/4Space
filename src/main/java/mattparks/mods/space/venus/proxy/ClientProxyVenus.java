@@ -1,7 +1,6 @@
 package mattparks.mods.space.venus.proxy;
 
 import java.util.ArrayList;
-import java.util.EnumSet;
 
 import mattparks.mods.space.venus.dimension.SkyProviderVenus;
 import mattparks.mods.space.venus.dimension.WorldProviderVenus;
@@ -11,7 +10,8 @@ import mattparks.mods.space.venus.entities.EntityVenusianVillager;
 import mattparks.mods.space.venus.entities.render.RenderEvolvedBlaze;
 import mattparks.mods.space.venus.entities.render.RenderVenusianTNT;
 import mattparks.mods.space.venus.entities.render.RenderVenusianVillager;
-import mattparks.mods.space.venus.items.*;
+import mattparks.mods.space.venus.items.ItemJetpack;
+import mattparks.mods.space.venus.items.VenusItems;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -32,7 +32,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ClientProxyVenus extends CommonProxyVenus {
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
-
+	
 	private static int renderIndexGemArmor;
 	private static int renderIndexSulfurArmor;
 	private static int renderIndexJetpack;
@@ -90,7 +90,7 @@ public class ClientProxyVenus extends CommonProxyVenus {
 	public int getBlockRender(Block block) {
 		return -1;
 	}
-	
+
 	public static class TickHandlerClient {  
 		@SideOnly(Side.CLIENT)
 		@SubscribeEvent
@@ -104,7 +104,7 @@ public class ClientProxyVenus extends CommonProxyVenus {
 	    		if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == VenusItems.jetpack && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.isPressed() && player.posY < 360) {
 	    			((ItemJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
 	    			player.motionY -= 0.05D;
-	    			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.063;
+	    			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.750;
 	    			player.fallDistance = 0.0F;
 	        		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);
 	    		}

@@ -1,7 +1,7 @@
 package mattparks.mods.space.hole.blocks;
 
 import mattparks.mods.space.hole.HoleCore;
-import mattparks.mods.space.hole.itemblocks.ItemBlockBasicHole;
+import mattparks.mods.space.hole.blocks.items.ItemBlockBasicHole;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

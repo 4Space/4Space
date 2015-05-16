@@ -279,7 +279,7 @@ public class ChunkProviderCallisto extends ChunkProviderGenerate {
 
 	@Override
 	public String makeString() {
-		return "EuropaLevelSource";
+		return "CallistoLevelSource";
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

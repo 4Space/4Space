@@ -34,7 +34,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_VENUS, name = Constants.MOD_NAME_VENUS, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_VENUS, name = Constants.MOD_NAME_VENUS, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class VenusCore {
 	public static final String ASSET_PREFIX = "spacevenus";
 	public static final String TEXTURE_PREFIX = VenusCore.ASSET_PREFIX + ":";
@@ -47,9 +47,6 @@ public class VenusCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerVenus(new File(event.getModConfigurationDirectory(), "4Space/venus.cfg"));
-
-		VenusBlocks.init();
-		VenusItems.init();
 
 		this.proxy.preInit(event);
 	}
@@ -64,28 +61,33 @@ public class VenusCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		VenusCore.planetVenus = (Planet) new Planet("venus").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(2.0F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(0.75F, 0.75F)).setRelativeOrbitTime(0.61527929901423877327491785323111F);
-		VenusCore.planetVenus.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/venus.png"));
-		VenusCore.planetVenus.setDimensionInfo(ConfigManagerVenus.idDimensionVenus, WorldProviderVenus.class).setTierRequired(2);
-		VenusCore.planetVenus.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
+		if (ConfigManagerVenus.idVenusEnabled) {
+			VenusBlocks.init();
+			VenusItems.init();
 
-		GalaxyRegistry.registerPlanet(VenusCore.planetVenus);
+			VenusCore.planetVenus = (Planet) new Planet("venus").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(2.0F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(0.75F, 0.75F)).setRelativeOrbitTime(0.61527929901423877327491785323111F);
+			VenusCore.planetVenus.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/venus.png"));
+			VenusCore.planetVenus.setDimensionInfo(ConfigManagerVenus.idDimensionVenus, WorldProviderVenus.class).setTierRequired(2);
+			VenusCore.planetVenus.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
+	
+			GalaxyRegistry.registerPlanet(VenusCore.planetVenus);
+	
+			GalacticraftRegistry.registerTeleportType(WorldProviderVenus.class, new TeleportTypeVenus());
+	
+			GalacticraftRegistry.registerRocketGui(WorldProviderVenus.class, new ResourceLocation(VenusCore.TEXTURE_PREFIX + "textures/gui/venusRocketGui.png"));
+	
+			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 2, 5), new ItemStack(VenusItems.venusBasicItem, 1, 0));
+			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 1));
+			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 2));
+			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 7), new ItemStack(VenusItems.venusBasicItem, 1, 3));
+	
+			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 3, 8), new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 7));
 
-		GalacticraftRegistry.registerTeleportType(WorldProviderVenus.class, new TeleportTypeVenus());
-
-		GalacticraftRegistry.registerRocketGui(WorldProviderVenus.class, new ResourceLocation(VenusCore.TEXTURE_PREFIX + "textures/gui/venusRocketGui.png"));
-
-		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 2, 5), new ItemStack(VenusItems.venusBasicItem, 1, 0));
-		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 1));
-		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 2));
-		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 7), new ItemStack(VenusItems.venusBasicItem, 1, 3));
-
-		CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 3, 8), new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 7));
-
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
-
+			this.registerTileEntities();
+			this.registerCreatures();
+			this.registerOtherEntities();
+		}
+		
 		this.proxy.init(event);
 	}
 

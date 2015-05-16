@@ -11,7 +11,7 @@ import mattparks.mods.space.callisto.util.ConfigManagerCallisto;
 import mattparks.mods.space.callisto.util.RecipeManagerCallisto;
 import mattparks.mods.space.core.Constants;
 import mattparks.mods.space.core.SpaceCore;
-import mattparks.mods.space.core.util.SCLog;
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
@@ -29,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_CALLISTO, name = Constants.MOD_NAME_CALLISTO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_CALLISTO, name = Constants.MOD_NAME_CALLISTO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class CallistoCore {
 	public static final String ASSET_PREFIX = "spacecallisto";
 	public static final String TEXTURE_PREFIX = CallistoCore.ASSET_PREFIX + ":";
@@ -43,8 +43,10 @@ public class CallistoCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerCallisto(new File(event.getModConfigurationDirectory(), "4Space/callisto.cfg"));
 
-		CallistoBlocks.init();
-		CallistoItems.init();
+		if (ConfigManagerCallisto.idCallistoEnabled && ConfigManagerCore.idJupiterEnabled) {
+			CallistoBlocks.init();
+			CallistoItems.init();
+		}
 
 		this.proxy.preInit(event);
 	}
@@ -59,26 +61,30 @@ public class CallistoCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		CallistoCore.moonCallisto = (Moon) new Moon("callisto").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1156F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(21F, 21F)).setRelativeOrbitTime(1 / 0.01F);
-		CallistoCore.moonCallisto.setDimensionInfo(ConfigManagerCallisto.idDimensionCallisto, WorldProviderCallisto.class).setTierRequired(3);
-		CallistoCore.moonCallisto.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/callisto.png"));
- 
-		GalaxyRegistry.registerMoon(CallistoCore.moonCallisto);
+		if (ConfigManagerCallisto.idCallistoEnabled && ConfigManagerCore.idJupiterEnabled) {
+			CallistoCore.moonCallisto = (Moon) new Moon("callisto").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(17F, 17F)).setRelativeOrbitTime(1 / 0.001125F);
+			CallistoCore.moonCallisto.setDimensionInfo(ConfigManagerCallisto.idDimensionCallisto, WorldProviderCallisto.class).setTierRequired(3);
+			CallistoCore.moonCallisto.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/callisto.png"));
 
-		GalacticraftRegistry.registerTeleportType(WorldProviderCallisto.class, new TeleportTypeCallisto());
-
-		GalacticraftRegistry.registerRocketGui(WorldProviderCallisto.class, new ResourceLocation(CallistoCore.TEXTURE_PREFIX + "textures/gui/callistoRocketGui.png"));
-
-		this.registerTileEntities();
-		this.registerCreatures();
-		this.registerOtherEntities();
+			GalaxyRegistry.registerMoon(CallistoCore.moonCallisto);
+			
+			GalacticraftRegistry.registerTeleportType(WorldProviderCallisto.class, new TeleportTypeCallisto());
+			
+			GalacticraftRegistry.registerRocketGui(WorldProviderCallisto.class, new ResourceLocation(CallistoCore.TEXTURE_PREFIX + "textures/gui/callistoRocketGui.png"));
+	
+			this.registerTileEntities();
+			this.registerCreatures();
+			this.registerOtherEntities();
+		}
 
 		this.proxy.init(event);
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		RecipeManagerCallisto.loadRecipes();
+		if (ConfigManagerCallisto.idCallistoEnabled && ConfigManagerCore.idJupiterEnabled) {
+			RecipeManagerCallisto.loadRecipes();
+		}
 
 		this.proxy.postInit(event);
 	}

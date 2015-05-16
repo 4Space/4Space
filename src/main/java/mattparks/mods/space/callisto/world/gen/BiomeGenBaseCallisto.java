@@ -7,7 +7,7 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenBaseCallisto extends BiomeGenBase {
-	public static final BiomeGenBase callisto = new BiomeGenBaseCallisto(ConfigManagerCallisto.idBiomeCallisto).setBiomeName("Europa");
+	public static final BiomeGenBase callisto = new BiomeGenBaseCallisto(ConfigManagerCallisto.idBiomeCallisto).setBiomeName("Callisto");
 
 	public BiomeGenBaseCallisto(int var1) {
 		super(var1);

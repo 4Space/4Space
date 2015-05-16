@@ -20,6 +20,7 @@ public class ConfigManagerHole {
 		}
 	}
 
+	public static boolean idHoleEnabled;
 	public static int idDimensionHole;
 	public static int idBiomeHole;
 
@@ -27,6 +28,7 @@ public class ConfigManagerHole {
 		try {
 			ConfigManagerHole.configuration.load();
 
+			ConfigManagerHole.idHoleEnabled = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Should Hole, Items and Blocks be registered in the game (Big planet on / off switch.)", true).getBoolean(true);
 			ConfigManagerHole.idDimensionHole = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Hole Dimension", -52).getInt(-52);
 			ConfigManagerHole.idBiomeHole = ConfigManagerHole.configuration.get(Configuration.CATEGORY_GENERAL, "Hole Biome", 222).getInt(222);
 		}

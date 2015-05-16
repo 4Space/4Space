@@ -2,8 +2,8 @@ package mattparks.mods.space.mercury.blocks;
 
 import mattparks.mods.space.core.util.ItemBlockUtil;
 import mattparks.mods.space.mercury.MercuryCore;
-import mattparks.mods.space.mercury.itemblocks.ItemBlockBasicMercury;
-import mattparks.mods.space.mercury.itemblocks.ItemBlockGlowstoneMercury;
+import mattparks.mods.space.mercury.blocks.items.ItemBlockBasicMercury;
+import mattparks.mods.space.mercury.blocks.items.ItemBlockGlowstoneMercury;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

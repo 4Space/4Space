@@ -2,8 +2,8 @@ package mattparks.mods.space.venus.blocks;
 
 import mattparks.mods.space.core.util.ItemBlockUtil;
 import mattparks.mods.space.venus.VenusCore;
-import mattparks.mods.space.venus.itemblocks.ItemBlockBasicVenus;
-import mattparks.mods.space.venus.itemblocks.ItemBlockDecorVenus;
+import mattparks.mods.space.venus.blocks.items.ItemBlockBasicVenus;
+import mattparks.mods.space.venus.blocks.items.ItemBlockDecorVenus;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;

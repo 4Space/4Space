@@ -1,4 +1,4 @@
-package mattparks.mods.space.venus.itemblocks;
+package mattparks.mods.space.hole.blocks.items;
 
 import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.block.Block;
@@ -6,10 +6,10 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockBasicVenus extends ItemBlock {
-	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "sulfurOre", "uraniumOre", "gemOre", "crystalOre", "tinOre", "copperOre", "ironOre", "coalOre", "dungeonBrick" };
+public class ItemBlockBasicHole extends ItemBlock {
+	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "brick", "flameiteOre", "flameiteBlock", };
 
-	public ItemBlockBasicVenus(Block par1) {
+	public ItemBlockBasicHole(Block par1) {
 		super(par1);
 		this.setHasSubtypes(true);
 	}
@@ -28,10 +28,10 @@ public class ItemBlockBasicVenus extends ItemBlock {
 	public String getUnlocalizedName(ItemStack itemstack) {
 		int meta = itemstack.getItemDamage();
 
-		if (meta < 0 || meta >= ItemBlockBasicVenus.types.length) {
+		if (meta < 0 || meta >= ItemBlockBasicHole.types.length) {
 			meta = 0;
 		}
 
-		return super.getUnlocalizedName() + "." + ItemBlockBasicVenus.types[meta];
+		return super.getUnlocalizedName() + "." + ItemBlockBasicHole.types[meta];
 	}
 }

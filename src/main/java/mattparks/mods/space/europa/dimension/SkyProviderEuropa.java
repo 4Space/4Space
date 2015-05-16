@@ -135,11 +135,11 @@ public class SkyProviderEuropa extends IRenderHandler {
 
 		GL11.glDisable(GL11.GL_BLEND);
 
-		// HOME:
+		// JUPITER:
 		var12 = 50.0F;
-		final float earthRotation = (float) (world.getSpawnPoint().posZ - mc.thePlayer.posZ) * 0.01F;
+		final float jupiterRotation = (float) (world.getSpawnPoint().posZ - mc.thePlayer.posZ) * 0.01F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(earthRotation, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(jupiterRotation, 1.0F, 0.0F, 0.0F);
 		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.jupiterTexture);
