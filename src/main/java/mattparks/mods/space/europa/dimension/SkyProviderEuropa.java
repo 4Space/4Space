@@ -22,6 +22,9 @@ import cpw.mods.fml.client.FMLClientHandler;
 public class SkyProviderEuropa extends IRenderHandler {
 	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
 	private static final ResourceLocation jupiterTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/jupiter.png");
+	private static final ResourceLocation ioTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/io.png");
+	private static final ResourceLocation callistoTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/callisto.png");
+	private static final ResourceLocation ganymedeTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/ganymede.png");
 
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
@@ -123,10 +126,10 @@ public class SkyProviderEuropa extends IRenderHandler {
 		var12 = 30.0F;
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.sunTexture);
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, 150.0D, -var12, 0.0D, 0.0D);
-		var23.addVertexWithUV(var12, 150.0D, -var12, 1.0D, 0.0D);
-		var23.addVertexWithUV(var12, 150.0D, var12, 1.0D, 1.0D);
-		var23.addVertexWithUV(-var12, 150.0D, var12, 0.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 250.0D, -var12, 0.0D, 0.0D);
+		var23.addVertexWithUV(var12, 250.0D, -var12, 1.0D, 0.0D);
+		var23.addVertexWithUV(var12, 250.0D, var12, 1.0D, 1.0D);
+		var23.addVertexWithUV(-var12, 250.0D, var12, 0.0D, 1.0D);
 		var23.draw();
 
 		GL11.glPopMatrix();
@@ -145,10 +148,52 @@ public class SkyProviderEuropa extends IRenderHandler {
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.jupiterTexture);
 		world.getMoonPhase();
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -500.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -500.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -500.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -500.0D, -var12, 0, 0);
+		var23.addVertexWithUV(-var12, -380.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -380.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -380.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -380.0D, -var12, 0, 0);
+		var23.draw();
+
+		// Render Ganymede
+		var12 = 0.4F;
+		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		GL11.glRotatef(300F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.ganymedeTexture);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, -16.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -16.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -16.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -16.0D, -var12, 0, 0);
+		var23.draw();
+		
+		// Render Callisto
+		var12 = 0.4F;
+		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		GL11.glRotatef(100F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.callistoTexture);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, -15.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -15.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -15.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -15.0D, -var12, 0, 0);
+		var23.draw();
+		
+		// Render IO
+		var12 = 0.4F;
+		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		GL11.glRotatef(300F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(300F, 1.0F, 0.0F, 0.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.ioTexture);
+		var23.startDrawingQuads();
+		var23.addVertexWithUV(-var12, -12.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -12.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -12.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -12.0D, -var12, 0, 0);
 		var23.draw();
 
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

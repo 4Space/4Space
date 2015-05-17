@@ -20,7 +20,7 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class SkyProviderVenus extends IRenderHandler {
-	private static final ResourceLocation overworldTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/mercury.png");
+	private static final ResourceLocation mercuryTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/mercury.png");
 	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
 
 	public int starList;
@@ -201,13 +201,13 @@ public class SkyProviderVenus extends IRenderHandler {
 		tessellator1.addVertexWithUV(-f10, 100.0D, f10, 0.0D, 1.0D);
 		tessellator1.draw();
 
-		// Render earth
+		// Render Mercury
 		f10 = 0.4F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
 		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderVenus.overworldTexture);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderVenus.mercuryTexture);
 		tessellator1.startDrawingQuads();
 		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
 		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);

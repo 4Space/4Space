@@ -210,7 +210,7 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 
 	@Override
 	public float getGravity() {
-		return 0.032F;
+		return 0.060F;
 	}
 
 	@Override

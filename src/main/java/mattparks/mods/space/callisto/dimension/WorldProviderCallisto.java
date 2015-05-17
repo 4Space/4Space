@@ -216,7 +216,7 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public float getGravity() {
-		return 0.066F;
+		return 0.069F;
 	}
 
 	@Override

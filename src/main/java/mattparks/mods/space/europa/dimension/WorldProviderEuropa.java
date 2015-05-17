@@ -216,7 +216,7 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public float getGravity() {
-		return 0.066F;
+		return 0.063F;
 	}
 
 	@Override
