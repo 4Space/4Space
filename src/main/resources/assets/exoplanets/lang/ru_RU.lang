@@ -1,0 +1,21 @@
+# 4Space Core Language File = RUSSIA RUSSIAN
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+
+# GUI
+itemGroup.SpaceItems=4Space: Предметы
+itemGroup.SpaceBlocks=4Space: Блоки
+
+# SCHEMATICS
+
+# Entity
+
+# OTHER
+4update.failed.name=Проверка обновлений 4Space не удалась! Повторная проверка через 15 секунд
+4update.success.name=Новая версия 4Space найдена:

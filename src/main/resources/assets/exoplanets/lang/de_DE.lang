@@ -1,0 +1,21 @@
+# 4Space Core Language File = GERMANY GERMAN
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+
+# GUI
+itemGroup.SpaceItems=4Space Artikel
+itemGroup.SpaceBlocks=4Space Blocks
+
+# Schematics
+
+# Entity
+
+# Other
+4update.failed.name=4Space Update-Prüfung fehlgeschlagen! Erneut versuchen in 15 Sekunden
+4update.success.name=4Space Remote-Version gefunden:
