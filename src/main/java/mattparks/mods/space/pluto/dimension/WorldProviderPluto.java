@@ -238,7 +238,7 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= 5;
+		return tier >= 3;
 	}
 
 	@Override

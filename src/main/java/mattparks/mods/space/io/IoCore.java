@@ -29,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
+@Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;required-after:SpaceVenus;")
 public class IoCore {
 	public static final String ASSET_PREFIX = "spaceio";
 	public static final String TEXTURE_PREFIX = IoCore.ASSET_PREFIX + ":";
