@@ -204,7 +204,7 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 
 	@Override
 	public float getGravity() {
-		return 0.022F;
+		return (float) (0.08D * (1 - 0.996));
 	}
 
 	@Override
@@ -229,12 +229,12 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 
 	@Override
 	public float getFallDamageModifier() {
-		return 0.50F;
+		return 0.996F;
 	}
 
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 0.0F;
+		return 0.01F;
 	}
 
 	@Override
@@ -249,7 +249,7 @@ public class WorldProviderHole extends WorldProviderSpace implements IGalacticra
 
 	@Override
 	public float getThermalLevelModifier() {
-		return 0.0F;
+		return 0.01F;
 	}
 
 	@Override

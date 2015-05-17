@@ -203,7 +203,11 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater) {
-		return false;
+		if (this.isDaytime()) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	@Override
@@ -218,7 +222,7 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 
 	@Override
 	public float getGravity() {
-		return 0.058F;
+		return (float) (0.08D * (1 - 0.378));
 	}
 
 	@Override
@@ -228,12 +232,12 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0D;
+		return 6.0D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 0.6D;
 	}
 
 	@Override
@@ -243,7 +247,7 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 
 	@Override
 	public float getFallDamageModifier() {
-		return 0.26F;
+		return 0.378F;
 	}
 
 	@Override
@@ -264,14 +268,14 @@ public class WorldProviderMercury extends WorldProviderSpace implements IGalacti
 	@Override
 	public float getThermalLevelModifier() {
 		if (this.isDaytime()) {
-			return 15.0F;
+			return 12.0F;
 		} else {
-			return -15.0F;
+			return -9.0F;
 		}
 	}
 
 	@Override
 	public float getWindLevel() {
-		return 0.8F;
+		return 0.2F;
 	}
 }

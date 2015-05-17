@@ -2,7 +2,6 @@ package mattparks.mods.space.io.dimension;
 
 import java.util.Random;
 
-import mattparks.mods.space.callisto.dimension.SkyProviderCallisto;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.client.Minecraft;

@@ -12,9 +12,7 @@ public class RecipeManagerVenus {
 	private static void addUniversalRecipes() {
 		// ORE DICTIONARY
 		OreDictionary.registerOre("dustSulfur", new ItemStack(VenusItems.venusBasicItem, 1, 0));
-		OreDictionary.registerOre("itemSulfurDust", new ItemStack(VenusItems.venusBasicItem, 1, 0)); // FOR
-																										// ICBM
-																										// SPIKES
+		OreDictionary.registerOre("itemSulfurDust", new ItemStack(VenusItems.venusBasicItem, 1, 0)); // FOR ICBM SPIKES
 		OreDictionary.registerOre("ingotSulfur", new ItemStack(VenusItems.venusBasicItem, 1, 1));
 		OreDictionary.registerOre("redGem", new ItemStack(VenusItems.venusBasicItem, 1, 2));
 		OreDictionary.registerOre("ingotUranium", new ItemStack(VenusItems.venusBasicItem, 1, 3));

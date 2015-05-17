@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.pluto.blocks.PlutoBlocks;
 import mattparks.mods.space.pluto.world.gen.dungeon.RoomBossPluto;
 import mattparks.mods.space.pluto.world.gen.dungeon.RoomChestsPluto;
@@ -233,7 +234,11 @@ public class ChunkProviderPluto extends ChunkProviderGenerate {
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ids, meta, this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, par1, par2, ids, meta);
-		this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 30, par2 * 16, par1, par2, ids, meta);
+		
+		if (!ConfigManagerCore.idRealisticEnabled) {
+			this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 30, par2 * 16, par1, par2, ids, meta);
+		}
+		
 		Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		byte[] var5 = var4.getBiomeArray();
 
@@ -347,10 +352,14 @@ public class ChunkProviderPluto extends ChunkProviderGenerate {
 	public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 8, 2, 3));
-			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
+			
+			if (!ConfigManagerCore.idRealisticEnabled) {
+				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 8, 2, 3));
+				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 8, 2, 3));
+				monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 8, 2, 3));
+				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
+			}
+			
 			return monsters;
 		} else {
 			return null;

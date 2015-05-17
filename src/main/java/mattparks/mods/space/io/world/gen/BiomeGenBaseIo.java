@@ -1,5 +1,6 @@
 package mattparks.mods.space.io.world.gen;
 
+import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.io.util.ConfigManagerIo;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
@@ -14,9 +15,13 @@ public class BiomeGenBaseIo extends BiomeGenBase {
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 5, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 3, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
+		
+		if (!ConfigManagerCore.idRealisticEnabled) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 5, 1, 1));
+			this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 3, 1, 1));
+			this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
+		}
+		
 		// this.spawnableMonsterList.add(new
 		// SpawnListEntry(EntityEvolvedBlaze.class, 4, 1, 1));
 		this.rainfall = 0F;

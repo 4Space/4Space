@@ -218,7 +218,7 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public float getGravity() {
-		return 0.058F;
+		return (float) (0.08D * (1 - 0.068));
 	}
 
 	@Override
@@ -243,7 +243,7 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public float getFallDamageModifier() {
-		return 0.26F;
+		return 0.068F;
 	}
 
 	@Override

@@ -216,7 +216,7 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public float getGravity() {
-		return 0.069F;
+		return (float) (0.08D * (1 - 0.1264));
 	}
 
 	@Override
@@ -226,12 +226,12 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0D;
+		return 6.0D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 0.8D;
 	}
 
 	@Override
@@ -241,7 +241,7 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public float getFallDamageModifier() {
-		return 0.26F;
+		return 0.1264F;
 	}
 
 	@Override
@@ -261,11 +261,11 @@ public class WorldProviderCallisto extends WorldProviderSpace implements IGalact
 
 	@Override
 	public float getThermalLevelModifier() {
-		return -10.0F;
+		return -8.0F;
 	}
 
 	@Override
 	public float getWindLevel() {
-		return 0.8F;
+		return 0.1F;
 	}
 }

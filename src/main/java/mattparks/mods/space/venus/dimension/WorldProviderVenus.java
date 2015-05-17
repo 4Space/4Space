@@ -200,7 +200,7 @@ public class WorldProviderVenus extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public boolean canDoLightning(Chunk chunk) {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -210,7 +210,7 @@ public class WorldProviderVenus extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public float getGravity() {
-		return 0.034F;
+		return (float) (0.08D * (1 - 0.907));
 	}
 
 	@Override
@@ -220,12 +220,12 @@ public class WorldProviderVenus extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0D;
+		return 5.0D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 0.907D;
 	}
 
 	@Override
@@ -255,11 +255,11 @@ public class WorldProviderVenus extends WorldProviderSpace implements IGalacticr
 
 	@Override
 	public float getThermalLevelModifier() {
-		return 5;
+		return 9;
 	}
 
 	@Override
 	public float getWindLevel() {
-		return 0.7F;
+		return 7.0F;
 	}
 }

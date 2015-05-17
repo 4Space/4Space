@@ -193,11 +193,9 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
 		return "Europa";
 	}
 
-	// @Override
-	// public boolean canSnowAt(int x, int y, int z)
-	// {
-	// return false;
-	// }
+	public boolean canSnowAt(int x, int y, int z) {
+		return true;
+	}
 
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater) {
@@ -216,7 +214,7 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public float getGravity() {
-		return 0.063F;
+		return (float) (0.08D * (1 - 0.1335));
 	}
 
 	@Override
@@ -226,12 +224,12 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0D;
+		return 7.0D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 0.8D;
 	}
 
 	@Override
@@ -241,12 +239,12 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public float getFallDamageModifier() {
-		return 0.26F;
+		return 0.1335F;
 	}
 
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 10.0F;
+		return 9.0F;
 	}
 
 	@Override
@@ -261,11 +259,11 @@ public class WorldProviderEuropa extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public float getThermalLevelModifier() {
-		return -10.0F;
+		return -6.0F;
 	}
 
 	@Override
 	public float getWindLevel() {
-		return 0.8F;
+		return 0.3F;
 	}
 }

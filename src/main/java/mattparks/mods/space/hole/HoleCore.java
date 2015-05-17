@@ -44,7 +44,7 @@ public class HoleCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerHole(new File(event.getModConfigurationDirectory(), "4Space/hole.cfg"));
 
-		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled) {
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled && !ConfigManagerCore.idRealisticEnabled) {
 			HoleBlocks.init();
 			HoleItems.init();
 		}
@@ -62,7 +62,7 @@ public class HoleCore {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled) {
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled && !ConfigManagerCore.idRealisticEnabled) {
 			HoleCore.moonHole = (Moon) new Moon("hole").setParentPlanet(SpaceCore.planetSaturn).setRelativeSize(0.2667F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(18F, 18F)).setRelativeOrbitTime(1 / 0.01F);
 			HoleCore.moonHole.setDimensionInfo(ConfigManagerHole.idDimensionHole, WorldProviderHole.class).setTierRequired(3); // 4
 			HoleCore.moonHole.setBodyIcon(new ResourceLocation(HoleCore.ASSET_PREFIX, "textures/gui/celestialbodies/wormhole.png"));
@@ -83,7 +83,7 @@ public class HoleCore {
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled) {
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled && !ConfigManagerCore.idRealisticEnabled) {
 			RecipeManagerHole.loadRecipes();
 		}
 
@@ -94,7 +94,9 @@ public class HoleCore {
 	}
 
 	private void registerCreatures() {
-		SpaceUtil.registerSpaceCreature(EntityMakianVillager.class, "MakianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
+		if (ConfigManagerHole.idHoleEnabled && ConfigManagerCore.idSaturnEnabled && !ConfigManagerCore.idRealisticEnabled) {
+			SpaceUtil.registerSpaceCreature(EntityMakianVillager.class, "MakianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
+		}
 	}
 
 	private void registerOtherEntities() {

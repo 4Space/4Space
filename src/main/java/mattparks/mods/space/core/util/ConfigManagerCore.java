@@ -24,6 +24,7 @@ public class ConfigManagerCore {
 	public static boolean idSaturnEnabled;
 	public static boolean idUranusEnabled;
 	public static boolean idNeptuneEnabled;
+	public static boolean idRealisticEnabled;
 	public static boolean updateCheck;
 
 	private void setDefaultValues() {
@@ -34,6 +35,7 @@ public class ConfigManagerCore {
 			ConfigManagerCore.idSaturnEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Saturn and all of its Moons?", true).getBoolean(true);
 			ConfigManagerCore.idUranusEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Neptune and all of its Moons?", true).getBoolean(true);
 			ConfigManagerCore.idNeptuneEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Pluto and all of its Moons?", true).getBoolean(true);
+			ConfigManagerCore.idRealisticEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable super realistic mode, disables mobs, structures, creates alturnitive craftings.", false).getBoolean(false);
 
 			ConfigManagerCore.updateCheck = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Update Checking?", true).getBoolean(true);
 		}

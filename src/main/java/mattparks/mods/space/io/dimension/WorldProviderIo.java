@@ -200,7 +200,7 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 
 	@Override
 	public boolean canDoLightning(Chunk chunk) {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -210,7 +210,7 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 
 	@Override
 	public float getGravity() {
-		return 0.060F;
+		return (float) (0.08D * (1 - 0.1835));
 	}
 
 	@Override
@@ -220,12 +220,12 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0D;
+		return 15.5D;
 	}
 
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 1.2D;
 	}
 
 	@Override
@@ -235,12 +235,12 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 
 	@Override
 	public float getFallDamageModifier() {
-		return 0.26F;
+		return 0.1835F;
 	}
 
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 10.0F;
+		return 6.0F;
 	}
 
 	@Override
@@ -255,7 +255,7 @@ public class WorldProviderIo extends WorldProviderSpace implements IGalacticraft
 
 	@Override
 	public float getThermalLevelModifier() {
-		return 4.0F;
+		return 7.0F;
 	}
 
 	@Override
