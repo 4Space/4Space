@@ -63,7 +63,7 @@ public class PlutoCore {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		if (ConfigManagerPluto.idPlutoEnabled) {
-			PlutoCore.planetPluto = (Planet) new Planet("pluto").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(2.0F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(2.5F, 2.5F)).setRelativeOrbitTime(194.84118291347207009857612267251F);
+			PlutoCore.planetPluto = (Planet) new Planet("pluto").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(2.0F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(2.5F, 2.0F)).setRelativeOrbitTime(194.84118291347207009857612267251F);
 			PlutoCore.planetPluto.setBodyIcon(new ResourceLocation(PlutoCore.ASSET_PREFIX, "textures/gui/celestialbodies/pluto.png"));
 			PlutoCore.planetPluto.setDimensionInfo(ConfigManagerPluto.idDimensionPluto, WorldProviderPluto.class).setTierRequired(3); // 5
 			PlutoCore.planetPluto.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);

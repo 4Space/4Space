@@ -62,7 +62,7 @@ public class CallistoCore {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		if (ConfigManagerCallisto.idCallistoEnabled && ConfigManagerCore.idJupiterEnabled) {
-			CallistoCore.moonCallisto = (Moon) new Moon("callisto").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(17F, 17F)).setRelativeOrbitTime(1 / 0.001125F);
+			CallistoCore.moonCallisto = (Moon) new Moon("callisto").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(17F, 17F)).setRelativeOrbitTime(1 / 0.000025F);
 			CallistoCore.moonCallisto.setDimensionInfo(ConfigManagerCallisto.idDimensionCallisto, WorldProviderCallisto.class).setTierRequired(3);
 			CallistoCore.moonCallisto.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/callisto.png"));
 
