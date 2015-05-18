@@ -1,9 +1,9 @@
-package mattparks.mods.space.exoplanets;
+package mattparks.mods.exoplanets;
 
 import java.io.File;
 
-import mattparks.mods.space.exoplanets.proxy.CommonProxy;
-import mattparks.mods.space.exoplanets.util.ConfigManagerCore;
+import mattparks.mods.exoplanets.proxy.CommonProxy;
+import mattparks.mods.exoplanets.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
@@ -22,7 +22,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 
-@Mod(modid = Constants.MOD_ID_CORE, name = Constants.MOD_NAME_CORE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;")
+@Mod(modid = Constants.MOD_ID_CORE, name = Constants.MOD_NAME_CORE, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class ExoCore {
 	public static final String ASSET_PREFIX = "exoplanets";
 	public static final String TEXTURE_PREFIX = ExoCore.ASSET_PREFIX + ":";
@@ -41,7 +41,7 @@ public class ExoCore {
 	private static Planet planetCeto;
 	private static Moon moonCeto_M1;
     
-	@SidedProxy(clientSide = "mattparks.mods.space.exoplanets.proxy.ClientProxy", serverSide = "mattparks.mods.space.exoplanets.proxy.CommonProxy")
+	@SidedProxy(clientSide = "mattparks.mods.exoplanets.proxy.ClientProxy", serverSide = "mattparks.mods.exoplanets.proxy.CommonProxy")
 	public static CommonProxy proxy;
 
 	@Instance(Constants.MOD_ID_CORE)

@@ -1,4 +1,4 @@
-package mattparks.mods.space.exoplanets.util;
+package mattparks.mods.exoplanets.util;
 
 import java.io.File;
 

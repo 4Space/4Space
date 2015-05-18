@@ -19,3 +19,20 @@ itemGroup.SpaceBlocks=4Space Blocks
 # OTHER
 4update.failed.name=4Space update check failed! Trying again in 15 seconds
 4update.success.name=4Space remote version found:
+
+solarsystem.gliese581g=Gliese 581G
+solarSystem.gliese581g=Gliese 581G
+star.581g=Gliese 581G
+
+planet.elpis=Elpis
+moon.elpis_m1=Elpis M1
+
+planet.hestia=Hestia
+moon.hestia_m1=Hestia M1
+
+planet.hera=Hera
+moon.hera_m1=Hera M1
+moon.hera_m2=Hera M2
+
+planet.ceto=Ceto
+moon.ceto_m1=Ceto M1

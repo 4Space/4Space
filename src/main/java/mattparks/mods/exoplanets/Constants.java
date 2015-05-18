@@ -1,4 +1,4 @@
-package mattparks.mods.space.exoplanets;
+package mattparks.mods.exoplanets;
 
 public class Constants {
 	public static final int LOCALMAJVERSION = 0;

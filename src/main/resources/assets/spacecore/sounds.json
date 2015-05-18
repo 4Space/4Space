@@ -1,0 +1,35 @@
+{
+  "4space.musicSpace": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "music/ambience",
+        "stream": true
+      },
+      {
+        "name": "music/lava_scarry",
+        "stream": true
+      },
+      {
+        "name": "music/magma_bubbles",
+        "stream": true
+      },
+      {
+        "name": "music/snowstorm",
+        "stream": true
+      },
+      {
+        "name": "music/venus_1",
+        "stream": true
+      },
+      {
+        "name": "music/venus_2",
+        "stream": true
+      },
+      {
+        "name": "music/venus_bells",
+        "stream": true
+      }
+    ]
+  }
+}

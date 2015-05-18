@@ -1,0 +1,9 @@
+mattparks:https://raw.github.com/4-Space/MattparksCapes/master/capes/capeBlue.png
+flashy3:https://raw.github.com/4-Space/MattparksCapes/master/capes/capeOrange.png
+Dinammar:https://raw.github.com/4-Space/MattparksCapes/master/capes/capePurple.png
+decaxon:https://raw.github.com/4-Space/MattparksCapes/master/capes/capeGreen.png
+JakXLT:https://raw.github.com/4-Space/MattparksCapes/master/capes/jakCape.png
+_Jaru_:https://raw.github.com/4-Space/MattparksCapes/master/capes/jaruCape0.png
+ro914:https://raw.github.com/4-Space/MattparksCapes/master/capes/capeBlue.png
+langjam350roxsox:https://raw.github.com/4-Space/MattparksCapes/master/capes/capeBlue.png
+EnderNawaf123:https://raw.github.com/4-Space/MattparksCapes/master/capes/capePurple.png

@@ -1,4 +1,4 @@
-package mattparks.mods.space.exoplanets.proxy;
+package mattparks.mods.exoplanets.proxy;
 
 import net.minecraft.item.EnumRarity;
 import net.minecraft.util.EnumChatFormatting;

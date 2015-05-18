@@ -1,4 +1,4 @@
-package mattparks.mods.space.exoplanets.proxy;
+package mattparks.mods.exoplanets.proxy;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
