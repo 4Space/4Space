@@ -111,7 +111,8 @@ public class StructureComponentVenusVillagePathGen extends StructureComponentVen
 	}
 
 	/**
-	 * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes Mineshafts at the end, it adds Fences...
+	 * second Part of Structure generating, this for example places Spiderwebs,
+	 * Mob Spawners, it closes Mineshafts at the end, it adds Fences...
 	 */
 	@Override
 	public boolean addComponentParts(World par1World, Random par2Random, StructureBoundingBox par3StructureBoundingBox) {

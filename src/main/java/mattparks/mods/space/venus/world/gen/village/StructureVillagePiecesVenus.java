@@ -107,7 +107,8 @@ public class StructureVillagePiecesVenus {
 	}
 
 	/**
-	 * attempts to find a next Structure Component to be spawned, private Village function
+	 * attempts to find a next Structure Component to be spawned, private
+	 * Village function
 	 */
 	private static StructureComponent getNextVillageStructureComponent(StructureComponentVenusVillageStartPiece par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, int par6, int par7) {
 		if (par7 > 50) {

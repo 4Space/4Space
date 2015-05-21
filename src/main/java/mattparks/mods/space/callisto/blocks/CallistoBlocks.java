@@ -8,7 +8,7 @@ public class CallistoBlocks {
 	public static Block callistoBasicBlock;
 
 	private static void initBlocks() {
-		CallistoBlocks.callistoBasicBlock = new BlockBasicCallisto("callisto_block");	
+		CallistoBlocks.callistoBasicBlock = new BlockBasicCallisto("callisto_block");
 	}
 
 	private static void setHarvestLevels() {

@@ -30,7 +30,7 @@ public class ConfigManagerCore {
 	private void setDefaultValues() {
 		try {
 			ConfigManagerCore.configuration.load();
-			
+
 			ConfigManagerCore.idJupiterEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Jupiter and all of its Moons?", true).getBoolean(true);
 			ConfigManagerCore.idSaturnEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Saturn and all of its Moons?", true).getBoolean(true);
 			ConfigManagerCore.idUranusEnabled = ConfigManagerCore.configuration.get(Configuration.CATEGORY_GENERAL, "Enable Neptune and all of its Moons?", true).getBoolean(true);

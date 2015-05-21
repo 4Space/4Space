@@ -70,25 +70,25 @@ public class VenusCore {
 			VenusCore.planetVenus.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/venus.png"));
 			VenusCore.planetVenus.setDimensionInfo(ConfigManagerVenus.idDimensionVenus, WorldProviderVenus.class).setTierRequired(2);
 			VenusCore.planetVenus.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
-	
+
 			GalaxyRegistry.registerPlanet(VenusCore.planetVenus);
-	
+
 			GalacticraftRegistry.registerTeleportType(WorldProviderVenus.class, new TeleportTypeVenus());
-	
+
 			GalacticraftRegistry.registerRocketGui(WorldProviderVenus.class, new ResourceLocation(VenusCore.TEXTURE_PREFIX + "textures/gui/venusRocketGui.png"));
-	
+
 			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 2, 5), new ItemStack(VenusItems.venusBasicItem, 1, 0));
 			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 1));
 			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 2));
 			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 7), new ItemStack(VenusItems.venusBasicItem, 1, 3));
-	
+
 			CompressorRecipes.addShapelessRecipe(new ItemStack(VenusItems.venusBasicItem, 3, 8), new ItemStack(VenusItems.venusBasicItem, 1, 5), new ItemStack(VenusItems.venusBasicItem, 1, 6), new ItemStack(VenusItems.venusBasicItem, 1, 7));
 
 			this.registerTileEntities();
 			this.registerCreatures();
 			this.registerOtherEntities();
 		}
-		
+
 		this.proxy.init(event);
 	}
 

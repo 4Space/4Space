@@ -32,7 +32,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ClientProxyVenus extends CommonProxyVenus {
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
-	
+
 	private static int renderIndexGemArmor;
 	private static int renderIndexSulfurArmor;
 	private static int renderIndexJetpack;
@@ -91,7 +91,7 @@ public class ClientProxyVenus extends CommonProxyVenus {
 		return -1;
 	}
 
-	public static class TickHandlerClient {  
+	public static class TickHandlerClient {
 		@SideOnly(Side.CLIENT)
 		@SubscribeEvent
 		public void onClientTick(ClientTickEvent event) {
@@ -101,15 +101,15 @@ public class ClientProxyVenus extends CommonProxyVenus {
 
 			// TODO: Make work!
 			if (Side.CLIENT != null) {
-	    		if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == VenusItems.jetpack && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.isPressed() && player.posY < 360) {
-	    			((ItemJetpack)player.inventory.armorItemInSlot(2).getItem()).setActive();
-	    			player.motionY -= 0.05D;
-	    			player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.750;
-	    			player.fallDistance = 0.0F;
-	        		world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);
-	    		}
-	        }	
-		
+				if (player != null && world != null && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == VenusItems.jetpack && FMLClientHandler.instance().getClient().gameSettings.keyBindJump.isPressed() && player.posY < 360) {
+					((ItemJetpack) player.inventory.armorItemInSlot(2).getItem()).setActive();
+					player.motionY -= 0.05D;
+					player.motionY += 0.07 + player.rotationPitch * 2 / 150 * 0.750;
+					player.fallDistance = 0.0F;
+					world.spawnParticle("largesmoke", player.posX, player.posY - 1D, player.posZ, 0, -0.5, 0);
+				}
+			}
+
 			if (world != null) {
 				if (world.provider instanceof WorldProviderVenus) {
 					if (world.provider.getSkyRenderer() == null) {

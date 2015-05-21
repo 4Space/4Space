@@ -1,0 +1,37 @@
+# 4Space Elipse Language File = UNITED STATES ENGLISH
+
+# GENERAL ITEMS
+item.flameiteDust.name=Flameite Dust
+item.ingotFlameite.name=Flameite Ingot
+item.flameitePlate.name=Flameite Plate
+item.flameite_battery.name=Flameite-Celled Battery
+
+# TOOLS
+item.flameite_axe.name=Flameite Axe
+item.flameite_hoe.name=Flameite Hoe
+item.flameite_pickaxe.name=Flameite Pickaxe
+item.flameite_spade.name=Flameite Shovel
+item.flameite_sword.name=Flameite Sword
+
+# ARMOR
+item.flameite_boots.name=Flameite Boots
+item.flameite_chestplate.name=Flameite Chestplate
+item.flameite_helmet.name=Flameite Helmet
+item.flameite_leggings.name=Flameite Leggings
+
+# BLOCKS
+tile.elipse_basic.surfaceRock.name=Elipse Surface Rock
+tile.elipse_basic.subSurface.name=Elipse Sub-Surface Rock
+tile.elipse_basic.rock.name=Elipse Rock
+tile.elipse_basic.cobblestone.name=Elipse Cobblestone
+tile.elipse_basic.brick.name=Elipse Dungeon Brick
+tile.elipse_basic.flameiteOre.name=Elipse Flameite Ore
+tile.elipse_basic.flameiteBlock.name=Flameite Block
+
+# GUI
+planet.elipse=Elipse
+
+# Schematics
+
+# Entity
+

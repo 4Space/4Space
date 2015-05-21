@@ -67,17 +67,17 @@ public class MercuryCore {
 			MercuryCore.planetMercury.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/mercury.png"));
 			MercuryCore.planetMercury.setDimensionInfo(ConfigManagerMercury.idDimensionMercury, WorldProviderMercury.class).setTierRequired(2);
 			MercuryCore.planetMercury.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
-	
+
 			GalaxyRegistry.registerPlanet(MercuryCore.planetMercury);
-	
+
 			GalacticraftRegistry.registerTeleportType(WorldProviderMercury.class, new TeleportTypeMercury());
-	
+
 			GalacticraftRegistry.registerRocketGui(WorldProviderMercury.class, new ResourceLocation(MercuryCore.TEXTURE_PREFIX + "textures/gui/mercuryRocketGui.png"));
-	
+
 			CompressorRecipes.addShapelessRecipe(new ItemStack(MercuryItems.mercuryBasicItem, 2, 1), new ItemStack(MercuryItems.mercuryBasicItem, 1, 0));
-	
+
 			CompressorRecipes.addShapelessRecipe(new ItemStack(MercuryItems.mercuryBasicItem, 3, 2), new ItemStack(MercuryItems.mercuryBasicItem, 1, 1), new ItemStack(MercuryItems.mercuryBasicItem, 1, 0), new ItemStack(MercuryItems.mercuryBasicItem, 1, 1));
-	
+
 			this.registerTileEntities();
 			this.registerCreatures();
 			this.registerOtherEntities();

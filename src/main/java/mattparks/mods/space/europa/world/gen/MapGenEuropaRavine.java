@@ -207,7 +207,10 @@ public class MapGenEuropaRavine extends MapGenBase {
 	}
 
 	/**
-	 * Digs out the current block, default implementation removes stone, filler, and top block Sets the block to lava if y is less then 10, and air other wise. If setting to air, it also checks to see if we've broken the surface and if so tries to make the floor the biome's top block
+	 * Digs out the current block, default implementation removes stone, filler,
+	 * and top block Sets the block to lava if y is less then 10, and air other
+	 * wise. If setting to air, it also checks to see if we've broken the
+	 * surface and if so tries to make the floor the biome's top block
 	 * 
 	 * @param data
 	 *            Block data array
@@ -224,7 +227,8 @@ public class MapGenEuropaRavine extends MapGenBase {
 	 * @param chunkZ
 	 *            Chunk Y position
 	 * @param foundTop
-	 *            True if we've encountered the biome's top block. Ideally if we've broken the surface.
+	 *            True if we've encountered the biome's top block. Ideally if
+	 *            we've broken the surface.
 	 */
 	protected void digBlock(Block[] data, int index, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop) {
 		final BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(x + chunkX * 16, z + chunkZ * 16);

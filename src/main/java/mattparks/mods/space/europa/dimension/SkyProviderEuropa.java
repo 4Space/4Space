@@ -155,9 +155,9 @@ public class SkyProviderEuropa extends IRenderHandler {
 		var23.draw();
 
 		// Render Ganymede
-		var12 = 0.4F;
+		var12 = 0.5F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(300F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.ganymedeTexture);
@@ -167,11 +167,11 @@ public class SkyProviderEuropa extends IRenderHandler {
 		var23.addVertexWithUV(var12, -16.0D, -var12, 1, 0);
 		var23.addVertexWithUV(-var12, -16.0D, -var12, 0, 0);
 		var23.draw();
-		
+
 		// Render Callisto
-		var12 = 0.4F;
+		var12 = 0.5F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(100F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(100F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.callistoTexture);
@@ -181,11 +181,11 @@ public class SkyProviderEuropa extends IRenderHandler {
 		var23.addVertexWithUV(var12, -15.0D, -var12, 1, 0);
 		var23.addVertexWithUV(-var12, -15.0D, -var12, 0, 0);
 		var23.draw();
-		
+
 		// Render IO
-		var12 = 0.4F;
+		var12 = 0.5F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(300F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEuropa.ioTexture);

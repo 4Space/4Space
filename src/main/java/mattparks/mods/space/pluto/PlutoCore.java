@@ -67,19 +67,19 @@ public class PlutoCore {
 			PlutoCore.planetPluto.setBodyIcon(new ResourceLocation(PlutoCore.ASSET_PREFIX, "textures/gui/celestialbodies/pluto.png"));
 			PlutoCore.planetPluto.setDimensionInfo(ConfigManagerPluto.idDimensionPluto, WorldProviderPluto.class).setTierRequired(3); // 5
 			PlutoCore.planetPluto.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
-	
+
 			GalaxyRegistry.registerPlanet(PlutoCore.planetPluto);
-	
+
 			GalacticraftRegistry.registerTeleportType(WorldProviderPluto.class, new TeleportTypePluto());
-	
+
 			GalacticraftRegistry.registerRocketGui(WorldProviderPluto.class, new ResourceLocation(PlutoCore.TEXTURE_PREFIX + "textures/gui/plutoRocketGui.png"));
-	
+
 			CompressorRecipes.addShapelessRecipe(new ItemStack(PlutoItems.plutoBasicItem, 2, 3), new ItemStack(PlutoItems.plutoBasicItem, 1, 0));
 			CompressorRecipes.addShapelessRecipe(new ItemStack(PlutoItems.plutoBasicItem, 1, 4), new ItemStack(PlutoItems.plutoBasicItem, 1, 2));
 			CompressorRecipes.addShapelessRecipe(new ItemStack(PlutoItems.plutoBasicItem, 1, 5), new ItemStack(PlutoItems.plutoBasicItem, 1, 1));
-	
+
 			CompressorRecipes.addShapelessRecipe(new ItemStack(PlutoItems.plutoBasicItem, 3, 6), new ItemStack(PlutoItems.plutoBasicItem, 1, 3), new ItemStack(PlutoItems.plutoBasicItem, 1, 5), new ItemStack(PlutoItems.plutoBasicItem, 1, 4));
-	
+
 			this.registerTileEntities();
 			this.registerCreatures();
 			this.registerOtherEntities();

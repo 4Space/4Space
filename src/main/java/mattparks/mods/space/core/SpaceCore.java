@@ -44,7 +44,7 @@ public class SpaceCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		new ConfigManagerCore(new File(event.getModConfigurationDirectory(), "4Space/core.cfg"));
-		
+
 		this.proxy.preInit(event);
 	}
 
@@ -63,21 +63,21 @@ public class SpaceCore {
 			SpaceCore.planetSaturn.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
 			GalaxyRegistry.registerPlanet(SpaceCore.planetSaturn);
 		}
-		
+
 		if (ConfigManagerCore.idUranusEnabled) {
 			SpaceCore.planetUranus = (Planet) new Planet("uranus").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(7.2F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(2.0F, 2.0F)).setRelativeOrbitTime(84.063526834611171960569550930997F);
 			SpaceCore.planetUranus.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/uranus.png"));
 			SpaceCore.planetUranus.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
 			GalaxyRegistry.registerPlanet(SpaceCore.planetUranus);
 		}
-		
+
 		if (ConfigManagerCore.idNeptuneEnabled) {
 			SpaceCore.planetNeptune = (Planet) new Planet("neptune").setParentSolarSystem(GalacticraftCore.solarSystemSol).setRingColorRGB(0.1F, 0.9F, 0.6F).setPhaseShift(36.1F).setRelativeSize(0.5319F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(2.25F, 2.25F)).setRelativeOrbitTime(164.84118291347207009857612267251F);
 			SpaceCore.planetNeptune.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/neptune.png"));
 			SpaceCore.planetNeptune.atmosphereComponent(IAtmosphericGas.CO2).atmosphereComponent(IAtmosphericGas.HELIUM).atmosphereComponent(IAtmosphericGas.ARGON);
 			GalaxyRegistry.registerPlanet(SpaceCore.planetNeptune);
 		}
-		
+
 		this.proxy.init(event);
 	}
 

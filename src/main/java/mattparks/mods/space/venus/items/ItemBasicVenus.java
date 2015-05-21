@@ -16,21 +16,20 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBasicVenus extends Item {
-	private static String[] names = { 
-		"sulfurDust", // 0
-		"ingotSulfur", // 1
-		"redGem", // 2
-		"ingotUranium", // 3
-		"venusCrystal", // 4
-		"sulfurPlate", // 5
-		"redGemPlate", // 6
-		"uraniumPlate", // 7
-		"tier4HeavyDutyPlate", // 8
-		"venusRod", // 9
-		"venusRodDust", // 10
-		"venusPowerCrystal", // 11
-		"jetpackThruster", // 12
-		"jetpackBody", // 13
+	private static String[] names = { "sulfurDust", // 0
+	"ingotSulfur", // 1
+	"redGem", // 2
+	"ingotUranium", // 3
+	"venusCrystal", // 4
+	"sulfurPlate", // 5
+	"redGemPlate", // 6
+	"uraniumPlate", // 7
+	"tier4HeavyDutyPlate", // 8
+	"venusRod", // 9
+	"venusRodDust", // 10
+	"venusPowerCrystal", // 11
+	"jetpackThruster", // 12
+	"jetpackBody", // 13
 	};
 	protected IIcon[] icons = new IIcon[ItemBasicVenus.names.length];
 

@@ -63,15 +63,15 @@ public class BlockMagmaRock extends Block {
 
 		return 1.0F;
 	}
-	
+
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int par2, int par3, int par4) {
 		if (world.getBlockMetadata(par2, par3, par4) == 0) {
 			final float f = 0.1F;
-			
+
 			return AxisAlignedBB.getBoundingBox(par2, par3, par4, par2 + 1, par3 + 1 - f, par4 + 1);
 		}
-		
+
 		return super.getCollisionBoundingBoxFromPool(world, par2, par3, par4);
 	}
 
@@ -82,7 +82,7 @@ public class BlockMagmaRock extends Block {
 				return true;
 			}
 		}
-		
+
 		return super.isFireSource(world, x, y, z, side);
 	}
 

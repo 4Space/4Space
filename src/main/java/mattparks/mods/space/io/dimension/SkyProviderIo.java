@@ -4,6 +4,7 @@ import java.util.Random;
 
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
+import micdoodle8.mods.galacticraft.planets.mars.client.SkyProviderMars;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.GLAllocation;
@@ -78,26 +79,6 @@ public class SkyProviderIo extends IRenderHandler {
 		GL11.glEndList();
 	}
 
-	private Vec3 getCustomSkyColor() {
-		return null;
-		// return Vec3.fakePool.getVecFromPool(0.26796875D, 0.1796875D, 0.0D);
-	}
-
-	public float getSkyBrightness(float par1) {
-		final float var2 = FMLClientHandler.instance().getClient().theWorld.getCelestialAngle(par1);
-		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
-
-		if (var3 < 0.0F) {
-			var3 = 0.0F;
-		}
-
-		if (var3 > 1.0F) {
-			var3 = 1.0F;
-		}
-
-		return var3 * var3 * 1F;
-	}
-
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc) {
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -117,7 +98,7 @@ public class SkyProviderIo extends IRenderHandler {
 		}
 
 		GL11.glColor3f(f1, f2, f3);
-		Tessellator tessellator1 = Tessellator.instance;
+		final Tessellator tessellator1 = Tessellator.instance;
 		GL11.glDepthMask(false);
 		GL11.glEnable(GL11.GL_FOG);
 		GL11.glColor3f(f1, f2, f3);
@@ -125,9 +106,8 @@ public class SkyProviderIo extends IRenderHandler {
 		GL11.glDisable(GL11.GL_FOG);
 		GL11.glDisable(GL11.GL_ALPHA_TEST);
 		GL11.glEnable(GL11.GL_BLEND);
-		// OpenGlHelper.glBlendFunc(770, 771, 1, 0);
+		OpenGlHelper.glBlendFunc(770, 771, 1, 0);
 		RenderHelper.disableStandardItemLighting();
-		float[] afloat = world.provider.calcSunriseSunsetColors(world.getCelestialAngle(partialTicks), partialTicks);
 		float f7;
 		float f8;
 		float f9;
@@ -140,7 +120,7 @@ public class SkyProviderIo extends IRenderHandler {
 			GL11.glCallList(this.starList);
 		}
 
-		afloat = new float[4];
+		float[] afloat = new float[4];
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GL11.glShadeModel(GL11.GL_SMOOTH);
 		GL11.glPushMatrix();
@@ -154,7 +134,6 @@ public class SkyProviderIo extends IRenderHandler {
 		f7 = afloat[1];
 		f8 = afloat[2];
 		float f11;
-		float var12;
 
 		if (mc.gameSettings.anaglyph) {
 			f9 = (f6 * 30.0F + f7 * 59.0F + f8 * 11.0F) / 100.0F;
@@ -165,12 +144,12 @@ public class SkyProviderIo extends IRenderHandler {
 			f8 = f11;
 		}
 
-		final Tessellator var23 = Tessellator.instance;
+		f18 = 1.0F - f18;
+
 		tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
-		tessellator1.setColorRGBA_F(f6, f7, f8, afloat[3] * 2);
+		tessellator1.setColorRGBA_F(f6 * f18, f7 * f18, f8 * f18, afloat[3] * 2 / f18);
 		tessellator1.addVertex(0.0D, 100.0D, 0.0D);
-		byte b0 = 16;
-		tessellator1.setColorRGBA_F(afloat[0], afloat[1], afloat[2], 0.0F);
+		tessellator1.setColorRGBA_F(afloat[0] * f18, afloat[1] * f18, afloat[2] * f18, 0.0F);
 
 		// Render sun aura
 		f10 = 25.0F;
@@ -227,7 +206,7 @@ public class SkyProviderIo extends IRenderHandler {
 		tessellator1.draw();
 
 		// JUPITER:
-		var12 = 10.0F;
+		f10 = 10.0F;
 		final float jupiterRotation = (float) (world.getSpawnPoint().posZ - mc.thePlayer.posZ) * 0.01F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(jupiterRotation, 1.0F, 0.0F, 0.0F);
@@ -235,54 +214,54 @@ public class SkyProviderIo extends IRenderHandler {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.jupiterTexture);
 		world.getMoonPhase();
-		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -75.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -75.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -75.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -75.0D, -var12, 0, 0);
-		var23.draw();
+		tessellator1.startDrawingQuads();
+		tessellator1.addVertexWithUV(-f10, -65.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -65.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -65.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -65.0D, -f10, 0, 0);
+		tessellator1.draw();
 
 		// Render Ganymede
-		var12 = 0.4F;
+		f10 = 0.5F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(300F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.ganymedeTexture);
-		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -27.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -27.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -27.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -27.0D, -var12, 0, 0);
-		var23.draw();
-		
+		tessellator1.startDrawingQuads();
+		tessellator1.addVertexWithUV(-f10, -27.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -27.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -27.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -27.0D, -f10, 0, 0);
+		tessellator1.draw();
+
 		// Render Europa
-		var12 = 0.4F;
+		f10 = 0.5F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(100F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(100F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.europaTexture);
-		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -15.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -15.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -15.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -15.0D, -var12, 0, 0);
-		var23.draw();
-		
+		tessellator1.startDrawingQuads();
+		tessellator1.addVertexWithUV(-f10, -15.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -15.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -15.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -15.0D, -f10, 0, 0);
+		tessellator1.draw();
+
 		// Render Callisto
-		var12 = 0.4F;
+		f10 = 0.5F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(300F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.callistoTexture);
-		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -25.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -25.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -25.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -25.0D, -var12, 0, 0);
-		var23.draw();
+		tessellator1.startDrawingQuads();
+		tessellator1.addVertexWithUV(-f10, -25.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -25.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -25.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -25.0D, -f10, 0, 0);
+		tessellator1.draw();
 
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 
@@ -305,26 +284,26 @@ public class SkyProviderIo extends IRenderHandler {
 			f10 = -f8;
 			tessellator1.startDrawingQuads();
 			tessellator1.setColorRGBA_I(0, 255);
-			tessellator1.addVertex((-f8), f9, f8);
+			tessellator1.addVertex(-f8, f9, f8);
 			tessellator1.addVertex(f8, f9, f8);
 			tessellator1.addVertex(f8, f10, f8);
-			tessellator1.addVertex((-f8), f10, f8);
-			tessellator1.addVertex((-f8), f10, (-f8));
-			tessellator1.addVertex(f8, f10, (-f8));
-			tessellator1.addVertex(f8, f9, (-f8));
-			tessellator1.addVertex((-f8), f9, (-f8));
-			tessellator1.addVertex(f8, f10, (-f8));
+			tessellator1.addVertex(-f8, f10, f8);
+			tessellator1.addVertex(-f8, f10, -f8);
+			tessellator1.addVertex(f8, f10, -f8);
+			tessellator1.addVertex(f8, f9, -f8);
+			tessellator1.addVertex(-f8, f9, -f8);
+			tessellator1.addVertex(f8, f10, -f8);
 			tessellator1.addVertex(f8, f10, f8);
 			tessellator1.addVertex(f8, f9, f8);
-			tessellator1.addVertex(f8, f9, (-f8));
-			tessellator1.addVertex((-f8), f9, (-f8));
-			tessellator1.addVertex((-f8), f9, f8);
-			tessellator1.addVertex((-f8), f10, f8);
-			tessellator1.addVertex((-f8), f10, (-f8));
-			tessellator1.addVertex((-f8), f10, (-f8));
-			tessellator1.addVertex((-f8), f10, f8);
+			tessellator1.addVertex(f8, f9, -f8);
+			tessellator1.addVertex(-f8, f9, -f8);
+			tessellator1.addVertex(-f8, f9, f8);
+			tessellator1.addVertex(-f8, f10, f8);
+			tessellator1.addVertex(-f8, f10, -f8);
+			tessellator1.addVertex(-f8, f10, -f8);
+			tessellator1.addVertex(-f8, f10, f8);
 			tessellator1.addVertex(f8, f10, f8);
-			tessellator1.addVertex(f8, f10, (-f8));
+			tessellator1.addVertex(f8, f10, -f8);
 			tessellator1.draw();
 		}
 
@@ -347,7 +326,7 @@ public class SkyProviderIo extends IRenderHandler {
 		final Tessellator var2 = Tessellator.instance;
 		var2.startDrawingQuads();
 
-		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 35000 : 6000); ++starIndex) {
+		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 40000 : 6000); ++starIndex) {
 			double var4 = rand.nextFloat() * 2.0F - 1.0F;
 			double var6 = rand.nextFloat() * 2.0F - 1.0F;
 			double var8 = rand.nextFloat() * 2.0F - 1.0F;
@@ -388,5 +367,19 @@ public class SkyProviderIo extends IRenderHandler {
 		}
 
 		var2.draw();
+	}
+
+	public float getSkyBrightness(float par1) {
+		final float var2 = FMLClientHandler.instance().getClient().theWorld.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+
+		if (var3 < 0.0F) {
+			var3 = 0.0F;
+		}
+
+		if (var3 > 1.0F) {
+			var3 = 1.0F;
+		}
+		return var3 * var3 * 1F;
 	}
 }

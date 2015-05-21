@@ -241,12 +241,12 @@ public class ChunkProviderVenus extends ChunkProviderGenerate {
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ids, meta, this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, par1, par2, ids, meta);
-		
+
 		if (!ConfigManagerCore.idRealisticEnabled) {
 			this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 30, par2 * 16, par1, par2, ids, meta);
 			this.blazeNest.generate(this, this.worldObj, par1, par2, ids, meta);
 		}
-		
+
 		Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		byte[] var5 = var4.getBiomeArray();
 
@@ -333,14 +333,14 @@ public class ChunkProviderVenus extends ChunkProviderGenerate {
 		long var9 = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
 		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
-		
+
 		if (!ConfigManagerCore.idRealisticEnabled) {
 			this.blazeNest.generateStructuresInChunk(this.worldObj, new Random(), par2, par3);
 		}
-		
+
 		BlockFalling.fallInstantly = false;
 
-		if (!ConfigManagerCore.idRealisticEnabled) { 
+		if (!ConfigManagerCore.idRealisticEnabled) {
 			this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
 		}
 	}

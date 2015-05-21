@@ -235,11 +235,11 @@ public class ChunkProviderIo extends ChunkProviderGenerate {
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ids, meta, this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, par1, par2, ids, meta);
-		
-		if (!ConfigManagerCore.idRealisticEnabled) { 
+
+		if (!ConfigManagerCore.idRealisticEnabled) {
 			this.dungeonGenerator.generateUsingArrays(this.worldObj, this.worldObj.getSeed(), par1 * 16, 30, par2 * 16, par1, par2, ids, meta);
 		}
-		
+
 		Chunk var4 = new Chunk(this.worldObj, ids, meta, par1, par2);
 		byte[] var5 = var4.getBiomeArray();
 
@@ -353,7 +353,7 @@ public class ChunkProviderIo extends ChunkProviderGenerate {
 	public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
-			
+
 			if (!ConfigManagerCore.idRealisticEnabled) {
 				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 8, 2, 3));
 				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 8, 2, 3));
@@ -361,7 +361,7 @@ public class ChunkProviderIo extends ChunkProviderGenerate {
 				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
 				monsters.add(new SpawnListEntry(EntityEvolvedBlaze.class, 8, 2, 3));
 			}
-			
+
 			return monsters;
 		} else {
 			return null;

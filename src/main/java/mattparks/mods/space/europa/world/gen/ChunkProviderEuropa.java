@@ -288,14 +288,14 @@ public class ChunkProviderEuropa extends ChunkProviderGenerate {
 	public List getPossibleCreatures(EnumCreatureType par1EnumCreatureType, int i, int j, int k) {
 		if (par1EnumCreatureType == EnumCreatureType.monster) {
 			final List monsters = new ArrayList();
-			
+
 			if (!ConfigManagerCore.idRealisticEnabled) {
 				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 8, 2, 3));
 				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 8, 2, 3));
 				monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 8, 2, 3));
 				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 8, 2, 3));
 			}
-			
+
 			return monsters;
 		} else {
 			return null;

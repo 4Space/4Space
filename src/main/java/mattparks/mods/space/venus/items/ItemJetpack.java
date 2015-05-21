@@ -57,7 +57,7 @@ public class ItemJetpack extends ItemArmor {
 		return this;
 	}
 
-    public void setActive() {
+	public void setActive() {
 		this.active = true;
 	}
 }

@@ -7,13 +7,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemBlockBasicCallisto extends ItemBlock {
-	private static final String[] types = new String[] { 
-		"surfaceRock", 
-		"subSurface", 
-		"rock", 
-		"cobblestone", 
-		"dungeonBrick" 
-	};
+	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "dungeonBrick" };
 
 	public ItemBlockBasicCallisto(Block par1) {
 		super(par1);
@@ -33,11 +27,11 @@ public class ItemBlockBasicCallisto extends ItemBlock {
 	@Override
 	public String getUnlocalizedName(ItemStack itemstack) {
 		int meta = itemstack.getItemDamage();
-		
+
 		if (meta < 0 || meta >= ItemBlockBasicCallisto.types.length) {
 			meta = 0;
 		}
-		
+
 		return super.getUnlocalizedName() + "." + ItemBlockBasicCallisto.types[meta];
 	}
 }

@@ -21,7 +21,7 @@ public class BiomeGenBaseEuropa extends BiomeGenBase {
 			this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 3, 1, 1));
 			this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
 		}
-		
+
 		this.rainfall = 0F;
 	}
 

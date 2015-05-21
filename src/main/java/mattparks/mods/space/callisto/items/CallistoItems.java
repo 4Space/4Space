@@ -1,6 +1,5 @@
 package mattparks.mods.space.callisto.items;
 
-
 public class CallistoItems {
 	public static void init() {
 		initItems();
@@ -18,6 +17,6 @@ public class CallistoItems {
 	private static void registerItems() {
 	}
 
-	private static void registerFluidContainer() {																																				// BUCKET
+	private static void registerFluidContainer() { // BUCKET
 	}
 }

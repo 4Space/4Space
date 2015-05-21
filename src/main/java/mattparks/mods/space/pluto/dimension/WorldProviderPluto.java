@@ -134,11 +134,14 @@ public class WorldProviderPluto extends WorldProviderSpace implements IGalacticr
 	}
 
 	/*
-	 * @Override public float calculateCelestialAngle(long par1, float par3) { return super.calculateCelestialAngle(par1, par3); }
+	 * @Override public float calculateCelestialAngle(long par1, float par3) {
+	 * return super.calculateCelestialAngle(par1, par3); }
 	 * 
-	 * public float calculatePhobosAngle(long par1, float par3) { return this.calculateCelestialAngle(par1, par3) * 3000; }
+	 * public float calculatePhobosAngle(long par1, float par3) { return
+	 * this.calculateCelestialAngle(par1, par3) * 3000; }
 	 * 
-	 * public float calculateDeimosAngle(long par1, float par3) { return this.calculatePhobosAngle(par1, par3) * 0.0000000001F; }
+	 * public float calculateDeimosAngle(long par1, float par3) { return
+	 * this.calculatePhobosAngle(par1, par3) * 0.0000000001F; }
 	 */
 	@Override
 	public IChunkProvider createChunkGenerator() {

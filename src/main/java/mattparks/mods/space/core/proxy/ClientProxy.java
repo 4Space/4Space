@@ -51,7 +51,7 @@ public class ClientProxy extends CommonProxy {
 	public static MusicTicker.MusicType MUSIC_TYPE_SPACE;
 
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
-    private static Map<String, ResourceLocation> capesMap = Maps.newHashMap();
+	private static Map<String, ResourceLocation> capesMap = Maps.newHashMap();
 
 	private static final ResourceLocation saturnRingTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/saturnRings.png");
 	private static final ResourceLocation uranusRingTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/uranusRings.png");
@@ -65,7 +65,7 @@ public class ClientProxy extends CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		Class[][] commonTypes = { { MusicTicker.MusicType.class, ResourceLocation.class, int.class, int.class }, };
 		MUSIC_TYPE_SPACE = EnumHelper.addEnum(commonTypes, MusicTicker.MusicType.class, "SNOWSTORM", new ResourceLocation(MercuryCore.ASSET_PREFIX, "4space.musicSpace"), 12000, 24000);
-		
+
 		ClientProxyCore.setupCapes();
 		super.init(event);
 	}
@@ -79,7 +79,7 @@ public class ClientProxy extends CommonProxy {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		super.postInit(event);
 	}
 
@@ -112,7 +112,7 @@ public class ClientProxy extends CommonProxy {
 		URL capeListUrl = null;
 
 		try {
-			capeListUrl = new URL("https://raw.github.com/4Space/4Space/master/capes.txt");
+			capeListUrl = new URL("https://raw.github.com/4Space/4Space-1.7/master/capes.txt");
 		} catch (MalformedURLException e) {
 			FMLLog.severe("Error getting capes list URL");
 			e.printStackTrace();
@@ -149,7 +149,7 @@ public class ClientProxy extends CommonProxy {
 				if (line.contains(":")) {
 					int splitLocation = line.indexOf(":");
 					String username = line.substring(0, splitLocation);
-					String capeUrl = "https://raw.github.com/4Space/4Space/master/capes/" + line.substring(splitLocation + 1) + ".png";
+					String capeUrl = "https://raw.github.com/4Space/4Space-1.7/master/capes/" + line.substring(splitLocation + 1) + ".png";
 					ClientProxyCore.capeMap.put(username, capeUrl);
 				}
 			}
@@ -281,7 +281,7 @@ public class ClientProxy extends CommonProxy {
 	}
 
 	@SubscribeEvent
-	public void onRenderPlanetPost(CelestialBodyRenderEvent.Post event) {
+	public void onRenderPlanetPost(CelestialBodyRenderEvent.Post event) { // TODO?
 		if (this.mc.currentScreen instanceof GuiCelestialSelection) {
 			if (event.celestialBody == SpaceCore.planetSaturn) {
 				this.mc.renderEngine.bindTexture(saturnRingTexture);

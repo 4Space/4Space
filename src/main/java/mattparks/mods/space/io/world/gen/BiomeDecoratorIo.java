@@ -9,9 +9,9 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class BiomeDecoratorIo extends BiomeDecoratorSpace {
 	protected WorldGenerator sulfurGen;
 
-	public int redLiquidSulfurLakesPerChunk; 
-	public int yellowLiquidSulfurLakesPerChunk; 
-	public int orangeLiquidSulfurLakesPerChunk; 
+	public int redLiquidSulfurLakesPerChunk;
+	public int yellowLiquidSulfurLakesPerChunk;
+	public int orangeLiquidSulfurLakesPerChunk;
 	public int ioLavaLakesPerChunk;
 
 	private World currentWorld;
@@ -19,9 +19,9 @@ public class BiomeDecoratorIo extends BiomeDecoratorSpace {
 	public BiomeDecoratorIo() {
 		this.sulfurGen = new WorldGenMinableMeta(IoBlocks.ioBasicBlock, 16, 4, true, IoBlocks.ioBasicBlock, 2);
 
-		this.redLiquidSulfurLakesPerChunk = 1; 
-		this.yellowLiquidSulfurLakesPerChunk = 1; 
-		this.orangeLiquidSulfurLakesPerChunk = 1; 
+		this.redLiquidSulfurLakesPerChunk = 1;
+		this.yellowLiquidSulfurLakesPerChunk = 1;
+		this.orangeLiquidSulfurLakesPerChunk = 1;
 		this.ioLavaLakesPerChunk = 3;
 	}
 
@@ -29,38 +29,41 @@ public class BiomeDecoratorIo extends BiomeDecoratorSpace {
 	public void decorate() {
 		this.generateOre(32, this.sulfurGen, 0, 256);
 
-		int var2; int var3; int var4; int var5;
+		int var2;
+		int var3;
+		int var4;
+		int var5;
 
-		for (var2 = 0; var2 < this.redLiquidSulfurLakesPerChunk; ++var2) { 
+		for (var2 = 0; var2 < this.redLiquidSulfurLakesPerChunk; ++var2) {
 			var3 = this.chunkX + this.rand.nextInt(16) + 8;
-			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8); 
-			var5 = this.chunkZ + this.rand.nextInt(16) + 8; 
-			
-			new WorldGenIoLava(IoBlocks.liquidRedSulfurFlowing, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5); 
+			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8);
+			var5 = this.chunkZ + this.rand.nextInt(16) + 8;
+
+			new WorldGenIoLava(IoBlocks.liquidRedSulfurFlowing, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5);
 		}
 
 		for (var2 = 0; var2 < this.yellowLiquidSulfurLakesPerChunk; ++var2) {
-			var3 = this.chunkX + this.rand.nextInt(16) + 8; 
-			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8); 
-			var5 = this.chunkZ + this.rand.nextInt(16) + 8; 
-			
-			new WorldGenIoLava(IoBlocks.liquidYellowSulfurStill, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5); 
+			var3 = this.chunkX + this.rand.nextInt(16) + 8;
+			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8);
+			var5 = this.chunkZ + this.rand.nextInt(16) + 8;
+
+			new WorldGenIoLava(IoBlocks.liquidYellowSulfurStill, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5);
 		}
 
-		for (var2 = 0; var2 < this.orangeLiquidSulfurLakesPerChunk; ++var2) { 
-			var3 = this.chunkX + this.rand.nextInt(16) + 8; 
-			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8); 
-			var5 = this.chunkZ + this.rand.nextInt(16) + 8; 
-			
-			new WorldGenIoLava(IoBlocks.liquidOrangeSulfurFlowing, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5); 
+		for (var2 = 0; var2 < this.orangeLiquidSulfurLakesPerChunk; ++var2) {
+			var3 = this.chunkX + this.rand.nextInt(16) + 8;
+			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8);
+			var5 = this.chunkZ + this.rand.nextInt(16) + 8;
+
+			new WorldGenIoLava(IoBlocks.liquidOrangeSulfurFlowing, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5);
 		}
 
-		for (var2 = 0; var2 < this.ioLavaLakesPerChunk; ++var2) { 
-			var3 = this.chunkX + this.rand.nextInt(16) + 8; 
-			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8); 
-			var5 = this.chunkZ + this.rand.nextInt(16) + 8; 
-			
-			new WorldGenIoLava(IoBlocks.ioLavaFlowing, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5); 
+		for (var2 = 0; var2 < this.ioLavaLakesPerChunk; ++var2) {
+			var3 = this.chunkX + this.rand.nextInt(16) + 8;
+			var4 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(112) + 8) + 8);
+			var5 = this.chunkZ + this.rand.nextInt(16) + 8;
+
+			new WorldGenIoLava(IoBlocks.ioLavaFlowing, IoBlocks.ioBasicBlock, 3).generate(this.currentWorld, this.rand, var3, var4, var5);
 		}
 	}
 

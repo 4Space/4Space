@@ -67,11 +67,11 @@ public class CallistoCore {
 			CallistoCore.moonCallisto.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/callisto.png"));
 
 			GalaxyRegistry.registerMoon(CallistoCore.moonCallisto);
-			
+
 			GalacticraftRegistry.registerTeleportType(WorldProviderCallisto.class, new TeleportTypeCallisto());
-			
+
 			GalacticraftRegistry.registerRocketGui(WorldProviderCallisto.class, new ResourceLocation(CallistoCore.TEXTURE_PREFIX + "textures/gui/callistoRocketGui.png"));
-	
+
 			this.registerTileEntities();
 			this.registerCreatures();
 			this.registerOtherEntities();

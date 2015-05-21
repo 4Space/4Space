@@ -3,7 +3,7 @@ package mattparks.mods.space.core;
 public class Constants {
 	public static final int LOCALMAJVERSION = 4;
 	public static final int LOCALMINVERSION = 1;
-	public static final int LOCALBUILDVERSION = 6;
+	public static final int LOCALBUILDVERSION = 7;
 
 	public static final String VERSION = (LOCALMAJVERSION + "." + LOCALMINVERSION + "." + LOCALBUILDVERSION);
 
@@ -30,10 +30,6 @@ public class Constants {
 	/* Jupiter : Callisto */
 	public static final String MOD_ID_CALLISTO = "SpaceCallisto";
 	public static final String MOD_NAME_CALLISTO = "4Space Callisto";
-
-	/* Saturn : Worm Hole */
-	public static final String MOD_ID_HOLE = "SpaceHole";
-	public static final String MOD_NAME_HOLE = "4Space Worm Hole";
 
 	/* Pluto */
 	public static final String MOD_ID_PLUTO = "SpacePluto";
