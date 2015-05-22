@@ -3,8 +3,8 @@
 # GENERAL ITEMS
 item.ingotSulfur.name=Lingotto di Zolfo
 item.tier4HeavyDutyPlate.name=Piastra di Acciaio
-item.redGem.name=Gemma Rossa
-item.redGemPlate.name=Piastra di Gemma Rossa
+item.ruby.name=rubyma Rossa
+item.rubyPlate.name=Piastra di rubyma Rossa
 item.sulfurDust.name=Polvere di Zolfo
 item.sulfurPlate.name=Piastra di Zolfo
 item.venusSulfurBattery.name=Cella di Zolfo
@@ -21,11 +21,11 @@ item.jetpackThruster.name=Motore del Jetpack
 item.jetpackBody.name=Struttura del Jetpack
 
 # TOOLS
-item.gem_axe.name=Ascia di Gemma Rossa
-item.gem_hoe.name=Zappa di Gemma Rossa
-item.gem_pickaxe.name=Piccone di Gemma Rossa
-item.gem_spade.name=Pala di Gemma Rossa
-item.gem_sword.name=Spada di Gemma Rossa
+item.ruby_axe.name=Ascia di rubyma Rossa
+item.ruby_hoe.name=Zappa di rubyma Rossa
+item.ruby_pickaxe.name=Piccone di rubyma Rossa
+item.ruby_spade.name=Pala di rubyma Rossa
+item.ruby_sword.name=Spada di rubyma Rossa
 item.sulfur_axe.name=Ascia di Zolfo
 item.sulfur_hoe.name=Zappa di Zolfo
 item.sulfur_pickaxe.name=Piccone di Zolfo
@@ -33,10 +33,10 @@ item.sulfur_spade.name=Pala di Zolfo
 item.sulfur_sword.name=Spada di Zolfo
 
 # ARMOR
-item.gem_boots.name=Stivali di Gemma Rossa
-item.gem_chestplate.name=Corazza di Gemma Rossa
-item.gem_helmet.name=Elmo di Gemma Rossa
-item.gem_leggings.name=Pantaloni di Gemma Rossa
+item.ruby_boots.name=Stivali di rubyma Rossa
+item.ruby_chestplate.name=Corazza di rubyma Rossa
+item.ruby_helmet.name=Elmo di rubyma Rossa
+item.ruby_leggings.name=Pantaloni di rubyma Rossa
 item.sulfur_boots.name=Stivali di Zolfo
 item.sulfur_chestplate.name=Corazza di Zolfo
 item.sulfur_helmet.name=Elmo di Zolfo
@@ -52,14 +52,14 @@ tile.venus_basic.dungeonBrick.name=Mattoni di Venere
 tile.venus_basic.coalOre.name=Carbone Grezzo di Venere
 tile.venus_basic.copperOre.name=Rame Grezzo di Venere
 tile.venus_basic.crystalOre.name=Cristallo Grezzo di Venere
-tile.venus_basic.gemOre.name=Gemma Rossa Grezza di Venere
+tile.venus_basic.rubyOre.name=rubyma Rossa Grezza di Venere
 tile.venus_basic.uraniumOre.name=Uranio Grezzo di Venere
 tile.venus_basic.ironOre.name=Ferro Grezzo di Venere
 tile.venus_basic.sulfurOre.name=Zolfo Grezzo di Venere
 tile.venus_basic.tinOre.name=Venus Stagno Grezzo di Venere
 tile.venus_decor.uraniumBlock.name=Blocco di Uranio
 tile.venus_decor.crystalBlock.name=Blocco di Cristallo
-tile.venus_decor.gemBlock.name=Blocco di Gemma Rossa
+tile.venus_decor.rubyBlock.name=Blocco di rubyma Rossa
 tile.venus_decor.sulfurBlock.name=Blocco di Zolfo
 tile.sulfur_torch.name=Torcia di Zolfo
 tile.evolved_blaze_egg.name=Uovo di Vampo Evoluto

@@ -38,7 +38,7 @@ public class BlockBasicVenus extends Block implements IDetectableResource, IPart
 		this.venusBlockIcon[3] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "venusCobblestone");
 		this.venusBlockIcon[4] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "sulfurOre");
 		this.venusBlockIcon[5] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "uraniumOre");
-		this.venusBlockIcon[6] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "gemOre");
+		this.venusBlockIcon[6] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "rubyOre");
 		this.venusBlockIcon[7] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "crystalOre");
 		this.venusBlockIcon[8] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "tinOre");
 		this.venusBlockIcon[9] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "copperOre");

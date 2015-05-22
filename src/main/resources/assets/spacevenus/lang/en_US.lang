@@ -3,8 +3,8 @@
 # GENERAL ITEMS
 item.ingotSulfur.name=Sulfur Ingot
 item.tier4HeavyDutyPlate.name=Heavy-Duty Plate
-item.redGem.name=Red-Gem
-item.redGemPlate.name=Red-Gem Plate
+item.ruby.name=Ruby
+item.rubyPlate.name=Ruby Plate
 item.sulfurDust.name=Sulfur Dust
 item.sulfurPlate.name=Sulfur Plate
 item.venusSulfurBattery.name=Sulfur-Celled Battery
@@ -21,11 +21,11 @@ item.jetpackThruster.name=Jetpack Engine
 item.jetpackBody.name=Jetpack Body
 
 # TOOLS
-item.gem_axe.name=Red-Gem Axe
-item.gem_hoe.name=Red-Gem Hoe
-item.gem_pickaxe.name=Red-Gem Pickaxe
-item.gem_spade.name=Red-Gem Shovel
-item.gem_sword.name=Red-Gem Sword
+item.ruby_axe.name=Ruby Axe
+item.ruby_hoe.name=Ruby Hoe
+item.ruby_pickaxe.name=Ruby Pickaxe
+item.ruby_spade.name=Ruby Shovel
+item.ruby_sword.name=Ruby Sword
 item.sulfur_axe.name=Sulfur Axe
 item.sulfur_hoe.name=Sulfur Hoe
 item.sulfur_pickaxe.name=Sulfur Pickaxe
@@ -33,10 +33,10 @@ item.sulfur_spade.name=Sulfur Shovel
 item.sulfur_sword.name=Sulfur Sword
 
 # ARMOR
-item.gem_boots.name=Red-Gem Boots
-item.gem_chestplate.name=Red-Gem Chestplate
-item.gem_helmet.name=Red-Gem Helmet
-item.gem_leggings.name=Red-Gem Leggings
+item.ruby_boots.name=Ruby Boots
+item.ruby_chestplate.name=Ruby Chestplate
+item.ruby_helmet.name=Ruby Helmet
+item.ruby_leggings.name=Ruby Leggings
 item.sulfur_boots.name=Sulfur Boots
 item.sulfur_chestplate.name=Sulfur Chestplate
 item.sulfur_helmet.name=Sulfur Helmet
@@ -52,14 +52,14 @@ tile.venus_basic.dungeonBrick.name=Venus Dungeon Brick
 tile.venus_basic.coalOre.name=Venus Coal Ore
 tile.venus_basic.copperOre.name=Venus Copper Ore
 tile.venus_basic.crystalOre.name=Venus Crystal Ore
-tile.venus_basic.gemOre.name=Venus Red-Gem Ore
+tile.venus_basic.rubyOre.name=Venus Ruby Ore
 tile.venus_basic.uraniumOre.name=Venus Uranium Ore
 tile.venus_basic.ironOre.name=Venus Iron Ore
 tile.venus_basic.sulfurOre.name=Venus Sulfur Ore
 tile.venus_basic.tinOre.name=Venus Tin Ore
 tile.venus_decor.uraniumBlock.name=Block of Uranium
 tile.venus_decor.crystalBlock.name=Block of Crystal
-tile.venus_decor.gemBlock.name=Block of Red-Gem
+tile.venus_decor.rubyBlock.name=Block of Ruby
 tile.venus_decor.sulfurBlock.name=Block of Sulfur
 tile.sulfur_torch.name=Sulfur Torch
 tile.evolved_blaze_egg.name=Evolved Blaze Egg

@@ -9,9 +9,7 @@ import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -21,27 +19,54 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class WorldProviderElipse extends WorldProviderSpace implements IGalacticraftWorldProvider {
 	@Override
 	public Vector3 getFogColor() {
-		return new Vector3(180, 100, 10);
+		return new Vector3(0, 0, 0);
 	}
 
 	@Override
 	public Vector3 getSkyColor() {
-		return new Vector3(180, 100, 10);
+		return new Vector3(0, 0, 0);
 	}
 
 	@Override
 	public boolean canRainOrSnow() {
-		return true;
+		return false;
+	}
+
+	@Override
+	public float calculateCelestialAngle(long par1, float par3) {
+		final int var4 = (int) (par1 % 58320L);
+		float var5 = (var4 + par3) / 58320.0F - 0.25F;
+
+		if (var5 < 0.0F) {
+			++var5;
+		}
+
+		if (var5 > 1.0F) {
+			--var5;
+		}
+
+		final float var6 = var5;
+		var5 = 1.0F - (float) ((Math.cos(var5 * Math.PI) + 1.0D) / 2.0D);
+		var5 = var6 + (var5 - var6) / 3.0F;
+		return var5;
+	}
+
+	public float calculateDeimosAngle(long par1, float par3) {
+		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
+	}
+
+	public float calculatePhobosAngle(long par1, float par3) {
+		return this.calculateCelestialAngle(par1, par3) * 3000;
 	}
 
 	@Override
 	public boolean hasSunset() {
-		return true;
+		return false;
 	}
 
 	@Override
 	public long getDayLength() {
-		return 24000L;
+		return 22000L;
 	}
 
 	@Override
@@ -85,47 +110,33 @@ public class WorldProviderElipse extends WorldProviderSpace implements IGalactic
 		this.worldChunkMgr = new WorldChunkManagerElipse();
 	}
 
-	@SideOnly(Side.CLIENT)
-	@Override
-	public Vec3 getFogColor(float var1, float var2) {
-		return Vec3.createVectorHelper((double) 210F / 255F, (double) 120F / 255F, (double) 59F / 255F);
-	}
-
-	@Override
-	public Vec3 getSkyColor(Entity cameraEntity, float partialTicks) {
-		return Vec3.createVectorHelper(154 / 255.0F, 114 / 255.0F, 66 / 255.0F);
-	}
-
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1) {
-		float f1 = this.worldObj.getCelestialAngle(par1);
-		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+		final float var2 = this.worldObj.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-		if (f2 < 0.0F) {
-			f2 = 0.0F;
+		if (var3 < 0.0F) {
+			var3 = 0.0F;
 		}
 
-		if (f2 > 1.0F) {
-			f2 = 1.0F;
+		if (var3 > 1.0F) {
+			var3 = 1.0F;
 		}
 
-		return f2 * f2 * 0.75F;
+		return var3 * var3 * 0.5F + 0.3F;
 	}
 
-	@Override
-	public float calculateCelestialAngle(long par1, float par3) {
-		return super.calculateCelestialAngle(par1, par3);
-	}
-
-	public float calculatePhobosAngle(long par1, float par3) {
-		return this.calculateCelestialAngle(par1, par3) * 3000;
-	}
-
-	public float calculateDeimosAngle(long par1, float par3) {
-		return this.calculatePhobosAngle(par1, par3) * 0.0000000001F;
-	}
-
+	/*
+	 * @Override public float calculateCelestialAngle(long par1, float par3) {
+	 * return super.calculateCelestialAngle(par1, par3); }
+	 * 
+	 * public float calculatePhobosAngle(long par1, float par3) { return
+	 * this.calculateCelestialAngle(par1, par3) * 3000; }
+	 * 
+	 * public float calculateDeimosAngle(long par1, float par3) { return
+	 * this.calculatePhobosAngle(par1, par3) * 0.0000000001F; }
+	 */
 	@Override
 	public IChunkProvider createChunkGenerator() {
 		return new ChunkProviderElipse(this.worldObj, this.worldObj.getSeed(), this.worldObj.getWorldInfo().isMapFeaturesEnabled());
@@ -133,7 +144,7 @@ public class WorldProviderElipse extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public boolean isSkyColored() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -168,17 +179,17 @@ public class WorldProviderElipse extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public String getWelcomeMessage() {
-		return "Entering Worm Elipse";
+		return "Entering Elipse";
 	}
 
 	@Override
 	public String getDepartMessage() {
-		return "Leaving Worm Elipse";
+		return "Leaving Elipse";
 	}
 
 	@Override
 	public String getDimensionName() {
-		return "Worm Elipse";
+		return "Elipse";
 	}
 
 	// @Override
@@ -189,22 +200,26 @@ public class WorldProviderElipse extends WorldProviderSpace implements IGalactic
 
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater) {
-		return false;
+		if (this.isDaytime()) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	@Override
 	public boolean canDoLightning(Chunk chunk) {
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean canDoRainSnowIce(Chunk chunk) {
-		return true;
+		return false;
 	}
 
 	@Override
 	public float getGravity() {
-		return (float) (0.08D * (1 - 0.659));
+		return (float) (0.08D * (1 - 1.125));
 	}
 
 	@Override

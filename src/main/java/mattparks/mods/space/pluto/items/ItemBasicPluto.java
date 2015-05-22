@@ -16,13 +16,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBasicPluto extends Item {
-	private static String[] names = { "blueGem", // 0
-	"ununpetiumRaw", // 1
-	"ingotFrozenIron", // 2
-	"blueGemPlate", // 3
-	"frozenIronPlate", // 4
-	"ununpetiumPlate", // 5
-	"plateHeavyT6", // 6
+	private static String[] names = { 
+		"sapphire", // 0
+		"ununpetiumRaw", // 1
+		"ingotFrozenIron", // 2
+		"sapphirePlate", // 3
+		"frozenIronPlate", // 4
+		"ununpetiumPlate", // 5
+		"plateHeavyT6", // 6
 	};
 	protected IIcon[] icons = new IIcon[ItemBasicPluto.names.length];
 

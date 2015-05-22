@@ -7,7 +7,19 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemBlockBasicPluto extends ItemBlock {
-	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "blueGem", "frozenIron", "ununpentium", "blueGemBlock", "frozenIronBlock", "ununpentiumBlock", "dungeonBrick" };
+	private static final String[] types = new String[] { 
+		"surfaceRock", 
+		"subSurface", 
+		"rock", 
+		"cobblestone", 
+		"sapphireOre", 
+		"frozenIronOre", 
+		"ununpentiumOre", 
+		"sapphireBlock", 
+		"frozenIronBlock", 
+		"ununpentiumBlock", 
+		"dungeonBrick" 
+	};
 
 	public ItemBlockBasicPluto(Block par1) {
 		super(par1);

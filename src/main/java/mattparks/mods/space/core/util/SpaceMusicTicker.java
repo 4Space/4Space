@@ -1,12 +1,12 @@
 package mattparks.mods.space.core.util;
 
-import cpw.mods.fml.client.FMLClientHandler;
+import mattparks.mods.space.core.proxy.ClientProxy;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MusicTicker;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.util.MathHelper;
-import mattparks.mods.space.core.proxy.*;
+import cpw.mods.fml.client.FMLClientHandler;
 
 public class SpaceMusicTicker extends MusicTicker {
 	public SpaceMusicTicker(Minecraft mc) {

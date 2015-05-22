@@ -3,8 +3,8 @@
 # GENERAL ITEMS
 item.ingotSulfur.name=Schwefel Ingot
 item.tier4HeavyDutyPlate.name=Heavy-Duty-Kennzeichen
-item.redGem.name=Red-Gem
-item.redGemPlate.name=Red-Edelstein-Platte
+item.ruby.name=Ruby
+item.rubyPlate.name=Red-Edelstein-Platte
 item.sulfurDust.name=Schwefel Staub
 item.sulfurPlate.name=Schwefel Platte
 item.venusSulfurBattery.name=Schwefel lige Batterie
@@ -19,11 +19,11 @@ item.sulfur_battery.name=Schwefel-Batterie
 item.uranium_battery.name=Uranium Batterie
 
 # TOOLS
-item.gem_axe.name=Red-Gem Axe
-item.gem_hoe.name=Red-Gem Hoe
-item.gem_pickaxe.name=Red-Gem Spitzhacke
-item.gem_spade.name=Red-Gem Shovel
-item.gem_sword.name=Red-Gem Schwert
+item.ruby_axe.name=Ruby Axe
+item.ruby_hoe.name=Ruby Hoe
+item.ruby_pickaxe.name=Ruby Spitzhacke
+item.ruby_spade.name=Ruby Shovel
+item.ruby_sword.name=Ruby Schwert
 item.sulfur_axe.name=Schwefel Axe
 item.sulfur_hoe.name=Schwefel Hoe
 item.sulfur_pickaxe.name=Schwefel Spitzhacke
@@ -31,10 +31,10 @@ item.sulfur_spade.name=Schwefel Shovel
 item.sulfur_sword.name=Schwefel Schwert
 
 # ARMOR
-item.gem_boots.name=Red-Gem Stiefel
-item.gem_chestplate.name=Red-Edelstein Brustplatte
-item.gem_helmet.name=Red-Gem Helm
-item.gem_leggings.name=Red-Gem Leggings
+item.ruby_boots.name=Ruby Stiefel
+item.ruby_chestplate.name=Red-Edelstein Brustplatte
+item.ruby_helmet.name=Ruby Helm
+item.ruby_leggings.name=Ruby Leggings
 item.sulfur_boots.name=Schwefel Stiefel
 item.sulfur_chestplate.name=Schwefel Brustplatte
 item.sulfur_helmet.name=Schwefel Helm
@@ -49,14 +49,14 @@ tile.venus_basic.dungeonBrick.name=Venus Dungeon Brick
 tile.venus_basic.coalOre.name=Venus Coal Ore
 tile.venus_basic.copperOre.name=Venus Kupfererz
 tile.venus_basic.crystalOre.name=Venus Kristallerz
-tile.venus_basic.gemOre.name=Venus Red-Gem Ore
+tile.venus_basic.rubyOre.name=Venus Ruby Ore
 tile.venus_basic.uraniumOre.name=Venus Uranerz
 tile.venus_basic.ironOre.name=Venus Iron Ore
 tile.venus_basic.sulfurOre.name=Venus Schwefel Ore
 tile.venus_basic.tinOre.name=Venus Zinnerz
 tile.venus_decor.uraniumBlock.name=Block of Uranium
 tile.venus_decor.crystalBlock.name=Sperren von Crystal
-tile.venus_decor.gemBlock.name=Block of Red-Gem
+tile.venus_decor.rubyBlock.name=Block of Ruby
 tile.venus_decor.sulfurBlock.name=Block of Sulfur
 tile.sulfur_torch.name=Schwefel Torch
 tile.evolved_blaze_egg.name=Evolved Blaze Egg

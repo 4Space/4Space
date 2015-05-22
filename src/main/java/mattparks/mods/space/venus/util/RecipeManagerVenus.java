@@ -12,23 +12,21 @@ public class RecipeManagerVenus {
 	private static void addUniversalRecipes() {
 		// ORE DICTIONARY
 		OreDictionary.registerOre("dustSulfur", new ItemStack(VenusItems.venusBasicItem, 1, 0));
-		OreDictionary.registerOre("itemSulfurDust", new ItemStack(VenusItems.venusBasicItem, 1, 0)); // FOR
-																										// ICBM
-																										// SPIKES
+		OreDictionary.registerOre("itemSulfurDust", new ItemStack(VenusItems.venusBasicItem, 1, 0)); // FOR ICBM SPIKES
 		OreDictionary.registerOre("ingotSulfur", new ItemStack(VenusItems.venusBasicItem, 1, 1));
-		OreDictionary.registerOre("redGem", new ItemStack(VenusItems.venusBasicItem, 1, 2));
+		OreDictionary.registerOre("ruby", new ItemStack(VenusItems.venusBasicItem, 1, 2));
 		OreDictionary.registerOre("ingotUranium", new ItemStack(VenusItems.venusBasicItem, 1, 3));
 		OreDictionary.registerOre("VenusCrystal", new ItemStack(VenusItems.venusBasicItem, 1, 4));
 
 		OreDictionary.registerOre("sulfurPlate", new ItemStack(VenusItems.venusBasicItem, 1, 5));
-		OreDictionary.registerOre("redGemPlate", new ItemStack(VenusItems.venusBasicItem, 1, 6));
+		OreDictionary.registerOre("rubyPlate", new ItemStack(VenusItems.venusBasicItem, 1, 6));
 		OreDictionary.registerOre("uraniumPlate", new ItemStack(VenusItems.venusBasicItem, 1, 7));
 
 		OreDictionary.registerOre("vurnStone", new ItemStack(VenusBlocks.vurnStone, 1, 0));
 		OreDictionary.registerOre("venusStone", new ItemStack(VenusBlocks.venusBasicBlock, 1, 2));
 		OreDictionary.registerOre("sulfurDecor", new ItemStack(VenusBlocks.venusDecorBlock, 1, 0));
 		OreDictionary.registerOre("uraniumDecor", new ItemStack(VenusBlocks.venusDecorBlock, 1, 1));
-		OreDictionary.registerOre("gemDecor", new ItemStack(VenusBlocks.venusDecorBlock, 1, 2));
+		OreDictionary.registerOre("rubyDecor", new ItemStack(VenusBlocks.venusDecorBlock, 1, 2));
 		OreDictionary.registerOre("crystalDecor", new ItemStack(VenusBlocks.venusDecorBlock, 1, 3));
 
 		OreDictionary.registerOre("venusRodDust", new ItemStack(VenusItems.venusBasicItem, 1, 10));
@@ -38,15 +36,15 @@ public class RecipeManagerVenus {
 		OreDictionary.registerOre("jetpackBody", new ItemStack(VenusItems.venusBasicItem, 1, 13));
 
 		// ARMOR AND TOOLS CRAFTING
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemBoots), new Object[] { "X X", "X X", 'X', "redGem" });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemHelmet), new Object[] { "XXX", "X X", 'X', "redGem" });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "redGem" });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemLeggings), new Object[] { "XXX", "X X", "X X", 'X', "redGem" });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemSword), new Object[] { "X", "X", "Y", 'X', "redGem", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemPickaxe), new Object[] { "XXX", " Y ", " Y ", 'X', "redGem", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemSpade), new Object[] { "X", "Y", "Y", 'X', "redGem", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemHoe), new Object[] { "XX", " Y", " Y", 'X', "redGem", 'Y', Items.stick });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.gemAxe), new Object[] { "XX", "XY", " Y", 'X', "redGem", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyBoots), new Object[] { "X X", "X X", 'X', "ruby" });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyHelmet), new Object[] { "XXX", "X X", 'X', "ruby" });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "ruby" });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyLeggings), new Object[] { "XXX", "X X", "X X", 'X', "ruby" });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubySword), new Object[] { "X", "X", "Y", 'X', "ruby", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyPickaxe), new Object[] { "XXX", " Y ", " Y ", 'X', "ruby", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubySpade), new Object[] { "X", "Y", "Y", 'X', "ruby", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyHoe), new Object[] { "XX", " Y", " Y", 'X', "ruby", 'Y', Items.stick });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.rubyAxe), new Object[] { "XX", "XY", " Y", 'X', "ruby", 'Y', Items.stick });
 
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.sulfurHelmet), new Object[] { "XXX", "X X", 'X', "ingotSulfur" });
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.sulfurChestplate), new Object[] { "X X", "XXX", "XXX", 'X', "ingotSulfur" });
@@ -69,14 +67,14 @@ public class RecipeManagerVenus {
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 1, 1), new Object[] { "XX", 'X', "dustSulfur" });
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 2, 0), new Object[] { "X", 'X', "ingotSulfur" });
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 4, 10), new Object[] { "X", 'X', new ItemStack(VenusItems.venusBasicItem, 1, 9) });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.uraniumBattery, 1, 100), new Object[] { "TTT", "SIS", "TTT", 'T', "redGemPlate", 'I', "uraniumDecor", 'S', VenusItems.sulfurBattery });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.uraniumBattery, 1, 100), new Object[] { "TTT", "SIS", "TTT", 'T', "rubyPlate", 'I', "uraniumDecor", 'S', VenusItems.sulfurBattery });
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.sulfurBattery, 1, 100), new Object[] { "TRT", "RVR", "TRT", 'T', "sulfurPlate", 'V', "VenusPowerCrystal", 'R', Items.redstone });
 
 		// ITEM TO BLOCK
 		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.venusianTNT, 1, 0), new Object[] { "DXD", "XDX", "DXD", 'X', "dustSulfur", 'D', "venusRodDust" });
 		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.venusDecorBlock, 1, 3), new Object[] { "XXX", "XXX", "XXX", 'X', "VenusCrystal" });
 		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.venusDecorBlock, 1, 1), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotUranium" });
-		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.venusDecorBlock, 1, 2), new Object[] { "XXX", "XXX", "XXX", 'X', "redGem" });
+		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.venusDecorBlock, 1, 2), new Object[] { "XXX", "XXX", "XXX", 'X', "ruby" });
 		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.venusDecorBlock, 1, 0), new Object[] { "XXX", "XXX", "XXX", 'X', "ingotSulfur" });
 
 		RecipeUtil.addRecipe(new ItemStack(VenusBlocks.sulfurTorch, 4, 0), new Object[] { "X", "Y", 'X', "dustSulfur", 'Y', Items.stick });
@@ -84,7 +82,7 @@ public class RecipeManagerVenus {
 
 		// BLOCK TO ITEM
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 9, 1), new Object[] { "X", 'X', "sulfurDecor" });
-		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 9, 2), new Object[] { "X", 'X', "gemDecor" });
+		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 9, 2), new Object[] { "X", 'X', "rubyDecor" });
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 9, 3), new Object[] { "X", 'X', "uraniumDecor" });
 		RecipeUtil.addRecipe(new ItemStack(VenusItems.venusBasicItem, 9, 4), new Object[] { "X", 'X', "crystalDecor" });
 
@@ -96,7 +94,7 @@ public class RecipeManagerVenus {
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 10), new ItemStack(Items.iron_ingot), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 9), OreDictionary.getOres("ingotCopper").get(0), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 8), OreDictionary.getOres("ingotTin").get(0), 0.2F);
-		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 6), OreDictionary.getOres("redGem").get(0), 0.2F);
+		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 6), OreDictionary.getOres("ruby").get(0), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 7), OreDictionary.getOres("VenusCrystal").get(0), 0.2F);
 		FurnaceRecipes.smelting().func_151394_a(new ItemStack(VenusBlocks.venusBasicBlock, 1, 5), OreDictionary.getOres("ingotUranium").get(0), 0.2F);
 	}

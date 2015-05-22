@@ -7,7 +7,21 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemBlockBasicVenus extends ItemBlock {
-	private static final String[] types = new String[] { "surfaceRock", "subSurface", "rock", "cobblestone", "sulfurOre", "uraniumOre", "gemOre", "crystalOre", "tinOre", "copperOre", "ironOre", "coalOre", "dungeonBrick" };
+	private static final String[] types = new String[] { 
+		"surfaceRock", 
+		"subSurface", 
+		"rock", 
+		"cobblestone", 
+		"sulfurOre", 
+		"uraniumOre", 
+		"rubyOre", 
+		"crystalOre", 
+		"tinOre", 
+		"copperOre", 
+		"ironOre", 
+		"coalOre", 
+		"dungeonBrick" 
+	};
 
 	public ItemBlockBasicVenus(Block par1) {
 		super(par1);

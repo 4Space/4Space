@@ -10,7 +10,6 @@ import mattparks.mods.exoplanets.elipse.world.gen.dungeon.RoomChestsHole;
 import mattparks.mods.exoplanets.elipse.world.gen.dungeon.RoomEmptyHole;
 import mattparks.mods.exoplanets.elipse.world.gen.dungeon.RoomSpawnerHole;
 import mattparks.mods.exoplanets.elipse.world.gen.dungeon.RoomTreasureHole;
-import mattparks.mods.exoplanets.elipse.world.gen.village.MapGenVillageElipse;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
@@ -54,8 +53,6 @@ public class ChunkProviderElipse extends ChunkProviderGenerate {
 	private World worldObj;
 
 	private MapGenElipseCave caveGenerator = new MapGenElipseCave();
-
-	private MapGenVillageElipse villageGenerator = new MapGenVillageElipse();
 
 	private MapGenDungeon dungeonGenerator = new MapGenDungeon(ElipseBlocks.elipseBasicBlock, 4, 8, 16, 6);
 
@@ -324,13 +321,10 @@ public class ChunkProviderElipse extends ChunkProviderGenerate {
 		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
 		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
 		BlockFalling.fallInstantly = false;
-
-		this.villageGenerator.generateStructuresInChunk(this.worldObj, this.rand, par2, par3);
 	}
 
 	@Override
 	public void recreateStructures(int par1, int par2) {
-		this.villageGenerator.func_151539_a(this, this.worldObj, par1, par2, (Block[]) null);
 	}
 
 	@Override

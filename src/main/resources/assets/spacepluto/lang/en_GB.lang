@@ -1,8 +1,8 @@
 # 4Space Pluto Language File = British English
 
 # GENERAL ITEMS
-item.blueGem.name=Blue-Gem
-item.blueGemPlate.name=Blue-Gem Plate
+item.sapphire.name=Sapphire
+item.sapphirePlate.name=Sapphire Plate
 item.ununpetiumRaw.name=Raw Ununpetium
 item.ununpetiumPlate.name=Ununpetium Plate
 item.ingotFrozenIron.name=Frozen Iron Ingot
@@ -10,17 +10,17 @@ item.frozenIronPlate.name=Frozen Iron Plate
 item.plateHeavyT6.name=Heavy-Duty Plate T6
 
 # TOOLS
-item.blueGem_axe.name=Blue-Gem Axe
-item.blueGem_hoe.name=Blue-Gem Hoe
-item.blueGem_pickaxe.name=Blue-Gem Pickaxe
-item.blueGem_spade.name=Blue-Gem Shovel
-item.blueGem_sword.name=Blue-Gem Sword
+item.sapphire_axe.name=Sapphire Axe
+item.sapphire_hoe.name=Sapphire Hoe
+item.sapphire_pickaxe.name=Sapphire Pickaxe
+item.sapphire_spade.name=Sapphire Shovel
+item.sapphire_sword.name=Sapphire Sword
 
 # ARMOR
-item.blueGem_boots.name=Blue-Gem Boots
-item.blueGem_chestplate.name=Blue-Gem Chestplate
-item.blueGem_helmet.name=Blue-Gem Helmet
-item.blueGem_leggings.name=Blue-Gem Leggings
+item.sapphire_boots.name=Sapphire Boots
+item.sapphire_chestplate.name=Sapphire Chestplate
+item.sapphire_helmet.name=Sapphire Helmet
+item.sapphire_leggings.name=Sapphire Leggings
 
 # BLOCKS
 tile.pluto_block.surfaceRock.name=Pluto Surface Rock
@@ -28,10 +28,10 @@ tile.pluto_block.subSurface.name=Pluto Sub-Surface Rock
 tile.pluto_block.rock.name=Pluto Rock
 tile.pluto_block.cobblestone.name=Pluto Cobblestone
 tile.pluto_block.dungeonBrick.name=Pluto Dungeon Brick
-tile.pluto_block.blueGem.name=Pluto Blue-Gem Ore
-tile.pluto_block.ununpentium.name=Pluto Ununpentium Ore
-tile.pluto_block.frozenIron.name=Pluto Frozen Iron Ore
-tile.pluto_block.blueGemBlock.name=Block of Blue-Gem
+tile.pluto_block.sapphireOre.name=Pluto Sapphire Ore
+tile.pluto_block.ununpentiumOre.name=Pluto Ununpentium Ore
+tile.pluto_block.frozenIronOre.name=Pluto Frozen Iron Ore
+tile.pluto_block.sapphireBlock.name=Block of Sapphire
 tile.pluto_block.frozenIronBlock.name=Block of Frozen Iron
 tile.pluto_block.ununpentiumBlock.name=Block of Ununpentium
 

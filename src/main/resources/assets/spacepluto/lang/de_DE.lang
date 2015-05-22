@@ -1,8 +1,8 @@
 # 4Space Pluto Language File = GERMANY GERMAN
 
 # GENERAL ITEMS
-item.blueGem.name=Blau-Edelstein
-item.blueGemPlate.name=Blau-Edelstein-Platte
+item.sapphire.name=Blau-Edelstein
+item.sapphirePlate.name=Blau-Edelstein-Platte
 item.ununpetiumRaw.name=Raw Ununpetium
 item.ununpetiumPlate.name=Ununpetium Platte
 item.ingotFrozenIron.name=Gefrorene Eisenbarren
@@ -10,17 +10,17 @@ item.frozenIronPlate.name=Gefrorene Eisenplatten
 item.plateHeavyT6.name=Schwerlastplatte T6
 
 # TOOLS
-item.blueGem_axe.name=Blau-Edelstein-Axt
-item.blueGem_hoe.name=Blau-Gem Hoe
-item.blueGem_pickaxe.name=Blau-Gem Spitzhacke
-item.blueGem_spade.name=Blau-Gem Shovel
-item.blueGem_sword.name=Blau-Gem Schwert
+item.sapphire_axe.name=Blau-Edelstein-Axt
+item.sapphire_hoe.name=Blau-Gem Hoe
+item.sapphire_pickaxe.name=Blau-Gem Spitzhacke
+item.sapphire_spade.name=Blau-Gem Shovel
+item.sapphire_sword.name=Blau-Gem Schwert
 
 # ARMOR
-item.blueGem_boots.name=Blau-Edelstein-Stiefel
-item.blueGem_chestplate.name=Blau-Edelstein Brustplatte
-item.blueGem_helmet.name=Blau-Edelstein-Helm
-item.blueGem_leggings.name=Blau-Gem Leggings
+item.sapphire_boots.name=Blau-Edelstein-Stiefel
+item.sapphire_chestplate.name=Blau-Edelstein Brustplatte
+item.sapphire_helmet.name=Blau-Edelstein-Helm
+item.sapphire_leggings.name=Blau-Gem Leggings
 
 # BLOCKS
 tile.pluto_block.surfaceRock.name=Pluto Oberflächenfels
@@ -28,10 +28,10 @@ tile.pluto_block.subSurface.name=Pluto Sub-Surface-Rock-
 tile.pluto_block.rock.name=Pluto Felsen
 tile.pluto_block.cobblestone.name=Pluto Cobblestone
 tile.pluto_block.dungeonBrick.name=Pluto Dungeon Brick
-tile.pluto_block.blueGem.name=Pluto Blau-Gem Ore
-tile.pluto_block.ununpentium.name=Pluto Ununpentium Ore
-tile.pluto_block.frozenIron.name=Pluto Gefrorene Eisenerz
-tile.pluto_block.blueGemBlock.name=Block Blau-Edelstein
+tile.pluto_block.sapphireOre.name=Pluto Blau-Gem Ore
+tile.pluto_block.ununpentiumOre.name=Pluto Ununpentium Ore
+tile.pluto_block.frozenIronOre.name=Pluto Gefrorene Eisenerz
+tile.pluto_block.sapphireBlock.name=Block Blau-Edelstein
 tile.pluto_block.frozenIronBlock.name=Block Gefrier Eisen
 tile.pluto_block.ununpentiumBlock.name=Block Ununpentium
 

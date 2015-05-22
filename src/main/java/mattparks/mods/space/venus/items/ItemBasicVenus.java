@@ -4,6 +4,7 @@ import java.util.List;
 
 import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.core.proxy.ClientProxy;
+import mattparks.mods.space.core.util.SpaceUtil;
 import mattparks.mods.space.venus.VenusCore;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,20 +17,21 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBasicVenus extends Item {
-	private static String[] names = { "sulfurDust", // 0
-	"ingotSulfur", // 1
-	"redGem", // 2
-	"ingotUranium", // 3
-	"venusCrystal", // 4
-	"sulfurPlate", // 5
-	"redGemPlate", // 6
-	"uraniumPlate", // 7
-	"tier4HeavyDutyPlate", // 8
-	"venusRod", // 9
-	"venusRodDust", // 10
-	"venusPowerCrystal", // 11
-	"jetpackThruster", // 12
-	"jetpackBody", // 13
+	private static String[] names = { 
+		"sulfurDust", // 0
+		"ingotSulfur", // 1
+		"ruby", // 2
+		"ingotUranium", // 3
+		"venusCrystal", // 4
+		"sulfurPlate", // 5
+		"rubyPlate", // 6
+		"uraniumPlate", // 7
+		"tier4HeavyDutyPlate", // 8
+		"venusRod", // 9
+		"venusRodDust", // 10
+		"venusPowerCrystal", // 11
+		"jetpackThruster", // 12
+		"jetpackBody", // 13
 	};
 	protected IIcon[] icons = new IIcon[ItemBasicVenus.names.length];
 
@@ -91,10 +93,9 @@ public class ItemBasicVenus extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-		// if (par1ItemStack != null && par1ItemStack.getItemDamage() == 8)
-		// {
-		// par3List.add(SpaceUtil.translate("item.tier3.desc"));
-		// }
+		//if (par1ItemStack != null && par1ItemStack.getItemDamage() == 8) {
+		//	par3List.add(SpaceUtil.translate("item.tier4.desc"));
+		//}
 	}
 
 	@Override

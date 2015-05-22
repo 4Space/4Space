@@ -28,7 +28,7 @@ public class BlockDecorVenus extends Block implements IPartialSealableBlock {
 		this.venusBlockIcon = new IIcon[4];
 		this.venusBlockIcon[0] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "sulfurBlock");
 		this.venusBlockIcon[1] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "uraniumBlock");
-		this.venusBlockIcon[2] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "gemBlock");
+		this.venusBlockIcon[2] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "rubyBlock");
 		this.venusBlockIcon[3] = par1IconRegister.registerIcon(VenusCore.TEXTURE_PREFIX + "crystalBlock");
 	}
 

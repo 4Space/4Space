@@ -2,26 +2,19 @@ package mattparks.mods.exoplanets.elipse;
 
 import java.io.File;
 
+import mattparks.mods.exoplanets.core.Constants;
+import mattparks.mods.exoplanets.core.ExoCore;
 import mattparks.mods.exoplanets.elipse.blocks.ElipseBlocks;
 import mattparks.mods.exoplanets.elipse.dimension.TeleportTypeElipse;
 import mattparks.mods.exoplanets.elipse.dimension.WorldProviderElipse;
-import mattparks.mods.exoplanets.elipse.entites.EntityElipsianVillager;
 import mattparks.mods.exoplanets.elipse.items.ElipseItems;
 import mattparks.mods.exoplanets.elipse.proxy.CommonProxyElipse;
 import mattparks.mods.exoplanets.elipse.util.ConfigManagerElipse;
 import mattparks.mods.exoplanets.elipse.util.RecipeManagerElipse;
-import mattparks.mods.exoplanets.core.ExoCore;
-import mattparks.mods.exoplanets.core.Constants;
-import mattparks.mods.space.core.SpaceCore;
-import mattparks.mods.space.core.util.ConfigManagerCore;
 import mattparks.mods.space.core.util.SpaceUtil;
-import mattparks.mods.space.io.IoCore;
-import mattparks.mods.space.io.dimension.WorldProviderIo;
-import mattparks.mods.space.io.util.ConfigManagerIo;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
-import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -100,7 +93,6 @@ public class ElipseCore {
 
 	private void registerCreatures() {
 		if (ConfigManagerElipse.idElipseEnabled) {
-			SpaceUtil.registerSpaceCreature(EntityElipsianVillager.class, "ElipsianVillager", SpaceUtil.to32BitColor(255, 103, 181, 145), 16167425);
 		}
 	}
 

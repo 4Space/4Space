@@ -21,7 +21,7 @@ public class PlutoBlocks {
 	}
 
 	public static void oreDictRegistration() {
-		OreDictionary.registerOre("oreBlueGem", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 4));
+		OreDictionary.registerOre("oreSapphire", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 4));
 		OreDictionary.registerOre("oreIron", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 5));
 		OreDictionary.registerOre("oreUnunpentium", new ItemStack(PlutoBlocks.plutoBasicBlock, 1, 6));
 	}

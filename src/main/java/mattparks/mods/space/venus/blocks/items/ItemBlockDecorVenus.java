@@ -7,7 +7,12 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemBlockDecorVenus extends ItemBlock {
-	private static final String[] types = new String[] { "sulfurBlock", "uraniumBlock", "gemBlock", "crystalBlock", };
+	private static final String[] types = new String[] { 
+		"sulfurBlock", 
+		"uraniumBlock", 
+		"rubyBlock", 
+		"crystalBlock", 
+	};
 
 	public ItemBlockDecorVenus(Block par1) {
 		super(par1);

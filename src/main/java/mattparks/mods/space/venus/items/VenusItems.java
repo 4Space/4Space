@@ -20,16 +20,16 @@ public class VenusItems {
 	public static Item sulfurLeggings;
 	public static Item sulfurBoots;
 
-	public static Item gemSword;
-	public static Item gemPickaxe;
-	public static Item gemSpade;
-	public static Item gemAxe;
-	public static Item gemHoe;
+	public static Item rubySword;
+	public static Item rubyPickaxe;
+	public static Item rubySpade;
+	public static Item rubyAxe;
+	public static Item rubyHoe;
 
-	public static Item gemHelmet;
-	public static Item gemChestplate;
-	public static Item gemLeggings;
-	public static Item gemBoots;
+	public static Item rubyHelmet;
+	public static Item rubyChestplate;
+	public static Item rubyLeggings;
+	public static Item rubyBoots;
 
 	public static Item jetpack;
 
@@ -41,8 +41,8 @@ public class VenusItems {
 	public static ArmorMaterial ARMOR_SULFUR = EnumHelper.addArmorMaterial("sulfur", 15, new int[] { 1, 4, 2, 1 }, 7);
 	public static ToolMaterial TOOL_SULFUR = EnumHelper.addToolMaterial("sulfur", 3, 416, 6.0F, 1, 2);
 
-	public static ArmorMaterial ARMOR_GEM = EnumHelper.addArmorMaterial("gem", 30, new int[] { 3, 8, 6, 3 }, 12);
-	public static ToolMaterial TOOL_GEM = EnumHelper.addToolMaterial("gem", 3, 768, 5.0F, 2, 8);
+	public static ArmorMaterial ARMOR_RUBY = EnumHelper.addArmorMaterial("ruby", 30, new int[] { 3, 8, 6, 3 }, 12);
+	public static ToolMaterial TOOL_RUBY = EnumHelper.addToolMaterial("ruby", 3, 768, 5.0F, 2, 8);
 
 	public static void init() {
 		initItems();
@@ -64,16 +64,16 @@ public class VenusItems {
 		VenusItems.sulfurLeggings = new ItemSulfurArmor("sulfur_leggings", VenusItems.ARMOR_SULFUR, 7, 2);
 		VenusItems.sulfurBoots = new ItemSulfurArmor("sulfur_boots", VenusItems.ARMOR_SULFUR, 7, 3);
 
-		VenusItems.gemSword = new ItemSwordVenus("gem_sword", VenusItems.TOOL_GEM);
-		VenusItems.gemPickaxe = new ItemPickaxeVenus("gem_pickaxe", VenusItems.TOOL_GEM);
-		VenusItems.gemSpade = new ItemSpadeVenus("gem_spade", VenusItems.TOOL_GEM);
-		VenusItems.gemAxe = new ItemAxeVenus("gem_axe", VenusItems.TOOL_GEM);
-		VenusItems.gemHoe = new ItemHoeVenus("gem_hoe", VenusItems.TOOL_GEM);
+		VenusItems.rubySword = new ItemSwordVenus("ruby_sword", VenusItems.TOOL_RUBY);
+		VenusItems.rubyPickaxe = new ItemPickaxeVenus("ruby_pickaxe", VenusItems.TOOL_RUBY);
+		VenusItems.rubySpade = new ItemSpadeVenus("ruby_spade", VenusItems.TOOL_RUBY);
+		VenusItems.rubyAxe = new ItemAxeVenus("ruby_axe", VenusItems.TOOL_RUBY);
+		VenusItems.rubyHoe = new ItemHoeVenus("ruby_hoe", VenusItems.TOOL_RUBY);
 
-		VenusItems.gemHelmet = new ItemGemArmor("gem_helmet", VenusItems.ARMOR_GEM, 7, 0);
-		VenusItems.gemChestplate = new ItemGemArmor("gem_chestplate", VenusItems.ARMOR_GEM, 7, 1);
-		VenusItems.gemLeggings = new ItemGemArmor("gem_leggings", VenusItems.ARMOR_GEM, 7, 2);
-		VenusItems.gemBoots = new ItemGemArmor("gem_boots", VenusItems.ARMOR_GEM, 7, 3);
+		VenusItems.rubyHelmet = new ItemRubyArmor("ruby_helmet", VenusItems.ARMOR_RUBY, 7, 0);
+		VenusItems.rubyChestplate = new ItemRubyArmor("ruby_chestplate", VenusItems.ARMOR_RUBY, 7, 1);
+		VenusItems.rubyLeggings = new ItemRubyArmor("ruby_leggings", VenusItems.ARMOR_RUBY, 7, 2);
+		VenusItems.rubyBoots = new ItemRubyArmor("ruby_boots", VenusItems.ARMOR_RUBY, 7, 3);
 
 		VenusItems.jetpack = new ItemJetpack("jetpack", VenusItems.JETPACK, 7, 1);
 
@@ -82,9 +82,9 @@ public class VenusItems {
 	}
 
 	private static void registerHarvestLevels() {
-		VenusItems.gemPickaxe.setHarvestLevel("pickaxe", 4);
-		VenusItems.gemAxe.setHarvestLevel("axe", 4);
-		VenusItems.gemSpade.setHarvestLevel("shovel", 4);
+		VenusItems.rubyPickaxe.setHarvestLevel("pickaxe", 4);
+		VenusItems.rubyAxe.setHarvestLevel("axe", 4);
+		VenusItems.rubySpade.setHarvestLevel("shovel", 4);
 
 		VenusItems.sulfurPickaxe.setHarvestLevel("pickaxe", 4);
 		VenusItems.sulfurAxe.setHarvestLevel("axe", 4);
@@ -105,16 +105,16 @@ public class VenusItems {
 		VenusCore.registerItem(sulfurLeggings);
 		VenusCore.registerItem(sulfurBoots);
 
-		VenusCore.registerItem(gemPickaxe);
-		VenusCore.registerItem(gemAxe);
-		VenusCore.registerItem(gemHoe);
-		VenusCore.registerItem(gemSpade);
-		VenusCore.registerItem(gemSword);
+		VenusCore.registerItem(rubyPickaxe);
+		VenusCore.registerItem(rubyAxe);
+		VenusCore.registerItem(rubyHoe);
+		VenusCore.registerItem(rubySpade);
+		VenusCore.registerItem(rubySword);
 
-		VenusCore.registerItem(gemHelmet);
-		VenusCore.registerItem(gemChestplate);
-		VenusCore.registerItem(gemLeggings);
-		VenusCore.registerItem(gemBoots);
+		VenusCore.registerItem(rubyHelmet);
+		VenusCore.registerItem(rubyChestplate);
+		VenusCore.registerItem(rubyLeggings);
+		VenusCore.registerItem(rubyBoots);
 
 		VenusCore.registerItem(jetpack);
 

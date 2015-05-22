@@ -24,7 +24,7 @@ public class CommonProxyVenus {
 		return 0;
 	}
 
-	public int getGemArmorRenderIndex() {
+	public int getRubyArmorRenderIndex() {
 		return 0;
 	}
 

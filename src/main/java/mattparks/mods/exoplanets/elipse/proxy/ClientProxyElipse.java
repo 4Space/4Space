@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import mattparks.mods.exoplanets.elipse.dimension.SkyProviderElipse;
 import mattparks.mods.exoplanets.elipse.dimension.WorldProviderElipse;
-import mattparks.mods.exoplanets.elipse.entites.EntityElipsianVillager;
-import mattparks.mods.exoplanets.elipse.entites.render.RenderElipsianVillager;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -41,7 +39,6 @@ public class ClientProxyElipse extends CommonProxyElipse {
 	}
 
 	public static void registerEntityRenderers() {
-		RenderingRegistry.registerEntityRenderingHandler(EntityElipsianVillager.class, new RenderElipsianVillager());
 	}
 
 	@Override

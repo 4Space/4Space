@@ -1,8 +1,8 @@
-package mattparks.mods.space.venus.items;
+package mattparks.mods.space.pluto.items;
 
 import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.core.proxy.ClientProxy;
-import mattparks.mods.space.venus.VenusCore;
+import mattparks.mods.space.pluto.PlutoCore;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -13,10 +13,10 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemGemArmor extends ItemArmor {
+public class ItemSapphireArmor extends ItemArmor {
 	private final ArmorMaterial material;
 
-	public ItemGemArmor(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
+	public ItemSapphireArmor(String name, ArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 		super(par2EnumArmorMaterial, par3, par4);
 		this.material = par2EnumArmorMaterial;
 		this.setUnlocalizedName(name);
@@ -29,13 +29,13 @@ public class ItemGemArmor extends ItemArmor {
 
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer) {
-		if (this.material == VenusItems.ARMOR_GEM) {
-			if (stack.getItem() == VenusItems.gemHelmet) {
-				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/gem_1.png";
-			} else if (stack.getItem() == VenusItems.gemChestplate || stack.getItem() == VenusItems.gemBoots) {
-				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/gem_2.png";
-			} else if (stack.getItem() == VenusItems.gemLeggings) {
-				return VenusCore.TEXTURE_PREFIX + "textures/model/armor/gem_3.png";
+		if (this.material == PlutoItems.ARMOR_SAPPHIRE) {
+			if (stack.getItem() == PlutoItems.sapphireHelmet) {
+				return PlutoCore.TEXTURE_PREFIX + "textures/model/armor/sapphire_1.png";
+			} else if (stack.getItem() == PlutoItems.sapphireChestplate || stack.getItem() == PlutoItems.sapphireBoots) {
+				return PlutoCore.TEXTURE_PREFIX + "textures/model/armor/sapphire_2.png";
+			} else if (stack.getItem() == PlutoItems.sapphireLeggings) {
+				return PlutoCore.TEXTURE_PREFIX + "textures/model/armor/sapphire_3.png";
 			}
 		}
 
@@ -50,13 +50,14 @@ public class ItemGemArmor extends ItemArmor {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister) {
-		this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", VenusCore.TEXTURE_PREFIX));
+		this.itemIcon = par1IconRegister.registerIcon(this.getUnlocalizedName().replace("item.", PlutoCore.TEXTURE_PREFIX));
 	}
 
 	@Override
 	public Item setUnlocalizedName(String par1Str) {
 		super.setTextureName(par1Str);
 		super.setUnlocalizedName(par1Str);
+		
 		return this;
 	}
 }

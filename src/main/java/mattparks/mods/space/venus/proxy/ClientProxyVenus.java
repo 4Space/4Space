@@ -33,7 +33,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ClientProxyVenus extends CommonProxyVenus {
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
 
-	private static int renderIndexGemArmor;
+	private static int renderIndexRubyArmor;
 	private static int renderIndexSulfurArmor;
 	private static int renderIndexJetpack;
 
@@ -41,7 +41,7 @@ public class ClientProxyVenus extends CommonProxyVenus {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		ClientProxyVenus.renderIndexGemArmor = RenderingRegistry.addNewArmourRendererPrefix("gem");
+		ClientProxyVenus.renderIndexRubyArmor = RenderingRegistry.addNewArmourRendererPrefix("ruby");
 		ClientProxyVenus.renderIndexSulfurArmor = RenderingRegistry.addNewArmourRendererPrefix("sulfur");
 		ClientProxyVenus.renderIndexJetpack = RenderingRegistry.addNewArmourRendererPrefix("jetpack");
 
@@ -49,8 +49,8 @@ public class ClientProxyVenus extends CommonProxyVenus {
 	}
 
 	@Override
-	public int getGemArmorRenderIndex() {
-		return ClientProxyVenus.renderIndexGemArmor;
+	public int getRubyArmorRenderIndex() {
+		return ClientProxyVenus.renderIndexRubyArmor;
 	}
 
 	@Override

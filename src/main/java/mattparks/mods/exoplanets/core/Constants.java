@@ -3,7 +3,7 @@ package mattparks.mods.exoplanets.core;
 public class Constants {
 	public static final int LOCALMAJVERSION = 0;
 	public static final int LOCALMINVERSION = 1;
-	public static final int LOCALBUILDVERSION = 0;
+	public static final int LOCALBUILDVERSION = 2;
 
 	public static final String VERSION = (LOCALMAJVERSION + "." + LOCALMINVERSION + "." + LOCALBUILDVERSION);
 

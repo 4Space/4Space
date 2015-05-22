@@ -40,7 +40,7 @@ public class VenusBlocks {
 	public static void oreDictRegistration() {
 		OreDictionary.registerOre("oreSulfur", new ItemStack(VenusBlocks.venusBasicBlock, 1, 4));
 		OreDictionary.registerOre("oreUranium", new ItemStack(VenusBlocks.venusBasicBlock, 1, 5));
-		OreDictionary.registerOre("oreRedGem", new ItemStack(VenusBlocks.venusBasicBlock, 1, 6));
+		OreDictionary.registerOre("oreRuby", new ItemStack(VenusBlocks.venusBasicBlock, 1, 6));
 		OreDictionary.registerOre("oreCrystal", new ItemStack(VenusBlocks.venusBasicBlock, 1, 7));
 		OreDictionary.registerOre("oreTin", new ItemStack(VenusBlocks.venusBasicBlock, 1, 8));
 		OreDictionary.registerOre("oreCopper", new ItemStack(VenusBlocks.venusBasicBlock, 1, 9));

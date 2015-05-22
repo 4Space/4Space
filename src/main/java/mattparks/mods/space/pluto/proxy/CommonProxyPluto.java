@@ -20,7 +20,7 @@ public class CommonProxyPluto {
 	public void registerRenderInfo() {
 	}
 
-	public int getBlueGemArmorRenderIndex() {
+	public int getSapphireArmorRenderIndex() {
 		return 0;
 	}
 

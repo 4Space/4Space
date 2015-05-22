@@ -36,10 +36,10 @@ public class BlockBasicPluto extends Block implements IDetectableResource, IPart
 		this.plutoBlockIcon[1] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "plutoSubRock");
 		this.plutoBlockIcon[2] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "plutoRock");
 		this.plutoBlockIcon[3] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "plutoCobblestone");
-		this.plutoBlockIcon[4] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "blueGemOre");
+		this.plutoBlockIcon[4] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "sapphireOre");
 		this.plutoBlockIcon[5] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "frozenIronOre");
 		this.plutoBlockIcon[6] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "ununpentiumOre");
-		this.plutoBlockIcon[7] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "blueGemBlock");
+		this.plutoBlockIcon[7] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "sapphireBlock");
 		this.plutoBlockIcon[8] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "frozenIronBlock");
 		this.plutoBlockIcon[9] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "ununpetiumBlock");
 		this.plutoBlockIcon[10] = par1IconRegister.registerIcon(PlutoCore.TEXTURE_PREFIX + "plutoDungeonBrick");

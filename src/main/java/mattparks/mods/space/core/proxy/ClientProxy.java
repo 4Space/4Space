@@ -11,12 +11,7 @@ import java.lang.reflect.Field;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
 import java.util.Map;
-
-import org.lwjgl.opengl.GL11;
-
-import com.google.common.collect.Maps;
 
 import mattparks.mods.space.core.SpaceCore;
 import mattparks.mods.space.core.tick.TickHandlerClient;
@@ -38,6 +33,11 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.util.EnumHelper;
+
+import org.lwjgl.opengl.GL11;
+
+import com.google.common.collect.Maps;
+
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLInitializationEvent;

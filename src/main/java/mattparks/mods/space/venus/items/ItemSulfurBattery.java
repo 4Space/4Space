@@ -1,14 +1,14 @@
 package mattparks.mods.space.venus.items;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import mattparks.mods.space.core.SpaceCore;
+import mattparks.mods.space.core.proxy.ClientProxy;
 import mattparks.mods.space.venus.VenusCore;
 import micdoodle8.mods.galacticraft.core.energy.item.ItemElectricBase;
-import mattparks.mods.space.core.proxy.ClientProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSulfurBattery extends ItemElectricBase {
 	public ItemSulfurBattery(String assetName) {

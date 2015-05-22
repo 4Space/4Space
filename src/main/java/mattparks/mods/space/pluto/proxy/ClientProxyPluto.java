@@ -24,20 +24,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ClientProxyPluto extends CommonProxyPluto {
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
 
-	private static int renderIndexBlueGemArmor;
+	private static int renderIndexSapphireArmor;
 
 	public static ArrayList<SoundPoolEntry> newMusic = new ArrayList<SoundPoolEntry>();
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		ClientProxyPluto.renderIndexBlueGemArmor = RenderingRegistry.addNewArmourRendererPrefix("blueGem");
+		ClientProxyPluto.renderIndexSapphireArmor = RenderingRegistry.addNewArmourRendererPrefix("sapphire");
 
 		super.preInit(event);
 	}
 
 	@Override
-	public int getBlueGemArmorRenderIndex() {
-		return ClientProxyPluto.renderIndexBlueGemArmor;
+	public int getSapphireArmorRenderIndex() {
+		return ClientProxyPluto.renderIndexSapphireArmor;
 	}
 
 	public static void registerEntityRenderers() {
