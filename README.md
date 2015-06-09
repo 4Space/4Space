@@ -40,10 +40,10 @@ Active:
 
 * Dinammar - Textures
 
+* Decaxon - Code
+
 Not active:
 * BBoldt - Musician
-
-* Decaxon - Code
 
 
 Anyone can commit and help out 4Space!
