@@ -36,14 +36,14 @@ The Team
 Active:
  * Mattparks - Owner, Main Coder and Musician
 
+* Flashy3 - Textures
+
+* Dinammar - Textures
+
 Not active:
 * BBoldt - Musician
 
 * Decaxon - Code
-
-* Flashy3 - Textures
-
-* Dinammar - Textures
 
 
 Anyone can commit and help out 4Space!
