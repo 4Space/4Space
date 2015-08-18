@@ -1,0 +1,23 @@
+# 4Space Callisto Language File = Thai
+
+# ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.callisto_block.surfaceRock.name=พื้นผิวหินของดาวคัลลิสโต
+tile.callisto_block.subSurface.name=พื้นผิวหินลองของดาวคัลลิสโต
+tile.callisto_block.rock.name=หินของดาวคัลลิสโต
+tile.callisto_block.cobblestone.name=หิวกรวดของดาวคัลลิสโต
+tile.callisto_block.dungeonBrick.name=อิฐดันเจียนดาวคัลลิสโต
+
+# GUI
+
+# PLANET
+moon.callisto=ดาวคัลลิสโต
+
+# SCHEMATICS
+
+# ENTITIES
