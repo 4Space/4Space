@@ -1,0 +1,59 @@
+# 4Space Mercury Language File = Thai
+
+# GENERAL ITEMS
+item.iridiumCrystals.name=อิริเดียมคริสตัล
+item.iridiumPlate.name=แผ่นอิริเดียม
+item.iridiumPlate.name=แผ่นอิริเดียม
+item.plateHeavyT4.name=แผ่นโลหะหนัก T4
+
+# TOOLS
+item.iridium_axe.name=ขวานอิริเดียม
+item.iridium_hoe.name=จอบอิริเดียม
+item.iridium_pickaxe.name=ที่ขุดอิริเดียม
+item.iridium_spade.name=พลั่วอิริเดียม
+item.iridium_sword.name=ดาบอิริเดียม
+
+# ARMOR
+item.iridium_boots.name=ลองเท้าอิริเดียม
+item.iridium_chestplate.name=ชุดอิริเดียม
+item.iridium_helmet.name=หมวกอิริเดียม
+item.iridium_leggings.name=กางเกงอิริเดียม
+
+# BLOCKS
+tile.mercury_block.surfaceRock.name=พื้นผิวหินดาวพุธ
+tile.mercury_block.subSurface.name=พื้นผิวหินลองดาวพุธ
+tile.mercury_block.rock.name=หินดาวพุธ
+tile.mercury_block.cobblestone.name=หินกรวดดาวพุธ
+tile.mercury_block.dungeonBrick.name=อิฐดันเจี้ยนของดาวพุธ
+tile.mercury_block.iridium.name=แร่อิริเดียมของดาวพุธ
+tile.mercury_block.copper.name=แร่ทองแดงของดาวพุธ
+tile.mercury_block.crystal.name=แร่คริสตัลของดาวพุธ
+tile.mercury_block.meteor.name=แร่ดาวตกของดาวพุธ
+tile.mercury_block.gold.name=แร่ทองคำของดาวพุธ
+tile.mercury_block.tin.name=แร่ดีบุกของดาวพุธ
+tile.mercury_block.iridiumBlock.name=บล็อกจากอิริเดียม
+tile.mercury_block.meteorBlock.name=บล็อกจากดาวตก
+tile.mercury_glowstone.white.name=หินเรืองแสงสีขาว
+tile.mercury_glowstone.orange.name=หินเรืองแสงสีส้ม
+tile.mercury_glowstone.magenta.name=หินเรืองแสงสีม่วงแดงเข่ม
+tile.mercury_glowstone.light_blue.name=หินเรืองแสงสีฟ้าอ่อน
+tile.mercury_glowstone.yellow.name=หินเรืองแสงสีเหลือง
+tile.mercury_glowstone.lime.name=หินเรืองแสงสีเขียวอ่อน
+tile.mercury_glowstone.pink.name=หินเรืองแสงสีชมพู
+tile.mercury_glowstone.gray.name=หินเรืองแสงสีเทา
+tile.mercury_glowstone.silver.name=หินเรืองแสงสีเงิน
+tile.mercury_glowstone.cyan.name=หินเรืองแสงสีฟ้า
+tile.mercury_glowstone.purple.name=หินเรืองแสงสีม่วง
+tile.mercury_glowstone.blue.name=หินเรืองแสงสีน้ำเงิน
+tile.mercury_glowstone.brown.name=หินเรืองแสงสีน้ำตาล
+tile.mercury_glowstone.green.name=หินเรืองแสงสีเขียว
+tile.mercury_glowstone.red.name=หินเรืองแสงสีแดง
+tile.mercury_glowstone.black.name=หินเรืองแสงสีดำ
+tile.caravan_module.name=คาราวานโมดูล
+
+# GUI
+
+# Schematics
+
+# Entity
+

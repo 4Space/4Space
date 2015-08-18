@@ -1,0 +1,35 @@
+# 4Space Io Language File = Thai
+
+# GENERAL ITEMS
+item.io_bucket.titaniumBucket.name=ถังไทเทเนี่ยม
+item.io_bucket.ioLavaBucket.name=ถังกำมะถัน
+item.io_bucket.liquidRedSulfurBucket.name=ถังกำมะถันแดง
+item.io_bucket.liquidOrangeSulfurBucket.name=ถังกำมะถันสีส้ม
+item.io_bucket.liquidYellowSulfurBucket.name=ถังกำมะถันเหลือง
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.io_basic.surface.name=พื้นผิวหินดาวไอโอ
+tile.io_basic.subSurface.name=พื้นผิวหินลองดาวไอโอ
+tile.io_basic.stone.name=หินดาวไอโอ
+tile.io_basic.cobblestone.name=หินกรวดดาวไอโอ
+tile.io_basic.sulfurOre.name=แร่กำมะถันของดาวไอโอ
+tile.io_basic.ashStone.name=หินขี้เถ้าดาวไอโอ
+tile.io_basic.ashCobblestone.name=หินกรวดขี้เถ้าดาวไอโอ
+tile.io_basic.basalt.name=ซอลต์ของดาวไอโอ
+tile.io_basic.silicate.name=ซิลิเกตของดาวไอโอ
+tile.io_basic.dungeonBrick.name=อิฐดันเจี้ยนของดาวไอโอ
+tile.magma_rock.magma.name=หินหนืดดาวไอโอ
+tile.magma_rock.sulfur.name=กำมะถันดาวไอโอ
+
+# GUI
+
+# PLANET
+moon.io=ดาวไอโอ
+
+# SCHEMATICS
+
+# ENTITIES

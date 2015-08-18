@@ -1,0 +1,37 @@
+# 4Space Elipse Language File = Thai
+
+# GENERAL ITEMS
+item.flameiteDust.name=ผงเฟลเมทา
+item.ingotFlameite.name=แท่งเฟลเมทา
+item.flameitePlate.name=แผ่นเฟลเมทา
+item.flameite_battery.name=เซลแบตเตอร์รี่เฟลเมทา
+
+# TOOLS
+item.flameite_axe.name=ขวานเฟลเมทา
+item.flameite_hoe.name=จอบเฟลเมทา
+item.flameite_pickaxe.name=ที่ขุดเฟลเมทา
+item.flameite_spade.name=พลั่วเฟลเมทา
+item.flameite_sword.name=ดาบเฟลเมทา
+
+# ARMOR
+item.flameite_boots.name=ลองเท้าเฟลเมทา
+item.flameite_chestplate.name=ชุดเฟลเมทา
+item.flameite_helmet.name=หมวกเฟลเมทา
+item.flameite_leggings.name=กางเกงเฟลเมทา
+
+# BLOCKS
+tile.elipse_basic.surfaceRock.name=พื้นผิวหินของดาวเอลเล็ฟ
+tile.elipse_basic.subSurface.name=พื้นผิวหินลองของดาวเอลเล็ฟ
+tile.elipse_basic.rock.name=หินของดาวเอลเล็ฟ
+tile.elipse_basic.cobblestone.name=หินกรวดของดาวเอลเล็ฟ
+tile.elipse_basic.brick.name=อิฐดันเจียนของดาวเอลเล็ฟ
+tile.elipse_basic.flameiteOre.name=แร่เฟลเมทาของดาวเอลเล็ฟ
+tile.elipse_basic.flameiteBlock.name=บล็อกเฟลเมทา
+
+# GUI
+planet.elipse=ดาวเอลเล็ฟ
+
+# Schematics
+
+# Entity
+

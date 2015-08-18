@@ -1,0 +1,44 @@
+# 4Space Pluto Language File = Thai
+
+# GENERAL ITEMS
+item.sapphire.name=พลอยสีน้ำเงิน
+item.sapphirePlate.name=แผ่นแร่พลอยสีน้ำเงิน
+item.ununpetiumRaw.name=อูนอูนเพนเทียมหยาบ
+item.ununpetiumPlate.name=แผ่นอูนอูนเพนเทียม
+item.ingotFrozenIron.name=แท่งโลหะแช่แข็ง
+item.frozenIronPlate.name=แผ่นโลหะแช่แข็ง
+item.plateHeavyT6.name=แผ่นหนัก T6
+
+# TOOLS
+item.sapphire_axe.name=ขวานพลอยสีน้ำเงิน
+item.sapphire_hoe.name=จอบพลอยสีน้ำเงิน
+item.sapphire_pickaxe.name=ที่ขุดพลอยสีน้ำเงิน
+item.sapphire_spade.name=พลั่วพลอยสีน้ำเงิน
+item.sapphire_sword.name=ดาบพลอยสีน้ำเงิน
+
+# ARMOR
+item.sapphire_boots.name=รองเท้าบูทจากแร่พลอยสีน้ำเงิน
+item.sapphire_chestplate.name=ชุดเกราะจากแร่พลอยสีน้ำเงิน
+item.sapphire_helmet.name=หมวกเกราะจากแร่พลอยสีน้ำเงิน
+item.sapphire_leggings.name=กางเกงจากพลอยสีน้ำเงิน
+
+# BLOCKS
+tile.pluto_block.surfaceRock.name=พื้นผิวหินดาวพลูโต
+tile.pluto_block.subSurface.name=พื้นผิวหินย่อยดาวพลูโต
+tile.pluto_block.rock.name=หินดาวพลูโต
+tile.pluto_block.cobblestone.name=หินกรวดดาวพลูโต
+tile.pluto_block.dungeonBrick.name=อิฐดันเจี้ยนของพลูโต
+tile.pluto_block.sapphireOre.name=แร่พลอยสีน้ำเงินของดาวพลูโต
+tile.pluto_block.ununpentiumOre.name=แร่อูนอูนเพนเทียมของดาวพลูโต
+tile.pluto_block.frozenIronOre.name=แร่เหล็กแช่แข็งของดาวพลูโต
+tile.pluto_block.sapphireBlock.name=บล็อกจากแร่พลอยสีน้ำเงิน
+tile.pluto_block.frozenIronBlock.name=บล็อกจากแร่เหล็กแช่แข็ง
+tile.pluto_block.ununpentiumBlock.name=บล็อกจากแร่อูนอูนเพนเทียม
+
+# GUI
+planet.pluto=ดาวพลูโต
+
+# Schematics
+
+# Entity
+

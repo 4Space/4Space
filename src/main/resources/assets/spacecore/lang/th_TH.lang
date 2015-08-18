@@ -1,0 +1,21 @@
+# 4Space Core Language File = Thai
+
+# GENERAL ITEMS
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+
+# GUI
+itemGroup.SpaceItems=ไอเท็มโฟสเปส
+itemGroup.SpaceBlocks=บล็อกโฟสเปส
+
+# SCHEMATICS
+
+# Entity
+
+# OTHER
+4update.failed.name=การตรวจสอบการอับเดตของ โฟสเปส (4Space) ผิดผลาด โปรดลองอีกหลังจาก 15 วินาที
+4update.success.name=เจอการอับเดตใหม่ของ โฟสเปส (4Space) :
