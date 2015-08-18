@@ -1,0 +1,75 @@
+# 4Space Venus Language File = Thai
+
+# GENERAL ITEMS
+item.ingotSulfur.name=แท่งกำมะถัน
+item.tier4HeavyDutyPlate.name=แผ่นโลหะหนัก
+item.ruby.name=ทับทิม
+item.rubyPlate.name=แผ่นทับทิม
+item.sulfurDust.name=ผงกำมะถัน
+item.sulfurPlate.name=แผ่นกำมะถัน
+item.venusSulfurBattery.name=Sulfur-Celled Battery
+item.venusUraniumBattery.name=Uranium-Celled Battery
+item.venusCrystal.name=คริสตัลดาวศุกร์
+item.venusPowerCrystal.name=คริสตัลพลังงานของดาวศุกร์
+item.venusRod.name=แท่งดาวศุกร์
+item.venusRodDust.name=ผงแท่งดาวศุกร์
+item.ingotUranium.name=แท่งยูเรเนียม
+item.uraniumPlate.name=แผ่นยูเรเนียม
+item.sulfur_battery.name=แบตเตอรี่จากกำมะถัน
+item.uranium_battery.name=แบตเตอรี่จากยูเรเนียม
+item.jetpackThruster.name=เครื่องยนต์ไอพ่น
+item.jetpackBody.name=โครงตัวไอพ่น
+
+# TOOLS
+item.ruby_axe.name=ขวานทับทิม
+item.ruby_hoe.name=จอบทับทิม
+item.ruby_pickaxe.name=ที่ขุดทับทิม
+item.ruby_spade.name=พลั่วทับทิม
+item.ruby_sword.name=ดาบทับทิม
+item.sulfur_axe.name=ขวานกำมะถัน
+item.sulfur_hoe.name=จอบกำมะถัน
+item.sulfur_pickaxe.name=ที่ขุดกำมะถัน
+item.sulfur_spade.name=พลั่วกำมะถัน
+item.sulfur_sword.name=ดาบกำมะถัน
+
+# ARMOR
+item.ruby_boots.name=รองเท้าทับทิม
+item.ruby_chestplate.name=ชุดทับทิม
+item.ruby_helmet.name=หมวกทับทิม
+item.ruby_leggings.name=กางเกงทับทิม
+item.sulfur_boots.name=รองเท้ากำมะถัน
+item.sulfur_chestplate.name=ชุดกำมะถัน
+item.sulfur_helmet.name=หมวกกำมะถัน
+item.sulfur_leggings.name=กางเกงกำมะถัน
+item.jetpack.name=ไอพ่น
+
+# BLOCKS
+tile.venus_basic.surfaceRock.name=พื้นผิวหินดาวศุกร์
+tile.venus_basic.subSurface.name=พื้นผิวหินย่อยดาวศุกร์
+tile.venus_basic.rock.name=หินดาวศุกร์
+tile.venus_basic.cobblestone.name=หินกรวดดาวศุกร์
+tile.venus_basic.dungeonBrick.name=อิฐดันเจี้ยนของดาวศุกร์
+tile.venus_basic.coalOre.name=แร่ถ่านของดาวศุกร์
+tile.venus_basic.copperOre.name=แร่ทองแดงของดาวศุกร์
+tile.venus_basic.crystalOre.name=แร่คริสตัลดาวศุกร์
+tile.venus_basic.rubyOre.name=แร่ทับทิมของดาวศุกร์
+tile.venus_basic.uraniumOre.name=แร่ยูเรเนียมของดาวศุกร์
+tile.venus_basic.ironOre.name=แร่โลหะของดาวศุกร์
+tile.venus_basic.sulfurOre.name=แร่กำมะถัน
+tile.venus_basic.tinOre.name=แร่ดีบุกของดาวศุกร์
+tile.venus_decor.uraniumBlock.name=บล็อกจากยูเรเนียม
+tile.venus_decor.crystalBlock.name=บล็อกจากคริสตัล
+tile.venus_decor.rubyBlock.name=บล็อกจากทับทิม
+tile.venus_decor.sulfurBlock.name=บล็อกจากกำมะถัน
+tile.sulfur_torch.name=คบเพลิงกำมะถัน
+tile.evolved_blaze_egg.name=ไข่ของแบลช ที่วิวัฒน์นาการ
+tile.vurn_stone.name=หินที่ถูกเผา
+tile.venusian_tnt.name=ระเบิดจากดาวศุกร์
+
+# GUI
+
+# Schematics
+
+# Entity
+entity.SpaceCore.EvolvedBlaze.name=แบลชที่วิวัฒน์นาการ
+entity.SpaceCore.VenusianVillager.name=มนุษย์ดาวศุกร์
