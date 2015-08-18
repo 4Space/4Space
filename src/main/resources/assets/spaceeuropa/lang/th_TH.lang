@@ -1,0 +1,25 @@
+# 4Space Europa Language File = Thai
+
+# ITEMS
+item.europa_water_bucket.name=ถังน้ำยูโรป้า
+
+# TOOLS
+
+# ARMOR
+
+# BLOCKS
+tile.europa_block.surface.name=พื้นผิวน้ำแข็งดาวยูโลป้า
+tile.europa_block.hardenedIce.name=พื้นผิวน้ำแข็งชั้นลองที่กลายเป็นน้ำแข็งของยูโลป้า
+tile.europa_ice.ice.name=น้ำแข็งของดาวยูโลป้า
+tile.europa_ice.dirty.name=น้ำแข็งอันสกปรกของดาวยูโลป้า
+tile.europa_ice.dense.name=น้ำแข็งอันหนาแน่นของดาวยูโลป้า
+tile.packed_europa_ice.name=น้ำแข็งที่อัดแน่นของดาวยูโลป้า
+
+# GUI
+
+# PLANET
+moon.europa=ดาวยูโลป้า
+
+# SCHEMATICS
+
+# ENTITIES
