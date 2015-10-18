@@ -155,45 +155,45 @@ public class SkyProviderCallisto extends IRenderHandler {
 		var23.draw();
 
 		// Render Ganymede
-		var12 = 0.5F;
+		var12 = 10.0F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderCallisto.ganymedeTexture);
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -12.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -12.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -12.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -12.0D, -var12, 0, 0);
+		var23.addVertexWithUV(-var12, -240.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -240.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -240.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -240.0D, -var12, 0, 0);
 		var23.draw();
 
 		// Render Europa
-		var12 = 0.5F;
+		var12 = 10.0F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(100F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderCallisto.europaTexture);
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -15.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -15.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -15.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -15.0D, -var12, 0, 0);
+		var23.addVertexWithUV(-var12, -300.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -300.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -300.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -300.0D, -var12, 0, 0);
 		var23.draw();
 
 		// Render IO
-		var12 = 0.5F;
+		var12 = 8.0F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderCallisto.ioTexture);
 		var23.startDrawingQuads();
-		var23.addVertexWithUV(-var12, -25.0D, var12, 0, 1);
-		var23.addVertexWithUV(var12, -25.0D, var12, 1, 1);
-		var23.addVertexWithUV(var12, -25.0D, -var12, 1, 0);
-		var23.addVertexWithUV(-var12, -25.0D, -var12, 0, 0);
+		var23.addVertexWithUV(-var12, -400.0D, var12, 0, 1);
+		var23.addVertexWithUV(var12, -400.0D, var12, 1, 1);
+		var23.addVertexWithUV(var12, -400.0D, -var12, 1, 0);
+		var23.addVertexWithUV(-var12, -400.0D, -var12, 0, 0);
 		var23.draw();
 
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
