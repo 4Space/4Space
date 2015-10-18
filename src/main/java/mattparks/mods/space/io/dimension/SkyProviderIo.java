@@ -221,45 +221,45 @@ public class SkyProviderIo extends IRenderHandler {
 		tessellator1.draw();
 
 		// Render Ganymede
-		f10 = 0.5F;
+		f10 = 10.0F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.ganymedeTexture);
 		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -27.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -27.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -27.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -27.0D, -f10, 0, 0);
+		tessellator1.addVertexWithUV(-f10, -540.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -540.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -540.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -540.0D, -f10, 0, 0);
 		tessellator1.draw();
 
 		// Render Europa
-		f10 = 0.5F;
+		f10 = 10.0F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(100F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(0F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.europaTexture);
 		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -15.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -15.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -15.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -15.0D, -f10, 0, 0);
+		tessellator1.addVertexWithUV(-f10, -300.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -300.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -300.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -300.0D, -f10, 0, 0);
 		tessellator1.draw();
 
 		// Render Callisto
-		f10 = 0.5F;
+		f10 = 10.0F;
 		GL11.glScalef(0.6F, 0.6F, 0.6F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 1.0F);
 		GL11.glRotatef(300F, 1.0F, 0.0F, 0.0F);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderIo.callistoTexture);
 		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -25.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -25.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -25.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -25.0D, -f10, 0, 0);
+		tessellator1.addVertexWithUV(-f10, -500.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -500.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -500.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -500.0D, -f10, 0, 0);
 		tessellator1.draw();
 
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
