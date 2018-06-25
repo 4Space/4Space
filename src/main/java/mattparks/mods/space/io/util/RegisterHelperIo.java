@@ -3,7 +3,7 @@ package mattparks.mods.space.io.util;
 import mattparks.mods.space.core.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class RegisterHelperIo {
 	public static void registerBlock(Block block) {

@@ -6,10 +6,10 @@ import java.util.List;
 import mattparks.mods.space.core.SpaceCore;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.StatCollector;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.relauncher.Side;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class SpaceUtil {
 	public static int nextID = 0;

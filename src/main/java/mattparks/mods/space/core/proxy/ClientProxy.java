@@ -28,7 +28,7 @@ import net.minecraft.client.audio.MusicTicker;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.IImageBuffer;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderPlayerEvent;
@@ -38,23 +38,23 @@ import org.lwjgl.opengl.GL11;
 
 import com.google.common.collect.Maps;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ClientProxy extends CommonProxy {
-	public static EnumRarity spaceItem = EnumHelper.addRarity("SpaceRarity", EnumChatFormatting.RED, "Space");
+	public static EnumRarity spaceItem = EnumHelper.addRarity("SpaceRarity", TextFormatting.RED, "Space");
 
 	public static MusicTicker.MusicType MUSIC_TYPE_SPACE;
 
 	private static Minecraft mc = FMLClientHandler.instance().getClient();
 	private static Map<String, ResourceLocation> capesMap = Maps.newHashMap();
 
-	private static final ResourceLocation saturnRingTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/saturnRings.png");
-	private static final ResourceLocation uranusRingTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/uranusRings.png");
+	private static final ResourceLocation saturnRingTexture = new ResourceLocation("galacticraftcore", "textures/gui/celestialbodies/saturnRings.png");
+	private static final ResourceLocation uranusRingTexture = new ResourceLocation("galacticraftcore", "textures/gui/celestialbodies/uranusRings.png");
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {

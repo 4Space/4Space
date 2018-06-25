@@ -8,9 +8,9 @@ import java.net.URL;
 
 import mattparks.mods.space.core.Constants;
 import net.minecraft.util.ChatComponentText;
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.relauncher.Side;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class ThreadVersionCheck extends Thread {
 	public static ThreadVersionCheck INSTANCE = new ThreadVersionCheck();

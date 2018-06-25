@@ -3,9 +3,9 @@ package mattparks.mods.space.pluto.proxy;
 import java.util.EnumSet;
 
 import net.minecraft.block.Block;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxyPluto {
 	public void preInit(FMLPreInitializationEvent event) {

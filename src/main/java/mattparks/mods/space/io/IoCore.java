@@ -21,13 +21,13 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_IO, name = Constants.MOD_NAME_IO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;required-after:SpaceVenus;")
 public class IoCore {
@@ -64,7 +64,7 @@ public class IoCore {
 		if (ConfigManagerIo.idIoEnabled && ConfigManagerCore.idJupiterEnabled) {
 			IoCore.moonIo = (Moon) new Moon("io").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1367F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(10F, 10F)).setRelativeOrbitTime(1 / 0.05F);
 			IoCore.moonIo.setDimensionInfo(ConfigManagerIo.idDimensionIo, WorldProviderIo.class).setTierRequired(3);
-			IoCore.moonIo.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/io.png"));
+			IoCore.moonIo.setBodyIcon(new ResourceLocation("galacticraftcore", "textures/gui/celestialbodies/io.png"));
 
 			GalaxyRegistry.registerMoon(IoCore.moonIo);
 

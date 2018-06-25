@@ -17,11 +17,11 @@ import net.minecraftforge.client.IRenderHandler;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class SkyProviderCallisto extends IRenderHandler {
 	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");
-	private static final ResourceLocation jupiterTexture = new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/jupiter.png");
+	private static final ResourceLocation jupiterTexture = new ResourceLocation("galacticraftcore", "textures/gui/celestialbodies/jupiter.png");
 	private static final ResourceLocation ioTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/io.png");
 	private static final ResourceLocation europaTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/europa.png");
 	private static final ResourceLocation ganymedeTexture = new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/ganymede.png");

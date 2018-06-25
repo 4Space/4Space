@@ -16,7 +16,7 @@ import net.minecraftforge.client.IRenderHandler;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class SkyProviderMercury extends IRenderHandler {
 	private static final ResourceLocation sunTexture = new ResourceLocation("textures/environment/sun.png");

@@ -2,7 +2,7 @@ package mattparks.mods.space.core.util;
 
 import org.apache.logging.log4j.Level;
 
-import cpw.mods.fml.relauncher.FMLRelaunchLog;
+import net.minecraftforge.fml.relauncher.FMLRelaunchLog;
 
 public class SpaceLog {
 	public static void info(String message) {

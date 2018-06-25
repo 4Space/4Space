@@ -1,1 +1,8 @@
 /.project
+/.gradle
+/.settings
+.classpath
+4Space_Client.launch
+4Space_Server.launch
+bin/
+build/

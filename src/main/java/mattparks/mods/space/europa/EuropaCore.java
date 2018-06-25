@@ -21,13 +21,13 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_EUROPA, name = Constants.MOD_NAME_EUROPA, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class EuropaCore {
@@ -64,7 +64,7 @@ public class EuropaCore {
 		if (ConfigManagerEuropa.idEuropaEnabled && ConfigManagerCore.idJupiterEnabled) {
 			EuropaCore.moonEuropa = (Moon) new Moon("europa").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(14F, 14F)).setRelativeOrbitTime(1 / 0.001F);
 			EuropaCore.moonEuropa.setDimensionInfo(ConfigManagerEuropa.idDimensionEuropa, WorldProviderEuropa.class).setTierRequired(3);
-			EuropaCore.moonEuropa.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/europa.png"));
+			EuropaCore.moonEuropa.setBodyIcon(new ResourceLocation("galacticraftcore", "textures/gui/celestialbodies/europa.png"));
 
 			GalaxyRegistry.registerMoon(EuropaCore.moonEuropa);
 

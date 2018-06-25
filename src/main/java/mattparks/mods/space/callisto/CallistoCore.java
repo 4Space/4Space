@@ -21,13 +21,13 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Constants.MOD_ID_CALLISTO, name = Constants.MOD_NAME_CALLISTO, version = Constants.VERSION, dependencies = "required-after:GalacticraftCore;required-after:SpaceCore;")
 public class CallistoCore {
@@ -64,7 +64,7 @@ public class CallistoCore {
 		if (ConfigManagerCallisto.idCallistoEnabled && ConfigManagerCore.idJupiterEnabled) {
 			CallistoCore.moonCallisto = (Moon) new Moon("callisto").setParentPlanet(SpaceCore.planetJupiter).setRelativeSize(0.1656F).setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(17F, 17F)).setRelativeOrbitTime(1 / 0.000025F);
 			CallistoCore.moonCallisto.setDimensionInfo(ConfigManagerCallisto.idDimensionCallisto, WorldProviderCallisto.class).setTierRequired(3);
-			CallistoCore.moonCallisto.setBodyIcon(new ResourceLocation(GalacticraftCore.ASSET_PREFIX, "textures/gui/celestialbodies/callisto.png"));
+			CallistoCore.moonCallisto.setBodyIcon(new ResourceLocation("galacticraftcore", "textures/gui/celestialbodies/callisto.png"));
 
 			GalaxyRegistry.registerMoon(CallistoCore.moonCallisto);
 
